@@ -1,0 +1,290 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemascope.org/catalog.schema.json",
+  "title": "SchemaScope catalog",
+  "description": "A list of ontologies, schemas, vocabularies and data standards across domains. Validated by scripts/validate.mjs.",
+  "type": "array",
+  "items": {
+    "$ref": "#/$defs/entry"
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "category",
+        "kind",
+        "description"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "homepage"
+          ]
+        },
+        {
+          "required": [
+            "repository"
+          ]
+        }
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+          "description": "Stable identifier; becomes the page URL /o/<id>/"
+        },
+        "acronym": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 2
+        },
+        "category": {
+          "enum": [
+            "anatomy",
+            "atlases",
+            "cells",
+            "behavior",
+            "disease",
+            "molecular",
+            "imaging",
+            "physiology",
+            "modeling",
+            "metadata",
+            "terminology"
+          ]
+        },
+        "kind": {
+          "enum": [
+            "ontology",
+            "schema",
+            "vocabulary",
+            "atlas",
+            "data-standard",
+            "knowledge-base"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 40,
+          "maxLength": 600
+        },
+        "formats": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "species": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "maintainer": {
+          "type": "string"
+        },
+        "license": {
+          "type": "string",
+          "description": "e.g. CC BY 4.0, MIT, BSD-3-Clause"
+        },
+        "homepage": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "repository": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "download": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://",
+          "description": "Canonical machine-readable artefact, ideally a PURL"
+        },
+        "ols": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$"
+        },
+        "obo": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$"
+        },
+        "bioportal": {
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "active",
+            "legacy"
+          ]
+        },
+        "publications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "title",
+              "doi"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "doi": {
+                "type": "string",
+                "pattern": "^10\\.\\d{4,9}/\\S+$"
+              },
+              "year": {
+                "type": "integer",
+                "minimum": 1900,
+                "maximum": 2100
+              }
+            }
+          }
+        },
+        "usedBy": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "url"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https?://"
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "modules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "url"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https?://"
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "tools": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "url"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https?://"
+              },
+              "note": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "bioregistry": {
+          "type": "string",
+          "description": "Prefix in bioregistry.io, if different from obo/ols"
+        },
+        "domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Secondary domains (category ids) where this resource is also used"
+        },
+        "provenance": {
+          "type": "object",
+          "description": "Where this catalog record's metadata came from",
+          "required": [
+            "source"
+          ],
+          "properties": {
+            "source": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "page": {
+              "type": "string"
+            },
+            "retrievedAt": {
+              "type": "string"
+            },
+            "curatedAt": {
+              "type": "string"
+            },
+            "curatedBy": {
+              "type": "string"
+            },
+            "fields": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "note": {
+              "type": "string"
+            },
+            "overrides": {
+              "type": "object"
+            },
+            "overridesNote": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

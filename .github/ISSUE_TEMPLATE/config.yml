@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Submission form
+    url: https://schemascope.org/submit/
+    about: Fill in a form that pre-fills the submission issue for you.
+  - name: Scoring methodology
+    url: https://schemascope.org/evaluation/
+    about: How resources are evaluated against the FAIR principles.

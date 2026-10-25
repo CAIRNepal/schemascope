@@ -1,0 +1,85 @@
+{
+  "id": "gfo",
+  "artefact": "http://www.onto-med.de/ontologies/gfo.owl",
+  "checkedAt": "2026-10-25T21:41:14.363Z",
+  "sha256": "063a7cd86690bb72d01bb0260c5418a5f7568dd702df67f1dcc02879801fa9d9",
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 1,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 139,
+      "WARN": 146,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-25T21:41:30.287Z",
+    "sha256": "063a7cd86690bb72d01bb0260c5418a5f7568dd702df67f1dcc02879801fa9d9"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 4,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P02",
+        "name": "Creating synonyms as classes",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 144
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 32
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 9
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P31",
+        "name": "Defining wrong equivalent classes",
+        "importance": "critical",
+        "affected": 4
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-25T21:41:46.707Z",
+    "sha256": "063a7cd86690bb72d01bb0260c5418a5f7568dd702df67f1dcc02879801fa9d9"
+  }
+}

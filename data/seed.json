@@ -1,0 +1,860 @@
+[
+ {
+  "prefix": "bfo",
+  "category": "foundational",
+  "domains": [
+   "life",
+   "health",
+   "chemistry",
+   "earth",
+   "agri",
+   "physical",
+   "engineering",
+   "neuro",
+   "humanities"
+  ]
+ },
+ {
+  "prefix": "gfo",
+  "category": "foundational",
+  "domains": [
+   "health",
+   "life"
+  ],
+  "overrides": {
+   "acronym": "GFO"
+  }
+ },
+ {
+  "prefix": "cob",
+  "category": "foundational",
+  "domains": [
+   "life",
+   "health",
+   "chemistry"
+  ]
+ },
+ {
+  "prefix": "ro",
+  "category": "foundational",
+  "domains": [
+   "life",
+   "health",
+   "agri",
+   "earth",
+   "neuro"
+  ]
+ },
+ {
+  "prefix": "iao",
+  "category": "foundational",
+  "domains": [
+   "metadata",
+   "life",
+   "health"
+  ]
+ },
+ {
+  "prefix": "omo",
+  "category": "foundational",
+  "domains": [
+   "metadata"
+  ]
+ },
+ {
+  "prefix": "dcat",
+  "category": "metadata",
+  "domains": [
+   "earth",
+   "computing",
+   "humanities"
+  ],
+  "overrides": {
+   "download": "http://www.w3.org/ns/dcat",
+   "formats": [
+    "OWL",
+    "Turtle"
+   ],
+   "kind": "ontology",
+   "acronym": "DCAT"
+  }
+ },
+ {
+  "prefix": "prov",
+  "category": "metadata",
+  "domains": [
+   "computing",
+   "life",
+   "earth"
+  ],
+  "overrides": {
+   "download": "http://www.w3.org/ns/prov-o",
+   "formats": [
+    "OWL",
+    "Turtle"
+   ],
+   "kind": "ontology",
+   "acronym": "PROV-O"
+  }
+ },
+ {
+  "prefix": "pav",
+  "category": "metadata",
+  "domains": [
+   "life"
+  ],
+  "overrides": {
+   "download": "http://purl.org/pav/",
+   "formats": [
+    "OWL",
+    "RDF"
+   ],
+   "kind": "ontology",
+   "acronym": "PAV"
+  }
+ },
+ {
+  "prefix": "dcterms",
+  "category": "metadata",
+  "domains": [
+   "humanities",
+   "computing"
+  ],
+  "overrides": {
+   "download": "http://purl.org/dc/terms/",
+   "formats": [
+    "RDF",
+    "Turtle"
+   ],
+   "kind": "vocabulary",
+   "acronym": "DCTERMS"
+  }
+ },
+ {
+  "prefix": "schema",
+  "category": "metadata",
+  "domains": [
+   "computing",
+   "humanities",
+   "health",
+   "life"
+  ],
+  "overrides": {
+   "download": "https://schema.org/version/latest/schemaorg-current-https.ttl",
+   "formats": [
+    "RDF",
+    "Turtle",
+    "JSON-LD"
+   ],
+   "kind": "vocabulary",
+   "acronym": "schema.org"
+  }
+ },
+ {
+  "prefix": "skos",
+  "category": "metadata",
+  "domains": [
+   "humanities",
+   "agri",
+   "earth"
+  ],
+  "overrides": {
+   "download": "http://www.w3.org/2004/02/skos/core",
+   "formats": [
+    "OWL",
+    "RDF"
+   ],
+   "kind": "ontology",
+   "acronym": "SKOS"
+  }
+ },
+ {
+  "prefix": "foaf",
+  "category": "metadata",
+  "domains": [
+   "humanities",
+   "computing"
+  ],
+  "overrides": {
+   "download": "http://xmlns.com/foaf/0.1/",
+   "formats": [
+    "RDF",
+    "JSON-LD"
+   ],
+   "kind": "vocabulary",
+   "acronym": "FOAF"
+  }
+ },
+ {
+  "prefix": "time",
+  "category": "metadata",
+  "domains": [
+   "earth",
+   "engineering",
+   "physical",
+   "humanities"
+  ],
+  "overrides": {
+   "download": "http://www.w3.org/2006/time",
+   "formats": [
+    "OWL",
+    "Turtle"
+   ],
+   "kind": "ontology",
+   "acronym": "OWL-Time"
+  }
+ },
+ {
+  "prefix": "org",
+  "category": "metadata",
+  "domains": [
+   "humanities"
+  ],
+  "overrides": {
+   "download": "http://www.w3.org/ns/org",
+   "formats": [
+    "OWL",
+    "Turtle"
+   ],
+   "kind": "ontology",
+   "acronym": "ORG"
+  }
+ },
+ {
+  "prefix": "vcard",
+  "category": "metadata",
+  "domains": [
+   "humanities"
+  ],
+  "overrides": {
+   "download": "http://www.w3.org/2006/vcard/ns",
+   "formats": [
+    "OWL",
+    "Turtle"
+   ],
+   "kind": "ontology",
+   "acronym": "vCard"
+  }
+ },
+ {
+  "prefix": "datacite",
+  "category": "metadata",
+  "domains": [
+   "humanities"
+  ],
+  "overrides": {
+   "download": "http://purl.org/spar/datacite",
+   "formats": [
+    "OWL",
+    "RDF"
+   ],
+   "kind": "ontology",
+   "acronym": "DataCite"
+  }
+ },
+ {
+  "prefix": "fabio",
+  "category": "metadata",
+  "domains": [
+   "humanities"
+  ],
+  "overrides": {
+   "download": "http://purl.org/spar/fabio",
+   "formats": [
+    "OWL",
+    "RDF"
+   ],
+   "kind": "ontology",
+   "acronym": "FaBiO"
+  }
+ },
+ {
+  "prefix": "cito",
+  "category": "metadata",
+  "domains": [
+   "humanities"
+  ],
+  "overrides": {
+   "download": "http://purl.org/spar/cito",
+   "formats": [
+    "OWL",
+    "RDF"
+   ],
+   "kind": "ontology",
+   "acronym": "CiTO"
+  }
+ },
+ {
+  "prefix": "bibo",
+  "category": "metadata",
+  "domains": [
+   "humanities"
+  ],
+  "overrides": {
+   "download": "http://purl.org/ontology/bibo/",
+   "formats": [
+    "OWL",
+    "Turtle"
+   ],
+   "kind": "ontology",
+   "acronym": "BIBO"
+  }
+ },
+ {
+  "prefix": "odrl",
+  "category": "metadata",
+  "domains": [
+   "computing",
+   "humanities"
+  ],
+  "overrides": {
+   "download": "http://www.w3.org/ns/odrl/2/",
+   "formats": [
+    "OWL",
+    "Turtle"
+   ],
+   "kind": "ontology",
+   "acronym": "ODRL"
+  }
+ },
+ {
+  "prefix": "go",
+  "category": "life",
+  "domains": [
+   "agri",
+   "health",
+   "neuro"
+  ]
+ },
+ {
+  "prefix": "cl",
+  "category": "life",
+  "domains": [
+   "health",
+   "neuro"
+  ]
+ },
+ {
+  "prefix": "uberon",
+  "category": "life",
+  "domains": [
+   "health",
+   "neuro",
+   "agri"
+  ]
+ },
+ {
+  "prefix": "ncbitaxon",
+  "category": "life",
+  "domains": [
+   "agri",
+   "earth",
+   "health"
+  ]
+ },
+ {
+  "prefix": "obi",
+  "category": "life",
+  "domains": [
+   "health",
+   "chemistry"
+  ]
+ },
+ {
+  "prefix": "edam",
+  "category": "life",
+  "domains": [
+   "computing"
+  ]
+ },
+ {
+  "prefix": "sio",
+  "category": "life",
+  "domains": [
+   "health",
+   "chemistry",
+   "computing"
+  ]
+ },
+ {
+  "prefix": "pr",
+  "category": "life",
+  "domains": [
+   "health"
+  ]
+ },
+ {
+  "prefix": "so",
+  "category": "life",
+  "domains": []
+ },
+ {
+  "prefix": "pato",
+  "category": "life",
+  "domains": [
+   "agri",
+   "health"
+  ]
+ },
+ {
+  "prefix": "eco",
+  "category": "life",
+  "domains": [
+   "health",
+   "agri"
+  ]
+ },
+ {
+  "prefix": "mondo",
+  "category": "health",
+  "domains": [
+   "life",
+   "neuro"
+  ]
+ },
+ {
+  "prefix": "hp",
+  "category": "health",
+  "domains": [
+   "life",
+   "neuro"
+  ]
+ },
+ {
+  "prefix": "doid",
+  "category": "health",
+  "domains": [
+   "life"
+  ]
+ },
+ {
+  "prefix": "ogms",
+  "category": "health",
+  "domains": [
+   "foundational"
+  ]
+ },
+ {
+  "prefix": "maxo",
+  "category": "health",
+  "domains": []
+ },
+ {
+  "prefix": "vo",
+  "category": "health",
+  "domains": [
+   "life"
+  ]
+ },
+ {
+  "prefix": "snomedct",
+  "category": "health",
+  "domains": [],
+  "overrides": {
+   "kind": "vocabulary",
+   "formats": [
+    "RF2"
+   ],
+   "license": "SNOMED CT Affiliate Licence (proprietary)",
+   "acronym": "SNOMED CT"
+  }
+ },
+ {
+  "prefix": "loinc",
+  "category": "health",
+  "domains": [
+   "life"
+  ],
+  "overrides": {
+   "kind": "vocabulary",
+   "formats": [
+    "CSV"
+   ],
+   "acronym": "LOINC"
+  }
+ },
+ {
+  "prefix": "icd11",
+  "category": "health",
+  "domains": [],
+  "overrides": {
+   "kind": "vocabulary",
+   "formats": [
+    "JSON API"
+   ],
+   "acronym": "ICD-11"
+  }
+ },
+ {
+  "prefix": "omop",
+  "category": "health",
+  "domains": [
+   "computing"
+  ],
+  "overrides": {
+   "kind": "data-standard",
+   "formats": [
+    "SQL DDL"
+   ],
+   "repository": "https://github.com/OHDSI/CommonDataModel",
+   "acronym": "OMOP CDM"
+  }
+ },
+ {
+  "prefix": "nbo",
+  "category": "neuro",
+  "domains": [
+   "life"
+  ]
+ },
+ {
+  "prefix": "chebi",
+  "category": "chemistry",
+  "domains": [
+   "life",
+   "health",
+   "agri",
+   "earth"
+  ]
+ },
+ {
+  "prefix": "chmo",
+  "category": "chemistry",
+  "domains": [
+   "physical"
+  ]
+ },
+ {
+  "prefix": "rxno",
+  "category": "chemistry",
+  "domains": []
+ },
+ {
+  "prefix": "mop",
+  "category": "chemistry",
+  "domains": []
+ },
+ {
+  "prefix": "emmo",
+  "category": "chemistry",
+  "domains": [
+   "engineering",
+   "physical"
+  ],
+  "overrides": {
+   "formats": [
+    "OWL",
+    "Turtle"
+   ],
+   "acronym": "EMMO"
+  }
+ },
+ {
+  "prefix": "classyfire",
+  "category": "chemistry",
+  "domains": [
+   "life"
+  ],
+  "overrides": {
+   "kind": "vocabulary",
+   "formats": [
+    "OBO",
+    "JSON API"
+   ],
+   "acronym": "ClassyFire"
+  }
+ },
+ {
+  "prefix": "envo",
+  "category": "earth",
+  "domains": [
+   "life",
+   "agri"
+  ]
+ },
+ {
+  "prefix": "sweet",
+  "category": "earth",
+  "domains": [
+   "physical"
+  ],
+  "overrides": {
+   "download": "https://raw.githubusercontent.com/ESIPFed/sweet/master/src/sweetAll.ttl",
+   "repository": "https://github.com/ESIPFed/sweet",
+   "formats": [
+    "OWL",
+    "Turtle"
+   ],
+   "kind": "ontology",
+   "acronym": "SWEET"
+  }
+ },
+ {
+  "prefix": "geosparql",
+  "category": "earth",
+  "domains": [
+   "engineering",
+   "humanities"
+  ],
+  "overrides": {
+   "download": "http://www.opengis.net/ont/geosparql",
+   "formats": [
+    "OWL",
+    "Turtle"
+   ],
+   "kind": "ontology",
+   "acronym": "GeoSPARQL"
+  }
+ },
+ {
+  "prefix": "sosa",
+  "category": "earth",
+  "domains": [
+   "engineering",
+   "agri",
+   "physical"
+  ],
+  "overrides": {
+   "download": "http://www.w3.org/ns/sosa/",
+   "formats": [
+    "OWL",
+    "Turtle"
+   ],
+   "kind": "ontology",
+   "acronym": "SOSA"
+  }
+ },
+ {
+  "prefix": "ssn",
+  "category": "earth",
+  "domains": [
+   "engineering"
+  ],
+  "overrides": {
+   "download": "http://www.w3.org/ns/ssn/",
+   "formats": [
+    "OWL",
+    "Turtle"
+   ],
+   "kind": "ontology",
+   "acronym": "SSN"
+  }
+ },
+ {
+  "prefix": "agrovoc",
+  "category": "agri",
+  "domains": [
+   "earth",
+   "humanities"
+  ],
+  "overrides": {
+   "kind": "vocabulary",
+   "formats": [
+    "RDF",
+    "SKOS"
+   ],
+   "acronym": "AGROVOC"
+  }
+ },
+ {
+  "prefix": "po",
+  "category": "agri",
+  "domains": [
+   "life"
+  ]
+ },
+ {
+  "prefix": "to",
+  "category": "agri",
+  "domains": [
+   "life"
+  ]
+ },
+ {
+  "prefix": "foodon",
+  "category": "agri",
+  "domains": [
+   "health",
+   "life"
+  ]
+ },
+ {
+  "prefix": "peco",
+  "category": "agri",
+  "domains": [
+   "life"
+  ]
+ },
+ {
+  "prefix": "ppo",
+  "category": "agri",
+  "domains": [
+   "earth"
+  ]
+ },
+ {
+  "prefix": "atol",
+  "category": "agri",
+  "domains": [
+   "life"
+  ]
+ },
+ {
+  "prefix": "co_320",
+  "category": "agri",
+  "domains": [
+   "life"
+  ],
+  "overrides": {
+   "kind": "vocabulary",
+   "formats": [
+    "OBO",
+    "JSON API"
+   ],
+   "acronym": "CO_320"
+  }
+ },
+ {
+  "prefix": "qudt",
+  "category": "physical",
+  "domains": [
+   "engineering",
+   "earth",
+   "chemistry",
+   "life"
+  ],
+  "overrides": {
+   "download": "http://qudt.org/schema/qudt/",
+   "formats": [
+    "OWL",
+    "Turtle"
+   ],
+   "kind": "ontology",
+   "acronym": "QUDT"
+  }
+ },
+ {
+  "prefix": "om",
+  "category": "physical",
+  "domains": [
+   "chemistry",
+   "agri",
+   "engineering"
+  ],
+  "overrides": {
+   "formats": [
+    "OWL",
+    "RDF"
+   ],
+   "acronym": "OM"
+  }
+ },
+ {
+  "prefix": "uo",
+  "category": "physical",
+  "domains": [
+   "life",
+   "chemistry"
+  ],
+  "overrides": {
+   "description": "An ontology of units of measurement, used across OBO Foundry ontologies to annotate quantitative values with standard units."
+  }
+ },
+ {
+  "prefix": "uat",
+  "category": "physical",
+  "domains": [],
+  "overrides": {
+   "kind": "vocabulary",
+   "formats": [
+    "RDF",
+    "SKOS"
+   ],
+   "acronym": "UAT"
+  }
+ },
+ {
+  "prefix": "saref",
+  "category": "engineering",
+  "domains": [
+   "computing",
+   "earth"
+  ],
+  "overrides": {
+   "download": "https://saref.etsi.org/core/",
+   "formats": [
+    "OWL",
+    "Turtle"
+   ],
+   "kind": "ontology",
+   "acronym": "SAREF"
+  }
+ },
+ {
+  "prefix": "brick",
+  "category": "engineering",
+  "domains": [
+   "computing"
+  ],
+  "overrides": {
+   "download": "https://brickschema.org/schema/Brick.ttl",
+   "formats": [
+    "OWL",
+    "Turtle"
+   ],
+   "kind": "ontology",
+   "acronym": "Brick"
+  }
+ },
+ {
+  "prefix": "bot",
+  "category": "engineering",
+  "domains": [
+   "humanities"
+  ],
+  "overrides": {
+   "download": "https://w3c-lbd-cg.github.io/bot/bot.ttl",
+   "formats": [
+    "OWL",
+    "Turtle"
+   ],
+   "kind": "ontology",
+   "acronym": "BOT"
+  }
+ },
+ {
+  "prefix": "elsst",
+  "category": "humanities",
+  "domains": [],
+  "overrides": {
+   "kind": "vocabulary",
+   "formats": [
+    "RDF",
+    "SKOS"
+   ],
+   "acronym": "ELSST"
+  }
+ },
+ {
+  "prefix": "swo",
+  "category": "computing",
+  "domains": [
+   "life"
+  ]
+ },
+ {
+  "prefix": "codemeta",
+  "category": "computing",
+  "domains": [
+   "metadata"
+  ],
+  "overrides": {
+   "kind": "schema",
+   "formats": [
+    "JSON-LD"
+   ],
+   "download": "https://doi.org/10.5063/schema/codemeta-2.0",
+   "acronym": "CodeMeta"
+  }
+ }
+]

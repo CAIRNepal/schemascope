@@ -1,0 +1,23 @@
+{
+  "name": "schemascope",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static, cross-domain catalog of ontologies and schemas with automated FAIR and quality evaluation.",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs && PORT=3300 node scripts/serve.mjs",
+    "serve": "PORT=3300 node scripts/serve.mjs",
+    "validate": "node scripts/validate.mjs",
+    "validate:online": "node scripts/validate.mjs --online",
+    "import": "node scripts/import-bioregistry.mjs",
+    "quality": "node scripts/quality.mjs",
+    "evaluate": "node scripts/evaluate.mjs",
+    "rescore": "node scripts/rescore.mjs",
+    "images": "docker build -q -t schemascope/oops docker/oops && docker build -q -t schemascope/robot docker/robot",
+    "refresh": "OOPS_IMAGE=schemascope/oops ROBOT_IMAGE=schemascope/robot node scripts/quality.mjs && node scripts/evaluate.mjs && node scripts/build.mjs"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "cob",
+  "artefact": "http://purl.obolibrary.org/obo/cob.owl",
+  "checkedAt": "2026-10-25T21:41:46.709Z",
+  "sha256": "bd4603fefcbfc9b700f37723a7caa5eb0e9b78be950e2680c9898732eb53651e",
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 100
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 30
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 27
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 2
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-25T21:42:04.635Z",
+    "sha256": "bd4603fefcbfc9b700f37723a7caa5eb0e9b78be950e2680c9898732eb53651e"
+  }
+}

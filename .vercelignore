@@ -1,0 +1,6 @@
+# Files Vercel does not need (CI-only tooling); the site is static, built by scripts/build.mjs
+requirements.txt
+docker/
+.github/
+.githooks/
+.local/

@@ -1,0 +1,4 @@
+# Written only by the Evaluate catalog GitHub Action (see scripts/paths.mjs)
+data/evaluation.json linguist-generated=true
+data/runs/** linguist-generated=true
+data/quality/** linguist-generated=true

@@ -1,0 +1,68 @@
+name: Submission to pull request
+
+# Turns an "Add or update a resource" issue into a pull request.
+# Uses the BOT_TOKEN secret (a fine-grained token with contents + pull-requests + issues write) when set,
+# so the new PR triggers the Checks workflow. With only GITHUB_TOKEN, GitHub doesn't run workflows on bot PRs.
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: submission-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  to-pr:
+    if: contains(github.event.issue.labels.*.name, 'submission') && github.event.issue.state == 'open'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Apply the submission to the catalog
+        id: apply
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: node scripts/issue-to-entry.mjs
+
+      - name: Create or update the pull request
+        if: success()
+        id: pr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.BOT_TOKEN || secrets.GITHUB_TOKEN }}
+          branch: submission/issue-${{ github.event.issue.number }}
+          commit-message: "${{ steps.apply.outputs.summary }} (from #${{ github.event.issue.number }})"
+          title: "${{ steps.apply.outputs.summary }}"
+          body: |
+            Submitted by @${{ github.event.issue.user.login }} in #${{ github.event.issue.number }}.
+
+            Closes #${{ github.event.issue.number }}
+
+            The **Checks** workflow validates this entry, checks its links and DOI, and posts a FAIR evaluation preview below. Edit the issue to update this PR.
+          labels: submission
+          add-paths: data/catalog.json
+
+      - name: Tell the submitter
+        if: success() && steps.pr.outputs.pull-request-number
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} --repo ${{ github.repository }} --body "Thanks! I opened #${{ steps.pr.outputs.pull-request-number }} with your entry (\`${{ steps.apply.outputs.id }}\`). Automated checks will post results there; a maintainer will review and merge. Edit this issue to update the PR."
+
+      - name: Report problems
+        if: failure() && steps.apply.outputs.error
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ERROR: ${{ steps.apply.outputs.error }}
+        run: |
+          printf 'I couldn'"'"'t turn this into a catalog entry yet:\n\n%s\n\nPlease edit the issue to fix it; I'"'"'ll try again automatically.\n' "$ERROR" > msg.md
+          gh issue comment ${{ github.event.issue.number }} --repo ${{ github.repository }} --body-file msg.md

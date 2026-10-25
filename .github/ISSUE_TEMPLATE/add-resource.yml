@@ -1,0 +1,50 @@
+name: Add or update a resource
+description: Propose an ontology, schema, vocabulary or data standard for SchemaScope, or correct an existing entry.
+title: "Add: "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing! The easiest way to fill this in is the form at https://schemascope.org/submit/, which pre-fills the JSON below.
+        When you submit, a bot turns this issue into a pull request. CI then validates the entry, checks its links and DOI, runs the FAIR evaluation and posts the results on the PR before a maintainer merges it.
+  - type: textarea
+    id: entry
+    attributes:
+      label: Catalog entry (JSON)
+      description: One entry in the format of data/catalog.json (see https://schemascope.org/catalog.schema.json). Keep the ```json fences.
+      value: |
+        ```json
+        {
+          "acronym": "",
+          "name": "",
+          "category": "anatomy",
+          "kind": "ontology",
+          "description": "",
+          "homepage": "https://",
+          "repository": "",
+          "download": "",
+          "formats": [],
+          "species": [],
+          "license": "",
+          "publications": [{ "doi": "" }],
+          "usedBy": [{ "name": "", "url": "", "note": "" }],
+          "tags": []
+        }
+        ```
+    validations:
+      required: true
+  - type: input
+    id: update-id
+    attributes:
+      label: Existing entry id (for corrections)
+      description: Leave empty for a new resource. For a correction, the id from the page URL, e.g. "uberon" for /o/uberon/.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: The links are public and point to the canonical source maintained by the resource's owners.
+          required: true
+        - label: I'm happy for this information to be published under CC BY 4.0 on schemascope.org.
+          required: true
