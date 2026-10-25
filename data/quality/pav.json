@@ -1,0 +1,61 @@
+{
+  "id": "pav",
+  "artefact": "http://purl.org/pav/",
+  "checkedAt": "2026-10-25T21:54:16.809Z",
+  "sha256": "b0a814e74b9199c2c5c2988cb923256ca459e2bed4afcb8c285d7fe956d0ee88",
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 43,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-25T21:54:26.096Z",
+    "sha256": "b0a814e74b9199c2c5c2988cb923256ca459e2bed4afcb8c285d7fe956d0ee88"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 40
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 24
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 15
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-25T21:54:38.322Z",
+    "sha256": "b0a814e74b9199c2c5c2988cb923256ca459e2bed4afcb8c285d7fe956d0ee88"
+  }
+}

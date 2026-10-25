@@ -1,0 +1,4 @@
+# Ontologies to probe that no registry lists, e.g. found in papers.
+# One per line:  artefact URL | short name | source (paper DOI or page) | note
+https://raw.githubusercontent.com/smashhiteu/smashhiteu.github.io/main/ontology/smashHitCore_v06.owl | smashhitcore | https://doi.org/10.3390/s23136188 | smashHitCore: GDPR consent and contracts for sensor data sharing (Kurteva et al., Sensors 2023)
+https://w3id.org/dpv | dpv | https://w3id.org/dpv | Data Privacy Vocabulary (W3C DPVCG)

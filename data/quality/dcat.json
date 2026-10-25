@@ -1,7 +1,7 @@
 {
   "id": "dcat",
   "artefact": "http://www.w3.org/ns/dcat",
-  "checkedAt": "2026-10-25T21:40:15.356Z",
+  "checkedAt": "2026-10-25T21:53:47.808Z",
   "sha256": "d1624d3bbf364f6fc1d43b9a188bbb9e67639b1a7d46a5cb7ea3f5d47d02b62f",
   "robot": {
     "reasoner": "ELK",
@@ -14,7 +14,7 @@
       "WARN": 54,
       "INFO": 16
     },
-    "checkedAt": "2026-10-25T21:40:30.260Z",
+    "checkedAt": "2026-10-25T21:54:03.048Z",
     "sha256": "d1624d3bbf364f6fc1d43b9a188bbb9e67639b1a7d46a5cb7ea3f5d47d02b62f"
   },
   "oops": {
@@ -59,7 +59,7 @@
     "attempts": [
       "local OOPS!: Command failed: docker run --rm -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dcat:/work schemascope/oops --input-file /work/ontology.owl\nPicked up JAVA_TOOL_OPTIONS: -Xmx4g\n"
     ],
-    "checkedAt": "2026-10-25T21:40:32.536Z",
+    "checkedAt": "2026-10-25T21:54:05.395Z",
     "sha256": "d1624d3bbf364f6fc1d43b9a188bbb9e67639b1a7d46a5cb7ea3f5d47d02b62f"
   }
 }

@@ -1,0 +1,54 @@
+{
+  "id": "datacite",
+  "artefact": "http://purl.org/spar/datacite",
+  "checkedAt": "2026-10-25T21:55:49.899Z",
+  "sha256": "e55a2146b1016c0033234f7fa9b168d869a6e9facf3fa338dd190a658bc714fd",
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://www.essepuntato.it/2010/06/literalreification/> Cause: https://essepuntato.it/2010/06/literalreification/\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "owl2dl": false,
+    "checkedAt": "2026-10-25T21:55:56.591Z",
+    "sha256": "e55a2146b1016c0033234f7fa9b168d869a6e9facf3fa338dd190a658bc714fd"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 26
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 10
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 59,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/datacite:/work schemascope/oops --input-file /work/ontology.owl\nPicked up JAVA_TOOL_OPTIONS: -Xm"
+    ],
+    "checkedAt": "2026-10-25T21:56:01.089Z",
+    "sha256": "e55a2146b1016c0033234f7fa9b168d869a6e9facf3fa338dd190a658bc714fd"
+  }
+}

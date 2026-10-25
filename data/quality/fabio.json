@@ -1,0 +1,61 @@
+{
+  "id": "fabio",
+  "artefact": "http://purl.org/spar/fabio",
+  "checkedAt": "2026-10-25T21:56:01.090Z",
+  "sha256": "0daa4af1e4965090778cfcba226ccce978d613c904400e2697d2906e56c50456",
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 31,
+      "WARN": 749,
+      "INFO": 10
+    },
+    "checkedAt": "2026-10-25T21:56:14.612Z",
+    "sha256": "0daa4af1e4965090778cfcba226ccce978d613c904400e2697d2906e56c50456"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 57
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 4
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-25T21:56:35.079Z",
+    "sha256": "0daa4af1e4965090778cfcba226ccce978d613c904400e2697d2906e56c50456"
+  }
+}

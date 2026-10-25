@@ -1,0 +1,69 @@
+{
+ "generatedAt": "2026-10-25T22:34:09Z",
+ "channels": [
+  "candidates"
+ ],
+ "candidates": 2,
+ "accepted": 2,
+ "entries": [
+  {
+   "url": "https://raw.githubusercontent.com/smashhiteu/smashhiteu.github.io/main/ontology/smashHitCore_v06.owl",
+   "channel": "curated candidate",
+   "hint": "smashhitcore",
+   "via": "https://doi.org/10.3390/s23136188",
+   "note": "smashHitCore: GDPR consent and contracts for sensor data sharing (Kurteva et al., Sensors 2023)",
+   "ok": true,
+   "checkedAt": "2026-10-25T22:34:09Z",
+   "final": "https://raw.githubusercontent.com/smashhiteu/smashhiteu.github.io/main/ontology/smashHitCore_v06.owl",
+   "contentType": "text/plain",
+   "iri": "http://ontologies.atb-bremen.de/smashHitCore",
+   "title": "smashHitCore",
+   "description": "GDPR consent and contracts for sensor data sharing (Kurteva et al., Sensors 2023)",
+   "license": null,
+   "versionIri": "http://ontologies.atb-bremen.de/smashHitCore",
+   "versionInfo": "0.06",
+   "titleFrom": "curated candidate note (artefact title unusable)",
+   "prefix": null,
+   "namespace": null,
+   "imports": [
+    "http://www.w3.org/2000/01/rdf-schema"
+   ],
+   "creators": [],
+   "terms": 302,
+   "triples": 2305,
+   "format": "OWL"
+  },
+  {
+   "url": "https://w3id.org/dpv",
+   "channel": "curated candidate",
+   "hint": "dpv",
+   "via": "https://w3id.org/dpv",
+   "note": "Data Privacy Vocabulary (W3C DPVCG)",
+   "ok": true,
+   "checkedAt": "2026-10-25T22:34:09Z",
+   "final": "https://w3c-cg.github.io/dpv/2.3/dpv/dpv.rdf",
+   "contentType": "application/rdf+xml",
+   "iri": "https://w3id.org/dpv",
+   "title": "Data Privacy Vocabulary (DPV)",
+   "description": "The Data Privacy Vocabulary (DPV) provides terms (classes and properties) to represent information about processing of personal data, for example - purposes, processing operations, personal data, technical and organisational measures.",
+   "license": "https://www.w3.org/copyright/document-license-2023/",
+   "versionIri": "https://w3id.org/dpv/2.3",
+   "versionInfo": "2.3",
+   "titleFrom": "artefact",
+   "prefix": "dpv",
+   "namespace": "https://w3id.org/dpv#",
+   "imports": [],
+   "creators": [
+    "N1f66c7778b144f00abbf88a2f53a1979",
+    "N25bfd320ab9c4d40b6e5bde1c680d9e8",
+    "N97882d79f45544c9990fc69bcab7200a",
+    "Nd3dda9dc24fa44eeb66a44a748b22ac7",
+    "Ned71baa48ae241b8a6b4fc2cb9ce0b76",
+    "Nef88e39cc9c444c387d12a5f90d3be0b"
+   ],
+   "terms": 1123,
+   "triples": 14909,
+   "format": "OWL"
+  }
+ ]
+}

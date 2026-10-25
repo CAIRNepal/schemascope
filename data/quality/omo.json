@@ -1,0 +1,35 @@
+{
+  "id": "omo",
+  "artefact": "http://purl.obolibrary.org/obo/omo.owl",
+  "checkedAt": "2026-10-25T21:53:26.441Z",
+  "sha256": "ab2c2791f189d44f9cc38a484ca3f449c7551f7eb53ff50376d2b81cb512b963",
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 27
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-25T21:53:47.806Z",
+    "sha256": "ab2c2791f189d44f9cc38a484ca3f449c7551f7eb53ff50376d2b81cb512b963"
+  }
+}
