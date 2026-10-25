@@ -466,6 +466,9 @@
   "acronym": "ACL",
   "name": "Basic Access Control ontology",
   "category": "computing",
+  "domains": [
+   "privacy"
+  ],
   "kind": "vocabulary",
   "description": "The Basic Access Control ontology describes how access rights (access control) are defined on the web.",
   "formats": [
@@ -1456,7 +1459,10 @@
   "id": "agr",
   "acronym": "AGR",
   "name": "Agreements ontology",
-  "category": "society",
+  "category": "privacy",
+  "domains": [
+   "society"
+  ],
   "kind": "vocabulary",
   "description": "This Agreements Ontology is designed to model 'agreements' which are social contracts that include licenses, laws, contracts, Memoranda of Understanding, standards and definitional metadata. Its purpose is to support data sharing by making explicit the relationships between agreements and data and agreements and Agents (people and organisations). Eventually it will also help with the interplay between different classes of agreements.",
   "formats": [
@@ -2155,7 +2161,10 @@
   "id": "algo",
   "acronym": "ALGO",
   "name": "Algorithms Ontology",
-  "category": "computing",
+  "category": "privacy",
+  "domains": [
+   "computing"
+  ],
   "kind": "vocabulary",
   "description": "An ontology describing cryptographic algorithms",
   "formats": [
@@ -2687,6 +2696,9 @@
   "acronym": "APCO",
   "name": "African Public Contract Ontology",
   "category": "society",
+  "domains": [
+   "privacy"
+  ],
   "kind": "vocabulary",
   "description": "APCO is an ontology that allows the description of public procurement terms",
   "formats": [
@@ -3643,7 +3655,7 @@
   "id": "attack",
   "acronym": "ATTACK",
   "name": "MITRE ATT&CK Ontology",
-  "category": "computing",
+  "category": "privacy",
   "kind": "vocabulary",
   "description": "An ontology to represent MITRE ATT & CK. This ontology is developed based on the MITRE ATT & CK (https://attack.mitre.org/)",
   "formats": [
@@ -7874,7 +7886,7 @@
   "id": "c4n",
   "acronym": "C4N",
   "name": "Call for Anything vocabulary",
-  "category": "society",
+  "category": "privacy",
   "kind": "vocabulary",
   "description": "A vocabulary to describe calls, such as call for tenders, call for proposals, call for papers, etc.",
   "formats": [
@@ -8550,7 +8562,7 @@
   "category": "metadata",
   "domains": [
    "humanities",
-   "society"
+   "privacy"
   ],
   "kind": "vocabulary",
   "description": "The Creative Commons Rights Expression Language (ccREL) lets you describe copyright licenses in RDF. For more information on describing licenses in RDF and attaching those descriptions to digital works, see [ccREL](https://wiki.creativecommons.org/CC_REL) in the [Creative Commons wiki](https://wiki.creativecommons.org/).",
@@ -15717,8 +15729,9 @@
   "id": "cocoon",
   "acronym": "COCOON",
   "name": "Cloud Computing Services Ontology",
-  "category": "society",
+  "category": "privacy",
   "domains": [
+   "society",
    "computing"
   ],
   "kind": "vocabulary",
@@ -17560,7 +17573,8 @@
   "name": "The Cyber Physical System Watch Ontology",
   "category": "engineering",
   "domains": [
-   "physical"
+   "physical",
+   "privacy"
   ],
   "kind": "vocabulary",
   "description": "This ontology defines a vocabulary for describing cyber physical systems for monitoring purpose. It contains two main concepts: CPSWatch#MonitoredSystem that is a top level description of a System that is modeled and CPSWatch#MonitoringSensor that is a top level description of a sensor used to monitor the CPSWatch#MonitoredSystem.",
@@ -18284,7 +18298,7 @@
   "id": "ct",
   "acronym": "CT",
   "name": "Connectivity types",
-  "category": "computing",
+  "category": "privacy",
   "kind": "vocabulary",
   "description": "Defines types of connectivity used in communication and bearer services accessible in certain connectivity.",
   "formats": [
@@ -24090,9 +24104,9 @@
   "id": "dpvocab",
   "acronym": "DPVOCAB",
   "name": "Data Privacy Vocabulary",
-  "category": "society",
+  "category": "privacy",
   "domains": [
-   "computing"
+   "society"
   ],
   "kind": "vocabulary",
   "description": "The Data Privacy Vocabulary provides an ontology (classes and properties) and taxonomies of concepts to represent information regarding how personal data is processed in the form of an ontology or a knowledge graph.",
@@ -24930,7 +24944,8 @@
   "name": "The DNS Security Ontology",
   "category": "computing",
   "domains": [
-   "society"
+   "society",
+   "privacy"
   ],
   "kind": "vocabulary",
   "description": "The DNS Security Ontology (DSecO) project is a data model for representing and reasoning on Domain Name System (DNS) data. The ontology is developed using web technologies (e.g. RDF, OWL, SKOS) and is intended as a structure for realizing a DNS Knowledge Graph (KG) for administration and security assessment applications. The model has been developed in collaboration with operational teams, and in connection with third parties linked vocabularies.",
@@ -28627,9 +28642,9 @@
   "id": "eli",
   "acronym": "ELI",
   "name": "ELI Metadata Ontology",
-  "category": "metadata",
+  "category": "privacy",
   "domains": [
-   "society",
+   "metadata",
    "humanities"
   ],
   "kind": "vocabulary",
@@ -35335,6 +35350,9 @@
   "acronym": "GCON",
   "name": "GConsent - a consent ontology based on the GDPR",
   "category": "society",
+  "domains": [
+   "privacy"
+  ],
   "kind": "vocabulary",
   "description": "GConsent provides concepts and relationships for defining consent and its associated information or metadata with a view towards GDPR compliance. It is the outcome of an analysis of consent and requirements associated with obtaining, using, and changes in consent as per the GDPR. The ontology also provides an approach to using its terms in various scenarios and use-cases (see more information in the documentation) which is intended to assist in its adoption.",
   "formats": [
@@ -35478,7 +35496,8 @@
   "name": "The GDPR Provenance ontology",
   "category": "society",
   "domains": [
-   "metadata"
+   "metadata",
+   "privacy"
   ],
   "kind": "vocabulary",
   "description": "GDPRov is an OWL2 ontology to express provenance metadata of consent and data lifecycles towards documenting compliance for GDPR.",
@@ -35532,7 +35551,8 @@
   "name": "GDPR text EXTensions",
   "category": "society",
   "domains": [
-   "metadata"
+   "metadata",
+   "privacy"
   ],
   "kind": "vocabulary",
   "description": "The General Data Protection Regulation (GDPR) is comprised of several articles, each with points that refer to specific concepts. The general convention of referring to these points and concepts is to quote the specific article or point using a human-readable reference. This ontology provides a way to refer to the points within the GDPR using the EurLex ontology published by the European Publication Office. It also defines the concepts defined, mentioned, and requried by the GDPR using the Simple Knowledge Organization System (SKOS) ontology.",
@@ -37499,7 +37519,8 @@
   "category": "earth",
   "domains": [
    "society",
-   "metadata"
+   "metadata",
+   "privacy"
   ],
   "kind": "vocabulary",
   "description": "Ontology defining generic concepts for reuse by other Global Legal Entity Identifier Foundation (GLEIF) ontologies. It defines generic classes for (legal) Entities and their relationships and statuses; and generic properties for different types of name and address. It makes use of the OMG Languages Countries and Codes (LCC) ontology (based on the ISO 3166 standard) for country and region information.",
@@ -37550,7 +37571,7 @@
   "id": "gleif-elf",
   "acronym": "gleif-elf",
   "name": "Entity Legal Form Ontology",
-  "category": "society",
+  "category": "privacy",
   "domains": [
    "engineering"
   ],
@@ -37606,7 +37627,7 @@
   "category": "earth",
   "domains": [
    "metadata",
-   "society"
+   "privacy"
   ],
   "kind": "vocabulary",
   "description": "Ontology defining concepts for Geocoding of addresses. It is based on the geocoding used in the Global Legal Entity Identifier Foundation (GLEIF) Golden Copy Data, but is more broadly applicable.",
@@ -37658,7 +37679,8 @@
   "name": "Global Legal Entity Identifier Foundation Level 1 Ontology - Who Is Who",
   "category": "society",
   "domains": [
-   "metadata"
+   "metadata",
+   "privacy"
   ],
   "kind": "vocabulary",
   "description": "Ontology for legal entity identifier registration. It was designed for Global Legal Entity Identifier Foundation (GLEIF) Level 1 data corresponding to the Common Data Format version 2.1. It covers key reference data for a legal entity identifiable with an LEI. The ISO 17442 standard developed by the International Organization for Standardization defines a set of attributes or LEI reference data that comprises the most essential elements of identification.",
@@ -37710,7 +37732,8 @@
   "name": "Global Legal Entity Identifier Foundation Level 2 Ontology - Who Owns Whom",
   "category": "society",
   "domains": [
-   "metadata"
+   "metadata",
+   "privacy"
   ],
   "kind": "vocabulary",
   "description": "Ontology for legal entity parent relationships. It was designed for Global Legal Entity Identifier Foundation (GLEIF) Level 2 data corresponding to the Relationship Record format, version 1.1. Legal entities that have or acquire an LEI report their ‘direct accounting consolidating parent’ as well as their ‘ultimate accounting consolidating parent’, or for International Branches ‘is an International Branch of'. Otherwise they must provide a Reporting Exception.",
@@ -37760,7 +37783,7 @@
   "id": "gleif-ra",
   "acronym": "gleif-ra",
   "name": "Global Legal Entity Identifier Foundation Registration Authority Ontology",
-  "category": "society",
+  "category": "privacy",
   "domains": [
    "metadata"
   ],
@@ -37814,7 +37837,8 @@
   "name": "Global Legal Entity Identifier Foundation Reporting Exception Ontology",
   "category": "society",
   "domains": [
-   "metadata"
+   "metadata",
+   "privacy"
   ],
   "kind": "vocabulary",
   "description": "Ontology for representing exceptions to reporting of parents, for entities registered with a Legal Entity Identifier. The Global Legal Identifier System (GLEIS) requires that legal entities with an LEI provide information on their ultimate and direct accounting consolidating parents. Relationship reporting is mandatory with exceptions allowed for certain well-defined reasons. This ontology provides a simple structure for recording reasons for each exception by LEI.",
@@ -39034,7 +39058,8 @@
   "name": "Gene Regulation Ontology",
   "category": "life",
   "domains": [
-   "chemistry"
+   "chemistry",
+   "privacy"
   ],
   "kind": "ontology",
   "description": "The Gene Regulation Ontology (GRO) is a conceptual model for the domain of gene regulation. It covers processes that are linked to the regulation of gene expression as well as physical entities that are involved in these processes (such as genes and transcription factors) in terms of ontology classes and semantic relations between classes.",
@@ -39605,7 +39630,7 @@
   "id": "gx",
   "acronym": "GX",
   "name": "Gaia-X Trust Framework Ontology",
-  "category": "multidisciplinary",
+  "category": "privacy",
   "kind": "ontology",
   "description": "The Gaia-X ontology defines classes and properties for describing participants, service offerings, resources, and compliance credentials within the Gaia-X federated data infrastructure ecosystem. It provides machine-readable SHACL shapes and JSON-LD contexts for verifiable credentials in conformity with the Gaia-X Trust Framework.",
   "formats": [
@@ -42723,7 +42748,8 @@
   "category": "life",
   "domains": [
    "metadata",
-   "health"
+   "health",
+   "privacy"
   ],
   "kind": "ontology",
   "description": "The Informed Consent Ontology (ICO) is an ontology for the informed consent and informed consent process in the medical field.",
@@ -43064,7 +43090,7 @@
   "id": "identity",
   "acronym": "IDENTITY",
   "name": "Ontology of digital identity.",
-  "category": "computing",
+  "category": "privacy",
   "kind": "vocabulary",
   "description": "v.2.0 based on P3P1.0 Specification http://www.w3.org/TR/P3P/",
   "formats": [
@@ -43425,11 +43451,12 @@
   "id": "idsa",
   "acronym": "IDSA",
   "name": "International Data Spaces Information Model",
-  "category": "society",
+  "category": "computing",
   "domains": [
-   "computing",
    "metadata",
-   "engineering"
+   "privacy",
+   "engineering",
+   "society"
   ],
   "kind": "vocabulary",
   "description": "This ontology defines classes and properties for describing participants, infrastructure, data and services of the International Data Spaces (formerly known as Industrial Data Space).",
@@ -47735,7 +47762,7 @@
   "id": "ldr",
   "acronym": "LDR",
   "name": "Linked Data Rights (LDR)",
-  "category": "society",
+  "category": "privacy",
   "kind": "vocabulary",
   "description": "The Linked Data Rights ontology provides the vocabulary for creating rights expressions for Linked Data resources.",
   "formats": [
@@ -48193,7 +48220,7 @@
   "name": "LegalHTML Ontology",
   "category": "metadata",
   "domains": [
-   "society"
+   "privacy"
   ],
   "kind": "vocabulary",
   "description": "An ontology for metadata about legal texts represented using the LegalHTML format",
@@ -50761,7 +50788,7 @@
   "id": "loted",
   "acronym": "LOTED",
   "name": "LOTED ontology",
-  "category": "society",
+  "category": "privacy",
   "kind": "vocabulary",
   "description": "A vocabulary for European Calls for Tenders (in english, german, and french)",
   "formats": [
@@ -52158,7 +52185,7 @@
   "id": "maso",
   "acronym": "MASO",
   "name": "Mobile Agents Security",
-  "category": "computing",
+  "category": "privacy",
   "kind": "vocabulary",
   "description": "Mobile Agents Security: Ontology for security of mobile agents. A vocabulary listed in Linked Open Vocabularies (LOV).",
   "formats": [
@@ -53059,6 +53086,9 @@
   "acronym": "MEDDRA",
   "name": "Medical Dictionary for Regulatory Activities Terminology",
   "category": "health",
+  "domains": [
+   "privacy"
+  ],
   "kind": "vocabulary",
   "description": "The Medical Dictionary for Regulatory Activities (MedDRA) was developed by the International Council for Harmonisation of Technical Requirements for Registration of Pharmaceuticals for Human Use (ICH)to provide a standardised medical terminology to facilitate sharing of regulatory information internationally for medical products used by humans. It is used within regulatory processes, safety monitoring, as well as for marketing activities.",
   "formats": [],
@@ -59980,7 +60010,7 @@
   "id": "nrv",
   "acronym": "NRV",
   "name": "Normative Requirements Vocabulary",
-  "category": "computing",
+  "category": "privacy",
   "domains": [
    "metadata"
   ],
@@ -60217,7 +60247,7 @@
   "name": "NyOn: A Multilingual Legal Ontology for Globalized Judicial System",
   "category": "metadata",
   "domains": [
-   "society"
+   "privacy"
   ],
   "kind": "vocabulary",
   "description": "An ontology that represents concepts in the legal domain.",
@@ -61682,7 +61712,7 @@
   "id": "ocds",
   "acronym": "OCDS",
   "name": "Schema for an Open Contracting Release (OCDS)",
-  "category": "society",
+  "category": "privacy",
   "kind": "vocabulary",
   "description": "The OCDS is a data model that aims at structuring and publishing contracting data (tenders, procurements, awards, transactions, etc.). It got international adoption and is one of the leading models in this domain.",
   "formats": [
@@ -68835,7 +68865,7 @@
   "id": "pay",
   "acronym": "PAY",
   "name": "Payments ontology",
-  "category": "society",
+  "category": "privacy",
   "kind": "vocabulary",
   "description": "Vocabulary for representing payments, such as government expenditures, using the data cube representation.",
   "formats": [
@@ -69096,7 +69126,7 @@
   "id": "pc",
   "acronym": "PC",
   "name": "Public Contracts Ontology",
-  "category": "society",
+  "category": "privacy",
   "kind": "vocabulary",
   "description": "Public Contracts Ontology offers a means of expression for describing public contracts in the public sector",
   "formats": [
@@ -69350,6 +69380,9 @@
   "acronym": "PD",
   "name": "Personal Data Categories",
   "category": "society",
+  "domains": [
+   "privacy"
+  ],
   "kind": "vocabulary",
   "description": "Extension to the Data Privacy Vocabulary (DPV) providing additional categories of personal data",
   "formats": [
@@ -72872,6 +72905,9 @@
   "acronym": "PPO",
   "name": "Privacy Preference Ontology",
   "category": "computing",
+  "domains": [
+   "privacy"
+  ],
   "kind": "vocabulary",
   "description": "An ontology to create privacy preferences for Linked Data",
   "formats": [
@@ -72920,7 +72956,7 @@
   "id": "pproc",
   "acronym": "PPROC",
   "name": "PPROC ontology",
-  "category": "society",
+  "category": "privacy",
   "kind": "vocabulary",
   "description": "The PPROC ontology defines the necessary concepts to describe public procurement process and the contracts of public sector (public e-procurement). The ontology has been designed with the main purpose of publishing data about public contracts.",
   "formats": [
@@ -73757,6 +73793,7 @@
   "name": "PRO Research: An ontology for describing RDM-Policies in a structured way",
   "category": "engineering",
   "domains": [
+   "privacy",
    "life"
   ],
   "kind": "ontology",
@@ -74639,7 +74676,8 @@
   "category": "life",
   "domains": [
    "health",
-   "chemistry"
+   "chemistry",
+   "privacy"
   ],
   "kind": "ontology",
   "description": "The Pathway Ontology captures information on biological networks, the relationships between netweorks and the alterations or malfunctioning of such networks within a hierarchical structure. The five main branches of the ontology are: classic metabolic pathways, regulatory, signaling, drug, and disease pathwaysfor complex human conditions.",
@@ -75855,7 +75893,7 @@
   "id": "rcao",
   "acronym": "RCAO",
   "name": "Resilient Collective Awareness Ontology",
-  "category": "computing",
+  "category": "privacy",
   "domains": [
    "society"
   ],
@@ -77772,6 +77810,9 @@
   "acronym": "RETO",
   "name": "Regulation of Transcription Ontology",
   "category": "life",
+  "domains": [
+   "privacy"
+  ],
   "kind": "ontology",
   "description": "Regulation of Transcription Ontology: Regulation of Transcription. A ontology listed in Bioregistry, OLS (EMBL-EBI).",
   "formats": [
@@ -77963,6 +78004,9 @@
   "acronym": "REXO",
   "name": "Regulation of Gene Expression Ontology",
   "category": "life",
+  "domains": [
+   "privacy"
+  ],
   "kind": "ontology",
   "description": "Regulation of Gene Expression Ontology: Regulation of Gene Expression. A ontology listed in Bioregistry, OLS (EMBL-EBI).",
   "formats": [
@@ -79508,6 +79552,7 @@
   "name": "Social Semantic SPARQL Security For Access Control Ontology",
   "category": "computing",
   "domains": [
+   "privacy",
    "society"
   ],
   "kind": "vocabulary",
@@ -82742,7 +82787,7 @@
   "id": "security",
   "acronym": "SECURITY",
   "name": "Security Ontology",
-  "category": "computing",
+  "category": "privacy",
   "kind": "vocabulary",
   "description": "A security ontology to annotate resources with security-related information",
   "formats": [
@@ -87320,7 +87365,7 @@
   "id": "stac",
   "acronym": "STAC",
   "name": "Security Toolbox : Attacks and Countermeasures",
-  "category": "computing",
+  "category": "privacy",
   "kind": "vocabulary",
   "description": "A vocabulary to describe main security and cryptographic concepts: attacks, security mechanisms, OSI model, security protocols, security tools in numerous technologies: Web applications, network management, Sensor networks, Cellular (2G, 3G, 4G) and Wireless (Wifi), etc.",
   "formats": [
@@ -96855,7 +96900,7 @@
   "id": "sweet-repsl",
   "acronym": "sweet.repsl",
   "name": "SWEET Ontology Representation Scientific Law",
-  "category": "society",
+  "category": "privacy",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Scientific Law",
   "formats": [
@@ -97959,7 +98004,7 @@
   "id": "sweet-strt",
   "acronym": "sweet.strt",
   "name": "SWEET Ontology State Role Trust",
-  "category": "multidisciplinary",
+  "category": "privacy",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Role Trust",
   "formats": [
@@ -99777,6 +99822,9 @@
   "acronym": "TAO",
   "name": "Trust Assertion Ontology",
   "category": "metadata",
+  "domains": [
+   "privacy"
+  ],
   "kind": "vocabulary",
   "description": "TAO is a light-weight vocabulary to describe asserted user’s subjective trust values.",
   "formats": [
@@ -102549,6 +102597,9 @@
   "acronym": "TIDO",
   "name": "The Threat Intelligence Decision Ontology",
   "category": "metadata",
+  "domains": [
+   "privacy"
+  ],
   "kind": "vocabulary",
   "description": "The TIDO ontology can be used to describe the decision processes within the threat intelligence domain",
   "formats": [
@@ -104266,6 +104317,7 @@
   "name": "Ontology for Trust Recommendation in Social Internet of Things",
   "category": "engineering",
   "domains": [
+   "privacy",
    "society"
   ],
   "kind": "vocabulary",
@@ -110435,7 +110487,8 @@
   "name": "WikiPathways",
   "category": "life",
   "domains": [
-   "health"
+   "health",
+   "privacy"
   ],
   "kind": "ontology",
   "description": "WikiPathways is a database of biological pathways maintained by and for the scientific community.",
@@ -111192,7 +111245,7 @@
   "id": "worldavatar-bpr",
   "acronym": "worldavatar.bpr",
   "name": "WorldAvatar back pressure regulator ontology",
-  "category": "multidisciplinary",
+  "category": "privacy",
   "kind": "ontology",
   "description": "OntoBPR is an ontology developed for expressing a back pressure regulator.",
   "formats": [
@@ -113168,7 +113221,7 @@
   "id": "worldavatar-planningregulation",
   "acronym": "worldavatar.planningregulation",
   "name": "WorldAvatar planning regulation ontology",
-  "category": "multidisciplinary",
+  "category": "privacy",
   "kind": "ontology",
   "description": "OntoPlanningRegulation is an ontology developed to describe the regulations imposed for urban planning purposes.",
   "formats": [
@@ -114478,7 +114531,7 @@
   "id": "wot",
   "acronym": "WOT",
   "name": "XML Web of Trust Ontology",
-  "category": "computing",
+  "category": "privacy",
   "domains": [
    "metadata"
   ],
@@ -114613,7 +114666,7 @@
   "name": "Security mechanisms for the Web of Things",
   "category": "engineering",
   "domains": [
-   "computing"
+   "privacy"
   ],
   "kind": "vocabulary",
   "description": "Security mechanisms for the the Web of Thing",
@@ -114722,10 +114775,10 @@
   "id": "wty",
   "acronym": "WTY",
   "name": "Verisav Warranty & Contracts Vocabulary",
-  "category": "agri",
+  "category": "privacy",
   "domains": [
-   "engineering",
-   "society"
+   "agri",
+   "engineering"
   ],
   "kind": "vocabulary",
   "description": "Vocabulary for machine-readable warranties and contracts, enabling complete automation of payment decisions and coverage assessment in after-sales service.",

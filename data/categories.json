@@ -66,6 +66,12 @@
     "blurb": "Cultural heritage, art, archives, media, music and language."
   },
   {
+    "id": "privacy",
+    "name": "Privacy, Security & Law",
+    "icon": "shield",
+    "blurb": "Data protection and GDPR, consent, contracts and licences, cybersecurity and legal knowledge."
+  },
+  {
     "id": "society",
     "name": "Society, Government & Business",
     "icon": "people",

@@ -86,7 +86,8 @@ if (online) {
   }
 }
 
-for (const w of warnings) console.warn(`⚠ ${w}`);
+if (args.includes("--verbose") || warnings.length <= 10) for (const w of warnings) console.warn(`⚠ ${w}`);
+else if (warnings.length) console.warn(`⚠ ${warnings.length} possible near-duplicates (run with --verbose to list them)`);
 for (const p of errors) console.error(`✗ ${p}`);
 console.log(errors.length ? `\n${errors.length} problem(s) found.` : `✓ ${catalog.length} entries valid${online ? ` (online checks on ${targets.length})` : ""}.`);
 

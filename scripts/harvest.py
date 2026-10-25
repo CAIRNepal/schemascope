@@ -92,7 +92,7 @@ LOV_TAG = {
     "Catalogs": "metadata", "Geography": "earth", "Environment": "earth", "Society": "society", "API": "computing", "RDF": "metadata", "People": "society",
     "Quality": "metadata", "Events": "society", "Vocabularies": "metadata", "General & Upper": "foundational", "Geometry": "earth", "Biology": "life",
     "Multimedia": "humanities", "Time": "metadata", "W3C Rec": "metadata", "Academy": "metadata", "Government": "society", "Tag": "metadata",
-    "FRBR": "humanities", "eBusiness": "society", "Food": "agri", "Health": "health", "Transport": "society", "Contracts": "society", "Security": "computing",
+    "FRBR": "humanities", "eBusiness": "society", "Food": "agri", "Health": "health", "Transport": "society", "Contracts": "privacy", "Security": "privacy",
     "Travel": "society", "SPAR": "metadata", "PLM": "engineering", "Press": "humanities", "Image": "humanities", "Music": "humanities", "RML": "computing",
     "Games": "humanities", "SSDesk": "metadata", "PROTON": "foundational", "CSV": "computing", "Rec": "metadata", "Water": "earth", "Cultural Heritage": "humanities",
 }
@@ -109,8 +109,9 @@ WORDS = {
     "physical": r"physic|astronom|\bunits?\b|measurement|quantit|mathemat|statistic|optic|particle|quantum",
     "engineering": r"engineer|manufactur|industr|building|architecture of buildings|\biot\b|internet of things|energy|device|automotive|robot|smart|product",
     "humanities": r"humanities|cultural|heritage|museum|archive|history|art\b|arts\b|music|linguist|language|literature|religio|media",
-    "society": r"social|society|government|legal|\blaw\b|economic|business|commerce|finance|transport|tourism|education|person|people|organi[sz]ation",
-    "computing": r"software|computing|computer|algorithm|machine learning|artificial intelligence|programming|data science|web service|workflow|\bapi\b|security",
+    "privacy": r"privacy|gdpr|data protection|personal data|consent|contract|legal|\blaw\b|regulat|complian|polic(y|ies)|cyber|security|threat|vulnerab|attack|access control|trust",
+    "society": r"social|society|government|economic|business|commerce|finance|transport|tourism|education|person|people|organi[sz]ation",
+    "computing": r"software|computing|computer|algorithm|machine learning|artificial intelligence|programming|data science|web service|workflow|\bapi\b",
 }
 WORDS = {k: re.compile(v, re.I) for k, v in WORDS.items()}
 
