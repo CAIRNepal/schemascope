@@ -183,6 +183,18 @@ def find(*keys):
     return None
 
 
+def niri(u):
+    u = str(u or "").strip().lower()
+    u = re.sub(r"^https?://(www\.)?", "", u)
+    return re.sub(r"[/#]+$", "", u)
+
+
+def register_iri(r, *iris):
+    for u in iris:
+        if u and len(niri(u)) > 8:
+            alias.setdefault("iri:" + niri(u), r)
+
+
 def register(r, *keys):
     for k in keys:
         if k:
@@ -239,6 +251,7 @@ for prefix, d in br.items():
     classify(" ".join([r.get("name", ""), " ".join(kw)]), r.get("description", ""), r["_votes"])
     cite(r, "bioregistry", prefix, f"https://bioregistry.io/api/registry/{prefix}")
     register(r, prefix, m.get("ols"), m.get("obofoundry"), m.get("lov"), m.get("tib.ts"), m.get("bioportal"))
+    register_iri(r, (d.get("uri_format") or "").replace("$1", ""), d.get("rdf_uri_format", "").replace("$1", "") if d.get("rdf_uri_format") else None)
     register(r, *(("lov:" + str(m["lov"])) for _ in [0] if m.get("lov")))
     register(r, *(("tib:" + str(m["tib.ts"])) for _ in [0] if m.get("tib.ts")))
 
@@ -295,6 +308,7 @@ for key in ("ols", "tib"):
         r.put("license", lic(o.get("license") or o.get("http://purl.org/dc/terms/license")), key)
         if key == "ols":
             r.put("ols", oid, "ols")
+        register_iri(r, o.get("iri"), o.get("baseUri", [None])[0] if isinstance(o.get("baseUri"), list) and o.get("baseUri") else None)
         r.setdefault("formats", ["OWL"])
         for c in o.get("classifications") or []:
             for v in (c.values() if isinstance(c, dict) else [c]):
@@ -327,7 +341,7 @@ def lit(v, p):
 for v in g.subjects(rdflib.RDF.type, VOAF.Vocabulary):
     prefix = lit(v, VANN.preferredNamespacePrefix)
     ns = lit(v, VANN.preferredNamespaceUri)
-    r = find("lov:" + prefix)
+    r = find("lov:" + prefix, "iri:" + niri(ns))
     if r is None:
         existing = find(prefix)
         # Same prefix in another registry is only the same resource if the names agree.
@@ -361,9 +375,43 @@ for v in g.subjects(rdflib.RDF.type, VOAF.Vocabulary):
     r.setdefault("registryStats", {})["lov"] = {**stats, **({"modified": modified} if modified else {}), "namespace": ns}
     classify(" ".join([r.get("name", ""), " ".join(tags)]), r.get("description", ""), r["_votes"])
     cite(r, "lov", prefix, f"https://lov.linkeddata.es/dataset/lov/vocabs/{prefix}")
+    register_iri(r, ns)
     register(r, prefix if find(prefix) is None else None)
 
-# ---------- 5. NeuroSchema (curated neuroscience entries) ----------
+# ---------- 5. Discovered (dereferenced artefacts, scripts/discover.py) ----------
+disc_path = DATA / "discovered.json"
+if disc_path.exists():
+    disc = json.loads(disc_path.read_text())
+    SOURCES["discovery"] = {"name": "Discovered by dereferencing", "url": "data/discovered.json", "page": "https://schemascope.org/about/#discovery",
+                            "license": "metadata read from each artefact", "retrievedAt": disc.get("generatedAt"), "channels": disc.get("channels"),
+                            "candidates": disc.get("candidates"), "bytes": disc_path.stat().st_size, "archive": "data/sources/discovered.json.gz"}
+    for x in disc.get("entries", []):
+        r = find("iri:" + niri(x.get("iri")), "iri:" + niri(x.get("namespace")), "iri:" + niri(x.get("url")), "lov:" + (x.get("prefix") or ""))
+        if r is None:
+            r = new("discovery", x.get("hint"), None)
+            base = x.get("prefix") or x.get("hint") or x["title"]
+            r["id"] = slug(base) if find(base) is None else slug(base + "-" + x["channel"].split(".")[0])
+            r["_kind"] = "vocabulary" if x.get("format") == "SKOS" else "ontology"
+            register(r, r["id"])
+        r.put("acronym", x.get("prefix") or (x["hint"] if x["channel"] == "curated candidate" else None), "discovery")
+        r.put("name", x["title"], "discovery")
+        r.put("description", shorten(x.get("description")), "discovery")
+        r.put("download", x["url"] if url_ok(x["url"]) else None, "discovery")
+        r.put("homepage", x.get("via") if url_ok(x.get("via")) and x["channel"] in ("GitHub", "curated candidate") else (x.get("iri") if url_ok(x.get("iri")) else None), "discovery")
+        r.put("repository", x.get("repository"), "discovery")
+        r.put("license", lic(x.get("license")), "discovery")
+        r.put("formats", ["OWL" if x.get("format") == "OWL" else "RDF"] + (["SKOS"] if x.get("format") == "SKOS" else []), "discovery")
+        if x.get("doi") or (x.get("via") or "").startswith("https://doi.org/"):
+            doi = x.get("doi") or x["via"].replace("https://doi.org/", "")
+            r.put("publications", [{"title": x["title"], "doi": doi}] if x["channel"] == "Zenodo" else [], "discovery")
+        r.setdefault("registryStats", {})["discovery"] = {k: x.get(k) for k in ("terms", "triples", "versionInfo", "versionIri", "titleFrom") if x.get(k)}
+        classify(x["title"], x.get("description", ""), r["_votes"])
+        r["_sources"].append({"registry": f"Discovered via {x['channel']}", "key": "discovery", "id": x.get("hint"), "url": x.get("via") or x["url"],
+                              "artefact": x["url"], "retrievedAt": x.get("checkedAt"),
+                              **({"note": x["note"]} if x.get("note") else {}), **({"alsoFoundVia": x["alsoFoundVia"]} if x.get("alsoFoundVia") else {})})
+        register_iri(r, x.get("iri"), x.get("namespace"))
+
+# ---------- 6. NeuroSchema (curated neuroscience entries) ----------
 ns_cat = json.loads(fetch("neuroschema") or b"{}")
 neuro_entries = []
 for e in ns_cat.get("entries", []):
@@ -381,6 +429,47 @@ for e in ns_cat.get("entries", []):
         r.put(k, v, "neuroschema", overwrite=k in ("usedBy", "modules", "tools", "description", "kind") and r.get("_neuro_primary"))
     r["_votes"]["neuro"] += 6 if r.get("_neuro_primary") else 3
     cite(r, "neuroschema", e["id"], f"https://neuroschema.org/o/{e['id']}/")
+
+# ---------- merge near-duplicates across registries ----------
+from urllib.parse import urlparse
+STOP = {"the", "ontology", "vocabulary", "owl", "an", "a", "of", "for", "and"}
+def name_key(n):
+    return " ".join(w for w in re.sub(r"[^a-z0-9 ]+", " ", n.lower()).split() if w not in STOP)
+def hosts(r):
+    hs = set()
+    for k in ("homepage", "download", "repository"):
+        if r.get(k):
+            h = urlparse(r[k]).netloc.lower().replace("www.", "")
+            if h and h not in ("github.com", "raw.githubusercontent.com", "w3id.org", "purl.org", "zenodo.org", "doi.org"):
+                hs.add(h)
+    for s_ in r["_sources"]:
+        if s_["key"] == "lov":
+            pass
+    return hs
+groups = defaultdict(list)
+for r in records:
+    if r.get("name"):
+        groups[name_key(r["name"])].append(r)
+merged_away = set()
+for key, rs in groups.items():
+    if len(rs) < 2 or not key or re.search(r"\d", key):
+        continue
+    rs.sort(key=lambda r: -len(r["_sources"]))
+    keep = rs[0]
+    for other in rs[1:]:
+        if not (hosts(keep) & hosts(other)):
+            continue
+        for f, v in other.items():
+            if f.startswith("_") or f in ("id",):
+                continue
+            if f not in keep or keep.get(f) in (None, "", [], {}):
+                keep[f] = v
+                keep.setdefault("_fields", {})[f] = other.get("_fields", {}).get(f, "merge")
+        keep["_sources"] += other["_sources"]
+        keep["_votes"].update(other["_votes"])
+        keep.setdefault("_merged_ids", []).append(other["id"])
+        merged_away.add(id(other))
+records = [r for r in records if id(r) not in merged_away]
 
 # ---------- finalize ----------
 categories = {c["id"] for c in json.loads((DATA / "categories.json").read_text())}
@@ -423,6 +512,7 @@ for r in records:
             "source": "harvest",
             "retrievedAt": NOW if not OFFLINE else max((s["retrievedAt"] or NOW) for s in r["_sources"]),
             "registries": r["_sources"],
+            **({"mergedIds": r["_merged_ids"]} if r.get("_merged_ids") else {}),
             "fields": {k: SOURCES[v]["name"] if v in SOURCES else v for k, v in fields.items()},
         },
     }
