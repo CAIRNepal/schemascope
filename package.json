@@ -18,6 +18,8 @@
     "evaluate": "node scripts/evaluate.mjs",
     "rescore": "node scripts/rescore.mjs",
     "images": "docker build -q -t schemascope/oops docker/oops && docker build -q -t schemascope/robot docker/robot",
-    "refresh": "OOPS_IMAGE=schemascope/oops ROBOT_IMAGE=schemascope/robot node scripts/quality.mjs && node scripts/evaluate.mjs && node scripts/build.mjs"
+    "refresh": "scripts/refresh.sh",
+    "harvest": "python3 scripts/harvest.py",
+    "discover": "python3 scripts/discover.py"
   }
 }
