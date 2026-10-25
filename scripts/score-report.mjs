@@ -4,7 +4,10 @@ import { readFileSync } from "node:fs";
 import { RUBRIC, FAIR_MAX } from "./rubric.mjs";
 
 const ids = (process.env.ONLY || "").split(",").filter(Boolean);
-const ev = JSON.parse(readFileSync("data/evaluation.json", "utf8")).entries;
+import { existsSync } from "node:fs";
+// In CI, PR previews are written to .local/data/ (never to tracked results); read whichever is newer.
+const files = [".local/data/evaluation.json", "data/evaluation.json"].filter(existsSync).map((f) => JSON.parse(readFileSync(f, "utf8")));
+const ev = (files.sort((a, b) => String(b.generatedAt).localeCompare(String(a.generatedAt)))[0] || { entries: {} }).entries;
 const lines = ["### 🧪 FAIR evaluation preview", ""];
 if (!ids.length) lines.push("No catalog entries changed.");
 for (const id of ids) {
