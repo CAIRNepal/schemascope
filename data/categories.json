@@ -1,14 +1,86 @@
 [
-  { "id": "foundational", "name": "Foundational & Upper Ontologies", "icon": "layers", "blurb": "Top-level ontologies and shared relations that other domains build on and align to." },
-  { "id": "metadata", "name": "Metadata, Provenance & Publishing", "icon": "tag", "blurb": "Describing datasets, catalogs, provenance, people, citations and licences, on the web and in research." },
-  { "id": "life", "name": "Life Sciences", "icon": "dna", "blurb": "Genes, proteins, cells, anatomy, taxonomy, investigations and bioinformatics." },
-  { "id": "health", "name": "Health & Clinical", "icon": "pulse", "blurb": "Diseases, phenotypes, clinical terminologies and healthcare data models." },
-  { "id": "neuro", "name": "Neuroscience", "icon": "brain", "blurb": "Brain data standards, behaviour and neuroscience metadata. See neuroschema.org for the full neuroscience catalog." },
-  { "id": "chemistry", "name": "Chemistry & Materials", "icon": "flask", "blurb": "Chemical entities, reactions, methods and materials." },
-  { "id": "earth", "name": "Earth & Environment", "icon": "globe", "blurb": "Environments, earth science, geospatial data, sensors and observations." },
-  { "id": "agri", "name": "Agriculture, Food & Plants", "icon": "leaf", "blurb": "Crops, plants, traits, livestock and food." },
-  { "id": "physical", "name": "Physical Sciences & Units", "icon": "atom", "blurb": "Quantities and units of measure, physics and astronomy." },
-  { "id": "engineering", "name": "Engineering & Built Environment", "icon": "gear", "blurb": "Smart devices, buildings, the Internet of Things and industrial data." },
-  { "id": "humanities", "name": "Humanities & Social Sciences", "icon": "people", "blurb": "Cultural heritage, art and archives, and social-science concepts." },
-  { "id": "computing", "name": "Computing & Software", "icon": "code", "blurb": "Software, research code and data-science methods." }
+  {
+    "id": "foundational",
+    "name": "Foundational & Upper Ontologies",
+    "icon": "layers",
+    "blurb": "Top-level ontologies and shared relations that other domains build on and align to."
+  },
+  {
+    "id": "metadata",
+    "name": "Metadata, Provenance & Publishing",
+    "icon": "tag",
+    "blurb": "Describing datasets, catalogs, provenance, people, citations and licences, on the web and in research."
+  },
+  {
+    "id": "life",
+    "name": "Life Sciences",
+    "icon": "dna",
+    "blurb": "Genes, proteins, cells, anatomy, taxonomy, investigations and bioinformatics."
+  },
+  {
+    "id": "health",
+    "name": "Health & Clinical",
+    "icon": "pulse",
+    "blurb": "Diseases, phenotypes, clinical terminologies and healthcare data models."
+  },
+  {
+    "id": "neuro",
+    "name": "Neuroscience",
+    "icon": "brain",
+    "blurb": "Brain data standards, behaviour and neuroscience metadata. See neuroschema.org for the full neuroscience catalog."
+  },
+  {
+    "id": "chemistry",
+    "name": "Chemistry & Materials",
+    "icon": "flask",
+    "blurb": "Chemical entities, reactions, methods and materials."
+  },
+  {
+    "id": "earth",
+    "name": "Earth & Environment",
+    "icon": "globe",
+    "blurb": "Environments, earth science, geospatial data, sensors and observations."
+  },
+  {
+    "id": "agri",
+    "name": "Agriculture, Food & Plants",
+    "icon": "leaf",
+    "blurb": "Crops, plants, traits, livestock and food."
+  },
+  {
+    "id": "physical",
+    "name": "Physical Sciences, Maths & Units",
+    "icon": "atom",
+    "blurb": "Quantities and units of measure, mathematics, statistics, physics and astronomy."
+  },
+  {
+    "id": "engineering",
+    "name": "Engineering & Built Environment",
+    "icon": "gear",
+    "blurb": "Smart devices, buildings, the Internet of Things and industrial data."
+  },
+  {
+    "id": "humanities",
+    "name": "Humanities & Culture",
+    "icon": "people",
+    "blurb": "Cultural heritage, art, archives, media, music and language."
+  },
+  {
+    "id": "society",
+    "name": "Society, Government & Business",
+    "icon": "people",
+    "blurb": "Government, law, economics, business, transport, tourism, people and organisations."
+  },
+  {
+    "id": "computing",
+    "name": "Computing & Software",
+    "icon": "code",
+    "blurb": "Software, research code and data-science methods."
+  },
+  {
+    "id": "multidisciplinary",
+    "name": "Multidisciplinary & General",
+    "icon": "grid",
+    "blurb": "Vocabularies that span many fields or that registries have not assigned to a single domain."
+  }
 ]

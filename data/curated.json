@@ -1,0 +1,4509 @@
+[
+ {
+  "id": "bfo",
+  "acronym": "BFO",
+  "name": "Basic Formal Ontology",
+  "description": "The upper level ontology upon which OBO Foundry ontologies are built.",
+  "homepage": "http://ifomis.org/bfo/",
+  "repository": "https://github.com/BFO-ontology/BFO",
+  "download": "http://purl.obolibrary.org/obo/bfo.owl",
+  "formats": [
+   "OWL",
+   "OBO"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "bfo",
+  "obo": "bfo",
+  "bioportal": "BFO",
+  "bioregistry": "bfo",
+  "tags": [
+   "data identity and mapping",
+   "data retrieval",
+   "dataplant",
+   "fairmat",
+   "foundational ontologies",
+   "nfdi-matwerk"
+  ],
+  "category": "foundational",
+  "kind": "ontology",
+  "domains": [
+   "life",
+   "health",
+   "chemistry",
+   "earth",
+   "agri",
+   "physical",
+   "engineering",
+   "neuro",
+   "humanities"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/bfo",
+   "page": "https://bioregistry.io/bfo",
+   "retrievedAt": "2026-10-25T21:38:54.718Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "gfo",
+  "acronym": "GFO",
+  "name": "General Formal Ontology",
+  "description": "The General Formal Ontology is a top-level ontology for conceptual modeling, which is being constantly further developed by Onto-Med. It includes elaborations of categories like objects, processes, time and space, properties, relations, roles, functions, facts, and situations. Moreover, we are working on an integration with the notion of levels of reality in order to more appropriately capture entities in the material, mental, and social areas.",
+  "homepage": "https://www.onto-med.de/ontologies/gfo",
+  "download": "http://www.onto-med.de/ontologies/gfo.owl",
+  "formats": [
+   "OWL"
+  ],
+  "license": "CC BY 4.0",
+  "bioportal": "GFO",
+  "bioregistry": "gfo",
+  "tags": [
+   "biomedical science",
+   "engineering",
+   "foundational ontologies",
+   "life science",
+   "ontology"
+  ],
+  "category": "foundational",
+  "kind": "ontology",
+  "domains": [
+   "health",
+   "life"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/gfo",
+   "page": "https://bioregistry.io/gfo",
+   "retrievedAt": "2026-10-25T21:38:54.833Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "download",
+    "formats",
+    "license",
+    "bioportal",
+    "tags"
+   ],
+   "overrides": {
+    "acronym": "GFO"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "cob",
+  "acronym": "COB",
+  "name": "Core Ontology for Biology and Biomedicine",
+  "description": "COB brings together key terms from a wide range of OBO projects to improve interoperability.",
+  "homepage": "https://obofoundry.org/COB/",
+  "repository": "https://github.com/OBOFoundry/COB",
+  "download": "http://purl.obolibrary.org/obo/cob.owl",
+  "formats": [
+   "OWL"
+  ],
+  "license": "CC0 1.0",
+  "ols": "cob",
+  "obo": "cob",
+  "bioportal": "COB",
+  "bioregistry": "cob",
+  "tags": [
+   "dataplant",
+   "life sciences, biology",
+   "obo",
+   "ontology"
+  ],
+  "category": "foundational",
+  "kind": "ontology",
+  "domains": [
+   "life",
+   "health",
+   "chemistry"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/cob",
+   "page": "https://bioregistry.io/cob",
+   "retrievedAt": "2026-10-25T21:38:54.865Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "ro",
+  "acronym": "RO",
+  "name": "Relation Ontology",
+  "description": "The OBO Relation Ontology provides consistent and unambiguous formal definitions of the relational expressions used in biomedical ontologies.",
+  "homepage": "https://oborel.github.io/",
+  "repository": "https://github.com/oborel/obo-relations",
+  "download": "http://purl.obolibrary.org/obo/ro.owl",
+  "formats": [
+   "OWL",
+   "OBO",
+   "JSON"
+  ],
+  "license": "CC0 1.0",
+  "ols": "ro",
+  "obo": "ro",
+  "bioregistry": "ro",
+  "publications": [
+   {
+    "title": "Structuring research methods and data with the research object model: genomics workflows as a case study",
+    "doi": "10.1186/2041-1480-5-41",
+    "year": 2014
+   },
+   {
+    "title": "Relations in biomedical ontologies",
+    "doi": "10.1186/gb-2005-6-5-r46",
+    "year": 2005
+   }
+  ],
+  "tags": [
+   "dataplant",
+   "foundational ontologies",
+   "life sciences, biology",
+   "nfdi4chem",
+   "obo",
+   "ontology"
+  ],
+  "category": "foundational",
+  "kind": "ontology",
+  "domains": [
+   "life",
+   "health",
+   "agri",
+   "earth",
+   "neuro"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/ro",
+   "page": "https://bioregistry.io/ro",
+   "retrievedAt": "2026-10-25T21:38:54.898Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "iao",
+  "acronym": "IAO",
+  "name": "Information Artifact Ontology",
+  "description": "An ontology of information entities, originally driven by work by the Ontology of Biomedical Investigation (OBI) digital entity and realizable information entity branch.",
+  "homepage": "https://github.com/information-artifact-ontology/IAO/",
+  "repository": "https://github.com/information-artifact-ontology/IAO",
+  "download": "http://purl.obolibrary.org/obo/iao.owl",
+  "formats": [
+   "OWL",
+   "OBO"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "iao",
+  "obo": "iao",
+  "bioportal": "IAO",
+  "bioregistry": "iao",
+  "publications": [
+   {
+    "title": "An information artifact ontology perspective on data collections and associated representational artifacts",
+    "doi": "10.3233/978-1-61499-101-4-68",
+    "year": 2012
+   }
+  ],
+  "tags": [
+   "assay",
+   "biomedical science",
+   "data identity and mapping",
+   "drug report",
+   "experimental measurement",
+   "fair data spaces"
+  ],
+  "category": "foundational",
+  "kind": "ontology",
+  "domains": [
+   "metadata",
+   "life",
+   "health"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/iao",
+   "page": "https://bioregistry.io/iao",
+   "retrievedAt": "2026-10-25T21:38:54.929Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "omo",
+  "acronym": "OMO",
+  "name": "OBO Metadata Ontology",
+  "description": "An ontology specifies terms that are used to annotate ontology terms for all OBO ontologies. The ontology was developed as part of Information Artifact Ontology (IAO).",
+  "homepage": "https://github.com/information-artifact-ontology/ontology-metadata",
+  "repository": "https://github.com/information-artifact-ontology/ontology-metadata",
+  "download": "http://purl.obolibrary.org/obo/omo.owl",
+  "formats": [
+   "OWL"
+  ],
+  "license": "CC0 1.0",
+  "ols": "omo",
+  "obo": "omo",
+  "bioportal": "OMO",
+  "bioregistry": "omo",
+  "tags": [
+   "obo",
+   "ontology"
+  ],
+  "category": "foundational",
+  "kind": "ontology",
+  "domains": [
+   "metadata"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/omo",
+   "page": "https://bioregistry.io/omo",
+   "retrievedAt": "2026-10-25T21:38:54.961Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "dcat",
+  "acronym": "DCAT",
+  "name": "Data Catalog",
+  "description": "DCAT is an RDF vocabulary designed to facilitate interoperability between data catalogs published on the Web",
+  "homepage": "https://www.w3.org/ns/dcat",
+  "download": "http://www.w3.org/ns/dcat",
+  "formats": [
+   "OWL",
+   "Turtle"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "dcat",
+  "bioportal": "DCAT",
+  "bioregistry": "dcat",
+  "tags": [
+   "computer science",
+   "ess",
+   "ontology",
+   "w3c rec"
+  ],
+  "category": "metadata",
+  "kind": "ontology",
+  "domains": [
+   "earth",
+   "computing",
+   "humanities"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/dcat",
+   "page": "https://bioregistry.io/dcat",
+   "retrievedAt": "2026-10-25T21:38:54.997Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "license",
+    "ols",
+    "bioportal",
+    "tags"
+   ],
+   "overrides": {
+    "download": "http://www.w3.org/ns/dcat",
+    "formats": [
+     "OWL",
+     "Turtle"
+    ],
+    "kind": "ontology",
+    "acronym": "DCAT"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "prov",
+  "acronym": "PROV-O",
+  "name": "PROV Namespace",
+  "description": "The namespace name http://www.w3.org/ns/prov# is intended for use with the PROV family of documents that support the interchange of provenance on the web.",
+  "homepage": "https://www.w3.org/ns/prov",
+  "download": "http://www.w3.org/ns/prov-o",
+  "formats": [
+   "OWL",
+   "Turtle"
+  ],
+  "license": "W3C-20150513",
+  "ols": "prov",
+  "bioportal": "PROVO",
+  "bioregistry": "prov",
+  "tags": [
+   "data management",
+   "ess",
+   "metadata standardization",
+   "nfdi-matwerk",
+   "nfdi4chem",
+   "nfdi4ing"
+  ],
+  "category": "metadata",
+  "kind": "ontology",
+  "domains": [
+   "computing",
+   "life",
+   "earth"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/prov",
+   "page": "https://bioregistry.io/prov",
+   "retrievedAt": "2026-10-25T21:38:55.028Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "license",
+    "ols",
+    "bioportal",
+    "tags"
+   ],
+   "overrides": {
+    "download": "http://www.w3.org/ns/prov-o",
+    "formats": [
+     "OWL",
+     "Turtle"
+    ],
+    "kind": "ontology",
+    "acronym": "PROV-O"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "pav",
+  "acronym": "PAV",
+  "name": "Provenance, Authoring, and Versioning Vocabulary",
+  "description": "PAV is a lightweight ontology for tracking provenance, authorship, and versioning. It specializes the W3C provenance ontology PROV-O in order to describe authorship, curation and digital creation of online resources.",
+  "homepage": "https://pav-ontology.github.io/pav",
+  "download": "http://purl.org/pav/",
+  "formats": [
+   "OWL",
+   "RDF"
+  ],
+  "bioportal": "PAV",
+  "bioregistry": "pav",
+  "publications": [
+   {
+    "title": "PAV ontology: provenance, authoring and versioning",
+    "doi": "10.1186/2041-1480-4-37",
+    "year": 2013
+   }
+  ],
+  "tags": [
+   "data management",
+   "ontology",
+   "quality",
+   "resource metadata",
+   "subject agnostic"
+  ],
+  "category": "metadata",
+  "kind": "ontology",
+  "domains": [
+   "life"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/pav",
+   "page": "https://bioregistry.io/pav",
+   "retrievedAt": "2026-10-25T21:38:55.060Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "bioportal",
+    "publications",
+    "tags"
+   ],
+   "overrides": {
+    "download": "http://purl.org/pav/",
+    "formats": [
+     "OWL",
+     "RDF"
+    ],
+    "kind": "ontology",
+    "acronym": "PAV"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "dcterms",
+  "acronym": "DCTERMS",
+  "name": "Dublin Core Metadata Initiative Terms",
+  "description": "This document is an up-to-date specification of all metadata terms maintained by the Dublin Core Metadata Initiative, including properties, vocabulary encoding schemes, syntax encoding schemes, and classes.",
+  "homepage": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms",
+  "download": "http://purl.org/dc/terms/",
+  "formats": [
+   "RDF",
+   "Turtle"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "dcterms",
+  "bioportal": "DCTERMS",
+  "bioregistry": "dcterms",
+  "tags": [
+   "digital planning and construction",
+   "ess",
+   "fid baudigital",
+   "metadata",
+   "metadata standardization",
+   "nfdi4ing"
+  ],
+  "category": "metadata",
+  "kind": "vocabulary",
+  "domains": [
+   "humanities",
+   "computing"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/dcterms",
+   "page": "https://bioregistry.io/dcterms",
+   "retrievedAt": "2026-10-25T21:38:55.091Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "license",
+    "ols",
+    "bioportal",
+    "tags"
+   ],
+   "overrides": {
+    "download": "http://purl.org/dc/terms/",
+    "formats": [
+     "RDF",
+     "Turtle"
+    ],
+    "kind": "vocabulary",
+    "acronym": "DCTERMS"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "schema",
+  "acronym": "schema.org",
+  "name": "Schema.org",
+  "description": "Schema.org is a collaborative, community activity with a mission to create, maintain, and promote schemas for structured data on the Internet, on web pages, in email messages, and beyond.",
+  "homepage": "https://schema.org",
+  "download": "https://schema.org/version/latest/schemaorg-current-https.ttl",
+  "formats": [
+   "RDF",
+   "Turtle",
+   "JSON-LD"
+  ],
+  "license": "CC BY-SA 3.0",
+  "ols": "schemaorg_http",
+  "bioportal": "SCHEMA",
+  "bioregistry": "schema",
+  "tags": [
+   "ess",
+   "fair data spaces",
+   "general & upper",
+   "nfdixcs",
+   "ontology"
+  ],
+  "category": "metadata",
+  "kind": "vocabulary",
+  "domains": [
+   "computing",
+   "humanities",
+   "health",
+   "life"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/schema",
+   "page": "https://bioregistry.io/schema",
+   "retrievedAt": "2026-10-25T21:38:55.123Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "license",
+    "ols",
+    "bioportal",
+    "tags"
+   ],
+   "overrides": {
+    "download": "https://schema.org/version/latest/schemaorg-current-https.ttl",
+    "formats": [
+     "RDF",
+     "Turtle",
+     "JSON-LD"
+    ],
+    "kind": "vocabulary",
+    "acronym": "schema.org"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "skos",
+  "acronym": "SKOS",
+  "name": "Simple Knowledge Organization System",
+  "description": "SKOS is an area of work developing specifications and standards to support the use of knowledge organization systems (KOS) such as thesauri, classification schemes, subject heading lists and taxonomies within the framework of the Semantic Web",
+  "homepage": "https://www.w3.org/TR/skos-reference",
+  "download": "http://www.w3.org/2004/02/skos/core",
+  "formats": [
+   "OWL",
+   "RDF"
+  ],
+  "license": "W3C-2023",
+  "ols": "skos",
+  "bioregistry": "skos",
+  "tags": [
+   "computer science",
+   "miscellaneous",
+   "ontology",
+   "w3c rec"
+  ],
+  "category": "metadata",
+  "kind": "ontology",
+  "domains": [
+   "humanities",
+   "agri",
+   "earth"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/skos",
+   "page": "https://bioregistry.io/skos",
+   "retrievedAt": "2026-10-25T21:38:55.152Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "license",
+    "ols",
+    "tags"
+   ],
+   "overrides": {
+    "download": "http://www.w3.org/2004/02/skos/core",
+    "formats": [
+     "OWL",
+     "RDF"
+    ],
+    "kind": "ontology",
+    "acronym": "SKOS"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "foaf",
+  "acronym": "FOAF",
+  "name": "Friend of a Friend",
+  "description": "FOAF is a project devoted to linking people and information using the Web. Regardless of whether information is in people's heads, in physical or digital documents, or in the form of factual data, it can be linked. FOAF integrates three kinds of network: social networks of human collaboration, friendship and association; representational networks that describe a simplified view of a cartoon universe in factual terms, and information networks that use Web-based linking to share independently published descriptions of this inter-connected world.",
+  "homepage": "http://xmlns.com/foaf/spec",
+  "download": "http://xmlns.com/foaf/0.1/",
+  "formats": [
+   "RDF",
+   "JSON-LD"
+  ],
+  "license": "CC BY 1.0",
+  "bioportal": "FOAF",
+  "bioregistry": "foaf",
+  "tags": [
+   "digital planning and construction",
+   "ess",
+   "fid baudigital",
+   "nfdi4ing",
+   "ontology",
+   "people"
+  ],
+  "category": "metadata",
+  "kind": "vocabulary",
+  "domains": [
+   "humanities",
+   "computing"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/foaf",
+   "page": "https://bioregistry.io/foaf",
+   "retrievedAt": "2026-10-25T21:38:55.185Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "license",
+    "bioportal",
+    "tags"
+   ],
+   "overrides": {
+    "download": "http://xmlns.com/foaf/0.1/",
+    "formats": [
+     "RDF",
+     "JSON-LD"
+    ],
+    "kind": "vocabulary",
+    "acronym": "FOAF"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "time",
+  "acronym": "OWL-Time",
+  "name": "Time Ontology in OWL",
+  "description": "Owl-time is an owl-2 dl ontology of temporal concepts, for describing the temporal properties of resources in the world or described in web pages. the ontology provides a vocabulary for expressing facts about topological (ordering) relations among instants and intervals, together with information about durations, and about temporal position including date-time information.",
+  "homepage": "https://www.w3.org/TR/owl-time",
+  "repository": "https://github.com/w3c/sdw",
+  "download": "http://www.w3.org/2006/time",
+  "formats": [
+   "OWL",
+   "Turtle"
+  ],
+  "license": "CC BY 4.0",
+  "bioportal": "TIME",
+  "bioregistry": "time",
+  "tags": [
+   "data coordination",
+   "ess",
+   "fair data spaces",
+   "metadata standardization",
+   "nfdi4chem",
+   "ontology"
+  ],
+  "category": "metadata",
+  "kind": "ontology",
+  "domains": [
+   "earth",
+   "engineering",
+   "physical",
+   "humanities"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/time",
+   "page": "https://bioregistry.io/time",
+   "retrievedAt": "2026-10-25T21:38:55.216Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "license",
+    "bioportal",
+    "tags"
+   ],
+   "overrides": {
+    "download": "http://www.w3.org/2006/time",
+    "formats": [
+     "OWL",
+     "Turtle"
+    ],
+    "kind": "ontology",
+    "acronym": "OWL-Time"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "org",
+  "acronym": "ORG",
+  "name": "Core organization ontology",
+  "description": "Vocabulary for describing organizational structures, specializable to a broad variety of types of organization.",
+  "homepage": "http://www.w3.org/TR/vocab-org/",
+  "download": "http://www.w3.org/ns/org",
+  "formats": [
+   "OWL",
+   "Turtle"
+  ],
+  "license": "PDDL-1.0",
+  "bioregistry": "org",
+  "tags": [
+   "digital planning and construction",
+   "economics",
+   "fid baudigital",
+   "ontology",
+   "social sciences",
+   "w3c rec"
+  ],
+  "category": "metadata",
+  "kind": "ontology",
+  "domains": [
+   "humanities"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/org",
+   "page": "https://bioregistry.io/org",
+   "retrievedAt": "2026-10-25T21:38:55.247Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "license",
+    "tags"
+   ],
+   "overrides": {
+    "download": "http://www.w3.org/ns/org",
+    "formats": [
+     "OWL",
+     "Turtle"
+    ],
+    "kind": "ontology",
+    "acronym": "ORG"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "vcard",
+  "acronym": "vCard",
+  "name": "Virtual Contact File",
+  "description": "vCard is a specification developed by the Internet Engineering Task Force (IETF) for the description of people and organisations",
+  "homepage": "https://www.w3.org/TR/vcard-rdf",
+  "download": "http://www.w3.org/2006/vcard/ns",
+  "formats": [
+   "OWL",
+   "Turtle"
+  ],
+  "bioregistry": "vcard",
+  "tags": [
+   "ontology",
+   "people"
+  ],
+  "category": "metadata",
+  "kind": "ontology",
+  "domains": [
+   "humanities"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/vcard",
+   "page": "https://bioregistry.io/vcard",
+   "retrievedAt": "2026-10-25T21:38:55.278Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "tags"
+   ],
+   "overrides": {
+    "download": "http://www.w3.org/2006/vcard/ns",
+    "formats": [
+     "OWL",
+     "Turtle"
+    ],
+    "kind": "ontology",
+    "acronym": "vCard"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "datacite",
+  "acronym": "DataCite",
+  "name": "DataCite Ontology",
+  "description": "An ontology that enables the metadata properties of the DataCite Metadata Schema Specification (i.e., a list of metadata properties for the accurate and consistent identification of a resource for citation and retrieval purposes) to be described in RDF.",
+  "homepage": "http://www.sparontologies.net/ontologies/datacite",
+  "repository": "https://github.com/sparontologies/datacite",
+  "download": "http://purl.org/spar/datacite",
+  "formats": [
+   "OWL",
+   "RDF"
+  ],
+  "license": "CC BY 4.0",
+  "bioportal": "DATACITE",
+  "bioregistry": "datacite",
+  "publications": [
+   {
+    "title": "DataCite and DOI names for research data",
+    "doi": "10.1007/s10822-014-9776-5",
+    "year": 2014
+   }
+  ],
+  "tags": [
+   "centrally registered identifier",
+   "nfdixcs",
+   "ontology",
+   "subject agnostic"
+  ],
+  "category": "metadata",
+  "kind": "ontology",
+  "domains": [
+   "humanities"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/datacite",
+   "page": "https://bioregistry.io/datacite",
+   "retrievedAt": "2026-10-25T21:38:55.310Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "license",
+    "bioportal",
+    "publications",
+    "tags"
+   ],
+   "overrides": {
+    "download": "http://purl.org/spar/datacite",
+    "formats": [
+     "OWL",
+     "RDF"
+    ],
+    "kind": "ontology",
+    "acronym": "DataCite"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "fabio",
+  "acronym": "FaBiO",
+  "name": "The FRBR-aligned Bibliographic Ontology",
+  "description": "The FRBR-aligned Bibliographic Ontology (FaBiO) is an ontology for describing entities that are published or potentially publishable (e.g., journal articles, conference papers, books), and that contain or are referred to by bibliographic references.",
+  "homepage": "http://purl.org/spar/fabio",
+  "repository": "https://github.com/sparontologies/fabio",
+  "license": "CC BY 4.0",
+  "bioregistry": "fabio",
+  "publications": [
+   {
+    "title": "FaBiO and CiTO: Ontologies for describing bibliographic resources and citations",
+    "doi": "10.1016/j.websem.2012.08.001",
+    "year": 2012
+   }
+  ],
+  "tags": [
+   "nfdi4ing",
+   "nfdixcs",
+   "ontology",
+   "other subjects",
+   "spar",
+   "subject agnostic"
+  ],
+  "category": "metadata",
+  "kind": "ontology",
+  "domains": [
+   "humanities"
+  ],
+  "usedBy": [],
+  "download": "http://purl.org/spar/fabio",
+  "formats": [
+   "OWL",
+   "RDF"
+  ],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/fabio",
+   "page": "https://bioregistry.io/fabio",
+   "retrievedAt": "2026-10-25T21:38:55.343Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "license",
+    "publications",
+    "tags"
+   ],
+   "overrides": {
+    "download": "http://purl.org/spar/fabio",
+    "formats": [
+     "OWL",
+     "RDF"
+    ],
+    "kind": "ontology",
+    "acronym": "FaBiO"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "cito",
+  "acronym": "CiTO",
+  "name": "Citation Typing Ontology",
+  "description": "An ontology that enables characterization of the nature or type of citations, both factually and rhetorically.",
+  "homepage": "http://www.sparontologies.net/ontologies/cito",
+  "repository": "https://github.com/sparontologies/cito",
+  "download": "http://purl.org/spar/cito",
+  "formats": [
+   "OWL",
+   "RDF"
+  ],
+  "license": "CC BY 4.0",
+  "bioregistry": "cito",
+  "publications": [
+   {
+    "title": "FaBiO and CiTO: Ontologies for describing bibliographic resources and citations",
+    "doi": "10.1016/j.websem.2012.08.001",
+    "year": 2012
+   }
+  ],
+  "tags": [
+   "citation",
+   "knowledge and information systems",
+   "nfdixcs",
+   "ontology",
+   "spar"
+  ],
+  "category": "metadata",
+  "kind": "ontology",
+  "domains": [
+   "humanities"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/cito",
+   "page": "https://bioregistry.io/cito",
+   "retrievedAt": "2026-10-25T21:38:55.380Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "license",
+    "publications",
+    "tags"
+   ],
+   "overrides": {
+    "download": "http://purl.org/spar/cito",
+    "formats": [
+     "OWL",
+     "RDF"
+    ],
+    "kind": "ontology",
+    "acronym": "CiTO"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "bibo",
+  "acronym": "BIBO",
+  "name": "The Bibliographic Ontology",
+  "description": "The Bibliographic Ontology Specification provides main concepts and properties for describing citations and bibliographic references (i.e. quotes, books, articles, etc) on the Semantic Web.",
+  "homepage": "http://purl.org/ontology/bibo",
+  "repository": "https://github.com/dcmi/bibo",
+  "download": "http://purl.org/ontology/bibo/",
+  "formats": [
+   "OWL",
+   "Turtle"
+  ],
+  "bioregistry": "bibo",
+  "tags": [
+   "bibliometrics",
+   "catalogs",
+   "ontology"
+  ],
+  "category": "metadata",
+  "kind": "ontology",
+  "domains": [
+   "humanities"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/bibo",
+   "page": "https://bioregistry.io/bibo",
+   "retrievedAt": "2026-10-25T21:38:55.414Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "tags"
+   ],
+   "overrides": {
+    "download": "http://purl.org/ontology/bibo/",
+    "formats": [
+     "OWL",
+     "Turtle"
+    ],
+    "kind": "ontology",
+    "acronym": "BIBO"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "odrl",
+  "acronym": "ODRL",
+  "name": "Open Digital Rights Language Ontology",
+  "description": "The ODRL Vocabulary and Expression defines a set of concepts and terms (the vocabulary) and encoding mechanism (the expression) for permissions and obligations statements describing digital content usage based on the ODRL Information Model.",
+  "homepage": "http://www.w3.org/ns/odrl/2",
+  "download": "http://www.w3.org/ns/odrl/2/",
+  "formats": [
+   "OWL",
+   "Turtle"
+  ],
+  "bioregistry": "odrl",
+  "tags": [
+   "metadata",
+   "ontology"
+  ],
+  "category": "metadata",
+  "kind": "ontology",
+  "domains": [
+   "computing",
+   "humanities"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/odrl",
+   "page": "https://bioregistry.io/odrl",
+   "retrievedAt": "2026-10-25T21:38:55.446Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "tags"
+   ],
+   "overrides": {
+    "download": "http://www.w3.org/ns/odrl/2/",
+    "formats": [
+     "OWL",
+     "Turtle"
+    ],
+    "kind": "ontology",
+    "acronym": "ODRL"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "go",
+  "acronym": "GO",
+  "name": "Gene Ontology",
+  "description": "The Gene Ontology project provides a controlled vocabulary to describe gene and gene product attributes in any organism.",
+  "homepage": "http://geneontology.org/",
+  "repository": "https://github.com/geneontology/go-ontology",
+  "download": "http://purl.obolibrary.org/obo/go.owl",
+  "formats": [
+   "OWL",
+   "OBO",
+   "JSON"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "go",
+  "obo": "go",
+  "bioportal": "GO",
+  "bioregistry": "go",
+  "publications": [
+   {
+    "title": "The Gene Ontology knowledgebase in 2026",
+    "doi": "10.1093/nar/gkaf1292",
+    "year": 2026
+   },
+   {
+    "title": "The Gene Ontology resource: enriching a GOld mine",
+    "doi": "10.1093/nar/gkaa1113",
+    "year": 2021
+   }
+  ],
+  "tags": [
+   "annotation",
+   "biocuration",
+   "biological_process",
+   "cellular_component",
+   "dataplant",
+   "expression data"
+  ],
+  "category": "life",
+  "kind": "ontology",
+  "domains": [
+   "agri",
+   "health",
+   "neuro"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/go",
+   "page": "https://bioregistry.io/go",
+   "retrievedAt": "2026-10-25T21:38:55.484Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "cl",
+  "acronym": "CL",
+  "name": "Cell Ontology",
+  "description": "The Cell Ontology is designed as a structured controlled vocabulary for cell types. The ontology was constructed for use by the model organism and other bioinformatics databases, incorporating cell types from prokaryotes to mammals, and includes plants and fungi.",
+  "homepage": "https://obophenotype.github.io/cell-ontology/",
+  "repository": "https://github.com/obophenotype/cell-ontology",
+  "download": "http://purl.obolibrary.org/obo/cl.owl",
+  "formats": [
+   "OWL",
+   "OBO",
+   "JSON"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "cl",
+  "obo": "cl",
+  "bioportal": "CL",
+  "bioregistry": "cl",
+  "publications": [
+   {
+    "title": "The Cell Ontology 2016: enhanced content, modularization, and ontology interoperability",
+    "doi": "10.1186/s13326-016-0088-7",
+    "year": 2016
+   },
+   {
+    "title": "Logical development of the cell ontology",
+    "doi": "10.1186/1471-2105-12-6",
+    "year": 2011
+   }
+  ],
+  "tags": [
+   "anatomy",
+   "annotation",
+   "cell",
+   "cell biology",
+   "immunogenetics",
+   "immunology"
+  ],
+  "category": "life",
+  "kind": "ontology",
+  "domains": [
+   "health",
+   "neuro"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/cl",
+   "page": "https://bioregistry.io/cl",
+   "retrievedAt": "2026-10-25T21:38:55.516Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "uberon",
+  "acronym": "UBERON",
+  "name": "Uber Anatomy Ontology",
+  "description": "Uberon is an integrated cross-species anatomy ontology representing a variety of entities classified according to traditional anatomical criteria such as structure, function and developmental lineage. The ontology includes comprehensive relationships to taxon-specific anatomical ontologies, allowing integration of functional, phenotype and expression data.",
+  "homepage": "http://uberon.org",
+  "repository": "https://github.com/obophenotype/uberon",
+  "download": "http://purl.obolibrary.org/obo/uberon.owl",
+  "formats": [
+   "OWL",
+   "OBO",
+   "JSON"
+  ],
+  "license": "CC BY 3.0",
+  "ols": "uberon",
+  "obo": "uberon",
+  "bioportal": "UBERON",
+  "bioregistry": "uberon",
+  "publications": [
+   {
+    "title": "Unification of multi-species vertebrate anatomy ontologies for comparative biology in Uberon",
+    "doi": "10.1186/2041-1480-5-21",
+    "year": 2014
+   },
+   {
+    "title": "Uberon, an integrative multi-species anatomy ontology",
+    "doi": "10.1186/gb-2012-13-1-r5",
+    "year": 2012
+   }
+  ],
+  "tags": [
+   "anatomy",
+   "dataplant",
+   "developmental biology",
+   "life science",
+   "life sciences, biology",
+   "obo"
+  ],
+  "category": "life",
+  "kind": "ontology",
+  "domains": [
+   "health",
+   "neuro",
+   "agri"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/uberon",
+   "page": "https://bioregistry.io/uberon",
+   "retrievedAt": "2026-10-25T21:38:55.550Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "ncbitaxon",
+  "acronym": "NCBITaxon",
+  "name": "NCBI Taxonomy",
+  "description": "The taxonomy contains the relationships between all living forms for which nucleic acid or protein sequence have been determined.",
+  "homepage": "https://github.com/obophenotype/ncbitaxon",
+  "repository": "https://github.com/obophenotype/ncbitaxon",
+  "download": "http://purl.obolibrary.org/obo/ncbitaxon.owl",
+  "formats": [
+   "OWL",
+   "OBO",
+   "JSON"
+  ],
+  "license": "CC0 1.0",
+  "ols": "ncbitaxon",
+  "obo": "ncbitaxon",
+  "bioportal": "NCBITAXON",
+  "bioregistry": "ncbitaxon",
+  "publications": [
+   {
+    "title": "NCBI Taxonomy: a comprehensive update on curation, resources and tools",
+    "doi": "10.1093/database/baaa062",
+    "year": 2020
+   },
+   {
+    "title": "GenBank",
+    "doi": "10.1093/nar/gkx1094",
+    "year": 2018
+   }
+  ],
+  "tags": [
+   "classification",
+   "dna",
+   "evolutionary biology",
+   "genomics",
+   "knowledge and information systems",
+   "life science"
+  ],
+  "category": "life",
+  "kind": "ontology",
+  "domains": [
+   "agri",
+   "earth",
+   "health"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/ncbitaxon",
+   "page": "https://bioregistry.io/ncbitaxon",
+   "retrievedAt": "2026-10-25T21:38:55.586Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "obi",
+  "acronym": "OBI",
+  "name": "Ontology for Biomedical Investigations",
+  "description": "The Ontology for Biomedical Investigations (OBI) project is developing an integrated ontology for the description of biological and clinical investigations. The ontology will represent the design of an investigation, the protocols and instrumentation used, the material used, the data generated and the type analysis performed on it. Currently OBI is being built under the Basic Formal Ontology (BFO).",
+  "homepage": "http://obi-ontology.org",
+  "repository": "https://github.com/obi-ontology/obi",
+  "download": "http://purl.obolibrary.org/obo/obi.owl",
+  "formats": [
+   "OWL",
+   "OBO"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "obi",
+  "obo": "obi",
+  "bioportal": "OBI",
+  "bioregistry": "obi",
+  "publications": [
+   {
+    "title": "The Ontology for Biomedical Investigations",
+    "doi": "10.1371/journal.pone.0154556",
+    "year": 2016
+   },
+   {
+    "title": "Modeling a microbial community and biodiversity assay with OBO Foundry ontologies: the interoperability gains of a modular approach",
+    "doi": "10.1093/database/bau132",
+    "year": 2015
+   }
+  ],
+  "tags": [
+   "assay",
+   "biomedical science",
+   "data transformation",
+   "dataplant",
+   "device",
+   "functional genomics"
+  ],
+  "category": "life",
+  "kind": "ontology",
+  "domains": [
+   "health",
+   "chemistry"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/obi",
+   "page": "https://bioregistry.io/obi",
+   "retrievedAt": "2026-10-25T21:38:55.617Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "edam",
+  "acronym": "edam",
+  "name": "EDAM Ontology",
+  "description": "EDAM is an ontology of general bioinformatics concepts, including topics, data types, formats, identifiers and operations. EDAM provides a controlled vocabulary for the description, in semantic terms, of things such as: web services (e.g. WSDL files), applications, tool collections and packages, work-benches and workflow software, databases and ontologies, XSD data schema and data objects, data syntax and file formats, web portals and pages, resource catalogues and documents (such as scientific publications).",
+  "homepage": "http://edamontology.org",
+  "repository": "https://github.com/edamontology/edamontology",
+  "download": "https://raw.githubusercontent.com/edamontology/edamontology/master/releases/EDAM.owl",
+  "formats": [
+   "OWL",
+   "OBO"
+  ],
+  "license": "CC BY-SA 4.0",
+  "ols": "edam",
+  "bioportal": "EDAM",
+  "bioregistry": "edam",
+  "publications": [
+   {
+    "title": "EDAM: an ontology of bioinformatics operations, types of data and identifiers, topics and formats",
+    "doi": "10.1093/bioinformatics/btt113",
+    "year": 2013
+   },
+   {
+    "title": "EDAM: the bioscientific data analysis ontology (update 2021)",
+    "doi": "10.7490/f1000research.1118900.1",
+    "year": 2021
+   }
+  ],
+  "tags": [
+   "bioinformatics",
+   "computer science",
+   "data acquisition",
+   "data analysis",
+   "data transformation",
+   "dataplant"
+  ],
+  "category": "life",
+  "kind": "ontology",
+  "domains": [
+   "computing"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/edam",
+   "page": "https://bioregistry.io/edam",
+   "retrievedAt": "2026-10-25T21:38:55.653Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "sio",
+  "acronym": "SIO",
+  "name": "Semanticscience Integrated Ontology",
+  "description": "The semanticscience integrated ontology (SIO) provides a simple, integrated upper level ontology (types, relations) for consistent knowledge representation across physical, processual and informational entities.",
+  "homepage": "https://github.com/micheldumontier/semanticscience",
+  "repository": "https://github.com/micheldumontier/semanticscience",
+  "download": "https://raw.githubusercontent.com/micheldumontier/semanticscience/master/ontology/sio/release/sio-release.owl",
+  "formats": [
+   "OWL"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "sio",
+  "bioportal": "SIO",
+  "bioregistry": "sio",
+  "publications": [
+   {
+    "title": "The Semanticscience Integrated Ontology (SIO) for biomedical research and knowledge discovery",
+    "doi": "10.1186/2041-1480-5-14",
+    "year": 2014
+   }
+  ],
+  "tags": [
+   "biology",
+   "classification",
+   "ess",
+   "knowledge representation",
+   "natural science",
+   "nfdi-matwerk"
+  ],
+  "category": "life",
+  "kind": "ontology",
+  "domains": [
+   "health",
+   "chemistry",
+   "computing"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/sio",
+   "page": "https://bioregistry.io/sio",
+   "retrievedAt": "2026-10-25T21:38:55.687Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "pr",
+  "acronym": "PR",
+  "name": "Protein Ontology",
+  "description": "The PRotein Ontology (PRO) has been designed to describe the relationships of proteins and protein evolutionary classes, to delineate the multiple protein forms of a gene locus (ontology for protein forms), and to interconnect existing ontologies.",
+  "homepage": "http://proconsortium.org",
+  "repository": "https://github.com/PROconsortium/PRoteinOntology",
+  "download": "http://purl.obolibrary.org/obo/pr.owl",
+  "formats": [
+   "OWL",
+   "OBO"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "pr",
+  "obo": "pr",
+  "bioportal": "PR",
+  "bioregistry": "pr",
+  "publications": [
+   {
+    "title": "Protein Ontology (PRO): enhancing and scaling up the representation of protein entities",
+    "doi": "10.1093/nar/gkw1075",
+    "year": 2016
+   },
+   {
+    "title": "Protein Ontology: a controlled structured network of protein entities",
+    "doi": "10.1093/nar/gkt1173",
+    "year": 2013
+   }
+  ],
+  "tags": [
+   "annotation",
+   "biocuration",
+   "biology",
+   "craniofacial phenotype",
+   "data analysis",
+   "disease phenotype"
+  ],
+  "category": "life",
+  "kind": "ontology",
+  "domains": [
+   "health"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/pr",
+   "page": "https://bioregistry.io/pr",
+   "retrievedAt": "2026-10-25T21:38:55.722Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "pato",
+  "acronym": "PATO",
+  "name": "Phenotype And Trait Ontology",
+  "description": "PATO is an ontology of phenotypic qualities, intended for use in a number of applications, primarily defining composite phenotypes and phenotype annotation.",
+  "homepage": "https://github.com/pato-ontology/pato/",
+  "repository": "https://github.com/pato-ontology/pato",
+  "download": "http://purl.obolibrary.org/obo/pato.owl",
+  "formats": [
+   "OWL",
+   "OBO",
+   "JSON"
+  ],
+  "license": "CC BY 3.0",
+  "ols": "pato",
+  "obo": "pato",
+  "bioportal": "PATO",
+  "bioregistry": "pato",
+  "publications": [
+   {
+    "title": "The anatomy of phenotype ontologies: principles, properties and applications",
+    "doi": "10.1093/bib/bbx035",
+    "year": 2018
+   },
+   {
+    "title": "Integrating phenotype ontologies across multiple species",
+    "doi": "10.1186/gb-2010-11-1-r2",
+    "year": 2010
+   }
+  ],
+  "tags": [
+   "biodiversity",
+   "biology",
+   "dataplant",
+   "earth sciences",
+   "ess",
+   "life sciences, biology"
+  ],
+  "category": "life",
+  "kind": "ontology",
+  "domains": [
+   "agri",
+   "health"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/pato",
+   "page": "https://bioregistry.io/pato",
+   "retrievedAt": "2026-10-25T21:38:55.794Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "eco",
+  "acronym": "ECO",
+  "name": "Evidence and Conclusion Ontology",
+  "description": "Evidence codes can be used to specify the type of supporting evidence for a piece of knowledge. This allows inference of a 'level of support' between an entity and an annotation made to an entity.",
+  "homepage": "https://www.evidenceontology.org",
+  "repository": "https://github.com/evidenceontology/evidenceontology",
+  "download": "http://purl.obolibrary.org/obo/eco.owl",
+  "formats": [
+   "OWL",
+   "OBO"
+  ],
+  "license": "CC0 1.0",
+  "ols": "eco",
+  "obo": "eco",
+  "bioportal": "ECO",
+  "bioregistry": "eco",
+  "publications": [
+   {
+    "title": "ECO: the Evidence and Conclusion Ontology, an update for 2022",
+    "doi": "10.1093/nar/gkab1025",
+    "year": 2022
+   },
+   {
+    "title": "ECO, the Evidence & Conclusion Ontology: community standard for evidence information",
+    "doi": "10.1093/nar/gky1036",
+    "year": 2019
+   }
+  ],
+  "tags": [
+   "assay",
+   "biocuration",
+   "computational biology",
+   "curated information",
+   "digital curation",
+   "evidence"
+  ],
+  "category": "life",
+  "kind": "ontology",
+  "domains": [
+   "health",
+   "agri"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/eco",
+   "page": "https://bioregistry.io/eco",
+   "retrievedAt": "2026-10-25T21:38:55.830Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "mondo",
+  "acronym": "MONDO",
+  "name": "Mondo Disease Ontology",
+  "description": "The Mondo Disease Ontology (Mondo) aims to harmonize disease definitions across the world.",
+  "homepage": "https://monarch-initiative.github.io/mondo",
+  "repository": "https://github.com/monarch-initiative/mondo",
+  "download": "http://purl.obolibrary.org/obo/mondo.owl",
+  "formats": [
+   "OWL",
+   "OBO",
+   "JSON"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "mondo",
+  "obo": "mondo",
+  "bioportal": "MONDO",
+  "bioregistry": "mondo",
+  "publications": [
+   {
+    "title": "The Monarch Initiative: an integrative data and analytic platform connecting phenotypes to genotypes across species",
+    "doi": "10.1093/nar/gkw1128",
+    "year": 2016
+   },
+   {
+    "title": "Mondo: Unifying diseases for the world, by the world",
+    "doi": "10.1101/2022.04.13.22273750",
+    "year": 2022
+   }
+  ],
+  "tags": [
+   "biocuration",
+   "health/disease",
+   "infectious disease medicine",
+   "medicine",
+   "obo",
+   "ontology"
+  ],
+  "category": "health",
+  "kind": "ontology",
+  "domains": [
+   "life",
+   "neuro"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/mondo",
+   "page": "https://bioregistry.io/mondo",
+   "retrievedAt": "2026-10-25T21:38:55.865Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "hp",
+  "acronym": "HP",
+  "name": "Human Phenotype Ontology",
+  "description": "The Human Phenotype Ontology (HPO) aims to provide a standardized vocabulary of phenotypic abnormalities encountered in human disease. Each term in the HPO describes a phenotypic abnormality, such as atrial septal defect. The HPO is currently being developed using the medical literature, Orphanet, DECIPHER, and OMIM.",
+  "homepage": "http://www.human-phenotype-ontology.org/",
+  "repository": "https://github.com/obophenotype/human-phenotype-ontology",
+  "download": "http://purl.obolibrary.org/obo/hp.owl",
+  "formats": [
+   "OWL",
+   "OBO",
+   "JSON"
+  ],
+  "license": "hpo",
+  "ols": "hp",
+  "obo": "hp",
+  "bioportal": "HP",
+  "bioregistry": "hp",
+  "publications": [
+   {
+    "title": "A resource for whole-body gene expression map of human tissues based on integration of single cell and bulk transcriptomics",
+    "doi": "10.1186/s13059-025-03616-4",
+    "year": 2025
+   },
+   {
+    "title": "The Human Phenotype Ontology in 2024: phenotypes around the world",
+    "doi": "10.1093/nar/gkad1005",
+    "year": 2024
+   }
+  ],
+  "tags": [
+   "biomedical science",
+   "disease phenotype",
+   "disorder",
+   "fair data spaces",
+   "genetics",
+   "genome/gene"
+  ],
+  "category": "health",
+  "kind": "ontology",
+  "domains": [
+   "life",
+   "neuro"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/hp",
+   "page": "https://bioregistry.io/hp",
+   "retrievedAt": "2026-10-25T21:38:55.900Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "doid",
+  "acronym": "DOID",
+  "name": "Human Disease Ontology",
+  "description": "The Disease Ontology has been developed as a standardized ontology for human disease with the purpose of providing the biomedical community with consistent, reusable and sustainable descriptions of human disease terms, phenotype characteristics and related medical vocabulary disease concepts.",
+  "homepage": "https://disease-ontology.org",
+  "repository": "https://github.com/DiseaseOntology/HumanDiseaseOntology",
+  "download": "http://purl.obolibrary.org/obo/doid.owl",
+  "formats": [
+   "OWL",
+   "OBO",
+   "JSON"
+  ],
+  "license": "CC0 1.0",
+  "ols": "doid",
+  "obo": "doid",
+  "bioportal": "DOID",
+  "bioregistry": "doid",
+  "publications": [
+   {
+    "title": "The DO-KB knowledgebase 2026 update: expanding programmatic and language access",
+    "doi": "10.1093/nar/gkaf1213",
+    "year": 2026
+   },
+   {
+    "title": "The DO-KB Knowledgebase: a 20-year journey developing the disease open science ecosystem",
+    "doi": "10.1093/nar/gkad1051",
+    "year": 2023
+   }
+  ],
+  "tags": [
+   "biomedical science",
+   "classification",
+   "disease",
+   "disease course",
+   "disease phenotype",
+   "genetic disorder"
+  ],
+  "category": "health",
+  "kind": "ontology",
+  "domains": [
+   "life"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/doid",
+   "page": "https://bioregistry.io/doid",
+   "retrievedAt": "2026-10-25T21:38:55.937Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "ogms",
+  "acronym": "OGMS",
+  "name": "Ontology for General Medical Science",
+  "description": "The Ontology for General Medical Science (OGMS) is an ontology of entities involved in a clinical encounter. OGMS includes very general terms that are used across medical disciplines, including: 'disease', 'disorder', 'disease course', 'diagnosis', 'patient', and 'healthcare provider'. OGMS uses the Basic Formal Ontology (BFO) as an upper-level ontology. The scope of OGMS is restricted to humans, but many terms can be applied to a variety of organisms.",
+  "homepage": "https://github.com/OGMS/ogms",
+  "repository": "https://github.com/OGMS/ogms",
+  "download": "http://purl.obolibrary.org/obo/ogms.owl",
+  "formats": [
+   "OWL",
+   "OBO"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "ogms",
+  "obo": "ogms",
+  "bioportal": "OGMS",
+  "bioregistry": "ogms",
+  "publications": [
+   {
+    "title": "The neurological disease ontology",
+    "doi": "10.1186/2041-1480-4-42",
+    "year": 2013
+   }
+  ],
+  "tags": [
+   "biomedical science",
+   "cancer",
+   "diagnosis",
+   "disease",
+   "disease phenotype",
+   "medicine"
+  ],
+  "category": "health",
+  "kind": "ontology",
+  "domains": [
+   "foundational"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/ogms",
+   "page": "https://bioregistry.io/ogms",
+   "retrievedAt": "2026-10-25T21:38:55.970Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "vo",
+  "acronym": "VO",
+  "name": "Vaccine Ontology",
+  "description": "The Vaccine Ontology (VO) is a community-based biomedical ontology in the domain of vaccines and vaccination. VO aims to standardize vaccine types and annotations, integrate various vaccine data, and support computer-assisted reasoning. The VO supports basic vaccine R&D and clinical vaccine usage. VO is being developed as a community-based ontology with support and collaborations from the vaccine and bio-ontology communities.",
+  "homepage": "https://violinet.org/vaccineontology",
+  "repository": "https://github.com/vaccineontology/VO",
+  "download": "http://purl.obolibrary.org/obo/vo.owl",
+  "formats": [
+   "OWL"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "vo",
+  "obo": "vo",
+  "bioportal": "VO",
+  "bioregistry": "vo",
+  "publications": [
+   {
+    "title": "Ontology-based Precision Vaccinology for Deep Mechanism Understanding and Precision Vaccine Development",
+    "doi": "10.2174/1381612826666201125112131",
+    "year": 2021
+   },
+   {
+    "title": "Network-based analysis of vaccine-related associations reveals consistent knowledge with the vaccine ontology",
+    "doi": "10.1186/2041-1480-4-33",
+    "year": 2013
+   }
+  ],
+  "tags": [
+   "biological_process",
+   "biomedical science",
+   "clinical studies",
+   "immunology",
+   "infection process",
+   "infectious disease medicine"
+  ],
+  "category": "health",
+  "kind": "ontology",
+  "domains": [
+   "life"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/vo",
+   "page": "https://bioregistry.io/vo",
+   "retrievedAt": "2026-10-25T21:38:56.043Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "snomedct",
+  "acronym": "SNOMED CT",
+  "name": "Systematized Nomenclature of Medicine - Clinical Terms",
+  "description": "SNOMED CT (Systematized Nomenclature of Medicine -- Clinical Terms), is a systematically organized computer processable collection of medical terminology covering most areas of clinical information such as diseases, findings, procedures, microorganisms, pharmaceuticals, etc.",
+  "homepage": "https://browser.ihtsdotools.org/",
+  "license": "SNOMED CT Affiliate Licence (proprietary)",
+  "ols": "snomed",
+  "bioportal": "SNOMEDCT",
+  "bioregistry": "snomedct",
+  "publications": [
+   {
+    "title": "Standardized nursing language in the systematized nomenclature of medicine clinical terms: A cross-mapping validation method",
+    "doi": "10.1097/00024665-200609000-00011",
+    "year": 2006
+   }
+  ],
+  "tags": [
+   "biomedical science",
+   "health science",
+   "medicine",
+   "ontology",
+   "preclinical studies"
+  ],
+  "category": "health",
+  "kind": "vocabulary",
+  "usedBy": [],
+  "formats": [
+   "RF2"
+  ],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/snomedct",
+   "page": "https://bioregistry.io/snomedct",
+   "retrievedAt": "2026-10-25T21:38:56.078Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "ols",
+    "bioportal",
+    "publications",
+    "tags"
+   ],
+   "overrides": {
+    "kind": "vocabulary",
+    "formats": [
+     "RF2"
+    ],
+    "license": "SNOMED CT Affiliate Licence (proprietary)",
+    "acronym": "SNOMED CT"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "loinc",
+  "acronym": "LOINC",
+  "name": "Logical Observation Identifiers Names and Codes",
+  "description": "The international standard for identifying health measurements, observations, and documents.",
+  "homepage": "https://loinc.org",
+  "download": "http://aber-owl.net/media/ontologies/LOINC/1/loinc.owl",
+  "formats": [
+   "CSV"
+  ],
+  "license": "https://uts.nlm.nih.gov/uts/assets/LicenseAgreement.pdf",
+  "bioportal": "LOINC",
+  "bioregistry": "loinc",
+  "publications": [
+   {
+    "title": "Combining laboratory data sets from multiple institutions using the logical observation identifier names and codes (LOINC)",
+    "doi": "10.1016/s1386-5056(98)00089-6",
+    "year": 1998
+   },
+   {
+    "title": "Supporting interoperability of genetic data with LOINC",
+    "doi": "10.1093/jamia/ocu012",
+    "year": 2015
+   }
+  ],
+  "tags": [
+   "assay",
+   "biomedical science",
+   "diagnosis",
+   "genetic disorder",
+   "genetic polymorphism",
+   "life science"
+  ],
+  "category": "health",
+  "kind": "vocabulary",
+  "domains": [
+   "life"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/loinc",
+   "page": "https://bioregistry.io/loinc",
+   "retrievedAt": "2026-10-25T21:38:56.109Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "download",
+    "license",
+    "bioportal",
+    "publications",
+    "tags"
+   ],
+   "overrides": {
+    "kind": "vocabulary",
+    "formats": [
+     "CSV"
+    ],
+    "acronym": "LOINC"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "icd11",
+  "acronym": "ICD-11",
+  "name": "International Classification of Diseases, 11th Revision (Foundation Component)",
+  "description": "The ICD-11 Foundation is the comprehensive base layer of the International Classification of Diseases, encompassing all diagnostic concepts, definitions, and semantic relationships, designed for flexibility and adaptability across various use cases, including research, ontology development, and detailed health data analysis.",
+  "homepage": "https://icd.who.int",
+  "download": "https://w3id.org/biopragmatics/resources/icd11/icd11.owl",
+  "formats": [
+   "JSON API"
+  ],
+  "license": "CC-BY-ND-3.0-IGO",
+  "bioregistry": "icd11",
+  "publications": [
+   {
+    "title": "ICD-11",
+    "doi": "10.1016/s0140-6736(19)31205-x",
+    "year": 2019
+   }
+  ],
+  "tags": [
+   "biomedical science",
+   "diagnosis",
+   "disease",
+   "electronic health record",
+   "epidemiology",
+   "global health"
+  ],
+  "category": "health",
+  "kind": "vocabulary",
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/icd11",
+   "page": "https://bioregistry.io/icd11",
+   "retrievedAt": "2026-10-25T21:38:56.139Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "download",
+    "license",
+    "publications",
+    "tags"
+   ],
+   "overrides": {
+    "kind": "vocabulary",
+    "formats": [
+     "JSON API"
+    ],
+    "acronym": "ICD-11"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "omop",
+  "acronym": "OMOP CDM",
+  "name": "Observational Medical Outcomes Partnership",
+  "description": "The OMOP Common Data Model allows for the systematic analysis of disparate observational databases. The concept behind this approach is to transform data contained within those databases into a common format (data model) as well as a common representation (terminologies, vocabularies, coding schemes), and then perform systematic analyses using a library of standard analytic routines that have been written based on the common format.",
+  "homepage": "https://www.ohdsi.org/data-standardization/the-common-data-model",
+  "bioregistry": "omop",
+  "category": "health",
+  "kind": "data-standard",
+  "domains": [
+   "computing"
+  ],
+  "usedBy": [],
+  "formats": [
+   "SQL DDL"
+  ],
+  "repository": "https://github.com/OHDSI/CommonDataModel",
+  "publications": [],
+  "tags": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/omop",
+   "page": "https://bioregistry.io/omop",
+   "retrievedAt": "2026-10-25T21:38:56.171Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage"
+   ],
+   "overrides": {
+    "kind": "data-standard",
+    "formats": [
+     "SQL DDL"
+    ],
+    "repository": "https://github.com/OHDSI/CommonDataModel",
+    "acronym": "OMOP CDM"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "nbo",
+  "acronym": "NBO",
+  "name": "Neuro Behavior Ontology",
+  "description": "An ontology of human and animal behaviours and behavioural phenotypes",
+  "homepage": "https://github.com/obo-behavior/behavior-ontology/",
+  "repository": "https://github.com/obo-behavior/behavior-ontology",
+  "download": "http://purl.obolibrary.org/obo/nbo.owl",
+  "formats": [
+   "OWL",
+   "OBO"
+  ],
+  "license": "CC BY 3.0",
+  "ols": "nbo",
+  "obo": "nbo",
+  "bioportal": "NBO",
+  "bioregistry": "nbo",
+  "publications": [
+   {
+    "title": "Analyzing gene expression data in mice with the Neuro Behavior Ontology",
+    "doi": "10.1007/s00335-013-9481-z",
+    "year": 2013
+   },
+   {
+    "title": "The neurobehavior ontology: an ontology for annotation and integration of behavior and behavioral phenotypes",
+    "doi": "10.1016/b978-0-12-388408-4.00004-6",
+    "year": 2012
+   }
+  ],
+  "tags": [
+   "behavior",
+   "obo",
+   "ontology",
+   "phenotype",
+   "social and behavioural science",
+   "systemic neuroscience"
+  ],
+  "category": "neuro",
+  "kind": "ontology",
+  "domains": [
+   "life"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/nbo",
+   "page": "https://bioregistry.io/nbo",
+   "retrievedAt": "2026-10-25T21:38:56.205Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "chebi",
+  "acronym": "CHEBI",
+  "name": "Chemical Entities of Biological Interest",
+  "description": "Chemical Entities of Biological Interest (ChEBI) is a freely available dictionary of molecular entities focused on 'small' chemical compounds.",
+  "homepage": "http://www.ebi.ac.uk/chebi",
+  "repository": "https://github.com/ebi-chebi/ChEBI",
+  "download": "http://purl.obolibrary.org/obo/chebi.owl",
+  "formats": [
+   "OWL",
+   "OBO",
+   "JSON"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "chebi",
+  "obo": "chebi",
+  "bioportal": "CHEBI",
+  "bioregistry": "chebi",
+  "publications": [
+   {
+    "title": "ChEBI in 2016: Improved services and an expanding collection of metabolites",
+    "doi": "10.1093/nar/gkv1031",
+    "year": 2015
+   },
+   {
+    "title": "The ChEBI reference database and ontology for biologically relevant chemistry: enhancements for 2013",
+    "doi": "10.1093/nar/gks1146",
+    "year": 2012
+   }
+  ],
+  "tags": [
+   "biochemistry",
+   "carbohydrate",
+   "chemical",
+   "chemical biology",
+   "chemical compound",
+   "chemical entity"
+  ],
+  "category": "chemistry",
+  "kind": "ontology",
+  "domains": [
+   "life",
+   "health",
+   "agri",
+   "earth"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/chebi",
+   "page": "https://bioregistry.io/chebi",
+   "retrievedAt": "2026-10-25T21:38:56.243Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "chmo",
+  "acronym": "CHMO",
+  "name": "Chemical Methods Ontology",
+  "description": "CHMO, the chemical methods ontology, describes methods used to",
+  "homepage": "https://github.com/rsc-ontologies/rsc-cmo",
+  "repository": "https://github.com/rsc-ontologies/rsc-cmo",
+  "download": "http://purl.obolibrary.org/obo/chmo.owl",
+  "formats": [
+   "OWL",
+   "OBO"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "chmo",
+  "obo": "chmo",
+  "bioportal": "CHMO",
+  "bioregistry": "chmo",
+  "tags": [
+   "assay",
+   "chemical biology",
+   "chemical entity",
+   "chemistry",
+   "chromatography",
+   "dataplant"
+  ],
+  "category": "chemistry",
+  "kind": "ontology",
+  "domains": [
+   "physical"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/chmo",
+   "page": "https://bioregistry.io/chmo",
+   "retrievedAt": "2026-10-25T21:38:56.274Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "emmo",
+  "acronym": "EMMO",
+  "name": "Elementary Multiperspective Material Ontology",
+  "description": "EMMO is a multidisciplinary effort to develop a standard representational framework (the ontology) for applied sciences. It is based on physics, analytical philosophy and information and communication technologies. It has been instigated by materials science to provide a framework for knowledge capture that is consistent with scientific principles and methodologies. (from GitHub)",
+  "homepage": "https://emmo-repo.github.io",
+  "repository": "https://github.com/emmo-repo/EMMO",
+  "download": "https://raw.githubusercontent.com/emmo-repo/EMMO/master/emmo.ttl",
+  "formats": [
+   "OWL",
+   "Turtle"
+  ],
+  "license": "CC BY 4.0",
+  "bioregistry": "emmo",
+  "tags": [
+   "communication science",
+   "emmo",
+   "industry",
+   "material science",
+   "nfdi-matwerk",
+   "nfdi4cat"
+  ],
+  "category": "chemistry",
+  "kind": "ontology",
+  "domains": [
+   "engineering",
+   "physical"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/emmo",
+   "page": "https://bioregistry.io/emmo",
+   "retrievedAt": "2026-10-25T21:38:56.373Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "license",
+    "tags"
+   ],
+   "overrides": {
+    "formats": [
+     "OWL",
+     "Turtle"
+    ],
+    "acronym": "EMMO"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "classyfire",
+  "acronym": "ClassyFire",
+  "name": "ClassyFire",
+  "description": "ClassyFire is a web-based application for automated structural classification of chemical entities. This application uses a rule-based approach that relies on a comprehensible, comprehensive, and computable chemical taxonomy. ClassyFire provides a hierarchical chemical classification of chemical entities (mostly small molecules and short peptide sequences), as well as a structure-based textual description, based on a chemical taxonomy named ChemOnt, which covers 4825 chemical classes of organic and inorganic compounds.",
+  "homepage": "http://classyfire.wishartlab.com/",
+  "download": "http://classyfire.wishartlab.com/system/downloads/1_0/chemont/ChemOnt_2_1.obo.zip",
+  "formats": [
+   "OBO",
+   "JSON API"
+  ],
+  "bioregistry": "classyfire",
+  "tags": [
+   "ontology"
+  ],
+  "category": "chemistry",
+  "kind": "vocabulary",
+  "domains": [
+   "life"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/classyfire",
+   "page": "https://bioregistry.io/classyfire",
+   "retrievedAt": "2026-10-25T21:38:56.405Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "download",
+    "tags"
+   ],
+   "overrides": {
+    "kind": "vocabulary",
+    "formats": [
+     "OBO",
+     "JSON API"
+    ],
+    "acronym": "ClassyFire"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "envo",
+  "acronym": "ENVO",
+  "name": "Environment Ontology",
+  "description": "The Environment Ontology is a resource and research target for the semantically controlled description of environmental entities. The ontology's initial aim was the representation of the biomes, environmental features, and environmental materials pertinent to genomic and microbiome-related investigations.",
+  "homepage": "http://environmentontology.org/",
+  "repository": "https://github.com/EnvironmentOntology/envo",
+  "download": "http://purl.obolibrary.org/obo/envo.owl",
+  "formats": [
+   "OWL",
+   "OBO",
+   "JSON"
+  ],
+  "license": "CC0 1.0",
+  "ols": "envo",
+  "obo": "envo",
+  "bioportal": "ENVO",
+  "bioregistry": "envo",
+  "publications": [
+   {
+    "title": "The environment ontology in 2016: bridging domains with increased scope, semantic density, and interoperation",
+    "doi": "10.1186/s13326-016-0097-6",
+    "year": 2016
+   },
+   {
+    "title": "EXTRACT: interactive extraction of environment metadata and term suggestion for metagenomic sample annotation",
+    "doi": "10.1093/database/baw005",
+    "year": 2016
+   }
+  ],
+  "tags": [
+   "dataplant",
+   "earth sciences",
+   "ecology",
+   "environmental material",
+   "environmental science",
+   "epidemiology"
+  ],
+  "category": "earth",
+  "kind": "ontology",
+  "domains": [
+   "life",
+   "agri"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/envo",
+   "page": "https://bioregistry.io/envo",
+   "retrievedAt": "2026-10-25T21:38:56.438Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "sweet",
+  "acronym": "SWEET",
+  "name": "Semantic Web for Earth and Environment Technology Ontology",
+  "description": "The Semantic Web for Earth and Environmental Terminology is a mature foundational ontology that contains over 6000 concepts organized in 200 ontologies represented in OWL. Top level concepts include Representation (math, space, science, time, data), Realm (Ocean, Land Surface, Terrestrial Hydroshere, Atmosphere, etc.), Phenomena (macro-scale ecological and physical), Processes (micro-scale physical, biological, chemical, and mathematical), Human Activities (Decision, Commerce, Jurisdiction, Environmental, Research).",
+  "homepage": "http://sweetontology.net",
+  "repository": "https://github.com/ESIPFed/sweet",
+  "download": "https://raw.githubusercontent.com/ESIPFed/sweet/master/src/sweetAll.ttl",
+  "formats": [
+   "OWL",
+   "Turtle"
+  ],
+  "license": "CC0 1.0",
+  "bioportal": "SWEET",
+  "bioregistry": "sweet",
+  "tags": [
+   "earth science",
+   "earth sciences",
+   "environmental science",
+   "ess",
+   "geography",
+   "geology"
+  ],
+  "category": "earth",
+  "kind": "ontology",
+  "domains": [
+   "physical"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/sweet",
+   "page": "https://bioregistry.io/sweet",
+   "retrievedAt": "2026-10-25T21:38:56.469Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "license",
+    "bioportal",
+    "tags"
+   ],
+   "overrides": {
+    "download": "https://raw.githubusercontent.com/ESIPFed/sweet/master/src/sweetAll.ttl",
+    "repository": "https://github.com/ESIPFed/sweet",
+    "formats": [
+     "OWL",
+     "Turtle"
+    ],
+    "kind": "ontology",
+    "acronym": "SWEET"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "geosparql",
+  "acronym": "GeoSPARQL",
+  "name": "GeoSPARQL",
+  "description": "The OGC GeoSPARQL standard supports representing and querying geospatial data on the Semantic Web. GeoSPARQL defines a vocabulary for representing geospatial data in RDF, and it defines an extension to the SPARQL query language for processing geospatial data. In addition, GeoSPARQL is designed to accommodate systems based on qualitative spatial reasoning and systems based on quantitative spatial computations.",
+  "homepage": "http://www.opengis.net/ont/geosparql",
+  "download": "http://www.opengis.net/ont/geosparql",
+  "formats": [
+   "OWL",
+   "Turtle"
+  ],
+  "license": "Apache-2.0",
+  "bioportal": "GEOSPARQL",
+  "bioregistry": "geosparql",
+  "tags": [
+   "earth sciences",
+   "ess",
+   "fair data spaces",
+   "nfdi4ing",
+   "ontology"
+  ],
+  "category": "earth",
+  "kind": "ontology",
+  "domains": [
+   "engineering",
+   "humanities"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/geosparql",
+   "page": "https://bioregistry.io/geosparql",
+   "retrievedAt": "2026-10-25T21:38:56.500Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "license",
+    "bioportal",
+    "tags"
+   ],
+   "overrides": {
+    "download": "http://www.opengis.net/ont/geosparql",
+    "formats": [
+     "OWL",
+     "Turtle"
+    ],
+    "kind": "ontology",
+    "acronym": "GeoSPARQL"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "sosa",
+  "acronym": "SOSA",
+  "name": "Sensor, Observation, Sample, and Actuator Ontology",
+  "description": "This ontology is based on the SSN Ontology by the W3C Semantic Sensor Networks Incubator Group (SSN-XG), together with considerations from the W3C/OGC Spatial Data on the Web Working Group.",
+  "homepage": "https://www.w3.org/TR/vocab-ssn",
+  "repository": "https://github.com/w3c/sdw",
+  "download": "http://www.w3.org/ns/sosa/",
+  "formats": [
+   "OWL",
+   "Turtle"
+  ],
+  "license": "http://www.w3.org/Consortium/Legal/2015/copyright-software-and-document",
+  "bioregistry": "sosa",
+  "publications": [
+   {
+    "title": "SOSA: A lightweight ontology for sensors, observations, samples, and actuators",
+    "doi": "10.1016/j.websem.2018.06.003",
+    "year": 2019
+   }
+  ],
+  "tags": [
+   "engineering",
+   "environment",
+   "ess",
+   "iot",
+   "nfdi4chem",
+   "nfdi4ing"
+  ],
+  "category": "earth",
+  "kind": "ontology",
+  "domains": [
+   "engineering",
+   "agri",
+   "physical"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/sosa",
+   "page": "https://bioregistry.io/sosa",
+   "retrievedAt": "2026-10-25T21:38:56.531Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "license",
+    "publications",
+    "tags"
+   ],
+   "overrides": {
+    "download": "http://www.w3.org/ns/sosa/",
+    "formats": [
+     "OWL",
+     "Turtle"
+    ],
+    "kind": "ontology",
+    "acronym": "SOSA"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "ssn",
+  "acronym": "SSN",
+  "name": "Semantic Sensor Network Ontology",
+  "description": "This ontology describes sensors, actuators and observations, and related concepts. It does not describe domain concepts, time, locations, etc. these are intended to be included from other ontologies via OWL imports.",
+  "homepage": "https://www.w3.org/TR/vocab-ssn",
+  "repository": "https://github.com/w3c/sdw-sosa-ssn",
+  "download": "http://www.w3.org/ns/ssn/",
+  "formats": [
+   "OWL",
+   "Turtle"
+  ],
+  "license": "http://www.w3.org/Consortium/Legal/2015/copyright-software-and-document",
+  "bioportal": "SSN",
+  "bioregistry": "ssn",
+  "publications": [
+   {
+    "title": "The Modular SSN Ontology: A Joint W3C and OGC Standard Specifying the Semantics of Sensors, Observations, Sampling, and Actuation",
+    "doi": "10.3233/sw-180320",
+    "year": 2019
+   },
+   {
+    "title": "SOSA: A lightweight ontology for sensors, observations, samples, and actuators",
+    "doi": "10.1016/j.websem.2018.06.003",
+    "year": 2018
+   }
+  ],
+  "tags": [
+   "engineering",
+   "ess",
+   "imaging",
+   "iot",
+   "methods",
+   "monitoring"
+  ],
+  "category": "earth",
+  "kind": "ontology",
+  "domains": [
+   "engineering"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/ssn",
+   "page": "https://bioregistry.io/ssn",
+   "retrievedAt": "2026-10-25T21:38:56.562Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "license",
+    "bioportal",
+    "publications",
+    "tags"
+   ],
+   "overrides": {
+    "download": "http://www.w3.org/ns/ssn/",
+    "formats": [
+     "OWL",
+     "Turtle"
+    ],
+    "kind": "ontology",
+    "acronym": "SSN"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "agrovoc",
+  "acronym": "AGROVOC",
+  "name": "AGROVOC",
+  "description": "AGROVOC is a multilingual and controlled vocabulary designed to cover concepts and terminology under FAO's areas of interest. It is the largest Linked Open Data set about agriculture available for public use and its greatest impact is through providing the access and visibility of data across domains and languages.",
+  "homepage": "https://data.apps.fao.org/catalog/organization/agrovoc",
+  "download": "https://agrovoc.fao.org/latestAgrovoc/agrovoc_core.rdf.zip",
+  "formats": [
+   "RDF",
+   "SKOS"
+  ],
+  "license": "CC BY 4.0",
+  "bioregistry": "agrovoc",
+  "publications": [
+   {
+    "title": "AGROVOC",
+    "doi": "10.4060/cb2838en",
+    "year": 2021
+   },
+   {
+    "title": "How Agricultural Digital Innovation Can Benefit from Semantics: The Case of the AGROVOC Multilingual Thesaurus",
+    "doi": "10.3390/engproc2021009017",
+    "year": 2021
+   }
+  ],
+  "tags": [
+   "agricultural products",
+   "agriculture",
+   "agronomy",
+   "aquaculture",
+   "botany",
+   "climate"
+  ],
+  "category": "agri",
+  "kind": "vocabulary",
+  "domains": [
+   "earth",
+   "humanities"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/agrovoc",
+   "page": "https://bioregistry.io/agrovoc",
+   "retrievedAt": "2026-10-25T21:38:56.594Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "download",
+    "license",
+    "publications",
+    "tags"
+   ],
+   "overrides": {
+    "kind": "vocabulary",
+    "formats": [
+     "RDF",
+     "SKOS"
+    ],
+    "acronym": "AGROVOC"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "po",
+  "acronym": "PO",
+  "name": "Plant Ontology",
+  "description": "The Plant Ontology is a structured vocabulary and database resource that links plant anatomy, morphology and growth and development to plant genomics data.",
+  "homepage": "http://browser.planteome.org/amigo",
+  "repository": "https://github.com/Planteome/plant-ontology",
+  "download": "http://purl.obolibrary.org/obo/po.owl",
+  "formats": [
+   "OWL",
+   "OBO"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "po",
+  "obo": "po",
+  "bioportal": "PO",
+  "bioregistry": "po",
+  "publications": [
+   {
+    "title": "The Planteome database: an integrated resource for reference ontologies, plant genomics and phenomics",
+    "doi": "10.1093/nar/gkx1152",
+    "year": 2018
+   },
+   {
+    "title": "The Plant Ontology: A Tool for Plant Genomics",
+    "doi": "10.1007/978-1-4939-3167-5_5",
+    "year": 2016
+   }
+  ],
+  "tags": [
+   "botany",
+   "classification",
+   "dataplant",
+   "earth sciences",
+   "ess",
+   "expression data"
+  ],
+  "category": "agri",
+  "kind": "ontology",
+  "domains": [
+   "life"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/po",
+   "page": "https://bioregistry.io/po",
+   "retrievedAt": "2026-10-25T21:38:56.633Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "to",
+  "acronym": "TO",
+  "name": "Plant Trait Ontology",
+  "description": "A controlled vocabulary to describe phenotypic traits in plants.",
+  "homepage": "http://browser.planteome.org/amigo",
+  "repository": "https://github.com/Planteome/plant-trait-ontology",
+  "download": "http://purl.obolibrary.org/obo/to.owl",
+  "formats": [
+   "OWL",
+   "OBO"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "to",
+  "obo": "to",
+  "bioportal": "PTO",
+  "bioregistry": "to",
+  "publications": [
+   {
+    "title": "The Planteome database: an integrated resource for reference ontologies, plant genomics and phenomics",
+    "doi": "10.1093/nar/gkx1152",
+    "year": 2018
+   },
+   {
+    "title": "Planteome 2024 Update: Reference Ontologies and Knowledgebase for Plant Biology",
+    "doi": "10.1093/nar/gkad1028",
+    "year": 2024
+   }
+  ],
+  "tags": [
+   "botany",
+   "dataplant",
+   "earth sciences",
+   "ess",
+   "life cycle",
+   "obo"
+  ],
+  "category": "agri",
+  "kind": "ontology",
+  "domains": [
+   "life"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/to",
+   "page": "https://bioregistry.io/to",
+   "retrievedAt": "2026-10-25T21:38:56.666Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "foodon",
+  "acronym": "FOODON",
+  "name": "The Food Ontology",
+  "description": "FoodOn is a comprehensive and easily accessible global farm-to-fork ontology about food that accurately and consistently describes foods commonly known in cultures from around the world. It is a consortium-driven project built to interoperate with the The Open Biological and Biomedical Ontology Foundry library of ontologies.",
+  "homepage": "https://foodon.org/",
+  "repository": "https://github.com/FoodOntology/foodon",
+  "download": "http://purl.obolibrary.org/obo/foodon.owl",
+  "formats": [
+   "OWL",
+   "OBO"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "foodon",
+  "obo": "foodon",
+  "bioportal": "FOODON",
+  "bioregistry": "foodon",
+  "publications": [
+   {
+    "title": "FoodOn: a harmonized food ontology to increase global food traceability, quality control and data integration",
+    "doi": "10.1038/s41538-018-0032-6",
+    "year": 2018
+   },
+   {
+    "title": "Context Is Everything: Harmonization of Critical Food Microbiology Descriptors and Metadata for Improved Food Safety and Surveillance",
+    "doi": "10.3389/fmicb.2017.01068",
+    "year": 2017
+   }
+  ],
+  "tags": [
+   "agriculture",
+   "botany",
+   "disease",
+   "environmental science",
+   "food",
+   "medicine"
+  ],
+  "category": "agri",
+  "kind": "ontology",
+  "domains": [
+   "health",
+   "life"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/foodon",
+   "page": "https://bioregistry.io/foodon",
+   "retrievedAt": "2026-10-25T21:38:56.698Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "peco",
+  "acronym": "PECO",
+  "name": "Plant Experimental Conditions Ontology",
+  "description": "A structured, controlled vocabulary which describes the treatments, growing conditions, and/or study types used in plant biology experiments.",
+  "homepage": "http://planteome.org/",
+  "repository": "https://github.com/Planteome/plant-experimental-conditions-ontology",
+  "download": "http://purl.obolibrary.org/obo/peco.owl",
+  "formats": [
+   "OWL",
+   "OBO"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "peco",
+  "obo": "peco",
+  "bioportal": "PECO",
+  "bioregistry": "peco",
+  "publications": [
+   {
+    "title": "The Planteome database: an integrated resource for reference ontologies, plant genomics and phenomics",
+    "doi": "10.1093/nar/gkx1152",
+    "year": 2018
+   }
+  ],
+  "tags": [
+   "botany",
+   "dataplant",
+   "experimental condition",
+   "experimental measurement",
+   "experimentally determined",
+   "life sciences, biology"
+  ],
+  "category": "agri",
+  "kind": "ontology",
+  "domains": [
+   "life"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/peco",
+   "page": "https://bioregistry.io/peco",
+   "retrievedAt": "2026-10-25T21:38:56.734Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "ppo",
+  "acronym": "PPO",
+  "name": "Plant Phenology Ontology",
+  "description": "An ontology for describing the phenology of individual plants and populations of plants, and for integrating plant phenological data across sources and scales.",
+  "homepage": "https://github.com/PlantPhenoOntology/PPO",
+  "repository": "https://github.com/PlantPhenoOntology/PPO",
+  "download": "http://purl.obolibrary.org/obo/ppo.owl",
+  "formats": [
+   "OWL"
+  ],
+  "license": "CC BY 3.0",
+  "ols": "ppo",
+  "obo": "ppo",
+  "bioportal": "PPO",
+  "bioregistry": "ppo",
+  "publications": [
+   {
+    "title": "The Plant Phenology Ontology: A New Informatics Resource for Large-Scale Integration of Plant Phenology Data",
+    "doi": "10.3389/fpls.2018.00517",
+    "year": 2018
+   }
+  ],
+  "tags": [
+   "botany",
+   "dataplant",
+   "life cycle",
+   "life sciences, biology",
+   "obo",
+   "ontology"
+  ],
+  "category": "agri",
+  "kind": "ontology",
+  "domains": [
+   "earth"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/ppo",
+   "page": "https://bioregistry.io/ppo",
+   "retrievedAt": "2026-10-25T21:38:56.766Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "atol",
+  "acronym": "atol",
+  "name": "Animal Trait Ontology for Livestock",
+  "description": "ATOL (Animal Trait Ontology for Livestock) is an ontology of characteristics defining phenotypes of livestock in their environment. ATOL aims to: provide a reference ontology of phenotypic traits of farm animals for the international scientific and educational - communities, farmers, etc.; deliver this reference ontology in a language which can be used by computers in order to support database management, semantic analysis and modeling; represent traits as generic as possible for livestock vertebrates;",
+  "homepage": "http://www.atol-ontology.com",
+  "download": "http://sicpa-web.cati.inrae.fr/ontologies/visualisation/ontologie/atol/creation_fichier_owl.php?filename=atol.owl",
+  "formats": [
+   "OWL"
+  ],
+  "license": "CC BY 4.0",
+  "bioportal": "ATOL",
+  "bioregistry": "atol",
+  "tags": [
+   "agriculture",
+   "animal husbandry",
+   "life science",
+   "livestock",
+   "ontology",
+   "phenotype"
+  ],
+  "category": "agri",
+  "kind": "ontology",
+  "domains": [
+   "life"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/atol",
+   "page": "https://bioregistry.io/atol",
+   "retrievedAt": "2026-10-25T21:38:56.796Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "download",
+    "formats",
+    "license",
+    "bioportal",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "co-320",
+  "acronym": "CO_320",
+  "name": "Rice Ontology",
+  "description": "Reference Plant Ontologies are being developed in the context of the Planteome project and are being integrated with the Crop Ontology, which provides harmonized breeders’ trait names, measurement methods, scales and standard variables for many crops. The IBP Rice Trait Ontology is one of these reference plant ontologies integrated within the Crop Ontology. Based on SES, Rice Descriptor and IRIS DB.",
+  "homepage": "http://www.cropontology.org/",
+  "repository": "https://github.com/bioversity/Crop-Ontology",
+  "download": "http://cropontology.org/rdf/CO_320.owl",
+  "formats": [
+   "OBO",
+   "JSON API"
+  ],
+  "license": "CC BY 4.0",
+  "bioregistry": "co_320",
+  "tags": [
+   "agriculture",
+   "botany",
+   "food",
+   "life science",
+   "ontology",
+   "phenotype"
+  ],
+  "category": "agri",
+  "kind": "vocabulary",
+  "domains": [
+   "life"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/co_320",
+   "page": "https://bioregistry.io/co_320",
+   "retrievedAt": "2026-10-25T21:38:56.841Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "license",
+    "tags"
+   ],
+   "overrides": {
+    "kind": "vocabulary",
+    "formats": [
+     "OBO",
+     "JSON API"
+    ],
+    "acronym": "CO_320"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "qudt",
+  "acronym": "QUDT",
+  "name": "Quantities, Units, Dimensions, and Types Ontology",
+  "description": "Ontologies that aim to provide semantic specifications for units of measure, quantity kind, dimensions and data types.",
+  "homepage": "https://qudt.org",
+  "repository": "https://github.com/qudt/qudt-public-repo",
+  "download": "http://qudt.org/schema/qudt/",
+  "formats": [
+   "OWL",
+   "Turtle"
+  ],
+  "license": "CC BY 4.0",
+  "bioportal": "QUDT",
+  "bioregistry": "qudt",
+  "tags": [
+   "experimental measurement",
+   "mardi",
+   "measurement systems",
+   "methods",
+   "nfdi4energy",
+   "nfdi4ing"
+  ],
+  "category": "physical",
+  "kind": "ontology",
+  "domains": [
+   "engineering",
+   "earth",
+   "chemistry",
+   "life"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/qudt",
+   "page": "https://bioregistry.io/qudt",
+   "retrievedAt": "2026-10-25T21:38:56.873Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "license",
+    "bioportal",
+    "tags"
+   ],
+   "overrides": {
+    "download": "http://qudt.org/schema/qudt/",
+    "formats": [
+     "OWL",
+     "Turtle"
+    ],
+    "kind": "ontology",
+    "acronym": "QUDT"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "om",
+  "acronym": "OM",
+  "name": "Ontology of units of Measure",
+  "description": "The Ontology of units of Measure (OM) 2.0 models concepts and relations important to scientific research. It has a strong focus on units, quantities, measures, and dimensions.",
+  "homepage": "https://github.com/HajoRijgersberg/OM",
+  "repository": "https://github.com/HajoRijgersberg/OM",
+  "download": "https://raw.githubusercontent.com/HajoRijgersberg/OM/master/om-2.0.rdf",
+  "formats": [
+   "OWL",
+   "RDF"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "om",
+  "bioportal": "OM",
+  "bioregistry": "om",
+  "tags": [
+   "earth sciences",
+   "ess",
+   "life sciences, biology",
+   "nfdi-matwerk",
+   "nfdi4cat",
+   "nfdi4chem"
+  ],
+  "category": "physical",
+  "kind": "ontology",
+  "domains": [
+   "chemistry",
+   "agri",
+   "engineering"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/om",
+   "page": "https://bioregistry.io/om",
+   "retrievedAt": "2026-10-25T21:38:56.904Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "license",
+    "ols",
+    "bioportal",
+    "tags"
+   ],
+   "overrides": {
+    "formats": [
+     "OWL",
+     "RDF"
+    ],
+    "acronym": "OM"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "uo",
+  "acronym": "UO",
+  "name": "Units of measurement ontology",
+  "description": "An ontology of units of measurement, used across OBO Foundry ontologies to annotate quantitative values with standard units.",
+  "homepage": "https://github.com/bio-ontology-research-group/unit-ontology",
+  "repository": "https://github.com/bio-ontology-research-group/unit-ontology",
+  "download": "http://purl.obolibrary.org/obo/uo.owl",
+  "formats": [
+   "OWL",
+   "OBO",
+   "JSON"
+  ],
+  "license": "CC BY 3.0",
+  "ols": "uo",
+  "obo": "uo",
+  "bioportal": "UO",
+  "bioregistry": "uo",
+  "publications": [
+   {
+    "title": "The Units Ontology: a tool for integrating units of measurement in science",
+    "doi": "10.1093/database/bas033",
+    "year": 2012
+   }
+  ],
+  "tags": [
+   "dataplant",
+   "earth sciences",
+   "ess",
+   "life science",
+   "life sciences, biology",
+   "mathematics"
+  ],
+  "category": "physical",
+  "kind": "ontology",
+  "domains": [
+   "life",
+   "chemistry"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/uo",
+   "page": "https://bioregistry.io/uo",
+   "retrievedAt": "2026-10-25T21:38:56.936Z",
+   "fields": [
+    "acronym",
+    "name",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ],
+   "overrides": {
+    "description": "An ontology of units of measurement, used across OBO Foundry ontologies to annotate quantitative values with standard units."
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "uat",
+  "acronym": "UAT",
+  "name": "Unified Astronomy Thesaurus",
+  "description": "The Unified Astronomy Thesaurus (UAT) is an open, interoperable and community-supported thesaurus being developed to unify the existing divergent and isolated Astronomy & Astrophysics thesauri into a single high-quality, freely-available open-source thesaurus which will be of immediate value to both research and research support, and provide a mechanism for reviewing, discussing and evaluating the continuous evolution of terminology in these fields.",
+  "homepage": "http://astrothesaurus.org/",
+  "repository": "https://github.com/astrothesaurus/UAT",
+  "download": "https://raw.githubusercontent.com/astrothesaurus/UAT/master/UAT.rdf",
+  "formats": [
+   "RDF",
+   "SKOS"
+  ],
+  "license": "CC BY-SA 3.0",
+  "bioregistry": "uat",
+  "publications": [
+   {
+    "title": "The Unified Astronomy Thesaurus: Semantic Metadata for Astronomy and Astrophysics",
+    "doi": "10.3847/1538-4365/aab760",
+    "year": 2018
+   }
+  ],
+  "tags": [
+   "astronomy and astrophysics",
+   "ess",
+   "nfdi4ing",
+   "physics"
+  ],
+  "category": "physical",
+  "kind": "vocabulary",
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/uat",
+   "page": "https://bioregistry.io/uat",
+   "retrievedAt": "2026-10-25T21:38:56.970Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "license",
+    "publications",
+    "tags"
+   ],
+   "overrides": {
+    "kind": "vocabulary",
+    "formats": [
+     "RDF",
+     "SKOS"
+    ],
+    "acronym": "UAT"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "saref",
+  "acronym": "SAREF",
+  "name": "Smart Applications Reference ontology",
+  "description": "The Smart Applications REFerence ontology (SAREF) is intended to enable interoperability between solutions from different providers and among various activity sectors in the Internet of Things (IoT), thus contributing to the development of the global digital market.",
+  "homepage": "https://saref.etsi.org/",
+  "license": "https://forge.etsi.org/etsi-software-license",
+  "bioregistry": "saref",
+  "tags": [
+   "digital planning and construction",
+   "engineering",
+   "fid baudigital",
+   "industry",
+   "iot",
+   "nfdi4ing"
+  ],
+  "category": "engineering",
+  "kind": "ontology",
+  "domains": [
+   "computing",
+   "earth"
+  ],
+  "usedBy": [],
+  "download": "https://saref.etsi.org/core/",
+  "formats": [
+   "OWL",
+   "Turtle"
+  ],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/saref",
+   "page": "https://bioregistry.io/saref",
+   "retrievedAt": "2026-10-25T21:38:57.002Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "license",
+    "tags"
+   ],
+   "overrides": {
+    "download": "https://saref.etsi.org/core/",
+    "formats": [
+     "OWL",
+     "Turtle"
+    ],
+    "kind": "ontology",
+    "acronym": "SAREF"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "brick",
+  "acronym": "Brick",
+  "name": "Brick Ontology",
+  "description": "Brick is an open-source effort to standardize semantic descriptions of the physical, logical and virtual assets in buildings and the relationships between them. Brick consists of an extensible dictionary of terms and concepts in and around buildings, a set of relationships for linking and composing concepts together, and a flexible data model permitting seamless integration of Brick with existing tools and databases.",
+  "homepage": "https://brickschema.org/ontology/",
+  "repository": "https://github.com/BrickSchema/Brick",
+  "download": "https://brickschema.org/schema/Brick.ttl",
+  "formats": [
+   "OWL",
+   "Turtle"
+  ],
+  "license": "BSD-3-Clause",
+  "bioregistry": "brick",
+  "publications": [
+   {
+    "title": "Interactive Metadata Integration with Brick",
+    "doi": "10.1145/3408308.3431125",
+    "year": 2020
+   },
+   {
+    "title": "Shepherding Metadata Through the Building Lifecycle",
+    "doi": "10.1145/3408308.3427627",
+    "year": 2020
+   }
+  ],
+  "tags": [
+   "architecture",
+   "building design",
+   "building informatics",
+   "building information modeling",
+   "civil engineering",
+   "digital planning and construction"
+  ],
+  "category": "engineering",
+  "kind": "ontology",
+  "domains": [
+   "computing"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/brick",
+   "page": "https://bioregistry.io/brick",
+   "retrievedAt": "2026-10-25T21:38:57.042Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "license",
+    "publications",
+    "tags"
+   ],
+   "overrides": {
+    "download": "https://brickschema.org/schema/Brick.ttl",
+    "formats": [
+     "OWL",
+     "Turtle"
+    ],
+    "kind": "ontology",
+    "acronym": "Brick"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "bot",
+  "acronym": "BOT",
+  "name": "Building Topology Ontology",
+  "description": "The Building Topology Ontology (BOT) is a minimal ontology for describing the core topological concepts of a building.",
+  "homepage": "https://w3c-lbd-cg.github.io/bot/",
+  "repository": "https://github.com/w3c-lbd-cg/bot",
+  "download": "https://w3c-lbd-cg.github.io/bot/bot.ttl",
+  "formats": [
+   "OWL",
+   "Turtle"
+  ],
+  "license": "CC",
+  "bioregistry": "bot",
+  "tags": [
+   "architecture",
+   "civil engineering",
+   "digital planning and construction",
+   "fid baudigital",
+   "nfdi4culture",
+   "nfdi4ing"
+  ],
+  "category": "engineering",
+  "kind": "ontology",
+  "domains": [
+   "humanities"
+  ],
+  "usedBy": [],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/bot",
+   "page": "https://bioregistry.io/bot",
+   "retrievedAt": "2026-10-25T21:38:57.082Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "license",
+    "tags"
+   ],
+   "overrides": {
+    "download": "https://w3c-lbd-cg.github.io/bot/bot.ttl",
+    "formats": [
+     "OWL",
+     "Turtle"
+    ],
+    "kind": "ontology",
+    "acronym": "BOT"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "elsst",
+  "acronym": "ELSST",
+  "name": "European Language Social Science Thesaurus",
+  "description": "The European Language Social Science Thesaurus (ELSST) is a broad-based, multilingual thesaurus for the social sciences. It is owned and published by the Consortium of European Social Science Data Archives (CESSDA) and its national Service Providers. The thesaurus consists of over 3,000 concepts and covers the core social science disciplines: politics, sociology, economics, education, law, crime, demography, health, employment, information and communication technology and, increasingly, environmental science. [from homepage]",
+  "homepage": "https://elsst.cessda.eu/id/3",
+  "license": "CC BY-SA 4.0",
+  "bioregistry": "elsst",
+  "tags": [
+   "economics",
+   "social science"
+  ],
+  "category": "humanities",
+  "kind": "vocabulary",
+  "usedBy": [],
+  "formats": [
+   "RDF",
+   "SKOS"
+  ],
+  "publications": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/elsst",
+   "page": "https://bioregistry.io/elsst",
+   "retrievedAt": "2026-10-25T21:38:57.114Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "license",
+    "tags"
+   ],
+   "overrides": {
+    "kind": "vocabulary",
+    "formats": [
+     "RDF",
+     "SKOS"
+    ],
+    "acronym": "ELSST"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "swo",
+  "acronym": "SWO",
+  "name": "Software Ontology",
+  "description": "The Software Ontology (SWO) is a resource for describing software tools, their types, tasks, versions, provenance and associated data. It contains detailed information on licensing and formats as well as software applications themselves, mainly (but not limited) to the bioinformatics community.",
+  "homepage": "https://github.com/allysonlister/swo",
+  "repository": "https://github.com/allysonlister/swo",
+  "download": "https://raw.githubusercontent.com/allysonlister/swo/master/swo.owl",
+  "formats": [
+   "OWL",
+   "JSON"
+  ],
+  "license": "CC BY 4.0",
+  "ols": "swo",
+  "obo": "swo",
+  "bioportal": "SWO",
+  "bioregistry": "swo",
+  "publications": [
+   {
+    "title": "The Software Ontology (SWO): a resource for reproducibility in biomedical data analysis, curation and digital preservation",
+    "doi": "10.1186/2041-1480-5-25",
+    "year": 2014
+   }
+  ],
+  "tags": [
+   "algorithm",
+   "bioinformatics",
+   "computer science",
+   "dataplant",
+   "license",
+   "nfdi-matwerk"
+  ],
+  "category": "computing",
+  "kind": "ontology",
+  "domains": [
+   "life"
+  ],
+  "usedBy": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/swo",
+   "page": "https://bioregistry.io/swo",
+   "retrievedAt": "2026-10-25T21:38:57.150Z",
+   "fields": [
+    "acronym",
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "download",
+    "formats",
+    "license",
+    "ols",
+    "obo",
+    "bioportal",
+    "publications",
+    "tags"
+   ]
+  }
+ },
+ {
+  "id": "codemeta",
+  "acronym": "CodeMeta",
+  "name": "CodeMeta",
+  "description": "An extension of Schema.org to annotate metadata on software projects",
+  "homepage": "https://codemeta.github.io/terms",
+  "repository": "https://github.com/codemeta/codemeta",
+  "license": "Apache-2.0",
+  "bioregistry": "codemeta",
+  "category": "computing",
+  "kind": "schema",
+  "domains": [
+   "metadata"
+  ],
+  "usedBy": [],
+  "formats": [
+   "JSON-LD"
+  ],
+  "download": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "publications": [],
+  "tags": [],
+  "provenance": {
+   "source": "Bioregistry",
+   "url": "https://bioregistry.io/api/registry/codemeta",
+   "page": "https://bioregistry.io/codemeta",
+   "retrievedAt": "2026-10-25T21:38:57.183Z",
+   "fields": [
+    "name",
+    "description",
+    "homepage",
+    "repository",
+    "license"
+   ],
+   "overrides": {
+    "kind": "schema",
+    "formats": [
+     "JSON-LD"
+    ],
+    "download": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "acronym": "CodeMeta"
+   },
+   "overridesNote": "curated by SchemaScope, takes precedence over the registry value"
+  }
+ },
+ {
+  "id": "cidoc-crm",
+  "acronym": "CIDOC CRM",
+  "name": "CIDOC Conceptual Reference Model",
+  "category": "humanities",
+  "domains": [
+   "metadata"
+  ],
+  "kind": "ontology",
+  "description": "A formal ontology for integrating cultural heritage information, standardised as ISO 21127 and used by museums, archives and libraries to describe objects, events, people and places.",
+  "formats": [
+   "RDF"
+  ],
+  "homepage": "https://cidoc-crm.org/",
+  "download": "https://cidoc-crm.org/rdfs/7.1.3/CIDOC_CRM_v7.1.3.rdfs",
+  "publications": [],
+  "usedBy": [],
+  "tags": [
+   "cultural heritage",
+   "museums",
+   "ISO 21127"
+  ],
+  "provenance": {
+   "source": "curated",
+   "curatedAt": "2026-10-25T21:34:45Z",
+   "curatedBy": "SchemaScope maintainers",
+   "note": "Not in Bioregistry; metadata taken from the official CIDOC CRM site.",
+   "sourcesChecked": [
+    "https://cidoc-crm.org/"
+   ]
+  }
+ },
+ {
+  "id": "getty-aat",
+  "acronym": "AAT",
+  "name": "Getty Art & Architecture Thesaurus",
+  "category": "humanities",
+  "kind": "vocabulary",
+  "description": "A structured vocabulary of terms for art, architecture, decorative arts and material culture, published by the Getty Research Institute as Linked Open Data.",
+  "formats": [
+   "RDF",
+   "SKOS"
+  ],
+  "homepage": "https://www.getty.edu/research/tools/vocabularies/aat/",
+  "publications": [],
+  "usedBy": [],
+  "tags": [
+   "art",
+   "architecture",
+   "thesaurus"
+  ],
+  "provenance": {
+   "source": "curated",
+   "curatedAt": "2026-10-25T21:34:45Z",
+   "curatedBy": "SchemaScope maintainers",
+   "note": "Not in Bioregistry; metadata taken from the Getty vocabularies site.",
+   "sourcesChecked": [
+    "https://www.getty.edu/research/tools/vocabularies/aat/"
+   ]
+  }
+ },
+ {
+  "id": "ro-crate",
+  "acronym": "RO-Crate",
+  "name": "Research Object Crate",
+  "category": "metadata",
+  "domains": [
+   "computing",
+   "life"
+  ],
+  "kind": "schema",
+  "description": "A community specification for packaging research data with their metadata, using schema.org in JSON-LD, so datasets, software and workflows can be shared with their context.",
+  "formats": [
+   "JSON-LD"
+  ],
+  "homepage": "https://www.researchobject.org/ro-crate/",
+  "repository": "https://github.com/ResearchObject/ro-crate",
+  "download": "https://w3id.org/ro/crate/1.1/context",
+  "publications": [],
+  "usedBy": [],
+  "tags": [
+   "research objects",
+   "packaging",
+   "JSON-LD"
+  ],
+  "provenance": {
+   "source": "curated",
+   "curatedAt": "2026-10-25T21:34:45Z",
+   "curatedBy": "SchemaScope maintainers",
+   "note": "Not in Bioregistry; metadata taken from the RO-Crate specification site and repository.",
+   "sourcesChecked": [
+    "https://www.researchobject.org/ro-crate/",
+    "https://github.com/ResearchObject/ro-crate"
+   ]
+  }
+ },
+ {
+  "id": "fhir",
+  "acronym": "FHIR",
+  "name": "HL7 Fast Healthcare Interoperability Resources",
+  "category": "health",
+  "domains": [
+   "computing"
+  ],
+  "kind": "data-standard",
+  "description": "The HL7 standard for exchanging healthcare information electronically, defining resources such as Patient and Observation with JSON, XML and RDF representations and a REST API.",
+  "formats": [
+   "JSON",
+   "XML",
+   "RDF"
+  ],
+  "homepage": "https://hl7.org/fhir/",
+  "repository": "https://github.com/HL7/fhir",
+  "license": "CC0 1.0",
+  "publications": [],
+  "usedBy": [],
+  "tags": [
+   "healthcare",
+   "interoperability",
+   "clinical data"
+  ],
+  "provenance": {
+   "source": "curated",
+   "curatedAt": "2026-10-25T21:34:45Z",
+   "curatedBy": "SchemaScope maintainers",
+   "note": "Not in Bioregistry; metadata and licence (CC0) from the HL7 FHIR specification.",
+   "sourcesChecked": [
+    "https://hl7.org/fhir/",
+    "https://hl7.org/fhir/license.html"
+   ]
+  }
+ },
+ {
+  "id": "cf-standard-names",
+  "acronym": "CF Standard Names",
+  "name": "Climate and Forecast (CF) Standard Name Table",
+  "category": "earth",
+  "domains": [
+   "physical"
+  ],
+  "kind": "vocabulary",
+  "description": "The controlled vocabulary of the CF metadata conventions, giving precise names, units and descriptions for climate, ocean and atmosphere variables in netCDF data.",
+  "formats": [
+   "XML"
+  ],
+  "homepage": "https://cfconventions.org/",
+  "repository": "https://github.com/cf-convention/cf-conventions",
+  "download": "https://cfconventions.org/Data/cf-standard-names/current/src/cf-standard-name-table.xml",
+  "publications": [],
+  "usedBy": [],
+  "tags": [
+   "climate",
+   "netCDF",
+   "variables"
+  ],
+  "provenance": {
+   "source": "curated",
+   "curatedAt": "2026-10-25T21:34:45Z",
+   "curatedBy": "SchemaScope maintainers",
+   "note": "Not in Bioregistry; metadata from the CF Conventions site.",
+   "sourcesChecked": [
+    "https://cfconventions.org/"
+   ]
+  }
+ },
+ {
+  "id": "bids",
+  "acronym": "BIDS",
+  "name": "Brain Imaging Data Structure",
+  "category": "neuro",
+  "kind": "data-standard",
+  "description": "A community standard for organising and describing neuroimaging and related data (MRI, EEG, MEG, iEEG, PET, microscopy, and more). Its rules are published as a machine-readable YAML schema.",
+  "formats": [
+   "YAML schema",
+   "JSON"
+  ],
+  "maintainer": "BIDS community",
+  "license": "CC BY 4.0",
+  "homepage": "https://bids.neuroimaging.io/",
+  "repository": "https://github.com/bids-standard/bids-specification",
+  "publications": [
+   {
+    "title": "The brain imaging data structure, a format for organizing and describing outputs of neuroimaging experiments",
+    "doi": "10.1038/sdata.2016.44",
+    "year": 2016
+   }
+  ],
+  "usedBy": [
+   {
+    "name": "OpenNeuro",
+    "url": "https://openneuro.org/",
+    "note": "Required dataset format"
+   },
+   {
+    "name": "fMRIPrep",
+    "url": "https://fmriprep.org/",
+    "note": "BIDS App input"
+   },
+   {
+    "name": "MNE-BIDS",
+    "url": "https://mne.tools/mne-bids/",
+    "note": "EEG/MEG BIDS conversion"
+   }
+  ],
+  "tags": [
+   "MRI",
+   "EEG",
+   "MEG",
+   "data organisation"
+  ],
+  "domains": [
+   "health",
+   "metadata"
+  ],
+  "provenance": {
+   "source": "NeuroSchema catalog",
+   "url": "https://neuroschema.org/o/bids/entry.json",
+   "page": "https://neuroschema.org/o/bids/",
+   "retrievedAt": "2026-10-25T21:34:45Z",
+   "note": "Curated entry copied from NeuroSchema, the neuroscience-specific sister catalog."
+  }
+ },
+ {
+  "id": "nwb",
+  "acronym": "NWB",
+  "name": "Neurodata Without Borders Schema",
+  "category": "neuro",
+  "kind": "data-standard",
+  "description": "A data standard and schema for neurophysiology: extracellular and intracellular electrophysiology, optical physiology, behavior and stimuli, extensible via neurodata extensions (NDX).",
+  "formats": [
+   "YAML schema",
+   "HDF5",
+   "Zarr"
+  ],
+  "maintainer": "NWB team",
+  "license": "BSD-3-Clause",
+  "homepage": "https://www.nwb.org/",
+  "repository": "https://github.com/NeurodataWithoutBorders/nwb-schema",
+  "publications": [
+   {
+    "title": "The Neurodata Without Borders ecosystem for neurophysiological data science",
+    "doi": "10.7554/eLife.78362",
+    "year": 2022
+   }
+  ],
+  "usedBy": [
+   {
+    "name": "DANDI Archive",
+    "url": "https://dandiarchive.org/",
+    "note": "Primary data format"
+   },
+   {
+    "name": "Allen Brain Observatory",
+    "url": "https://portal.brain-map.org/explore/circuits",
+    "note": "Data distribution"
+   },
+   {
+    "name": "SpikeInterface",
+    "url": "https://spikeinterface.readthedocs.io/",
+    "note": "Read/write support"
+   }
+  ],
+  "tags": [
+   "electrophysiology",
+   "ophys",
+   "behavior",
+   "HDF5"
+  ],
+  "domains": [
+   "life",
+   "computing"
+  ],
+  "provenance": {
+   "source": "NeuroSchema catalog",
+   "url": "https://neuroschema.org/o/nwb/entry.json",
+   "page": "https://neuroschema.org/o/nwb/",
+   "retrievedAt": "2026-10-25T21:34:45Z",
+   "note": "Curated entry copied from NeuroSchema, the neuroscience-specific sister catalog."
+  }
+ },
+ {
+  "id": "hed",
+  "acronym": "HED",
+  "name": "Hierarchical Event Descriptors",
+  "category": "neuro",
+  "kind": "vocabulary",
+  "description": "A structured vocabulary and annotation system for describing experimental events in time-series data such as EEG, MEG, fMRI and behavior.",
+  "formats": [
+   "XML",
+   "MediaWiki",
+   "TSV",
+   "OWL"
+  ],
+  "maintainer": "HED Working Group",
+  "homepage": "https://www.hedtags.org/",
+  "repository": "https://github.com/hed-standard/hed-schemas",
+  "publications": [
+   {
+    "title": "Building FAIR Functionality: Annotating Events in Time Series Data Using Hierarchical Event Descriptors (HED)",
+    "doi": "10.1007/s12021-021-09537-4",
+    "year": 2022
+   }
+  ],
+  "usedBy": [
+   {
+    "name": "BIDS",
+    "url": "https://bids.neuroimaging.io/",
+    "note": "Event annotation in events.tsv sidecars"
+   },
+   {
+    "name": "EEGLAB",
+    "url": "https://sccn.ucsd.edu/eeglab/",
+    "note": "HED tools plugin"
+   }
+  ],
+  "tags": [
+   "events",
+   "EEG",
+   "annotation"
+  ],
+  "domains": [
+   "health"
+  ],
+  "provenance": {
+   "source": "NeuroSchema catalog",
+   "url": "https://neuroschema.org/o/hed/entry.json",
+   "page": "https://neuroschema.org/o/hed/",
+   "retrievedAt": "2026-10-25T21:34:45Z",
+   "note": "Curated entry copied from NeuroSchema, the neuroscience-specific sister catalog."
+  }
+ },
+ {
+  "id": "openminds",
+  "acronym": "openMINDS",
+  "name": "openMINDS",
+  "category": "neuro",
+  "kind": "schema",
+  "description": "A set of metadata models and controlled terms for neuroscience graph databases, covering datasets, subjects, methods, software, models and brain atlases (SANDS).",
+  "formats": [
+   "JSON Schema",
+   "JSON-LD"
+  ],
+  "maintainer": "Open Metadata Initiative / EBRAINS",
+  "license": "MIT",
+  "homepage": "https://openminds-documentation.readthedocs.io/",
+  "repository": "https://github.com/openMetadataInitiative/openMINDS",
+  "publications": [],
+  "usedBy": [
+   {
+    "name": "EBRAINS Knowledge Graph",
+    "url": "https://search.kg.ebrains.eu/",
+    "note": "Native metadata model"
+   }
+  ],
+  "tags": [
+   "metadata",
+   "knowledge graph",
+   "atlases",
+   "JSON-LD"
+  ],
+  "domains": [
+   "metadata"
+  ],
+  "provenance": {
+   "source": "NeuroSchema catalog",
+   "url": "https://neuroschema.org/o/openminds/entry.json",
+   "page": "https://neuroschema.org/o/openminds/",
+   "retrievedAt": "2026-10-25T21:34:45Z",
+   "note": "Curated entry copied from NeuroSchema, the neuroscience-specific sister catalog."
+  }
+ },
+ {
+  "id": "neuroml",
+  "acronym": "NeuroML",
+  "name": "NeuroML",
+  "category": "neuro",
+  "kind": "schema",
+  "description": "An XML-based language (with XSD schema) for describing detailed neuron, synapse and network models in a simulator-independent way.",
+  "formats": [
+   "XSD",
+   "XML",
+   "LEMS"
+  ],
+  "maintainer": "NeuroML Editorial Board",
+  "homepage": "https://neuroml.org/",
+  "repository": "https://github.com/NeuroML/NeuroML2",
+  "publications": [
+   {
+    "title": "NeuroML: a language for describing data driven models of neurons and networks with a high degree of biological detail",
+    "doi": "10.1371/journal.pcbi.1000815",
+    "year": 2010
+   }
+  ],
+  "usedBy": [
+   {
+    "name": "Open Source Brain",
+    "url": "https://www.opensourcebrain.org/",
+    "note": "Model sharing platform"
+   },
+   {
+    "name": "NetPyNE",
+    "url": "https://www.netpyne.org/",
+    "note": "Import/export"
+   }
+  ],
+  "tags": [
+   "models",
+   "simulation",
+   "networks"
+  ],
+  "domains": [
+   "computing"
+  ],
+  "provenance": {
+   "source": "NeuroSchema catalog",
+   "url": "https://neuroschema.org/o/neuroml/entry.json",
+   "page": "https://neuroschema.org/o/neuroml/",
+   "retrievedAt": "2026-10-25T21:34:45Z",
+   "note": "Curated entry copied from NeuroSchema, the neuroscience-specific sister catalog."
+  }
+ },
+ {
+  "id": "dandi-schema",
+  "acronym": "DANDI schema",
+  "name": "DANDI Archive Metadata Schema",
+  "category": "neuro",
+  "kind": "schema",
+  "description": "The metadata models of the DANDI neurophysiology archive. Pydantic models in the dandischema library define Dandiset and asset metadata; versioned JSON Schemas plus a JSON-LD context are generated from them and published in the dandi/schema repository. The library also converts Dandiset metadata to DataCite for DOIs.",
+  "formats": [
+   "JSON Schema",
+   "JSON-LD",
+   "Pydantic"
+  ],
+  "maintainer": "DANDI team",
+  "homepage": "https://docs.dandiarchive.org/",
+  "repository": "https://github.com/dandi/dandi-schema",
+  "publications": [],
+  "usedBy": [
+   {
+    "name": "DANDI Archive",
+    "url": "https://dandiarchive.org/",
+    "note": "Dataset metadata"
+   }
+  ],
+  "tags": [
+   "metadata",
+   "archive",
+   "neurophysiology",
+   "NWB",
+   "DataCite"
+  ],
+  "download": "https://github.com/dandi/schema/tree/master/releases",
+  "modules": [
+   {
+    "name": "Dandiset",
+    "url": "https://github.com/dandi/schema/blob/master/releases/0.8.0/dandiset.json",
+    "note": "Draft Dandiset metadata (JSON Schema, release 0.8.0)"
+   },
+   {
+    "name": "Published Dandiset",
+    "url": "https://github.com/dandi/schema/blob/master/releases/0.8.0/published-dandiset.json",
+    "note": "Metadata of a published, versioned Dandiset"
+   },
+   {
+    "name": "Asset",
+    "url": "https://github.com/dandi/schema/blob/master/releases/0.8.0/asset.json",
+    "note": "Per-file asset metadata"
+   },
+   {
+    "name": "Published Asset",
+    "url": "https://github.com/dandi/schema/blob/master/releases/0.8.0/published-asset.json",
+    "note": "Asset metadata within a published Dandiset"
+   },
+   {
+    "name": "JSON-LD context",
+    "url": "https://github.com/dandi/schema/blob/master/releases/0.8.0/context.json",
+    "note": "Maps fields to schema.org and other vocabularies"
+   },
+   {
+    "name": "Pydantic models",
+    "url": "https://github.com/dandi/dandi-schema/blob/master/dandischema/models.py",
+    "note": "Source of truth for all generated schemas"
+   }
+  ],
+  "tools": [
+   {
+    "name": "dandischema",
+    "url": "https://pypi.org/project/dandischema/",
+    "note": "Python library: validate, migrate and aggregate DANDI metadata"
+   },
+   {
+    "name": "dandi-cli",
+    "url": "https://github.com/dandi/dandi-cli",
+    "note": "Command-line client that validates uploads against the schema"
+   }
+  ],
+  "domains": [
+   "metadata"
+  ],
+  "provenance": {
+   "source": "NeuroSchema catalog",
+   "url": "https://neuroschema.org/o/dandi-schema/entry.json",
+   "page": "https://neuroschema.org/o/dandi-schema/",
+   "retrievedAt": "2026-10-25T21:34:45Z",
+   "note": "Curated entry copied from NeuroSchema, the neuroscience-specific sister catalog."
+  }
+ }
+]

@@ -4,7 +4,7 @@
 export const KINDS = ["ontology", "schema", "vocabulary", "atlas", "data-standard", "knowledge-base"];
 const ALLOWED = new Set([
   "id", "acronym", "name", "category", "kind", "description", "formats", "species", "maintainer", "license",
-  "homepage", "repository", "download", "ols", "obo", "bioportal", "bioregistry", "domains", "provenance", "status", "publications", "usedBy", "modules", "tools", "tags",
+  "homepage", "repository", "download", "ols", "obo", "bioportal", "bioregistry", "domains", "provenance", "registryStats", "status", "publications", "usedBy", "modules", "tools", "tags",
 ]);
 const URL_FIELDS = ["homepage", "repository", "download"];
 const isUrl = (s) => typeof s === "string" && /^https?:\/\/[^\s]+$/.test(s);
@@ -55,11 +55,13 @@ export function validateCatalog(catalog, categories) {
       else seen[bucket].set(key, e.id);
     };
     check("id", e.id, "id");
-    check("name", norm(e.name), "name");
-    if (e.acronym && e.acronym !== e.name) check("acronym", norm(e.acronym), "acronym");
+    // Harvested registries legitimately reuse names and prefixes; only curated entries must be unique by name.
+    const harvested = e.provenance?.source === "harvest";
+    if (!harvested) check("name", norm(e.name), "name");
+    if (!harvested && e.acronym && e.acronym !== e.name) check("acronym", norm(e.acronym), "acronym");
     // Several entries may legitimately share a repository (e.g. NIF-Ontology hosts NIFSTD and NPO),
     // so only downloads must be unique.
-    if (e.download) check("url", normUrl(e.download), "download URL");
+    if (e.download && !harvested) check("url", normUrl(e.download), "download URL");
   }
   return problems;
 }

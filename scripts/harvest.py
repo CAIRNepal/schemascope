@@ -20,6 +20,7 @@ import hashlib
 import json
 import re
 import sys
+import time
 import urllib.request
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
@@ -50,13 +51,31 @@ def fetch(key):
         raw = gzip.decompress(path.read_bytes())
         retrieved = json.loads((DATA / "sources.json").read_text())["sources"][key]["retrievedAt"]
     else:
-        req = urllib.request.Request(s["url"], headers={"User-Agent": UA, "Accept": "application/json, */*;q=0.5"})
-        raw = urllib.request.urlopen(req, timeout=180).read()
-        if s["url"].endswith(".gz"):
-            raw = gzip.decompress(raw)
-        retrieved = NOW
-        RAW.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(gzip.compress(raw, mtime=0))
+        raw, err = None, None
+        for attempt in range(3):
+            try:
+                req = urllib.request.Request(s["url"], headers={"User-Agent": UA, "Accept": "application/json, */*;q=0.5"})
+                raw = urllib.request.urlopen(req, timeout=180).read()
+                if s["url"].endswith(".gz"):
+                    raw = gzip.decompress(raw)
+                break
+            except Exception as e:  # flaky registries: back off and retry
+                err = e
+                time.sleep(5 * (attempt + 1))
+        if raw is None:
+            if not path.exists():
+                print(f"! {s['name']}: download failed ({err}); skipping this source", file=sys.stderr)
+                s.update(error=str(err), retrievedAt=None)
+                return None
+            print(f"! {s['name']}: download failed ({err}); using the archived copy", file=sys.stderr)
+            raw = gzip.decompress(path.read_bytes())
+            prev = json.loads((DATA / "sources.json").read_text())["sources"].get(key, {}) if (DATA / "sources.json").exists() else {}
+            s.update(stale=True, staleReason=str(err))
+            retrieved = prev.get("retrievedAt", NOW)
+        else:
+            retrieved = NOW
+            RAW.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(gzip.compress(raw, mtime=0))
     s.update(retrievedAt=retrieved, sha256=hashlib.sha256(raw).hexdigest(), bytes=len(raw), archive=str(path.relative_to(ROOT)))
     return raw
 
@@ -183,7 +202,7 @@ def cite(r, key, src_id, url=None):
 
 
 # ---------- 1. Bioregistry ----------
-br = json.loads(fetch("bioregistry"))
+br = json.loads(fetch("bioregistry") or b"{}")
 SEM = {"ols", "obofoundry", "bioportal", "lov", "agroportal", "ontobee", "aberowl", "tib.ts", "ecoportal", "biodivportal", "bartoc", "fairsharing"}
 for prefix, d in br.items():
     m = d.get("mappings") or {}
@@ -224,7 +243,7 @@ for prefix, d in br.items():
     register(r, *(("tib:" + str(m["tib.ts"])) for _ in [0] if m.get("tib.ts")))
 
 # ---------- 2. OBO Foundry ----------
-obo = json.loads(fetch("obo"))["ontologies"]
+obo = json.loads(fetch("obo") or b'{"ontologies": []}')["ontologies"]
 for o in obo:
     r = find(o["id"])
     if r is None:
@@ -250,7 +269,7 @@ for o in obo:
 
 # ---------- 3. OLS + TIB ----------
 for key in ("ols", "tib"):
-    data = json.loads(fetch(key))
+    data = json.loads(fetch(key) or b"{}")
     for o in data.get("elements") or []:
         oid = o.get("ontologyId")
         if not oid:
@@ -290,7 +309,8 @@ except ImportError:
     sys.exit("rdflib is required: pip install -r requirements.txt")
 lov_raw = fetch("lov")
 g = rdflib.Graph()
-g.parse(data=lov_raw.decode("utf8"), format="n3")
+if lov_raw:
+    g.parse(data=lov_raw.decode("utf8"), format="n3")
 VOAF = rdflib.Namespace("http://purl.org/vocommons/voaf#")
 VANN = rdflib.Namespace("http://purl.org/vocab/vann/")
 DCT = rdflib.Namespace("http://purl.org/dc/terms/")
@@ -307,7 +327,7 @@ def lit(v, p):
 for v in g.subjects(rdflib.RDF.type, VOAF.Vocabulary):
     prefix = lit(v, VANN.preferredNamespacePrefix)
     ns = lit(v, VANN.preferredNamespaceUri)
-    r = find("lov:" + prefix) or (find(prefix) if find(prefix) is not None and slug(find(prefix).get("name", "")) and _ if False else None)
+    r = find("lov:" + prefix)
     if r is None:
         existing = find(prefix)
         # Same prefix in another registry is only the same resource if the names agree.
@@ -344,7 +364,7 @@ for v in g.subjects(rdflib.RDF.type, VOAF.Vocabulary):
     register(r, prefix if find(prefix) is None else None)
 
 # ---------- 5. NeuroSchema (curated neuroscience entries) ----------
-ns_cat = json.loads(fetch("neuroschema"))
+ns_cat = json.loads(fetch("neuroschema") or b"{}")
 neuro_entries = []
 for e in ns_cat.get("entries", []):
     r = find(e["id"], e.get("obo"), e.get("ols"), e.get("bioregistry"))
@@ -364,7 +384,9 @@ for e in ns_cat.get("entries", []):
 
 # ---------- finalize ----------
 categories = {c["id"] for c in json.loads((DATA / "categories.json").read_text())}
-old = {e["id"]: e for e in json.loads((DATA / "catalog.json").read_text())} if (DATA / "catalog.json").exists() else {}
+# Curated entries and overrides live in data/curated.json (kept across harvests).
+CURATED = DATA / "curated.json"
+old = {e["id"]: e for e in json.loads(CURATED.read_text())} if CURATED.exists() else {}
 out, seen = [], set()
 for r in records:
     if not r.get("name"):
@@ -399,7 +421,7 @@ for r in records:
         "tags": (r.get("tags") or [])[:8],
         "provenance": {
             "source": "harvest",
-            "retrievedAt": NOW if not OFFLINE else max(s["retrievedAt"] for s in r["_sources"]),
+            "retrievedAt": NOW if not OFFLINE else max((s["retrievedAt"] or NOW) for s in r["_sources"]),
             "registries": r["_sources"],
             "fields": {k: SOURCES[v]["name"] if v in SOURCES else v for k, v in fields.items()},
         },
@@ -417,6 +439,16 @@ for r in records:
         if prev["provenance"].get("overrides"):
             e["provenance"]["overrides"] = prev["provenance"]["overrides"]
             e["provenance"]["overridesNote"] = "curated by SchemaScope, takes precedence over registry values"
+    if prev and prev.get("provenance", {}).get("source") in ("curated", "NeuroSchema catalog"):
+        for k in ("acronym", "name", "description", "kind", "formats", "license", "homepage", "repository", "download", "tags", "publications"):
+            if prev.get(k):
+                e[k] = prev[k]
+        e["provenance"]["curated"] = {kk: prev["provenance"].get(kk) for kk in ("source", "curatedAt", "curatedBy", "note", "sourcesChecked", "url", "retrievedAt") if prev["provenance"].get(kk)}
+    for k in ("ols", "obo"):
+        if k in e:
+            e[k] = str(e[k]).lower()
+            if not re.match(r"^[a-z0-9_]+$", e[k]):
+                e.pop(k)
     for k in ("homepage", "repository", "download"):
         if k in e and not url_ok(e[k]):
             e.pop(k)
@@ -437,4 +469,4 @@ manifest = {"generatedAt": NOW, "offline": OFFLINE, "entries": len(out), "source
 cats = Counter(e["category"] for e in out)
 print(f"Harvested {len(out)} resources from {len(SOURCES)} registries → data/catalog.json")
 print("  by domain:", ", ".join(f"{k} {v}" for k, v in cats.most_common()))
-print("  sources:", ", ".join(f"{v['name']} ({v['bytes'] // 1024} KB)" for v in SOURCES.values()))
+print("  sources:", ", ".join(f"{v['name']} ({v.get('bytes', 0) // 1024} KB{', FAILED' if v.get('error') else ', archived copy' if v.get('stale') else ''})" for v in SOURCES.values()))

@@ -237,7 +237,9 @@ export function scoreEntry(entry, facts) {
   // U
   const nAd = adopters(entry, facts).length;
   add("adoption", "Documented adopting projects", tier(T.adopters, nAd), 7, `${nAd} project${nAd === 1 ? "" : "s"}`);
-  add("adoption", "Reused by other ontologies", tier(T.reuse, reuse.length), 4, `${reuse.length}${reuse.length ? `: ${reuse.slice(0, 6).join(", ")}${reuse.length > 6 ? "…" : ""}` : ""}`);
+  const lovReuse = entry.registryStats?.lov?.reusedByVocabularies || 0;
+  const reuseN = Math.max(reuse.length, lovReuse);
+  add("adoption", "Reused by other ontologies", tier(T.reuse, reuseN), 4, reuseN > reuse.length ? `${lovReuse} vocabularies (LOV)` : `${reuse.length}${reuse.length ? `: ${reuse.slice(0, 6).join(", ")}${reuse.length > 6 ? "…" : ""}` : ""}`);
   const stars = facts.github?.stars ?? 0;
   const cites = Math.max(0, ...(facts.citations || []).map((c) => c.count ?? 0));
   const sp = tier(T.stars, stars), cp = tier(T.citations, cites);
@@ -293,6 +295,6 @@ export function scoreEntry(entry, facts) {
     score, gross: scaled, earned, possible, qualityApplies: qApplies,
     penalty: { score: -pTotal, reason: pTotal ? pSteps.filter((x) => x.pts).map((x) => x.detail).join("; ") : `no penalties (active${qApplies && cons === true ? ", consistent" : ""})`, steps: pSteps },
     consistent: qApplies ? cons : null,
-    grade, fair, breakdown: b, lastActivity: last, adopterCount: nAd, reuseCount: reuse.length, importCount: imp.length, registries: regs, evaluatedVersion: ver,
+    grade, fair, breakdown: b, lastActivity: last, adopterCount: nAd, reuseCount: reuseN, importCount: imp.length, registries: regs, evaluatedVersion: ver,
   };
 }

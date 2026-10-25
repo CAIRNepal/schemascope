@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-10-25T21:50:35Z",
+  "offline": true,
+  "entries": 2174,
+  "sources": {
+    "bioregistry": {
+      "name": "Bioregistry",
+      "url": "https://raw.githubusercontent.com/biopragmatics/bioregistry/main/exports/registry/registry.json",
+      "page": "https://bioregistry.io",
+      "license": "CC0-1.0",
+      "retrievedAt": "2026-10-25T21:49:00Z",
+      "sha256": "cdf0ad29bc602a0ef706abf5435c49dc64b3238c2cd1cb094b4daeea1766cf5c",
+      "bytes": 4029500,
+      "archive": "data/sources/bioregistry.json.gz"
+    },
+    "obo": {
+      "name": "OBO Foundry",
+      "url": "https://obofoundry.org/registry/ontologies.jsonld",
+      "page": "https://obofoundry.org",
+      "license": "CC0-1.0",
+      "retrievedAt": "2026-10-25T21:49:00Z",
+      "sha256": "82d8ae284371fd60fb7b015f85f26742e6e7404fbb83cb2c9d21297fb418fa28",
+      "bytes": 611419,
+      "archive": "data/sources/obo.json.gz"
+    },
+    "ols": {
+      "name": "OLS (EMBL-EBI)",
+      "url": "https://www.ebi.ac.uk/ols4/api/v2/ontologies?size=1000",
+      "page": "https://www.ebi.ac.uk/ols4",
+      "license": "Apache-2.0 (service); per-ontology licences apply",
+      "retrievedAt": "2026-10-25T21:49:00Z",
+      "sha256": "e49b923a3939fbd93457d613051d3bc5e9cd20c52b5ab550b4b010386493b84d",
+      "bytes": 2318636,
+      "archive": "data/sources/ols.json.gz"
+    },
+    "tib": {
+      "name": "TIB Terminology Service",
+      "url": "https://api.terminology.tib.eu/api/v2/ontologies?size=1000",
+      "page": "https://terminology.tib.eu",
+      "license": "per-ontology licences apply",
+      "retrievedAt": "2026-10-25T21:49:00Z",
+      "sha256": "f55ed44ad9560005405b8859ca9925eb29a6ac0d1068f953dde0c0efa931f80e",
+      "bytes": 4694197,
+      "archive": "data/sources/tib.json.gz"
+    },
+    "lov": {
+      "name": "Linked Open Vocabularies (LOV)",
+      "url": "https://lov.linkeddata.es/lov.n3.gz",
+      "page": "https://lov.linkeddata.es",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-10-25T21:49:00Z",
+      "sha256": "ffb0473e883eac704fdcce33d5eeab498307c095a0f88b6c458201fde5e0cbba",
+      "bytes": 7301661,
+      "archive": "data/sources/lov.n3.gz"
+    },
+    "neuroschema": {
+      "name": "NeuroSchema",
+      "url": "https://neuroschema.org/catalog.json",
+      "page": "https://neuroschema.org",
+      "license": "CC-BY-4.0",
+      "retrievedAt": "2026-10-25T21:49:00Z",
+      "sha256": "d9841c8c2b6bc4e2b3e6320dff955b2373aff50655e5ceb001dab936a75e444c",
+      "bytes": 1195180,
+      "archive": "data/sources/neuroschema.json.gz"
+    }
+  }
+}
