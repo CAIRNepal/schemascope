@@ -460,3 +460,7 @@ mark { background: var(--gold-soft); color: inherit; border-radius: 3px; padding
 .also-head { margin-top: 36px; }
 .recprov p { margin: 6px 0; line-height: 1.7; }
 @media (max-width: 960px) { .xgrid { grid-template-columns: minmax(0, 1fr); padding: 20px; } }
+.load-more { text-align: center; margin: 22px 0 0; }
+.load-more .btn-ghost { display: inline-block; text-decoration: none; padding: 10px 18px; }
+.load-more { text-align: center; margin: 22px 0 0; }
+.load-more .btn-ghost { display: inline-block; text-decoration: none; padding: 10px 18px; }

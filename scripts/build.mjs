@@ -449,7 +449,8 @@ const catalogLd = (list) => ({
   publisher: { "@id": ORG_ID },
   keywords: ["ontology", "schema", "vocabulary", "metadata", "data standard", "FAIR", "semantic web", "interoperability"],
   ...(evaluation.generatedAt ? { dateModified: evaluation.generatedAt } : {}),
-  dataset: list.map((e) => ({ "@type": "Dataset", "@id": abs(`/o/${e.id}/`) + "#dataset", name: e.name, url: abs(`/o/${e.id}/`) })),
+  // The 100 highest-rated are listed inline; every entry page carries its own Dataset markup and is in the sitemap.
+  dataset: list.slice(0, 100).map((e) => ({ "@type": "Dataset", "@id": abs(`/o/${e.id}/`) + "#dataset", name: e.name, url: abs(`/o/${e.id}/`) })),
 });
 
 function homePage() {
@@ -530,14 +531,14 @@ function catalogPage() {
 <section class="page-head wrap">
   ${crumbsHtml(trail)}
   <h1>The catalog</h1>
-  <p class="lede">All ${catalog.length} resources. Filter by domain, type, species or grade, and sort by score, FAIRness, activity or adoption.</p>
+  <p class="lede">All ${catalog.length.toLocaleString("en-US")} resources. Harvested from Bioregistry, the OBO Foundry, OLS, TIB, LOV and NeuroSchema. Filter by domain (including cross-domain use), type, source registry or grade, and sort by score, FAIRness, activity or adoption.</p>
 </section>
 <section class="wrap section" id="explore">
   <div class="filters" role="group" aria-label="Filters">
     <label class="grow">Filter<input id="q" type="search" placeholder="Filter by name, tag, format…" autocomplete="off"></label>
     <label>Category<select id="f-cat"><option value="">All</option>${options(categories.map((c) => c.id), (id) => catById[id].name)}</select></label>
     <label>Type<select id="f-kind"><option value="">All</option>${options(allKinds, (k) => KIND_LABEL[k] || k)}</select></label>
-    <label>Species<select id="f-species"><option value="">All</option>${options(allSpecies)}</select></label>
+    <label>Source registry<select id="f-reg"><option value="">All</option>${options(["Bioregistry", "OBO Foundry", "OLS (EMBL-EBI)", "TIB Terminology Service", "Linked Open Vocabularies (LOV)", "NeuroSchema", "curated"], (r) => r.replace(/ \(.*\)/, ""))}</select></label>
     <label>Grade<select id="f-grade"><option value="">All</option>${options(GRADES.map((g) => g.grade), (g) => `${g} (${GRADES.find((x) => x.grade === g).min}+)`)}</select></label>
     <label>Sort<select id="f-sort">
       <option value="score">Highest score</option>
@@ -549,9 +550,10 @@ function catalogPage() {
     <label class="check"><input type="checkbox" id="f-active"> Hide legacy</label>
     <button type="button" class="btn-ghost" id="f-reset">Reset</button>
   </div>
-  <p class="muted small" id="count" aria-live="polite">${catalog.length} resources</p>
-  <div class="cards" id="cards">${sorted.map(card).join("")}</div>
+  <p class="muted small" id="count" aria-live="polite">${catalog.length.toLocaleString("en-US")} resources</p>
+  <div class="cards" id="cards" data-index="/catalog-index.json?v=${BUILD_ID}">${sorted.slice(0, 48).map(card).join("")}</div>
   <p class="empty" id="empty" hidden>No resources match. <button type="button" class="link" id="f-reset2">Clear filters</button></p>
+  <p class="load-more"><button type="button" class="btn-ghost" id="more">Load more</button></p>
 </section>`;
   const description = `All ${catalog.length} ontologies, schemas, vocabularies and data standards in SchemaScope, with FAIR scores, versions and adoption.`;
   return page({ title: "Catalog", pathname: "/catalog/", body, description, graph: [webPage("CollectionPage", "/catalog/", "Catalog", description), catalogLd(sorted), breadcrumbs(trail)] });
@@ -585,7 +587,7 @@ function categoriesPage() {
   ${categories
     .map((c) => {
       const items = catalog.filter((e) => e.category === c.id).sort(byScore);
-      return `<div class="cat-row"><div class="cat-row-head">${icon(c.icon)}<div><h2><a href="/category/${attr(c.id)}/">${esc(c.name)}</a></h2><p class="muted">${esc(c.blurb)}</p></div></div>${miniList(items)}</div>`;
+      return `<div class="cat-row"><div class="cat-row-head">${icon(c.icon)}<div><h2><a href="/category/${attr(c.id)}/">${esc(c.name)}</a></h2><p class="muted">${esc(c.blurb)}</p></div></div>${miniList(items.slice(0, 12))}${items.length > 12 ? `<p class="small"><a href="/category/${attr(c.id)}/">All ${items.length} in ${esc(c.name)} →</a></p>` : ""}</div>`;
     })
     .join("")}
 </section>`;
@@ -615,10 +617,11 @@ function categoryPage(c) {
 </section>
 <section class="wrap section">
   <div class="section-head"><h2>${items.length} resource${items.length === 1 ? "" : "s"}</h2><span class="muted">Sorted by evaluation score</span></div>
-  <div class="cards">${items.map(card).join("")}</div>
+  <div class="cards">${items.slice(0, 48).map(card).join("")}</div>
+  ${items.length > 48 ? `<p class="load-more"><a class="btn-ghost" href="/catalog/?cat=${attr(c.id)}">Browse all ${items.length} in the catalog →</a></p>` : ""}
   ${(() => {
     const also = catalog.filter((e) => e.category !== c.id && (e.domains || []).includes(c.id)).sort(byScore);
-    return also.length ? `<div class="section-head also-head"><h2>Also used in ${esc(c.name)}</h2><span class="muted">${also.length} resource${also.length === 1 ? "" : "s"} from other domains</span></div><div class="cards">${also.map(card).join("")}</div>` : "";
+    return also.length ? `<div class="section-head also-head"><h2>Also used in ${esc(c.name)}</h2><span class="muted">${also.length} resource${also.length === 1 ? "" : "s"} from other domains</span></div><div class="cards">${also.slice(0, 24).map(card).join("")}</div>${also.length > 24 ? `<p class="load-more"><a class="btn-ghost" href="/catalog/?cat=${attr(c.id)}">See all ${also.length} →</a></p>` : ""}` : "";
   })()}
   <p class="muted other-cats">Other categories: ${categories.filter((x) => x.id !== c.id).map((x) => `<a href="/category/${attr(x.id)}/">${esc(x.name)}</a>`).join(" · ")}</p>
 </section>`;
@@ -1312,6 +1315,21 @@ for (const e of catalog) {
 put("evaluation/index.html", evaluationPage());
 put("catalog/index.html", catalogPage());
 put("search/index.html", searchPage());
+const regsOf = (e) => (e.provenance?.registries || []).map((x) => x.registry).filter((v, i, a) => a.indexOf(v) === i).concat(e.provenance?.source === "curated" || e.provenance?.curated ? ["curated"] : []).concat(e.provenance?.source === "NeuroSchema catalog" ? ["NeuroSchema"] : []);
+put(
+  "catalog-index.json",
+  JSON.stringify(
+    catalog.map((e) => {
+      const r = ev(e.id);
+      return {
+        id: e.id, a: e.acronym || null, n: e.name, d: e.description.length > 180 ? e.description.slice(0, 177) + "…" : e.description,
+        c: e.category, cn: catById[e.category].name, x: e.domains || [], xn: (e.domains || []).map((d) => catById[d].name),
+        k: KIND_LABEL[e.kind] || e.kind, kid: e.kind, fm: (e.formats || []).slice(0, 4), tg: (e.tags || []).slice(0, 6), r: regsOf(e),
+        g: r?.grade || null, s: r?.score ?? null, f: r?.fair ?? null, t: r?.lastActivity || null, u: r?.adopterCount ?? 0, v: versionLabel(r), l: e.status === "legacy" || undefined,
+      };
+    })
+  )
+);
 put(
   "search-index.json",
   JSON.stringify(

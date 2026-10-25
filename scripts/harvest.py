@@ -428,6 +428,8 @@ for r in records:
     }
     if not e["acronym"]:
         e.pop("acronym")
+    elif e["acronym"].islower() and re.match(r"^[a-z0-9_]{2,16}$", e["acronym"]):
+        e["acronym"] = e["acronym"].upper()
     # Curated catalog entries and curated overrides win over harvested values.
     prev = old.get(rid)
     if prev and prev.get("provenance", {}).get("source") in ("curated", "Bioregistry", "NeuroSchema catalog"):
