@@ -146922,5 +146922,44 @@
     "tags": "Bioregistry"
    }
   }
+ },
+ {
+  "publications": [
+   {
+    "doi": "10.1177/22104968251361274",
+    "title": "RePlanIT Ontology for Digital Product Passports of ICT: Laptops and Data Servers",
+    "year": 2025
+   }
+  ],
+  "usedBy": [],
+  "tags": [
+   "digital product passport",
+   "circular economy",
+   "ICT",
+   "laptops",
+   "data servers",
+   "materials",
+   "sustainability"
+  ],
+  "id": "replanit",
+  "acronym": "RePlanIT",
+  "name": "RePlanIT Ontology for Digital Product Passports of ICT",
+  "category": "engineering",
+  "kind": "ontology",
+  "description": "An OWL ontology for building digital product passports of ICT devices such as laptops and data servers, in support of a circular economy. It models knowledge at the device, hardware-component, material and circular-economy levels (203 classes, 52 object properties, 33 data properties) and is used to build knowledge graphs that make ICT and materials data FAIR.",
+  "formats": [
+   "OWL"
+  ],
+  "maintainer": "Delft University of Technology (KIND lab)",
+  "license": "CC BY 4.0",
+  "homepage": "https://github.com/RePlanIT/Ontology",
+  "repository": "https://github.com/RePlanIT/Ontology",
+  "download": "https://raw.githubusercontent.com/RePlanIT/Ontology/main/RePlaniTv3.4.owl",
+  "provenance": {
+   "source": "curated",
+   "curatedAt": "2026-10-26T21:38:49Z",
+   "curatedBy": "submission #2",
+   "note": "Submitted through schemascope.org/submit."
+  }
  }
 ]
