@@ -2,6 +2,9 @@
 
 A cross-domain catalog of ontologies, vocabularies, schemas and data standards. It is harvested from the major registries, extended by discovering ontologies that no registry lists, and evaluated automatically for FAIRness, ontology quality, maintenance and adoption. Every record keeps its provenance. The site is fully static.
 
+<img width="1508" height="833" alt="Screenshot 2026-10-26 at 4 42 34 PM" src="https://github.com/user-attachments/assets/70ef4c4d-9f32-4343-b466-d4998de99caf" />
+
+
 ## Quick start
 
 ```bash
