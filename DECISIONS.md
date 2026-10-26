@@ -20,3 +20,9 @@ SchemaScope began as a copy of NeuroSchema (neuroschema.org); see that repositor
 
 ## S-004: Privacy, Security & Law domain   (2026-10-25, status: accepted)
 **Decision** – A dedicated domain for data protection, GDPR, consent, contracts, cybersecurity and legal ontologies. It is fed by LOV's Security and Contracts tags and keyword rules.
+
+## S-005: Submissions are saved as curated entries   (2026-10-26, status: accepted)
+**Context** – The submission bot (`scripts/issue-to-entry.mjs`) wrote only to `data/catalog.json`, which `scripts/harvest.py` rebuilds from the registries plus `data/curated.json`. The next harvest would have dropped every submitted entry. The bot also wrote the catalog with 2-space indentation while the harvest uses 1, so each submission PR reformatted all ~2,700 entries. And, as in NeuroSchema, the workflow only ran for issues carrying a `submission` label that didn't exist in the repo.
+**Decision** – The bot writes the entry to both files. A new entry gets `provenance.source: "curated"` with `curatedAt` and `curatedBy: "submission #N"`. A correction records the submitted fields under `provenance.overrides`, which the harvest applies on top of registry values. Submitter-supplied `provenance` is ignored. Both files keep the harvest's formatting. The workflow passes `ISSUE_NUMBER`, commits `data/curated.json` too, and runs on the form's JSON field as well as the label, creating the label when missing.
+**Why** – `curated.json` is already the place harvest-proof values live. Rejected: making the harvest keep every non-harvest catalog entry, which would also keep entries a registry has removed or renamed.
+**Consequences** – Entries submitted before this change that aren't in `curated.json` must be copied there by hand before the next harvest.

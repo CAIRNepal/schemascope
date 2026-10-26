@@ -19,9 +19,21 @@ concurrency:
 
 jobs:
   to-pr:
-    if: contains(github.event.issue.labels.*.name, 'submission') && github.event.issue.state == 'open'
+    # Match on the label or on the issue form's JSON field: GitHub silently drops a template label
+    # that doesn't exist in the repo yet, so the label alone isn't reliable.
+    if: >-
+      github.event.issue.state == 'open' &&
+      (contains(github.event.issue.labels.*.name, 'submission') ||
+       contains(github.event.issue.body, '### Catalog entry (JSON)'))
     runs-on: ubuntu-latest
     steps:
+      # Uses GITHUB_TOKEN, so adding the label doesn't start this workflow again.
+      - name: Make sure the issue has the submission label
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create submission --repo ${{ github.repository }} --color 0E8A16 --description "Add or update a catalog entry" 2>/dev/null || true
+          gh issue edit ${{ github.event.issue.number }} --repo ${{ github.repository }} --add-label submission
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
@@ -31,6 +43,7 @@ jobs:
         id: apply
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: node scripts/issue-to-entry.mjs
 
       - name: Create or update the pull request
@@ -49,7 +62,9 @@ jobs:
 
             The **Checks** workflow validates this entry, checks its links and DOI, and posts a FAIR evaluation preview below. Edit the issue to update this PR.
           labels: submission
-          add-paths: data/catalog.json
+          add-paths: |
+            data/catalog.json
+            data/curated.json
 
       - name: Tell the submitter
         if: success() && steps.pr.outputs.pull-request-number
