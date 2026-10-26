@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-25T22:54:13Z",
+  "generatedAt": "2026-10-26T00:34:46Z",
   "offline": true,
-  "entries": 2122,
+  "entries": 2683,
   "sources": {
     "bioregistry": {
       "name": "Bioregistry",
@@ -68,12 +68,15 @@
       "url": "data/discovered.json",
       "page": "https://schemascope.org/about/#discovery",
       "license": "metadata read from each artefact",
-      "retrievedAt": "2026-10-25T22:34:09Z",
+      "retrievedAt": "2026-10-25T22:34:26Z",
       "channels": [
-        "candidates"
+        "candidates",
+        "prefixcc",
+        "w3id",
+        "zenodo"
       ],
-      "candidates": 2,
-      "bytes": 2465,
+      "candidates": 5819,
+      "bytes": 951404,
       "archive": "data/sources/discovered.json.gz"
     }
   }

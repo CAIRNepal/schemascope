@@ -486,7 +486,8 @@ for r in records:
         rid += "-x"
     seen.add(rid)
     votes = r["_votes"]
-    ranked = [d for d, _ in votes.most_common() if d in categories and votes[d] >= 1]
+    # Strong evidence (registry domains, tags, name) wins; a description-only match still beats "multidisciplinary".
+    ranked = [d for d, _ in votes.most_common() if d in categories and votes[d] >= 0.6]
     primary = ("neuro" if r.get("_neuro_primary") else None) or (ranked[0] if ranked else "multidisciplinary")
     secondary = [d for d in ranked if d != primary and votes[d] >= 2][:4]
     srcs = {s["registry"] for s in r["_sources"]}
