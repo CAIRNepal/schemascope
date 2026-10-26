@@ -47,3 +47,7 @@ Use the site's `/submit/` form, which opens a GitHub issue that a bot turns into
 ## Deploy
 
 Vercel builds the site with `node scripts/build.mjs` into `dist/` (see `vercel.json`). Set the Application Preset to **Other** and leave the install command empty.
+
+## License
+
+The SchemaScope code and site are licensed under the [Apache License 2.0](LICENSE). Catalogued ontologies and schemas belong to their maintainers and keep their own licences, which are shown on each record. Registry data keeps the licence recorded in `data/sources.json`.

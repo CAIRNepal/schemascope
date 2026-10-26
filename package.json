@@ -1,6 +1,7 @@
 {
   "name": "schemascope",
   "version": "1.0.0",
+  "license": "Apache-2.0",
   "private": true,
   "description": "Static, cross-domain catalog of ontologies and schemas with automated FAIR and quality evaluation.",
   "type": "module",
