@@ -7,7 +7,7 @@
 // Ontologies already checked by the OBO Dashboard skip the ROBOT step (the dashboard result is used).
 // Env: ROBOT_JAR (path to robot.jar), ONLY=id1,id2, MAX_MB (default 150), SKIP_OOPS=1
 import { readFile, writeFile, mkdir, rm, stat } from "node:fs/promises";
-import { existsSync, createWriteStream } from "node:fs";
+import { existsSync, createWriteStream, readFileSync } from "node:fs";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { Readable } from "node:stream";
@@ -29,10 +29,22 @@ const ROBOT_JAR = process.env.ROBOT_JAR || null;
 const ROBOT_IMAGE = process.env.ROBOT_IMAGE || null;
 const ROBOT = ROBOT_JAR || ROBOT_IMAGE;
 // Run a ROBOT command; host paths under `work` are mapped to /work inside the container.
+// Run a container with a unique name and kill it on timeout (killing the docker client alone leaves it running).
+let seq = 0;
+async function dockerRun(image, volume, args, timeoutMs) {
+  const name = `${path.basename(root)}-q-${process.pid}-${++seq}`;
+  try {
+    return await run("docker", ["run", "--rm", "--name", name, "--memory", process.env.DOCKER_MEMORY || "8g", "-v", volume, image, ...args], { maxBuffer: 1 << 28, timeout: timeoutMs, killSignal: "SIGKILL" });
+  } catch (e) {
+    await run("docker", ["kill", name]).catch(() => {});
+    throw e;
+  }
+}
+
 function robot(args, opts = {}) {
   if (ROBOT_JAR) return run("java", ["-Xmx6G", "-jar", ROBOT_JAR, ...args], opts);
   const mapped = args.map((a) => (typeof a === "string" && a.startsWith(work) ? "/work" + a.slice(work.length) : a));
-  return run("docker", ["run", "--rm", "-v", `${work}:/work`, ROBOT_IMAGE, ...mapped], opts);
+  return dockerRun(ROBOT_IMAGE, `${work}:/work`, mapped, opts.timeout || 30 * 60e3);
 }
 const MAX_MB = Number(process.env.MAX_MB || 150);
 const only = process.env.ONLY ? new Set(process.env.ONLY.split(",")) : null;
@@ -127,7 +139,7 @@ async function oopsDocker(file) {
   const dir = path.dirname(file);
   const report = path.join(dir, "tstOut.model.ttl");
   await rm(report, { force: true });
-  await run("docker", ["run", "--rm", "-v", `${dir}:/work`, OOPS_IMAGE, "--input-file", `/work/${path.basename(file)}`], { maxBuffer: 1 << 28, timeout: 45 * 60e3 });
+  await dockerRun(OOPS_IMAGE, `${dir}:/work`, ["--input-file", `/work/${path.basename(file)}`], Number(process.env.OOPS_TIMEOUT_MIN || 10) * 60e3);
   if (!existsSync(report)) throw new Error("OOPS! produced no report");
   const r = await pyJson(["parse-oops", report]);
   await rm(report, { force: true });
@@ -137,7 +149,7 @@ async function oopsDocker(file) {
 
 async function pitfallScan(e, file) {
   const attempts = [];
-  if (OOPS_IMAGE && file) {
+  if (OOPS_IMAGE && file && (await stat(file)).size <= Number(process.env.OOPS_MAX_MB || 20) * 1e6) {
     try {
       return { ...(await oopsDocker(file)), engine: "OOPS! (local Docker)", attempts };
     } catch (err) {
@@ -161,9 +173,29 @@ async function pitfallScan(e, file) {
   return { error: "no pitfall scanner succeeded", attempts };
 }
 
-const targets = catalog.filter((e) => isOntology(e) && e.download && (!only || only.has(e.id)));
+// Incremental: never-checked ontologies first, then the oldest checks; stop when the time budget runs out.
+const MAX_MINUTES = Number(process.env.MAX_MINUTES || 120);
+const deadline = Date.now() + MAX_MINUTES * 60e3;
+const lastChecked = (id) => {
+  for (const d of [outDir, trackedDir]) {
+    const f = path.join(d, `${id}.json`);
+    if (existsSync(f)) try { return JSON.parse(readFileSync(f, "utf8")).checkedAt || ""; } catch {}
+  }
+  return "";
+};
+const targets = catalog
+  .filter((e) => isOntology(e) && e.download && (!only || only.has(e.id)))
+  .map((e) => ({ e, at: lastChecked(e.id) }))
+  .sort((a, b) => a.at.localeCompare(b.at))
+  .map((x) => x.e);
 console.log(`Quality checks for ${targets.length} ontologies (ROBOT: ${robotVersion || "not available"}; OOPS! image: ${OOPS_IMAGE || "none"})`);
+let checked = 0;
 for (const e of targets) {
+  if (Date.now() > deadline) {
+    console.log(`Time budget of ${MAX_MINUTES} min reached after ${checked} ontologies; the rest will be checked first next run.`);
+    break;
+  }
+  checked++;
   const out = path.join(outDir, `${e.id}.json`);
   const prevFile = [out, path.join(trackedDir, `${e.id}.json`)].find(existsSync);
   const prev = prevFile ? JSON.parse(await readFile(prevFile, "utf8")) : {};

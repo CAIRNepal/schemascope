@@ -7,6 +7,7 @@
 #   scripts/refresh.sh --push       ... and push to origin
 #   scripts/refresh.sh --quick      skip the slow ontology quality checks (reuses data/quality/)
 #   ONLY=id1,id2 scripts/refresh.sh evaluate just these entries
+#   MAX_MINUTES=60 scripts/refresh.sh  time budget for quality checks (default 120; stalest first, resumes next run)
 #
 # Requirements: Node ≥ 18, Docker (OOPS! and ROBOT images, built automatically), Python 3 with rdflib.
 # Optional: GITHUB_TOKEN (or a logged-in `gh` CLI) to avoid GitHub's 60 requests/hour limit; BIOPORTAL_API_KEY.
@@ -27,8 +28,11 @@ NAME=$(node -e 'console.log(require("./package.json").name)')
 step() { printf '\n\033[1m▸ %s\033[0m\n' "$*"; }
 
 step "Updating from origin"
-if git remote get-url origin >/dev/null 2>&1; then
-  git pull --rebase --autostash origin "$(git branch --show-current)" || { echo "git pull failed; resolve and re-run." >&2; exit 1; }
+BRANCH=$(git branch --show-current)
+if git remote get-url origin >/dev/null 2>&1 && git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null 2>&1; then
+  git pull --rebase --autostash origin "$BRANCH" || { echo "git pull failed; resolve and re-run." >&2; exit 1; }
+else
+  echo "origin/$BRANCH not found (not pushed yet?); skipping pull."
 fi
 
 if [ -z "${GITHUB_TOKEN:-}" ] && command -v gh >/dev/null 2>&1; then
