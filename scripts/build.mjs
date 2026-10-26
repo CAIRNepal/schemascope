@@ -544,7 +544,7 @@ function homePage() {
 
 <section class="wrap section cta">
   <div class="cta-inner">
-    <div><h2>Missing a schema or ontology?</h2><p class="muted">Submit it through GitHub. Every addition is reviewed, validated and evaluated automatically before it is merged.</p></div>
+    <div><h2>Missing a schema or ontology?</h2><p class="muted">Submit it through ${config.repository ? `<a href="${attr(config.repository)}" rel="noopener">GitHub</a>` : "GitHub"}. Every addition is reviewed, validated and evaluated automatically before it is merged.</p></div>
     <a class="btn" href="/submit/">Submit a resource</a>
   </div>
 </section>`;
@@ -1148,12 +1148,12 @@ function submitPage() {
 <section class="page-head wrap">
   ${crumbsHtml(trail)}
   <h1>Submit a resource</h1>
-  <p class="lede">All additions and corrections go through GitHub, so every change is reviewed, tracked and checked automatically before it is merged.</p>
+  <p class="lede">All additions and corrections go through ${config.repository ? `<a href="${attr(config.repository)}" rel="noopener">GitHub</a>` : "GitHub"}, so every change is reviewed, tracked and checked automatically before it is merged.</p>
 </section>
 
 <section class="wrap section">
   <ol class="flow">
-    <li><b>1. Describe it</b><span>Fill in the form below, or open the GitHub issue form directly.</span></li>
+    <li><b>1. Describe it</b><span>Fill in the form below, or open the ${issueUrl ? `<a href="${attr(issueUrl)}" rel="noopener">GitHub issue form</a>` : "GitHub issue form"} directly.</span></li>
     <li><b>2. Issue → pull request</b><span>A bot turns your issue into a pull request that adds the entry to <code>data/catalog.json</code>.</span></li>
     <li><b>3. Automated checks</b><span>CI validates the entry, checks links and DOIs for duplicates, runs the FAIR evaluation and posts the score on the PR.</span></li>
     <li><b>4. Review &amp; merge</b><span>A maintainer reviews and merges. The site redeploys, and the next evaluation run archives it.</span></li>
@@ -1233,7 +1233,7 @@ function aboutPage() {
   <p>Each resource stays with its maintainers. This catalog links to the canonical homepage, repository, download PURL and ontology browsers; it does not copy or re-license their files.</p>
 
   <h2 id="contribute">Contributing</h2>
-  <p>Everything is tracked in Git. Use the <a href="/submit/">submission form</a>, which opens a pre-filled GitHub issue that a bot converts into a pull request, or edit <code>data/catalog.json</code> and open a pull request yourself. Every pull request is validated, link-checked, de-duplicated and FAIR-evaluated in CI before a maintainer reviews and merges it.</p>
+  <p>Everything is tracked in Git. Use the <a href="/submit/">submission form</a>, which opens a pre-filled GitHub issue that a bot converts into a pull request, or edit <code>data/catalog.json</code> and open a pull request yourself on ${config.repository ? `<a href="${attr(config.repository)}" rel="noopener">GitHub</a>` : "GitHub"}. Every pull request is validated, link-checked, de-duplicated and FAIR-evaluated in CI before a maintainer reviews and merges it.</p>
 
   <h2>Use the data</h2>
   <ul>
