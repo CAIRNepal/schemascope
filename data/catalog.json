@@ -727,7 +727,7 @@
   "id": "actan",
   "acronym": "ACTAN",
   "name": "Active Animals Ontology",
-  "category": "neuro",
+  "category": "multidisciplinary",
   "kind": "ontology",
   "description": "An ontology for animal behaviours. It defines, labels, and interconnects potentially discernible actions, functional contexts, and dispositions. Using scientific references, it attempts to provide an internally consistent framework for classifying assertions which have been made about behaviours.",
   "formats": [
@@ -5496,10 +5496,10 @@
   "name": "BioAssay Ontology",
   "category": "life",
   "domains": [
-   "neuro",
    "chemistry",
    "earth",
-   "agri"
+   "agri",
+   "engineering"
   ],
   "kind": "ontology",
   "description": "The BioAssay Ontology (BAO) describes chemical biology screening assays and their results including high-throughput screening (HTS) data for the purpose of categorizing assays and data analysis.",
@@ -6171,9 +6171,6 @@
   "acronym": "BCIO",
   "name": "The Behaviour Change Intervention Ontology",
   "category": "engineering",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "The Behaviour Change Intervention Ontology is an ontology for all aspects of human behaviour change interventions and their evaluation.",
   "formats": [
@@ -6293,7 +6290,6 @@
   "domains": [
    "earth",
    "agri",
-   "neuro",
    "chemistry"
   ],
   "kind": "ontology",
@@ -6655,7 +6651,6 @@
   "name": "Biological and Environmental Research Variable Ontology",
   "category": "life",
   "domains": [
-   "neuro",
    "earth"
   ],
   "kind": "ontology",
@@ -9799,9 +9794,6 @@
   "acronym": "BR",
   "name": "Brainstorm Ontology",
   "category": "society",
-  "domains": [
-   "neuro"
-  ],
   "kind": "vocabulary",
   "description": "A lightweight ontology to structure e- brainstorming sessions",
   "formats": [
@@ -10387,7 +10379,6 @@
   "category": "life",
   "domains": [
    "agri",
-   "neuro",
    "physical",
    "health"
   ],
@@ -11308,9 +11299,6 @@
   "acronym": "CASO",
   "name": "Context Aware System Observation Ontology",
   "category": "engineering",
-  "domains": [
-   "earth"
-  ],
   "kind": "vocabulary",
   "description": "CASO (Context Aware System Observation) is an ontology for context aware system and observation services. Its goal is to describe all the processing of the context.",
   "formats": [
@@ -12159,9 +12147,6 @@
   "acronym": "CCO",
   "name": "Cognitive Characteristics Ontology",
   "category": "society",
-  "domains": [
-   "neuro"
-  ],
   "kind": "vocabulary",
   "description": "The Cognitive Characteristics Ontology specification provides a vocabulary for describing cognitive pattern within contexts, their temporal dynamics and their origins, on/ for the Semantic Web.",
   "formats": [
@@ -13368,10 +13353,7 @@
   "id": "censo",
   "acronym": "CENSO",
   "name": "CENSO: an ontology for censored environmental observations",
-  "category": "neuro",
-  "domains": [
-   "earth"
-  ],
+  "category": "earth",
   "kind": "ontology",
   "description": "CENSO extends SOSA/SSN with detection and quantification limits, interval-valued results, applicability conditions on regulatory thresholds, and a three-valued compliance assessment in which \"cannot be determined\" is an explicit, queryable outcome, subtyped by the reason it cannot. Designed for measurement processes in which non-detection is the normal result and must be represented as an open-world upper bound rather than as zero.",
   "formats": [
@@ -14090,7 +14072,6 @@
   "name": "Climate and Energy Policy Ontology",
   "category": "engineering",
   "domains": [
-   "neuro",
    "chemistry",
    "earth"
   ],
@@ -14444,7 +14425,7 @@
  {
   "id": "cevo",
   "name": "cevo ontology",
-  "category": "neuro",
+  "category": "multidisciplinary",
   "kind": "ontology",
   "description": "This is a cognitive ontology to organize English verbs",
   "formats": [
@@ -14731,7 +14712,6 @@
   "name": "Common Greenhouse Ontology",
   "category": "earth",
   "domains": [
-   "neuro",
    "chemistry",
    "engineering"
   ],
@@ -23410,9 +23390,6 @@
   "acronym": "CTENO",
   "name": "Ctenophore Ontology",
   "category": "life",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "An anatomical and developmental ontology for ctenophores (Comb Jellies)",
   "formats": [
@@ -25852,7 +25829,7 @@
  {
   "id": "dbc-ontology",
   "name": "DBC – CAN Database Ontology",
-  "category": "earth",
+  "category": "society",
   "kind": "ontology",
   "description": "The DBC Ontology provides a semantic model for representing CAN bus messaging, encoding, and observations. It extends the W3C SSN/SOSA ontology to capture CAN database (DBC)-specific concepts such as messages, signals, logs, and ECUs. Designed for the transportation domain, the ontology supports advanced analytics, condition monitoring, predictive maintenance, and real-time diagnostics.",
   "formats": [
@@ -27221,7 +27198,6 @@
   "category": "life",
   "domains": [
    "health",
-   "neuro",
    "earth"
   ],
   "kind": "ontology",
@@ -31666,7 +31642,6 @@
   "name": "Domain Resource Application Ontology",
   "category": "health",
   "domains": [
-   "neuro",
    "earth",
    "agri",
    "computing"
@@ -34828,7 +34803,6 @@
   "name": "The Ecosystem Ontology",
   "category": "earth",
   "domains": [
-   "neuro",
    "chemistry",
    "engineering"
   ],
@@ -34893,9 +34867,6 @@
   "acronym": "ECTO",
   "name": "Environmental conditions, treatments and exposures ontology",
   "category": "earth",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "ECTO describes exposures to experimental treatments of plants and model organisms (e.g. exposures to modification of diet, lighting levels, temperature); exposures of humans or any other organisms to stressors through a variety of routes, for purposes of public health, environmental monitoring etc, stimuli, natural and experimental, any kind of environmental condition or change in condition that can be experienced by an organism or population of organisms on earth.",
   "formats": [
@@ -35827,9 +35798,6 @@
   "acronym": "EEO",
   "name": "Experimental Evaluation Ontology",
   "category": "metadata",
-  "domains": [
-   "neuro"
-  ],
   "kind": "vocabulary",
   "description": "An ontology to describe experiments, evaluations and their relation.",
   "formats": [
@@ -35946,7 +35914,7 @@
    "earth",
    "agri",
    "health",
-   "neuro"
+   "physical"
   ],
   "kind": "ontology",
   "description": "The Experimental Factor Ontology (EFO) provides a systematic description of many experimental variables available in EBI databases. It combines parts of several biological ontologies, such as anatomy, disease and chemical compounds. The scope of EFO is to support the annotation, analysis and visualization of data handled by the EBI Functional Genomics Team.",
@@ -36071,8 +36039,7 @@
   "name": "Human developmental anatomy, timed version",
   "category": "life",
   "domains": [
-   "health",
-   "neuro"
+   "health"
   ],
   "kind": "ontology",
   "description": "A structured controlled vocabulary of stage-specific anatomical structures of the human. It has been designed to mesh with the mouse anatomy (EMAP ontology) and incorporates each Carnegie stage of development (CS1-20). The timed version of the human developmental anatomy ontology gives all the tissues present at each Carnegie Stage (CS) of human development (1-20) linked by a part-of rule. Each term is mentioned only once so that the embryo at each stage can be seen as the simple sum of its parts. Users should note that tissues that are symmetric (e.g.",
@@ -36140,8 +36107,7 @@
   "name": "Human developmental anatomy, abstract version",
   "category": "life",
   "domains": [
-   "health",
-   "neuro"
+   "health"
   ],
   "kind": "ontology",
   "description": "A structured controlled vocabulary of stage-specific anatomical structures of the human. It has been designed to mesh with the mouse anatomy (EMAP ontology) and incorporates each Carnegie stage of development (CS1-20). This abstract version of the human developmental anatomy ontology compresses all the tissues present over Carnegie stages 1-20 into a single hierarchy. The heart, for example, is present from Carnegie Stage 9 onwards and is thus represented by 12 EHDA IDs (one for each stage).",
@@ -36214,8 +36180,7 @@
   "name": "Human developmental anatomy, abstract",
   "category": "life",
   "domains": [
-   "health",
-   "neuro"
+   "health"
   ],
   "kind": "ontology",
   "description": "A structured controlled vocabulary of stage-specific anatomical structures of the developing human.",
@@ -36764,9 +36729,6 @@
   "acronym": "EMAP",
   "name": "Mouse gross anatomy and development, timed",
   "category": "life",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "A structured controlled vocabulary of stage-specific anatomical structures of the mouse (Mus).",
   "formats": [
@@ -36848,9 +36810,6 @@
   "acronym": "EMAPA",
   "name": "Mouse Developmental Anatomy Ontology",
   "category": "life",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "An ontology for mouse anatomy covering embryonic development and postnatal stages.",
   "formats": [
@@ -37311,10 +37270,7 @@
   "id": "empty",
   "acronym": "EMPTY",
   "name": "Experimental Measurements Purposes and Treatments ontologY",
-  "category": "neuro",
-  "domains": [
-   "physical"
-  ],
+  "category": "physical",
   "kind": "ontology",
   "description": "The Experimental Measurements, Purposes, and Treatments ontologY (EMPTY) is a structured vocabulary designed to capture and standardize the scientific reasoning behind experimental measurements. It addresses a critical gap in existing metadata standards, which primarily focus on technical specifications rather than scientific intent. The ontology provides a common language to express why a measurement was taken and the conceptual conditions under which it should be interpreted.",
   "formats": [
@@ -37921,7 +37877,6 @@
   "name": "Thesaurus for long-term ecological research, monitoring, experiments",
   "category": "earth",
   "domains": [
-   "neuro",
    "chemistry"
   ],
   "kind": "ontology",
@@ -37987,7 +37942,6 @@
   "name": "Plant Environment Ontology",
   "category": "earth",
   "domains": [
-   "neuro",
    "agri"
   ],
   "kind": "ontology",
@@ -38058,7 +38012,6 @@
   "name": "Environment Ontology for Livestock",
   "category": "life",
   "domains": [
-   "neuro",
    "earth",
    "agri"
   ],
@@ -38712,7 +38665,7 @@
   "id": "ero-w3id",
   "acronym": "ERO",
   "name": "Experimental Research Ontology (ERO)",
-  "category": "neuro",
+  "category": "foundational",
   "kind": "ontology",
   "description": "The Experimental Research Ontology (ERO) is a small ontology that models some fundamental aspects of data creation in experimental research. ERO is aligned with several upper ontologies, including BFO, IAO, OBI, and SOSA. ERO enables the characterization of different types of experiments by specifying different methodologies and collections of parameters. Methodology specifications may include, e.g., research objectives, experiment setups and procedures, success criteria, or saftey regulations.",
   "formats": [
@@ -38871,7 +38824,7 @@
   "id": "esrfet",
   "acronym": "ESRFET",
   "name": "ESRF Experimental Techniques Ontology",
-  "category": "neuro",
+  "category": "metadata",
   "kind": "ontology",
   "description": "The ESRFET ontology describes beamline experimental techniques at ESRF to enhance the FAIRness of experimental metadata. It supports semantic interoperability and reasoning over relationships between techniques. (from homepage)",
   "formats": [
@@ -39344,10 +39297,10 @@
   "name": "EuroVoc",
   "category": "life",
   "domains": [
-   "neuro",
    "earth",
    "agri",
-   "engineering"
+   "engineering",
+   "society"
   ],
   "kind": "vocabulary",
   "description": "EuroVoc is the EU's multilingual and multidisciplinary thesaurus. It contains keywords, organized in 21 domains and 127 sub-domains, which are used to describe the content of documents in EUR-Lex. [from homepage]",
@@ -39837,7 +39790,6 @@
   "name": "Exposure ontology",
   "category": "health",
   "domains": [
-   "neuro",
    "earth"
   ],
   "kind": "ontology",
@@ -41026,9 +40978,6 @@
   "acronym": "FBdv",
   "name": "Drosophila development",
   "category": "life",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "A structured controlled vocabulary of the development of Drosophila melanogaster.",
   "formats": [
@@ -42168,7 +42117,6 @@
   "category": "chemistry",
   "domains": [
    "life",
-   "neuro",
    "physical"
   ],
   "kind": "ontology",
@@ -43716,7 +43664,7 @@
   "id": "fraternal",
   "acronym": "FRATERNAL",
   "name": "Fraternal Orders and Sororities Ontology",
-  "category": "neuro",
+  "category": "society",
   "kind": "ontology",
   "description": "Extension of the Membership Organisations Ontology (membership) for fraternal orders, lodges, fraternities and sororities: degree systems and their order, initiation and degree conferral, lodges and grand bodies, ceremonies, insignia, recognition and amity between orders, and assessments of whether an order of chivalry is genuine.",
   "formats": [
@@ -44873,9 +44821,6 @@
   "acronym": "GAZ",
   "name": "Gazetteer",
   "category": "earth",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "A gazetteer constructed on ontological principles. The countries are actively maintained.",
   "formats": [
@@ -45299,7 +45244,6 @@
   "name": "Genomics Cohorts Knowledge Ontology",
   "category": "life",
   "domains": [
-   "neuro",
    "physical"
   ],
   "kind": "ontology",
@@ -45374,8 +45318,7 @@
   "name": "General Multilingual Environmental Thesaurus Concept",
   "category": "earth",
   "domains": [
-   "life",
-   "neuro"
+   "life"
   ],
   "kind": "vocabulary",
   "description": "The European Environment Information and Observation Network (Eionet) is a partnership network of the European Environment Agency (EEA) and its 38 member and cooperating countries. The EEA is responsible for developing Eionet and coordinating its activities together with National Focal Points (NFPs) in the countries. This terminology supports those efforts.",
@@ -46512,7 +46455,6 @@
   "name": "Thesaurus for the Social Sciences",
   "category": "life",
   "domains": [
-   "neuro",
    "society"
   ],
   "kind": "vocabulary",
@@ -53089,9 +53031,6 @@
   "acronym": "HsapDv",
   "name": "Human Developmental Stages",
   "category": "life",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "Human Developmental Stages: Life cycle stages for Human. A ontology listed in Bioregistry, OBO Foundry, OLS (EMBL-EBI).",
   "formats": [
@@ -54749,7 +54688,7 @@
   "id": "icepo",
   "acronym": "ICEPO",
   "name": "Ion Channel Electrophysiology Ontology",
-  "category": "humanities",
+  "category": "neuro",
   "kind": "ontology",
   "description": "The Ion Channel Electrophysiology Ontology supports the capture of voltage-gated ion channel electrophysiological data from the literature in a structured manner and thus enables other applications such as querying and reasoning tools.",
   "formats": [
@@ -55027,7 +54966,6 @@
   "category": "life",
   "domains": [
    "health",
-   "neuro",
    "earth"
   ],
   "kind": "ontology",
@@ -55958,7 +55896,6 @@
   "category": "metadata",
   "domains": [
    "life",
-   "neuro",
    "chemistry",
    "earth"
   ],
@@ -60117,7 +60054,7 @@
   "id": "kim-lp",
   "acronym": "kim.lp",
   "name": "Lehrplan Ontology",
-  "category": "neuro",
+  "category": "multidisciplinary",
   "kind": "ontology",
   "description": "This ontology is a formal representation that captures the fundamental concepts and their relationships to one another in the field of curriculum design and implementation of the German school system.",
   "formats": [
@@ -61790,7 +61727,7 @@
  {
   "id": "lehrplan",
   "name": "Curriculum Ontology",
-  "category": "neuro",
+  "category": "multidisciplinary",
   "kind": "ontology",
   "description": "This ontology is a formal representation that captures the fundamental concepts and their relationships to one another in the field of curriculum design and implementation of the German school system.",
   "formats": [
@@ -68849,9 +68786,6 @@
   "acronym": "MFO",
   "name": "Medaka fish anatomy and development",
   "category": "life",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "A structured controlled vocabulary of the anatomy and development of the Japanese medaka fish, <i>Oryzias latipes</i>.",
   "formats": [
@@ -70402,9 +70336,6 @@
   "acronym": "MmusDv",
   "name": "Mouse Developmental Stages",
   "category": "life",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "Mouse Developmental Stages: Life cycle stages for Mus Musculus. A ontology listed in Bioregistry, OBO Foundry, OLS (EMBL-EBI).",
   "formats": [
@@ -70477,8 +70408,7 @@
   "name": "Microarray experimental conditions",
   "category": "life",
   "domains": [
-   "metadata",
-   "neuro"
+   "metadata"
   ],
   "kind": "ontology",
   "description": "The MGED Ontology (MO) provides terms for annotating all aspects of a microarray experiment from the design of the experiment and array layout, through to the preparation of the biological sample and the protocols used to hybridize the RNA and analyze the data.",
@@ -71614,8 +71544,7 @@
   "name": "Mammalian Phenotype Ontology",
   "category": "life",
   "domains": [
-   "health",
-   "neuro"
+   "health"
   ],
   "kind": "ontology",
   "description": "The Mammalian Phenotype Ontology (MP) classifies and organises phenotypic information related to the mouse and other mammalian species. This ontology has been applied to mouse phenotype descriptions in various databases allowing comparisons of data from diverse mammalian sources. It can facilitate in the identification of appropriate experimental disease models, and aid in the discovery of candidate disease genes and molecular signaling pathways.",
@@ -72303,7 +72232,6 @@
   "category": "life",
   "domains": [
    "agri",
-   "neuro",
    "physical"
   ],
   "kind": "ontology",
@@ -75726,9 +75654,9 @@
   "category": "life",
   "domains": [
    "chemistry",
-   "neuro",
    "earth",
-   "engineering"
+   "engineering",
+   "metadata"
   ],
   "kind": "ontology",
   "description": "nmrCV is a controlled vocabulary to deliver standardized descriptors for the open mark-up language for NMR raw and spectrum data, sanctioned by the metabolomics standards initiative msi.",
@@ -75822,7 +75750,6 @@
   "name": "Nuclear Magnetic Resonance Controlled Vocabulary (nmrCV) - Version 2025-03-20",
   "category": "chemistry",
   "domains": [
-   "neuro",
    "earth",
    "engineering"
   ],
@@ -75862,9 +75789,6 @@
   "acronym": "NNO",
   "name": "The Neural Network Ontology",
   "category": "metadata",
-  "domains": [
-   "neuro"
-  ],
   "kind": "vocabulary",
   "description": "This is the Neural Network Ontology. Designed by the AIFB (http://www.aifb.kit.edu/web/Web_Science)",
   "formats": [
@@ -77811,7 +77735,6 @@
   "name": "The Extensible Observation Ontology",
   "category": "life",
   "domains": [
-   "neuro",
    "earth"
   ],
   "kind": "ontology",
@@ -78108,9 +78031,6 @@
   "acronym": "OBSM",
   "name": "Observation Method Ontology",
   "category": "life",
-  "domains": [
-   "earth"
-  ],
   "kind": "vocabulary",
   "description": "This is a taxonomy of some observation methods. It is incomplete",
   "formats": [
@@ -78831,7 +78751,7 @@
   "id": "odm2-methodtype",
   "acronym": "odm2.methodtype",
   "name": "Method Type Vocabulary",
-  "category": "earth",
+  "category": "multidisciplinary",
   "kind": "vocabulary",
   "description": "A vocabulary for describing types of Methods associated with creating observations. MethodTypes correspond with ActionTypes in ODM2. An Action must be performed using an appropriate MethodType - e.g., a specimen collection Action should be associated with a specimen collection method.",
   "formats": [],
@@ -80716,9 +80636,6 @@
   "acronym": "OlatDv",
   "name": "Medaka Developmental Stages",
   "category": "life",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "Medaka Developmental Stages: Life cycle stages for Medaka. A ontology listed in Bioregistry, OBO Foundry, OLS (EMBL-EBI).",
   "formats": [
@@ -82643,7 +82560,7 @@
  {
   "id": "ontoim",
   "name": "Ontologia per i Comuni Italiani",
-  "category": "earth",
+  "category": "agri",
   "kind": "ontology",
   "description": "This ontology, combined with ontologies from the Italian OntoPiA network, makes it possible to model the reality of a municipality. It includes events, associations, businesses, schools, hospitals, green areas, plants, street signs, traffic observations, traffic accidents and demographic statistics.",
   "formats": [
@@ -83745,9 +83662,6 @@
   "acronym": "OPL",
   "name": "Ontology for Parasite LifeCycle",
   "category": "life",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "The Ontology for Parasite Lifecycle (OPL) models the life cycle stage details of various parasites, including Trypanosoma sp., Leishmania major, and Plasmodium sp., etc.",
   "formats": [
@@ -87387,9 +87301,6 @@
   "acronym": "PANET",
   "name": "Photon and Neutron Experimental Techniques Ontology",
   "category": "physical",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "The ExPaNDS Photon and Neutron Experimental Techniques (PaNET) ontology provides a taxonomy and thesaurus of photon and neutron (PaN) experimental techniques. Based mainly on accelerator-based light sources and neutron facilities, the primary use of the ontology is to enhance the FAIRness of PaN data catalogues services. The ontology defines specific techniques in terms of more general technique classes and provides synonyms and references.",
   "formats": [
@@ -88775,9 +88686,6 @@
   "acronym": "PD_ST",
   "name": "Platynereis stage ontology",
   "category": "life",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "Platynereis stage ontology: Developmental stages of Platynereis. A ontology listed in Bioregistry, OBO Foundry.",
   "formats": [
@@ -89010,9 +88918,6 @@
   "acronym": "PdumDv",
   "name": "Platynereis Developmental Stages",
   "category": "life",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "Life cycle stages for Platynereis dumerilii",
   "formats": [
@@ -90118,7 +90023,6 @@
   "category": "metadata",
   "domains": [
    "health",
-   "neuro",
    "earth"
   ],
   "kind": "ontology",
@@ -90902,9 +90806,6 @@
   "acronym": "PLANA",
   "name": "Planarian Anatomy and Schmidtea mediterranean Developmental Stage Ontology",
   "category": "life",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "PLANA, the PLANarian Anatomy Ontology, encompasses the anatomy of developmental stages and adult biotypes of Schmidtea mediterranea.",
   "formats": [
@@ -91382,7 +91283,6 @@
   "category": "chemistry",
   "domains": [
    "engineering",
-   "neuro",
    "earth"
   ],
   "kind": "ontology",
@@ -93853,7 +93753,6 @@
   "name": "Process Chemistry Ontology",
   "category": "chemistry",
   "domains": [
-   "neuro",
    "earth",
    "engineering",
    "life"
@@ -97481,7 +97380,7 @@
   "id": "rdaco",
   "acronym": "RDACO",
   "name": "RDA Content Type",
-  "category": "neuro",
+  "category": "multidisciplinary",
   "kind": "vocabulary",
   "description": "Concepts for a categorization that reflects the fundamental form of communication in which the content is expressed and the human sense through which it is intended to be perceived.",
   "formats": [
@@ -102403,8 +102302,7 @@
   "name": "Rat Genome Database",
   "category": "life",
   "domains": [
-   "health",
-   "neuro"
+   "health"
   ],
   "kind": "ontology",
   "description": "Rat Genome Database seeks to collect, consolidate, and integrate rat genomic and genetic data with curated functional and physiological data and make these data widely available to the scientific community. This collection references genes.",
@@ -103252,7 +103150,7 @@
   "id": "roar",
   "acronym": "ROAR",
   "name": "Reconstructions and Observations in Archival Resources",
-  "category": "earth",
+  "category": "society",
   "kind": "ontology",
   "description": "Ontology to describe person, location etc. observations in archival resources. One or multiple observations can be bundled into a reconstruction that combines complementary (or sometimes conflicting) information from the observation(s) so that a single entity is reconstructed out of several entity observations from one or multiple sources.",
   "formats": [
@@ -103299,7 +103197,7 @@
   "id": "rofch",
   "acronym": "ROFCH",
   "name": "ROF Character",
-  "category": "neuro",
+  "category": "multidisciplinary",
   "kind": "vocabulary",
   "description": "Concepts for a fundamental form of communication in which the content of a resource is expressed.",
   "formats": [
@@ -103593,7 +103491,7 @@
   "id": "rofsm",
   "acronym": "ROFSM",
   "name": "ROF Sensory Mode",
-  "category": "earth",
+  "category": "multidisciplinary",
   "kind": "vocabulary",
   "description": "Concepts for a human sense through which the content of a resource is intended to be perceived.",
   "formats": [
@@ -108025,10 +107923,7 @@
   "id": "sdgio",
   "acronym": "SDGIO",
   "name": "Sustainable Development Goals Interface Ontology",
-  "category": "neuro",
-  "domains": [
-   "earth"
-  ],
+  "category": "earth",
   "kind": "ontology",
   "description": "The Sustainable Development Goals Interface Ontology (SDGIO) aims to provide a semantic bridge between 1) the Sustainable Development Goals, their targets, and indicators and 2) the large array of entities they refer to. SDGIO will reuse existing ontologies where appropriate.",
   "formats": [
@@ -110632,7 +110527,6 @@
   "name": "Social Insect Behavior Ontology",
   "category": "life",
   "domains": [
-   "neuro",
    "society"
   ],
   "kind": "ontology",
@@ -112215,7 +112109,7 @@
   "id": "smashhitcore",
   "acronym": "SMASHHITCORE",
   "name": "smashHitCore",
-  "category": "earth",
+  "category": "privacy",
   "kind": "ontology",
   "description": "GDPR consent and contracts for sensor data sharing (Kurteva et al., Sensors 2023)",
   "formats": [
@@ -113419,9 +113313,6 @@
   "acronym": "SPD",
   "name": "Spider Ontology",
   "category": "life",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "An ontology for spider comparative biology including anatomical parts (e.g. leg, claw), behavior (e.g. courtship, combing) and products (i.g. silk, web, borrow).",
   "formats": [
@@ -114195,7 +114086,6 @@
   "name": "FAIRsharing Subject Ontology",
   "category": "health",
   "domains": [
-   "neuro",
    "earth",
    "agri",
    "computing"
@@ -114759,7 +114649,7 @@
  {
   "id": "ssnx",
   "name": "Semantic Sensor Network Ontology",
-  "category": "earth",
+  "category": "multidisciplinary",
   "kind": "ontology",
   "description": "This ontology describes sensors and observations, and related concepts. It does not describe domain concepts, time, locations, etc. these are intended to be included from other ontologies via OWL imports.",
   "formats": [
@@ -114805,7 +114695,7 @@
   "id": "sso",
   "acronym": "SSO",
   "name": "SSO",
-  "category": "neuro",
+  "category": "chemistry",
   "kind": "ontology",
   "description": "SSO describes structural analysis models, their materials and constitutive behaviours, and the calibration events that update those behaviours against measured data.",
   "formats": [
@@ -114902,9 +114792,8 @@
   "id": "sstim",
   "acronym": "SSTIM",
   "name": "Sensory Stimulation Ontology",
-  "category": "earth",
+  "category": "health",
   "domains": [
-   "health",
    "neuro"
   ],
   "kind": "vocabulary",
@@ -115087,7 +114976,6 @@
   "domains": [
    "agri",
    "computing",
-   "neuro",
    "physical"
   ],
   "kind": "ontology",
@@ -116107,9 +115995,6 @@
   "acronym": "SWEET",
   "name": "Semantic Web for Earth and Environment Technology Ontology",
   "category": "earth",
-  "domains": [
-   "physical"
-  ],
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology is a mature foundational ontology that contains over 6000 concepts organized in 200 ontologies represented in OWL. Top level concepts include Representation (math, space, science, time, data), Realm (Ocean, Land Surface, Terrestrial Hydroshere, Atmosphere, etc.), Phenomena (macro-scale ecological and physical), Processes (micro-scale physical, biological, chemical, and mathematical), Human Activities (Decision, Commerce, Jurisdiction, Environmental, Research).",
   "formats": [
@@ -116176,13 +116061,16 @@
     "acronym": "SWEET"
    },
    "overridesNote": "curated by SchemaScope, takes precedence over registry values"
-  }
+  },
+  "domains": [
+   "physical"
+  ]
  },
  {
   "id": "sweet-hu",
   "acronym": "sweet.hu",
   "name": "SWEET Ontology Human",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Human",
   "formats": [
@@ -116320,7 +116208,7 @@
   "id": "sweet-hud",
   "acronym": "sweet.hud",
   "name": "SWEET Ontology Human Decision",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Human Decision",
   "formats": [
@@ -116366,10 +116254,7 @@
   "id": "sweet-huea",
   "acronym": "sweet.huea",
   "name": "SWEET Ontology Human Environmental Assessment",
-  "category": "neuro",
-  "domains": [
-   "earth"
-  ],
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Human Environmental Assessment",
   "formats": [
@@ -116415,10 +116300,7 @@
   "id": "sweet-hueccont",
   "acronym": "sweet.hueccont",
   "name": "SWEET Ontology Human Environmental Control",
-  "category": "neuro",
-  "domains": [
-   "earth"
-  ],
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Human Environmental Control",
   "formats": [
@@ -116464,10 +116346,7 @@
   "id": "sweet-huecons",
   "acronym": "sweet.huecons",
   "name": "SWEET Ontology Human Environmental Conservation",
-  "category": "neuro",
-  "domains": [
-   "earth"
-  ],
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Human Environmental Conservation",
   "formats": [
@@ -116513,10 +116392,7 @@
   "id": "sweet-hues",
   "acronym": "sweet.hues",
   "name": "SWEET Ontology Human Environmental Standards",
-  "category": "neuro",
-  "domains": [
-   "earth"
-  ],
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Human Environmental Standards",
   "formats": [
@@ -116562,7 +116438,7 @@
   "id": "sweet-huj",
   "acronym": "sweet.huj",
   "name": "SWEET Ontology Human Jurisdiction",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Human Jurisdiction",
   "formats": [
@@ -116608,7 +116484,7 @@
   "id": "sweet-hukd",
   "acronym": "sweet.hukd",
   "name": "SWEET Ontology Human Knowledge Domain",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Human Knowledge Domain",
   "formats": [
@@ -116654,7 +116530,7 @@
   "id": "sweet-hur",
   "acronym": "sweet.hur",
   "name": "SWEET Ontology Human Research",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Human Research",
   "formats": [
@@ -116746,7 +116622,7 @@
   "id": "sweet-hutr",
   "acronym": "sweet.hutr",
   "name": "SWEET Ontology Human Technology Readiness",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Human Technology Readiness",
   "formats": [
@@ -117026,10 +116902,7 @@
   "id": "sweet-maem",
   "acronym": "sweet.maem",
   "name": "SWEET Ontology Material Elemental Molecule",
-  "category": "neuro",
-  "domains": [
-   "chemistry"
-  ],
+  "category": "chemistry",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Material Elemental Molecule",
   "formats": [
@@ -117937,7 +117810,7 @@
   "id": "sweet-ph",
   "acronym": "sweet.ph",
   "name": "SWEET Ontology Phenomena",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Phenomena",
   "formats": [
@@ -118597,7 +118470,7 @@
   "id": "sweet-phcr",
   "acronym": "sweet.phcr",
   "name": "SWEET Ontology Phenomena Cryosphere",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Phenomena Cryosphere",
   "formats": [
@@ -118644,7 +118517,7 @@
   "id": "sweet-phcy",
   "acronym": "sweet.phcy",
   "name": "SWEET Ontology Phenomena Cycle",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Phenomena Cycle",
   "formats": [
@@ -118738,10 +118611,7 @@
   "id": "sweet-phei",
   "acronym": "sweet.phei",
   "name": "SWEET Ontology Phenomena Environmental Impact",
-  "category": "neuro",
-  "domains": [
-   "earth"
-  ],
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Phenomena Environmental Impact",
   "formats": [
@@ -118788,7 +118658,7 @@
   "id": "sweet-phel",
   "acronym": "sweet.phel",
   "name": "SWEET Ontology Phenomena ElectroMagnetic",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Phenomena ElectroMagnetic",
   "formats": [
@@ -118882,7 +118752,7 @@
   "id": "sweet-phfd",
   "acronym": "sweet.phfd",
   "name": "SWEET Ontology Phenomena Fluid Dynamics",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Phenomena Fluid Dynamics",
   "formats": [
@@ -118929,7 +118799,7 @@
   "id": "sweet-phfi",
   "acronym": "sweet.phfi",
   "name": "SWEET Ontology Phenomena Fluid Instability",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Phenomena Fluid Instability",
   "formats": [
@@ -119305,7 +119175,7 @@
   "id": "sweet-phhe",
   "acronym": "sweet.phhe",
   "name": "SWEET Ontology Phenomena Heliosphere",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Phenomena Heliosphere",
   "formats": [
@@ -119352,7 +119222,7 @@
   "id": "sweet-phhy",
   "acronym": "sweet.phhy",
   "name": "SWEET Ontology Phenomena Hydrosphere",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Phenomena Hydrosphere",
   "formats": [
@@ -119399,7 +119269,7 @@
   "id": "sweet-phm",
   "acronym": "sweet.phm",
   "name": "SWEET Ontology Phenomena Mixing",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Phenomena Mixing",
   "formats": [
@@ -119681,7 +119551,7 @@
   "id": "sweet-phso",
   "acronym": "sweet.phso",
   "name": "SWEET Ontology Phenomena Solid",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Phenomena Solid",
   "formats": [
@@ -119728,7 +119598,7 @@
   "id": "sweet-phst",
   "acronym": "sweet.phst",
   "name": "SWEET Ontology Phenomena Star",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Phenomena Star",
   "formats": [
@@ -119775,7 +119645,7 @@
   "id": "sweet-phsy",
   "acronym": "sweet.phsy",
   "name": "SWEET Ontology Phenomena System",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Phenomena System",
   "formats": [
@@ -119822,7 +119692,7 @@
   "id": "sweet-phsyc",
   "acronym": "sweet.phsyc",
   "name": "SWEET Ontology Phenomena System Complexity",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Phenomena System Complexity",
   "formats": [
@@ -119869,7 +119739,7 @@
   "id": "sweet-phw",
   "acronym": "sweet.phw",
   "name": "SWEET Ontology Phenomena Wave",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Phenomena Wave",
   "formats": [
@@ -119916,7 +119786,7 @@
   "id": "sweet-phwn",
   "acronym": "sweet.phwn",
   "name": "SWEET Ontology Phenomena Wave Noise",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Phenomena Wave Noise",
   "formats": [
@@ -119963,7 +119833,7 @@
   "id": "sweet-proc",
   "acronym": "sweet.proc",
   "name": "SWEET Ontology Process",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Process",
   "formats": [
@@ -120101,7 +119971,7 @@
   "id": "sweet-procsc",
   "acronym": "sweet.procsc",
   "name": "SWEET Ontology Process State Change",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Process State Change",
   "formats": [
@@ -120147,7 +120017,7 @@
   "id": "sweet-procw",
   "acronym": "sweet.procw",
   "name": "SWEET Ontology Process Wave",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Process Wave",
   "formats": [
@@ -120193,7 +120063,7 @@
   "id": "sweet-prop",
   "acronym": "sweet.prop",
   "name": "SWEET Ontology Property",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property",
   "formats": [
@@ -120239,7 +120109,7 @@
   "id": "sweet-propb",
   "acronym": "sweet.propb",
   "name": "SWEET Ontology Property Binary",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Binary",
   "formats": [
@@ -120285,7 +120155,7 @@
   "id": "sweet-propcap",
   "acronym": "sweet.propcap",
   "name": "SWEET Ontology Property Capacity",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Capacity",
   "formats": [
@@ -120331,7 +120201,7 @@
   "id": "sweet-propcat",
   "acronym": "sweet.propcat",
   "name": "SWEET Ontology Property Categorical",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Categorical",
   "formats": [
@@ -120377,7 +120247,7 @@
   "id": "sweet-propcha",
   "acronym": "sweet.propcha",
   "name": "SWEET Ontology Property Charge",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Charge",
   "formats": [
@@ -120469,7 +120339,7 @@
   "id": "sweet-propcon",
   "acronym": "sweet.propcon",
   "name": "SWEET Ontology Property Conductivity",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Conductivity",
   "formats": [
@@ -120515,7 +120385,7 @@
   "id": "sweet-propcou",
   "acronym": "sweet.propcou",
   "name": "SWEET Ontology Property Count",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Count",
   "formats": [
@@ -120561,7 +120431,7 @@
   "id": "sweet-propdife",
   "acronym": "sweet.propdife",
   "name": "SWEET Ontology Property Difference",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Difference",
   "formats": [
@@ -120607,7 +120477,7 @@
   "id": "sweet-propdifu",
   "acronym": "sweet.propdifu",
   "name": "SWEET Ontology Property Diffusivity",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Diffusivity",
   "formats": [
@@ -120653,7 +120523,7 @@
   "id": "sweet-propdr",
   "acronym": "sweet.propdr",
   "name": "SWEET Ontology Property Dimensionless Ratio",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Dimensionless Ratio",
   "formats": [
@@ -120791,7 +120661,7 @@
   "id": "sweet-propfr",
   "acronym": "sweet.propfr",
   "name": "SWEET Ontology Property Fraction",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Fraction",
   "formats": [
@@ -120837,7 +120707,7 @@
   "id": "sweet-propfu",
   "acronym": "sweet.propfu",
   "name": "SWEET Ontology Property Function",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Function",
   "formats": [
@@ -120883,7 +120753,7 @@
   "id": "sweet-propi",
   "acronym": "sweet.propi",
   "name": "SWEET Ontology Property Index",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Index",
   "formats": [
@@ -120929,7 +120799,7 @@
   "id": "sweet-propm",
   "acronym": "sweet.propm",
   "name": "SWEET Ontology Property Mass",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Mass",
   "formats": [
@@ -120975,7 +120845,7 @@
   "id": "sweet-propmf",
   "acronym": "sweet.propmf",
   "name": "SWEET Ontology Property Mass Flux",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Mass Flux",
   "formats": [
@@ -121021,7 +120891,7 @@
   "id": "sweet-propo",
   "acronym": "sweet.propo",
   "name": "SWEET Ontology Property Ordinal",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Ordinal",
   "formats": [
@@ -121067,7 +120937,7 @@
   "id": "sweet-propp",
   "acronym": "sweet.propp",
   "name": "SWEET Ontology Property Pressure",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Pressure",
   "formats": [
@@ -121159,7 +121029,7 @@
   "id": "sweet-propr",
   "acronym": "sweet.propr",
   "name": "SWEET Ontology Property Rotation",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Rotation",
   "formats": [
@@ -121205,7 +121075,7 @@
   "id": "sweet-props",
   "acronym": "sweet.props",
   "name": "SWEET Ontology Property Space",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Space",
   "formats": [
@@ -121251,7 +121121,7 @@
   "id": "sweet-propsdir",
   "acronym": "sweet.propsdir",
   "name": "SWEET Ontology Property Space Direction",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Space Direction",
   "formats": [
@@ -121297,7 +121167,7 @@
   "id": "sweet-propsdis",
   "acronym": "sweet.propsdis",
   "name": "SWEET Ontology Property Space Distance",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Space Distance",
   "formats": [
@@ -121343,7 +121213,7 @@
   "id": "sweet-propsh",
   "acronym": "sweet.propsh",
   "name": "SWEET Ontology Property Space Height",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Space Height",
   "formats": [
@@ -121389,7 +121259,7 @@
   "id": "sweet-propsl",
   "acronym": "sweet.propsl",
   "name": "SWEET Ontology Property Space Location",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Space Location",
   "formats": [
@@ -121435,7 +121305,7 @@
   "id": "sweet-propsm",
   "acronym": "sweet.propsm",
   "name": "SWEET Ontology Property Space Multidimensional",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Space Multidimensional",
   "formats": [
@@ -121481,7 +121351,7 @@
   "id": "sweet-propsp",
   "acronym": "sweet.propsp",
   "name": "SWEET Ontology Property Speed",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Speed",
   "formats": [
@@ -121527,7 +121397,7 @@
   "id": "sweet-propst",
   "acronym": "sweet.propst",
   "name": "SWEET Ontology Property Space Thickness",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Space Thickness",
   "formats": [
@@ -121573,7 +121443,7 @@
   "id": "sweet-propt",
   "acronym": "sweet.propt",
   "name": "SWEET Ontology Property Temperature",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Temperature",
   "formats": [
@@ -121619,7 +121489,7 @@
   "id": "sweet-proptf",
   "acronym": "sweet.proptf",
   "name": "SWEET Ontology Property Time Frequency",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Time Frequency",
   "formats": [
@@ -121665,7 +121535,7 @@
   "id": "sweet-proptg",
   "acronym": "sweet.proptg",
   "name": "SWEET Ontology Property Temperature Gradient",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Temperature Gradient",
   "formats": [
@@ -121711,7 +121581,7 @@
   "id": "sweet-propti",
   "acronym": "sweet.propti",
   "name": "SWEET Ontology Property Time",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Property Time",
   "formats": [
@@ -121757,7 +121627,7 @@
   "id": "sweet-rea",
   "acronym": "sweet.rea",
   "name": "SWEET Ontology Realm",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Realm",
   "formats": [
@@ -122132,7 +122002,7 @@
   "id": "sweet-reac",
   "acronym": "sweet.reac",
   "name": "SWEET Ontology Realm Cryosphere",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Realm Cryosphere",
   "formats": [
@@ -122555,7 +122425,7 @@
   "id": "sweet-reah",
   "acronym": "sweet.reah",
   "name": "SWEET Ontology Realm Hydrosphere",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Realm Hydrosphere",
   "formats": [
@@ -122602,7 +122472,7 @@
   "id": "sweet-reahb",
   "acronym": "sweet.reahb",
   "name": "SWEET Ontology Realm Hydrosphere Body",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Realm Hydrosphere Body",
   "formats": [
@@ -122649,7 +122519,7 @@
   "id": "sweet-real",
   "acronym": "sweet.real",
   "name": "SWEET Ontology Realm Landform",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Realm Landform",
   "formats": [
@@ -122696,7 +122566,7 @@
   "id": "sweet-reala",
   "acronym": "sweet.reala",
   "name": "SWEET Ontology Realm Land Aeolian",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Realm Land Aeolian",
   "formats": [
@@ -122742,7 +122612,7 @@
   "id": "sweet-realc",
   "acronym": "sweet.realc",
   "name": "SWEET Ontology Realm Land Coastal",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Realm Land Coastal",
   "formats": [
@@ -122788,7 +122658,7 @@
   "id": "sweet-realf",
   "acronym": "sweet.realf",
   "name": "SWEET Ontology Realm Land Fluvial",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Realm Land Fluvial",
   "formats": [
@@ -122834,7 +122704,7 @@
   "id": "sweet-realg",
   "acronym": "sweet.realg",
   "name": "SWEET Ontology Realm Land Glacial",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Realm Land Glacial",
   "formats": [
@@ -122880,7 +122750,7 @@
   "id": "sweet-realo",
   "acronym": "sweet.realo",
   "name": "SWEET Ontology Realm Land Orographic",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Realm Land Orographic",
   "formats": [
@@ -122926,7 +122796,7 @@
   "id": "sweet-realp",
   "acronym": "sweet.realp",
   "name": "SWEET Ontology Realm Land Protected",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Realm Land Protected",
   "formats": [
@@ -122972,7 +122842,7 @@
   "id": "sweet-realt",
   "acronym": "sweet.realt",
   "name": "SWEET Ontology Realm Land Tectonic",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Realm Land Tectonic",
   "formats": [
@@ -123018,7 +122888,7 @@
   "id": "sweet-realv",
   "acronym": "sweet.realv",
   "name": "SWEET Ontology Realm Land Volcanic",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Realm Land Volcanic",
   "formats": [
@@ -123205,7 +123075,7 @@
   "id": "sweet-rear",
   "acronym": "sweet.rear",
   "name": "SWEET Ontology Realm Region",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Realm Region",
   "formats": [
@@ -123299,7 +123169,7 @@
   "id": "sweet-rel",
   "acronym": "sweet.rel",
   "name": "SWEET Ontology Relationships",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Relationships",
   "formats": [
@@ -123437,7 +123307,7 @@
   "id": "sweet-relh",
   "acronym": "sweet.relh",
   "name": "SWEET Ontology Relationships Human",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Relationships Human",
   "formats": [
@@ -123621,7 +123491,7 @@
   "id": "sweet-relsc",
   "acronym": "sweet.relsc",
   "name": "SWEET Ontology Relationships Scientific",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Relationships Scientific",
   "formats": [
@@ -123667,7 +123537,7 @@
   "id": "sweet-relsp",
   "acronym": "sweet.relsp",
   "name": "SWEET Ontology Relationships Space",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Relationships Space",
   "formats": [
@@ -123713,7 +123583,7 @@
   "id": "sweet-relt",
   "acronym": "sweet.relt",
   "name": "SWEET Ontology Relationships Time",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Relationships Time",
   "formats": [
@@ -123759,7 +123629,7 @@
   "id": "sweet-rep",
   "acronym": "sweet.rep",
   "name": "SWEET Ontology Representation",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation",
   "formats": [
@@ -123805,7 +123675,7 @@
   "id": "sweet-repdf",
   "acronym": "sweet.repdf",
   "name": "SWEET Ontology Representation Data Format",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Data Format",
   "formats": [
@@ -123851,7 +123721,7 @@
   "id": "sweet-repdm",
   "acronym": "sweet.repdm",
   "name": "SWEET Ontology Representation Data Model",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Data Model",
   "formats": [
@@ -123943,7 +123813,7 @@
   "id": "sweet-repds",
   "acronym": "sweet.repds",
   "name": "SWEET Ontology Representation Data Service",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Data Service",
   "formats": [
@@ -123989,7 +123859,7 @@
   "id": "sweet-repdsa",
   "acronym": "sweet.repdsa",
   "name": "SWEET Ontology Representation Data Servcie Analysis",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Data Servcie Analysis",
   "formats": [
@@ -124081,7 +123951,7 @@
   "id": "sweet-repdsr",
   "acronym": "sweet.repdsr",
   "name": "SWEET Ontology Representation Data Service Reduction",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Data Service Reduction",
   "formats": [
@@ -124127,7 +123997,7 @@
   "id": "sweet-repdsv",
   "acronym": "sweet.repdsv",
   "name": "SWEET Ontology Representation Data Service Validation",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Data Service Validation",
   "formats": [
@@ -124495,7 +124365,7 @@
   "id": "sweet-reps",
   "acronym": "sweet.reps",
   "name": "SWEET Ontology Representation Space",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Space",
   "formats": [
@@ -124541,7 +124411,7 @@
   "id": "sweet-repsc",
   "acronym": "sweet.repsc",
   "name": "SWEET Ontology Representation Scientific Component",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Scientific Component",
   "formats": [
@@ -124587,7 +124457,7 @@
   "id": "sweet-repscd",
   "acronym": "sweet.repscd",
   "name": "SWEET Ontology Representation Space Coordinate",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Space Coordinate",
   "formats": [
@@ -124633,7 +124503,7 @@
   "id": "sweet-repsd",
   "acronym": "sweet.repsd",
   "name": "SWEET Ontology Representation Space Direction",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Space Direction",
   "formats": [
@@ -124679,7 +124549,7 @@
   "id": "sweet-repsf",
   "acronym": "sweet.repsf",
   "name": "SWEET Ontology Representation Scientific Function",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Scientific Function",
   "formats": [
@@ -124725,7 +124595,7 @@
   "id": "sweet-repsg",
   "acronym": "sweet.repsg",
   "name": "SWEET Ontology Representation Space Geometry",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Space Geometry",
   "formats": [
@@ -124771,7 +124641,7 @@
   "id": "sweet-repsg3",
   "acronym": "sweet.repsg3",
   "name": "SWEET Ontology Representation Space Geometry 3D",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Space Geometry 3D",
   "formats": [
@@ -124863,7 +124733,7 @@
   "id": "sweet-repsme",
   "acronym": "sweet.repsme",
   "name": "SWEET Ontology Representation Representation Scientific Methodology",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Representation Scientific Methodology",
   "formats": [
@@ -124909,7 +124779,7 @@
   "id": "sweet-repsmo",
   "acronym": "sweet.repsmo",
   "name": "SWEET Ontology Representation Scientific Model",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Scientific Model",
   "formats": [
@@ -125001,7 +124871,7 @@
   "id": "sweet-repsrs",
   "acronym": "sweet.repsrs",
   "name": "SWEET Ontology Representation Space Reference System",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Space Reference System",
   "formats": [
@@ -125093,7 +124963,7 @@
   "id": "sweet-rept",
   "acronym": "sweet.rept",
   "name": "SWEET Ontology Representation Time",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Time",
   "formats": [
@@ -125139,7 +125009,7 @@
   "id": "sweet-reptd",
   "acronym": "sweet.reptd",
   "name": "SWEET Ontology Representation Time Day",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Time Day",
   "formats": [
@@ -125185,7 +125055,7 @@
   "id": "sweet-repts",
   "acronym": "sweet.repts",
   "name": "SWEET Ontology Representation Time Season",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for Representation Time Season",
   "formats": [
@@ -125231,7 +125101,7 @@
   "id": "sweet-st",
   "acronym": "sweet.st",
   "name": "SWEET Ontology State",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State",
   "formats": [
@@ -125369,7 +125239,7 @@
   "id": "sweet-stdp",
   "acronym": "sweet.stdp",
   "name": "SWEET Ontology State Data Processing",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Data Processing",
   "formats": [
@@ -125461,7 +125331,7 @@
   "id": "sweet-stf",
   "acronym": "sweet.stf",
   "name": "SWEET Ontology State Fluid",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Fluid",
   "formats": [
@@ -125507,7 +125377,7 @@
   "id": "sweet-sto",
   "acronym": "sweet.sto",
   "name": "SWEET Ontology State Ordinal",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Ordinal",
   "formats": [
@@ -125691,7 +125561,7 @@
   "id": "sweet-stre",
   "acronym": "sweet.stre",
   "name": "SWEET Ontology State Realm",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Realm",
   "formats": [
@@ -125783,7 +125653,7 @@
   "id": "sweet-stri",
   "acronym": "sweet.stri",
   "name": "SWEET Ontology State Role Impact",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Role Impact",
   "formats": [
@@ -125829,7 +125699,7 @@
   "id": "sweet-stro",
   "acronym": "sweet.stro",
   "name": "SWEET Ontology State Role",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Role",
   "formats": [
@@ -125875,7 +125745,7 @@
   "id": "sweet-strr",
   "acronym": "sweet.strr",
   "name": "SWEET Ontology State Role Representative",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Role Representative",
   "formats": [
@@ -125967,7 +125837,7 @@
   "id": "sweet-stsb",
   "acronym": "sweet.stsb",
   "name": "SWEET Ontology State Spectral Band",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Spectral Band",
   "formats": [
@@ -126013,7 +125883,7 @@
   "id": "sweet-stsc",
   "acronym": "sweet.stsc",
   "name": "SWEET Ontology State Space Configuration",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Space Configuration",
   "formats": [
@@ -126059,7 +125929,7 @@
   "id": "sweet-stsl",
   "acronym": "sweet.stsl",
   "name": "SWEET Ontology State Spectral Line",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Spectral Line",
   "formats": [
@@ -126105,7 +125975,7 @@
   "id": "sweet-stso",
   "acronym": "sweet.stso",
   "name": "SWEET Ontology State Solid",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Solid",
   "formats": [
@@ -126151,7 +126021,7 @@
   "id": "sweet-stsp",
   "acronym": "sweet.stsp",
   "name": "SWEET Ontology State Space",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Space",
   "formats": [
@@ -126197,7 +126067,7 @@
   "id": "sweet-stss",
   "acronym": "sweet.stss",
   "name": "SWEET Ontology State Space Scale",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Space Scale",
   "formats": [
@@ -126243,7 +126113,7 @@
   "id": "sweet-stst",
   "acronym": "sweet.stst",
   "name": "SWEET Ontology State Storm",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Storm",
   "formats": [
@@ -126289,7 +126159,7 @@
   "id": "sweet-stsy",
   "acronym": "sweet.stsy",
   "name": "SWEET Ontology State System",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State System",
   "formats": [
@@ -126335,7 +126205,7 @@
   "id": "sweet-sttc",
   "acronym": "sweet.sttc",
   "name": "SWEET Ontology State Time Cycle",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Time Cycle",
   "formats": [
@@ -126381,7 +126251,7 @@
   "id": "sweet-sttf",
   "acronym": "sweet.sttf",
   "name": "SWEET Ontology State Time Frequency",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Time Frequency",
   "formats": [
@@ -126473,7 +126343,7 @@
   "id": "sweet-stth",
   "acronym": "sweet.stth",
   "name": "SWEET Ontology State Thermodynamic",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Thermodynamic",
   "formats": [
@@ -126519,7 +126389,7 @@
   "id": "sweet-stti",
   "acronym": "sweet.stti",
   "name": "SWEET Ontology State Time",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Time",
   "formats": [
@@ -126565,7 +126435,7 @@
   "id": "sweet-stv",
   "acronym": "sweet.stv",
   "name": "SWEET Ontology State Visibility",
-  "category": "neuro",
+  "category": "earth",
   "kind": "ontology",
   "description": "The Semantic Web for Earth and Environmental Terminology (SWEET) ontology for State Visibility",
   "formats": [
@@ -129283,7 +129153,7 @@
   "id": "tfo",
   "acronym": "TFO",
   "name": "TransformON",
-  "category": "earth",
+  "category": "agri",
   "kind": "ontology",
   "description": "A domain ontology on food and bioproduct processing and characterization that is a specialization of the PO2 ontology (Process and Observation Ontology).",
   "formats": [
@@ -137444,9 +137314,6 @@
   "acronym": "VHOG",
   "name": "Vertebrate Homologous Organ Group Ontology",
   "category": "life",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "vHOG is a multi-species anatomical ontology for the vertebrate lineage, developed as part of the Bgee project. A mapping to species-specific anatomical ontologies is also provided. This mapping represents homology-strict relationships, in the sense of HOM:0000007 historical homology. Each mapping has been manually reviewed, and we provide confidence codes and references when available.",
   "formats": [
@@ -139068,7 +138935,6 @@
   "name": "Vital Sign Ontology",
   "category": "health",
   "domains": [
-   "neuro",
    "physical"
   ],
   "kind": "ontology",
@@ -139227,7 +139093,6 @@
   "category": "life",
   "domains": [
    "health",
-   "neuro",
    "agri"
   ],
   "kind": "ontology",
@@ -139599,9 +139464,6 @@
   "acronym": "WBls",
   "name": "C. elegans development ontology",
   "category": "life",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "Ontology about the development and life stages of the C. elegans",
   "formats": [
@@ -141906,10 +141768,7 @@
   "id": "worldavatar-building",
   "acronym": "worldavatar.building",
   "name": "WorldAvatar building duct behavior ontology",
-  "category": "neuro",
-  "domains": [
-   "engineering"
-  ],
+  "category": "engineering",
   "kind": "ontology",
   "description": "A World Avatar ontology describing building duct behavior",
   "formats": [
@@ -142375,7 +142234,6 @@
   "name": "WorldAvatar computational chemistry ontology",
   "category": "chemistry",
   "domains": [
-   "neuro",
    "earth",
    "engineering"
   ],
@@ -143361,7 +143219,6 @@
   "name": "WorldAvatar ontology for chemical kinetic reaction mechanisms",
   "category": "chemistry",
   "domains": [
-   "neuro",
    "earth",
    "engineering"
   ],
@@ -144343,7 +144200,7 @@
   "id": "worldavatar-sensor",
   "acronym": "worldavatar.sensor",
   "name": "WorldAvatar sensor ontology",
-  "category": "earth",
+  "category": "multidisciplinary",
   "kind": "ontology",
   "description": "based on http://purl.oclc.org/NET/ssnx/ssn",
   "formats": [
@@ -145094,7 +144951,6 @@
   "name": "World Register of Marine Species",
   "category": "life",
   "domains": [
-   "neuro",
    "earth"
   ],
   "kind": "vocabulary",
@@ -145525,9 +145381,6 @@
   "acronym": "XAO",
   "name": "Xenopus Anatomy Ontology",
   "category": "life",
-  "domains": [
-   "neuro"
-  ],
   "kind": "ontology",
   "description": "XAO represents the anatomy and development of the African frogs Xenopus laevis and tropicalis.",
   "formats": [
@@ -145773,7 +145626,6 @@
   "name": "Experimental condition ontology",
   "category": "health",
   "domains": [
-   "neuro",
    "physical"
   ],
   "kind": "ontology",
@@ -146033,7 +145885,6 @@
   "category": "life",
   "domains": [
    "chemistry",
-   "neuro",
    "physical"
   ],
   "kind": "ontology",
@@ -146649,8 +146500,7 @@
   "category": "earth",
   "domains": [
    "life",
-   "health",
-   "neuro"
+   "health"
   ],
   "kind": "ontology",
   "description": "Ontology of Zebrafish Experimental Conditions",
@@ -146895,7 +146745,6 @@
   "name": "Zebrafish developmental stages ontology",
   "category": "life",
   "domains": [
-   "neuro",
    "earth"
   ],
   "kind": "ontology",
