@@ -1,7 +1,7 @@
 {
   "id": "time",
   "artefact": "http://www.w3.org/2006/time",
-  "checkedAt": "2026-10-25T21:55:24.029Z",
+  "checkedAt": "2026-10-26T02:14:20.664Z",
   "sha256": "251bd6970b0d7a5efa97ff681afe81a297df85deab3d860fa4f8eeba72d8f16c",
   "robot": {
     "reasoner": "ELK",
@@ -14,7 +14,7 @@
       "WARN": 101,
       "INFO": 3
     },
-    "checkedAt": "2026-10-25T21:55:31.067Z",
+    "checkedAt": "2026-10-26T02:14:22.097Z",
     "sha256": "251bd6970b0d7a5efa97ff681afe81a297df85deab3d860fa4f8eeba72d8f16c"
   },
   "oops": {

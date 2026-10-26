@@ -464,3 +464,9 @@ mark { background: var(--gold-soft); color: inherit; border-radius: 3px; padding
 .load-more .btn-ghost { display: inline-block; text-decoration: none; padding: 10px 18px; }
 .load-more { text-align: center; margin: 22px 0 0; }
 .load-more .btn-ghost { display: inline-block; text-decoration: none; padding: 10px 18px; }
+
+/* cookie consent */
+.consent { position: fixed; z-index: 50; left: 16px; right: 16px; bottom: 16px; max-width: 720px; margin: 0 auto; display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 14px 18px; background: var(--surface); color: var(--text); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 18px 50px -12px rgb(0 0 0 / .35); }
+.consent[hidden] { display: none; }
+.consent p { margin: 0; font-size: .9rem; flex: 1 1 360px; }
+.consent-actions { display: flex; gap: 8px; }

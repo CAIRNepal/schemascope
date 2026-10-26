@@ -1,0 +1,59 @@
+{
+  "id": "ac-subtype",
+  "artefact": "http://rs.tdwg.org/acsubtype.ttl",
+  "checkedAt": "2026-10-26T01:18:12.411Z",
+  "sha256": "00158ee1fb5491665cf6d242405e0306a866cf234288c9c8f44db2c9b186aac0",
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 7,
+      "WARN": 3,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-26T01:18:19.792Z",
+    "sha256": "00158ee1fb5491665cf6d242405e0306a866cf234288c9c8f44db2c9b186aac0"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-56990-9 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ac-subtype:/work schemascope/oops --input-file /work/on"
+    ],
+    "checkedAt": "2026-10-26T01:18:22.218Z",
+    "sha256": "00158ee1fb5491665cf6d242405e0306a866cf234288c9c8f44db2c9b186aac0"
+  }
+}

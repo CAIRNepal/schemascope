@@ -1,0 +1,24 @@
+{
+  "id": "abo",
+  "artefact": "https://w3id.org/abo",
+  "checkedAt": "2026-10-26T01:17:53.307Z",
+  "sha256": "2e26e257e6e6470a0598286a9cc92986dd687370a8df356f2082e04757defa77",
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://promsns.org/def/decprov> Cause: promsns.org\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "owl2dl": false,
+    "checkedAt": "2026-10-26T01:17:59.512Z",
+    "sha256": "2e26e257e6e6470a0598286a9cc92986dd687370a8df356f2082e04757defa77"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-56990-5 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/abo:/work schemascope/oops --input-file /work/ontology.",
+      "Python scan: Command failed: /opt/anaconda3/bin/python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/abo/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-26T01:18:01.961Z",
+    "sha256": "2e26e257e6e6470a0598286a9cc92986dd687370a8df356f2082e04757defa77"
+  }
+}

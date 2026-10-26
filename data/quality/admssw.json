@@ -1,0 +1,46 @@
+{
+  "id": "admssw",
+  "artefact": "http://purl.org/adms/sw/",
+  "checkedAt": "2026-10-26T01:56:29.427Z",
+  "sha256": "50a6f86abb3df13395a2865da356a1e6450415890a3cdf4d7697a4c38b8ebf5b",
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 40,
+      "WARN": 82,
+      "INFO": 5
+    },
+    "checkedAt": "2026-10-26T01:56:40.476Z",
+    "sha256": "50a6f86abb3df13395a2865da356a1e6450415890a3cdf4d7697a4c38b8ebf5b"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-56990-33 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/admssw:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-26T01:56:43.366Z",
+    "sha256": "50a6f86abb3df13395a2865da356a1e6450415890a3cdf4d7697a4c38b8ebf5b"
+  }
+}

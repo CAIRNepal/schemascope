@@ -1,0 +1,11 @@
+{
+  "id": "a4bdg",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/a4bdg/versions/2025-06-16.n3",
+  "checkedAt": "2026-10-26T01:01:25.082Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-26T01:17:53.306Z"
+  }
+}

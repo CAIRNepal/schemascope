@@ -1,0 +1,59 @@
+{
+  "id": "adcad",
+  "artefact": "https://github.com/NCEAS/adc-disciplines/raw/main/ADCAD.ttl",
+  "checkedAt": "2026-10-26T01:38:03.194Z",
+  "sha256": "6625c1c7f2e6e407e3ca6252db8cc27ed604afb19d8a531b83cb35d88320e7d5",
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 67,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-26T01:38:11.397Z",
+    "sha256": "6625c1c7f2e6e407e3ca6252db8cc27ed604afb19d8a531b83cb35d88320e7d5"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 67
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 67,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-56990-25 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/adcad:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-26T01:38:13.701Z",
+    "sha256": "6625c1c7f2e6e407e3ca6252db8cc27ed604afb19d8a531b83cb35d88320e7d5"
+  }
+}

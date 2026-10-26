@@ -1,7 +1,7 @@
 {
   "id": "vcard",
   "artefact": "http://www.w3.org/2006/vcard/ns",
-  "checkedAt": "2026-10-25T21:55:41.731Z",
+  "checkedAt": "2026-10-26T02:14:23.608Z",
   "sha256": "2442baf3d07d660910a0e24dd96b1efe1ec22cb26d12cdfd415195da91b43a0c",
   "robot": {
     "reasoner": "ELK",
@@ -14,7 +14,7 @@
       "WARN": 155,
       "INFO": 8
     },
-    "checkedAt": "2026-10-25T21:55:47.985Z",
+    "checkedAt": "2026-10-26T02:14:25.217Z",
     "sha256": "2442baf3d07d660910a0e24dd96b1efe1ec22cb26d12cdfd415195da91b43a0c"
   },
   "oops": {

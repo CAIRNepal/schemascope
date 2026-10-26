@@ -69,31 +69,36 @@ async function download(url, file) {
   return createHash("sha256").update(await readFile(file)).digest("hex");
 }
 
+// One chained ROBOT run (the ontology is loaded once): report → reason (ELK) → validate-profile (OWL 2 DL).
+// The chain stops at the first failing step, which tells us which check failed.
 async function robotChecks(file) {
   const result = { reasoner: "ELK", robotVersion };
-  // reason: exits non-zero if inconsistent or (by default) if there are unsatisfiable classes.
-  const r = await robot(["reason", "--input", file, "--reasoner", "ELK", "--equivalent-classes-allowed", "all", "--dump-unsatisfiable", path.join(work, "unsat.ofn")], { maxBuffer: 1 << 26, timeout: 30 * 60e3 }).then(
+  const rep = path.join(work, "report.tsv"), unsat = path.join(work, "unsat.ofn"), prof = path.join(work, "profile.txt");
+  for (const f of [rep, unsat, prof]) await rm(f, { force: true });
+  const opts = { maxBuffer: 1 << 26, timeout: 30 * 60e3 };
+  const r = await robot(["report", "--input", file, "--fail-on", "none", "--output", rep,
+    "reason", "--reasoner", "ELK", "--equivalent-classes-allowed", "all", "--dump-unsatisfiable", unsat,
+    "validate-profile", "--profile", "DL", "--output", prof], opts).then(
     () => ({ ok: true, out: "" }),
-    (e) => ({ ok: false, out: `${e.stdout || ""}${e.stderr || ""}` })
+    (e) => ({ ok: false, out: `${e.stdout || ""}${e.stderr || ""}`, killed: e.killed })
   );
-  if (r.ok) Object.assign(result, { consistent: true, unsatisfiable: 0 });
+  const reasoned = existsSync(prof); // validate-profile only runs after a successful reason step
+  if (r.ok) Object.assign(result, { consistent: true, unsatisfiable: 0, owl2dl: true });
+  else if (reasoned) Object.assign(result, { consistent: true, unsatisfiable: 0, owl2dl: false });
   else if (/inconsistent/i.test(r.out)) Object.assign(result, { consistent: false, unsatisfiable: null });
   else if (/unsatisfiable/i.test(r.out)) {
-    const n = existsSync(path.join(work, "unsat.ofn")) ? ((await readFile(path.join(work, "unsat.ofn"), "utf8")).match(/^Declaration\(Class/gm) || []).length : null;
+    const n = existsSync(unsat) ? ((await readFile(unsat, "utf8")).match(/^Declaration\(Class/gm) || []).length : null;
     Object.assign(result, { consistent: true, unsatisfiable: n ?? 1 });
-  } else Object.assign(result, { consistent: null, reasonError: r.out.slice(-400) });
-
-  const prof = await robot(["validate-profile", "--input", file, "--profile", "DL", "--output", path.join(work, "profile.txt")], { maxBuffer: 1 << 26, timeout: 30 * 60e3 }).then(() => true, () => false);
-  result.owl2dl = prof;
-
-  const rep = path.join(work, "report.tsv");
-  await robot(["report", "--input", file, "--fail-on", "none", "--output", rep], { maxBuffer: 1 << 26, timeout: 30 * 60e3 }).catch(() => {});
+  } else Object.assign(result, { consistent: null, reasonError: (r.killed ? "timed out; " : "") + r.out.slice(-400) });
+  // If the reasoner stopped the chain, the profile wasn't checked yet.
+  if (result.owl2dl === undefined && result.consistent !== null)
+    result.owl2dl = await robot(["validate-profile", "--input", file, "--profile", "DL", "--output", prof], opts).then(() => true, () => false);
   if (existsSync(rep)) {
     const rows = (await readFile(rep, "utf8")).split("\n").slice(1).filter(Boolean);
     const count = (lvl) => rows.filter((l) => l.startsWith(lvl)).length;
     result.robot = { ERROR: count("ERROR"), WARN: count("WARN"), INFO: count("INFO") };
-    await rm(rep);
   }
+  for (const f of [rep, unsat, prof]) await rm(f, { force: true });
   return result;
 }
 

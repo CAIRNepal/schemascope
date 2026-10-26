@@ -1,0 +1,11 @@
+{
+  "id": "acco",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/acco/versions/2013-03-25.n3",
+  "checkedAt": "2026-10-26T01:18:32.212Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-26T01:18:42.729Z"
+  }
+}

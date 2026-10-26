@@ -1,0 +1,11 @@
+{
+  "id": "acm",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/acm/versions/2013-04-25.n3",
+  "checkedAt": "2026-10-26T01:18:53.247Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-26T01:19:03.765Z"
+  }
+}

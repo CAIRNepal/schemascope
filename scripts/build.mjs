@@ -215,6 +215,34 @@ function datasetLd(e) {
   };
 }
 
+// ---------- analytics (Google Tag Manager, loaded only after consent) ----------
+const GTM = /^GTM-[A-Z0-9]+$/.test(config.gtmId || "") ? config.gtmId : null;
+// Consent Mode v2 defaults to "denied"; GTM itself is injected only once the visitor has accepted.
+const gtmHead = GTM
+  ? `<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
+window.__loadGTM=function(){if(window.__gtmLoaded)return;window.__gtmLoaded=true;
+<!-- Google Tag Manager -->
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM}');
+<!-- End Google Tag Manager -->
+};
+try{if(localStorage.getItem('cookie-consent')==='granted'){gtag('consent','update',{analytics_storage:'granted'});window.__loadGTM();}}catch(e){}</script>`
+  : "";
+const gtmBody = GTM
+  ? `<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${GTM}"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="consent" id="consent" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+  <p><b>Cookies.</b> We'd like to use Google Analytics (via Google Tag Manager) to understand how the site is used. It sets cookies only if you accept. <a href="/privacy/">Privacy</a></p>
+  <div class="consent-actions"><button type="button" class="btn-ghost" data-consent="reject">Reject</button><button type="button" class="btn" data-consent="accept">Accept</button></div>
+</div>`
+  : "";
+
 // ---------- layout ----------
 function page({ title, description, pathname, body, graph = [], noindex = false, scripts = [] }) {
   const full = title ? `${title} · SchemaScope` : `SchemaScope — ${config.tagline}`;
@@ -226,6 +254,7 @@ function page({ title, description, pathname, body, graph = [], noindex = false,
 <html lang="en">
 <head>
 <meta charset="utf-8">
+${gtmHead}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(full)}</title>
 <meta name="description" content="${attr(desc)}">
@@ -261,6 +290,7 @@ function page({ title, description, pathname, body, graph = [], noindex = false,
 <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>
 </head>
 <body>
+${gtmBody}
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap header-inner">
@@ -291,11 +321,14 @@ ${body}
       <a href="/catalog.json">catalog.json</a>
       <a href="/catalog.jsonld">DCAT JSON-LD</a>
       ${config.repository ? `<a href="${attr(config.repository)}">GitHub</a>` : ""}
+      <a href="/privacy/">Privacy</a>
+      ${GTM ? `<a href="#" data-consent-open>Cookie settings</a>` : ""}
     </nav>
     <p class="muted small">Descriptions are summaries; each resource is owned by its maintainers and keeps its own license.${evaluatedAt ? ` Last evaluated ${evaluatedAt}.` : ""}</p>
   </div>
 </footer>
 <script src="/assets/app.js?v=${BUILD_ID}" defer></script>
+${GTM ? `<script src="/assets/consent.js?v=${BUILD_ID}" defer></script>` : ""}
 ${scripts.map((s) => `<script src="${s}?v=${BUILD_ID}" defer></script>`).join("\n")}
 </body>
 </html>`;
@@ -1216,6 +1249,28 @@ function aboutPage() {
   return page({ title: "About", pathname: "/about/", body, description, graph: [webPage("AboutPage", "/about/", "About SchemaScope", description), breadcrumbs(trail)] });
 }
 
+function privacyPage() {
+  const trail = [["Home", "/"], ["Privacy", "/privacy/"]];
+  const body = `
+<section class="page-head wrap">
+  ${crumbsHtml(trail)}
+  <h1>Privacy</h1>
+  <p class="lede">This site is a static catalog. It has no accounts, no forms that store data on our servers, and no tracking unless you allow it.</p>
+</section>
+<section class="wrap section prose">
+  <h2>Analytics and cookies</h2>
+  ${GTM ? `<p>With your consent we use <b>Google Analytics</b>, loaded through <b>Google Tag Manager</b> (container <code>${GTM}</code>), to count visits and see which pages are useful. Until you click <i>Accept</i>, no Google script is loaded and no analytics cookies are set. Advertising storage and personalisation remain disabled even if you accept (Google Consent Mode v2).</p>
+  <p>Your choice is stored in your browser's local storage (<code>cookie-consent</code>). You can change it at any time with <a href="#" data-consent-open>Cookie settings</a>; withdrawing consent removes the Google Analytics cookies.</p>
+  <p>Visitors with JavaScript disabled cannot be asked for consent; for them Google Tag Manager's no-script fallback may load.</p>` : "<p>This site does not use analytics or tracking cookies.</p>"}
+  <p>The theme preference (light/dark) is also kept in local storage. It is never sent anywhere.</p>
+  <h2>Submissions</h2>
+  <p>Submissions go through GitHub issues and pull requests, which are subject to <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>.</p>
+  <h2>Hosting</h2>
+  <p>The site is served by Vercel, which may log technical request data (such as IP addresses) for security and operations.</p>
+</section>`;
+  return page({ title: "Privacy", pathname: "/privacy/", body, description: "How this site handles analytics, cookies and your data.", graph: [webPage("WebPage", "/privacy/", "Privacy", "Privacy and cookies"), breadcrumbs(trail)] });
+}
+
 function notFound() {
   return page({ title: "Not found", pathname: "/404", noindex: true, body: `<section class="page-head wrap"><h1>Page not found</h1><p class="lede">That page doesn't exist. Try the <a href="/catalog/">catalog</a> or <a href="/search/">search</a> or <a href="/categories/">categories</a>.</p></section>` });
 }
@@ -1347,6 +1402,7 @@ put(
 put("submit/index.html", submitPage());
 put("about/index.html", aboutPage());
 put("404.html", notFound());
+put("privacy/index.html", privacyPage());
 put("catalog.json", JSON.stringify({ name: "SchemaScope", url: config.url, generatedAt: evaluation.generatedAt || null, run: evaluation.run || null, rubricVersion: RUBRIC_VERSION, categories, entries: catalog.map(record) }, null, 2));
 put("catalog.jsonld", JSON.stringify(dcat(), null, 2));
 put("catalog.schema.json", await readFile(path.join(root, "data/catalog.schema.json"), "utf8"));

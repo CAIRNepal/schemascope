@@ -1,0 +1,11 @@
+{
+  "id": "acl",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/acl/versions/2012-12-18.n3",
+  "checkedAt": "2026-10-26T01:18:42.731Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-26T01:18:53.245Z"
+  }
+}

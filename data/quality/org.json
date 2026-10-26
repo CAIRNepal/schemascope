@@ -1,7 +1,7 @@
 {
   "id": "org",
   "artefact": "http://www.w3.org/ns/org",
-  "checkedAt": "2026-10-25T21:55:33.110Z",
+  "checkedAt": "2026-10-26T02:14:22.099Z",
   "sha256": "3e01f89a17475a88f8b1606ca0fae04800d34dbbf93adc6db12dc30929848729",
   "robot": {
     "reasoner": "ELK",
@@ -14,7 +14,7 @@
       "WARN": 47,
       "INFO": 3
     },
-    "checkedAt": "2026-10-25T21:55:39.803Z",
+    "checkedAt": "2026-10-26T02:14:23.607Z",
     "sha256": "3e01f89a17475a88f8b1606ca0fae04800d34dbbf93adc6db12dc30929848729"
   },
   "oops": {

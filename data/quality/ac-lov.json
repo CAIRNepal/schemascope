@@ -1,0 +1,11 @@
+{
+  "id": "ac-lov",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ac/versions/2023-05-09.n3",
+  "checkedAt": "2026-10-26T01:18:01.964Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-26T01:18:12.409Z"
+  }
+}

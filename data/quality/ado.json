@@ -1,0 +1,51 @@
+{
+  "id": "ado",
+  "artefact": "http://purl.obolibrary.org/obo/ado.owl",
+  "checkedAt": "2026-10-26T01:56:43.368Z",
+  "sha256": "30d2c292255ef4f59cae3940e24f9fd64e049c232492007197bf0a583861f20d",
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 11
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 791
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 11
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1961,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-56990-34 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ado:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-26T02:08:58.393Z",
+    "sha256": "30d2c292255ef4f59cae3940e24f9fd64e049c232492007197bf0a583861f20d"
+  }
+}
