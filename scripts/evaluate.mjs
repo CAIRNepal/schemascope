@@ -483,4 +483,4 @@ await writeFile(outFile, JSON.stringify(out, null, 2) + "\n");
 
 const stale = results.filter(([, r]) => r.github?.stale || r.ols?.stale || r.obo?.stale).map(([id]) => id);
 if (stale.length) console.log(`Carried forward last good values for failed lookups: ${stale.join(", ")}`);
-console.log(`Wrote ${path.relative(root, outFile)}${process.env.NO_ARCHIVE ? "" : ` and ${path.relative(root, runsDir)}/${runId}.json`}${IS_CI ? "" : " (local preview; tracked results are written only by the Evaluate catalog Action)"}`);
+console.log(`Wrote ${path.relative(root, outFile)}${process.env.NO_ARCHIVE ? "" : ` and ${path.relative(root, runsDir)}/${runId}.json`}${IS_CI ? " (CI preview only; not tracked)" : ""}`);
