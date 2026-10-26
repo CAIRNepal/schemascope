@@ -3,6 +3,6 @@
   "url": "https://schemascope.org",
   "tagline": "Ontologies, schemas & standards across every domain",
   "description": "A curated, automatically evaluated catalog of ontologies, schemas, vocabularies and data standards across the sciences, from biomedicine and earth science to chemistry, engineering and the humanities.",
-  "repository": null,
+  "repository": "https://github.com/CAIRNepal/schemascope",
   "gtmId": "GTM-M265DH2W"
 }
