@@ -440,9 +440,17 @@ async function pool(items, n, fn) {
 
 const targets = catalog.filter((e) => !only || only.has(e.id));
 console.log(`Run ${runId}: evaluating ${targets.length} entries${GH ? "" : " (no GITHUB_TOKEN: skipping release lookups)"}…`);
-const results = await pool(targets, 6, async (e) => {
+// Concurrency: 16 with a GitHub token (5,000 requests/hour), 6 without.
+const CONCURRENCY = Number(process.env.CONCURRENCY || (GH ? 16 : 6));
+let done = 0;
+const t0 = Date.now();
+const results = await pool(targets, CONCURRENCY, async (e) => {
   const r = await evaluate(e);
   console.log(`  ${String(r.score).padStart(3)} ${r.grade}  ${e.id}`);
+  if (++done % 100 === 0 || done === targets.length) {
+    const rate = done / ((Date.now() - t0) / 60e3);
+    console.error(`▸ ${done}/${targets.length} evaluated (${rate.toFixed(0)}/min, ~${Math.ceil((targets.length - done) / rate)} min left)`);
+  }
   return [e.id, r];
 });
 
