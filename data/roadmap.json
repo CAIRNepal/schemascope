@@ -1,0 +1,156 @@
+{
+  "updated": "2026-10-27",
+  "note": "Status is one of: done, in-progress, planned. Edit this file to update the Features & roadmap page.",
+  "sections": [
+    {
+      "id": "catalog",
+      "title": "Catalog & discovery",
+      "items": [
+        {
+          "status": "done",
+          "title": "Harvest from six registries",
+          "text": "Bioregistry, OBO Foundry, OLS, TIB, LOV and NeuroSchema, merged into one record per resource, with every field traced to its source."
+        },
+        {
+          "status": "done",
+          "title": "Discovery beyond registries",
+          "text": "prefix.cc, w3id.org, Zenodo, GitHub and suggested URLs are probed by content negotiation, and only real ontologies, vocabularies and schemas are accepted."
+        },
+        {
+          "status": "done",
+          "title": "Reproducible downloads",
+          "text": "Each registry download is archived with its checksum, so the catalog can be rebuilt offline, and a single registry can be refreshed on its own."
+        },
+        {
+          "status": "done",
+          "title": "Submissions through GitHub",
+          "text": "The submission form opens an issue that a bot turns into a pull request, with link, DOI and registry checks on every change."
+        }
+      ]
+    },
+    {
+      "id": "evaluation",
+      "title": "Evaluation",
+      "items": [
+        {
+          "status": "done",
+          "title": "Rubric v4: source-neutral scoring",
+          "text": "A check whose only evidence source doesn't cover a resource is \"not assessed\" instead of failed, and no problem is penalised twice."
+        },
+        {
+          "status": "done",
+          "title": "Our own quality checks",
+          "text": "ROBOT (report, ELK reasoner, OWL 2 DL profile) and OOPS! pitfall scans run on every ontology, with the OBO Dashboard shown side by side for comparison."
+        },
+        {
+          "status": "done",
+          "title": "DOI verification across services",
+          "text": "Reference DOIs are checked against Crossref, DataCite, OpenAlex, Semantic Scholar and doi.org."
+        },
+        {
+          "status": "done",
+          "title": "Quality checks for every ontology",
+          "text": "ROBOT (report, ELK reasoner, OWL 2 DL profile), pitfall scans and import reading run on every ontology with a download, several at a time. A full pass resumes where it stopped, and each run reports how many ontologies have been checked."
+        },
+        {
+          "status": "done",
+          "title": "Read imports from the artefact",
+          "text": "owl:imports and the terms an ontology uses are read from the file itself, so upper-ontology alignment (BFO, COB, DOLCE, GFO, gUFO), RO use and vocabulary reuse are measured for every checked ontology, not only those listed in OLS or Bioregistry (rubric v4.1)."
+        },
+        {
+          "status": "done",
+          "title": "Rubric validation",
+          "text": "A published report of how sensitive grades are to the weights (random and one-at-a-time changes), how well our quality checks agree with the OBO Dashboard, and how scores compare with expert ratings."
+        },
+        {
+          "status": "done",
+          "title": "Metrics across runs",
+          "text": "Each resource's page shows how its score, every criterion and the quality metrics changed from one evaluation run to the next."
+        },
+        {
+          "status": "in-progress",
+          "title": "Expert ratings",
+          "text": "Collecting ratings from domain experts to compare with our scores. Get in touch if you'd like to rate resources in your field."
+        },
+        {
+          "status": "planned",
+          "title": "Adoption evidence beyond OBO",
+          "text": "Count adopting projects from papers, software dependencies and data repositories, not only curated entries and OBO Foundry usages."
+        },
+        {
+          "status": "planned",
+          "title": "Community standards per domain",
+          "text": "Score R1.3 against each field's own standards bodies and principles, not only the OBO Foundry's."
+        },
+        {
+          "status": "planned",
+          "title": "Flag disagreements between portals",
+          "text": "Our checks are already shown next to the OBO Dashboard's on each page. Next: highlight where OLS, TIB and BioPortal report different versions or class counts."
+        }
+      ]
+    },
+    {
+      "id": "publications",
+      "title": "Publication tracking",
+      "items": [
+        {
+          "status": "planned",
+          "title": "Papers that cite each resource",
+          "text": "Collect citing papers from OpenAlex, Semantic Scholar and Crossref, with citation counts over time on each resource's page."
+        },
+        {
+          "status": "planned",
+          "title": "Papers that use a resource",
+          "text": "Find papers that use a resource in their methods or data, not just cite it, to give adoption evidence across fields."
+        },
+        {
+          "status": "planned",
+          "title": "New publications",
+          "text": "Detect new reference papers and versions of a resource and suggest them as catalog updates."
+        }
+      ]
+    },
+    {
+      "id": "recommendations",
+      "title": "Recommendations",
+      "items": [
+        {
+          "status": "planned",
+          "title": "Similar resources",
+          "text": "Suggest related resources on each page, based on domain, shared imports and overlapping terms."
+        },
+        {
+          "status": "planned",
+          "title": "Which ontology should I use?",
+          "text": "A guided finder that recommends well-maintained, well-scored resources for a domain, data type or task."
+        },
+        {
+          "status": "planned",
+          "title": "Alternatives to inactive resources",
+          "text": "Point to active replacements when a resource is archived, deprecated or no longer maintained."
+        }
+      ]
+    },
+    {
+      "id": "maintainers",
+      "title": "For maintainers",
+      "items": [
+        {
+          "status": "planned",
+          "title": "Score badges",
+          "text": "An embeddable badge with the current grade for READMEs and websites."
+        },
+        {
+          "status": "planned",
+          "title": "Improvement reports",
+          "text": "A per-resource checklist of the changes that would raise its score the most, such as a PURL, a license or a version IRI."
+        },
+        {
+          "status": "planned",
+          "title": "Change alerts",
+          "text": "Opt-in notices when a resource's links break or its score drops."
+        }
+      ]
+    }
+  ]
+}

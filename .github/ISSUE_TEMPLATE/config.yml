@@ -6,3 +6,6 @@ contact_links:
   - name: Scoring methodology
     url: https://schemascope.org/evaluation/
     about: How resources are evaluated against the FAIR principles.
+  - name: Contact the maintainer
+    url: https://schemascope.org/contact/
+    about: Questions, collaboration or anything that isn't an issue.
