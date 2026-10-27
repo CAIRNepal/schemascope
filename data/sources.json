@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-26T00:51:55Z",
-  "offline": true,
-  "entries": 2683,
+  "generatedAt": "2026-10-27T21:32:12Z",
+  "offline": false,
+  "entries": 2688,
   "sources": {
     "bioregistry": {
       "name": "Bioregistry",
@@ -58,9 +58,9 @@
       "url": "https://neuroschema.org/catalog.json",
       "page": "https://neuroschema.org",
       "license": "CC-BY-4.0",
-      "retrievedAt": "2026-10-25T21:49:00Z",
-      "sha256": "d9841c8c2b6bc4e2b3e6320dff955b2373aff50655e5ceb001dab936a75e444c",
-      "bytes": 1195180,
+      "retrievedAt": "2026-10-27T21:32:12Z",
+      "sha256": "49a437238501d09f8cf6d9fb2b18674e645a31a3c7b10feb56cb58276920261e",
+      "bytes": 1268998,
       "archive": "data/sources/neuroschema.json.gz"
     },
     "discovery": {

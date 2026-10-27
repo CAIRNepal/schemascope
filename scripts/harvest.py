@@ -433,7 +433,9 @@ for e in ns_cat.get("entries", []):
     for k, v in curated.items():
         if k in ("id", "category"):
             continue
-        r.put(k, v, "neuroschema", overwrite=k in ("usedBy", "modules", "tools", "description", "kind") and r.get("_neuro_primary"))
+        # NeuroSchema is curated by hand, so its values replace other registries' values for the same entry.
+        # (Entries curated in SchemaScope itself, data/curated.json, still win; see "finalize".)
+        r.put(k, v, "neuroschema", overwrite=True)
     r["_votes"]["neuro"] += 6 if r.get("_neuro_primary") else 3
     cite(r, "neuroschema", e["id"], f"https://neuroschema.org/o/{e['id']}/")
 
@@ -530,8 +532,12 @@ for r in records:
         e["acronym"] = e["acronym"].upper()
     # Curated catalog entries and curated overrides win over harvested values.
     prev = old.get(rid)
+    # Entries copied into curated.json from NeuroSchema are snapshots; once NeuroSchema itself is harvested
+    # for this entry, its live values win and the snapshot only keeps the SchemaScope domain.
+    live_ns = any(x.get("key") == "neuroschema" for x in r["_sources"])
+    ns_snapshot = bool(prev) and prev.get("provenance", {}).get("source") == "NeuroSchema catalog" and live_ns
     if prev and prev.get("provenance", {}).get("source") in ("curated", "Bioregistry", "NeuroSchema catalog"):
-        for k in ("category", "domains", "usedBy", "modules", "tools"):
+        for k in ("category", "domains") if ns_snapshot else ("category", "domains", "usedBy", "modules", "tools"):
             if prev.get(k):
                 e[k] = prev[k]
         for k, v in (prev.get("provenance", {}).get("overrides") or {}).items():
@@ -539,7 +545,7 @@ for r in records:
         if prev["provenance"].get("overrides"):
             e["provenance"]["overrides"] = prev["provenance"]["overrides"]
             e["provenance"]["overridesNote"] = "curated by SchemaScope, takes precedence over registry values"
-    if prev and prev.get("provenance", {}).get("source") in ("curated", "NeuroSchema catalog"):
+    if prev and prev.get("provenance", {}).get("source") in ("curated", "NeuroSchema catalog") and not ns_snapshot:
         for k in ("acronym", "name", "description", "kind", "formats", "license", "homepage", "repository", "download", "tags", "publications"):
             if prev.get(k):
                 e[k] = prev[k]
@@ -563,6 +569,16 @@ for oid, e in old.items():
         out.append(e)
 
 out.sort(key=lambda e: e["id"])
+# What changed since the last catalog, so it's clear which entries to rescore.
+WATCH = ("acronym", "name", "kind", "description", "formats", "maintainer", "license", "homepage", "repository", "download",
+         "ols", "obo", "bioportal", "status", "publications", "usedBy", "modules", "tools", "tags", "category", "domains")
+before = {e["id"]: e for e in json.loads((DATA / "catalog.json").read_text())} if (DATA / "catalog.json").exists() else {}
+from_ns = {e["id"] for e in out if any(x.get("key") == "neuroschema" for x in e.get("provenance", {}).get("registries", []))}
+added = [e["id"] for e in out if e["id"] not in before]
+removed = sorted(set(before) - {e["id"] for e in out})
+changed = {e["id"]: [k for k in WATCH if e.get(k) != before[e["id"]].get(k)] for e in out if e["id"] in before}
+changed = {i: ks for i, ks in changed.items() if ks}
+
 (DATA / "catalog.json").write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n")
 manifest = {"generatedAt": NOW, "offline": OFFLINE, "entries": len(out), "sources": {k: {kk: vv for kk, vv in v.items()} for k, v in SOURCES.items()}}
 (DATA / "sources.json").write_text(json.dumps(manifest, indent=2) + "\n")
@@ -570,3 +586,17 @@ cats = Counter(e["category"] for e in out)
 print(f"Harvested {len(out)} resources from {len(SOURCES)} registries → data/catalog.json")
 print("  by domain:", ", ".join(f"{k} {v}" for k, v in cats.most_common()))
 print("  sources:", ", ".join(f"{v['name']} ({v.get('bytes', 0) // 1024} KB{', FAILED' if v.get('error') else ', archived copy' if v.get('stale') else ''})" for v in SOURCES.values()))
+
+print(f"Changes since the previous catalog: {len(added)} new, {len(changed)} updated, {len(removed)} removed")
+for label, ids in (("from NeuroSchema", [i for i in added + list(changed) if i in from_ns]), ("from other registries", [i for i in added + list(changed) if i not in from_ns])):
+    if not ids:
+        continue
+    print(f"  {label}: {len(ids)}")
+    for i in ids[:40]:
+        print(f"    {i}: {'new' if i in added else ', '.join(changed[i])}")
+    if len(ids) > 40:
+        print(f"    … and {len(ids) - 40} more")
+if removed:
+    print(f"  removed: {', '.join(removed[:40])}{' …' if len(removed) > 40 else ''}")
+if added or changed:
+    print(f"Rescore them with:  ONLY={','.join(added + list(changed))} npm run refresh")
