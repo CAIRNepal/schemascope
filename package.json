@@ -21,6 +21,8 @@
     "images": "docker build -q -t schemascope/oops docker/oops && docker build -q -t schemascope/robot docker/robot",
     "refresh": "scripts/refresh.sh",
     "harvest": "python3 scripts/harvest.py",
-    "discover": "python3 scripts/discover.py"
+    "discover": "python3 scripts/discover.py",
+    "quality:all": "scripts/quality-all.sh",
+    "validate:rubric": "node scripts/validate-rubric.mjs"
   }
 }

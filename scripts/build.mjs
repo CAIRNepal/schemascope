@@ -101,7 +101,8 @@ const logo = (cls = "") =>
 function gradeBadge(e, size = "") {
   const r = ev(e.id);
   if (!r) return `<span class="grade grade-none ${size}" title="Not evaluated yet">–</span>`;
-  return `<span class="grade grade-${r.grade} ${size}" title="Evaluation score ${r.score}/100"><b>${r.grade}</b><small>${r.score}</small></span>`;
+  const partial = r.qualityPartial ? `; quality partially assessed (${r.qualityNotAssessed} of 20 Q points could not be checked)` : "";
+  return `<span class="grade grade-${r.grade} ${size}" title="Evaluation score ${r.score}/100${partial}"><b>${r.grade}</b><small>${r.score}</small>${r.qualityPartial ? '<sup class="q-partial" aria-label="quality partially assessed">*</sup>' : ""}</span>`;
 }
 const versionLabel = (r) => r?.evaluatedVersion?.label || null;
 
@@ -124,8 +125,54 @@ for (const run of runs) {
       links: Object.fromEntries(Object.entries(r.links || {}).filter(([, l]) => l).map(([k, l]) => [k, l.state])),
       archived: r.github?.archived || false,
       rubric: run.run.evaluator?.rubricVersion,
+      // Per-criterion points and the quality metrics behind them, to compare runs.
+      crit: Object.fromEntries(Object.entries(r.breakdown || {}).map(([k, b]) => [k, b.score])),
+      penalty: r.penalty?.score ?? null,
+      metrics: {
+        consistent: (r.quality && !r.quality.error ? r.quality.consistent : null) ?? r.dashboard?.consistent ?? null,
+        unsatisfiable: (r.quality && !r.quality.error ? r.quality.unsatisfiable : null) ?? r.dashboard?.unsatisfiable ?? null,
+        owl2dl: (r.quality && !r.quality.error ? r.quality.owl2dl : null) ?? r.dashboard?.owl2dl ?? null,
+        robotErrors: (r.quality?.robot || r.dashboard?.robot)?.ERROR ?? null,
+        robotWarnings: (r.quality?.robot || r.dashboard?.robot)?.WARN ?? null,
+        criticalPitfalls: r.oops && !r.oops.error ? r.oops.critical ?? null : null,
+        imports: r.importCount ?? null,
+        reuse: r.reuseCount ?? null,
+      },
     });
   }
+}
+
+const CRIT_LABELS = [["findable", "Findable"], ["accessible", "Accessible"], ["interoperable", "Interoperable"], ["reusable", "Reusable"], ["quality", "Quality"], ["maintenance", "Maintenance"], ["adoption", "Adoption"]];
+const METRIC_LABELS = [["consistent", "Logically consistent"], ["unsatisfiable", "Unsatisfiable classes"], ["owl2dl", "In OWL 2 DL"], ["robotErrors", "ROBOT errors"], ["robotWarnings", "ROBOT warnings"], ["criticalPitfalls", "Critical pitfalls"], ["imports", "Imported vocabularies"], ["reuse", "Reused by"]];
+const fmtMetric = (v) => (v === true ? "yes" : v === false ? "no" : v == null ? "—" : fmtNum(v));
+
+// Metrics across runs: one column per run (newest first), a row per criterion and quality metric; changed cells are marked.
+function metricsAcrossRuns(h) {
+  const runs = [...h].reverse().slice(0, 8);
+  if (runs.length < 2) return "";
+  const LOWER_BETTER = new Set(["Unsatisfiable classes", "ROBOT errors", "ROBOT warnings", "Critical pitfalls"]);
+  const row = (label, get, fmt = fmtMetric) => {
+    const vals = runs.map(get);
+    if (vals.every((v) => v == null)) return "";
+    return `<tr><th scope="row">${esc(label)}</th>${vals.map((v, i) => {
+      const older = vals[i + 1];
+      const changed = older != null && v != null && older !== v;
+      // "up" = better, "down" = worse (for errors and pitfalls, fewer is better); yes/no changes just get marked.
+      const better = typeof v === "number" && typeof older === "number" ? (v > older) !== LOWER_BETTER.has(label) : typeof v === "boolean" ? v : null;
+      const dir = better == null ? "" : better ? " up" : " down";
+      return `<td class="num${changed ? ` changed${dir}` : ""}"${changed ? ` title="was ${attr(fmt(older))}"` : ""}>${esc(fmt(v))}</td>`;
+    }).join("")}</tr>`;
+  };
+  return `<details class="metrics-runs"${runs.some((p, i) => i && JSON.stringify([p.crit, p.metrics]) !== JSON.stringify([runs[i - 1].crit, runs[i - 1].metrics])) ? " open" : ""}>
+    <summary>Metrics across runs</summary>
+    <div class="table-wrap"><table class="hist-table metrics-table"><thead><tr><th></th>${runs.map((p) => `<th class="num"><a href="/runs/${attr(p.runId)}.json">${esc(fmtDate(p.at))}</a><br><span class="muted">rubric v${esc(p.rubric || "?")}</span></th>`).join("")}</tr></thead><tbody>
+      ${row("Score", (p) => p.score)}
+      ${CRIT_LABELS.map(([k, label]) => row(label, (p) => p.crit?.[k] ?? null)).join("")}
+      ${row("Penalty", (p) => p.penalty)}
+      ${METRIC_LABELS.map(([k, label]) => row(label, (p) => p.metrics?.[k] ?? null)).join("")}
+    </tbody></table></div>
+    <p class="small muted">Newest run first. Highlighted cells changed since the run before; hover to see the earlier value. A rubric change alone can move points.</p>
+  </details>`;
 }
 
 function changes(id) {
@@ -141,6 +188,15 @@ function changes(id) {
     if (a.adopters !== b.adopters && a.adopters != null) add(`Documented adopters: ${a.adopters} → ${b.adopters}`);
     for (const k of new Set([...Object.keys(a.links), ...Object.keys(b.links)])) if (a.links[k] !== b.links[k]) add(`${k[0].toUpperCase() + k.slice(1)} link: ${a.links[k] ?? "—"} → ${b.links[k] ?? "—"}`);
     if (!a.archived && b.archived) add("Repository archived");
+    for (const [k, label] of CRIT_LABELS) {
+      const x = a.crit?.[k], y = b.crit?.[k];
+      if (x != null && y != null && x !== y) add(`${label}: ${x} → ${y} (${y > x ? "+" : ""}${y - x})`);
+    }
+    if (a.penalty != null && b.penalty != null && a.penalty !== b.penalty) add(`Penalty: ${a.penalty} → ${b.penalty}`);
+    for (const [k, label] of METRIC_LABELS) {
+      const x = a.metrics?.[k], y = b.metrics?.[k];
+      if (x != null && y != null && x !== y) add(`${label}: ${fmtMetric(x)} → ${fmtMetric(y)}`);
+    }
   }
   return out.reverse();
 }
@@ -300,7 +356,9 @@ ${gtmBody}
       ${nav("/categories/", "Categories")}
       ${nav("/evaluation/", "Evaluation")}
       ${nav("/submit/", "Submit")}
+      ${nav("/roadmap/", "Roadmap")}
       ${nav("/about/", "About")}
+      ${nav("/contact/", "Contact")}
       <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
       </button>
@@ -318,6 +376,8 @@ ${body}
       <a href="/evaluation/">Methodology</a>
       <a href="/evaluation/#runs">Run history</a>
       <a href="/submit/">Submit a resource</a>
+      <a href="/roadmap/">Features &amp; roadmap</a>
+      <a href="/contact/">Contact</a>
       <a href="/catalog.json">catalog.json</a>
       <a href="/catalog.jsonld">DCAT JSON-LD</a>
       ${config.repository ? `<a href="${attr(config.repository)}">GitHub</a>` : ""}
@@ -560,19 +620,20 @@ function homePage() {
 function catalogPage() {
   const options = (list, label = (x) => x) => list.map((x) => `<option value="${attr(x)}">${esc(label(x))}</option>`).join("");
   const sorted = [...catalog].sort(byScore);
+  const nSubmitted = catalog.filter(isSubmitted).length;
   const trail = [["Home", "/"], ["Catalog", "/catalog/"]];
   const body = `
 <section class="page-head wrap">
   ${crumbsHtml(trail)}
   <h1>The catalog</h1>
-  <p class="lede">All ${catalog.length.toLocaleString("en-US")} resources. Harvested from Bioregistry, the OBO Foundry, OLS, TIB, LOV and NeuroSchema. Filter by domain (including cross-domain use), type, source registry or grade, and sort by score, FAIRness, activity or adoption.</p>
+  <p class="lede">All ${catalog.length.toLocaleString("en-US")} resources: harvested from Bioregistry, the OBO Foundry, OLS, TIB, LOV and NeuroSchema, found by probing the web directly, and ${nSubmitted ? `${nSubmitted.toLocaleString("en-US")} submitted by their authors` : "submitted by their authors"} through the <a href="/submit/">submission form</a>. Filter by domain (including cross-domain use), type, source or grade, and sort by score, FAIRness, activity or adoption.</p>
 </section>
 <section class="wrap section" id="explore">
   <div class="filters" role="group" aria-label="Filters">
     <label class="grow">Filter<input id="q" type="search" placeholder="Filter by name, tag, format…" autocomplete="off"></label>
     <label>Category<select id="f-cat"><option value="">All</option>${options(categories.map((c) => c.id), (id) => catById[id].name)}</select></label>
     <label>Type<select id="f-kind"><option value="">All</option>${options(allKinds, (k) => KIND_LABEL[k] || k)}</select></label>
-    <label>Source registry<select id="f-reg"><option value="">All</option>${options(["Bioregistry", "OBO Foundry", "OLS (EMBL-EBI)", "TIB Terminology Service", "Linked Open Vocabularies (LOV)", "NeuroSchema", "curated"], (r) => r.replace(/ \(.*\)/, ""))}</select></label>
+    <label>Source<select id="f-reg"><option value="">All</option>${options(["Bioregistry", "OBO Foundry", "OLS (EMBL-EBI)", "TIB Terminology Service", "Linked Open Vocabularies (LOV)", "NeuroSchema", "discovered", "submitted", "curated"], (r) => ({ discovered: "Found by discovery", submitted: "Submitted by authors", curated: "Curated by SchemaScope" })[r] || r.replace(/ \(.*\)/, ""))}</select></label>
     <label>Grade<select id="f-grade"><option value="">All</option>${options(GRADES.map((g) => g.grade), (g) => `${g} (${GRADES.find((x) => x.grade === g).min}+)`)}</select></label>
     <label>Sort<select id="f-sort">
       <option value="score">Highest score</option>
@@ -706,6 +767,23 @@ function provenanceRows(r) {
 // Cross-portal view: what OLS, TIB, BioPortal, Bioregistry and the OBO Dashboard report about this resource.
 const idToEntry = Object.fromEntries(catalog.flatMap((x) => [x.obo, x.ols, x.bioregistry].filter(Boolean).map((k) => [String(k).toLowerCase(), x])));
 const ontChip = (k) => (idToEntry[k] ? `<a class="chip chip-link" href="/o/${attr(idToEntry[k].id)}/">${esc(idToEntry[k].acronym || k.toUpperCase())}</a>` : `<a class="chip" href="https://bioregistry.io/${attr(k)}" rel="noopener nofollow">${esc(k.toUpperCase())}</a>`);
+// Our ROBOT run next to the OBO Dashboard's. Scores use ours; differences are listed so they can be checked.
+function robotComparePanel(r) {
+  const c = r?.dashboardComparison;
+  if (!c?.rows?.length) return "";
+  const v = (x) => (x == null ? "—" : x === true ? "yes" : x === false ? "no" : fmtNum(x));
+  const file = (u) => (u ? `<code>${esc(String(u).split("/").pop())}</code>` : "—");
+  return `<div class="panel" id="robot-compare">
+    <h2>Our checks vs the OBO Dashboard</h2>
+    <p class="small muted">${c.differences.length ? `${c.differences.length} of ${c.rows.length} checks differ: ${esc(c.differences.join(", "))}.` : `All ${c.rows.length} checks agree.`} Scores use SchemaScope's own ROBOT run; the Dashboard is shown for comparison. The two may check different files (the Dashboard usually checks the <code>-base</code> release), which alone can change warning counts.</p>
+    <div class="table-wrap"><table class="portal-table"><thead><tr><th>Check</th><th>SchemaScope (ROBOT + ELK)</th><th><a href="${attr(c.dashboard.page || "https://dashboard.obofoundry.org/")}" rel="noopener">OBO Dashboard</a></th><th></th></tr></thead><tbody>
+      ${c.rows.map((x) => `<tr><td>${esc(x.check)}</td><td>${v(x.ours)}</td><td>${v(x.dashboard)}</td><td>${x.differs ? "<b>differs</b>" : x.ours != null && x.dashboard != null ? "same" : ""}</td></tr>`).join("")}
+      <tr><td class="muted">File checked</td><td>${file(c.ours.artefact)}</td><td>${file(c.dashboard.artefact)}</td><td></td></tr>
+      <tr><td class="muted">Checked on</td><td>${esc(fmtDate(c.ours.checkedAt))}</td><td>${esc(fmtDate(c.dashboard.checkedAt))}</td><td></td></tr>
+    </tbody></table></div>
+  </div>`;
+}
+
 function portalsPanel(e, r) {
   if (!r) return "";
   const rows = [];
@@ -828,7 +906,7 @@ function entryPage(e) {
         return `<div class="bd-row${na ? " is-na" : ""}">
       <div class="bd-label"><span><b class="sym">${esc(rb.symbol)}</b> ${esc(rb.label)}${rb.fair ? ' <span class="fair-tag">FAIR</span>' : ""}</span><span class="bd-num">${na ? "n/a" : `${b.score}<small>/${b.max}</small>`}</span></div>
       <div class="bar${rb.fair ? " bar-fair" : ""}" role="img" aria-label="${attr(`${rb.label}: ${b.score} of ${b.max}`)}"><span style="width:${pct}%"></span></div>
-      <ul class="bd-steps">${(b.steps || []).map((s) => `<li><span>${esc(s.label)}</span><span class="muted">${esc(s.detail)}</span><b>${s.pts > 0 ? "+" : ""}${s.pts}</b></li>`).join("")}</ul>
+      <ul class="bd-steps">${(b.steps || []).map((s) => `<li${s.notAssessed ? ' class="na"' : ""}><span>${esc(s.label)}</span><span class="muted">${esc(s.detail)}</span><b>${s.notAssessed ? `n/a<span class="muted"> (${s.outOf})</span>` : `${s.pts > 0 ? "+" : ""}${s.pts}`}</b></li>`).join("")}</ul>
     </div>`;
       }).join("")
     : `<p class="muted">Not evaluated yet. Run <code>npm run evaluate</code>.</p>`;
@@ -863,6 +941,7 @@ function entryPage(e) {
     <div class="score-card">
       ${gradeBadge(e, "lg")}
       ${r ? `<p class="fair-line"><span class="fair-tag">FAIR</span> <b>${r.fair}</b>/${FAIR_MAX}</p>` : ""}
+      ${r?.qualityPartial ? `<p class="small q-partial-note">* Q partially assessed: ${r.qualityNotAssessed} of 20 points could not be checked and are left out of the total.</p>` : ""}
       ${versionLabel(r) ? `<p class="muted small">Version ${esc(versionLabel(r).length > 28 ? versionLabel(r).slice(0, 27) + "…" : versionLabel(r))}</p>` : ""}
       <p class="muted small">${r ? `Evaluated ${fmtDate(r.evaluatedAt || evaluation.generatedAt)}` : "Not evaluated"}</p>
       <a class="small" href="/evaluation/#formula">How scores work</a>
@@ -884,6 +963,7 @@ function entryPage(e) {
     </div>
 
     ${portalsPanel(e, r)}
+    ${robotComparePanel(r)}
 
     ${e.modules?.length ? `<div class="panel"><h2>Schemas &amp; modules <span class="count">${e.modules.length}</span></h2><ul class="modules">${e.modules.map((m) => `<li><a href="${attr(m.url)}" rel="noopener">${esc(m.name)}${ext}</a><span class="muted">${esc(m.note || "")}</span></li>`).join("")}</ul></div>` : ""}
 
@@ -909,9 +989,10 @@ function entryPage(e) {
     <div class="panel" id="history">
       <h2>History &amp; changes <span class="count">${h.length} run${h.length === 1 ? "" : "s"}</span></h2>
       ${h.length >= 2 ? `<div class="spark-wrap">${sparkline(h)}<span class="muted small">Score over time</span></div>` : ""}
+      ${metricsAcrossRuns(h)}
       ${
         ch.length
-          ? `<ul class="changes">${ch.slice(0, 12).map((c) => `<li><time datetime="${attr(c.at)}">${esc(fmtDate(c.at))}</time><span>${esc(c.what)}</span></li>`).join("")}</ul>`
+          ? `<ul class="changes">${ch.slice(0, 20).map((c) => `<li><time datetime="${attr(c.at)}">${esc(fmtDate(c.at))}</time><span>${esc(c.what)}</span></li>`).join("")}</ul>`
           : `<p class="muted small">${h.length < 2 ? "History starts with the first archived run; changes appear after the next evaluation." : "No changes detected between runs."}</p>`
       }
       ${
@@ -988,7 +1069,7 @@ function workedExample() {
       <tbody>${RUBRIC.map((rb) => {
         const b = r.breakdown[rb.key];
         return (b.steps || [])
-          .map((s, i) => `<tr${i === 0 ? ' class="grp"' : ""}>${i === 0 ? `<td rowspan="${b.steps.length}"><b>${esc(rb.symbol)}</b> ${esc(rb.label)}${rb.fair ? ' <span class="fair-tag">FAIR</span>' : ""}<br><span class="muted small">= ${b.score} / ${b.max}</span></td>` : ""}<td>${esc(s.label)}</td><td class="muted">${esc(s.detail)}</td><td class="num">${s.pts > 0 ? "+" : ""}${s.pts}${s.max ? `<span class="muted"> / ${s.max}</span>` : ""}</td></tr>`)
+          .map((s, i) => `<tr${i === 0 ? ' class="grp"' : ""}>${i === 0 ? `<td rowspan="${b.steps.length}"><b>${esc(rb.symbol)}</b> ${esc(rb.label)}${rb.fair ? ' <span class="fair-tag">FAIR</span>' : ""}<br><span class="muted small">= ${b.score} / ${b.max}</span></td>` : ""}<td>${esc(s.label)}</td><td class="muted">${esc(s.detail)}</td><td class="num">${s.notAssessed ? `n/a<span class="muted"> (${s.outOf})</span>` : `${s.pts > 0 ? "+" : ""}${s.pts}${s.max ? `<span class="muted"> / ${s.max}</span>` : ""}`}</td></tr>`)
           .join("");
       }).join("")}</tbody>
     </table></div>
@@ -1022,6 +1103,7 @@ function evaluationPage() {
 
 <section class="wrap section">
   <div class="grade-dist">${dist.map((g) => `<div class="gd"><span class="grade grade-${g.grade}"><b>${g.grade}</b></span><span><b>${g.n}</b> resource${g.n === 1 ? "" : "s"}</span><small>${g.min}+ points</small></div>`).join("")}</div>
+  <p class="small muted">* next to a grade means ontology quality (Q) was only partly assessed: checks SchemaScope could not run are left out of the possible points rather than scored 0.</p>
 </section>
 
 <section class="wrap section" id="formula">
@@ -1063,8 +1145,8 @@ function evaluationPage() {
       <li><b>BioPortal</b> (with an API key): latest submission and metrics.</li>
       <li><b>Bioregistry</b>: cross-portal identifiers (OLS, BioPortal, TIB, FAIRsharing, Wikidata…), dependencies and reuse.</li>
       <li><b>OBO Foundry registry</b>: activity status, license and registered usages (shown as adopters).</li>
-      <li><b>OBO Dashboard</b>: OBO principle checks, ROBOT report, reasoner consistency and unsatisfiable classes, ontologies that reuse it.</li>
-      <li><b>SchemaScope CI</b>: for ontologies outside the OBO Dashboard, ROBOT reasons (ELK) and reports on the artefact; every ontology is also sent to the <a href="https://oops.linkeddata.es" rel="noopener">OOPS!</a> pitfall scanner.</li>
+      <li><b>OBO Dashboard</b>: OBO principle checks and the ontologies that reuse it. Its ROBOT report and reasoner results are shown next to ours for comparison, and used only when our own check is missing.</li>
+      <li><b>SchemaScope's own checks</b>: ROBOT reasons (ELK) and reports on every ontology's artefact, OBO Dashboard ones included; every ontology is also sent to the <a href="https://oops.linkeddata.es" rel="noopener">OOPS!</a> pitfall scanner.</li>
       <li><b>Crossref</b>: citation counts of each resource's reference paper.</li>
       <li><b>Curated data</b>: adopting projects, modules and tooling submitted through GitHub and reviewed before merge.</li>
     </ul>
@@ -1103,6 +1185,7 @@ function evaluationPage() {
 </section>
 
 <section class="wrap section" id="runs">
+  <p class="small">How robust are these scores? See the <a href="/evaluation/validation/">rubric validation</a>: sensitivity to the weights, agreement with the OBO Dashboard and with expert ratings.</p>
   <div class="section-head"><h2>Run history</h2><a href="/runs/index.json">runs/index.json</a></div>
   <div class="table-wrap"><table class="score-table">
     <thead><tr><th>Finished</th><th>Scope</th><th class="num">Entries</th><th class="num">Avg. score</th><th>Trigger</th><th>Evaluator</th><th>Data</th></tr></thead>
@@ -1217,6 +1300,175 @@ function submitPage() {
 </section>`;
   const description = "Submit an ontology, schema or data standard to SchemaScope through GitHub. Every submission is validated, FAIR-evaluated and reviewed before merge.";
   return page({ title: "Submit a resource", pathname: "/submit/", body, description, scripts: ["/assets/submit.js"], graph: [webPage("WebPage", "/submit/", "Submit a resource", description), breadcrumbs(trail)] });
+}
+
+// Contact details (override with CONTACT_NAME, CONTACT_EMAILS=a@x,b@y and CONTACT_SITE at build time).
+const CONTACT = {
+  name: process.env.CONTACT_NAME || "Tek Raj Chhetri",
+  emails: (process.env.CONTACT_EMAILS || "tekraj.chhetri@cair-nepal.org,tekraj@mit.edu").split(",").map((x) => x.trim()).filter(Boolean),
+  site: process.env.CONTACT_SITE ?? "https://tekrajchhetri.com/",
+  github: process.env.CONTACT_GITHUB ?? "tekrajchhetri", // for the photo; empty to hide it
+  role: process.env.CONTACT_ROLE || "Creator & maintainer",
+};
+
+// Contributors, pulled from the GitHub API at build time (bots left out). The last good list is cached in
+// .local/ so an offline build, or one that hits the rate limit, still shows it.
+// Accounts not to list, e.g. AI assistants credited through Co-Authored-By lines (CONTRIBUTORS_EXCLUDE=a,b).
+const EXCLUDE = new Set((process.env.CONTRIBUTORS_EXCLUDE ?? "claude").split(",").map((x) => x.trim().toLowerCase()).filter(Boolean));
+async function githubContributors() {
+  const m = String(config.repository || "").match(/github\.com\/([^/]+)\/([^/#?]+)/);
+  if (!m) return null;
+  const cache = path.join(root, ".local", "contributors.json");
+  try {
+    const headers = { Accept: "application/vnd.github+json", "User-Agent": "schemascope-build", ...(process.env.GITHUB_TOKEN ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {}) };
+    const r = await fetch(`https://api.github.com/repos/${m[1]}/${m[2].replace(/\.git$/, "")}/contributors?per_page=100`, { headers, signal: AbortSignal.timeout(15000) });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const list = (await r.json())
+      .filter((c) => c.type !== "Bot" && !/\[bot\]$/.test(c.login) && !EXCLUDE.has(c.login.toLowerCase()))
+      .map((c) => ({ login: c.login, url: c.html_url, avatar: c.avatar_url }));
+    // Display names need one request per person; keep the login if that fails.
+    for (const c of list.slice(0, 30)) {
+      const u = await fetch(`https://api.github.com/users/${c.login}`, { headers, signal: AbortSignal.timeout(10000) }).then((x) => (x.ok ? x.json() : null)).catch(() => null);
+      if (u?.name) c.name = u.name;
+    }
+    await mkdir(path.dirname(cache), { recursive: true });
+    await writeFile(cache, JSON.stringify(list, null, 2) + "\n");
+    return list;
+  } catch (err) {
+    if (existsSync(cache)) return JSON.parse(await readFile(cache, "utf8")).filter((c) => !EXCLUDE.has(c.login.toLowerCase()));
+    console.warn(`Note: couldn't fetch contributors from GitHub (${err.message}); the contact page links to GitHub instead.`);
+    return null;
+  }
+}
+const contributors = await githubContributors();
+
+function contactPage() {
+  const trail = [["Home", "/"], ["Contact", "/contact/"]];
+  const repo = config.repository;
+  const ICON = {
+    mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg>',
+    globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg>',
+    plus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>',
+    flag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 21V4m0 0h11l-2 4 2 4H5"/></svg>',
+    code: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg>',
+  };
+  const host = (u) => u.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  const ways = [
+    { icon: ICON.plus, title: "Add or update a resource", text: "Use the submission form. A bot turns it into a pull request for review.", href: "/submit/", cta: "Submission form" },
+    repo && { icon: ICON.flag, title: "Report a problem", text: "Wrong score or metadata, a broken link, or a bug on the site?", href: `${repo}/issues/new?template=report-problem.yml`, cta: "Report a problem" },
+    repo && { icon: ICON.code, title: "Suggest an idea", text: "A feature, a scoring improvement or a collaboration. The code is open source too.", href: `${repo}/issues/new?template=idea.yml`, cta: "Suggest an idea" },
+  ].filter(Boolean);
+  const people = contributors?.length
+    ? `<ul class="people">${contributors.map((c) => `<li><a href="${attr(c.url)}" rel="noopener"><img src="${attr(c.avatar)}&amp;s=160" alt="" width="64" height="64" loading="lazy"><b>${esc(c.name || c.login)}</b>${c.name ? `<small>@${esc(c.login)}</small>` : ""}</a></li>`).join("")}</ul>`
+    : "";
+  const body = `
+<section class="page-head wrap">
+  ${crumbsHtml(trail)}
+  <h1>Contact</h1>
+  <p class="lede">Questions, corrections or ideas for collaboration? We'd like to hear from you.</p>
+</section>
+<section class="wrap section contact">
+  <div class="contact-grid">
+    <article class="contact-card maintainer">
+      ${CONTACT.github ? `<img class="portrait" src="https://github.com/${attr(CONTACT.github)}.png?size=240" alt="${attr(CONTACT.name)}" width="112" height="112">` : ""}
+      <div>
+        <p class="eyebrow">${esc(CONTACT.role)}</p>
+        <h2>${esc(CONTACT.name)}</h2>
+        <div class="contact-links">
+          ${CONTACT.emails.map((x) => `<a class="contact-link" href="mailto:${attr(x)}">${ICON.mail}<span>${esc(x)}</span></a>`).join("")}
+          ${CONTACT.site ? `<a class="contact-link" href="${attr(CONTACT.site)}" rel="noopener">${ICON.globe}<span>${esc(host(CONTACT.site))}</span></a>` : ""}
+        </div>
+      </div>
+    </article>
+    <div class="ways">
+      ${ways.map((w) => `<a class="way" href="${attr(w.href)}"${w.href.startsWith("http") ? ' rel="noopener"' : ""}><span class="way-icon">${w.icon}</span><span><b>${esc(w.title)}</b><span class="muted">${esc(w.text)}</span><span class="way-cta">${esc(w.cta)} →</span></span></a>`).join("")}
+    </div>
+  </div>
+  ${people || repo ? `<div class="contributors-block" id="contributors">
+    <h2>Contributors</h2>
+    <p class="muted">Everyone who has contributed to SchemaScope on GitHub.</p>
+    ${people}
+    ${repo ? `<p class="small muted"><a href="${attr(repo)}/graphs/contributors" rel="noopener">See all contributions on GitHub</a></p>` : ""}
+  </div>` : ""}
+</section>`;
+  const description = `Contact the SchemaScope maintainer, and the people who have contributed to it on GitHub.`;
+  return page({ title: "Contact", pathname: "/contact/", body, description, graph: [webPage("ContactPage", "/contact/", "Contact SchemaScope", description), breadcrumbs(trail)] });
+}
+
+// Features & roadmap, from data/roadmap.json (edit that file to update the page).
+const roadmap = JSON.parse(await readFile(path.join(root, "data/roadmap.json"), "utf8"));
+function roadmapPage() {
+  const trail = [["Home", "/"], ["Features & roadmap", "/roadmap/"]];
+  const LABEL = { done: "Available", "in-progress": "In progress", planned: "Planned" };
+  const all = roadmap.sections.flatMap((x) => x.items);
+  const count = (st) => all.filter((i) => i.status === st).length;
+  const body = `
+<section class="page-head wrap">
+  ${crumbsHtml(trail)}
+  <h1>Features &amp; roadmap</h1>
+  <p class="lede">What SchemaScope does today, and what we plan to build next.</p>
+  <p class="small muted">${count("done")} available · ${count("in-progress")} in progress · ${count("planned")} planned · updated ${esc(fmtDate(roadmap.updated))}</p>
+</section>
+<section class="wrap section">
+  ${roadmap.sections.map((sec) => `<div class="roadmap-sec" id="${attr(sec.id)}">
+    <h2>${esc(sec.title)}</h2>
+    <ul class="roadmap">${sec.items.map((i) => `<li class="rm-${attr(i.status)}"><span class="rm-status">${esc(LABEL[i.status] || i.status)}</span><div><b>${esc(i.title)}</b><p>${esc(i.text)}</p></div></li>`).join("")}</ul>
+  </div>`).join("")}
+  <p class="small muted">Ideas or priorities you'd like to see? <a href="/contact/">Get in touch</a>${config.repository ? ` or <a href="${attr(config.repository)}/issues/new?template=idea.yml" rel="noopener">suggest an idea on GitHub</a>` : ""}.</p>
+</section>`;
+  const description = "SchemaScope's features and development roadmap: catalog and discovery, evaluation and rubric improvements, publication tracking, recommendations and tools for maintainers.";
+  return page({ title: "Features & roadmap", pathname: "/roadmap/", body, description, graph: [webPage("WebPage", "/roadmap/", "SchemaScope features & roadmap", description), breadcrumbs(trail)] });
+}
+
+// Rubric validation (scripts/validate-rubric.mjs → data/validation/report.json): sensitivity to the weights,
+// agreement with the OBO Dashboard, and agreement with expert ratings.
+const validation = existsSync(path.join(root, "data/validation/report.json")) ? JSON.parse(await readFile(path.join(root, "data/validation/report.json"), "utf8")) : null;
+function validationPage() {
+  const trail = [["Home", "/"], ["Evaluation", "/evaluation/"], ["Rubric validation", "/evaluation/validation/"]];
+  const v = validation;
+  const pc = (x) => (x == null ? "—" : `${(x * 100).toFixed(1)}%`);
+  const n = (x) => (x == null ? "—" : String(x));
+  const sens = v?.sensitivity;
+  const body = `
+<section class="page-head wrap">
+  ${crumbsHtml(trail)}
+  <h1>Rubric validation</h1>
+  <p class="lede">How robust SchemaScope's scores are: how much they move when the weights change, how well our own quality checks agree with the OBO Dashboard, and how well scores agree with expert ratings.</p>
+  ${v ? `<p class="small muted">Rubric v${esc(v.rubricVersion)} · ${fmtNum(v.entries)} resources · computed ${esc(fmtDate(v.generatedAt))} from the evaluation of ${esc(fmtDate(v.evaluation.generatedAt))}. Reproduce with <code>npm run validate:rubric</code>.</p>` : ""}
+</section>
+${!v ? `<section class="wrap section"><p class="muted">No validation report yet. Run <code>npm run validate:rubric</code>.</p></section>` : `
+<section class="wrap section">
+  <h2>Sensitivity to the weights</h2>
+  <p class="muted">${esc(sens.method)}</p>
+  <div class="stat-grid">
+    <div class="stat"><b>${n(sens.spearman.mean)}</b><span>mean rank correlation with the published ranking (worst 5%: ${n(sens.spearman.p05)})</span></div>
+    <div class="stat"><b>${pc(sens.sameGradeShare.mean)}</b><span>of resources keep their grade on average (worst draw ${pc(sens.sameGradeShare.min)})</span></div>
+    <div class="stat"><b>${n(sens.meanAbsScoreChange.mean)}</b><span>points mean score change</span></div>
+    <div class="stat"><b>${fmtNum(sens.borderline.count)}</b><span>borderline resources: grade changes in ≥ ${Math.round(sens.borderline.threshold * 100)}% of draws</span></div>
+  </div>
+  <h3>One criterion at a time</h3>
+  <div class="table-wrap"><table class="hist-table"><thead><tr><th>Criterion</th><th class="num">Grade changes, weight −30%</th><th class="num">+30%</th><th class="num">Criterion dropped</th><th class="num">Rank correlation if dropped</th></tr></thead><tbody>
+    ${sens.oneAtATime.map((x) => `<tr><td>${esc(x.label)}</td><td class="num">${fmtNum(x.minus.gradeChanges)}</td><td class="num">${fmtNum(x.plus.gradeChanges)}</td><td class="num">${fmtNum(x.dropped.gradeChanges)}</td><td class="num">${n(x.dropped.rho)}</td></tr>`).join("")}
+  </tbody></table></div>
+  ${sens.borderline.examples.length ? `<details><summary>Most borderline resources</summary><ul class="changes">${sens.borderline.examples.map((x) => `<li><span><a href="/o/${attr(x.id)}/">${esc(x.name)}</a></span><span class="muted">${x.score} (${esc(x.grade)}), grade changes in ${Math.round(x.flipShare * 100)}% of draws</span></li>`).join("")}</ul></details>` : ""}
+</section>
+<section class="wrap section">
+  <h2>Our quality checks vs the OBO Dashboard</h2>
+  <p class="muted">${esc(v.dashboardAgreement.method)}</p>
+  ${v.dashboardAgreement.ontologies ? `<div class="table-wrap"><table class="hist-table"><thead><tr><th>Check</th><th class="num">Compared</th><th class="num">Agree</th><th class="num">Agreement</th><th>Differing (examples)</th></tr></thead><tbody>
+    ${v.dashboardAgreement.checks.map((c) => `<tr><td>${esc(c.label)}</td><td class="num">${fmtNum(c.compared)}</td><td class="num">${fmtNum(c.agree)}</td><td class="num">${pc(c.rate)}</td><td>${c.differing.slice(0, 6).map((d) => `<a href="/o/${attr(d.id)}/#robot-compare">${esc(d.id)}</a>`).join(", ") || "—"}</td></tr>`).join("")}
+  </tbody></table></div>
+  ${v.dashboardAgreement.robotErrors ? `<p class="small muted">ROBOT error counts on ${fmtNum(v.dashboardAgreement.robotErrors.compared)} ontologies: ours higher for ${fmtNum(v.dashboardAgreement.robotErrors.oursHigher)}, equal for ${fmtNum(v.dashboardAgreement.robotErrors.equal)}, lower for ${fmtNum(v.dashboardAgreement.robotErrors.oursLower)} (rank correlation ${n(v.dashboardAgreement.robotErrors.spearman)}). We check the full download, which often includes imported terms.</p>` : ""}`
+  : `<p class="muted">No ontology has both results yet. This fills in as our quality checks run (<code>npm run quality:all</code>) and the catalog is re-evaluated.</p>`}
+</section>
+<section class="wrap section">
+  <h2>Agreement with expert ratings</h2>
+  ${v.experts.ratings ? `<p>${fmtNum(v.experts.ratings)} ratings of ${fmtNum(v.experts.entries)} resources by ${fmtNum(v.experts.raters)} rater${v.experts.raters === 1 ? "" : "s"}. Rank correlation between our score and the mean rating: <b>${n(v.experts.rho)}</b>.</p>
+  <div class="table-wrap"><table class="hist-table"><thead><tr><th>Our grade</th><th class="num">Resources rated</th><th class="num">Mean expert rating (1–5)</th></tr></thead><tbody>${v.experts.byGrade.map((g) => `<tr><td>${esc(g.grade)}</td><td class="num">${fmtNum(g.n)}</td><td class="num">${n(g.meanRating)}</td></tr>`).join("")}</tbody></table></div>`
+  : `<p class="muted">No expert ratings yet. Ratings (1–5 per resource) go in <code>${esc(v.experts.file)}</code>; the comparison appears here once at least five resources are rated. Would you like to rate resources in your field? <a href="/contact/">Get in touch</a>.</p>`}
+</section>`}`;
+  const description = "How robust SchemaScope's scores are: sensitivity of grades to the rubric weights, agreement of our quality checks with the OBO Dashboard, and agreement with expert ratings.";
+  return page({ title: "Rubric validation", pathname: "/evaluation/validation/", body, description, graph: [webPage("WebPage", "/evaluation/validation/", "SchemaScope rubric validation", description), breadcrumbs(trail)] });
 }
 
 function aboutPage() {
@@ -1371,7 +1623,11 @@ for (const e of catalog) {
 put("evaluation/index.html", evaluationPage());
 put("catalog/index.html", catalogPage());
 put("search/index.html", searchPage());
-const regsOf = (e) => (e.provenance?.registries || []).map((x) => x.registry).filter((v, i, a) => a.indexOf(v) === i).concat(e.provenance?.source === "curated" || e.provenance?.curated ? ["curated"] : []).concat(e.provenance?.source === "NeuroSchema catalog" ? ["NeuroSchema"] : []);
+// Entries added or corrected through the submission form (the bot records "submission #<issue>").
+function isSubmitted(e) {
+  return /^submission/.test(e.provenance?.curatedBy || e.provenance?.curated?.curatedBy || "");
+}
+const regsOf = (e) => (e.provenance?.registries || []).map((x) => x.registry).filter((v, i, a) => a.indexOf(v) === i).concat(e.provenance?.source === "curated" || e.provenance?.curated ? ["curated"] : []).concat(isSubmitted(e) ? ["submitted"] : []).concat((e.provenance?.registries || []).some((x) => /^Discovered/.test(x.registry || "")) ? ["discovered"] : []).concat(e.provenance?.source === "NeuroSchema catalog" ? ["NeuroSchema"] : []);
 put(
   "catalog-index.json",
   JSON.stringify(
@@ -1401,6 +1657,9 @@ put(
 );
 put("submit/index.html", submitPage());
 put("about/index.html", aboutPage());
+put("contact/index.html", contactPage());
+put("roadmap/index.html", roadmapPage());
+put("evaluation/validation/index.html", validationPage());
 put("404.html", notFound());
 put("privacy/index.html", privacyPage());
 put("catalog.json", JSON.stringify({ name: "SchemaScope", url: config.url, generatedAt: evaluation.generatedAt || null, run: evaluation.run || null, rubricVersion: RUBRIC_VERSION, categories, entries: catalog.map(record) }, null, 2));

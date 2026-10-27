@@ -7,4 +7,4 @@ ARG ROBOT_VERSION=v1.9.7
 ADD https://github.com/ontodev/robot/releases/download/${ROBOT_VERSION}/robot.jar /opt/robot/robot.jar
 LABEL org.opencontainers.image.title="ROBOT for SchemaScope" org.opencontainers.image.source="https://github.com/ontodev/robot"
 WORKDIR /work
-ENTRYPOINT ["java", "-Xmx6g", "-jar", "/opt/robot/robot.jar"]
+ENTRYPOINT ["sh", "-c", "exec java -Xmx${ROBOT_HEAP:-6g} -jar /opt/robot/robot.jar \"$@\"", "robot"]

@@ -1,0 +1,348 @@
+{
+  "generatedAt": "2026-10-27T22:46:56.334Z",
+  "rubricVersion": "4.1",
+  "evaluation": {
+    "generatedAt": "2026-10-27T21:58:35.897Z",
+    "runId": "2026-10-27T21-58-30Z",
+    "file": "data/evaluation.json"
+  },
+  "entries": 2688,
+  "sensitivity": {
+    "method": "Each criterion's weight drawn uniformly from 0.7–1.3 (1000 draws, fixed seed); scores recomputed from the stored points. Penalties and the inconsistency cap are unchanged.",
+    "reproduces": true,
+    "spearman": {
+      "mean": 0.996,
+      "p05": 0.993,
+      "min": 0.99
+    },
+    "sameGradeShare": {
+      "mean": 0.964,
+      "p05": 0.894,
+      "min": 0.805
+    },
+    "meanAbsScoreChange": {
+      "mean": 1.658,
+      "p05": 0.709,
+      "min": 0.297
+    },
+    "oneAtATime": [
+      {
+        "key": "findable",
+        "label": "Findable",
+        "minus": {
+          "rho": 0.997,
+          "gradeChanges": 42,
+          "meanAbsChange": 0.81
+        },
+        "plus": {
+          "rho": 0.998,
+          "gradeChanges": 41,
+          "meanAbsChange": 0.72
+        },
+        "dropped": {
+          "rho": 0.982,
+          "gradeChanges": 430,
+          "meanAbsChange": 2.77
+        }
+      },
+      {
+        "key": "accessible",
+        "label": "Accessible",
+        "minus": {
+          "rho": 0.996,
+          "gradeChanges": 101,
+          "meanAbsChange": 1.6
+        },
+        "plus": {
+          "rho": 0.998,
+          "gradeChanges": 47,
+          "meanAbsChange": 1.49
+        },
+        "dropped": {
+          "rho": 0.962,
+          "gradeChanges": 350,
+          "meanAbsChange": 5.75
+        }
+      },
+      {
+        "key": "interoperable",
+        "label": "Interoperable",
+        "minus": {
+          "rho": 0.998,
+          "gradeChanges": 69,
+          "meanAbsChange": 1.52
+        },
+        "plus": {
+          "rho": 0.997,
+          "gradeChanges": 24,
+          "meanAbsChange": 1.46
+        },
+        "dropped": {
+          "rho": 0.984,
+          "gradeChanges": 195,
+          "meanAbsChange": 5.53
+        }
+      },
+      {
+        "key": "reusable",
+        "label": "Reusable",
+        "minus": {
+          "rho": 0.996,
+          "gradeChanges": 58,
+          "meanAbsChange": 0.95
+        },
+        "plus": {
+          "rho": 0.997,
+          "gradeChanges": 20,
+          "meanAbsChange": 0.84
+        },
+        "dropped": {
+          "rho": 0.971,
+          "gradeChanges": 149,
+          "meanAbsChange": 3.37
+        }
+      },
+      {
+        "key": "quality",
+        "label": "Ontology consistency & quality",
+        "minus": {
+          "rho": 0.999,
+          "gradeChanges": 22,
+          "meanAbsChange": 0.38
+        },
+        "plus": {
+          "rho": 0.999,
+          "gradeChanges": 44,
+          "meanAbsChange": 0.34
+        },
+        "dropped": {
+          "rho": 0.998,
+          "gradeChanges": 87,
+          "meanAbsChange": 1.65
+        }
+      },
+      {
+        "key": "maintenance",
+        "label": "Maintenance",
+        "minus": {
+          "rho": 0.997,
+          "gradeChanges": 48,
+          "meanAbsChange": 1.43
+        },
+        "plus": {
+          "rho": 0.997,
+          "gradeChanges": 74,
+          "meanAbsChange": 1.11
+        },
+        "dropped": {
+          "rho": 0.964,
+          "gradeChanges": 507,
+          "meanAbsChange": 5.55
+        }
+      },
+      {
+        "key": "adoption",
+        "label": "Community adoption",
+        "minus": {
+          "rho": 0.999,
+          "gradeChanges": 79,
+          "meanAbsChange": 1.56
+        },
+        "plus": {
+          "rho": 0.998,
+          "gradeChanges": 110,
+          "meanAbsChange": 1.29
+        },
+        "dropped": {
+          "rho": 0.992,
+          "gradeChanges": 583,
+          "meanAbsChange": 6.15
+        }
+      }
+    ],
+    "borderline": {
+      "threshold": 0.25,
+      "count": 133,
+      "examples": [
+        {
+          "id": "htn",
+          "name": "Hypertension Ontology",
+          "score": 40,
+          "grade": "D",
+          "flipShare": 0.5
+        },
+        {
+          "id": "slso",
+          "name": "Space Life Sciences Ontology",
+          "score": 70,
+          "grade": "B",
+          "flipShare": 0.5
+        },
+        {
+          "id": "euroscivoc",
+          "name": "European Science Vocabulary",
+          "score": 39,
+          "grade": "E",
+          "flipShare": 0.49
+        },
+        {
+          "id": "cvdo",
+          "name": "Cardiovascular Disease Ontology",
+          "score": 55,
+          "grade": "C",
+          "flipShare": 0.48
+        },
+        {
+          "id": "tto",
+          "name": "Teleost taxonomy ontology",
+          "score": 40,
+          "grade": "D",
+          "flipShare": 0.48
+        },
+        {
+          "id": "cidoc-crm",
+          "name": "CIDOC Conceptual Reference Model",
+          "score": 55,
+          "grade": "C",
+          "flipShare": 0.47
+        },
+        {
+          "id": "deo",
+          "name": "Discourse Elements Ontology",
+          "score": 55,
+          "grade": "C",
+          "flipShare": 0.47
+        },
+        {
+          "id": "doco",
+          "name": "Document Components Ontology",
+          "score": 55,
+          "grade": "C",
+          "flipShare": 0.47
+        },
+        {
+          "id": "duo",
+          "name": "Data Use Ontology",
+          "score": 55,
+          "grade": "C",
+          "flipShare": 0.47
+        },
+        {
+          "id": "ecto",
+          "name": "Environmental conditions, treatments and exposures ontology",
+          "score": 85,
+          "grade": "A",
+          "flipShare": 0.47
+        },
+        {
+          "id": "pharmgkb-gene",
+          "name": "PharmGKB Gene",
+          "score": 39,
+          "grade": "E",
+          "flipShare": 0.47
+        },
+        {
+          "id": "phipo",
+          "name": "Pathogen Host Interaction Phenotype Ontology",
+          "score": 85,
+          "grade": "A",
+          "flipShare": 0.47
+        },
+        {
+          "id": "pwo",
+          "name": "Publishing Workflow Ontology",
+          "score": 55,
+          "grade": "C",
+          "flipShare": 0.47
+        },
+        {
+          "id": "scoro",
+          "name": "Scholarly Contributions and Roles Ontology",
+          "score": 55,
+          "grade": "C",
+          "flipShare": 0.47
+        },
+        {
+          "id": "apo",
+          "name": "Ascomycete phenotype ontology",
+          "score": 70,
+          "grade": "B",
+          "flipShare": 0.46
+        }
+      ]
+    }
+  },
+  "dashboardAgreement": {
+    "method": "Ontologies with both a SchemaScope ROBOT run and an OBO Dashboard result. The two may check different files (the Dashboard usually checks the -base release).",
+    "ontologies": 0,
+    "checks": [
+      {
+        "key": "consistent",
+        "label": "Logically consistent",
+        "compared": 0,
+        "agree": 0,
+        "rate": null,
+        "differing": []
+      },
+      {
+        "key": "unsatisfiable",
+        "label": "Unsatisfiable classes",
+        "compared": 0,
+        "agree": 0,
+        "rate": null,
+        "differing": []
+      },
+      {
+        "key": "owl2dl",
+        "label": "In OWL 2 DL",
+        "compared": 0,
+        "agree": 0,
+        "rate": null,
+        "differing": []
+      },
+      {
+        "key": "robotErrorsZero",
+        "label": "No ROBOT errors",
+        "compared": 0,
+        "agree": 0,
+        "rate": null,
+        "differing": []
+      }
+    ],
+    "robotErrors": null
+  },
+  "experts": {
+    "file": "data/validation/expert-ratings.csv",
+    "ratings": 0,
+    "entries": 0,
+    "raters": 0,
+    "rho": null,
+    "byGrade": [
+      {
+        "grade": "A",
+        "n": 0,
+        "meanRating": null
+      },
+      {
+        "grade": "B",
+        "n": 0,
+        "meanRating": null
+      },
+      {
+        "grade": "C",
+        "n": 0,
+        "meanRating": null
+      },
+      {
+        "grade": "D",
+        "n": 0,
+        "meanRating": null
+      },
+      {
+        "grade": "E",
+        "n": 0,
+        "meanRating": null
+      }
+    ]
+  }
+}

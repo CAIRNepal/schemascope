@@ -28641,7 +28641,7 @@
   "maintainer": "Allen Institute / BICAN",
   "homepage": "https://www.brainspan.org/",
   "repository": "https://github.com/brain-bican/developing_human_brain_atlas_ontology",
-  "download": "https://purl.brain-bican.org/ontology/dhbao/dhbao.owl",
+  "download": "https://raw.githubusercontent.com/brain-bican/developing_human_brain_atlas_ontology/main/dhbao.owl",
   "bioregistry": "dhba",
   "publications": [],
   "usedBy": [
@@ -29848,7 +29848,7 @@
   "maintainer": "Allen Institute / BICAN",
   "homepage": "https://developingmouse.brain-map.org/",
   "repository": "https://github.com/brain-bican/developing_mouse_brain_atlas_ontology",
-  "download": "https://purl.brain-bican.org/ontology/dmbao/dmbao.owl",
+  "download": "https://raw.githubusercontent.com/brain-bican/developing_mouse_brain_atlas_ontology/main/dmbao.owl",
   "bioregistry": "dmba",
   "publications": [],
   "usedBy": [
@@ -51018,7 +51018,7 @@
   "maintainer": "Allen Institute / BICAN",
   "homepage": "https://human.brain-map.org/",
   "repository": "https://github.com/brain-bican/human_brain_atlas_ontology",
-  "download": "https://purl.brain-bican.org/ontology/hbao/hbao.owl",
+  "download": "https://raw.githubusercontent.com/brain-bican/human_brain_atlas_ontology/main/hbao.owl",
   "bioregistry": "hba",
   "publications": [],
   "usedBy": [
@@ -67266,7 +67266,7 @@
   "maintainer": "Allen Institute / BICAN",
   "homepage": "https://atlas.brain-map.org/",
   "repository": "https://github.com/brain-bican/mouse_brain_atlas_ontology",
-  "download": "https://purl.brain-bican.org/ontology/mbao/mbao.owl",
+  "download": "https://raw.githubusercontent.com/brain-bican/mouse_brain_atlas_ontology/main/mbao.owl",
   "bioportal": "ABA-AMB",
   "bioregistry": "mba",
   "publications": [],

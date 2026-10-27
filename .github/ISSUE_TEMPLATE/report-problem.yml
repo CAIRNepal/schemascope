@@ -1,0 +1,44 @@
+name: Report a problem
+description: A wrong score or metadata, a broken link, or a bug on the SchemaScope site.
+title: "Problem: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this. To add a resource or correct its metadata yourself, the [submission form](https://schemascope.org/submit/) is usually quicker.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of problem?
+      options:
+        - Wrong or outdated metadata for a resource
+        - Score or grade looks wrong
+        - Broken link
+        - Bug on the website
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: entry
+    attributes:
+      label: Resource (if any)
+      description: The resource's id or page, e.g. https://schemascope.org/o/bids/
+      placeholder: https://schemascope.org/o/...
+  - type: textarea
+    id: what
+    attributes:
+      label: What's wrong?
+      description: What you see, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence or links
+      description: A link that shows the correct information helps us fix it faster.
+  - type: input
+    id: contact
+    attributes:
+      label: How can we reach you? (optional)
+      description: Only if you'd like a reply outside GitHub.
