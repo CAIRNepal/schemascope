@@ -1,14 +1,26 @@
 {
   "id": "ado",
   "artefact": "http://purl.obolibrary.org/obo/ado.owl",
-  "checkedAt": "2026-10-26T01:56:43.368Z",
+  "checkedAt": "2026-10-27T21:57:22.343Z",
   "sha256": "30d2c292255ef4f59cae3940e24f9fd64e049c232492007197bf0a583861f20d",
   "oops": {
-    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "engine": "OOPS! (local Docker)",
     "critical": 0,
-    "important": 1,
-    "minor": 2,
+    "important": 2,
+    "minor": 6,
     "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1870
+      },
       {
         "code": "P11",
         "name": "Missing domain or range in properties",
@@ -16,36 +28,38 @@
         "affected": 11
       },
       {
-        "code": "P08",
-        "name": "Missing annotations",
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
         "importance": "minor",
-        "affected": 791
+        "affected": 10
       },
       {
-        "code": "P13",
-        "name": "Inverse relationships not explicitly declared",
+        "code": "P20",
+        "name": "Misusing ontology annotations",
         "importance": "minor",
-        "affected": 11
+        "affected": 3
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 6
       }
     ],
-    "checked": [
-      "P06",
-      "P19",
-      "P39",
-      "P38",
-      "P41",
-      "P34",
-      "P35",
-      "P11",
-      "P10",
-      "P08",
-      "P13"
-    ],
-    "classes": 1961,
-    "attempts": [
-      "local OOPS!: Command failed: docker run --rm --name schemascope-q-56990-34 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ado:/work schemascope/oops --input-file /work/ontology"
-    ],
-    "checkedAt": "2026-10-26T02:08:58.393Z",
+    "attempts": [],
+    "checkedAt": "2026-10-27T21:58:07.011Z",
     "sha256": "30d2c292255ef4f59cae3940e24f9fd64e049c232492007197bf0a583861f20d"
   }
 }

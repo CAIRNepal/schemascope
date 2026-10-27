@@ -1,0 +1,57 @@
+{
+  "id": "nbo",
+  "artefact": "http://purl.obolibrary.org/obo/nbo.owl",
+  "checkedAt": "2026-10-27T21:38:33.484Z",
+  "sha256": "dbae2820243e1bb16f81085fcd88e06d0f82948aa120fb653ae6154ee93916eb",
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 4
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 194
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 3271
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 158
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 4546,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-95487-7 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/nbo:/work schemascope/oops --input-file /work/ontology."
+    ],
+    "checkedAt": "2026-10-27T21:43:04.619Z",
+    "sha256": "dbae2820243e1bb16f81085fcd88e06d0f82948aa120fb653ae6154ee93916eb"
+  }
+}

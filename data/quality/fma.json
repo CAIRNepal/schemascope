@@ -1,0 +1,11 @@
+{
+  "id": "fma",
+  "artefact": "http://purl.obolibrary.org/obo/fma.owl",
+  "checkedAt": "2026-10-27T21:37:14.991Z",
+  "downloadError": "file is 208 MB (limit 150 MB)",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-27T21:37:16.750Z"
+  }
+}

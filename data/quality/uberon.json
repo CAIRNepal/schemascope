@@ -1,0 +1,14 @@
+{
+  "id": "uberon",
+  "artefact": "http://purl.obolibrary.org/obo/uberon.owl",
+  "checkedAt": "2026-10-27T21:44:32.237Z",
+  "sha256": "8c5dafd10760734320c144ff521b0cb7732b207491db7124166656668a8790fc",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "Python scan: file larger than 80 MB"
+    ],
+    "checkedAt": "2026-10-27T21:44:41.770Z",
+    "sha256": "8c5dafd10760734320c144ff521b0cb7732b207491db7124166656668a8790fc"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "cno",
+  "artefact": "https://w3id.org/cno",
+  "checkedAt": "2026-10-27T21:58:27.252Z",
+  "sha256": "76f69719ecdf22f0878c5fa28de5ae049511a60461b1263ed8038fbc9a3e8563",
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 40,
+      "INFO": 6
+    },
+    "checkedAt": "2026-10-27T21:58:28.689Z",
+    "sha256": "76f69719ecdf22f0878c5fa28de5ae049511a60461b1263ed8038fbc9a3e8563"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 8
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 12,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-95487-18 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cno:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-27T21:58:29.503Z",
+    "sha256": "76f69719ecdf22f0878c5fa28de5ae049511a60461b1263ed8038fbc9a3e8563"
+  }
+}

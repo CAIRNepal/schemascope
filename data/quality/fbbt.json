@@ -1,0 +1,14 @@
+{
+  "id": "fbbt",
+  "artefact": "http://purl.obolibrary.org/obo/fbbt.owl",
+  "checkedAt": "2026-10-27T21:37:02.447Z",
+  "sha256": "522a2e13860be2b35d0d6c4ea402610ef0cbad750343ce7f789e6e5cfbbdd5f9",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "Python scan: file larger than 80 MB"
+    ],
+    "checkedAt": "2026-10-27T21:37:14.987Z",
+    "sha256": "522a2e13860be2b35d0d6c4ea402610ef0cbad750343ce7f789e6e5cfbbdd5f9"
+  }
+}

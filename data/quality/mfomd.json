@@ -1,0 +1,89 @@
+{
+  "id": "mfomd",
+  "artefact": "http://purl.obolibrary.org/obo/mfomd.owl",
+  "checkedAt": "2026-10-27T21:38:14.913Z",
+  "sha256": "378d88f742231ffe249ce2b0b42283f3126f427f70962de087d89b05a5582534",
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 5,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P03",
+        "name": "Creating the relationship \"is\" instead of using \"rdfs:subClassOf\", \"rdf:type\" or \"owl:sameAs\"",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 800
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 41
+      },
+      {
+        "code": "P12",
+        "name": "Equivalent properties not explicitly declared",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 37
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 7
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-27T21:38:32.942Z",
+    "sha256": "378d88f742231ffe249ce2b0b42283f3126f427f70962de087d89b05a5582534"
+  }
+}

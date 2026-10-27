@@ -1,0 +1,14 @@
+{
+  "id": "go",
+  "artefact": "http://purl.obolibrary.org/obo/go.owl",
+  "checkedAt": "2026-10-27T21:37:16.751Z",
+  "sha256": "653ce47cd7b02304e67eb67c54d3be02ec5b0ba5e00eb7384dfa0da00f9682ec",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "Python scan: file larger than 80 MB"
+    ],
+    "checkedAt": "2026-10-27T21:37:27.355Z",
+    "sha256": "653ce47cd7b02304e67eb67c54d3be02ec5b0ba5e00eb7384dfa0da00f9682ec"
+  }
+}

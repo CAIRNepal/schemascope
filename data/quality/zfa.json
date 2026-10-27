@@ -1,0 +1,41 @@
+{
+  "id": "zfa",
+  "artefact": "http://purl.obolibrary.org/obo/zfa.owl",
+  "checkedAt": "2026-10-27T21:51:50.122Z",
+  "sha256": "9f3fcf68739d2eb31c8cde5848f508ee8f21e32174efd5353ac13454aa081385",
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 126
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 3185
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 10
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 7
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-27T21:56:58.349Z",
+    "sha256": "9f3fcf68739d2eb31c8cde5848f508ee8f21e32174efd5353ac13454aa081385"
+  }
+}

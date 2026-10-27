@@ -1,0 +1,11 @@
+{
+  "id": "chebi",
+  "artefact": "http://purl.obolibrary.org/obo/chebi.owl",
+  "checkedAt": "2026-10-27T21:58:07.012Z",
+  "downloadError": "file is 867 MB (limit 150 MB)",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-27T21:58:07.305Z"
+  }
+}

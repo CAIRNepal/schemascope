@@ -1,0 +1,55 @@
+{
+  "id": "cl",
+  "artefact": "http://purl.obolibrary.org/obo/cl.owl",
+  "checkedAt": "2026-10-27T21:58:07.308Z",
+  "sha256": "6abe12f1569d077507e03c1ad0168ebbb9ed725973a7eddba8ab3b9aeaf7a68d",
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 213
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1281
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 178
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 18241,
+    "attempts": [],
+    "checkedAt": "2026-10-27T21:58:27.250Z",
+    "sha256": "6abe12f1569d077507e03c1ad0168ebbb9ed725973a7eddba8ab3b9aeaf7a68d"
+  }
+}

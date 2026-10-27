@@ -1,0 +1,65 @@
+{
+  "id": "nemo2",
+  "artefact": "http://aber-owl.net/media/ontologies/NEMO/1/nemo.owl",
+  "checkedAt": "2026-10-27T21:43:04.620Z",
+  "sha256": "f27cfe696b5e6124b4ad8f78531f86d2ca8dcebf5fd16782cb09d531eaae0e00",
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.bioontology.org/NEMO/ontology/NEMO_annotation_properties.owl> Cause: Server returned HTTP response code: 403 for URL: http://purl.bioontology.org/NEMO/ontology/NEMO_annotation_properties.owl\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-27T21:43:07.344Z",
+    "sha256": "f27cfe696b5e6124b4ad8f78531f86d2ca8dcebf5fd16782cb09d531eaae0e00"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 59
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1717
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1742,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-95487-9 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/nemo2:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-27T21:43:10.506Z",
+    "sha256": "f27cfe696b5e6124b4ad8f78531f86d2ca8dcebf5fd16782cb09d531eaae0e00"
+  }
+}

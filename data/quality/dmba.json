@@ -1,0 +1,11 @@
+{
+  "id": "dmba",
+  "artefact": "https://purl.brain-bican.org/ontology/dmbao/dmbao.owl",
+  "checkedAt": "2026-10-27T21:58:30.261Z",
+  "downloadError": "resolves to an HTML page (https://github.com/brain-bican/purl.brain-bican.org/), not the ontology file",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-27T21:58:30.323Z"
+  }
+}

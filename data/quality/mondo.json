@@ -1,0 +1,11 @@
+{
+  "id": "mondo",
+  "artefact": "http://purl.obolibrary.org/obo/mondo.owl",
+  "checkedAt": "2026-10-27T21:38:32.943Z",
+  "downloadError": "file is 255 MB (limit 150 MB)",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-27T21:38:33.482Z"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "pcl",
+  "artefact": "http://purl.obolibrary.org/obo/pcl.owl",
+  "checkedAt": "2026-10-27T21:44:31.515Z",
+  "downloadError": "file is 168 MB (limit 150 MB)",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-27T21:44:32.235Z"
+  }
+}
