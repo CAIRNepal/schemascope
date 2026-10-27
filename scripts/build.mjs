@@ -706,6 +706,23 @@ function provenanceRows(r) {
 // Cross-portal view: what OLS, TIB, BioPortal, Bioregistry and the OBO Dashboard report about this resource.
 const idToEntry = Object.fromEntries(catalog.flatMap((x) => [x.obo, x.ols, x.bioregistry].filter(Boolean).map((k) => [String(k).toLowerCase(), x])));
 const ontChip = (k) => (idToEntry[k] ? `<a class="chip chip-link" href="/o/${attr(idToEntry[k].id)}/">${esc(idToEntry[k].acronym || k.toUpperCase())}</a>` : `<a class="chip" href="https://bioregistry.io/${attr(k)}" rel="noopener nofollow">${esc(k.toUpperCase())}</a>`);
+// Our ROBOT run next to the OBO Dashboard's. Scores use ours; differences are listed so they can be checked.
+function robotComparePanel(r) {
+  const c = r?.dashboardComparison;
+  if (!c?.rows?.length) return "";
+  const v = (x) => (x == null ? "—" : x === true ? "yes" : x === false ? "no" : fmtNum(x));
+  const file = (u) => (u ? `<code>${esc(String(u).split("/").pop())}</code>` : "—");
+  return `<div class="panel" id="robot-compare">
+    <h2>Our checks vs the OBO Dashboard</h2>
+    <p class="small muted">${c.differences.length ? `${c.differences.length} of ${c.rows.length} checks differ: ${esc(c.differences.join(", "))}.` : `All ${c.rows.length} checks agree.`} Scores use SchemaScope's own ROBOT run; the Dashboard is shown for comparison. The two may check different files (the Dashboard usually checks the <code>-base</code> release), which alone can change warning counts.</p>
+    <div class="table-wrap"><table class="portal-table"><thead><tr><th>Check</th><th>SchemaScope (ROBOT + ELK)</th><th><a href="${attr(c.dashboard.page || "https://dashboard.obofoundry.org/")}" rel="noopener">OBO Dashboard</a></th><th></th></tr></thead><tbody>
+      ${c.rows.map((x) => `<tr><td>${esc(x.check)}</td><td>${v(x.ours)}</td><td>${v(x.dashboard)}</td><td>${x.differs ? "<b>differs</b>" : x.ours != null && x.dashboard != null ? "same" : ""}</td></tr>`).join("")}
+      <tr><td class="muted">File checked</td><td>${file(c.ours.artefact)}</td><td>${file(c.dashboard.artefact)}</td><td></td></tr>
+      <tr><td class="muted">Checked on</td><td>${esc(fmtDate(c.ours.checkedAt))}</td><td>${esc(fmtDate(c.dashboard.checkedAt))}</td><td></td></tr>
+    </tbody></table></div>
+  </div>`;
+}
+
 function portalsPanel(e, r) {
   if (!r) return "";
   const rows = [];
@@ -884,6 +901,7 @@ function entryPage(e) {
     </div>
 
     ${portalsPanel(e, r)}
+    ${robotComparePanel(r)}
 
     ${e.modules?.length ? `<div class="panel"><h2>Schemas &amp; modules <span class="count">${e.modules.length}</span></h2><ul class="modules">${e.modules.map((m) => `<li><a href="${attr(m.url)}" rel="noopener">${esc(m.name)}${ext}</a><span class="muted">${esc(m.note || "")}</span></li>`).join("")}</ul></div>` : ""}
 
@@ -1063,8 +1081,8 @@ function evaluationPage() {
       <li><b>BioPortal</b> (with an API key): latest submission and metrics.</li>
       <li><b>Bioregistry</b>: cross-portal identifiers (OLS, BioPortal, TIB, FAIRsharing, Wikidata…), dependencies and reuse.</li>
       <li><b>OBO Foundry registry</b>: activity status, license and registered usages (shown as adopters).</li>
-      <li><b>OBO Dashboard</b>: OBO principle checks, ROBOT report, reasoner consistency and unsatisfiable classes, ontologies that reuse it.</li>
-      <li><b>SchemaScope CI</b>: for ontologies outside the OBO Dashboard, ROBOT reasons (ELK) and reports on the artefact; every ontology is also sent to the <a href="https://oops.linkeddata.es" rel="noopener">OOPS!</a> pitfall scanner.</li>
+      <li><b>OBO Dashboard</b>: OBO principle checks and the ontologies that reuse it. Its ROBOT report and reasoner results are shown next to ours for comparison, and used only when our own check is missing.</li>
+      <li><b>SchemaScope's own checks</b>: ROBOT reasons (ELK) and reports on every ontology's artefact, OBO Dashboard ones included; every ontology is also sent to the <a href="https://oops.linkeddata.es" rel="noopener">OOPS!</a> pitfall scanner.</li>
       <li><b>Crossref</b>: citation counts of each resource's reference paper.</li>
       <li><b>Curated data</b>: adopting projects, modules and tooling submitted through GitHub and reviewed before merge.</li>
     </ul>

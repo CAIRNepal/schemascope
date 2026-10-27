@@ -5,9 +5,9 @@
 //   - ROBOT report: errors / warnings / info
 //   - OOPS! (OntOlogy Pitfall Scanner) REST service: critical / important / minor pitfalls
 // Ontologies already checked by the OBO Dashboard skip the ROBOT step (the dashboard result is used).
-// Env: ROBOT_JAR (path to robot.jar), ONLY=id1,id2, MAX_MB (default 150), SKIP_OOPS=1
-import { readFile, writeFile, mkdir, rm, stat } from "node:fs/promises";
-import { existsSync, createWriteStream, readFileSync } from "node:fs";
+// Env: ROBOT_JAR (path to robot.jar), ONLY=id1,id2, MAX_MB (default 5000), PY_MAX_MB (default 5000), SKIP_OOPS=1
+import { readFile, writeFile, mkdir, rm, stat, open } from "node:fs/promises";
+import { existsSync, createWriteStream, createReadStream, readFileSync } from "node:fs";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { Readable } from "node:stream";
@@ -28,13 +28,17 @@ const work = path.join(os.tmpdir(), "schemascope-quality");
 const ROBOT_JAR = process.env.ROBOT_JAR || null;
 const ROBOT_IMAGE = process.env.ROBOT_IMAGE || null;
 const ROBOT = ROBOT_JAR || ROBOT_IMAGE;
+// Java heap for ROBOT: large ontologies (GO, MONDO, FMA) need a lot. By default, 2 GB less than Docker has
+// (between 4 and 12 GB); with Docker Desktop, raise its memory limit to check the biggest ontologies.
+const dockerGb = ROBOT_IMAGE ? Math.floor(Number((await run("docker", ["info", "--format", "{{.MemTotal}}"]).catch(() => ({ stdout: "0" }))).stdout.trim()) / 2 ** 30) : 0;
+const ROBOT_HEAP = process.env.ROBOT_HEAP || `${dockerGb ? Math.max(4, Math.min(12, dockerGb - 2)) : 6}g`;
 // Run a ROBOT command; host paths under `work` are mapped to /work inside the container.
 // Run a container with a unique name and kill it on timeout (killing the docker client alone leaves it running).
 let seq = 0;
-async function dockerRun(image, volume, args, timeoutMs) {
+async function dockerRun(image, volume, args, timeoutMs, { memory = process.env.DOCKER_MEMORY || "8g", env = {} } = {}) {
   const name = `${path.basename(root)}-q-${process.pid}-${++seq}`;
   try {
-    return await run("docker", ["run", "--rm", "--name", name, "--memory", process.env.DOCKER_MEMORY || "8g", "-v", volume, image, ...args], { maxBuffer: 1 << 28, timeout: timeoutMs, killSignal: "SIGKILL" });
+    return await run("docker", ["run", "--rm", "--name", name, "--memory", memory, ...Object.entries(env).flatMap(([k, v]) => ["-e", `${k}=${v}`]), "-v", volume, image, ...args], { maxBuffer: 1 << 28, timeout: timeoutMs, killSignal: "SIGKILL" });
   } catch (e) {
     await run("docker", ["kill", name]).catch(() => {});
     throw e;
@@ -42,17 +46,15 @@ async function dockerRun(image, volume, args, timeoutMs) {
 }
 
 function robot(args, opts = {}) {
-  if (ROBOT_JAR) return run("java", ["-Xmx6G", "-jar", ROBOT_JAR, ...args], opts);
+  if (ROBOT_JAR) return run("java", [`-Xmx${ROBOT_HEAP}`, "-jar", ROBOT_JAR, ...args], opts);
   const mapped = args.map((a) => (typeof a === "string" && a.startsWith(work) ? "/work" + a.slice(work.length) : a));
-  return dockerRun(ROBOT_IMAGE, `${work}:/work`, mapped, opts.timeout || 30 * 60e3);
+  return dockerRun(ROBOT_IMAGE, `${work}:/work`, mapped, opts.timeout || 30 * 60e3, { memory: process.env.DOCKER_MEMORY || `${(parseInt(ROBOT_HEAP, 10) || 6) + 2}g`, env: { ROBOT_HEAP } });
 }
-const MAX_MB = Number(process.env.MAX_MB || 150);
+const MAX_MB = Number(process.env.MAX_MB || 5000); // download limit (5 GB)
 const only = process.env.ONLY ? new Set(process.env.ONLY.split(",")) : null;
 await mkdir(outDir, { recursive: true });
 await mkdir(work, { recursive: true });
 
-const dash = await fetch("https://dashboard.obofoundry.org/dashboard/dashboard-results.json").then((r) => r.json()).catch(() => ({ ontologies: [] }));
-const onDashboard = new Set((dash.ontologies || []).map((o) => o.namespace));
 
 const robotVersion = ROBOT ? (await robot(["--version"]).catch(() => ({ stdout: "" }))).stdout.trim() || null : null;
 
@@ -62,11 +64,17 @@ async function download(url, file) {
   const len = Number(res.headers.get("content-length") || 0);
   if (len > MAX_MB * 1e6) throw new Error(`file is ${(len / 1e6).toFixed(0)} MB (limit ${MAX_MB} MB)`);
   await pipeline(Readable.fromWeb(res.body), createWriteStream(file));
-  const head = (await readFile(file, { encoding: "utf8" })).slice(0, 2000).trimStart().toLowerCase();
+  // Read just the start and stream the hash: large files don't fit in memory as one string or buffer.
+  const fh = await open(file);
+  const { buffer, bytesRead } = await fh.read(Buffer.alloc(2000), 0, 2000, 0);
+  await fh.close();
+  const head = buffer.subarray(0, bytesRead).toString("utf8").trimStart().toLowerCase();
   if (head.startsWith("<!doctype html") || head.startsWith("<html")) throw new Error(`resolves to an HTML page (${res.url}), not the ontology file`);
   const size = (await stat(file)).size;
   if (size > MAX_MB * 1e6) throw new Error(`file is ${(size / 1e6).toFixed(0)} MB (limit ${MAX_MB} MB)`);
-  return createHash("sha256").update(await readFile(file)).digest("hex");
+  const hash = createHash("sha256");
+  await pipeline(createReadStream(file), hash);
+  return hash.digest("hex");
 }
 
 // One chained ROBOT run (the ontology is loaded once): report → reason (ELK) → validate-profile (OWL 2 DL).
@@ -137,7 +145,7 @@ const PY = await (async () => {
   console.warn("! No Python with rdflib found (pip install -r requirements.txt); OOPS! reports can't be parsed and the Python scan is unavailable.");
   return "python3";
 })();
-const PY_MAX_MB = Number(process.env.PY_MAX_MB || 80);
+const PY_MAX_MB = Number(process.env.PY_MAX_MB || 5000); // Python pitfall scan limit (5 GB; large files need a lot of memory)
 const pyJson = async (args) => JSON.parse((await run(PY, [path.join(root, "scripts/pitfalls.py"), ...args], { maxBuffer: 1 << 26, timeout: 30 * 60e3 })).stdout);
 
 async function oopsDocker(file) {
@@ -193,7 +201,7 @@ const targets = catalog
   .map((e) => ({ e, at: lastChecked(e.id) }))
   .sort((a, b) => a.at.localeCompare(b.at))
   .map((x) => x.e);
-console.log(`Quality checks for ${targets.length} ontologies (ROBOT: ${robotVersion || "not available"}; OOPS! image: ${OOPS_IMAGE || "none"})`);
+console.log(`Quality checks for ${targets.length} ontologies (ROBOT: ${robotVersion ? `${robotVersion}, ${ROBOT_HEAP} heap` : "not available"}; OOPS! image: ${OOPS_IMAGE || "none"})`);
 let checked = 0;
 for (const e of targets) {
   if (Date.now() > deadline) {
@@ -215,8 +223,8 @@ for (const e of targets) {
   } catch (err) {
     rec.downloadError = err.message;
   }
-  // Consistency: OBO Dashboard ontologies are already reasoned over there.
-  if (ROBOT && have && !onDashboard.has(e.obo)) {
+  // Every ontology is reasoned over here, OBO Dashboard ones too, so scores don't depend on an outside service.
+  if (ROBOT && have) {
     try {
       rec.robot = { ...(await robotChecks(file)), checkedAt: new Date().toISOString(), sha256: rec.sha256 };
     } catch (err) {
@@ -229,5 +237,5 @@ for (const e of targets) {
   } else if (prev.oops) rec.oops = prev.oops;
   await rm(dir, { recursive: true, force: true });
   await writeFile(out, JSON.stringify(rec, null, 2) + "\n");
-  console.log(`  ${e.id}: ${rec.robot ? (rec.robot.error ? `robot error (${rec.robot.error})` : `consistent=${rec.robot.consistent} unsat=${rec.robot.unsatisfiable} dl=${rec.robot.owl2dl} report=${JSON.stringify(rec.robot.robot || {})}`) : "robot skipped"}; pitfalls ${rec.oops?.error ? `unavailable (${rec.oops.attempts?.join(" | ")})` : rec.oops ? `${rec.oops.critical}C/${rec.oops.important}I/${rec.oops.minor}M via ${rec.oops.engine}` : "skipped"}`);
+  console.log(`  ${e.id}: ${rec.downloadError ? `download failed (${rec.downloadError}); ` : ""}${rec.robot ? (rec.robot.error ? `robot error (${rec.robot.error})` : `consistent=${rec.robot.consistent} unsat=${rec.robot.unsatisfiable} dl=${rec.robot.owl2dl} report=${JSON.stringify(rec.robot.robot || {})}`) : "robot skipped"}; pitfalls ${rec.oops?.error ? `unavailable (${rec.oops.attempts?.join(" | ") || "nothing to scan"})` : rec.oops ? `${rec.oops.critical}C/${rec.oops.important}I/${rec.oops.minor}M via ${rec.oops.engine}` : "skipped"}`);
 }

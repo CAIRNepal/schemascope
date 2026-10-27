@@ -351,7 +351,7 @@ async function qualityFile(id) {
   const f = [path.join(outData, "quality", `${id}.json`), path.join(trackedData, "quality", `${id}.json`)].find(existsSync);
   if (!f) return { quality: null, oops: null };
   const q = JSON.parse(await readFile(f, "utf8"));
-  return { quality: q.robot ? { ...q.robot, source: `data/quality/${id}.json` } : null, oops: q.oops ? { ...q.oops, source: `data/quality/${id}.json` } : null };
+  return { quality: q.robot ? { ...q.robot, artefact: q.artefact, source: `data/quality/${id}.json` } : null, oops: q.oops ? { ...q.oops, source: `data/quality/${id}.json` } : null };
 }
 
 // Release dates in the last 12 months: GitHub releases (with a token), else date-named git tags.
@@ -481,6 +481,12 @@ const kept = only ? Object.fromEntries(Object.entries(previous.entries).filter((
 const out = { generatedAt: run.finishedAt, rubricVersion: RUBRIC_VERSION, run, entries: { ...kept, ...fresh } };
 await writeFile(outFile, JSON.stringify(out, null, 2) + "\n");
 
+const differing = results.filter(([, r]) => r.dashboardComparison?.differences?.length);
+if (differing.length) {
+  console.log(`Our ROBOT results differ from the OBO Dashboard for ${differing.length} ontolog${differing.length === 1 ? "y" : "ies"} (scores use ours):`);
+  for (const [id, r] of differing)
+    console.log(`  ${id}: ${r.dashboardComparison.rows.filter((x) => x.differs).map((x) => `${x.check} ours ${x.ours} vs Dashboard ${x.dashboard}`).join("; ")}`);
+}
 const stale = results.filter(([, r]) => r.github?.stale || r.ols?.stale || r.obo?.stale).map(([id]) => id);
 if (stale.length) console.log(`Carried forward last good values for failed lookups: ${stale.join(", ")}`);
 console.log(`Wrote ${path.relative(root, outFile)}${process.env.NO_ARCHIVE ? "" : ` and ${path.relative(root, runsDir)}/${runId}.json`}${IS_CI ? " (CI preview only; not tracked)" : ""}`);

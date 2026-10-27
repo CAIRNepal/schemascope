@@ -5,7 +5,7 @@
 // ROBOT quality report and OOPS! pitfalls. M = maintenance, U = adoption, P = inactivity penalty.
 // Change weights here and bump RUBRIC_VERSION; `npm run rescore` recomputes from stored facts.
 
-export const RUBRIC_VERSION = "3.4";
+export const RUBRIC_VERSION = "3.5";
 
 export const MACHINE_FORMATS = ["OWL", "OBO", "Turtle", "RDF", "JSON-LD", "LinkML", "JSON Schema", "SHACL", "YAML schema", "XSD"];
 export const SEMANTIC_FORMATS = ["OWL", "OBO", "Turtle", "RDF", "JSON-LD", "SHACL"];
@@ -52,7 +52,7 @@ export const RUBRIC = [
   {
     key: "quality", symbol: "Q", label: "Ontology consistency & quality", fair: false, max: 20, ontologyOnly: true,
     formula: "c(logical consistency) + 2·[OWL 2 DL] + u(upper ontology) + q(quality report)",
-    how: "Applies to ontologies (OWL/OBO/RDF artefacts). Logical consistency carries half the weight: a reasoner run (OBO Dashboard, or ROBOT + ELK in our CI) that finds the ontology consistent with no unsatisfiable classes scores 10; consistent with 1–5 unsatisfiable classes 5; more than 5 → 2; inconsistent or never checked 0. OWL 2 DL profile 2. Upper-ontology alignment: imports BFO or COB 3, the Relation Ontology 1. Quality report: no ROBOT errors 2, warnings per class ≤ 0.05 → 1, and a pitfall scan with no critical pitfalls 1 (OOPS! when reachable, otherwise the ROBOT report). Schemas, atlases and other non-ontology resources are not scored on Q; their total is scaled to 100 from the remaining 80 points.",
+    how: "Applies to ontologies (OWL/OBO/RDF artefacts). Logical consistency carries half the weight: a reasoner run (ROBOT + ELK, run by SchemaScope on every ontology; the OBO Dashboard's result is used only if ours is missing) that finds the ontology consistent with no unsatisfiable classes scores 10; consistent with 1–5 unsatisfiable classes 5; more than 5 → 2; inconsistent or never checked 0. OWL 2 DL profile 2. Upper-ontology alignment: imports BFO or COB 3, the Relation Ontology 1. Quality report: no ROBOT errors 2, warnings per class ≤ 0.05 → 1, and a pitfall scan with no critical pitfalls 1 (OOPS! when reachable, otherwise the ROBOT report). Schemas, atlases and other non-ontology resources are not scored on Q; their total is scaled to 100 from the remaining 80 points.",
   },
   {
     key: "maintenance", symbol: "M", label: "Maintenance", fair: false, max: 16,
@@ -150,6 +150,22 @@ export function evaluatedVersion(facts) {
 const isPid = (url) => !!url && PID_HOSTS.includes(hostOf(url));
 export const isOntology = (entry) => (entry.formats || []).some((f) => ONTOLOGY_FORMATS.includes(f)) && ["ontology", "vocabulary"].includes(entry.kind);
 
+// Our ROBOT run next to the OBO Dashboard's, check by check. Scores use ours; this only shows where they differ.
+// (The Dashboard usually checks the -base.owl release, so warning counts can differ for that reason alone.)
+export function compareWithDashboard(quality, dash) {
+  if (!quality || quality.error || quality.consistent === undefined || !dash || dash.error) return null;
+  const rows = [
+    ["Logically consistent", quality.consistent, dash.consistent],
+    ["Unsatisfiable classes", quality.unsatisfiable, dash.unsatisfiable],
+    ["In OWL 2 DL", quality.owl2dl, dash.owl2dl],
+    ["ROBOT report errors", quality.robot?.ERROR, dash.robot?.ERROR],
+    ["ROBOT report warnings", quality.robot?.WARN, dash.robot?.WARN],
+  ]
+    .filter(([, a, b]) => a != null || b != null)
+    .map(([check, ours, dashboard]) => ({ check, ours: ours ?? null, dashboard: dashboard ?? null, differs: ours != null && dashboard != null && ours !== dashboard }));
+  return { rows, differences: rows.filter((x) => x.differs).map((x) => x.check), ours: { artefact: quality.artefact || null, checkedAt: quality.checkedAt || null }, dashboard: { artefact: dash.checkedVersion || null, checkedAt: dash.checkedAt || null, page: dash.page || null } };
+}
+
 export function scoreEntry(entry, facts) {
   const b = Object.fromEntries(RUBRIC.map((r) => [r.key, { score: 0, max: r.max, steps: [], notes: [] }]));
   const add = (k, label, pts, max, detail) => {
@@ -203,20 +219,20 @@ export function scoreEntry(entry, facts) {
 
   // Q — ontology consistency & quality
   const qApplies = isOntology(entry);
-  const cons = dash?.consistent ?? quality?.consistent ?? null;
-  const unsat = dash?.unsatisfiable ?? quality?.unsatisfiable ?? null;
+  const cons = quality?.consistent ?? dash?.consistent ?? null; // our own ROBOT run first; the OBO Dashboard only fills a gap
+  const unsat = quality?.consistent != null ? quality.unsatisfiable ?? null : dash?.unsatisfiable ?? null;
   if (qApplies) {
-    const consSrc = dash?.consistent != null ? "OBO Dashboard" : quality?.consistent != null ? `ROBOT ${quality.reasoner || "ELK"} in SchemaScope CI` : null;
+    const consSrc = quality?.consistent != null ? `ROBOT ${quality.reasoner || "ELK"}, run by SchemaScope` : dash?.consistent != null ? "OBO Dashboard" : null;
     const cPts = cons === true ? (!unsat ? 10 : unsat <= 5 ? 5 : 2) : 0;
     add("quality", "Logical consistency", cPts, 10, cons == null ? "never checked by a reasoner" : `${cons ? "consistent" : "INCONSISTENT"}, ${unsat ?? 0} unsatisfiable classes (${consSrc})`);
-    const dl = dash?.owl2dl ?? quality?.owl2dl ?? null;
+    const dl = quality?.owl2dl ?? dash?.owl2dl ?? null;
     add("quality", "OWL 2 DL profile", dl === true ? 2 : 0, 2, dl == null ? "profile not checked" : dl ? "in OWL 2 DL" : "outside OWL 2 DL");
     const upper = imp.filter((x) => UPPER_ONTOLOGIES.includes(x));
     add("quality", "Upper-ontology alignment", upper.length ? 3 : 0, 3, upper.length ? `imports ${upper.join(", ").toUpperCase()}` : "no BFO/COB/DOLCE import found");
     const rel = imp.filter((x) => RELATION_ONTOLOGIES.includes(x));
     add("quality", "Standard relations (RO)", rel.length ? 1 : 0, 1, rel.length ? "imports RO" : "does not import the Relation Ontology");
-    const rr = dash?.robot || quality?.robot;
-    const classes = dash?.classes || quality?.classes || facts.ols?.terms || 1;
+    const rr = quality?.robot || dash?.robot;
+    const classes = quality?.classes || dash?.classes || facts.ols?.terms || 1;
     const dens = rr ? (rr.WARN || 0) / classes : null;
     add("quality", "ROBOT report: no errors", rr ? (rr.ERROR ? 0 : 2) : 0, 2, rr ? `${rr.ERROR || 0} errors` : "no ROBOT report available");
     add("quality", "ROBOT report: warning density", rr && dens <= 0.05 ? 1 : 0, 1, rr ? `${rr.WARN || 0} warnings / ${classes} classes = ${dens.toFixed(2)}` : "no ROBOT report available");
@@ -278,7 +294,7 @@ export function scoreEntry(entry, facts) {
       const codes = (oopsF.pitfalls || []).filter((p) => p.importance === "critical").map((p) => p.code).join(", ");
       pSteps.push({ label: "Critical pitfalls", pts: -pitP, detail: `${oopsF.critical} critical pitfall type${oopsF.critical === 1 ? "" : "s"}${codes ? ` (${codes})` : ""} × ${PENALTY.perCritical}${pitP === PENALTY.criticalCap ? " (capped)" : ""}` });
     }
-    const rrF = (dash?.robot || quality?.robot) ?? null;
+    const rrF = (quality?.robot || dash?.robot) ?? null;
     // ROBOT's report checks OBO conventions; only penalise ontologies that are meant to follow them.
     const oboStyle = !!(entry.obo || dash);
     if (rrF?.ERROR && !oboStyle) pSteps.push({ label: "ROBOT report errors", pts: 0, detail: `${rrF.ERROR} errors against OBO conventions; not penalised (not an OBO-style ontology)` });
@@ -301,6 +317,7 @@ export function scoreEntry(entry, facts) {
     score, gross: scaled, earned, possible, qualityApplies: qApplies,
     penalty: { score: -pTotal, reason: pTotal ? pSteps.filter((x) => x.pts).map((x) => x.detail).join("; ") : `no penalties (active${qApplies && cons === true ? ", consistent" : ""})`, steps: pSteps },
     consistent: qApplies ? cons : null,
+    dashboardComparison: qApplies ? compareWithDashboard(quality, dash) : null,
     grade, fair, breakdown: b, lastActivity: last, adopterCount: nAd, reuseCount: reuseN, importCount: imp.length, registries: regs, evaluatedVersion: ver,
   };
 }
