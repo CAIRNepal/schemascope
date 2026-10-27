@@ -9,9 +9,15 @@ permissions:
   contents: read
   pull-requests: write
 
+# A new push to the same branch or PR cancels the run still going for the old one.
+concurrency:
+  group: checks-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate-and-build:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
@@ -45,12 +51,16 @@ jobs:
       # Online checks: links resolve, DOIs exist and match, OLS ids are real.
       - name: Check links, DOIs and registry ids
         if: github.event_name == 'pull_request' && steps.changed.outputs.ids != ''
+        timeout-minutes: 10
         env:
           ONLY: ${{ steps.changed.outputs.ids }}
         run: node scripts/validate.mjs --online --report validation.md
 
+      # Optional: a score preview for the PR comment. Runs only when the checks above passed, and never fails the job.
       - name: FAIR evaluation preview
-        if: always() && github.event_name == 'pull_request' && steps.changed.outputs.ids != ''
+        if: github.event_name == 'pull_request' && steps.changed.outputs.ids != ''
+        continue-on-error: true
+        timeout-minutes: 15
         env:
           ONLY: ${{ steps.changed.outputs.ids }}
           NO_ARCHIVE: "1"
@@ -60,14 +70,14 @@ jobs:
           node scripts/score-report.mjs > evaluation.md
 
       - name: Write summary
-        if: always() && github.event_name == 'pull_request'
+        if: ${{ !cancelled() && github.event_name == 'pull_request' }}
         run: |
           { cat validation.md 2>/dev/null || echo "### ✅ Catalog validation passed"; echo; cat evaluation.md 2>/dev/null || true; } > comment.md
           cat comment.md >> "$GITHUB_STEP_SUMMARY"
 
       # Comments need write access, which PRs from forks don't get; the job summary above always works.
       - name: Comment on pull request
-        if: always() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        if: ${{ !cancelled() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository }}
         continue-on-error: true
         uses: marocchino/sticky-pull-request-comment@v2
         with:

@@ -47,14 +47,49 @@ async function head(url) {
   }
 }
 
+// GET with a timeout; one retry on rate limits, server errors and network failures. Returns the Response, or null.
+async function get(url, opts = {}, timeout = 20000) {
+  for (let attempt = 0; attempt < 2; attempt++) {
+    if (attempt) await new Promise((r) => setTimeout(r, 2000));
+    try {
+      const r = await fetch(url, { redirect: "follow", ...opts, signal: AbortSignal.timeout(timeout) });
+      if (r.status === 429 || r.status >= 500) { await r.body?.cancel(); continue; }
+      return r;
+    } catch {}
+  }
+  return null;
+}
+
+// A DOI is checked against several registries, so one being down or rate-limiting CI doesn't fail the check.
+// Each source answers found (with a title, if it has one), not found (HTTP 404), or unknown (unreachable).
+const UA = { "User-Agent": "schemascope-validator/1.0 (https://schemascope.org)" };
+const DOI_SOURCES = [
+  ["Crossref", (d) => `https://api.crossref.org/works/${d}`, (j) => j.message?.title?.[0]],
+  ["DataCite", (d) => `https://api.datacite.org/dois/${d}`, (j) => j.data?.attributes?.titles?.[0]?.title],
+  ["OpenAlex", (d) => `https://api.openalex.org/works/doi:${d}`, (j) => j.title],
+  ["Semantic Scholar", (d) => `https://api.semanticscholar.org/graph/v1/paper/DOI:${d}?fields=title`, (j) => j.title],
+  ["doi.org", (d) => `https://doi.org/api/handles/${d}`, () => ""], // the DOI resolver itself: proves existence, has no title
+];
+async function lookupDoi(doi) {
+  const d = String(doi).trim().replace(/^(https?:\/\/(dx\.)?doi\.org\/|doi:)/i, "").split("/").map(encodeURIComponent).join("/");
+  return Promise.all(DOI_SOURCES.map(async ([name, url, title]) => {
+    const r = await get(url(d), { headers: { ...UA, Accept: "application/json" } });
+    if (!r) return { name, status: "unknown" };
+    if (r.status === 404) { await r.body?.cancel(); return { name, status: "missing" }; }
+    if (!r.ok) { await r.body?.cancel(); return { name, status: "unknown" }; }
+    const j = await r.json().catch(() => null);
+    return j ? { name, status: "found", title: title(j) || "" } : { name, status: "unknown" };
+  }));
+}
+
 if (online) {
   for (const e of targets) {
     for (const k of ["homepage", "repository", "download"]) {
       if (!e[k]) continue;
       const code = await head(e[k]);
       if (k === "download" && code >= 200 && code < 400) {
-        const r = await fetch(e[k], { redirect: "follow", headers: { Range: "bytes=0-2047", Accept: "text/turtle, application/rdf+xml;q=0.9, application/ld+json;q=0.8, */*;q=0.1", "User-Agent": "schemascope-validator/1.0" } }).catch(() => null);
-        const t = r ? (await r.text()).trimStart().toLowerCase() : "";
+        const r = await get(e[k], { headers: { Range: "bytes=0-2047", Accept: "text/turtle, application/rdf+xml;q=0.9, application/ld+json;q=0.8, */*;q=0.1", "User-Agent": "schemascope-validator/1.0" } });
+        const t = r ? (await r.text().catch(() => "")).trimStart().toLowerCase() : "";
         if (t.startsWith("<!doctype html") || t.startsWith("<html")) {
           checks.push({ id: e.id, what: "download is the artefact", ok: false, detail: `${e[k]} → HTML page (${r.url})` });
           errors.push(`entry "${e.id}": download ${e[k]} resolves to an HTML page (${r.url}), not the ontology/schema file`);
@@ -66,20 +101,38 @@ if (online) {
       if (!ok) errors.push(`entry "${e.id}": ${k} ${e[k]} returned HTTP ${code || "error"}`);
     }
     for (const p of e.publications || []) {
-      const r = await fetch(`https://api.crossref.org/works/${encodeURIComponent(p.doi)}`, { headers: { "User-Agent": "schemascope-validator/1.0 (https://schemascope.org)" } }).catch(() => null);
-      if (!r?.ok) {
-        checks.push({ id: e.id, what: "DOI exists", ok: false, detail: `doi:${p.doi} not found in Crossref` });
-        errors.push(`entry "${e.id}": DOI ${p.doi} not found in Crossref`);
+      const res = await lookupDoi(p.doi);
+      const found = res.filter((x) => x.status === "found");
+      const missing = res.filter((x) => x.status === "missing").map((x) => x.name);
+      if (!found.length) {
+        // Not found only if the DOI resolver itself, or every registry, says 404; otherwise we couldn't tell.
+        if (missing.includes("doi.org") || missing.length === res.length) {
+          checks.push({ id: e.id, what: "DOI exists", ok: false, detail: `doi:${p.doi} not found (${missing.join(", ")})` });
+          errors.push(`entry "${e.id}": DOI ${p.doi} not found in ${missing.join(", ")}`);
+        } else {
+          checks.push({ id: e.id, what: "DOI exists", ok: null, detail: `doi:${p.doi}: couldn't reach ${res.filter((x) => x.status === "unknown").map((x) => x.name).join(", ")}` });
+          warnings.push(`entry "${e.id}": couldn't verify DOI ${p.doi} (DOI services unreachable); check it by hand`);
+        }
         continue;
       }
-      const title = (await r.json()).message?.title?.[0] || "";
-      const sim = jaccard(title, p.title);
-      checks.push({ id: e.id, what: "DOI matches title", ok: sim >= 0.5, detail: `Crossref: “${title}”` });
-      if (sim < 0.5) warnings.push(`entry "${e.id}": DOI ${p.doi} resolves to “${title}”, which doesn't match the given title`);
+      const titled = found.filter((x) => x.title);
+      if (!titled.length) {
+        checks.push({ id: e.id, what: "DOI exists", ok: true, detail: `doi:${p.doi} (${found.map((x) => x.name).join(", ")})` });
+        continue;
+      }
+      const best = titled.map((x) => ({ ...x, sim: jaccard(x.title, p.title) })).sort((a, b) => b.sim - a.sim)[0];
+      checks.push({ id: e.id, what: "DOI matches title", ok: best.sim >= 0.5, detail: `${best.name}: “${best.title}” (found in ${found.map((x) => x.name).join(", ")})` });
+      if (best.sim < 0.5) warnings.push(`entry "${e.id}": DOI ${p.doi} resolves to “${best.title}”, which doesn't match the given title`);
     }
     if (e.ols) {
-      const d = await fetch(`https://www.ebi.ac.uk/ols4/api/ontologies/${e.ols}`).then((r) => r.json()).catch(() => null);
-      const ok = d && typeof d.status !== "number";
+      const r = await get(`https://www.ebi.ac.uk/ols4/api/ontologies/${e.ols}`, { headers: UA });
+      const d = r ? await r.json().catch(() => null) : null;
+      const ok = r?.status === 404 ? false : r ? Boolean(d && typeof d.status !== "number") : null;
+      if (ok === null) {
+        checks.push({ id: e.id, what: "OLS id exists", ok: null, detail: `${e.ols}: OLS unreachable` });
+        warnings.push(`entry "${e.id}": couldn't reach OLS to check "${e.ols}"`);
+        continue;
+      }
       checks.push({ id: e.id, what: "OLS id exists", ok, detail: e.ols });
       if (!ok) errors.push(`entry "${e.id}": OLS has no ontology "${e.ols}"`);
     }
@@ -97,7 +150,7 @@ if (reportPath) {
     "",
     ...(errors.length ? ["**Problems**", "", ...errors.map((e) => `- ${e}`), ""] : []),
     ...(warnings.length ? ["**Warnings**", "", ...warnings.map((w) => `- ${w}`), ""] : []),
-    ...(checks.length ? ["| Entry | Check | Result | Detail |", "|---|---|---|---|", ...checks.map((c) => `| \`${c.id}\` | ${c.what} | ${c.ok ? "✅" : "❌"} | ${c.detail.replace(/\|/g, "\\|")} |`), ""] : []),
+    ...(checks.length ? ["| Entry | Check | Result | Detail |", "|---|---|---|---|", ...checks.map((c) => `| \`${c.id}\` | ${c.what} | ${c.ok === null ? "⚠️" : c.ok ? "✅" : "❌"} | ${c.detail.replace(/\|/g, "\\|")} |`), ""] : []),
   ].join("\n");
   await writeFile(reportPath, md);
 }
