@@ -38,3 +38,37 @@ SchemaScope began as a copy of NeuroSchema (neuroschema.org); see that repositor
 **Decision** – ROBOT (report → ELK reason → DL profile) runs on every ontology. The rubric (now 3.5) uses our result first, and the Dashboard's only when ours is missing. Each result stores `dashboardComparison`, which lists each check side by side. The ontology page shows it as "Our checks vs the OBO Dashboard", and `evaluate.mjs` prints the ontologies where the two differ. The download and Python-scan limits default to 5 GB, and files are hashed as a stream. ROBOT's Java heap is configurable (`ROBOT_HEAP`), and by default is 2 GB less than Docker's memory (4–12 GB).
 **Why** – SchemaScope's scores should be reproducible from its own checks alone. Rejected: keeping the Dashboard first and only showing ours, which leaves scores tied to when the Dashboard last ran.
 **Consequences** – OBO Foundry ontologies can score differently. We check the full download, which often includes imported terms, while the Dashboard usually checks the `-base` file, so ROBOT error counts can be much higher (e.g. MF: 140 vs 2). R1.3 (OBO principles) still comes from the Dashboard, since there's no local equivalent. Rebuild the ROBOT image (`docker build docker/robot`) for the configurable heap. Large ontologies need Docker Desktop's memory raised.
+
+## S-009: Rubric v4.0, source-neutral evidence   (2026-10-27, status: accepted)
+**Context** – Several v3 checks could only be scored from OBO infrastructure. F4 and A2 ignored LOV and most registries, and R1.3 used only the OBO Dashboard. Q scored 0 for checks that were never run. ROBOT errors and unsatisfiable classes cost points twice (in Q and in P). A draft proposal ("rubric v4.0 (draft): source-neutral evidence") measured the effect from stored facts.
+**Decision** – F4 counts LOV, and A2 accepts any of those registries. R1.3 is the better of the OBO principle pass rate (×3) and a FAIRsharing listing (2). LOV isn't counted under R1.3, so one listing isn't counted three times. A Q check that couldn't be run (no file, too large, tool timed out) is "not assessed": it's left out of the possible points, and the grade is marked *. A file ROBOT can't load still scores 0. The ROBOT report checks (errors, warning density) apply only to OBO-style ontologies. P no longer penalises unsatisfiable classes or ROBOT errors.
+**Why** – Missing evidence from a source that doesn't cover a resource isn't a failure. Rejected from the draft: counting LOV for R1.3 (triple counting), and treating unloadable files as "not assessed" (that would reward broken artefacts).
+**Consequences** – From the same stored facts as v3.5, 309 grades rise and none fall. The OBO mean goes 51.9 → 56.9 and the non-OBO mean 18.7 → 24.5. One score drops by 1 point through rounding. Most ontologies are marked * until quality checks have run on them. Run `npm run rescore` (no network) or the next refresh to apply it.
+
+## S-010: Contact page with contributors from GitHub   (2026-10-27, status: accepted)
+**Context** – The site had no contact details and didn't credit contributors.
+**Decision** – Add a /contact/ page with the maintainer's name, emails and website (`CONTACT_NAME`, `CONTACT_EMAILS`, `CONTACT_SITE` override them at build time). It also lists contributors from the GitHub API at build time, without bots, caching the last good list in `.local/contributors.json`.
+**Why** – Contributors stay current without manual edits. Rejected: a hand-maintained list, which goes stale.
+**Consequences** – The build makes one GitHub API request (it uses `GITHUB_TOKEN` if set). An offline build uses the cache, or else just links to GitHub.
+
+## S-011: Rubric v4.1: read imports from the ontology file, and check every ontology   (2026-10-27, status: accepted)
+**Context** – I3, upper-ontology alignment and RO use came only from OLS and Bioregistry import lists. Those cover few non-OBO ontologies, so most showed "no imported vocabularies found". Quality checks covered only a few dozen ontologies, because each run had a 2-hour limit and checked one ontology at a time.
+**Decision** – `scripts/artefact-scan.mjs` streams each downloaded file (up to 500 MB, `ARTEFACT_SCAN_MB`) and records `owl:imports` and the vocabularies it uses (at least 3 distinct terms). OBO terms are recognised by their `PREFIX_` IRIs, and other namespaces by LOV and a short list of well-known ones. The rubric (v4.1) adds these to the OLS/Bioregistry lists for I3, upper-ontology alignment (now also GFO and gUFO) and RO. `quality.mjs` runs `QUALITY_JOBS` ontologies at a time, sharing Docker's memory between them, and prints how many ontologies have been checked. `npm run quality:all` runs it with no time limit, skipping ontologies checked in the last 30 days so it can be stopped and resumed.
+**Why** – Evidence from the file itself covers every ontology. Rejected: parsing each file with rdflib, which is too slow and memory-hungry for multi-GB ontologies.
+**Consequences** – The new evidence appears only after a quality run has read an ontology's file. Until then the old OLS/Bioregistry evidence is used.
+
+## S-012: Per-criterion metrics across runs; issue templates for problems and ideas   (2026-10-27, status: accepted)
+**Context** – Entry pages listed changes in score, version and term count between runs, but not which criterion or quality metric changed. The contact page linked to a blank GitHub issue.
+**Decision** – Each run's history point stores per-criterion points, the penalty and the quality metrics (consistency, unsatisfiable classes, OWL 2 DL, ROBOT errors and warnings, critical pitfalls, imports, reuse). Entry pages show a "Metrics across runs" table that highlights what got better or worse, and list per-criterion changes. New issue forms, "Report a problem" and "Suggest an idea", are linked from the contact page.
+**Why** – It shows whether a score moved because the resource changed or because the rubric did. Structured issues are easier to act on. Rejected: a free-text issue link.
+**Consequences** – Runs archived before this change have fewer metrics, so their table cells show "—".
+
+## S-013: Rubric validation without outside FAIR tools   (2026-10-27, status: accepted)
+**Context** – The roadmap planned to validate the rubric against expert ratings and outside FAIR assessments (FOOPS!, O'FAIRe).
+**Decision** – `scripts/validate-rubric.mjs` (`npm run validate:rubric`) works from stored facts, with no network:
+- weight sensitivity: 1,000 random ±30% weightings with a fixed seed, plus each criterion −30%, +30% and dropped;
+- agreement between our ROBOT results and the OBO Dashboard, check by check;
+- agreement with expert ratings from `data/validation/expert-ratings.csv`, a 1–5 rating per resource.
+It writes `data/validation/report.json`, which the site shows at /evaluation/validation/.
+**Why** – FOOPS! overlaps with what the rubric already measures, and its hosted service was unavailable. O'FAIRe needs a BioPortal API key. Running either adds an outside dependency to a self-contained evaluation. Rejected: running FOOPS! locally in Docker.
+**Consequences** – On the current data, rank correlation under random weights averages 0.996, 96.4% of resources keep their grade, and 133 are borderline. Dashboard agreement fills in as quality checks run. Expert ratings still need raters.

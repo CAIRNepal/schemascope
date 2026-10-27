@@ -18,6 +18,7 @@ import os from "node:os";
 import path from "node:path";
 import { isOntology } from "./rubric.mjs";
 import { outData, trackedData } from "./paths.mjs";
+import { scanArtefact, namespaceMap } from "./artefact-scan.mjs";
 
 const run = promisify(execFile);
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
@@ -31,7 +32,9 @@ const ROBOT = ROBOT_JAR || ROBOT_IMAGE;
 // Java heap for ROBOT: large ontologies (GO, MONDO, FMA) need a lot. By default, 2 GB less than Docker has
 // (between 4 and 12 GB); with Docker Desktop, raise its memory limit to check the biggest ontologies.
 const dockerGb = ROBOT_IMAGE ? Math.floor(Number((await run("docker", ["info", "--format", "{{.MemTotal}}"]).catch(() => ({ stdout: "0" }))).stdout.trim()) / 2 ** 30) : 0;
-const ROBOT_HEAP = process.env.ROBOT_HEAP || `${dockerGb ? Math.max(4, Math.min(12, dockerGb - 2)) : 6}g`;
+// Ontologies checked at once (QUALITY_JOBS, default 1). Docker's memory is shared between them.
+const JOBS = Math.max(1, Number(process.env.QUALITY_JOBS || 1));
+const ROBOT_HEAP = process.env.ROBOT_HEAP || `${dockerGb ? Math.max(2, Math.min(12, Math.floor((dockerGb - 2) / JOBS))) : 6}g`;
 // Run a ROBOT command; host paths under `work` are mapped to /work inside the container.
 // Run a container with a unique name and kill it on timeout (killing the docker client alone leaves it running).
 let seq = 0;
@@ -196,19 +199,18 @@ const lastChecked = (id) => {
   }
   return "";
 };
+// QUALITY_SKIP_DAYS=N skips ontologies checked in the last N days, so a long run can be stopped and resumed.
+const skipDays = Number(process.env.QUALITY_SKIP_DAYS || 0);
+const fresh = (id) => skipDays > 0 && Date.parse(lastChecked(id) || 0) > Date.now() - skipDays * 864e5;
 const targets = catalog
-  .filter((e) => isOntology(e) && e.download && (!only || only.has(e.id)))
+  .filter((e) => isOntology(e) && e.download && (!only || only.has(e.id)) && !fresh(e.id))
   .map((e) => ({ e, at: lastChecked(e.id) }))
   .sort((a, b) => a.at.localeCompare(b.at))
   .map((x) => x.e);
 console.log(`Quality checks for ${targets.length} ontologies (ROBOT: ${robotVersion ? `${robotVersion}, ${ROBOT_HEAP} heap` : "not available"}; OOPS! image: ${OOPS_IMAGE || "none"})`);
-let checked = 0;
-for (const e of targets) {
-  if (Date.now() > deadline) {
-    console.log(`Time budget of ${MAX_MINUTES} min reached after ${checked} ontologies; the rest will be checked first next run.`);
-    break;
-  }
-  checked++;
+const nsMap = namespaceMap(catalog);
+let checked = 0, stopped = false;
+async function checkOne(e) {
   const out = path.join(outDir, `${e.id}.json`);
   const prevFile = [out, path.join(trackedDir, `${e.id}.json`)].find(existsSync);
   const prev = prevFile ? JSON.parse(await readFile(prevFile, "utf8")) : {};
@@ -223,6 +225,14 @@ for (const e of targets) {
   } catch (err) {
     rec.downloadError = err.message;
   }
+  // What the file imports and whose terms it uses (for I3 and upper-ontology alignment).
+  if (have) {
+    try {
+      rec.artefactScan = { ...(await scanArtefact(file, { nsMap, self: [e.id, e.obo, e.ols, e.bioregistry], selfHosts: [e.download, e.homepage].filter(Boolean) })), sha256: rec.sha256 };
+    } catch (err) {
+      rec.artefactScan = { error: err.message };
+    }
+  } else if (prev.artefactScan) rec.artefactScan = { ...prev.artefactScan, stale: true };
   // Every ontology is reasoned over here, OBO Dashboard ones too, so scores don't depend on an outside service.
   if (ROBOT && have) {
     try {
@@ -237,5 +247,39 @@ for (const e of targets) {
   } else if (prev.oops) rec.oops = prev.oops;
   await rm(dir, { recursive: true, force: true });
   await writeFile(out, JSON.stringify(rec, null, 2) + "\n");
-  console.log(`  ${e.id}: ${rec.downloadError ? `download failed (${rec.downloadError}); ` : ""}${rec.robot ? (rec.robot.error ? `robot error (${rec.robot.error})` : `consistent=${rec.robot.consistent} unsat=${rec.robot.unsatisfiable} dl=${rec.robot.owl2dl} report=${JSON.stringify(rec.robot.robot || {})}`) : "robot skipped"}; pitfalls ${rec.oops?.error ? `unavailable (${rec.oops.attempts?.join(" | ") || "nothing to scan"})` : rec.oops ? `${rec.oops.critical}C/${rec.oops.important}I/${rec.oops.minor}M via ${rec.oops.engine}` : "skipped"}`);
+  const scan = rec.artefactScan && !rec.artefactScan.error ? `; imports ${rec.artefactScan.imports.length}, uses ${Object.keys(rec.artefactScan.uses).length} vocabularies` : "";
+  console.log(`  ${e.id}: ${rec.downloadError ? `download failed (${rec.downloadError}); ` : ""}${rec.robot ? (rec.robot.error ? `robot error (${rec.robot.error})` : `consistent=${rec.robot.consistent} unsat=${rec.robot.unsatisfiable} dl=${rec.robot.owl2dl} report=${JSON.stringify(rec.robot.robot || {})}`) : "robot skipped"}; pitfalls ${rec.oops?.error ? `unavailable (${rec.oops.attempts?.join(" | ") || "nothing to scan"})` : rec.oops ? `${rec.oops.critical}C/${rec.oops.important}I/${rec.oops.minor}M via ${rec.oops.engine}` : "skipped"}${scan}`);
+}
+// A small worker pool: each worker takes the next ontology until the list or the time budget runs out.
+const queue = [...targets];
+await Promise.all(Array.from({ length: Math.min(JOBS, queue.length) }, async () => {
+  while (queue.length) {
+    if (Date.now() > deadline) {
+      stopped = true;
+      return;
+    }
+    const e = queue.shift();
+    checked++;
+    try {
+      await checkOne(e);
+    } catch (err) {
+      console.log(`  ${e.id}: check failed (${err.message.slice(0, 200)})`);
+    }
+  }
+}));
+if (stopped) console.log(`Time budget of ${MAX_MINUTES} min reached after ${checked} ontologies; the rest will be checked first next run.`);
+
+// Coverage across the whole catalog, so it's clear how far the checks have got.
+{
+  const all = catalog.filter((e) => isOntology(e) && e.download);
+  let robotDone = 0, scanDone = 0, never = 0, failed = 0;
+  for (const e of all) {
+    const f = [path.join(outDir, `${e.id}.json`), path.join(trackedDir, `${e.id}.json`)].find(existsSync);
+    if (!f) { never++; continue; }
+    const q = JSON.parse(readFileSync(f, "utf8"));
+    if (q.robot && !q.robot.error && q.robot.consistent !== undefined) robotDone++;
+    else failed++;
+    if (q.artefactScan && !q.artefactScan.error) scanDone++;
+  }
+  console.log(`Coverage: ${all.length} ontologies with a download; ROBOT results for ${robotDone}, imports read for ${scanDone}, checked without a ROBOT result ${failed}, never checked ${never}.`);
 }

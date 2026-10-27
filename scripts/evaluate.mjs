@@ -349,9 +349,9 @@ async function dashboard(ns) {
 // Quality checks produced by the CI job (scripts/quality.mjs): ROBOT reason/report and OOPS!.
 async function qualityFile(id) {
   const f = [path.join(outData, "quality", `${id}.json`), path.join(trackedData, "quality", `${id}.json`)].find(existsSync);
-  if (!f) return { quality: null, oops: null };
+  if (!f) return { quality: null, oops: null, artefactScan: null };
   const q = JSON.parse(await readFile(f, "utf8"));
-  return { quality: q.robot ? { ...q.robot, artefact: q.artefact, source: `data/quality/${id}.json` } : null, oops: q.oops ? { ...q.oops, source: `data/quality/${id}.json` } : null };
+  return { quality: q.robot ? { ...q.robot, artefact: q.artefact, source: `data/quality/${id}.json` } : null, oops: q.oops ? { ...q.oops, source: `data/quality/${id}.json` } : null, artefactScan: q.artefactScan && !q.artefactScan.error ? { ...q.artefactScan, source: `data/quality/${id}.json` } : null };
 }
 
 // Release dates in the last 12 months: GitHub releases (with a token), else date-named git tags.
@@ -398,7 +398,7 @@ async function evaluate(e) {
   const tibInfo = tibId ? await once(`tib:${tibId}`, () => tib(tibId)) : null;
   const dashNs = e.obo || (map.obofoundry ? String(map.obofoundry).toLowerCase() : null);
   const dash = dashNs ? await dashboard(dashNs) : null;
-  const { quality, oops } = await qualityFile(e.id);
+  const { quality, oops, artefactScan } = await qualityFile(e.id);
   const rel = await once(`rel:${slug || e.id}`, () => releaseDates(slug, git && !git.error ? git : null));
   const yearAgo = Date.now() - 365 * 864e5;
   const relDates = [...new Set([...(rel.dates || []).map((d) => d.slice(0, 10)), olsInfo?.releaseDate].filter(Boolean))].sort();
@@ -417,6 +417,7 @@ async function evaluate(e) {
     dashboard: carry(dash, prev.dashboard),
     quality,
     oops,
+    artefactScan,
     releases,
     bioregistry: carry(br, prev.bioregistry),
     artifact: carry(artifact, prev.artifact),
@@ -479,6 +480,7 @@ if (!process.env.NO_ARCHIVE) {
 const ids = new Set(catalog.map((e) => e.id));
 const kept = only ? Object.fromEntries(Object.entries(previous.entries).filter(([id]) => ids.has(id) && !fresh[id])) : {};
 const out = { generatedAt: run.finishedAt, rubricVersion: RUBRIC_VERSION, run, entries: { ...kept, ...fresh } };
+await mkdir(path.dirname(outFile), { recursive: true }); // CI previews write to .local/data, which may not exist yet
 await writeFile(outFile, JSON.stringify(out, null, 2) + "\n");
 
 const differing = results.filter(([, r]) => r.dashboardComparison?.differences?.length);

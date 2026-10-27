@@ -12,6 +12,9 @@ pip install -r requirements.txt     # rdflib, for harvesting, discovery and pitf
 npm run harvest                     # registries → data/catalog.json (+ data/sources.json)
 npm run discover                    # dereference prefix.cc, w3id.org, Zenodo, GitHub, data/candidates.txt
 npm run refresh                     # quality checks + evaluation + build + commit (add -- --push to publish)
+npm run quality:all                 # ROBOT, pitfalls and imports for every ontology; resumable (QUALITY_JOBS=2 for two at a time)
+npm run rescore                     # recompute scores from stored facts after a rubric change (no network)
+npm run validate:rubric             # weight sensitivity, OBO Dashboard agreement, expert ratings → data/validation/report.json
 npm run serve                       # preview at http://localhost:3300
 ```
 
@@ -41,7 +44,7 @@ There are 15 domains, from foundational ontologies to privacy & law (see `data/c
 
 ## Scoring
 
-`Score = max(0, 100 · (F + A + I + R + Q + M + U) / possible − P)`. FAIR is 4 × 12 points. Q (ontology consistency & quality, 20) applies to ontologies only; for other resources `possible` is 80 and the result is scaled. M is maintenance (16), U is adoption (16), and P is penalties for inactivity, inconsistency, critical pitfalls and ROBOT errors. The rules are in `scripts/rubric.mjs`, and the site's `/evaluation/` page shows the formula and a worked example.
+`Score = max(0, 100 · (F + A + I + R + Q + M + U) / possible − P)`. FAIR is 4 × 12 points. Q (ontology consistency & quality, 20) applies to ontologies only; for other resources `possible` is 80 and the result is scaled. Q checks SchemaScope couldn't run are left out of `possible` too (rubric v4, "not assessed"), and such grades are marked with *. M is maintenance (16), U is adoption (16), and P is penalties for inactivity, inconsistency and critical pitfalls. The rules are in `scripts/rubric.mjs`, and the site's `/evaluation/` page shows the formula and a worked example.
 
 ## Contributing
 

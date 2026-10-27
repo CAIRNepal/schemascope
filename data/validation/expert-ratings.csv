@@ -1,0 +1,3 @@
+# Expert ratings for rubric validation. One row per rater and resource; overall is 1 (poor) to 5 (excellent).
+# id must match a catalog id. Run `npm run validate:rubric` after adding rows.
+id,rater,overall,notes
