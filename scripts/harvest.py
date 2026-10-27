@@ -14,6 +14,7 @@ the exact URL and when it was retrieved. Curated entries and curated overrides i
 
   python3 scripts/harvest.py            # harvest all sources and rewrite data/catalog.json
   python3 scripts/harvest.py --offline  # rebuild from the archived raw files in data/sources/
+  python3 scripts/harvest.py --only neuroschema[,lov]  # download just these sources; the rest come from data/sources/
 """
 import gzip
 import hashlib
@@ -30,6 +31,8 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 RAW = DATA / "sources"
 OFFLINE = "--offline" in sys.argv
+_only = next((a.split("=", 1)[1] for a in sys.argv if a.startswith("--only=")), None) or (sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv[:-1] else None)
+LIVE = {k.strip() for k in _only.split(",") if k.strip()} if _only else None
 NOW = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 UA = "schemascope-harvester/1.0 (+https://schemascope.org)"
 
@@ -41,13 +44,16 @@ SOURCES = {
     "lov": {"name": "Linked Open Vocabularies (LOV)", "url": "https://lov.linkeddata.es/lov.n3.gz", "page": "https://lov.linkeddata.es", "license": "CC-BY-4.0"},
     "neuroschema": {"name": "NeuroSchema", "url": "https://neuroschema.org/catalog.json", "page": "https://neuroschema.org", "license": "CC-BY-4.0"},
 }
+if LIVE and LIVE - SOURCES.keys():
+    sys.exit(f"--only: unknown source(s) {', '.join(sorted(LIVE - SOURCES.keys()))}; choose from {', '.join(SOURCES)}")
 
 
 def fetch(key):
     """Download a source (or read the archived copy offline); archive it and record provenance."""
     s = SOURCES[key]
     path = RAW / f"{key}{'.n3' if key == 'lov' else '.json'}.gz"
-    if OFFLINE:
+    # With --only, sources not named are read from their archive (downloaded only if there's no archive yet).
+    if OFFLINE or (LIVE and key not in LIVE and path.exists()):
         raw = gzip.decompress(path.read_bytes())
         retrieved = json.loads((DATA / "sources.json").read_text())["sources"][key]["retrievedAt"]
     else:
