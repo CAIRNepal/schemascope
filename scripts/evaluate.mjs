@@ -479,6 +479,7 @@ if (!process.env.NO_ARCHIVE) {
 const ids = new Set(catalog.map((e) => e.id));
 const kept = only ? Object.fromEntries(Object.entries(previous.entries).filter(([id]) => ids.has(id) && !fresh[id])) : {};
 const out = { generatedAt: run.finishedAt, rubricVersion: RUBRIC_VERSION, run, entries: { ...kept, ...fresh } };
+await mkdir(path.dirname(outFile), { recursive: true }); // CI previews write to .local/data, which may not exist yet
 await writeFile(outFile, JSON.stringify(out, null, 2) + "\n");
 
 const stale = results.filter(([, r]) => r.github?.stale || r.ols?.stale || r.obo?.stale).map(([id]) => id);
