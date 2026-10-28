@@ -1416,7 +1416,7 @@ function roadmapPage() {
   </div>`).join("")}
   <p class="small muted">Ideas or priorities you'd like to see? <a href="/contact/">Get in touch</a>${config.repository ? ` or <a href="${attr(config.repository)}/issues/new?template=idea.yml" rel="noopener">suggest an idea on GitHub</a>` : ""}.</p>
 </section>`;
-  const description = "SchemaScope's features and development roadmap: catalog and discovery, evaluation and rubric improvements, publication tracking, recommendations and tools for maintainers.";
+  const description = "SchemaScope's features and development roadmap: catalog and discovery, evaluation and rubric improvements, publication tracking, recommendations, AI readiness (MCP server, API) and tools for maintainers.";
   return page({ title: "Features & roadmap", pathname: "/roadmap/", body, description, graph: [webPage("WebPage", "/roadmap/", "SchemaScope features & roadmap", description), breadcrumbs(trail)] });
 }
 

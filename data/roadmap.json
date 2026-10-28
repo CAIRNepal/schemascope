@@ -132,6 +132,37 @@
       ]
     },
     {
+      "id": "ai-ready",
+      "title": "AI-ready",
+      "items": [
+        {
+          "status": "planned",
+          "title": "MCP server",
+          "text": "A Model Context Protocol server so AI assistants can search the catalog, look up a resource's score and its evidence, compare resources and get recommendations, with every answer linked back to its SchemaScope page."
+        },
+        {
+          "status": "planned",
+          "title": "Machine-readable catalog and API",
+          "text": "Every record and score as JSON and JSON-LD (DCAT, schema.org), with a stable, documented API and bulk downloads, so tools and AI agents can use the catalog without scraping pages."
+        },
+        {
+          "status": "planned",
+          "title": "llms.txt and AI-friendly pages",
+          "text": "An llms.txt index and plain-text summaries of each resource and the rubric, so language models read the catalog accurately and cite it."
+        },
+        {
+          "status": "planned",
+          "title": "AI-readiness checks",
+          "text": "Measure how ready each resource is for use in AI pipelines: definitions and labels on its terms, synonyms, machine-readable downloads, stable IRIs and a license that allows reuse."
+        },
+        {
+          "status": "planned",
+          "title": "Semantic search",
+          "text": "Search by meaning across resource descriptions and term definitions, not only keywords, to find the right ontology for a concept."
+        }
+      ]
+    },
+    {
       "id": "maintainers",
       "title": "For maintainers",
       "items": [
