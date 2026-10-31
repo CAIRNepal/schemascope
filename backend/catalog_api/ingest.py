@@ -235,7 +235,10 @@ def ingest(rebuild: bool = False) -> dict:
 def main() -> None:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--rebuild", action="store_true", help="reload every run as well (accounts are kept)")
-    ingest(rebuild=p.parse_args().rebuild)
+    try:
+        ingest(rebuild=p.parse_args().rebuild)
+    finally:
+        db.close()
 
 
 if __name__ == "__main__":
