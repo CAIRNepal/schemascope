@@ -7,7 +7,10 @@
 		Referrer-Policy strict-origin-when-cross-origin
 		-Server
 	}
-	reverse_proxy web:3000
+	# Flush immediately so streamed responses (the recommendation chat) arrive as they are written.
+	reverse_proxy web:3000 {
+		flush_interval -1
+	}
 }
 
 # Optional: redirect www to the apex domain.

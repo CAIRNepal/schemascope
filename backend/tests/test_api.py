@@ -321,3 +321,43 @@ def test_admin_dashboard_and_review(client):
     csv = admin.get("/api/admin/catalog.csv")
     assert csv.status_code == 200 and csv.text.startswith("id,acronym,name")
     assert "submission.changes_requested" in [a["action"] for a in admin.get("/api/audit", params={"action": "submission.*"}).json()]
+
+
+def test_recommend(client):
+    o = client.get("/api/recommend/options").json()
+    assert {a["id"] for a in o["areas"]} >= {"life", "earth"} and any(k["id"] == "schema" for k in o["kinds"])
+    r = client.get("/api/recommend", params={"q": "gene function"}).json()
+    assert r["items"][0]["id"] == "go" and any("gene" in w.lower() for w in r["items"][0]["why"])
+    assert all(x["id"] != "envo" for x in r["items"])  # legacy resources are not recommended
+    # Filters that leave nothing are relaxed, most specific first, and reported.
+    r = client.get("/api/recommend", params={"q": "gene", "format": "SHACL"}).json()
+    assert r["relaxed"] == ["format"] and r["items"][0]["id"] == "go"
+    r = client.get("/api/recommend", params={"kind": "schema"}).json()
+    assert [x["id"] for x in r["items"]] == ["sch"]
+
+
+def test_recommend_chat_without_model(client):
+    from catalog_api import chat, settings
+
+    assert chat.parse("an actively maintained open schema in JSON Schema for life sciences") == {
+        "category": "life", "kind": "schema", "format": "JSON Schema", "maintained": True, "open_license": True}
+    assert client.get("/api/recommend/chat/status").json()["available"] is False
+    r = client.post("/api/recommend/chat", json={"messages": [{"role": "user", "content": "Which ontology for gene function?"}]})
+    assert r.status_code == 200 and r.headers["content-type"].startswith("application/x-ndjson")
+    events = [json.loads(line) for line in r.text.splitlines()]
+    assert [e["type"] for e in events][:2] == ["filters", "results"] and events[-1] == {"type": "done", "model": None}
+    assert events[1]["items"][0]["id"] == "go" and "GO" in "".join(e["text"] for e in events if e["type"] == "token")
+    assert client.post("/api/recommend/chat", json={"messages": [{"role": "assistant", "content": "hi"}]}).status_code == 422
+    # Chat turns have their own, tighter per-minute limit.
+    from catalog_api.app import _chat_window
+    _chat_window.counts.clear()
+    codes = [client.post("/api/recommend/chat", json={"messages": [{"role": "user", "content": "gene"}]}).status_code for _ in range(settings.CHAT_RATE_ANON + 1)]
+    assert codes[-1] == 429 and set(codes[:-1]) == {200}
+    _chat_window.counts.clear()
+
+
+def test_mcp_recommend_tool(client):
+    from catalog_api import mcp_server
+
+    r = mcp_server.recommend_resources("gene function")
+    assert r["items"][0]["id"] == "go" and r["items"][0]["url"].endswith("/o/go/")

@@ -1,0 +1,1161 @@
+[
+ {
+  "summary": {
+   "model": "qwen2.5:0.5b",
+   "threads": 2,
+   "mem_gb": 0.6,
+   "cold_first_token": 1.4,
+   "warm_first_token": 0.5,
+   "prompt_tok_s": 1004.0,
+   "gen_tok_s": 98.8,
+   "warm_total_s": 1.0,
+   "stray": 0
+  },
+  "rows": [
+   {
+    "q": "I need a well-maintained ontology for mouse brain anatomy",
+    "filters": {
+     "kind": "ontology",
+     "maintained": true
+    },
+    "ttft": 1.415251375,
+    "load": 0.792799375,
+    "p_tok": 491,
+    "p_rate": 788.815844434591,
+    "e_tok": 40,
+    "e_rate": 100.97389319991316,
+    "wall": 1.819786787033081,
+    "stray": [],
+    "text": "The EMAPA (mouse developmental anatomy ontology) is well-maintained and used by 1 project, making it a strong candidate for a well-maintained ontology for mouse brain anatomy."
+   },
+   {
+    "q": "Which schema should I use to describe research datasets with an open licence?",
+    "filters": {
+     "kind": "schema",
+     "open_license": true
+    },
+    "ttft": 0.171911,
+    "load": 0.000394042,
+    "p_tok": 207,
+    "p_rate": 1204.1114297514412,
+    "e_tok": 27,
+    "e_rate": 105.20409594613551,
+    "wall": 0.4319031238555908,
+    "stray": [],
+    "text": "openMINDS (openMINDS) is a schema that should be used to describe research datasets with an open licence."
+   },
+   {
+    "q": "Best vocabulary for chemical compounds",
+    "filters": {
+     "kind": "vocabulary",
+     "min_grade": "B"
+    },
+    "ttft": 0.616834,
+    "load": 0.000389209,
+    "p_tok": 559,
+    "p_rate": 906.2405768813003,
+    "e_tok": 59,
+    "e_rate": 97.62328662858806,
+    "wall": 1.2253131866455078,
+    "stray": [],
+    "text": "The best vocabulary for chemical compounds is ABCD (AntiBodies Chemically Defined database), with a grade of E (33/100), used by 0 projects, updated in 2025-08, and licensed under CC BY 4.0."
+   },
+   {
+    "q": "What should I use for cell types in single-cell RNA-seq data?",
+    "filters": {},
+    "ttft": 0.580078,
+    "load": 0.000412875,
+    "p_tok": 523,
+    "p_rate": 901.602887887491,
+    "e_tok": 57,
+    "e_rate": 93.5105330592545,
+    "wall": 1.1935560703277588,
+    "stray": [],
+    "text": "The Cell Line Ontology (CL) is the best choice for cell types in single-cell RNA-seq data. It is grade B (81/100) and used by 4 projects, with an updated date of 2026-06."
+   }
+  ]
+ },
+ {
+  "summary": {
+   "model": "qwen2.5:0.5b",
+   "threads": 4,
+   "mem_gb": 0.6,
+   "cold_first_token": 1.0,
+   "warm_first_token": 0.4,
+   "prompt_tok_s": 1133.1,
+   "gen_tok_s": 130.0,
+   "warm_total_s": 0.7,
+   "stray": 1
+  },
+  "rows": [
+   {
+    "q": "I need a well-maintained ontology for mouse brain anatomy",
+    "filters": {
+     "kind": "ontology",
+     "maintained": true
+    },
+    "ttft": 0.9672496669999999,
+    "load": 0.537831667,
+    "p_tok": 491,
+    "p_rate": 1143.4080546227685,
+    "e_tok": 180,
+    "e_rate": 129.89430933030823,
+    "wall": 2.3562259674072266,
+    "stray": [
+     "Mus"
+    ],
+    "text": "The EMAPA (Mouse Developmental Anatomy Ontology) is a well-maintained ontology for mouse brain anatomy, covering embryonic development and postnatal stages. It is used by 1 project and has been updated 2026-10. The UBERON (Uber-anatomy Ontology) is another excellent choice, used by 14 projects and updated 2026-10. It is a cross-species anatomy ontology covering animals, with extensive coverage of nervous system structures. The MA (Mouse adult gross anatomy) ontology is a structured controlled vocabulary of the adult anatomy of the mouse (Mus musculus), used by 1 project and updated 2026-02. The FBbt (Drosophila Anatomy Ontology) is a good alternative, used by 2 projects and updated 2026-10. It"
+   },
+   {
+    "q": "Which schema should I use to describe research datasets with an open licence?",
+    "filters": {
+     "kind": "schema",
+     "open_license": true
+    },
+    "ttft": 0.17278,
+    "load": 0.001306416,
+    "p_tok": 207,
+    "p_rate": 1198.0553304780647,
+    "e_tok": 27,
+    "e_rate": 140.81421910692492,
+    "wall": 0.36931300163269043,
+    "stray": [],
+    "text": "openMINDS (openMINDS) is a schema that should be used to describe research datasets with an open licence."
+   },
+   {
+    "q": "Best vocabulary for chemical compounds",
+    "filters": {
+     "kind": "vocabulary",
+     "min_grade": "B"
+    },
+    "ttft": 0.49759,
+    "load": 0.000412833,
+    "p_tok": 559,
+    "p_rate": 1123.4148596233847,
+    "e_tok": 54,
+    "e_rate": 119.44630004025782,
+    "wall": 0.9557487964630127,
+    "stray": [],
+    "text": "The best vocabulary for chemical compounds is ClassyFire, with a grade of E (17/100), used by 0 projects, updated in 2025-08, and licensed under the CC BY 4.0 license."
+   },
+   {
+    "q": "What should I use for cell types in single-cell RNA-seq data?",
+    "filters": {},
+    "ttft": 0.485299,
+    "load": 0.00050825,
+    "p_tok": 523,
+    "p_rate": 1077.6861275213837,
+    "e_tok": 52,
+    "e_rate": 129.70298017539835,
+    "wall": 0.8914551734924316,
+    "stray": [],
+    "text": "The Cell Line Ontology (CL) is the best choice for cell types in single-cell RNA-seq data. It is grade B (81/100) and used by 4 projects, which is the highest grade among the candidates."
+   }
+  ]
+ },
+ {
+  "summary": {
+   "model": "gemma3:1b",
+   "threads": 2,
+   "mem_gb": 1.2,
+   "cold_first_token": 7.0,
+   "warm_first_token": 1.2,
+   "prompt_tok_s": 348.0,
+   "gen_tok_s": 48.2,
+   "warm_total_s": 4.2,
+   "stray": 2
+  },
+  "rows": [
+   {
+    "q": "I need a well-maintained ontology for mouse brain anatomy",
+    "filters": {
+     "kind": "ontology",
+     "maintained": true
+    },
+    "ttft": 6.955580375,
+    "load": 5.716539375,
+    "p_tok": 475,
+    "p_rate": 383.36100258183546,
+    "e_tok": 136,
+    "e_rate": 47.393216288351475,
+    "wall": 9.830278873443604,
+    "stray": [
+     "Here"
+    ],
+    "text": "Here are three recommendations for a well-maintained ontology for mouse brain anatomy, ranked by suitability:\n\n1.  **EMAPA** \u2013 This is the strongest choice due to its focus on mouse developmental anatomy, offering a comprehensive and widely used ontology. However, it\u2019s a more complex and potentially expensive option.\n\n2.  **UBERON** \u2013 A robust cross-species ontology with extensive coverage of nervous system structures makes it a good option, but it might be less focused on the specific details of mouse brain anatomy.\n\n3.  **MA** \u2013 A structured vocabulary is suitable, but lacks the breadth and detailed anatomical information offered by the other options."
+   },
+   {
+    "q": "Which schema should I use to describe research datasets with an open licence?",
+    "filters": {
+     "kind": "schema",
+     "open_license": true
+    },
+    "ttft": 0.655452,
+    "load": 0.0004115,
+    "p_tok": 207,
+    "p_rate": 315.81259954962377,
+    "e_tok": 82,
+    "e_rate": 49.707363054699314,
+    "wall": 2.314173936843872,
+    "stray": [],
+    "text": "openMINDS is the best choice for describing research datasets with an open licence. It\u2019s specifically designed for metadata models and controlled terms, making it ideal for datasets and research. \n\nIt\u2019s a well-established schema with a strong focus on neuroscience data, offering a comprehensive set of metadata. However, it\u2019s relatively focused on neuroscience, potentially limiting its applicability to broader research datasets.\n\n"
+   },
+   {
+    "q": "Best vocabulary for chemical compounds",
+    "filters": {
+     "kind": "vocabulary",
+     "min_grade": "B"
+    },
+    "ttft": 1.61647,
+    "load": 0.000369459,
+    "p_tok": 560,
+    "p_rate": 346.4338960822038,
+    "e_tok": 180,
+    "e_rate": 47.177154934494524,
+    "wall": 5.439327955245972,
+    "stray": [
+     "Here"
+    ],
+    "text": "Here\u2019s the best vocabulary recommendation for chemical compounds:\n\n**ABCD (AntiBodies Chemically Defined database)** \u2013 It\u2019s a well-established, manually curated database, offering a comprehensive collection of sequenced antibodies, making it a strong choice for chemical compound terminology. However, it\u2019s not actively used in projects.\n\n**VOC4CAT (A vocabulary for the catalysis disciplines)** \u2013 This vocabulary is specifically designed for catalysis, which is a relevant area for chemical compounds. It\u2019s updated and used by a small number of projects, but it\u2019s not widely adopted.\n\n**GOLDBOOK (IUPAC Gold Book Compendium of Chemical Terminology)** \u2013 While a valuable resource, it\u2019s not actively used for compound terminology, making it a less optimal choice.\n\n**ClassyFire (ClassyFire)** \u2013 It\u2019s a web-based application, but it"
+   },
+   {
+    "q": "What should I use for cell types in single-cell RNA-seq data?",
+    "filters": {},
+    "ttft": 1.356908,
+    "load": 0.000393875,
+    "p_tok": 518,
+    "p_rate": 381.7502734157364,
+    "e_tok": 172,
+    "e_rate": 47.78325957950176,
+    "wall": 4.964115858078003,
+    "stray": [],
+    "text": "1.  **CL (Cell Ontology)** \u2013 This is the best choice as it\u2019s the most comprehensive and widely used ontology for cell types, offering a large and established branch of relevant categories. It\u2019s a foundational resource.\n\n2.  **PCL** \u2013 It\u2019s useful for incorporating data-driven cell type identification from single-cell experiments, but it\u2019s less comprehensive than the Cell Ontology.\n\n3.  **CLO** \u2013 It\u2019s a good option if you\u2019re focusing on cell line data and its standardization efforts are relevant to your analysis.\n\n4.  **ORNASEQ** \u2013 This is less relevant for cell type identification, focusing on RNA sequencing data.\n\n5.  **CELLOSAURUS** \u2013 This resource is a specialized knowledge base and not directly applicable to cell type identification."
+   }
+  ]
+ },
+ {
+  "summary": {
+   "model": "gemma3:1b",
+   "threads": 4,
+   "mem_gb": 1.2,
+   "cold_first_token": 2.0,
+   "warm_first_token": 0.9,
+   "prompt_tok_s": 452.9,
+   "gen_tok_s": 65.0,
+   "warm_total_s": 2.7,
+   "stray": 5
+  },
+  "rows": [
+   {
+    "q": "I need a well-maintained ontology for mouse brain anatomy",
+    "filters": {
+     "kind": "ontology",
+     "maintained": true
+    },
+    "ttft": 1.997666959,
+    "load": 1.051734959,
+    "p_tok": 475,
+    "p_rate": 502.1502602724086,
+    "e_tok": 132,
+    "e_rate": 64.83577638140727,
+    "wall": 4.040079116821289,
+    "stray": [
+     "Here"
+    ],
+    "text": "Here are three recommendations for a well-maintained ontology for mouse brain anatomy, ranked by suitability:\n\n1.  **EMAPA** \u2013 This is the best choice due to its focus on mouse developmental anatomy, providing a comprehensive and widely used ontology. However, it\u2019s a more complex and potentially costly option.\n\n2.  **UBERON** \u2013 It offers a broad animal anatomy perspective, which is valuable for understanding mouse brain connections, but may lack the specific details needed for detailed mouse brain studies.\n\n3.  **MA** \u2013 A straightforward, structured vocabulary is suitable, but lacks the breadth and detailed annotations of other options.\n\n"
+   },
+   {
+    "q": "Which schema should I use to describe research datasets with an open licence?",
+    "filters": {
+     "kind": "schema",
+     "open_license": true
+    },
+    "ttft": 0.529159999,
+    "load": 0.000642792,
+    "p_tok": 207,
+    "p_rate": 391.18603142940896,
+    "e_tok": 106,
+    "e_rate": 64.85544577717627,
+    "wall": 2.171915054321289,
+    "stray": [
+     "MIT",
+     "Metadata",
+     "Trade-off"
+    ],
+    "text": "openMINDS is a good choice for describing research datasets with an open licence. It\u2019s specifically designed for neuroscience graph databases and has a permissive MIT license, making it suitable for datasets with open access. \n\nHowever, it might be slightly more focused on neuroscience than broader research data.\n\n**Grade: 3/5**\n\n**Use:** Metadata models and controlled terms for research datasets.\n\n**Trade-off:** It\u2019s tailored to neuroscience, so it might not be as versatile for other research domains."
+   },
+   {
+    "q": "Best vocabulary for chemical compounds",
+    "filters": {
+     "kind": "vocabulary",
+     "min_grade": "B"
+    },
+    "ttft": 1.240687,
+    "load": 0.00054025,
+    "p_tok": 560,
+    "p_rate": 451.3628336558697,
+    "e_tok": 72,
+    "e_rate": 65.39598632133952,
+    "wall": 2.351771831512451,
+    "stray": [
+     "Here"
+    ],
+    "text": "Here\u2019s a recommendation for the best vocabulary for chemical compounds:\n\n**ABCD (AntiBodies Chemically Defined database)** \u2013 This is the strongest candidate as it\u2019s a manually curated database, offering a high level of detail and consistency, making it ideal for precise chemical compound identification. However, it\u2019s manually curated, meaning updates are infrequent.\n\n"
+   },
+   {
+    "q": "What should I use for cell types in single-cell RNA-seq data?",
+    "filters": {},
+    "ttft": 1.003662,
+    "load": 0.000485416,
+    "p_tok": 518,
+    "p_rate": 516.1100051611,
+    "e_tok": 166,
+    "e_rate": 64.60355599766181,
+    "wall": 3.5813777446746826,
+    "stray": [],
+    "text": "1.  **CL (Cell Ontology)** \u2013 This is the best choice as it\u2019s the most comprehensive and widely used cell type ontology, offering a broad representation of cell types across organisms. It\u2019s a foundational resource for many studies.\n\n2.  **PCL** \u2013 It\u2019s useful for incorporating data-driven cell type identification from single-cell transcriptomics, offering a more current perspective.\n\n3.  **CELLOSAURUS** \u2013 While a useful resource, it\u2019s less comprehensive than the Cell Ontology and may not be as adaptable for all research needs.\n\n4.  **ORNASEQ** \u2013 This is not directly relevant to cell type identification.\n\n5.  **CELLOSAURUS** \u2013 It\u2019s a niche resource and lacks the breadth of the Cell Ontology."
+   }
+  ]
+ },
+ {
+  "summary": {
+   "model": "llama3.2:1b",
+   "threads": 2,
+   "mem_gb": 1.73,
+   "cold_first_token": 9.2,
+   "warm_first_token": 1.4,
+   "prompt_tok_s": 350.1,
+   "gen_tok_s": 44.7,
+   "warm_total_s": 3.2,
+   "stray": 1
+  },
+  "rows": [
+   {
+    "q": "I need a well-maintained ontology for mouse brain anatomy",
+    "filters": {
+     "kind": "ontology",
+     "maintained": true
+    },
+    "ttft": 9.181917333,
+    "load": 7.209518333,
+    "p_tok": 470,
+    "p_rate": 238.28850045046667,
+    "e_tok": 90,
+    "e_rate": 45.32534532876991,
+    "wall": 11.170207977294922,
+    "stray": [],
+    "text": "I recommend EMAPA and FBbt for their well-maintained status and extensive coverage of mouse brain anatomy. EMAPA is a structured ontology with a strong focus on developmental biology, while FBbt provides a comprehensive and up-to-date anatomy of Drosophila melanogaster. Both are well-maintained and widely used, but FBbt's focus on Drosophila may be a trade-off for its limited coverage of mouse anatomy."
+   },
+   {
+    "q": "Which schema should I use to describe research datasets with an open licence?",
+    "filters": {
+     "kind": "schema",
+     "open_license": true
+    },
+    "ttft": 0.431893,
+    "load": 0.000597458,
+    "p_tok": 211,
+    "p_rate": 488.5469317631913,
+    "e_tok": 99,
+    "e_rate": 45.52349955235225,
+    "wall": 2.612169027328491,
+    "stray": [
+     "MIT"
+    ],
+    "text": "I recommend using openMINDS. It fits because it is an open licence, which aligns with the research dataset's open licence requirement. It also has a high grade, indicating its quality and relevance. openMINDS is used by 1 project, which is a good starting point. The licence is MIT, which is a permissive licence that allows for flexibility. However, it may not be suitable for all research datasets, as it is primarily focused on neuroscience graph databases."
+   },
+   {
+    "q": "Best vocabulary for chemical compounds",
+    "filters": {
+     "kind": "vocabulary",
+     "min_grade": "B"
+    },
+    "ttft": 2.011522,
+    "load": 0.0005325,
+    "p_tok": 536,
+    "p_rate": 266.46489573566686,
+    "e_tok": 73,
+    "e_rate": 44.06623940523857,
+    "wall": 3.673701286315918,
+    "stray": [],
+    "text": "The best vocabulary for chemical compounds is GOLDBOOK (IUPAC Gold Book Compendium of Chemical Terminology) with a grade of E (10/100). It is a widely used and recognized standard, and its updates are relatively recent. However, it may not be as comprehensive as other options, and its use is limited to specific fields."
+   },
+   {
+    "q": "What should I use for cell types in single-cell RNA-seq data?",
+    "filters": {},
+    "ttft": 1.702773,
+    "load": 0.000474541,
+    "p_tok": 503,
+    "p_rate": 295.4005025919485,
+    "e_tok": 78,
+    "e_rate": 44.45384180929416,
+    "wall": 3.463834762573242,
+    "stray": [],
+    "text": "For cell types in single-cell RNA-seq data, I recommend CL (Cell Ontology) with a grade of A (95/100). It is the reference ontology of cell types across organisms, with a large and growing branch of neuron and glial types, making it a reliable choice. Although it has some updates, its high grade and widespread use make it a strong candidate."
+   }
+  ]
+ },
+ {
+  "summary": {
+   "model": "llama3.2:1b",
+   "threads": 4,
+   "mem_gb": 1.73,
+   "cold_first_token": 2.7,
+   "warm_first_token": 0.9,
+   "prompt_tok_s": 573.3,
+   "gen_tok_s": 44.3,
+   "warm_total_s": 3.3,
+   "stray": 3
+  },
+  "rows": [
+   {
+    "q": "I need a well-maintained ontology for mouse brain anatomy",
+    "filters": {
+     "kind": "ontology",
+     "maintained": true
+    },
+    "ttft": 2.709956875,
+    "load": 1.577027875,
+    "p_tok": 470,
+    "p_rate": 414.8538875781271,
+    "e_tok": 64,
+    "e_rate": 49.81983125089033,
+    "wall": 3.9981489181518555,
+    "stray": [],
+    "text": "I recommend EMAPA and FBbt for their well-maintained status and extensive coverage of mouse brain anatomy. EMAPA is a structured ontology with a strong focus on developmental biology, while FBbt provides a detailed anatomy of Drosophila melanogaster, with thousands of neuron types linked to connectome datasets."
+   },
+   {
+    "q": "Which schema should I use to describe research datasets with an open licence?",
+    "filters": {
+     "kind": "schema",
+     "open_license": true
+    },
+    "ttft": 0.256146,
+    "load": 0.000557542,
+    "p_tok": 211,
+    "p_rate": 823.7489556737174,
+    "e_tok": 62,
+    "e_rate": 50.50562648971233,
+    "wall": 1.4893419742584229,
+    "stray": [],
+    "text": "I recommend using openMINDS. It fits because it is an open licence, which aligns with the research dataset's open licence requirement. It also has a high grade, indicating its quality. openMINDS is used by 1 project, which is a trade-off for its limited usage."
+   },
+   {
+    "q": "Best vocabulary for chemical compounds",
+    "filters": {
+     "kind": "vocabulary",
+     "min_grade": "B"
+    },
+    "ttft": 1.126383,
+    "load": 0.000531,
+    "p_tok": 536,
+    "p_rate": 475.85945455497824,
+    "e_tok": 158,
+    "e_rate": 38.44709741167013,
+    "wall": 5.241486072540283,
+    "stray": [
+     "BY-SA",
+     "Based",
+     "CC0"
+    ],
+    "text": "Based on the filters, I recommend:\n\n1. VOC4CAT (grade E, used by 0 projects, updated 2026-10, licence CC0) - It is a widely used vocabulary for the catalysis disciplines, and its CC0 licence allows for free use and distribution.\n2. GOLDBOOK (grade E, used by 0 projects, updated unknown, licence CC BY-SA 4.0) - It is a well-established and widely recognized vocabulary, and its CC BY-SA licence allows for free use and modification.\n3. ERM (grade E, used by 0 projects, updated 2025-07, licence unknown) - It is a simple and widely used registry, but its licence is unknown, which may limit its use."
+   },
+   {
+    "q": "What should I use for cell types in single-cell RNA-seq data?",
+    "filters": {},
+    "ttft": 1.196581,
+    "load": 0.000541791,
+    "p_tok": 503,
+    "p_rate": 420.36435477414403,
+    "e_tok": 80,
+    "e_rate": 43.81952926870683,
+    "wall": 3.029358148574829,
+    "stray": [],
+    "text": "For cell types in single-cell RNA-seq data, I recommend CL (Cell Ontology) due to its high grade and widespread use. It provides a reference ontology of cell types across organisms, making it a reliable source for cell type identification. Although it has some updates, its CC BY 4.0 license allows for reuse and modification. This choice offers a balance between accuracy and flexibility."
+   }
+  ]
+ },
+ {
+  "summary": {
+   "model": "qwen2.5:1.5b",
+   "threads": 2,
+   "mem_gb": 1.3,
+   "cold_first_token": 5.3,
+   "warm_first_token": 2.8,
+   "prompt_tok_s": 172.1,
+   "gen_tok_s": 45.7,
+   "warm_total_s": 4.9,
+   "stray": 5
+  },
+  "rows": [
+   {
+    "q": "I need a well-maintained ontology for mouse brain anatomy",
+    "filters": {
+     "kind": "ontology",
+     "maintained": true
+    },
+    "ttft": 5.250990375000001,
+    "load": 1.342423375,
+    "p_tok": 491,
+    "p_rate": 125.62148736352735,
+    "e_tok": 180,
+    "e_rate": 48.446261119426225,
+    "wall": 8.969322919845581,
+    "stray": [
+     "Recommendations",
+     "Recommended",
+     "Trade-offs"
+    ],
+    "text": "**Recommendations:**\n\n1. **EMAPA (Mouse Developmental Anatomy Ontology)** - Recommended for its comprehensive coverage of mouse embryonic development and postnatal stages, making it ideal for detailed anatomical studies focusing on the mouse brain.\n2. **UBERON (Uber-anatomy Ontology)** - Recommended for its cross-species coverage and extensive coverage of nervous system structures, making it a versatile choice for comparing mouse anatomy with other species.\n3. **MBA (Allen Mouse Brain Atlas Ontology)** - Recommended for its detailed adult mouse brain regions hierarchy, which is essential for understanding the anatomical structure of the mouse brain, particularly for researchers focusing on the Allen Mouse Brain Atlas.\n\n**Trade-offs:**\n\n- **EMAPA** and **UBERON** offer more detailed and species-specific coverage, making them suitable for advanced research and cross-species comparisons.\n- **MBA**"
+   },
+   {
+    "q": "Which schema should I use to describe research datasets with an open licence?",
+    "filters": {
+     "kind": "schema",
+     "open_license": true
+    },
+    "ttft": 0.901318,
+    "load": 0.000498584,
+    "p_tok": 207,
+    "p_rate": 229.66367031391806,
+    "e_tok": 66,
+    "e_rate": 45.20061883756336,
+    "wall": 2.369291067123413,
+    "stray": [],
+    "text": "openMINDS is the best choice for describing research datasets with an open licence because it provides a comprehensive set of metadata models and controlled terms specifically designed for neuroscience graph databases, covering datasets, subjects, methods, software, models, and brain atlases. This makes it ideal for researchers looking to standardize their dataset descriptions."
+   },
+   {
+    "q": "Best vocabulary for chemical compounds",
+    "filters": {
+     "kind": "vocabulary",
+     "min_grade": "B"
+    },
+    "ttft": 3.797693,
+    "load": 0.0011015,
+    "p_tok": 559,
+    "p_rate": 147.19462578992034,
+    "e_tok": 122,
+    "e_rate": 45.83466235069452,
+    "wall": 6.466125965118408,
+    "stray": [
+     "Recommendation",
+     "SKOS"
+    ],
+    "text": "**Recommendation: VOC4CAT (A vocabulary for the catalysis disciplines)**\n\nVOC4CAT is the best fit for the question because it is specifically designed for the catalysis disciplines, which aligns perfectly with the need for a vocabulary for chemical compounds. It has a high grade of 57/100 and is used by 0 projects, indicating it is not widely adopted but is still valuable. The vocabulary is based on SKOS, making it easily accessible and interoperable. The lack of a licence is a trade-off, but it ensures the vocabulary is free for use."
+   },
+   {
+    "q": "What should I use for cell types in single-cell RNA-seq data?",
+    "filters": {},
+    "ttft": 3.754588,
+    "load": 0.000567042,
+    "p_tok": 523,
+    "p_rate": 139.29624235735054,
+    "e_tok": 90,
+    "e_rate": 46.0185751421974,
+    "wall": 5.717800855636597,
+    "stray": [],
+    "text": "**CL (Cell Ontology)** is the best choice for cell types in single-cell RNA-seq data. It is the most comprehensive and widely used ontology, referenced across organisms and includes neuron and glial types, making it essential for researchers looking to standardize cell type classification across different studies. While it has a lower grade, it is highly recommended due to its extensive coverage and the importance of standardizing cell type classification in single-cell research."
+   }
+  ]
+ },
+ {
+  "summary": {
+   "model": "qwen2.5:1.5b",
+   "threads": 4,
+   "mem_gb": 1.3,
+   "cold_first_token": 4.1,
+   "warm_first_token": 2.1,
+   "prompt_tok_s": 226.4,
+   "gen_tok_s": 46.2,
+   "warm_total_s": 4.2,
+   "stray": 5
+  },
+  "rows": [
+   {
+    "q": "I need a well-maintained ontology for mouse brain anatomy",
+    "filters": {
+     "kind": "ontology",
+     "maintained": true
+    },
+    "ttft": 4.132407292,
+    "load": 1.309490292,
+    "p_tok": 491,
+    "p_rate": 173.93355879751337,
+    "e_tok": 180,
+    "e_rate": 40.40276166343556,
+    "wall": 8.593569993972778,
+    "stray": [
+     "Recommendations",
+     "Recommended",
+     "Trade-offs"
+    ],
+    "text": "**Recommendations:**\n\n1. **EMAPA (Mouse Developmental Anatomy Ontology)** - Recommended for its comprehensive coverage of mouse embryonic development and postnatal stages, making it ideal for detailed anatomical studies focusing on the mouse's developmental timeline.\n2. **UBERON (Uber-anatomy Ontology)** - Recommended for its extensive coverage of nervous system structures, making it a valuable resource for understanding the mouse brain anatomy, especially for those needing a cross-species perspective.\n3. **MA (Mouse adult gross anatomy)** - Recommended for its structured controlled vocabulary of the adult mouse anatomy, which can be particularly useful for those needing a well-maintained and up-to-date resource focusing specifically on the mouse's adult brain anatomy.\n\n**Trade-offs:**\n\n- **EMAPA** and **UBERON** both offer extensive coverage but differ in their focus. **EMAPA** is more detailed"
+   },
+   {
+    "q": "Which schema should I use to describe research datasets with an open licence?",
+    "filters": {
+     "kind": "schema",
+     "open_license": true
+    },
+    "ttft": 0.684475,
+    "load": 0.001491333,
+    "p_tok": 207,
+    "p_rate": 302.4215639723876,
+    "e_tok": 67,
+    "e_rate": 50.33241933666378,
+    "wall": 2.023757219314575,
+    "stray": [],
+    "text": "openMINDS is the best choice for describing research datasets with an open licence because it includes a set of metadata models and controlled terms specifically designed for neuroscience graph databases, covering datasets, subjects, methods, software, models, and brain atlases. This makes it ideal for researchers looking to standardize and share their datasets effectively."
+   },
+   {
+    "q": "Best vocabulary for chemical compounds",
+    "filters": {
+     "kind": "vocabulary",
+     "min_grade": "B"
+    },
+    "ttft": 2.925219,
+    "load": 0.000621292,
+    "p_tok": 559,
+    "p_rate": 191.09680335045002,
+    "e_tok": 125,
+    "e_rate": 43.205846131193,
+    "wall": 5.825271129608154,
+    "stray": [
+     "CC0",
+     "NFDI4Cat"
+    ],
+    "text": "VOC4CAT (A vocabulary for the catalysis disciplines) | Vocabulary | grade C (57/100) | used by 0 projects | updated 2026-10 | licence CC0 1.0 | This vocabulary, created in the NFDI4Cat project, is specifically designed for the catalysis disciplines and is widely used in the field. It provides a comprehensive and up-to-date resource for researchers working in catalysis. However, it is not as comprehensive as the other options, and its use is limited to projects within the NFDI4Cat initiative."
+   },
+   {
+    "q": "What should I use for cell types in single-cell RNA-seq data?",
+    "filters": {},
+    "ttft": 2.816302,
+    "load": 0.000731375,
+    "p_tok": 523,
+    "p_rate": 185.70451606397327,
+    "e_tok": 93,
+    "e_rate": 45.1321352449947,
+    "wall": 4.886419773101807,
+    "stray": [],
+    "text": "**CL (Cell Ontology)** is the best choice for cell types in single-cell RNA-seq data. It is grade A (95/100), widely used by 9 projects, and updated in 2026. It includes neuron and glial types, making it comprehensive for biological research. However, it is a reference ontology, so it may not be as up-to-date as the more recent PCL and CLO."
+   }
+  ]
+ },
+ {
+  "summary": {
+   "model": "smollm2:1.7b",
+   "threads": 2,
+   "mem_gb": 2.4,
+   "cold_first_token": 7.1,
+   "warm_first_token": 3.2,
+   "prompt_tok_s": 155.4,
+   "gen_tok_s": 24.5,
+   "warm_total_s": 9.0,
+   "stray": 2
+  },
+  "rows": [
+   {
+    "q": "I need a well-maintained ontology for mouse brain anatomy",
+    "filters": {
+     "kind": "ontology",
+     "maintained": true
+    },
+    "ttft": 7.1399865,
+    "load": 3.0580415,
+    "p_tok": 501,
+    "p_rate": 122.735607657624,
+    "e_tok": 180,
+    "e_rate": 22.381072575601397,
+    "wall": 15.189451932907104,
+    "stray": [],
+    "text": "1. EMAPA (Mouse Developmental Anatomy Ontology) | Ontology | grade B (83/100) | used by 1 projects | updated 2026-10 | licence CC BY 4.0 | An ontology for mouse anatomy covering embryonic development and postnatal stages.\n2. UBERON (Uber-anatomy Ontology) | Ontology | grade A (96/100) | used by 14 projects | updated 2026-10 | licence CC BY 3.0 | A cross-species anatomy ontology covering animals, with extensive coverage of nervous system structures. It is the common anatomy backbone for many cell, expression and phenotype studies.\n3. MA (Mouse adult gross anatomy) | Ontology | grade B (73/100) | used by "
+   },
+   {
+    "q": "Which schema should I use to describe research datasets with an open licence?",
+    "filters": {
+     "kind": "schema",
+     "open_license": true
+    },
+    "ttft": 1.020626,
+    "load": 0.000666084,
+    "p_tok": 214,
+    "p_rate": 209.6752385300786,
+    "e_tok": 141,
+    "e_rate": 25.741675169634902,
+    "wall": 6.528475046157837,
+    "stray": [
+     "MIT",
+     "SANDS"
+    ],
+    "text": "1. openMINDS (openMINDS) | Schema | grade D (40/100) | used by 1 projects | updated 2026-10 | licence MIT | A set of metadata models and controlled terms for neuroscience graph databases, covering datasets, subjects, methods, software, models and brain atlases (SANDS).\n\nThis schema is suitable for research datasets with an open licence as it provides a structured way to describe and share neuroscience data, ensuring compliance with open data principles. The open licence allows for unrestricted use and modification of the data, while the MIT licence grants users the right to use, modify, and distribute the schema."
+   },
+   {
+    "q": "Best vocabulary for chemical compounds",
+    "filters": {
+     "kind": "vocabulary",
+     "min_grade": "B"
+    },
+    "ttft": 4.431249,
+    "load": 0.000647,
+    "p_tok": 575,
+    "p_rate": 129.7602549529489,
+    "e_tok": 180,
+    "e_rate": 23.51213572354222,
+    "wall": 12.109401941299438,
+    "stray": [],
+    "text": "1. ClassyFire (ClassyFire) | Vocabulary | grade E (17/100) | used by 0 projects | updated unknown | licence unknown | ClassyFire is a web-based application for automated structural classification of chemical entities. This application uses a rule-based approach that relies on a comprehensible, \u2026\n2. ABCD (AntiBodies Chemically Defined database) | Vocabulary | grade E (33/100) | used by 0 projects | updated 2025-08 | licence CC BY 4.0 | The ABCD (AntiBodies Chemically Defined) database is a manually curated depository of sequenced antibodies\n3. GOLDBOOK (IUPAC Gold Book Compendium of Chemical Terminology) | Vocabulary | grade E (10/100) | used"
+   },
+   {
+    "q": "What should I use for cell types in single-cell RNA-seq data?",
+    "filters": {},
+    "ttft": 4.292733,
+    "load": 0.000662416,
+    "p_tok": 544,
+    "p_rate": 126.7257944996812,
+    "e_tok": 100,
+    "e_rate": 24.309548067101534,
+    "wall": 8.442250967025757,
+    "stray": [],
+    "text": "For cell types in single-cell RNA-seq data, use the Cell Ontology (1) as it is the reference ontology of cell types across organisms, with a large and growing branch of neuron and glial types. It is used by 9 projects, updated 2026-10, and has a CC BY 4.0 licence. This ontology holds data-driven cell types before they are ready for the Cell Ontology, linked to their source taxonomies."
+   }
+  ]
+ },
+ {
+  "summary": {
+   "model": "smollm2:1.7b",
+   "threads": 4,
+   "mem_gb": 2.4,
+   "cold_first_token": 6.1,
+   "warm_first_token": 2.2,
+   "prompt_tok_s": 227.5,
+   "gen_tok_s": 25.4,
+   "warm_total_s": 8.6,
+   "stray": 3
+  },
+  "rows": [
+   {
+    "q": "I need a well-maintained ontology for mouse brain anatomy",
+    "filters": {
+     "kind": "ontology",
+     "maintained": true
+    },
+    "ttft": 6.102157042,
+    "load": 2.844042042,
+    "p_tok": 501,
+    "p_rate": 153.76989455559425,
+    "e_tok": 180,
+    "e_rate": 23.256222589957652,
+    "wall": 13.845977067947388,
+    "stray": [],
+    "text": "1. EMAPA (Mouse Developmental Anatomy Ontology) | Ontology | grade B (83/100) | used by 1 projects | updated 2026-10 | licence CC BY 4.0 | An ontology for mouse anatomy covering embryonic development and postnatal stages.\n2. UBERON (Uber-anatomy Ontology) | Ontology | grade A (96/100) | used by 14 projects | updated 2026-10 | licence CC BY 3.0 | A cross-species anatomy ontology covering animals, with extensive coverage of nervous system structures. It is the common anatomy backbone for many cell, expression and phenotype studies.\n3. MA (Mouse adult gross anatomy) | Ontology | grade B (73/100) | used by "
+   },
+   {
+    "q": "Which schema should I use to describe research datasets with an open licence?",
+    "filters": {
+     "kind": "schema",
+     "open_license": true
+    },
+    "ttft": 0.703143,
+    "load": 0.000706166,
+    "p_tok": 214,
+    "p_rate": 304.3477642527907,
+    "e_tok": 101,
+    "e_rate": 30.30653105744288,
+    "wall": 4.06506609916687,
+    "stray": [
+     "MIT",
+     "SANDS"
+    ],
+    "text": "1. openMINDS (openMINDS) | Schema | grade D (40/100) | used by 1 projects | updated 2026-10 | licence MIT | A set of metadata models and controlled terms for neuroscience graph databases, covering datasets, subjects, methods, software, models and brain atlases (SANDS). This schema is suitable for research datasets with an open licence, offering a structured approach to metadata and ensuring consistency across datasets."
+   },
+   {
+    "q": "Best vocabulary for chemical compounds",
+    "filters": {
+     "kind": "vocabulary",
+     "min_grade": "B"
+    },
+    "ttft": 3.224349,
+    "load": 0.000819042,
+    "p_tok": 575,
+    "p_rate": 178.33057153552545,
+    "e_tok": 180,
+    "e_rate": 23.54910374073588,
+    "wall": 10.895562887191772,
+    "stray": [],
+    "text": "1. ClassyFire (ClassyFire) | Vocabulary | grade E (17/100) | used by 0 projects | updated unknown | licence unknown | ClassyFire is a web-based application for automated structural classification of chemical entities. This application uses a rule-based approach that relies on a comprehensible, \u2026\n2. ABCD (AntiBodies Chemically Defined database) | Vocabulary | grade E (33/100) | used by 0 projects | updated 2025-08 | licence CC BY 4.0 | The ABCD (AntiBodies Chemically Defined) database is a manually curated depository of sequenced antibodies\n3. GOLDBOOK (IUPAC Gold Book Compendium of Chemical Terminology) | Vocabulary | grade E (10/100) | used"
+   },
+   {
+    "q": "What should I use for cell types in single-cell RNA-seq data?",
+    "filters": {},
+    "ttft": 2.724411,
+    "load": 0.000710667,
+    "p_tok": 544,
+    "p_rate": 199.6761868895699,
+    "e_tok": 180,
+    "e_rate": 22.37347242009625,
+    "wall": 10.806647062301636,
+    "stray": [
+     "Holds"
+    ],
+    "text": "1. CL (Cell Ontology) | Ontology | grade A (95/100) | used by 9 projects | updated 2026-10 | licence CC BY 4.0 | The Cell Ontology is a reference ontology of cell types across organisms, with a large and growing branch of neuron and glial types.\n2. PCL (Provisional Cell Ontology) | Ontology | grade B (70/100) | used by 1 projects | updated 2025-07 | licence CC BY 4.0 | Holds data-driven cell types (e.g. from single-cell transcriptomics of the brain) before they are ready for the Cell Ontology, linked to their source taxonomies.\n3. CLO (Cell Line Ontology) | Ontology | grade"
+   }
+  ]
+ },
+ {
+  "summary": {
+   "model": "qwen2.5:3b",
+   "threads": 2,
+   "mem_gb": 2.35,
+   "cold_first_token": 12.8,
+   "warm_first_token": 7.5,
+   "prompt_tok_s": 65.3,
+   "gen_tok_s": 15.9,
+   "warm_total_s": 10.3,
+   "stray": 6
+  },
+  "rows": [
+   {
+    "q": "I need a well-maintained ontology for mouse brain anatomy",
+    "filters": {
+     "kind": "ontology",
+     "maintained": true
+    },
+    "ttft": 12.771302167000002,
+    "load": 3.119589167,
+    "p_tok": 491,
+    "p_rate": 50.87179861232923,
+    "e_tok": 137,
+    "e_rate": 17.967842283788823,
+    "wall": 20.401726007461548,
+    "stray": [
+     "BICAN",
+     "Comprehensive",
+     "Uberanatomy"
+    ],
+    "text": "EMAPA: Best for mouse brain development, grade B, used by 1, updated 2026-10, CC BY 4.0, lacks postnatal stages. Uberanatomy: Comprehensive cross-species, grade A, 14 projects, CC BY 3.0, broader scope. MA: Adult mouse anatomy, grade B, 1 project, CC BY 4.0, less detailed. FBbt: Drosophila, grade A, 2 projects, CC BY 4.0, different species. MBA: Mouse brain regions, grade E, 2 projects, unknown license, packaged by BICAN."
+   },
+   {
+    "q": "Which schema should I use to describe research datasets with an open licence?",
+    "filters": {
+     "kind": "schema",
+     "open_license": true
+    },
+    "ttft": 2.326126,
+    "load": 0.000629125,
+    "p_tok": 207,
+    "p_rate": 88.98916051838981,
+    "e_tok": 47,
+    "e_rate": 16.018496933309883,
+    "wall": 5.267840147018433,
+    "stray": [
+     "MIT"
+    ],
+    "text": "openMINDS (openMINDS) | MIT licence fits for open datasets, grade D suitable for research datasets, updated till 2026, used by 1 project, trade-off: grade and usage."
+   },
+   {
+    "q": "Best vocabulary for chemical compounds",
+    "filters": {
+     "kind": "vocabulary",
+     "min_grade": "B"
+    },
+    "ttft": 10.286448,
+    "load": 0.000663333,
+    "p_tok": 559,
+    "p_rate": 54.3433457302268,
+    "e_tok": 33,
+    "e_rate": 12.598035622663637,
+    "wall": 12.914644002914429,
+    "stray": [
+     "Trade-off"
+    ],
+    "text": "ClassyFire fits best for chemical compounds, grade E but used by none, rule-based structural classification comprehensible. Trade-off: unknown licence, no updates."
+   },
+   {
+    "q": "What should I use for cell types in single-cell RNA-seq data?",
+    "filters": {},
+    "ttft": 9.929947,
+    "load": 0.000843542,
+    "p_tok": 523,
+    "p_rate": 52.668961878648496,
+    "e_tok": 52,
+    "e_rate": 19.10188098426115,
+    "wall": 12.669636249542236,
+    "stray": [
+     "Trade-off"
+    ],
+    "text": "CL (Cell Ontology) best fits for cell types in single-cell RNA-seq data, grade A, widely used, large neuron/glial branch, CC BY 4.0 licence, organism-wide cell types reference. Trade-off: provisional status."
+   }
+  ]
+ },
+ {
+  "summary": {
+   "model": "qwen2.5:3b",
+   "threads": 4,
+   "mem_gb": 2.35,
+   "cold_first_token": 10.0,
+   "warm_first_token": 5.3,
+   "prompt_tok_s": 93.9,
+   "gen_tok_s": 17.8,
+   "warm_total_s": 11.4,
+   "stray": 8
+  },
+  "rows": [
+   {
+    "q": "I need a well-maintained ontology for mouse brain anatomy",
+    "filters": {
+     "kind": "ontology",
+     "maintained": true
+    },
+    "ttft": 10.041905916000001,
+    "load": 3.148910916,
+    "p_tok": 491,
+    "p_rate": 71.23173598704192,
+    "e_tok": 44,
+    "e_rate": 21.82816865633731,
+    "wall": 12.071208953857422,
+    "stray": [
+     "Trade-off"
+    ],
+    "text": "EMAPA fits best as it covers mouse anatomy development, grade B, updated 2026-10, licence CC BY 4.0. Trade-off: less used projects, less species coverage."
+   },
+   {
+    "q": "Which schema should I use to describe research datasets with an open licence?",
+    "filters": {
+     "kind": "schema",
+     "open_license": true
+    },
+    "ttft": 1.628291,
+    "load": 0.000752,
+    "p_tok": 207,
+    "p_rate": 127.12715356161767,
+    "e_tok": 68,
+    "e_rate": 16.51868275165302,
+    "wall": 5.753499984741211,
+    "stray": [
+     "Better",
+     "MIT"
+    ],
+    "text": "openMINDS (openMINDS) | grade D (40/100) | used by 1 projects | updated 2026-10 | licence MIT | though open, its scope is narrow, focusing on neuroscience, not directly applicable to all research datasets. Better for neuro-specific projects."
+   },
+   {
+    "q": "Best vocabulary for chemical compounds",
+    "filters": {
+     "kind": "vocabulary",
+     "min_grade": "B"
+    },
+    "ttft": 7.940747,
+    "load": 0.000762292,
+    "p_tok": 559,
+    "p_rate": 70.39639973418117,
+    "e_tok": 180,
+    "e_rate": 16.964631570613864,
+    "wall": 18.5645751953125,
+    "stray": [
+     "BY-SA",
+     "Manually",
+     "Popular",
+     "Rule-based"
+    ],
+    "text": "ClassyFire (ClassyFire) | Vocabulary | grade E (17/100) | used by 0 projects | updated unknown | licence unknown | Rule-based chemical entity classification suitable for automated systems, though low grade indicates limited reliability.\n\nABCD (AntiBodies Chemically Defined database) | Vocabulary | grade E (33/100) | used by 0 projects | updated 2025-08 | licence CC BY 4.0 | Manually curated antibodies database, not ideal for chemical compounds.\n\nGOLDBOOK (IUPAC Gold Book Compendium of Chemical Terminology) | Vocabulary | grade E (10/100) | used by 0 projects | updated unknown | licence CC BY-SA 4.0 | Popular \"Gold Book\" for chemical terminology, outdated and low grade.\n\nVOC4CAT"
+   },
+   {
+    "q": "What should I use for cell types in single-cell RNA-seq data?",
+    "filters": {},
+    "ttft": 6.223798,
+    "load": 0.001422834,
+    "p_tok": 523,
+    "p_rate": 84.03229025106535,
+    "e_tok": 72,
+    "e_rate": 19.911036383270858,
+    "wall": 9.853564262390137,
+    "stray": [
+     "Trade-off"
+    ],
+    "text": "CL (Cell Ontology) fits best due to its grade A (95/100), wide use (9 projects), and current updates (2026-10), referencing neuron and glial types relevant for single-cell RNA-seq. Trade-off: focuses on organism-wide cell types, less specific to RNA-seq data."
+   }
+  ]
+ },
+ {
+  "summary": {
+   "model": "llama3.2:3b",
+   "threads": 2,
+   "mem_gb": 2.65,
+   "cold_first_token": 14.4,
+   "warm_first_token": 7.4,
+   "prompt_tok_s": 64.7,
+   "gen_tok_s": 13.8,
+   "warm_total_s": 18.4,
+   "stray": 10
+  },
+  "rows": [
+   {
+    "q": "I need a well-maintained ontology for mouse brain anatomy",
+    "filters": {
+     "kind": "ontology",
+     "maintained": true
+    },
+    "ttft": 14.358821125,
+    "load": 3.893430125,
+    "p_tok": 470,
+    "p_rate": 44.909932175491576,
+    "e_tok": 180,
+    "e_rate": 13.41331944110871,
+    "wall": 27.7840838432312,
+    "stray": [
+     "Based",
+     "Trade-offs"
+    ],
+    "text": "Based on the question, I recommend the following three ontologies:\n\n1. EMAPA (grade B, used by 1 project, updated 2026-10, licence CC BY 4.0) - As a mouse-specific ontology covering embryonic development and postnatal stages, it fits the question's requirements.\n2. UBERON (grade A, used by 14 projects, updated 2026-10, licence CC BY 3.0) - Although it covers a broader range of species, UBERON's extensive coverage of nervous system structures makes it a suitable choice for mouse brain anatomy.\n3. MA (grade B, used by 1 project, updated 2026-02, licence CC BY 4.0) - As a structured controlled vocabulary of adult mouse anatomy, it provides a specific focus on the adult stage.\n\nTrade-offs: EMAPA's lower"
+   },
+   {
+    "q": "Which schema should I use to describe research datasets with an open licence?",
+    "filters": {
+     "kind": "schema",
+     "open_license": true
+    },
+    "ttft": 2.397843,
+    "load": 0.000835625,
+    "p_tok": 211,
+    "p_rate": 87.9957528495402,
+    "e_tok": 87,
+    "e_rate": 14.811957097081143,
+    "wall": 8.293776035308838,
+    "stray": [
+     "Based",
+     "CANDIDATES"
+    ],
+    "text": "Based on the CANDIDATES list, I recommend openMINDS. It fits because it is specifically designed for neuroscience graph databases, covering datasets, subjects, methods, software, models, and brain atlases, which aligns with describing research datasets. However, a trade-off is that it has a lower grade (D) compared to other options, indicating it may require more customization or adaptation to fully meet your needs."
+   },
+   {
+    "q": "Best vocabulary for chemical compounds",
+    "filters": {
+     "kind": "vocabulary",
+     "min_grade": "B"
+    },
+    "ttft": 8.906334,
+    "load": 0.000644958,
+    "p_tok": 536,
+    "p_rate": 60.18188853011801,
+    "e_tok": 180,
+    "e_rate": 13.599171961529454,
+    "wall": 22.157551050186157,
+    "stray": [
+     "BY-SA",
+     "Based",
+     "CANDIDATES",
+     "CC0",
+     "Trade-off"
+    ],
+    "text": "Based on the CANDIDATES list, I recommend the following three vocabularies for chemical compounds:\n\n1. GOLDBOOK (IUPAC Gold Book Compendium of Chemical Terminology) | grade E (10/100) | used by 0 projects | updated unknown | licence CC BY-SA 4.0 | The GOLDBOOK is a widely recognized and authoritative vocabulary for chemical terminology, making it a good choice for standardizing compound names.\n\nTrade-off: The low grade may indicate a lack of recent updates, but the GOLDBOOK's established reputation and widespread use outweigh this concern.\n\n2. VOC4CAT (A vocabulary for the catalysis disciplines) | grade C (57/100) | used by 0 projects | updated 2026-10 | licence CC0 1.0 | VOC4CAT is a well-structured vocabulary for a"
+   },
+   {
+    "q": "What should I use for cell types in single-cell RNA-seq data?",
+    "filters": {},
+    "ttft": 10.969849,
+    "load": 0.005882291,
+    "p_tok": 503,
+    "p_rate": 45.852955678788284,
+    "e_tok": 180,
+    "e_rate": 12.997406223172542,
+    "wall": 24.857579946517944,
+    "stray": [
+     "Trade-offs"
+    ],
+    "text": "For cell types in single-cell RNA-seq data, I recommend:\n\n1. CL (Cell Ontology) - As the reference ontology of cell types across organisms, it provides a large and growing branch of neuron and glial types, making it a reliable choice.\n2. PCL (Provisional Cell Ontology) - It holds data-driven cell types from single-cell transcriptomics, linking them to their source taxonomies, making it a good fit for data that is not yet part of the main Cell Ontology.\n3. CELLOSAURUS (Cellosaurus) - Although not specifically designed for cell types, it provides a comprehensive resource on cell lines, which can be used as a starting point for annotating single-cell RNA-seq data.\n\nTrade-offs: CL is the most comprehensive, but PCL is more up-to-date with recent data-driven cell types. CELLOSA"
+   }
+  ]
+ },
+ {
+  "summary": {
+   "model": "llama3.2:3b",
+   "threads": 4,
+   "mem_gb": 2.65,
+   "cold_first_token": 12.9,
+   "warm_first_token": 4.9,
+   "prompt_tok_s": 96.2,
+   "gen_tok_s": 10.2,
+   "warm_total_s": 19.6,
+   "stray": 13
+  },
+  "rows": [
+   {
+    "q": "I need a well-maintained ontology for mouse brain anatomy",
+    "filters": {
+     "kind": "ontology",
+     "maintained": true
+    },
+    "ttft": 12.943320958,
+    "load": 4.178817958,
+    "p_tok": 470,
+    "p_rate": 53.6254023759248,
+    "e_tok": 180,
+    "e_rate": 13.517002361420314,
+    "wall": 26.264164924621582,
+    "stray": [
+     "Based",
+     "Trade-off"
+    ],
+    "text": "Based on the question, I recommend the following three ontologies:\n\n1. EMAPA (grade B, used by 1 project, updated 2026-10, licence CC BY 4.0) - As a mouse-specific ontology covering embryonic development and postnatal stages, it fits the question's requirements.\n2. UBERON (grade A, used by 14 projects, updated 2026-10, licence CC BY 3.0) - Although it's a cross-species ontology, UBERON's extensive coverage of nervous system structures makes it a suitable choice for mouse brain anatomy.\n3. MA (grade B, used by 1 project, updated 2026-02, licence CC BY 4.0) - As a structured controlled vocabulary of adult mouse anatomy, it provides a solid foundation for mouse brain anatomy.\n\nTrade-off: MBA's low grade"
+   },
+   {
+    "q": "Which schema should I use to describe research datasets with an open licence?",
+    "filters": {
+     "kind": "schema",
+     "open_license": true
+    },
+    "ttft": 1.645353,
+    "load": 0.000862041,
+    "p_tok": 211,
+    "p_rate": 128.2399582338866,
+    "e_tok": 89,
+    "e_rate": 6.501172621619043,
+    "wall": 15.35300874710083,
+    "stray": [
+     "Based",
+     "CANDIDATES",
+     "MIT"
+    ],
+    "text": "Based on the CANDIDATES list, I recommend using openMINDS. It fits because it has an open licence (MIT), which aligns with your requirement. However, it has a relatively low grade (40/100), indicating that it may not be as comprehensive or well-established as other options. A trade-off is that its lower grade may also mean it is less widely used, which could impact its adoption and support."
+   },
+   {
+    "q": "Best vocabulary for chemical compounds",
+    "filters": {
+     "kind": "vocabulary",
+     "min_grade": "B"
+    },
+    "ttft": 6.86463,
+    "load": 0.001492833,
+    "p_tok": 536,
+    "p_rate": 78.08141152545731,
+    "e_tok": 180,
+    "e_rate": 10.155507334448446,
+    "wall": 24.61087989807129,
+    "stray": [
+     "BY-SA",
+     "Based",
+     "CANDIDATES",
+     "CC0",
+     "Trade-off"
+    ],
+    "text": "Based on the CANDIDATES list, I recommend the following three vocabularies for chemical compounds:\n\n1. GOLDBOOK (IUPAC Gold Book Compendium of Chemical Terminology) | grade E (10/100) | used by 0 projects | updated unknown | licence CC BY-SA 4.0 | The Gold Book is a widely recognized and established standard for chemical terminology, making it a reliable choice.\n\nTrade-off: The low grade may indicate that the vocabulary is not actively maintained or updated.\n\n2. VOC4CAT (A vocabulary for the catalysis disciplines) | grade C (57/100) | used by 0 projects | updated 2026-10 | licence CC0 1.0 | VOC4CAT is a well-structured vocabulary specifically designed for the catalysis disciplines, making it a suitable choice for this domain.\n\nTrade-off: The"
+   },
+   {
+    "q": "What should I use for cell types in single-cell RNA-seq data?",
+    "filters": {},
+    "ttft": 6.110204,
+    "load": 0.000905083,
+    "p_tok": 503,
+    "p_rate": 82.32131038505425,
+    "e_tok": 180,
+    "e_rate": 14.038026674590354,
+    "wall": 18.956982135772705,
+    "stray": [
+     "Based",
+     "CANDIDATES",
+     "Trade-offs"
+    ],
+    "text": "Based on the CANDIDATES list, I recommend the following for cell types in single-cell RNA-seq data:\n\n1. CL (Cell Ontology) - As the reference ontology of cell types across organisms, it fits well for single-cell RNA-seq data due to its large and growing branch of neuron and glial types.\n2. PCL (Provisional Cell Ontology) - Its data-driven cell types, linked to their source taxonomies, make it a suitable choice for single-cell RNA-seq data, which often involves novel cell types.\n3. CELLOSAURUS (Cellosaurus) - Although not specifically designed for cell types, its comprehensive coverage of cell lines makes it a good alternative, although it may require more manual annotation.\n\nTrade-offs: CL has a higher grade but is used by more projects, while PCL is used by fewer projects but has more"
+   }
+  ]
+ }
+]

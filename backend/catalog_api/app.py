@@ -12,11 +12,11 @@ from typing import Optional
 from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, JSONResponse, PlainTextResponse, Response
+from fastapi.responses import FileResponse, JSONResponse, PlainTextResponse, Response, StreamingResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from mcp.server.transport_security import TransportSecuritySettings
 
-from . import auth, docs_text, llms, store
+from . import auth, chat, docs_text, llms, recommend, settings, store
 from .guard import TITLES, Guard
 from .mcp_server import mcp
 from .settings import CORS_ORIGINS, MCP_ALLOWED_HOSTS, PUBLIC_API_URL, RATE_LIMIT_ANON, RATE_LIMIT_USER, TOKEN_PREFIX, site_config
@@ -47,6 +47,7 @@ TAGS = [
     {"name": "API tokens", "description": "Personal access tokens for scripts and MCP clients."},
     {"name": "Submissions", "description": "Add or correct catalog entries (signed in)."},
     {"name": "Admin", "description": "Superadmins: rate limits for everyone and per user."},
+    {"name": "Recommend", "description": "Which resource should I use? Guided recommendations and a chat assistant."},
     {"name": "Meta", "description": "Server, rubric and content metadata."},
 ]
 api = FastAPI(
@@ -240,3 +241,77 @@ def get_run(run_id: str, page: int = Query(1, ge=1), size: int = Query(100, ge=1
     if r is None:
         raise HTTPException(404, "Run not found")
     return r
+
+
+# ---------- recommendations ----------
+from pydantic import BaseModel, Field  # noqa: E402
+
+
+@api.get("/api/recommend/options", tags=["Recommend"], summary="Recommendation options")
+def recommend_options():
+    return recommend.options()
+
+
+@api.get("/api/recommend", tags=["Recommend"], summary="Recommend resources")
+def get_recommendations(
+    q: Optional[str] = Query(None, max_length=600),
+    category: Optional[str] = None,
+    kind: Optional[str] = None,
+    format: Optional[str] = None,
+    min_grade: Optional[str] = Query(None, pattern="^[A-E]$"),
+    maintained: bool = False,
+    open_license: bool = False,
+    used: bool = False,
+    limit: int = Query(8, ge=1, le=20),
+):
+    return recommend.recommend(q, limit=limit, category=category, kind=kind, format=format, min_grade=min_grade,
+                               maintained=maintained, open_license=open_license, used=used)
+
+
+class ChatMessage(BaseModel):
+    role: str = Field(pattern="^(user|assistant)$")
+    content: str = Field(max_length=2000)
+
+
+class ChatIn(BaseModel):
+    messages: list[ChatMessage] = Field(min_length=1, max_length=20, description="The conversation so far; the last message is the user's question.")
+
+
+class _ChatWindow:
+    """Chat turns per minute, per user or IP (answers cost CPU time, so this is tighter than the API limit)."""
+
+    def __init__(self):
+        self.counts: dict[str, tuple[int, int]] = {}
+
+    def hit(self, key: str, limit: int) -> int:
+        import time as _t
+
+        minute = int(_t.time() // 60)
+        m, n = self.counts.get(key, (minute, 0))
+        n = n + 1 if m == minute else 1
+        self.counts[key] = (minute, n)
+        if len(self.counts) > 20000:
+            self.counts = {k: v for k, v in self.counts.items() if v[0] == minute}
+        return 0 if n <= limit else 60 - int(_t.time() % 60)
+
+
+_chat_window = _ChatWindow()
+
+
+@api.get("/api/recommend/chat/status", tags=["Recommend"], summary="Chat status")
+async def chat_status():
+    return {**chat.status(), "available": await chat.available()}
+
+
+@api.post("/api/recommend/chat", tags=["Recommend"], summary="Ask for a recommendation")
+async def chat_turn(request: Request, body: ChatIn):
+    p = auth.resolve(request)
+    key, limit = (f"u{p.user.id}", settings.CHAT_RATE_USER) if p else (f"ip{auth.client_ip(request.scope)}", settings.CHAT_RATE_ANON)
+    wait = _chat_window.hit(key, limit)
+    if wait:
+        raise HTTPException(429, f"Chat limit of {limit} questions per minute reached. Please wait {wait} seconds"
+                                 + ("" if p else ", or sign in for a higher limit") + ".", headers={"Retry-After": str(wait)})
+    if not any(m.role == "user" and m.content.strip() for m in body.messages[-1:]):
+        raise HTTPException(422, "The last message must be the user's question")
+    return StreamingResponse(chat.stream([m.model_dump() for m in body.messages]), media_type="application/x-ndjson",
+                             headers={"Cache-Control": "no-store", "X-Accel-Buffering": "no"})

@@ -381,8 +381,9 @@ ${gtmBody}
       </button>
       <div class="nav-links" id="nav-links">
       ${group("Catalog", [["/catalog/", "Browse the catalog", "Search and filter every resource"], ["/categories/", "Categories", "Resources grouped by domain"]])}
+      <a class="nav-find" href="/recommend/"${pathname.startsWith("/recommend/") ? ' aria-current="page"' : ""}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>Find a resource</a>
       ${nav("/evaluation/", "Evaluation")}
-      ${group("Developers", [["/api-docs/", "REST API", "Search and read the catalog from your code"], ["/mcp-docs/", "MCP server", "Connect Claude, Cursor, VS Code and other assistants"]])}
+      ${nav("/mcp-docs/", "Use with AI")}
       ${group("About", [["/about/", "About", "What this is, who runs it and how"], ["/roadmap/", "Roadmap", "What's available and what's next"], ["/contact/", "Contact", "Questions, corrections and partnerships"]])}
       <a class="nav-submit" href="/submit/"${pathname.startsWith("/submit/") ? ' aria-current="page"' : ""}>Submit</a>
       </div>
@@ -397,23 +398,39 @@ ${gtmBody}
 ${body}
 </main>
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div class="footer-brand">${logo("logo-footer")}<p class="muted">${esc(config.description)}</p>${config.parent ? `<a class="footer-parent" href="${attr(config.parent.url)}" rel="noopener"><span class="muted small">${esc(config.parent.label || "Part of")}</span><img src="${attr(config.parent.logo)}" alt="${attr(config.parent.name)}" width="${config.parent.logoWidth || 320}" height="${config.parent.logoHeight || 80}" loading="lazy"></a>` : ""}</div>
-    <nav class="footer-links" aria-label="Footer">
-      <a href="/categories/">Categories</a>
-      <a href="/evaluation/">Methodology</a>
-      <a href="/evaluation/#runs">Run history</a>
-      <a href="/submit/">Submit a resource</a>
-      <a href="/roadmap/">Features &amp; roadmap</a>
-      <a href="/contact/">Contact</a>
-      <a href="/api-docs/">Developer docs</a>
-      <a href="/catalog.json">catalog.json</a>
-      <a href="/catalog.jsonld">DCAT JSON-LD</a>
-      ${config.repository ? `<a href="${attr(config.repository)}">GitHub</a>` : ""}
-      <a href="/privacy/">Privacy</a>
-      ${GTM ? `<a href="#" data-consent-open>Cookie settings</a>` : ""}
-    </nav>
-    <p class="muted small">Descriptions are summaries; each resource is owned by its maintainers and keeps its own license.${evaluatedAt ? ` Last evaluated ${evaluatedAt}.` : ""}</p>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">${logo("logo-footer")}<p>${esc(config.description)}</p></div>
+      <nav class="footer-cols" aria-label="Footer">
+        <div><h2>Explore</h2>
+        <a href="/catalog/">Catalog</a>
+        <a href="/categories/">Categories</a>
+        <a href="/recommend/">Find a resource</a>
+        <a href="/evaluation/">How evaluation works</a>
+        <a href="/evaluation/#runs">Run history</a></div>
+        <div><h2>Developers</h2>
+        <a href="/api-docs/">REST API</a>
+        <a href="/mcp-docs/">Use with AI (MCP)</a>
+        <a href="/llms-full.txt">Docs for LLMs</a>
+        <a href="/catalog.json">catalog.json</a>
+        <a href="/catalog.jsonld">DCAT JSON-LD</a></div>
+        <div><h2>Community</h2>
+        <a href="/submit/">Submit a resource</a>
+        <a href="/roadmap/">Roadmap</a>
+        ${config.repository ? `<a href="${attr(config.repository)}">GitHub</a>` : ""}
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a></div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <span>© ${new Date().getFullYear()} ${esc(config.brand || config.name || "")}</span>
+        <a href="/privacy/">Privacy</a>
+        ${GTM ? `<a href="#" data-consent-open>Cookie settings</a>` : ""}
+        <span class="footer-note">Descriptions are summaries; each resource keeps its own licence.${evaluatedAt ? ` Last evaluated ${evaluatedAt}.` : ""}</span>
+      </div>
+      ${config.parent ? `<a class="footer-parent" href="${attr(config.parent.url)}" rel="noopener"><span>${esc(config.parent.label || "Part of")}</span><img src="${attr(config.parent.logo)}" alt="${attr(config.parent.name)}" width="${config.parent.logoWidth || 320}" height="${config.parent.logoHeight || 80}" loading="lazy"></a>` : ""}
+    </div>
   </div>
 </footer>
 <script src="/assets/app.js?v=${BUILD_ID}" defer></script>
@@ -588,6 +605,11 @@ function homePage() {
     <h1>See how the world&rsquo;s <em>schemas</em> fit together.</h1>
     <p class="lede">${esc(config.description)} Every entry is scored against the FAIR principles, ontology quality, maintenance and community adoption, with the exact version evaluated and full provenance.</p>
     ${searchForm("hero-q")}
+    <div class="find-choices">
+      <span class="find-label"><span aria-hidden="true">✦</span> Not sure which to use?</span>
+      <a class="find-box" href="/recommend/guided/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="12" r="2"/><circle cx="14" cy="18" r="2"/></svg><span><b>Answer a few questions</b><small>Area, type, format, must-haves</small></span><i aria-hidden="true">→</i></a>
+      <a class="find-box" href="/recommend/ask/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg><span><b>Ask in your own words</b><small>An AI assistant suggests and explains</small></span><i aria-hidden="true">→</i></a>
+    </div>
     <dl class="stats">
       <div><dt>Resources</dt><dd>${catalog.length}</dd></div>
       <div><dt>Categories</dt><dd>${categories.length}</dd></div>
@@ -690,6 +712,11 @@ function searchPage() {
   ${crumbsHtml(trail)}
   <h1>Search</h1>
   ${searchForm("search-q", "", "search search-page")}
+    <div class="find-choices">
+      <span class="find-label"><span aria-hidden="true">✦</span> Not sure which to use?</span>
+      <a class="find-box" href="/recommend/guided/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="12" r="2"/><circle cx="14" cy="18" r="2"/></svg><span><b>Answer a few questions</b><small>Area, type, format, must-haves</small></span><i aria-hidden="true">→</i></a>
+      <a class="find-box" href="/recommend/ask/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg><span><b>Ask in your own words</b><small>An AI assistant suggests and explains</small></span><i aria-hidden="true">→</i></a>
+    </div>
   <p class="muted small" id="search-status" aria-live="polite">Type to search ${catalog.length} resources by name, acronym, tag, species, format, schema module or maintainer.</p>
 </section>
 <section class="wrap section">
@@ -1772,6 +1799,127 @@ function accountPage() {
   return page({ title: "Account", pathname: "/account/", body, noindex: true, description: "Your account: tokens, connections, submissions and activity.", scripts: ["/assets/account.js"] });
 }
 
+// Recommend: a landing page that sends people to the guided questions or the chat (two pages, one engine).
+function recommendData() {
+  const live = catalog.filter((e) => e.status !== "legacy");
+  const count = (fn) => { const m = new Map(); for (const e of live) for (const k of [fn(e)].flat()) if (k) m.set(k, (m.get(k) || 0) + 1); return [...m].sort((a, b) => b[1] - a[1]); };
+  const top = [...catalog].sort(byScore)[0];
+  const topic = (top?.tags || [])[0] || "anatomy";
+  const kinds = count((e) => e.kind);
+  const areas = categories.map((c) => [c.id, c.name]);
+  return { kinds, formats: count((e) => e.formats || []).slice(0, 14), areas, topic, examples: [
+    `An actively maintained ontology for ${topic}`,
+    "A schema to describe research datasets, with an open licence",
+    `Which ontology is most widely used in ${areas[0]?.[1] || "my field"}?`,
+  ] };
+}
+const REC_ICON = {
+  guide: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="12" r="2"/><circle cx="14" cy="18" r="2"/></svg>',
+  ask: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg>',
+};
+const recResults = () => `
+    <div class="rec-results-head"><h2>Recommendations</h2><span class="small muted" data-rec-summary></span></div>
+    <div class="rec-understood" data-understood hidden></div>
+    <ol class="rec-results" data-rec-results><li class="rec-empty">Loading…</li></ol>`;
+
+function recommendPage() {
+  const brand = config.brand || config.name || "Catalog";
+  const { examples, topic } = recommendData();
+  const trail = [["Home", "/"], ["Catalog", "/catalog/"], ["Find the right resource", "/recommend/"]];
+  const body = `
+<section class="page-head wrap">
+  ${crumbsHtml(trail)}
+  <p class="eyebrow">Recommend</p>
+  <h1>Find the right resource</h1>
+  <p class="lede">Not sure which ontology, schema or standard to use? Choose how you'd like to look. Both use ${esc(brand)}'s evaluations, how widely each resource is used and how recently it was updated, and show the reasons for every suggestion.</p>
+</section>
+<section class="wrap section rec-landing">
+  <a class="rec-path" href="/recommend/guided/">
+    <span class="rec-path-icon">${REC_ICON.guide}</span>
+    <span class="rec-path-tag">Guided · no typing needed</span>
+    <h2>Answer a few questions</h2>
+    <p>Pick the area you work in, the type of resource, the format you need and your must-haves, such as an open licence or active maintenance. Results update as you choose.</p>
+    <ul><li>Best when you know your requirements</li><li>Every filter is visible and easy to change</li><li>Instant results</li></ul>
+    <span class="rec-path-cta">Start with questions →</span>
+  </a>
+  <div class="rec-path">
+    <span class="rec-path-icon">${REC_ICON.ask}</span>
+    <span class="rec-path-tag">Chat · AI assistant</span>
+    <h2>Ask in your own words</h2>
+    <p>Describe what you're working on, like you would to a colleague. An assistant finds matching resources in the catalog and explains which fit best and why.</p>
+    <form class="rec-quick" action="/recommend/ask/" method="get"><label class="sr-only" for="rec-quick-q">Your question</label><input id="rec-quick-q" name="q" type="text" maxlength="600" placeholder="e.g. ${attr(examples[0])}" required><button class="btn" type="submit">Ask</button></form>
+    <div class="rec-path-examples">${examples.slice(1).map((x) => `<a href="/recommend/ask/?q=${encodeURIComponent(x)}">${esc(x)}</a>`).join("")}</div>
+  </div>
+</section>
+<section class="wrap section rec-how">
+  <h2>How recommendations are made</h2>
+  <div class="rec-how-grid">
+    <div><b>Match</b><p>How well a resource fits your words or choices: its name, description, tags and domains.</p></div>
+    <div><b>Quality</b><p>Its ${esc(brand)} grade, from automated checks of FAIRness, quality and maintenance.</p></div>
+    <div><b>Use</b><p>How many projects are known to use it, and how recently it was updated.</p></div>
+    <div><b>Reasons</b><p>Each suggestion lists why it was picked, so you can judge for yourself. <a href="/evaluation/">How grades work</a></p></div>
+  </div>
+</section>`;
+  return page({ title: "Find the right resource", pathname: "/recommend/", body, description: `Which ontology, schema or standard should you use? Answer a few questions or ask in your own words, and get recommendations from ${brand} with the reasons for each.`, scripts: [] });
+}
+
+function recommendGuidedPage() {
+  const brand = config.brand || config.name || "Catalog";
+  const { kinds, formats, areas, topic } = recommendData();
+  const trail = [["Home", "/"], ["Find the right resource", "/recommend/"], ["Guided", "/recommend/guided/"]];
+  const chip = (name, value, label, n, checked = false) => `<label class="rec-chip"><input type="radio" name="${name}" value="${attr(value)}"${checked ? " checked" : ""}><span>${esc(label)}${n != null ? ` <small>${n.toLocaleString("en-US")}</small>` : ""}</span></label>`;
+  const body = `
+<section class="page-head wrap">
+  ${crumbsHtml(trail)}
+  <h1>Answer a few questions</h1>
+  <p class="lede">Choose what matters to you; recommendations update as you go. Prefer to describe it? <a href="/recommend/ask/">Ask in your own words</a>.</p>
+</section>
+<section class="wrap section rec" data-recommend>
+  <aside class="rec-guide" aria-label="Questions">
+    <form data-guide>
+      <label class="rec-field"><span class="rec-step">1</span> What's it about? <span class="muted">(optional)</span><input type="search" name="q" placeholder="e.g. ${attr([...new Set([topic, "cell types", "datasets", "units"])].slice(0, 3).join(", "))}" autocomplete="off"></label>
+      <label class="rec-field"><span class="rec-step">2</span> Your area<select name="category"><option value="">Any area</option>${areas.map(([id, name]) => `<option value="${attr(id)}">${esc(name)}</option>`).join("")}</select></label>
+      <fieldset class="rec-field"><legend><span class="rec-step">3</span> Type of resource</legend><div class="rec-chips">${chip("kind", "", "Any", null, true)}${kinds.map(([k, n]) => chip("kind", k, KIND_LABEL[k] || k, n)).join("")}</div></fieldset>
+      <label class="rec-field"><span class="rec-step">4</span> Format you need<select name="format"><option value="">Any format</option>${formats.map(([f, n]) => `<option value="${attr(f)}">${esc(f)} (${n})</option>`).join("")}</select></label>
+      <fieldset class="rec-field"><legend><span class="rec-step">5</span> Must have</legend>
+        <label class="rec-check"><input type="checkbox" name="maintained"><span><b>Actively maintained</b><small>Updated in the last two years</small></span></label>
+        <label class="rec-check"><input type="checkbox" name="open_license"><span><b>Open licence</b><small>CC0, CC BY, MIT, Apache, BSD…</small></span></label>
+        <label class="rec-check"><input type="checkbox" name="used"><span><b>Used by other projects</b><small>At least one known adopter</small></span></label>
+      </fieldset>
+      <fieldset class="rec-field"><legend><span class="rec-step">6</span> Minimum grade</legend><div class="rec-chips">${chip("min_grade", "", "Any", null, true)}${["A", "B", "C"].map((g) => chip("min_grade", g, `${g}${g === "A" ? "" : " or better"}`)).join("")}</div></fieldset>
+      <button type="reset" class="btn-ghost btn-sm">Start over</button>
+    </form>
+  </aside>
+  <div class="rec-main">${recResults()}</div>
+</section>`;
+  return page({ title: "Find a resource: guided", pathname: "/recommend/guided/", body, description: `Answer a few questions and get ${brand} recommendations for ontologies, schemas and standards, with the reasons for each.`, scripts: ["/assets/recommend.js"] });
+}
+
+function recommendAskPage() {
+  const brand = config.brand || config.name || "Catalog";
+  const { examples } = recommendData();
+  const trail = [["Home", "/"], ["Find the right resource", "/recommend/"], ["Ask", "/recommend/ask/"]];
+  const body = `
+<section class="page-head wrap">
+  ${crumbsHtml(trail)}
+  <h1>Ask in your own words</h1>
+  <p class="lede">Describe what you're working on and what matters to you. Prefer to choose options? <a href="/recommend/guided/">Answer a few questions</a> instead.</p>
+</section>
+<section class="wrap section rec-ask-page" data-recommend>
+  <div class="rec-chat">
+    <div class="rec-chat-head"><span class="rec-status" data-chat-status></span></div>
+    <div class="rec-log" data-chat-log aria-live="polite">
+      <div class="rec-msg bot"><p>Hi! Tell me what you're describing or building, and anything that matters (format, licence, maintenance). I'll suggest resources from ${esc(brand)} and explain why.</p></div>
+    </div>
+    <div class="rec-examples" data-examples>${examples.map((x) => `<button type="button" class="rec-example">${esc(x)}</button>`).join("")}</div>
+    <form class="rec-ask" data-chat-form><label class="sr-only" for="rec-input">Your question</label><textarea id="rec-input" name="q" rows="2" maxlength="600" placeholder="e.g. I need an ontology for mouse brain regions that is still maintained" required></textarea><button class="btn" type="submit">Ask</button></form>
+    <p class="rec-fine small muted">Answers are written by a small AI model from ${esc(brand)}'s own data; check the resource pages before relying on them. Your question is used only to answer it.</p>
+  </div>
+  <div class="rec-main" data-ask-results hidden>${recResults()}</div>
+</section>`;
+  return page({ title: "Find a resource: ask", pathname: "/recommend/ask/", body, description: `Describe what you need and get ${brand} recommendations for ontologies, schemas and standards, explained by an AI assistant.`, scripts: ["/assets/recommend.js"] });
+}
+
 function adminPage() {
   const brand = config.brand || config.name || "Catalog";
   const ic = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
@@ -1944,6 +2092,9 @@ put(
 put("submit/index.html", () => submitPage());
 put("account/index.html", () => accountPage());
 put("admin/index.html", () => adminPage());
+put("recommend/index.html", () => recommendPage());
+put("recommend/guided/index.html", () => recommendGuidedPage());
+put("recommend/ask/index.html", () => recommendAskPage());
 put("api-docs/index.html", () => apiDocsPage("api"));
 put("mcp-docs/index.html", () => apiDocsPage("mcp"));
 put("about/index.html", () => aboutPage());

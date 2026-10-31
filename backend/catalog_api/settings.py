@@ -92,3 +92,14 @@ def jwt_secret() -> str:
         f.write_text(secrets.token_urlsafe(48))
         f.chmod(0o600)
     return f.read_text().strip()
+
+# Recommendation chat (chat.py): an Ollama server with a small instruction model. Leave LLM_URL empty to run without a
+# model; the chat then answers with ranked matches only. Sized for small CPU-only servers.
+LLM_URL = os.environ.get("LLM_URL", "").rstrip("/")
+LLM_MODEL = os.environ.get("LLM_MODEL", "llama3.2:1b")
+LLM_MAX_TOKENS = int(os.environ.get("LLM_MAX_TOKENS", "180"))      # cap on the answer length
+LLM_TIMEOUT = float(os.environ.get("LLM_TIMEOUT", "90"))           # seconds for one answer
+LLM_CONCURRENCY = int(os.environ.get("LLM_CONCURRENCY", "1"))      # answers generated at the same time
+LLM_THREADS = int(os.environ.get("LLM_THREADS", "0"))              # CPU threads for the model (0 = the server decides)
+CHAT_RATE_ANON = int(os.environ.get("CHAT_RATE_ANON", "6"))        # chat turns per minute, per IP, signed out
+CHAT_RATE_USER = int(os.environ.get("CHAT_RATE_USER", "20"))       # chat turns per minute, per user

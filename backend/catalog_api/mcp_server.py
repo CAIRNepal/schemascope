@@ -121,3 +121,32 @@ def scoring_rubric() -> dict:
 
 if __name__ == "__main__":
     mcp.run()
+
+
+@mcp.tool()
+def recommend_resources(
+    need: str,
+    category: Optional[str] = None,
+    kind: Optional[str] = None,
+    format: Optional[str] = None,
+    maintained: bool = False,
+    open_license: bool = False,
+    used: bool = False,
+    min_grade: Optional[str] = None,
+    limit: int = 5,
+) -> dict:
+    """Recommend resources for a need, best first, each with the reasons it was chosen.
+
+    need: what the user wants to describe or do, in a few words (e.g. "mouse brain anatomy").
+    category: a category id from list_categories. kind: ontology | schema | vocabulary | atlas | data-standard | knowledge-base.
+    format: e.g. OWL, OBO, JSON Schema. maintained: updated in the last two years. open_license: open licences only.
+    used: at least one known adopter. min_grade: A (best) to E. If nothing matches, filters are relaxed and listed in `relaxed`.
+    """
+    from . import recommend as rec
+
+    r = rec.recommend(need, limit=min(max(limit, 1), 10), category=category, kind=kind, format=format, min_grade=min_grade,
+                      maintained=maintained, open_license=open_license, used=used)
+    base = _base_url()
+    for x in r["items"]:
+        x["url"] = f"{base}/o/{x['id']}/"
+    return r

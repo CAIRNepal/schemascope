@@ -2,6 +2,8 @@
 # Secrets come from infrastructure/production/.env (see .env.example); DEV_LOGIN is never enabled here.
 #
 #   docker compose -f infrastructure/production/docker-compose.yml --env-file infrastructure/production/.env up -d --build
+#   # with the recommendation chat's language model (adds ~1–2 GB of memory):
+#   docker compose -f infrastructure/production/docker-compose.yml --env-file infrastructure/production/.env --profile llm up -d --build
 #   # after each evaluation run (data/ updated by git pull):
 #   docker compose -f infrastructure/production/docker-compose.yml --env-file infrastructure/production/.env run --rm ingest
 name: schemascope
@@ -18,6 +20,13 @@ x-api-env: &api-env
   TRUSTED_PROXIES: 172.16.0.0/12,10.0.0.0/8
   MCP_ALLOWED_HOSTS: ${SITE_DOMAIN},api
   CORS_ORIGINS: https://${SITE_DOMAIN}
+  # Recommendation chat: a small model on CPU (see the llm service). Without it, chat answers with ranked matches.
+  LLM_URL: ${LLM_URL:-http://llm:11434}
+  LLM_MODEL: ${LLM_MODEL:-llama3.2:1b}
+  LLM_THREADS: ${LLM_THREADS:-0}
+  LLM_MAX_TOKENS: ${LLM_MAX_TOKENS:-180}
+  CHAT_RATE_ANON: ${CHAT_RATE_ANON:-6}
+  CHAT_RATE_USER: ${CHAT_RATE_USER:-20}
 
 services:
   db:
@@ -66,6 +75,22 @@ services:
       CACHE_MB: ${WEB_CACHE_MB:-256}
     depends_on: { api: { condition: service_healthy } }
 
+  # Small language model for the recommendation chat (CPU only). Optional: start with `--profile llm`.
+  # One model, one answer at a time, kept in memory for 30 minutes; it downloads the model on first start.
+  llm:
+    image: ollama/ollama:${OLLAMA_VERSION:-latest}
+    profiles: ["llm"]
+    restart: always
+    environment:
+      OLLAMA_NUM_PARALLEL: 1
+      OLLAMA_MAX_LOADED_MODELS: 1
+      OLLAMA_KEEP_ALIVE: 30m
+    volumes: [ollama:/root/.ollama]
+    entrypoint: ["/bin/sh", "-c", "ollama serve & sleep 3 && ollama pull ${LLM_MODEL:-llama3.2:1b} && wait"]
+    deploy:
+      resources:
+        limits: { memory: "${LLM_MEMORY:-2g}" }
+
   caddy:
     image: caddy:2-alpine
     restart: always
@@ -79,6 +104,7 @@ services:
     depends_on: [web]
 
 volumes:
+  ollama:
   pgdata:
   caddy_data:
   caddy_config:

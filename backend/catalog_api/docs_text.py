@@ -246,6 +246,42 @@ OPS: dict[tuple[str, str], dict] = {
         "d": "**Superadmins only.** Downloads every resource as CSV: id, acronym, name, type, domain, grade, score, FAIR score, "
              "adopters, version, last activity and whether it is legacy.",
     },
+    # ---------- Recommend ----------
+    ("get", "/api/recommend/options"): {
+        "d": "The choices for guided recommendations: the areas (domains), types and file formats in the catalog with how many "
+             "resources each has, and the must-haves you can ask for (actively maintained, open licence, used by other projects).",
+    },
+    ("get", "/api/recommend"): {
+        "d": "Recommends resources for a need, best first, with the reasons for each. Describe the need in a few words, choose "
+             "filters, or both.\n\n"
+             "Results are ranked by how well they match your words, their evaluation score, how widely they are used and how "
+             "recently they were updated. If the filters leave nothing, they are relaxed one at a time (most specific first) and "
+             "`relaxed` lists which.\n\n"
+             "**Returns** `items` (each with `match`, a 0–1 ranking score, and `why`, the reasons in words), `filters` as applied, "
+             "`relaxed` and `total`.",
+        "p": {
+            "q": "The need in your own words, e.g. `mouse brain anatomy` or `describe research datasets`.",
+            "category": "Only this area (domain id from `GET /api/recommend/options`).",
+            "kind": "Only this type, e.g. `ontology` or `schema`.",
+            "format": "Only resources available in this format, e.g. `OWL` or `JSON Schema`.",
+            "min_grade": "Only resources graded this well or better: `A` (best) to `E`.",
+            "maintained": "Only resources updated in the last two years.",
+            "open_license": "Only resources under an open licence (CC0, CC BY, MIT, Apache, BSD, GPL and similar).",
+            "used": "Only resources with at least one known adopter.",
+            "limit": "How many recommendations to return, from 1 to 20.",
+        },
+    },
+    ("get", "/api/recommend/chat/status"): {
+        "d": "Whether the chat assistant's language model is configured and reachable. Without it, the chat still answers with "
+             "ranked matches.",
+    },
+    ("post", "/api/recommend/chat"): {
+        "d": "Ask for a recommendation in plain language, as a conversation. Your words are turned into filters, the catalog is "
+             "searched, and a small language model writes a short answer that may only use the resources found.\n\n"
+             "**Returns** a stream of JSON lines (`application/x-ndjson`): `filters` (what was understood), `results` (the ranked "
+             "resources with reasons), then `token` events with the answer text as it is written, and `done`. Signed out: a few "
+             "questions per minute; signed in: more.",
+    },
 }
 
 # Request body fields without their own description.
