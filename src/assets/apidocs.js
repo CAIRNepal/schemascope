@@ -13,17 +13,43 @@
   const BRAND = D.brand, SLUG = D.slug, ORIGIN = location.origin;
   const ENV = SLUG.toUpperCase().replace(/-/g, "_") + "_TOKEN";
   const token = () => { try { return sessionStorage.getItem("new-mcp-token"); } catch { return null; } };
-  const state = { cfg: { tokenPrefix: "…_pat_", rateLimit: {} }, spec: null, session: null, client: store.get("dh-client") || "claude-code", lang: store.get("dh-lang") || "cURL" };
+  const state = { open: new Set(), cfg: { tokenPrefix: "…_pat_", rateLimit: {} }, spec: null, session: null, client: store.get("dh-client") || "claude-code", lang: store.get("dh-lang") || "cURL" };
   const SAMPLE = { entry_id: D.entry, cat_id: D.category, run_id: D.run, name: "roadmap" };
 
   // ---------- building blocks ----------
-  const code = (text, label = "cURL", { raw = false } = {}) =>
-    `<div class="dh-code"><div class="dh-codehead"><span>${esc(label)}</span><button type="button" class="dh-copy" data-copy>Copy</button></div><pre>${raw ? text : esc(text)}</pre></div>`;
+  // A code block; with `run` (a path on this site) it gets a Run button that shows the live response below it.
+  // Tokens are shown masked (prefix…last 4); Copy still copies the full text.
+  const mask = (t) => `${t.slice(0, t.indexOf("_pat_") + 5 || 8)}…${t.slice(-4)}`;
+  const code = (text, label = "cURL", { raw = false, run = null } = {}) => {
+    const secrets = [token(), savedToken()].filter((x) => x && x.length > 12 && text.includes(x));
+    const shown = secrets.reduce((acc, x) => acc.split(x).join(mask(x)), text);
+    return `<div class="dh-code"><div class="dh-codehead"><span>${esc(label)}</span><span class="dh-actions">${run ? `<button type="button" class="dh-run" data-run="${esc(run)}">Run ▶</button>` : ""}<button type="button" class="dh-copy" data-copy${secrets.length ? ` data-full="${esc(text)}"` : ""}>Copy</button></span></div><pre>${raw ? shown : esc(shown)}</pre></div>${run ? `<div class="dh-out" data-run-out></div>` : ""}`;
+  };
+  const savedToken = () => { try { return sessionStorage.getItem("dh-token") || ""; } catch { return ""; } };
+  // Calls this site's API (same origin: your signed-in session is used, or the token you entered on this page).
+  async function call(path, { method = "GET", body = null } = {}) {
+    const headers = { Accept: "application/json" };
+    if (savedToken()) headers.Authorization = `Bearer ${savedToken()}`;
+    if (body) headers["Content-Type"] = "application/json";
+    const t0 = performance.now();
+    const r = await fetch(path, { method, headers, body: body || undefined, credentials: "same-origin" });
+    const ms = Math.round(performance.now() - t0);
+    const raw = await r.text();
+    let text = raw;
+    try { text = JSON.stringify(JSON.parse(raw), null, 2); } catch {}
+    if (text.length > 8000) text = text.slice(0, 8000) + "\n… (truncated)";
+    const lim = r.headers.get("x-ratelimit-limit"), left = r.headers.get("x-ratelimit-remaining");
+    return `<div class="dh-response ${r.ok ? "ok" : "err"}"><div class="dh-codehead"><span><b class="dh-status">${r.status} ${esc(r.statusText || "")}</b> · ${esc(method)} ${esc(path)} · ${ms} ms${lim ? ` · ${left}/${lim} requests left this minute` : ""}</span><button type="button" class="dh-copy" data-copy>Copy</button></div><pre>${esc(text || "(empty response)")}</pre></div>`;
+  }
+  const step = (n, t, html) => `<section class="dh-step"><div class="dh-step-n">${n}</div><div class="dh-step-body"><h3>${t}</h3>${html}</div></section>`;
+  const outcome = (html) => `<div class="dh-outcome"><span>What you get back</span><p>${html}</p></div>`;
+  const facts = (items) => `<div class="dh-facts">${items.map(([k, v]) => `<div><span>${k}</span><b>${v}</b></div>`).join("")}</div>`;
+  const tokenBox = () => `<div class="dh-tokenbox"><label>Your token <small>optional · kept in this tab only</small><input type="password" data-token-input placeholder="${esc(state.cfg.tokenPrefix)}…" value="${esc(savedToken())}" autocomplete="off"></label><span class="dh-muted">${state.session?.user ? `Signed in as @${esc(state.session.user.login)}: requests from this page use your session.` : `Not signed in: requests run anonymously unless you paste a token.`}</span></div>`;
   const hero = (label, title, desc) => `<section class="dh-hero"><div class="dh-hero-copy"><div class="dh-eyebrow"><span></span>${esc(label)}</div><h1>${title}</h1><p class="dh-lead">${desc}</p></div>
     <div class="dh-orbital" aria-hidden="true"><div class="dh-orbit o1"></div><div class="dh-orbit o2"></div><div class="dh-orbit o3"></div><span class="dh-star s1"></span><span class="dh-star s2"></span><span class="dh-star s3"></span>
       <div class="dh-core"><svg viewBox="0 0 70 70" fill="none" stroke="currentColor"><path d="m35 12 23 13v22L35 60 12 47V25zM12 25l23 13 23-13M35 38v22M35 12v26M12 47l23-13 23 13"/><circle cx="35" cy="12" r="3"/><circle cx="58" cy="25" r="3"/><circle cx="12" cy="47" r="3"/><circle cx="35" cy="60" r="3"/></svg></div>
       <span class="dh-olabel l1">SCHEMAS</span><span class="dh-olabel l2">ONTOLOGIES</span><span class="dh-olabel l3">STANDARDS</span></div>
-    <div class="dh-meta"><a href="#api">REST API <i>↗</i></a><b></b><a href="#mcp">MODEL CONTEXT PROTOCOL <i>↗</i></a><span class="dh-note">Developer documentation</span></div></section>`;
+    <div class="dh-meta"><a href="#api">REST API <i>↗</i></a><b></b><a href="#mcp">MODEL CONTEXT PROTOCOL <i>↗</i></a></div></section>`;
   const title = (t, sub = "") => `<div class="dh-title"><h2>${t}</h2>${sub ? `<span>${sub}</span>` : ""}</div>`;
   const callout = (html, kind = "") => `<div class="dh-callout ${kind}">${html}</div>`;
   const resources = (items) => `<div class="dh-resources">${items.map(([href, t, d]) => `<a class="dh-resource" href="${href}"><div><b>${t}</b>${d ? `<p>${d}</p>` : ""}</div><span>↗</span></a>`).join("")}</div>`;
@@ -58,16 +84,29 @@
   const exists = (page) => Object.values(GROUPS()).some((g) => g.some(([, items]) => items.some(([id]) => id === page)));
   let page = "overview", section = "overview";
 
+  // Toggle one group without losing the reader's place in the sidebar.
+  function renderNavKeep(group, open) {
+    const side = $("[data-dh-side]");
+    const top = side.scrollTop;
+    if (open) state.open.add(group); else { state.open.delete(group); state.forceClosed = group; }
+    renderNav();
+    side.scrollTop = top;
+  }
   function renderNav() {
     $("[data-dh-switch]").innerHTML = [["overview", "Overview"], ["api", "REST API"], ["mcp", "MCP"]]
       .map(([s, l]) => `<button type="button" role="tab" aria-selected="${section === s}" class="${section === s ? "active" : ""}" data-go="${s}">${l}</button>`).join("");
     const q = $("[data-dh-search]").value.trim().toLowerCase();
     const groups = q ? Object.values(GROUPS()).flat() : GROUPS()[section];
     const seen = new Set();
+    // Reference groups fold to a heading with a count, so the whole sidebar fits; the current page's group is open.
     const html = groups.map(([label, items]) => {
       const list = items.filter(([id, name]) => !seen.has(id) && (!q || name.toLowerCase().includes(q) || id.includes(q)));
       list.forEach(([id]) => seen.add(id));
-      return list.length ? `<div class="dh-label">${esc(label)}</div>` + list.map(([id, name, method]) => `<a class="dh-item${page === id ? " active" : ""}" href="#${id}">${method ? `<span class="dh-mini m-${method}">${method.toUpperCase()}</span>` : ""}${esc(name)}</a>`).join("") : "";
+      if (!list.length) return "";
+      const links = list.map(([id, name, method]) => `<a class="dh-item${page === id ? " active" : ""}" href="#${id}">${method ? `<span class="dh-mini m-${method}">${method.toUpperCase()}</span>` : ""}${esc(name)}</a>`).join("");
+      if (!label.startsWith("Reference")) return `<div class="dh-label">${esc(label)}</div>${links}`;
+      const open = q || state.open.has(label) || (state.forceClosed !== label && list.some(([id]) => id === page));
+      return `<button type="button" class="dh-group" data-group="${esc(label)}" aria-expanded="${!!open}"><span>${esc(label.replace("Reference · ", ""))}</span><small>${list.length}</small></button>${open ? `<div class="dh-group-items">${links}</div>` : ""}`;
     }).join("");
     $("[data-dh-nav]").innerHTML = html || `<div class="dh-empty">No matching pages.</div>`;
   }
@@ -96,26 +135,48 @@
     ${code(`Find the best-scored ontologies in ${BRAND} for ${D.topic}.\nWhy does ${D.entryName} score what it does? Show the evidence per criterion.\nHow has its score changed across evaluation runs?`, "Prompts")}
     <a class="dh-link" href="#connect">Connect your client →</a>`;
 
-  P.api = () => hero("REST API", `Structured knowledge.<br><em>Ready to build.</em>`, `JSON over HTTPS. Search with facets, read entries with their full evaluation, and follow history across runs.`) + `
-    ${callout(`Base URL <code>${esc(ORIGIN)}</code> · JSON · errors as <code>application/problem+json</code> · <a href="/openapi.json" download="openapi.json">OpenAPI</a> · <a href="/docs">interactive console</a>`)}
-    ${title("1. Make your first request", "No token needed")}
-    ${code(first())}
-    ${title("2. Read a resource", `${esc(D.entryName)}, with its evaluation and history`)}
-    ${code(`curl "${ORIGIN}/api/entries/${D.entry}"`)}
-    ${title("3. Add a token for a higher limit", `${fmt(state.cfg.rateLimit.anonymousPerMinute)} → ${fmt(state.cfg.rateLimit.authenticatedPerMinute)} requests per minute`)}
-    <p class="dh-p"><a href="${signin()}">Sign in with GitHub</a> and create a token with <b>API</b> access, then keep it in your environment.</p>
-    ${code(`export ${ENV}="${tokenText()}"\ncurl "${ORIGIN}/api/entries?q=${encodeURIComponent(D.topic.split(" ")[0])}" \\\n  -H "Authorization: Bearer $${ENV}"`, "Shell")}
-    ${resources([["#" + (endpointPages()[0]?.[1][0]?.[0] || "api"), "Endpoint reference", "Every endpoint, with live examples."], ["#rate-limits", "Rate limits", "Headers and what to do on 429."], ["#errors", "Handle errors", "Problem details and status codes."]])}`;
+  P.api = () => hero("REST API", `Structured knowledge.<br><em>Ready to build.</em>`, `JSON over HTTPS. Search with facets, read entries with their full evaluation, and follow history across runs.`) +
+    facts([["Base URL", `<code>${esc(ORIGIN)}</code>`], ["Format", "JSON"], ["Errors", "problem+json"], ["Reading", "No token needed"]]) + `
+    <p class="dh-intro">This quickstart takes about five minutes. Each step shows the request, explains what it does and what comes back, and has a <b>Run</b> button that calls this site's API right here, so you see the real response before writing any code.</p>
+    ${step(1, "Search the catalog", `<p class="dh-p"><code>/api/entries</code> searches every resource. <code>q</code> matches each word you give (as a prefix) against acronyms, names, descriptions, tags, formats, maintainers and domains; <code>sort=score</code> puts the best-evaluated first and <code>size</code> caps the page.</p>
+      ${code(first(), "cURL", { run: `/api/entries?q=${encodeURIComponent(D.topic.split(" ")[0])}&sort=score&size=5` })}
+      ${outcome(`<code>total</code> matches, the page of <code>items</code> (id, name, score 0–100, grade A–E, the version evaluated…) and <code>facets</code>: counts per type, grade, domain and format, ready for building filters.`)}`)}
+    ${step(2, "Read a resource", `<p class="dh-p">Use an <code>id</code> from the search (the last part of an entry page's URL) to get everything about one resource: its catalog record, the facts gathered from each source, the points earned per criterion and why, adopters, imports and reuse.</p>
+      ${code(`curl "${ORIGIN}/api/entries/${D.entry}"`, "cURL", { run: `/api/entries/${encodeURIComponent(D.entry)}` })}
+      ${outcome(`<code>entry</code> (the record), <code>facts</code> (with <code>breakdown</code>: each criterion's score and the steps behind it), <code>adopters</code>, <code>imports</code>, <code>reusedBy</code>, <code>history</code> and <code>changes</code>.`)}`)}
+    ${step(3, "Follow its history", `<p class="dh-p">Every evaluation run is archived. The history shows how the score, each criterion and the quality checks changed, and lists what changed between runs (a new version, a license, a broken link…).</p>
+      ${code(`curl "${ORIGIN}/api/entries/${D.entry}/history"`, "cURL", { run: `/api/entries/${encodeURIComponent(D.entry)}/history` })}
+      ${outcome(`<code>runs</code>, oldest first, each with score, grade, per-criterion points and metrics; and <code>changes</code>, one line per difference.`)}`)}
+    ${step(4, "Add a token for a higher limit", `<p class="dh-p">Without a token you get <b>${fmt(state.cfg.rateLimit.anonymousPerMinute)}</b> requests per minute per IP address; with one, <b>${fmt(state.cfg.rateLimit.authenticatedPerMinute)}</b> per minute. <a href="${signin()}">Sign in with GitHub</a>, create a token with <b>API</b> access, and send it as a bearer token. Keep it in an environment variable, never in code. Please read <a href="#rate-limits">fair use</a>: cache responses and use bulk data for bulk work.</p>
+      ${code(`export ${ENV}="${tokenText()}"\ncurl "${ORIGIN}/api/entries?q=${encodeURIComponent(D.topic.split(" ")[0])}" \\\n  -H "Authorization: Bearer $${ENV}"`, "Shell")}
+      <p class="dh-p">Paste it here to use it for every request you send from this page:</p>${tokenBox()}`)}
+    ${title("Next")}
+    ${resources([["#" + (endpointPages()[0]?.[1][0]?.[0] || "api"), "Endpoint reference", "Every endpoint, with a form to try it."], ["#pagination", "Search & pagination", "Filters, sorting and facets."], ["#errors", "Handle errors", "Status codes and problem details."]])}`;
   P.authentication = () => hero("REST API", "Authentication", "Reading is open. Sign in for tokens, submissions and a higher limit.") + `
     ${title("Two kinds of bearer token")}
     <div class="dh-quick two"><div class="dh-quick-text"><div class="dh-number">PERSONAL ACCESS TOKENS</div><h3><code>${esc(state.cfg.tokenPrefix)}…</code></h3><p>For scripts and AI agents. Scoped (<b>API</b>, <b>MCP</b>), expiring and revocable. Create them on your account page; a token is shown once.</p><a class="dh-link" href="${signin()}">Create a token →</a></div>
-      <div class="dh-quick-text alt"><div class="dh-number">SESSION JWT</div><h3>From GitHub sign-in</h3><p>This site keeps it in a secure cookie. For scripts, <code>POST /api/auth/token</code> while signed in returns one, valid for ${esc(state.cfg.sessionHours ?? "a few")} hours.</p></div></div>
-    ${code(`curl "${ORIGIN}/api/auth/me" \\\n  -H "Authorization: Bearer ${tokenText()}"`)}
+      <div class="dh-quick-text alt"><div class="dh-number">SESSION JWT</div><h3>From GitHub sign-in</h3><p>This site keeps it in a secure cookie, so requests you send from this page are already authenticated when you're signed in. For scripts, <code>POST /api/auth/token</code> returns one, valid for ${esc(state.cfg.sessionHours ?? "a few")} hours.</p></div></div>
+    ${title("Check who you are", "Never fails: returns you, or null")}
+    ${tokenBox()}
+    ${code(`curl "${ORIGIN}/api/auth/session" \\\n  -H "Authorization: Bearer ${tokenText()}"`, "cURL", { run: "/api/auth/session" })}
     ${callout(`Keep tokens in environment variables, not in code. Account endpoints (tokens, settings) accept only a signed-in session, so a leaked token can't create more tokens.`)}`;
-  P["rate-limits"] = () => hero("REST API", "Rate limits", "Per minute. Every response tells you where you stand.") + `
-    <div class="dh-stats"><div><span>Without a token</span><b>${fmt(state.cfg.rateLimit.anonymousPerMinute)}</b><small>per minute, per IP</small></div><div><span>Signed in or with a token</span><b>${fmt(state.cfg.rateLimit.authenticatedPerMinute)}</b><small>per minute, per user</small></div></div>
-    <table class="dh-table"><thead><tr><th>Header</th><th>Meaning</th></tr></thead><tbody><tr><td><code>X-RateLimit-Limit</code></td><td>Requests allowed this minute</td></tr><tr><td><code>X-RateLimit-Remaining</code></td><td>Requests left</td></tr><tr><td><code>X-RateLimit-Reset</code></td><td>When the window resets (Unix time)</td></tr><tr><td><code>Retry-After</code></td><td>Seconds to wait, on 429</td></tr></tbody></table>
-    ${callout(`Need more for a project? <a href="/contact/">Get in touch</a>; limits can be raised per account.`)}`;
+  P["rate-limits"] = () => hero("REST API", "Rate limits &amp; <em>fair use.</em>", `${esc(BRAND)} is a free, public service. Limits keep it fast and available for everyone.`) + `
+    <div class="dh-stats"><div><span>Without a token</span><b>${fmt(state.cfg.rateLimit.anonymousPerMinute)}</b><small>requests per minute, per IP address</small></div><div><span>Signed in or with a token</span><b>${fmt(state.cfg.rateLimit.authenticatedPerMinute)}</b><small>requests per minute, per account</small></div></div>
+    ${title("Why there are limits")}
+    <p class="dh-p">The catalog, its evaluations and this API are shared by researchers, tools and AI agents, and served from modest infrastructure at no cost to anyone. Without limits, one runaway script or crawler could slow the service down or take it offline for everyone else. Limits also let us see, through tokens, who depends on the API, so we can plan capacity, warn about changes, and reach out before anything breaks.</p>
+    ${title("Fair use", "What we ask")}
+    <div class="dh-fair">
+      <div><b>Cache what you fetch</b><p>Scores change only when the catalog is re-evaluated (see <code>/api/runs</code>), so most responses can be cached for hours.</p></div>
+      <div><b>Use bulk data for bulk work</b><p>Need everything? Use <a href="/catalog.json">catalog.json</a>, <code>/api/entry-ids</code> or a run snapshot (<code>/api/runs/{id}/snapshot</code>) rather than paging through every entry.</p></div>
+      <div><b>Back off when asked</b><p>On <code>429</code>, wait the seconds in <code>Retry-After</code> before retrying, and slow down rather than retrying in a tight loop.</p></div>
+      <div><b>Identify yourself</b><p>Send a token, even for light use. It raises your limit and lets us contact you if something goes wrong.</p></div>
+      <div><b>Don't work around the limits</b><p>Rotating IP addresses or accounts to exceed them, or reselling access, isn't allowed; tokens used that way may be revoked.</p></div>
+      <div><b>Credit the source</b><p>Each resource belongs to its maintainers and keeps its own license; scores and evaluations come from ${esc(BRAND)}. Link back when you republish them.</p></div>
+    </div>
+    ${title("Where you stand", "Sent with every response")}
+    <table class="dh-table"><thead><tr><th>Header</th><th>Meaning</th></tr></thead><tbody><tr><td><code>X-RateLimit-Limit</code></td><td>Requests allowed this minute</td></tr><tr><td><code>X-RateLimit-Remaining</code></td><td>Requests left this minute</td></tr><tr><td><code>X-RateLimit-Reset</code></td><td>When the window resets (Unix time)</td></tr><tr><td><code>Retry-After</code></td><td>Seconds to wait, on 429</td></tr></tbody></table>
+    ${code(`curl -i "${ORIGIN}/api/stats"`, "cURL", { run: "/api/stats" })}
+    ${callout(`Building something that needs more? <a href="/contact/">Tell us about your project</a>: limits can be raised per account, and we'd like to hear what you're building.`)}`;
   P.pagination = () => hero("REST API", "Search &amp; pagination", "Filters, sorting and facet counts in one call.") + `
     <table class="dh-table"><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody>
       <tr><td><code>q</code></td><td>Free text; every word must match (as a prefix) across acronym, name, description, tags, formats, maintainer and domains</td></tr>
@@ -127,36 +188,110 @@
     <table class="dh-table"><thead><tr><th>Status</th><th>Meaning</th></tr></thead><tbody>${[["400", "Bad request"], ["401", "Missing, invalid or expired token"], ["403", "The token lacks the scope (API or MCP), or not allowed"], ["404", "No such entry, run or category"], ["422", "Invalid parameters or entry"], ["429", "Rate limit exceeded: wait for Retry-After"], ["503", "Catalog not loaded or a service is down"]].map(([c, m]) => `<tr><td><code>${c}</code></td><td>${m}</td></tr>`).join("")}</tbody></table>
     ${code(`{\n  "type": "about:blank",\n  "title": "Too Many Requests",\n  "status": 429,\n  "detail": "Rate limit of ${state.cfg.rateLimit.anonymousPerMinute ?? 60} requests per minute exceeded.",\n  "instance": "/api/entries"\n}`, "JSON · application/problem+json")}`;
 
-  // Endpoint pages from the OpenAPI document, with a live "Try it" for GET requests.
-  const endpoint = (id) => {
-    const [, name, method, path, op] = endpointPages().flatMap(([, ops]) => ops).find(([pid]) => pid === id);
-    const needsAuth = /^\/api\/(tokens|submissions|admin|audit|auth\/(me|token|activity))/.test(path);
-    const ps = op.parameters || [];
-    const sample = path.replace(/\{(\w+)\}/g, (_, n) => SAMPLE[n] || `<${n}>`);
-    const query = ps.filter((p) => p.in === "query" && (p.required || ["q", "size"].includes(p.name))).map((p) => `${p.name}=${p.name === "q" ? encodeURIComponent(D.topic.split(" ")[0]) : p.name === "size" ? 3 : "…"}`).join("&");
-    const url = `${ORIGIN}${sample}${query ? `?${query}` : ""}`;
-    const body = op.requestBody?.content?.["application/json"]?.schema?.$ref ? state.spec.components.schemas[op.requestBody.content["application/json"].schema.$ref.split("/").pop()] : null;
-    const bodyObj = body ? Object.fromEntries(Object.entries(body.properties || {}).map(([k, v]) => [k, v.type === "array" ? [] : v.type === "integer" ? 90 : v.type === "object" ? {} : `<${k}>`])) : null;
-    const auth = needsAuth ? `Bearer ${tokenText()}` : null;
-    const ex = {
-      cURL: [`curl${method === "get" ? "" : ` -X ${method.toUpperCase()}`} "${url}"`, auth && `  -H "Authorization: ${auth}"`, bodyObj && `  -H "Content-Type: application/json"`, bodyObj && `  -d '${JSON.stringify(bodyObj)}'`].filter(Boolean).join(" \\\n"),
-      Python: `import requests\n\nresponse = requests.${method}(\n    "${url}",${auth ? `\n    headers={"Authorization": "${auth}"},` : ""}${bodyObj ? `\n    json=${JSON.stringify(bodyObj)},` : ""}\n)\nresponse.raise_for_status()\nprint(response.json())`,
-      JavaScript: `const response = await fetch("${url}", {${method !== "get" ? `\n  method: "${method.toUpperCase()}",` : ""}${auth || bodyObj ? `\n  headers: { ${[auth && `Authorization: "${auth}"`, bodyObj && `"Content-Type": "application/json"`].filter(Boolean).join(", ")} },` : ""}${bodyObj ? `\n  body: JSON.stringify(${JSON.stringify(bodyObj)}),` : ""}\n});\nconst data = await response.json();`,
-    };
-    const params = ps.length
-      ? `<table class="dh-table"><thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead><tbody>${ps.map((p) => `<tr><td><code>${esc(p.name)}</code></td><td>${esc(p.schema?.type || (p.schema?.anyOf || []).map((x) => x.type).filter((t) => t !== "null").join(" | ") || "string")} · ${p.in}${p.required ? " · required" : ""}</td><td>${esc(p.description || p.schema?.description || (p.schema?.enum ? p.schema.enum.join(" · ") : ""))}${p.schema?.default != null ? ` <span class="dh-muted">(default ${esc(p.schema.default)})</span>` : ""}</td></tr>`).join("")}</tbody></table>`
-      : `<p class="dh-p dh-muted">No parameters.</p>`;
-    const desc = esc(op.description || "").replace(/`([^`]+)`/g, "<code>$1</code>");
-    return hero("API reference", esc(name), desc || esc(path)) + `
-      <div class="dh-endpoint"><span class="dh-method m-${method}">${method.toUpperCase()}</span><code>${esc(path)}</code>${needsAuth ? `<span class="dh-auth">Requires sign-in or token</span>` : ""}</div>
-      <div class="dh-tabs" role="tablist"><button class="active" data-tab="params">Parameters</button><button data-tab="response">Response</button>${body ? `<button data-tab="body">Request body</button>` : ""}</div>
-      <div data-tabpane="params">${params}</div>
-      <div data-tabpane="response" hidden>${method === "get" && !needsAuth && !sample.includes("<") ? `<p class="dh-p">A live response from this site, for <code>${esc(sample)}</code>:</p><button class="dh-btn" data-try="${esc(`${sample}${query && !query.includes("…") ? `?${query}` : ""}`)}">Try it</button><div data-try-out></div>` : `<p class="dh-p dh-muted">${needsAuth ? "Needs your token; try it in the <a href='/docs'>interactive console</a> while signed in." : "See the schema in the <a href='/docs'>interactive console</a>."}</p>`}</div>
-      ${body ? `<div data-tabpane="body" hidden><table class="dh-table"><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>${Object.entries(body.properties || {}).map(([k, v]) => `<tr><td><code>${esc(k)}</code>${(body.required || []).includes(k) ? " · required" : ""}</td><td>${esc(v.type || (v.anyOf || []).map((x) => x.type).join(" | "))}</td><td>${esc(v.description || "")}</td></tr>`).join("")}</tbody></table></div>` : ""}
-      ${title("Request example")}
-      <div class="dh-clientbar" data-lang-bar>${["cURL", "Python", "JavaScript"].map((l) => `<button class="${state.lang === l ? "active" : ""}" data-lang="${l}">${l}</button>`).join("")}</div>
-      ${code(ex[state.lang] || ex.cURL, state.lang)}`;
+  // Endpoint pages from the OpenAPI document: one page, no tabs. What it is for, the parameters, a filled-in form
+  // that sends the request from this page (public GET requests run as soon as the page opens), the response, and code.
+  const NOTES = {
+    "/api/entries": "Start here to find resources. Every word in q must match; combine filters freely. The facets tell you how many results each filter value would give, so you can build filter menus without extra calls.",
+    "/api/entries/{entry_id}": "Everything about one resource in one call: use it for a detail page, or to check a score before you rely on a resource.",
+    "/api/entries/{entry_id}/history": "How a resource changed over time: one point per evaluation run, plus a readable list of differences.",
+    "/api/categories": "The domains of the catalog. count is resources whose primary domain it is; reach also counts resources used there.",
+    "/api/stats": "Catalog-wide numbers for dashboards: size, grades, average score and the latest run.",
+    "/api/runs": "Evaluation runs, newest first, with the rubric version each used.",
+    "/api/runs/{run_id}": "Every entry's score and metrics in one run, paginated.",
+    "/api/runs/{run_id}/snapshot": "The full archived run file, exactly as written by the evaluator (large).",
+    "/api/domain-graph": "How domains connect: shared resources and imports between domains, and the resources that bridge the most domains.",
+    "/api/top-entries": "The best-scored resources, optionally within one domain.",
+    "/api/recent-entries": "Resources with the most recent activity (commits, releases, dated files).",
+    "/api/entry-ids": "Every id, for sitemaps and bulk processing.",
+    "/api/tokens": "Your personal access tokens. Needs a signed-in session.",
+    "/api/submissions": "Submit a new entry or a correction; it is recorded with your GitHub identity.",
   };
+  const opById = (id) => endpointPages().flatMap(([, ops]) => ops).find(([pid]) => pid === id);
+  const authNeeded = (path) => /^\/api\/(tokens|submissions|admin|audit|auth\/(me|token|activity))/.test(path);
+  const typeOf = (sch = {}) => sch.type || (sch.anyOf || []).map((x) => x.type).filter((t) => t && t !== "null").join(" | ") || "string";
+  const sampleFor = (p) => {
+    if (SAMPLE[p.name]) return SAMPLE[p.name];
+    if (p.name === "q") return D.topic.split(" ")[0];
+    if (p.name === "size") return "5";
+    if (p.name === "n" || p.name === "limit") return "5";
+    if (p.schema?.default != null && p.in === "path") return String(p.schema.default);
+    return "";
+  };
+  // Builds the request from the form (or the samples when the form isn't there yet).
+  function currentRequest(id) {
+    const [, , method, path, op] = opById(id);
+    const form = $("[data-ep-form]");
+    const val = (name, fallback) => (form ? form.elements[`p_${name}`]?.value ?? "" : fallback);
+    let p = path;
+    const qs = new URLSearchParams();
+    for (const prm of op.parameters || []) {
+      const v = val(prm.name, sampleFor(prm)).trim();
+      if (prm.in === "path") p = p.replace(`{${prm.name}}`, encodeURIComponent(v || `<${prm.name}>`));
+      else if (prm.in === "query" && v !== "") qs.set(prm.name, v);
+    }
+    const bodyEl = form?.elements.body;
+    const body = op.requestBody ? (bodyEl ? bodyEl.value : null) : null;
+    return { method: method.toUpperCase(), url: p + (qs.size ? `?${qs}` : ""), body };
+  }
+  function examples(id) {
+    const [, , , path] = opById(id);
+    const { method, url, body } = currentRequest(id);
+    const full = ORIGIN + url;
+    const auth = authNeeded(path) || savedToken() ? `Bearer ${savedToken() || "<your token>"}` : null;
+    let bodyJson = null;
+    try { bodyJson = body ? JSON.stringify(JSON.parse(body)) : null; } catch { bodyJson = body; }
+    return {
+      cURL: [`curl${method === "GET" ? "" : ` -X ${method}`} "${full}"`, auth && `  -H "Authorization: ${auth}"`, bodyJson && `  -H "Content-Type: application/json"`, bodyJson && `  -d '${bodyJson}'`].filter(Boolean).join(" \\\n"),
+      Python: `import requests\n\nresponse = requests.${method.toLowerCase()}(\n    "${full}",${auth ? `\n    headers={"Authorization": "${auth}"},` : ""}${bodyJson ? `\n    json=${bodyJson},` : ""}\n)\nresponse.raise_for_status()\nprint(response.json())`,
+      JavaScript: `const response = await fetch("${full}", {${method !== "GET" ? `\n  method: "${method}",` : ""}${auth || bodyJson ? `\n  headers: { ${[auth && `Authorization: "${auth}"`, bodyJson && `"Content-Type": "application/json"`].filter(Boolean).join(", ")} },` : ""}${bodyJson ? `\n  body: JSON.stringify(${bodyJson}),` : ""}\n});\nconst data = await response.json();`,
+    };
+  }
+  const endpoint = (id) => {
+    const [, name, method, path, op] = opById(id);
+    const ps = op.parameters || [];
+    const ref = op.requestBody?.content?.["application/json"]?.schema?.$ref;
+    const body = ref ? state.spec.components.schemas[ref.split("/").pop()] : null;
+    const sampleBody = body ? JSON.stringify(Object.fromEntries(Object.entries(body.properties || {}).map(([k, v]) => [k, v.default ?? (v.type === "array" ? [] : v.type === "integer" ? 90 : v.type === "object" ? {} : k === "name" ? "My script" : "")])), null, 2) : "";
+    const desc = esc(op.description || "").replace(/`([^`]+)`/g, "<code>$1</code>");
+    const needs = authNeeded(path);
+    const ex = examples(id);
+    return hero("API reference", esc(name), `<code>${esc(method.toUpperCase())} ${esc(path)}</code>`) + `
+      <div class="dh-endpoint"><span class="dh-method m-${method}">${method.toUpperCase()}</span><code>${esc(path)}</code><span class="dh-auth">${needs ? "Needs sign-in or a token" : "Public · no token needed"}</span></div>
+      ${desc || NOTES[path] ? `<div class="dh-about">${desc ? `<p>${desc}</p>` : ""}${NOTES[path] ? `<p class="dh-muted">${esc(NOTES[path])}</p>` : ""}</div>` : ""}
+      ${title("Parameters")}
+      ${ps.length ? `<table class="dh-table"><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>${ps.map((p) => `<tr><td><code>${esc(p.name)}</code></td><td>${esc(typeOf(p.schema))} · ${p.in}${p.required ? " · <b>required</b>" : ""}</td><td>${esc(p.description || p.schema?.description || (p.schema?.enum ? `One of: ${p.schema.enum.join(", ")}` : ""))}${p.schema?.default != null ? ` <span class="dh-muted">Default ${esc(p.schema.default)}.</span>` : ""}</td></tr>`).join("")}</tbody></table>` : `<p class="dh-p dh-muted">None.</p>`}
+      ${body ? `${title("Request body", "JSON")}<table class="dh-table"><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>${Object.entries(body.properties || {}).map(([k, v]) => `<tr><td><code>${esc(k)}</code>${(body.required || []).includes(k) ? " · <b>required</b>" : ""}</td><td>${esc(typeOf(v))}</td><td>${esc(v.description || "")}</td></tr>`).join("")}</tbody></table>` : ""}
+      ${title("Try it", "Sends the request from this page")}
+      <form class="dh-try" data-ep-form data-ep="${esc(id)}">
+        ${ps.length ? `<div class="dh-try-grid">${ps.map((p) => `<label>${esc(p.name)}${p.required ? " *" : ""}<small>${p.in}</small>${p.schema?.enum ? `<select name="p_${esc(p.name)}"><option value=""></option>${p.schema.enum.map((o) => `<option${o === sampleFor(p) ? " selected" : ""}>${esc(o)}</option>`).join("")}</select>` : `<input name="p_${esc(p.name)}" value="${esc(sampleFor(p))}" placeholder="${esc(p.schema?.default ?? "")}" autocomplete="off">`}</label>`).join("")}</div>` : ""}
+        ${body ? `<label class="dh-try-body">Body<textarea name="body" rows="${Math.min(10, sampleBody.split("\n").length + 1)}" spellcheck="false">${esc(sampleBody)}</textarea></label>` : ""}
+        ${needs ? tokenBox() : ""}
+        <div class="dh-try-bar"><button class="dh-btn" type="submit">Send ${method.toUpperCase()} ▶</button><code class="dh-try-url" data-try-url>${esc(ORIGIN + currentRequest(id).url)}</code></div>
+      </form>
+      <div class="dh-out" data-ep-out>${!needs && method === "get" ? `<p class="dh-p dh-muted">Loading the live response…</p>` : `<p class="dh-p dh-muted">Press Send to see the response here.</p>`}</div>
+      ${title("Code", "Matches the form above")}
+      <div class="dh-clientbar">${["cURL", "Python", "JavaScript"].map((l) => `<button type="button" class="${state.lang === l ? "active" : ""}" data-lang="${l}">${l}</button>`).join("")}</div>
+      <div data-ep-code>${code(ex[state.lang] || ex.cURL, state.lang)}</div>`;
+  };
+  async function sendEndpoint() {
+    const form = $("[data-ep-form]");
+    if (!form) return;
+    const id = form.dataset.ep;
+    const { method, url, body } = currentRequest(id);
+    const out = $("[data-ep-out]");
+    if (url.includes("%3C") || url.includes("<")) { out.innerHTML = `<p class="dh-p">Fill in the path parameters first.</p>`; return; }
+    out.innerHTML = `<p class="dh-p dh-muted">Sending…</p>`;
+    try { out.innerHTML = await call(url, { method, body: method === "GET" ? null : body }); }
+    catch (err) { out.innerHTML = `<p class="dh-p">Request failed: ${esc(err.message)}</p>`; }
+  }
+  function refreshEndpoint() {
+    const form = $("[data-ep-form]");
+    if (!form) return;
+    const id = form.dataset.ep;
+    $("[data-try-url]").textContent = ORIGIN + currentRequest(id).url;
+    const ex = examples(id);
+    $("[data-ep-code]").innerHTML = code(ex[state.lang] || ex.cURL, state.lang);
+  }
 
   // MCP
   const CLIENTS = {
@@ -209,47 +344,95 @@
   function render() {
     renderNav();
     const html = page.startsWith("ep-") ? (state.spec ? endpoint(page) : `<p class="dh-p dh-muted">Loading…</p>`) : (P[page] || P.overview)();
-    $("[data-dh-content]").innerHTML = crumbs() + html + `<footer class="dh-footer"><span>© ${esc(BRAND)} · Developer documentation</span><span><a href="/openapi.json">OpenAPI</a> · <a href="/docs">Interactive console</a>${D.repo ? ` · <a href="${esc(D.repo)}">GitHub</a>` : ""}</span></footer>`;
+    $("[data-dh-content]").innerHTML = crumbs() + html;
+  }
+  // Right rail: "On this page" (with the section in view highlighted), what you need, useful links and a next step.
+  const spy = new IntersectionObserver((entries) => {
+    for (const en of entries) if (en.isIntersecting) $$("[data-rail-toc] a").forEach((a) => a.classList.toggle("active", a.getAttribute("data-target") === en.target.id));
+  }, { rootMargin: "-20% 0px -70% 0px" });
+  function renderRail() {
+    const rail = $("[data-dh-rail]");
+    if (!rail) return;
+    spy.disconnect();
+    const heads = $$(".dh-title h2, .dh-step h3", $("[data-dh-content]"));
+    heads.forEach((h, i) => (h.id ||= `s-${i}-${h.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").slice(0, 40)}`));
+    const signedIn = !!state.session?.user;
+    const needs = section === "mcp"
+      ? ["An MCP client: Claude Code, Claude Desktop, Cursor, VS Code, Codex…", "A GitHub account, to sign in", "A token with MCP access"]
+      : ["Nothing, to read the catalog", "A GitHub account and a token, for a higher rate limit", "Sign-in, for tokens and submissions"];
+    const links = section === "mcp"
+      ? [["#connect", "Connect your client"], ["#tools", "Available tools"], ["#troubleshooting", "Troubleshooting"], ["/account/#tokens", "Your tokens"]]
+      : [["#api", "Quickstart"], ["#authentication", "Authentication"], ["#rate-limits", "Rate limits"], ["#errors", "Errors"], ["/account/#tokens", "Your tokens"]];
+    rail.innerHTML = `
+      ${heads.length > 1 ? `<p class="dh-rail-title">On this page</p><nav class="dh-rail-toc" data-rail-toc>${heads.map((h) => `<a href="#${esc(page)}" data-target="${esc(h.id)}">${esc(h.textContent.trim())}</a>`).join("")}</nav>` : ""}
+      <div class="dh-rail-card"><h3>✓ What you need</h3><ul>${needs.map((n) => `<li>${esc(n)}</li>`).join("")}</ul></div>
+      <div class="dh-rail-card"><h3>↗ Useful links</h3>${links.filter(([h]) => h !== `#${page}`).map(([h, t]) => `<a href="${h}">${esc(t)}</a>`).join("")}<a href="/contact/">Get in touch</a></div>
+      <div class="dh-rail-card cta"><h3>→ ${signedIn ? "Create a token" : "Get a token"}</h3><p>${signedIn ? `Signed in as @${esc(state.session.user.login)}. Tokens raise your limit to ${fmt(state.cfg.rateLimit.authenticatedPerMinute)} requests a minute and connect MCP clients.` : "Sign in with GitHub to create tokens for the API and MCP. It takes a minute."}</p><a class="dh-btn" href="${signin()}">${signedIn ? "Your tokens →" : "Sign in with GitHub →"}</a></div>`;
+    heads.forEach((h) => spy.observe(h));
+  }
+  function afterRender() {
+    renderRail();
+    const form = $("[data-ep-form]");
+    if (form) {
+      const [, , method, path] = opById(form.dataset.ep);
+      if (method === "get" && !authNeeded(path)) sendEndpoint();
+    }
   }
   function route() {
+    state.forceClosed = null;
     const want = location.hash.slice(1) || "overview";
     page = exists(want) || (want.startsWith("ep-") && !state.spec) ? want : "overview";
     section = page.startsWith("ep-") ? "api" : sectionOf(page);
     $("[data-dh-search]").value = "";
     render();
+    afterRender();
     root.classList.remove("side-open");
     $("[data-dh-menu]").setAttribute("aria-expanded", "false");
     window.scrollTo({ top: root.offsetTop - 70 });
   }
 
+  root.addEventListener("click", (e) => {
+    const a = e.target.closest("[data-rail-toc] a");
+    if (!a) return;
+    e.preventDefault();
+    document.getElementById(a.dataset.target)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
   root.addEventListener("click", async (e) => {
     const t = e.target.closest("button");
     if (!t) return;
     if (t.dataset.go) location.hash = t.dataset.go;
+    else if (t.dataset.group) renderNavKeep(t.dataset.group, t.getAttribute("aria-expanded") !== "true");
     else if (t.dataset.client) { state.client = t.dataset.client; store.set("dh-client", state.client); render(); }
-    else if (t.dataset.lang) { state.lang = t.dataset.lang; store.set("dh-lang", state.lang); render(); }
-    else if (t.dataset.tab) {
-      $$("[data-tab]").forEach((b) => b.classList.toggle("active", b === t));
-      $$("[data-tabpane]").forEach((p) => (p.hidden = p.dataset.tabpane !== t.dataset.tab));
-    } else if (t.dataset.try) {
-      const out = $("[data-try-out]");
+    else if (t.dataset.lang) { state.lang = t.dataset.lang; store.set("dh-lang", state.lang); $$("[data-lang]").forEach((b) => b.classList.toggle("active", b === t)); refreshEndpoint(); }
+    else if (t.dataset.run) {
+      const out = t.closest(".dh-code").nextElementSibling;
       t.disabled = true;
-      try {
-        const r = await fetch(t.dataset.try);
-        const text = JSON.stringify(await r.json(), null, 2);
-        out.innerHTML = code(text.length > 6000 ? text.slice(0, 6000) + "\n…" : text, `JSON · ${r.status} · X-RateLimit-Remaining ${r.headers.get("x-ratelimit-remaining") ?? "—"}`);
-      } catch (err) { out.innerHTML = `<p class="dh-p">Request failed: ${esc(err.message)}</p>`; }
+      out.innerHTML = `<p class="dh-p dh-muted">Running…</p>`;
+      try { out.innerHTML = await call(t.dataset.run); } catch (err) { out.innerHTML = `<p class="dh-p">Request failed: ${esc(err.message)}</p>`; }
       t.disabled = false;
-    } else if (t.hasAttribute("data-copy")) {
-      try { await navigator.clipboard.writeText(t.closest(".dh-code").querySelector("pre").textContent); t.textContent = "Copied ✓"; } catch { t.textContent = "Select text to copy"; }
+    }
+    else if (t.hasAttribute("data-copy")) {
+      try { await navigator.clipboard.writeText(t.dataset.full ?? (t.closest(".dh-code") || t.closest(".dh-response")).querySelector("pre").textContent); t.textContent = "Copied ✓"; } catch { t.textContent = "Select text to copy"; }
       setTimeout(() => (t.textContent = "Copy"), 1800);
-    } else if (t.hasAttribute("data-dh-menu")) {
+    }
+    else if (t.hasAttribute("data-dh-menu")) {
       const open = !root.classList.contains("side-open");
       root.classList.toggle("side-open", open);
       t.setAttribute("aria-expanded", String(open));
     }
   });
   $("[data-dh-search]").addEventListener("input", renderNav);
+  root.addEventListener("submit", (e) => {
+    if (!e.target.matches("[data-ep-form]")) return;
+    e.preventDefault();
+    sendEndpoint();
+  });
+  root.addEventListener("input", (e) => {
+    if (e.target.matches("[data-token-input]")) {
+      try { sessionStorage.setItem("dh-token", e.target.value.trim()); } catch {}
+      refreshEndpoint();
+    } else if (e.target.closest("[data-ep-form]")) refreshEndpoint();
+  });
   window.addEventListener("hashchange", route);
 
   route();
@@ -257,5 +440,5 @@
     fetch("/api/auth/config").then((r) => r.json()).then((c) => (state.cfg = c)).catch(() => {}),
     fetch("/api/auth/session").then((r) => r.json()).then((s) => (state.session = s)).catch(() => {}),
     fetch("/openapi.json").then((r) => r.json()).then((s) => (state.spec = s)).catch(() => {}),
-  ]).then(() => route());
+  ]).then(() => { if (!$("[data-ep-form]") || !state.loadedOnce) route(); state.loadedOnce = true; });
 })();

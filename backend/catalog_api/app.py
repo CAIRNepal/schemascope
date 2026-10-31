@@ -173,14 +173,14 @@ def get_category(cat_id: str):
 def list_entries(
     q: Optional[str] = Query(None, description="Free text; every word must match (prefix)"),
     category: Optional[str] = Query(None, description="Category id (primary or secondary domain)"),
-    kind: Optional[str] = None,
+    kind: Optional[str] = Query(None, description="Type: ontology, schema, vocabulary, atlas, data-standard or knowledge-base"),
     grade: Optional[str] = Query(None, description="A–E, or 'none' for not evaluated"),
-    format: Optional[str] = None,
-    registry: Optional[str] = None,
+    format: Optional[str] = Query(None, description="File format, e.g. OWL, OBO, JSON-LD, LinkML, JSON Schema"),
+    registry: Optional[str] = Query(None, description="Where the record came from, e.g. OBO Foundry, OLS (EMBL-EBI), Bioregistry, curated"),
     legacy: bool = Query(True, description="Include legacy resources"),
-    sort: Optional[store.SortKey] = None,
-    page: int = Query(1, ge=1),
-    size: int = Query(24, ge=1, le=store.MAX_PAGE_SIZE),
+    sort: Optional[store.SortKey] = Query(None, description="score, fair, name, activity or adopters; by default best match when q is given, else score"),
+    page: int = Query(1, ge=1, description="Page number, from 1"),
+    size: int = Query(24, ge=1, le=store.MAX_PAGE_SIZE, description="Results per page, up to 100"),
 ):
     return store.search(q=q, category=category, kind=kind, grade=grade, format=format, registry=registry, include_legacy=legacy, sort=sort, page=page, size=size)
 

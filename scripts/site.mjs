@@ -1760,11 +1760,11 @@ function apiDocsPage() {
     <input class="dh-search" type="search" placeholder="Search documentation…" aria-label="Search documentation" data-dh-search>
     <div class="dh-switch" data-dh-switch role="tablist"></div>
     <nav data-dh-nav aria-label="Developer documentation"></nav>
-    <div class="dh-foot"><span class="dh-dot"></span>${esc(brand)} developer resources<br><span>Built for connected knowledge.</span></div>
   </aside>
   <div class="dh-main" data-dh-content>
     <noscript><p>The developer documentation needs JavaScript. The API reference is also at <a href="/docs">/docs</a> and <a href="/openapi.json">/openapi.json</a>.</p></noscript>
   </div>
+  <aside class="dh-rail" data-dh-rail aria-label="On this page"></aside>
 </div>`;
   return page({ title: "Developers: API & MCP", pathname: "/api-docs/", body, description: `Build on ${brand}: a REST API for applications and data pipelines, and an MCP server for AI assistants. Quickstart, authentication, rate limits, every endpoint, and MCP setup for Claude, Cursor, VS Code and Codex.`, scripts: ["/assets/apidocs.js"] });
 }
