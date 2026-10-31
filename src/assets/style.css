@@ -1285,3 +1285,4 @@ body.nav-open .nav-toggle .nt-close { display: inline; }
   .dh-side, .dh-rail { height: auto; max-height: none; overflow: visible; -webkit-mask-image: none; mask-image: none; }
   .dh-side { padding-bottom: 28px; }
 }
+.dh-errors td:first-child { width: 72px; } .dh-errors td:nth-child(3) { min-width: 200px; }

@@ -179,8 +179,22 @@
       <tr><td><code>legacy</code></td><td><code>false</code> to leave out legacy resources</td></tr><tr><td><code>sort</code></td><td><code>score</code>, <code>fair</code>, <code>name</code>, <code>activity</code> or <code>adopters</code></td></tr>
       <tr><td><code>page</code> · <code>size</code></td><td>From 1; up to 100 per page. The response has <code>total</code></td></tr></tbody></table>
     ${code(`{\n  "total": 428, "page": 1, "size": 24,\n  "items": [ { "id": "${D.entry}", "score": 91, "grade": "A", … } ],\n  "facets": { "kind": { "ontology": 364, … }, "grade": { … } }\n}`, "JSON · response shape")}`;
-  P.errors = () => hero("REST API", "Errors &amp; responses", "RFC 7807 problem details, with a standard status code.") + `
-    <table class="dh-table"><thead><tr><th>Status</th><th>Meaning</th></tr></thead><tbody>${[["400", "Bad request"], ["401", "Missing, invalid or expired token"], ["403", "The token lacks the scope (API or MCP), or not allowed"], ["404", "No such entry, run or category"], ["422", "Invalid parameters or entry"], ["429", "Rate limit exceeded: wait for Retry-After"], ["503", "Catalog not loaded or a service is down"]].map(([c, m]) => `<tr><td><code>${c}</code></td><td>${m}</td></tr>`).join("")}</tbody></table>
+  // Status codes with a plain-language explanation and what to do, for people who don't read HTTP codes every day.
+  const ERRORS = () => [
+    ["200", "OK", "It worked. The answer is in the response body.", "Nothing."],
+    ["400", "Bad request", "The request itself is malformed, for example broken JSON in the body.", "Check the request against the examples on the endpoint's page."],
+    ["401", "Missing, invalid or expired token", "We couldn't tell who you are: the token is missing a character, has expired or was revoked. Reading the catalog doesn't need a token at all.", `Remove the token to read anonymously, or <a href="${signin()}">create a new one</a>.`],
+    ["403", "The token lacks the scope (API or MCP), or not allowed", "We know who you are, but this token or account isn't allowed to do this, for example an MCP-only token calling the REST API, or a non-admin calling an admin endpoint.", "Create a token with the right access ticked (REST API, MCP or both)."],
+    ["404", "No such entry, run or category", "What you asked for doesn't exist: usually a typo in an id, or an id that was renamed.", "Check the id by searching with <code>GET /api/entries?q=…</code>."],
+    ["422", "Invalid parameters or entry", "The request is well formed but a value isn't allowed, for example <code>size=500</code> when the maximum is 100, or a submission without a description.", "Read <code>detail</code> in the response: it says which value to fix."],
+    ["429", "Rate limit exceeded: wait for Retry-After", `You sent more requests in one minute than your limit allows (${fmt(state.cfg.rateLimit.anonymousPerMinute)} without a token, ${fmt(state.cfg.rateLimit.authenticatedPerMinute)} with one). Nothing is broken and nothing is blocked for long.`, `Wait the number of seconds in the <code>Retry-After</code> header, then try again. Cache results, or <a href="#rate-limits">use a token</a> for a higher limit.`],
+    ["503", "Catalog not loaded or a service is down", "Our side has a problem, for example the catalog is being reloaded. It's not caused by your request.", "Wait a minute and retry. If it lasts, <a href=\"/contact/\">let us know</a>."],
+  ];
+  P.errors = () => hero("REST API", "Errors &amp; responses", "Every response has a standard status code; errors also explain themselves in a small JSON body.") + `
+    <p class="dh-p">The status code says, in a number, how the request went: <b>2xx</b> means it worked, <b>4xx</b> means something about the request needs changing, and <b>5xx</b> means the problem is on our side. Every error response also has a <code>detail</code> field that says, in words, what went wrong.</p>
+    <table class="dh-table dh-errors"><thead><tr><th>Status</th><th>What it means</th><th>What to do</th></tr></thead><tbody>${ERRORS().map(([c, t, plain, fix]) => `<tr><td><code>${c}</code></td><td><b>${t}</b><br><span class="dh-muted">${plain}</span></td><td>${fix}</td></tr>`).join("")}</tbody></table>
+    ${title("What an error looks like", "RFC 7807 problem details")}
+    <p class="dh-p">Errors use a standard format, so most HTTP libraries can read them. <code>title</code> names the problem, <code>status</code> repeats the code, <code>detail</code> explains this case and <code>instance</code> is the path you called.</p>
     ${code(`{\n  "type": "about:blank",\n  "title": "Too Many Requests",\n  "status": 429,\n  "detail": "Rate limit of ${state.cfg.rateLimit.anonymousPerMinute ?? 60} requests per minute exceeded.",\n  "instance": "/api/entries"\n}`, "JSON · application/problem+json")}`;
 
   // Endpoint pages from the OpenAPI document: one page, no tabs. What it is for, the parameters, a filled-in form
