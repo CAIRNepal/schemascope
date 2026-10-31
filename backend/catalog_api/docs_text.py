@@ -226,6 +226,26 @@ OPS: dict[tuple[str, str], dict] = {
              "project that needs more. Send `null` to return them to the default. Recorded in the audit log.",
         "p": {"user_id": "The user's numeric `id` from `GET /api/admin/users`."},
     },
+    ("get", "/api/admin/overview"): {
+        "d": "**Superadmins only.** The admin dashboard in one call: catalog size and evaluation coverage, the review queue, "
+             "accounts and active users, score changes between the two latest runs, resources that need attention, and service "
+             "health (database latency, when data was loaded, the latest run).",
+    },
+    ("get", "/api/admin/submissions"): {
+        "d": "**Superadmins only.** Every contributor's submissions with the proposed entry, newest first, for review.",
+        "p": {"status": "`pending` (default), `approved`, `changes_requested`, `rejected` or `all`.",
+              "q": "Only submissions whose name, id or contributor's login contains this text."},
+    },
+    ("post", "/api/admin/submissions/{submission_id}/review"): {
+        "d": "**Superadmins only.** Records an editorial decision on a submission: approve, request changes or reject, with notes "
+             "for the contributor (required unless approving). The contributor sees the decision on their account page, and it is "
+             "recorded in the audit log. Merging the entry still happens through its pull request on GitHub.",
+        "p": {"submission_id": "The submission's `id` from `GET /api/admin/submissions`."},
+    },
+    ("get", "/api/admin/catalog.csv"): {
+        "d": "**Superadmins only.** Downloads every resource as CSV: id, acronym, name, type, domain, grade, score, FAIR score, "
+             "adopters, version, last activity and whether it is legacy.",
+    },
 }
 
 # Request body fields without their own description.

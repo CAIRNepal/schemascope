@@ -420,3 +420,76 @@ def admin_user_limit(request: Request, user_id: int, body: UserLimitIn, p: Princ
         raise HTTPException(404, "No such user")
     _audit(request, "admin.user_rate_limit", p.user, u.login, userId=u.id, perMinute=body.perMinute)
     return {"user": u.public(), "rateLimit": body.perMinute}
+
+
+# ---------- superadmin: dashboard, submission review, catalog export ----------
+class ReviewIn(BaseModel):
+    decision: str = Field(description="`approved`, `changes_requested` or `rejected` (or `pending` to reopen)")
+    notes: str | None = Field(None, max_length=4000, description="Why; required unless approving. Shown to the contributor on their account page.")
+
+
+@router.get("/admin/overview", tags=["Admin"], summary="Admin dashboard")
+def admin_overview(p: Principal = Depends(require_session)):
+    """Everything the admin dashboard shows at a glance: catalog size and evaluation coverage, the review queue,
+    accounts, score changes in the latest run, what needs attention and service health. Superadmins only."""
+    require_superadmin(p)
+    from . import store
+
+    t0 = time.perf_counter()
+    db_ok = True
+    try:
+        store.db.value("SELECT 1")
+    except Exception:
+        db_ok = False
+    db_ms = round((time.perf_counter() - t0) * 1000, 1)
+    m = store.meta()
+    return {
+        "stats": store.stats(), "accounts": accounts.admin_counts(), "changes": store.score_changes(8), "attention": store.attention(6),
+        "queue": accounts.all_submissions("pending", limit=6), "runs": store.runs(5),
+        "health": {"database": {"ok": db_ok, "ms": db_ms}, "ingestedAt": m.get("ingestedAt"), "evaluation": m.get("evaluation"),
+                   "rateLimit": accounts.rate_limits(), "github": bool(settings.GITHUB_CLIENT_ID)},
+    }
+
+
+@router.get("/admin/submissions", tags=["Admin"], summary="All submissions")
+def admin_submissions(status: str | None = "pending", q: str | None = None, p: Principal = Depends(require_session)):
+    """Every contributor's submissions with the proposed entry, for review. Filter by `status` (`pending`, `approved`,
+    `changes_requested`, `rejected` or `all`) and search with `q`. Superadmins only."""
+    require_superadmin(p)
+    return accounts.all_submissions(status, q)
+
+
+@router.post("/admin/submissions/{submission_id}/review", tags=["Admin"], summary="Review a submission")
+def admin_review(request: Request, submission_id: int, body: ReviewIn, p: Principal = Depends(require_session)):
+    """Records an editorial decision on a submission, with notes for the contributor. The decision is recorded in the
+    audit log; merging the entry itself still happens through the pull request on GitHub. Superadmins only."""
+    require_superadmin(p)
+    if body.decision not in accounts.REVIEW_STATUSES:
+        raise HTTPException(422, f"decision must be one of {list(accounts.REVIEW_STATUSES)}")
+    notes = (body.notes or "").strip() or None
+    if body.decision in ("changes_requested", "rejected") and not notes:
+        raise HTTPException(422, "Add a note explaining this decision")
+    s = accounts.review_submission(submission_id, body.decision, notes, p.user)
+    if not s:
+        raise HTTPException(404, "No such submission")
+    _audit(request, f"submission.{body.decision}", p.user, s["entryId"], submission=submission_id, notes=notes)
+    return s
+
+
+@router.get("/admin/catalog.csv", tags=["Admin"], summary="Export catalog (CSV)")
+def admin_catalog_csv(request: Request, p: Principal = Depends(require_session)):
+    """Every resource with its type, domain, grade, score, adopters and version, as CSV. Superadmins only."""
+    require_superadmin(p)
+    import csv
+    import io
+
+    from . import store
+
+    buf = io.StringIO()
+    w = csv.writer(buf)
+    w.writerow(store.CSV_FIELDS)
+    for r in store.catalog_rows():
+        w.writerow([r[k] for k in store.CSV_FIELDS])
+    _audit(request, "admin.export", p.user, "catalog.csv")
+    name = (settings.site_config().get("brand") or "catalog").lower().replace(" ", "-")
+    return Response(buf.getvalue(), media_type="text/csv; charset=utf-8", headers={"Content-Disposition": f'attachment; filename="{name}-catalog.csv"'})

@@ -297,3 +297,27 @@ def test_superadmin_rate_limits(client):
     accounts._settings_cache["at"] = 0
     actions = [a["action"] for a in admin.get("/api/audit", params={"action": "admin.*"}).json()]
     assert "admin.rate_limits" in actions and "admin.user_rate_limit" in actions
+
+
+def test_admin_dashboard_and_review(client):
+    admin = _signed_in()
+    from fastapi.testclient import TestClient
+    from catalog_api.app import app
+    carol = TestClient(app)
+    carol.get("/api/auth/dev-login", params={"login": "carol"}, follow_redirects=False)
+    entry = {"id": "rev", "name": "Review Ontology", "description": "An ontology submitted to test the editorial review flow end to end.",
+             "homepage": "https://example.org/rev", "category": "neuro", "kind": "ontology"}
+    sid = carol.post("/api/submissions", json={"entry": entry}).json()["id"]
+    assert carol.get("/api/admin/overview").status_code == 403
+    o = admin.get("/api/admin/overview").json()
+    assert o["stats"]["entries"] > 0 and o["health"]["database"]["ok"] and any(s["id"] == sid for s in o["queue"])
+    queue = admin.get("/api/admin/submissions", params={"status": "pending", "q": "Review"}).json()
+    assert queue[0]["name"] == "Review Ontology" and queue[0]["submittedBy"]["login"] == "carol"
+    assert admin.post(f"/api/admin/submissions/{sid}/review", json={"decision": "rejected"}).status_code == 422  # note required
+    r = admin.post(f"/api/admin/submissions/{sid}/review", json={"decision": "changes_requested", "notes": "Add a license."})
+    assert r.status_code == 200 and r.json()["status"] == "changes_requested"
+    mine = carol.get("/api/submissions").json()
+    assert mine[0]["status"] == "changes_requested" and mine[0]["reviewNotes"] == "Add a license."
+    csv = admin.get("/api/admin/catalog.csv")
+    assert csv.status_code == 200 and csv.text.startswith("id,acronym,name")
+    assert "submission.changes_requested" in [a["action"] for a in admin.get("/api/audit", params={"action": "submission.*"}).json()]

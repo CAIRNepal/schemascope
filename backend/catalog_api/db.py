@@ -68,6 +68,11 @@ CREATE TABLE IF NOT EXISTS audit_log (
 );
 CREATE INDEX IF NOT EXISTS audit_actor ON audit_log (actor_id, at DESC);
 CREATE INDEX IF NOT EXISTS audit_action ON audit_log (action, at DESC);
+-- Editorial review of submissions (admin dashboard): pending → approved | changes_requested | rejected.
+ALTER TABLE submissions ADD COLUMN IF NOT EXISTS status text NOT NULL DEFAULT 'pending';
+ALTER TABLE submissions ADD COLUMN IF NOT EXISTS reviewed_by text;
+ALTER TABLE submissions ADD COLUMN IF NOT EXISTS reviewed_at timestamptz;
+ALTER TABLE submissions ADD COLUMN IF NOT EXISTS review_notes text;
 """
 
 _pool: ConnectionPool | None = None

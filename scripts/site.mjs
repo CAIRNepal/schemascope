@@ -1665,85 +1665,204 @@ ${paths.map((p) => `  <url><loc>${esc(abs(p))}</loc><lastmod>${lastmod}</lastmod
 
 function accountPage() {
   const trail = [["Home", "/"], ["Account", "/account/"]];
-  const brandSlug = (config.brand || config.name || "catalog").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  const brand = config.brand || config.name || "Catalog";
+  const brandSlug = brand.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  const ic = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
+  const I = {
+    key: ic('<circle cx="8" cy="15" r="4"/><path d="m10.8 12.2 8.2-8.2M16 7l3 3M14 9l2 2"/>'),
+    box: ic('<path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/>'),
+    gauge: ic('<path d="M4 15a8 8 0 1 1 16 0"/><path d="m12 15 4-5"/>'),
+    code: ic('<path d="m8 6-6 6 6 6m8-12 6 6-6 6"/>'),
+    mcp: ic('<path d="M8 3h8v6H8zM2 15h8v6H2zm12 0h8v6h-8zM12 9v3M6 15v-3h12v3"/>'),
+    shield: ic('<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/>'),
+  };
   const body = `
-<section class="page-head wrap">
+<section class="wrap acc" data-account-page>
   ${crumbsHtml(trail)}
-  <h1>Your account</h1>
-  <p class="lede" data-account-intro>Loading…</p>
+  <div class="acc-title"><div><h1>Your account</h1><p class="lede" data-account-intro>Manage your access, connect your tools and follow your contributions.</p></div></div>
+  <div data-account-body hidden>
+  <div class="acc-profile" data-profile></div>
+
+  <div class="acc-tabs" role="tablist" aria-label="Account sections">
+    <button role="tab" id="tab-overview" aria-controls="overview" data-tab="overview">Overview</button>
+    <button role="tab" id="tab-tokens" aria-controls="tokens" data-tab="tokens">Access tokens <span class="acc-count" data-token-count>0</span></button>
+    <button role="tab" id="tab-connections" aria-controls="connections" data-tab="connections">Connections</button>
+    <button role="tab" id="tab-activity" aria-controls="activity" data-tab="activity">Activity</button>
+  </div>
+
+  <section class="acc-panel" id="overview" role="tabpanel" aria-labelledby="tab-overview">
+    <div class="acc-stats">
+      <div class="acc-stat"><span class="acc-eyebrow">Active tokens</span><span class="acc-stat-icon">${I.key}</span><strong data-stat-tokens>—</strong><p>For the API and MCP</p></div>
+      <div class="acc-stat"><span class="acc-eyebrow">Your submissions</span><span class="acc-stat-icon">${I.box}</span><strong data-stat-subs>—</strong><p data-stat-subs-note>Your contributions to the catalog</p></div>
+      <div class="acc-stat"><span class="acc-eyebrow">Rate limit</span><span class="acc-stat-icon">${I.gauge}</span><strong><span data-my-limit>—</span> <small>req / min</small></strong><p>Shared by your session and tokens. Signed out: <span data-anon-limit>—</span>.</p></div>
+    </div>
+    <div class="acc-grid">
+      <article class="acc-card" id="submissions"><div class="acc-card-head"><h2>Your submissions</h2><a class="acc-link" href="/submit/">Submit a resource →</a></div><div data-submissions></div></article>
+      <article class="acc-card"><div class="acc-card-head"><h2>Connect your workflow</h2></div><div class="acc-setup"><p>Bring ${esc(brand)} into the tools you already use.</p>
+        <button type="button" class="acc-setup-item" data-open-connection="api"><span class="acc-symbol">${I.code}</span><span><b>Build with the API</b><small>Query the catalog from your code</small></span><span class="acc-arrow">→</span></button>
+        <button type="button" class="acc-setup-item" data-open-connection="mcp"><span class="acc-symbol">${I.mcp}</span><span><b>Connect an AI client</b><small>Explore resources through MCP</small></span><span class="acc-arrow">→</span></button>
+        <a class="acc-setup-item" href="/api-docs/#llms"><span class="acc-symbol">${ic('<path d="M5 4h10l4 4v12H5zM14 4v5h5M8 13h8M8 17h5"/>')}</span><span><b>Docs for your AI assistant</b><small>Copy the API reference as Markdown</small></span><span class="acc-arrow">→</span></a>
+      </div></article>
+    </div>
+    <article class="acc-card acc-recent"><div class="acc-card-head"><h2>Recent activity</h2><button type="button" class="acc-link" data-go-tab="activity">View all activity →</button></div><div data-recent></div></article>
+    <p class="acc-foot">${I.shield} Your access tokens act on your behalf. Keep them private and revoke any you no longer use.</p>
+  </section>
+
+  <section class="acc-panel" id="tokens" role="tabpanel" aria-labelledby="tab-tokens" hidden>
+    <div class="acc-intro"><div><h2>Personal access tokens</h2><p>For your scripts, applications and AI clients. Send one as <code>Authorization: Bearer …</code>.</p></div><button type="button" class="btn" data-create-token>＋ Create token</button></div>
+    <div class="acc-card acc-tablewrap"><table class="acc-table"><thead><tr><th>Name</th><th>Token</th><th>Access</th><th>Last used</th><th>Expires</th><th></th></tr></thead><tbody data-tokens></tbody></table></div>
+    <p class="acc-note">A token is shown only once, when you create it. Use a separate token for each application, so you can revoke one without affecting the others.</p>
+  </section>
+
+  <section class="acc-panel" id="connections" role="tabpanel" aria-labelledby="tab-connections" hidden>
+    <div class="acc-intro"><div><h2>One catalog. Two ways to connect.</h2><p>Call the REST API from your code, or connect ${esc(brand)} to an AI client.</p></div><button type="button" class="btn-ghost" data-go-tab="tokens">Manage tokens →</button></div>
+    <div class="acc-switch" role="group" aria-label="Connection type"><button type="button" data-conn="api">REST API</button><button type="button" data-conn="mcp">MCP</button></div>
+    <article class="acc-card acc-connection">
+      <span class="acc-eyebrow" data-conn-eyebrow></span>
+      <h2 data-conn-title></h2>
+      <p data-conn-desc></p>
+      <label class="acc-client" data-client-wrap hidden>Client <select data-client>
+        <option value="claude-code">Claude Code</option><option value="claude-desktop">Claude Desktop</option><option value="cursor">Cursor</option><option value="vscode">VS Code</option><option value="codex">Codex</option><option value="json">Other clients (JSON)</option>
+      </select></label>
+      <div class="acc-code"><div class="acc-code-head"><span data-code-label></span><button type="button" data-copy-code>Copy</button></div><pre data-conn-code></pre></div>
+      <p class="acc-note" data-conn-note></p>
+    </article>
+  </section>
+
+  <section class="acc-panel" id="activity" role="tabpanel" aria-labelledby="tab-activity" hidden>
+    <div class="acc-intro"><div><h2>Account activity</h2><p>Sign-ins, token changes and contributions, newest first.</p></div></div>
+    <div class="acc-filters"><input type="search" data-activity-search aria-label="Search activity" placeholder="Search activity…"><select data-activity-filter aria-label="Filter by event type"><option value="">All events</option><option value="auth.">Sign-ins &amp; sign-outs</option><option value="token.">Token changes</option><option value="submission.">Submissions</option></select></div>
+    <article class="acc-card" data-activity></article>
+    <p><button type="button" class="btn-ghost btn-sm" data-activity-more hidden>Older activity</button></p>
+  </section>
+
+  </div>
 </section>
-<section class="wrap section account" data-account-page hidden>
-  <div class="account-grid">
-    <div class="panel profile" data-profile></div>
-    <div class="panel">
-      <h2>Rate limit</h2>
-      <p class="limit-big"><b data-my-limit>—</b> <span class="muted">requests per minute</span></p>
-      <p class="small muted">Applies to everything you do with your session or your tokens. Without signing in: <span data-anon-limit>—</span> per minute per IP address.</p>
+
+<dialog class="acc-dialog" data-create-dialog aria-labelledby="create-title">
+  <form method="dialog" data-token-form>
+    <h2 id="create-title">Create an access token</h2>
+    <p>Give it a name you'll recognise and choose what it can access.</p>
+    <label class="acc-field">Token name<input name="name" required maxlength="80" placeholder="e.g. Claude Code on my laptop" autocomplete="off"></label>
+    <fieldset class="acc-field"><legend>Access</legend><div class="acc-checks">
+      <label><input type="checkbox" name="scope" value="api" checked> REST API</label>
+      <label><input type="checkbox" name="scope" value="mcp" checked> MCP</label></div></fieldset>
+    <label class="acc-field">Expires<select name="expires"><option value="30">in 30 days</option><option value="90" selected>in 90 days</option><option value="365">in 1 year</option><option value="">never</option></select></label>
+    <p class="acc-error" data-token-error hidden></p>
+    <div class="acc-actions"><button type="button" class="btn-ghost" data-close>Cancel</button><button type="submit" class="btn" value="create">Create token</button></div>
+  </form>
+</dialog>
+<dialog class="acc-dialog" data-secret-dialog aria-labelledby="secret-title">
+  <h2 id="secret-title">Copy your new token</h2>
+  <p>This is the only time it is shown. Store it somewhere safe, such as an environment variable or your client's settings.</p>
+  <div class="acc-code"><div class="acc-code-head"><span>Token</span><button type="button" data-copy-secret>Copy</button></div><pre data-token-value></pre></div>
+  <p class="small muted" data-secret-next></p>
+  <div class="acc-actions"><button type="button" class="btn-ghost" data-open-connection="mcp">Set up a client</button><button type="button" class="btn" data-close>Done</button></div>
+</dialog>
+<dialog class="acc-dialog" data-revoke-dialog aria-labelledby="revoke-title">
+  <h2 id="revoke-title">Revoke this token?</h2>
+  <p data-revoke-text>Anything using it stops working immediately.</p>
+  <div class="acc-actions"><button type="button" class="btn-ghost" data-close>Cancel</button><button type="button" class="btn acc-danger" data-confirm-revoke>Revoke token</button></div>
+</dialog>
+<div class="acc-toast" role="status" aria-live="polite" data-toast></div>
+<template data-brand-slug>${esc(brandSlug)}</template>`;
+  return page({ title: "Account", pathname: "/account/", body, noindex: true, description: "Your account: tokens, connections, submissions and activity.", scripts: ["/assets/account.js"] });
+}
+
+function adminPage() {
+  const brand = config.brand || config.name || "Catalog";
+  const ic = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
+  const NAV = [
+    ["overview", "Overview", ic('<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>')],
+    ["submissions", "Submissions", ic('<path d="M4 4h16v16H4zM4 14h5l2 3h2l2-3h5M8 8h8"/>')],
+    ["catalog", "Catalog", ic('<path d="M4 4h16v16H4zM8 4v16M11 8h6M11 12h6M11 16h4"/>')],
+    ["evaluations", "Evaluations", ic('<path d="m4 12 5 5L20 6M4 5h7M14 20h6"/>')],
+    ["users", "Users &amp; access", ic('<circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6M18 15a5 5 0 0 1 3 5"/>')],
+    ["activity", "Activity log", ic('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/>')],
+  ];
+  const body = `
+<div class="adm" data-admin-page>
+  <aside class="adm-side" data-adm-side>
+    <div class="acc-eyebrow">Administration</div>
+    <nav class="adm-nav" aria-label="Administration">${NAV.map(([id, label, icon]) => `<a href="#${id}" data-view-link="${id}">${icon}<span>${label}</span>${id === "submissions" ? '<b class="adm-count" data-queue-badge hidden></b>' : ""}</a>`).join("")}</nav>
+    <div class="adm-side-foot"><a href="/catalog/">↗ Open the public catalog</a><a href="/account/">Your account</a><div class="adm-me" data-admin-me></div></div>
+  </aside>
+  <div class="adm-main">
+    <div class="adm-bar"><button type="button" class="btn-ghost btn-sm adm-menu" data-adm-menu aria-expanded="false">☰ Menu</button><div class="adm-crumb">Administration <span>/</span> <b data-adm-crumb>Overview</b></div><span class="adm-date" data-adm-date></span></div>
+    <p class="adm-denied" data-adm-denied hidden>This page is for ${esc(brand)} superadmins. <a href="/account/">Back to your account</a></p>
+    <div data-adm-views hidden>
+
+    <section class="adm-view" id="overview">
+      <div class="adm-title"><div><div class="acc-eyebrow adm-accent">Catalog operations</div><h1>Admin dashboard</h1><p>Review contributions, follow evaluations and keep the catalog reliable.</p></div>
+        <div class="adm-actions"><a class="btn-ghost" href="/api/admin/catalog.csv" download>↓ Export catalog</a><a class="btn" href="#evaluations">Evaluation runs</a></div></div>
+      <div class="adm-stats" data-stats></div>
+      <div class="adm-alert" data-alert hidden></div>
+      <div class="adm-grid">
+        <article class="acc-card"><div class="acc-card-head"><div><h2>Submission queue <span class="acc-badge" data-queue-count></span></h2><p class="adm-sub">New resources and corrections waiting for review.</p></div><a class="acc-link" href="#submissions">View all →</a></div><div class="acc-tablewrap"><table class="acc-table"><thead><tr><th>Resource</th><th>Type</th><th>Received</th><th></th></tr></thead><tbody data-queue></tbody></table></div></article>
+        <article class="acc-card"><div class="acc-card-head"><div><h2>Service health</h2><p class="adm-sub">Checked when this page loaded.</p></div><span class="adm-pill" data-health-pill>…</span></div><div class="adm-health" data-health></div></article>
+      </div>
+      <div class="adm-grid adm-below">
+        <article class="acc-card"><div class="acc-card-head"><div><h2>Score changes in the latest run</h2><p class="adm-sub" data-changes-sub></p></div><a class="acc-link" href="#evaluations">All runs →</a></div><div class="acc-tablewrap"><table class="acc-table"><thead><tr><th>Resource</th><th>Grade</th><th>Score</th><th>Change</th></tr></thead><tbody data-changes></tbody></table></div></article>
+        <article class="acc-card"><div class="acc-card-head"><h2>Catalog composition</h2><span class="adm-sub" data-comp-total></span></div><div class="adm-bars" data-composition></div></article>
+      </div>
+    </section>
+
+    <section class="adm-view" id="submissions" hidden>
+      <div class="adm-vtitle"><h2>Submission review</h2><p>Read each proposed resource or correction and record a decision. The contributor sees your decision and notes on their account page; the entry itself is merged through its pull request on GitHub.</p></div>
+      <div class="acc-filters"><input type="search" data-sub-search placeholder="Search by name, id or contributor…" aria-label="Search submissions"><select data-sub-status aria-label="Status"><option value="pending">Pending</option><option value="changes_requested">Changes requested</option><option value="approved">Approved</option><option value="rejected">Rejected</option><option value="all">All</option></select></div>
+      <div class="acc-card acc-tablewrap"><table class="acc-table"><thead><tr><th>Resource</th><th>Type</th><th>Contributor</th><th>Received</th><th>Status</th><th></th></tr></thead><tbody data-subs></tbody></table><div class="adm-listfoot" data-subs-foot></div></div>
+    </section>
+
+    <section class="adm-view" id="catalog" hidden>
+      <div class="acc-intro"><div class="adm-vtitle"><h2>Resource catalog</h2><p>Search every published resource, check its evaluation and open its page.</p></div><a class="btn-ghost" href="/api/admin/catalog.csv" download>↓ Export CSV</a></div>
+      <div class="acc-filters"><input type="search" data-cat-search placeholder="Search name, acronym, tag or domain…" aria-label="Search catalog"><select data-cat-kind aria-label="Type"><option value="">All types</option><option value="ontology">Ontology</option><option value="schema">Schema</option><option value="vocabulary">Vocabulary</option><option value="atlas">Atlas</option><option value="data-standard">Data standard</option><option value="knowledge-base">Knowledge base</option></select><select data-cat-grade aria-label="Grade"><option value="">All grades</option><option>A</option><option>B</option><option>C</option><option>D</option><option>E</option><option value="none">Not evaluated</option></select></div>
+      <div class="acc-card acc-tablewrap"><table class="acc-table"><thead><tr><th>Resource</th><th>Type</th><th>Domain</th><th>Grade</th><th>Score</th><th></th></tr></thead><tbody data-cat></tbody></table><div class="adm-listfoot"><span data-cat-foot></span> <button type="button" class="btn-ghost btn-sm" data-cat-more hidden>Load more</button></div></div>
+    </section>
+
+    <section class="adm-view" id="evaluations" hidden>
+      <div class="adm-vtitle"><h2>Evaluation runs</h2><p>Each run re-checks every resource against its sources and scores it with the rubric. Runs are produced by the evaluator (<code>npm run evaluate</code>, locally or in the scheduled workflow) and loaded into the API with <code>npm run ingest</code>.</p></div>
+      <div class="acc-card acc-tablewrap"><table class="acc-table"><thead><tr><th>Run</th><th>Finished</th><th>Scope</th><th class="num">Resources</th><th>Rubric</th><th>Trigger</th><th></th></tr></thead><tbody data-runs></tbody></table></div>
+      <p class="acc-note">To start a new run, use the evaluator from the repository. Starting runs from this page is on the <a href="/roadmap/">roadmap</a>.</p>
+    </section>
+
+    <section class="adm-view" id="users" hidden>
+      <div class="adm-vtitle"><h2>Users &amp; access</h2><p>Rate limits for everyone, and per-user limits for people or projects that need more. Superadmins are set by email in the server's <code>SUPERADMIN_EMAILS</code> setting.</p></div>
+      <article class="acc-card acc-pad"><h3>Default rate limits</h3>
+        <form class="limits-form" data-limits-form>
+          <label>Anonymous, per IP<input type="number" name="anonymousPerMinute" min="1" required></label>
+          <label>Signed in or token, per user<input type="number" name="authenticatedPerMinute" min="1" required></label>
+          <span class="small muted">requests per minute</span>
+          <button class="btn" type="submit">Save</button>
+        </form>
+        <p class="small muted" data-limit-defaults></p>
+      </article>
+      <div class="acc-filters"><input type="search" data-user-search placeholder="Search users by login, name or email…" aria-label="Search users"></div>
+      <div class="acc-card acc-tablewrap"><table class="acc-table"><thead><tr><th>User</th><th>Email</th><th>Last sign-in</th><th class="num">Tokens</th><th>Rate limit (per minute)</th></tr></thead><tbody data-users></tbody></table></div>
+    </section>
+
+    <section class="adm-view" id="activity" hidden>
+      <div class="adm-vtitle"><h2>Activity log</h2><p>Who signed in or out, created or revoked tokens, submitted or reviewed entries, changed settings, and every data load.</p></div>
+      <div class="acc-filters"><input type="search" data-audit-search placeholder="Search loaded activity…" aria-label="Search activity"><select data-audit-action aria-label="Action"><option value="">All actions</option><option value="auth.*">Sign-in &amp; sign-out</option><option value="token.*">Tokens</option><option value="submission.*">Submissions &amp; reviews</option><option value="admin.*">Admin changes</option><option value="catalog.*">Data loads</option></select></div>
+      <article class="acc-card" data-audit></article>
+      <p><button type="button" class="btn-ghost btn-sm" data-audit-more hidden>Older entries</button></p>
+    </section>
     </div>
   </div>
+</div>
 
-  <div class="panel" id="tokens">
-    <h2>Personal access tokens</h2>
-    <p class="small muted">Use a token in the <code>Authorization: Bearer …</code> header for the API, or in an MCP client. A token is shown once, when you create it. Tokens act as you; revoke any you no longer use.</p>
-    <form class="token-form" data-token-form>
-      <label>Name<input name="name" required maxlength="80" placeholder="e.g. Claude Desktop, nightly script"></label>
-      <fieldset class="scopes"><legend>Access</legend>
-        <label class="check"><input type="checkbox" name="scope" value="api" checked> API</label>
-        <label class="check"><input type="checkbox" name="scope" value="mcp" checked> MCP</label>
-      </fieldset>
-      <label>Expires<select name="expires"><option value="30">in 30 days</option><option value="90" selected>in 90 days</option><option value="365">in 1 year</option><option value="">never</option></select></label>
-      <button class="btn" type="submit">Create token</button>
-    </form>
-    <div class="token-new" data-token-new hidden>
-      <p><b>Your new token.</b> Copy it now; it won't be shown again.</p>
-      <div class="copy-row"><code data-token-value></code><button type="button" class="btn-ghost btn-sm" data-copy-token>Copy</button></div>
-    </div>
-    <div class="table-wrap"><table class="hist-table token-table"><thead><tr><th>Name</th><th>Token</th><th>Access</th><th>Created</th><th>Last used</th><th>Expires</th><th></th></tr></thead><tbody data-tokens></tbody></table></div>
-  </div>
-
-  <div class="panel" id="mcp">
-    <h2>Connect an AI agent (MCP)</h2>
-    <p class="small">Create a token with MCP access above, then add the server to your client:</p>
-    <div class="code-block"><div class="code-head"><span>Claude Code</span><button type="button" class="copy" data-copy>Copy</button></div><pre><code data-mcp-cmd>claude mcp add --transport http ${esc(brandSlug)} &lt;site&gt;/mcp/ --header "Authorization: Bearer &lt;token&gt;"</code></pre></div>
-    <div class="code-block"><div class="code-head"><span>Other clients (JSON)</span><button type="button" class="copy" data-copy>Copy</button></div><pre><code data-mcp-json></code></pre></div>
-    <p class="small muted">Tools: search the catalog, read an entry's full evaluation and history, list categories, statistics and the scoring rubric. See <a href="/api-docs/#mcp">API &amp; MCP</a>.</p>
-  </div>
-
-  <div class="panel" id="submissions">
-    <h2>Your submissions</h2>
-    <div class="table-wrap"><table class="hist-table"><thead><tr><th>When</th><th>Entry</th><th>Type</th><th>GitHub issue</th></tr></thead><tbody data-submissions></tbody></table></div>
-    <p class="small"><a href="/submit/">Submit a resource</a></p>
-  </div>
-
-  <div class="panel" id="activity">
-    <h2>Activity</h2>
-    <p class="small muted">Sign-ins, sign-outs, tokens and submissions on your account.</p>
-    <div class="table-wrap"><table class="hist-table"><thead><tr><th>When</th><th>What</th><th>Details</th><th>From</th></tr></thead><tbody data-activity></tbody></table></div>
-  </div>
-
-  <div class="panel admin" id="admin" data-admin hidden>
-    <h2>Superadmin</h2>
-    <h3>Rate limits</h3>
-    <form class="limits-form" data-limits-form>
-      <label>Anonymous, per IP<input type="number" name="anonymousPerMinute" min="1" required></label>
-      <label>Signed in or token, per user<input type="number" name="authenticatedPerMinute" min="1" required></label>
-      <span class="small muted">requests per minute</span>
-      <button class="btn" type="submit">Save</button>
-      <span class="small" data-limits-status></span>
-    </form>
-    <p class="small muted" data-limit-defaults></p>
-    <h3>Users</h3>
-    <input type="search" class="admin-search" data-user-search placeholder="Search users by login, name or email">
-    <div class="table-wrap"><table class="hist-table"><thead><tr><th>User</th><th>Email</th><th>Last sign-in</th><th class="num">Tokens</th><th>Rate limit</th></tr></thead><tbody data-users></tbody></table></div>
-    <h3>Audit log</h3>
-    <div class="audit-filter"><label>Action<select data-audit-action><option value="">All</option><option value="auth.*">Sign-in &amp; sign-out</option><option value="token.*">Tokens</option><option value="submission.*">Submissions</option><option value="admin.*">Admin changes</option><option value="catalog.*">Data loads</option></select></label></div>
-    <div class="table-wrap"><table class="hist-table"><thead><tr><th>When</th><th>Who</th><th>What</th><th>Target</th><th>Details</th><th>From</th></tr></thead><tbody data-audit></tbody></table></div>
-    <p><button type="button" class="btn-ghost btn-sm" data-audit-more hidden>Older entries</button></p>
-  </div>
-
-  <p><button type="button" class="btn-ghost" data-signout>Sign out</button></p>
-</section>`;
-  return page({ title: "Account", pathname: "/account/", body, noindex: true, description: "Your account: tokens, MCP setup, submissions and activity.", scripts: ["/assets/account.js"] });
+<dialog class="acc-dialog adm-dialog" data-review-dialog aria-labelledby="review-title">
+  <form data-review-form>
+    <div class="acc-eyebrow">Submission review</div>
+    <h2 id="review-title" data-review-title></h2>
+    <div class="adm-details" data-review-details></div>
+    <label class="acc-field">Decision<select name="decision"><option value="approved">Approve</option><option value="changes_requested">Request changes</option><option value="rejected">Reject</option><option value="pending">Move back to pending</option></select></label>
+    <label class="acc-field">Notes for the contributor<textarea name="notes" rows="4" maxlength="4000" placeholder="Explain your decision or what should change…"></textarea></label>
+    <p class="acc-error" data-review-error hidden></p>
+    <div class="acc-actions"><button type="button" class="btn-ghost" data-close>Cancel</button><button type="submit" class="btn">Save decision</button></div>
+  </form>
+</dialog>
+<div class="acc-toast" role="status" aria-live="polite" data-toast></div>`;
+  return page({ title: "Administration", pathname: "/admin/", body, noindex: true, description: `${brand} administration: submissions, catalog, evaluations, users and activity.`, scripts: ["/assets/admin.js"] });
 }
 
 function apiDocsPage() {
@@ -1819,6 +1938,7 @@ put(
 );
 put("submit/index.html", () => submitPage());
 put("account/index.html", () => accountPage());
+put("admin/index.html", () => adminPage());
 put("api-docs/index.html", () => apiDocsPage());
 put("about/index.html", () => aboutPage());
 put("contact/index.html", () => contactPage());
@@ -1832,7 +1952,7 @@ put("catalog.schema.json", () => data.catalogSchema);
 for (const x of runs) put(`runs/${x.run.id}.json`, () => JSON.stringify(x));
 put("runs/index.json", () => JSON.stringify({ runs: [...runs].reverse().map((x) => ({ ...x.run, snapshot: abs(`/runs/${x.run.id}.json`) })) }, null, 2));
 put("site.webmanifest", () => JSON.stringify({ name: "SchemaScope", short_name: "SchemaScope", start_url: "/", display: "standalone", background_color: "#faf8f3", theme_color: "#0b1530", icons: [{ src: "/assets/brand/logo-mark.png", sizes: "512x512", type: "image/png" }, { src: "/assets/apple-touch-icon.png", sizes: "180x180", type: "image/png" }] }, null, 2));
-const htmlPaths = [...files.keys()].filter((p) => p.endsWith("index.html") && !/^(login|account)\//.test(p)).map((p) => "/" + p.replace(/index\.html$/, ""));
+const htmlPaths = [...files.keys()].filter((p) => p.endsWith("index.html") && !/^(login|account|admin)\//.test(p)).map((p) => "/" + p.replace(/index\.html$/, ""));
 put("sitemap.xml", () => sitemap(htmlPaths));
 put("robots.txt", () => `User-agent: *\nAllow: /\nDisallow: /404\n\nSitemap: ${abs("/sitemap.xml")}\n`);
 

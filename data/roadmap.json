@@ -146,9 +146,9 @@
           "text": "A documented JSON API (OpenAPI) for search with facets, entries, history, runs and statistics, plus JSON and JSON-LD (DCAT, schema.org) downloads. The site itself is built from the same API."
         },
         {
-          "status": "planned",
-          "title": "llms.txt and AI-friendly pages",
-          "text": "An llms.txt index and plain-text summaries of each resource and the rubric, so language models read the catalog accurately and cite it."
+          "status": "done",
+          "title": "llms.txt and docs for LLMs",
+          "text": "/llms.txt and /llms-full.txt describe the whole API and the MCP tools in Markdown, generated from the live API, and every developer page can be copied or viewed as Markdown, so assistants write working integrations. Plain-text summaries of each resource are next."
         },
         {
           "status": "planned",
@@ -185,6 +185,16 @@
           "status": "done",
           "title": "Easier submissions",
           "text": "Projects that use a resource are entered one per row instead of a formatted text box, and the form checks each one before you submit."
+        },
+        {
+          "status": "done",
+          "title": "Admin dashboard",
+          "text": "Superadmins review submissions with notes for contributors, follow evaluation coverage and score changes, check service health, export the catalog, set rate limits and read the activity log."
+        },
+        {
+          "status": "planned",
+          "title": "Start evaluation runs from the dashboard",
+          "text": "Queue a full or partial evaluation run from the admin dashboard and follow its progress, instead of running the evaluator from the repository."
         }
       ]
     },

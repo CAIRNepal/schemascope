@@ -339,3 +339,42 @@ def compact(obj: Any) -> Any:
     if isinstance(obj, list):
         return [compact(v) for v in obj]
     return obj
+
+
+# ---------- admin dashboard ----------
+def score_changes(limit: int = 8) -> dict:
+    """Resources whose score changed between the two latest runs, biggest change first."""
+    ids = [r["id"] for r in db.rows("SELECT id FROM runs ORDER BY finished_at DESC NULLS LAST, id DESC LIMIT 2")]
+    if len(ids) < 2:
+        return {"latest": ids[0] if ids else None, "previous": None, "changes": []}
+    rows = db.rows(
+        """SELECT e.id, e.name, e.acronym, e.kind, (h1.point::jsonb->>'score')::int AS now, (h0.point::jsonb->>'score')::int AS before,
+                  h1.point::jsonb->>'grade' AS grade, h0.point::jsonb->>'grade' AS grade_before, h1.at
+           FROM history h1 JOIN history h0 ON h0.entry_id = h1.entry_id AND h0.run_id = %s
+           JOIN entries e ON e.id = h1.entry_id
+           WHERE h1.run_id = %s AND (h1.point::jsonb->>'score') IS DISTINCT FROM (h0.point::jsonb->>'score')
+           ORDER BY ABS(COALESCE((h1.point::jsonb->>'score')::int, 0) - COALESCE((h0.point::jsonb->>'score')::int, 0)) DESC, e.name
+           LIMIT %s""", (ids[1], ids[0], limit))
+    count = db.value(
+        """SELECT COUNT(*) FROM history h1 JOIN history h0 ON h0.entry_id = h1.entry_id AND h0.run_id = %s
+           WHERE h1.run_id = %s AND (h1.point::jsonb->>'score') IS DISTINCT FROM (h0.point::jsonb->>'score')""", (ids[1], ids[0]))
+    return {"latest": ids[0], "previous": ids[1], "changed": count, "changes": [
+        {"id": r["id"], "name": r["acronym"] or r["name"], "fullName": r["name"], "kind": r["kind"], "score": r["now"], "before": r["before"],
+         "grade": r["grade"], "gradeBefore": r["grade_before"], "at": r["at"]} for r in rows]}
+
+
+def attention(limit: int = 8) -> dict:
+    """Resources that need a look: not evaluated, or with a grade E and recent adopters (widely used but weak)."""
+    unevaluated = db.rows("SELECT id, name, acronym, kind, category FROM entries WHERE score IS NULL ORDER BY name LIMIT %s", (limit,))
+    return {
+        "unevaluated": db.value("SELECT COUNT(*) FROM entries WHERE score IS NULL"),
+        "unevaluatedSample": [{"id": r["id"], "name": r["acronym"] or r["name"], "kind": r["kind"], "category": r["category"]} for r in unevaluated],
+        "weakButUsed": db.value("SELECT COUNT(*) FROM entries WHERE grade = 'E' AND adopters > 0"),
+    }
+
+
+CSV_FIELDS = ["id", "acronym", "name", "kind", "category", "grade", "score", "fair", "adopters", "version", "last_activity", "legacy"]
+
+
+def catalog_rows():
+    return db.rows(f"SELECT {', '.join(CSV_FIELDS)} FROM entries ORDER BY position")

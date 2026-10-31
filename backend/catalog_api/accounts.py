@@ -197,4 +197,50 @@ def record_submission(user: User, entry: dict, update_of: str | None, notes: str
 
 def list_submissions(user: User) -> list[dict]:
     rows = db.rows("SELECT * FROM submissions WHERE user_id = %s ORDER BY id DESC LIMIT 100", (user.id,))
-    return [{"id": r["id"], "entryId": r["entry_id"], "updateOf": r["update_of"], "issueUrl": r["issue_url"], "createdAt": iso(r["created_at"])} for r in rows]
+    return [_submission(r) for r in rows]
+
+
+def _submission(r: dict, with_payload: bool = False) -> dict:
+    out = {"id": r["id"], "entryId": r["entry_id"], "updateOf": r["update_of"], "issueUrl": r["issue_url"], "createdAt": iso(r["created_at"]),
+           "status": r.get("status") or "pending", "reviewNotes": r.get("review_notes"), "reviewedBy": r.get("reviewed_by"), "reviewedAt": iso(r.get("reviewed_at"))}
+    if with_payload:
+        p = r["payload"] or {}
+        out.update({"name": p.get("name"), "acronym": p.get("acronym"), "kind": p.get("kind"), "category": p.get("category"),
+                    "description": p.get("description"), "homepage": p.get("homepage"), "repository": p.get("repository"),
+                    "notes": r.get("notes"), "entry": p,
+                    "submittedBy": {"login": r.get("login"), "name": r.get("uname"), "avatarUrl": r.get("avatar_url"), "url": r.get("html_url")}})
+    return out
+
+
+REVIEW_STATUSES = ("pending", "approved", "changes_requested", "rejected")
+
+
+def all_submissions(status: str | None = None, q: str | None = None, limit: int = 200) -> list[dict]:
+    where, args = [], []
+    if status and status != "all":
+        where.append("s.status = %s")
+        args.append(status)
+    if q:
+        where.append("(s.payload->>'name' ILIKE %s OR s.entry_id ILIKE %s OR u.login ILIKE %s)")
+        args += [f"%{q}%"] * 3
+    rows = db.rows(
+        "SELECT s.*, u.login, u.name AS uname, u.avatar_url, u.html_url FROM submissions s JOIN users u ON u.id = s.user_id "
+        f"{'WHERE ' + ' AND '.join(where) if where else ''} ORDER BY s.id DESC LIMIT %s", (*args, min(max(limit, 1), 500)))
+    return [_submission(r, with_payload=True) for r in rows]
+
+
+def review_submission(sid: int, status: str, notes: str | None, reviewer: User) -> dict | None:
+    row = db.one(
+        "UPDATE submissions SET status = %s, review_notes = %s, reviewed_by = %s, reviewed_at = now() WHERE id = %s RETURNING *",
+        (status, notes, reviewer.login, sid))
+    return _submission(row) if row else None
+
+
+def admin_counts() -> dict:
+    return {
+        "users": db.value("SELECT COUNT(*) FROM users"),
+        "activeUsers30d": db.value("SELECT COUNT(*) FROM users WHERE last_login_at > now() - interval '30 days'"),
+        "activeTokens": db.value("SELECT COUNT(*) FROM tokens WHERE revoked_at IS NULL AND (expires_at IS NULL OR expires_at > now())"),
+        "submissions": {r["status"]: r["n"] for r in db.rows("SELECT status, COUNT(*) AS n FROM submissions GROUP BY status")},
+        "events24h": db.value("SELECT COUNT(*) FROM audit_log WHERE at > now() - interval '24 hours'"),
+    }

@@ -374,18 +374,70 @@
     codex: ["Codex", "~/.codex/config.toml", () => `[mcp_servers.${SLUG}]\nurl = "${ORIGIN}/mcp/"\nbearer_token_env_var = "${ENV}"\n\n# in your shell:\nexport ${ENV}="${tokenText()}"`, "Restart Codex with the variable set."],
     generic: ["Other client", "Settings", () => `Server name: ${BRAND}\nServer URL:  ${ORIGIN}/mcp/\nTransport:   Streamable HTTP\nHeader:      Authorization: Bearer ${tokenText()}`, "Any MCP client that supports remote (streamable HTTP) servers with a header."],
   };
-  P.mcp = () => hero("Model Context Protocol", `Your AI.<br><em>A world of context.</em>`, `Connect an MCP client and ask about ontologies, schemas and standards in plain language, with the scores and evidence behind every answer.`) + `
-    ${callout(`Needs a personal access token with <b>MCP</b> access. <a href="${signin()}">${state.session?.user ? "Create one on your account page" : "Sign in with GitHub to create one"}</a>; it is filled in below once created in this tab.`)}
-    ${connectBlock()}
-    ${title("Then, start a conversation")}
-    <div class="dh-quick two"><div class="dh-quick-text"><div class="dh-number">TRY A PROMPT</div><h3>“Find the best-scored ${esc(BRAND)} ontologies for ${esc(D.topic)}.”</h3><p>Your assistant calls <code>search_catalog</code> and answers with grades and links.</p><a class="dh-link" href="#tools">Explore available tools →</a></div>
-      <div class="dh-quick-text alt"><div class="dh-number">A TYPICAL WORKFLOW</div><p>01 &nbsp; Find relevant resources<br>02 &nbsp; Inspect a score and its evidence<br>03 &nbsp; Compare runs and versions</p><a class="dh-link" href="#workflow">See the workflow →</a></div></div>`;
+  // Step-by-step setup per client, for people who have never added an MCP server before.
+  const CLIENT_STEPS = {
+    "claude-code": [
+      "Open a terminal (on any folder; the server is added for your user).",
+      "Paste the command above and press Enter.",
+      "Start a new Claude Code session with <code>claude</code>. Type <code>/mcp</code>: the server should be listed as connected. <code>claude mcp list</code> shows it from the terminal too.",
+    ],
+    "claude-desktop": [
+      "Install <a href=\"https://nodejs.org\" rel=\"noopener\">Node.js</a> (version 18 or later) if you don't have it. Claude Desktop uses it to run <code>mcp-remote</code>, a small bridge to remote servers.",
+      "In Claude Desktop open <b>Settings → Developer → Edit Config</b>. This opens <code>claude_desktop_config.json</code>.",
+      "Paste the configuration above. If the file already has an <code>mcpServers</code> section, add the inner entry to it instead of replacing the file.",
+      "Save, then quit Claude Desktop completely and open it again. The tools appear in the tools menu of the message box.",
+    ],
+    cursor: [
+      "Open <b>Cursor Settings → MCP</b> and choose <b>Add new MCP server</b>, or open <code>~/.cursor/mcp.json</code> directly.",
+      "Paste the configuration above (merge it into <code>mcpServers</code> if the file has other servers) and save.",
+      "Back in the MCP settings, turn the server on. A green dot means it connected. Use it from the chat in Agent mode.",
+    ],
+    vscode: [
+      "In your project, create the file <code>.vscode/mcp.json</code> (or run <b>MCP: Add Server</b> from the Command Palette).",
+      "Paste the configuration above and save.",
+      "Click <b>Start</b> above the server entry in the file. Then open Copilot Chat, switch to <b>Agent</b> mode, and check the tools button: the six tools should be listed.",
+    ],
+    codex: [
+      "Open (or create) <code>~/.codex/config.toml</code> and paste the first lines above.",
+      `Set the token in your shell, as in the last line. To keep it, add that line to your shell profile (for example <code>~/.zshrc</code>).`,
+      "Start Codex from that shell. Type <code>/mcp</code> to see the server and its tools.",
+    ],
+    generic: [
+      "Find where your client adds a <b>remote</b> MCP server (sometimes called a custom connector or HTTP server).",
+      "Enter the server URL and add the <code>Authorization</code> header shown above. Choose the <b>Streamable HTTP</b> transport if asked.",
+      "Restart or reload the client so it picks up the new server.",
+    ],
+  };
+  P.mcp = () => hero("Model Context Protocol", `Your AI.<br><em>A world of context.</em>`, `Connect an AI assistant to ${esc(BRAND)} and ask about ontologies, schemas and standards in plain language, with the scores and evidence behind every answer.`) + `
+    ${title("What is MCP?")}
+    <p class="dh-p">The <b>Model Context Protocol</b> (MCP) is an open standard that lets AI assistants such as Claude, Cursor, VS Code Copilot and Codex use outside tools. Once you connect ${esc(BRAND)}, your assistant can look things up in the catalog by itself while it answers you, instead of relying on what it remembers, which may be out of date or wrong.</p>
+    <div class="dh-quick two"><div class="dh-quick-text"><div class="dh-number">WITHOUT MCP</div><h3>“Which ontology should I use for ${esc(D.topic)}?”</h3><p>The assistant answers from memory: no scores, no sources, possibly outdated.</p></div>
+      <div class="dh-quick-text alt"><div class="dh-number">WITH ${esc(BRAND.toUpperCase())}</div><h3>Same question</h3><p>The assistant searches the catalog, reads each candidate's evaluation and answers with grades, links and the reasons behind them.</p></div></div>
+    ${title("How it works")}
+    ${step(1, "You ask a question", `<p class="dh-p">In your usual assistant, in plain language. Nothing changes in how you work.</p>`)}
+    ${step(2, "The assistant calls a tool", `<p class="dh-p">It picks one of ${esc(BRAND)}'s <a href="#tools">six read-only tools</a>, for example <code>search_catalog</code>, and sends the request with your token. Many clients ask you to approve the first call.</p>`)}
+    ${step(3, "It answers with evidence", `<p class="dh-p">The tool returns catalog data: scores, grades, criteria and links. The assistant uses it in its answer, so you can check every claim on the resource's page.</p>`)}
+    ${title("What you need")}
+    <ul class="dh-list"><li>An MCP client: Claude Code, Claude Desktop, Cursor, VS Code with Copilot, Codex or another client that supports remote servers.</li><li>A free GitHub account, to sign in to ${esc(BRAND)}.</li><li>A personal access token with <b>MCP</b> access. It identifies you and gives you ${fmt(state.cfg.rateLimit.authenticatedPerMinute)} requests per minute.</li></ul>
+    ${callout(`Ready? <a href="#connect">Connect your client step by step →</a> It takes about five minutes.`, "ok")}
+    ${title("Is it safe?")}
+    <p class="dh-p">The tools only <b>read</b> public catalog data; your assistant cannot change anything. ${esc(BRAND)} sees the requests your assistant makes (for example the search words) and logs them against your token for rate limiting, not your conversation. You can revoke a token at any time on your account page.</p>`;
   const connectBlock = () => {
     const c = CLIENTS[state.client] || CLIENTS["claude-code"];
-    return `${title("Connect your client", "Choose your client")}<div class="dh-clientbar" data-client-bar>${Object.entries(CLIENTS).map(([k, [n]]) => `<button class="${state.client === k ? "active" : ""}" data-client="${k}">${n}</button>`).join("")}</div>${code(c[2](), `${c[0]} · ${c[1]}`)}<p class="dh-p dh-muted">${c[3]}</p>`;
+    return `<div class="dh-clientbar" data-client-bar>${Object.entries(CLIENTS).map(([k, [n]]) => `<button class="${state.client === k ? "active" : ""}" data-client="${k}">${n}</button>`).join("")}</div>${code(c[2](), `${c[0]} · ${c[1]}`)}
+      <ol class="dh-steps-list">${(CLIENT_STEPS[state.client] || CLIENT_STEPS["claude-code"]).map((t) => `<li>${t}</li>`).join("")}</ol>`;
   };
-  P.connect = () => hero("MCP server", "Connect your <em>client.</em>", `Add ${esc(BRAND)} to your assistant with your token.`) + connectBlock() +
-    callout(`Verify: ask <b>“Which ${esc(BRAND)} tools do you have?”</b> Your assistant should list the six tools below.`) + resources([["#tools", "Available tools", ""], ["#troubleshooting", "Troubleshooting", ""], [signin(), "Your tokens", ""]]);
+  P.connect = () => {
+    const have = !!token();
+    return hero("MCP server", "Connect your <em>client.</em>", `Four steps, about five minutes. No programming needed.`) + `
+    ${step(1, "Create a token with MCP access", `<p class="dh-p">${state.session?.user ? `You're signed in as <b>@${esc(state.session.user.login)}</b>.` : "Sign in with your GitHub account (there's nothing else to register)."} On your account page, open <b>Access tokens → Create token</b>, give it a name such as “Claude on my laptop”, keep <b>MCP</b> ticked and copy the token. It is shown only once.</p>
+      <p class="dh-p">${have ? `<b>✓ Your new token is filled in below</b> (in this browser tab only).` : `<a class="dh-btn" href="${signin()}">${state.session?.user ? "Create a token →" : "Sign in with GitHub →"}</a>`}</p>`)}
+    ${step(2, "Add the server to your client", `<p class="dh-p">Choose your assistant. Copy what's shown and follow the steps under it.${have ? "" : " Replace <code>&lt;your token&gt;</code> with the token from step 1."}</p>${connectBlock()}`)}
+    ${step(3, "Check that it works", `<p class="dh-p">In a new conversation, ask <b>“Which ${esc(BRAND)} tools do you have?”</b> The assistant should list six tools, such as <code>search_catalog</code> and <code>get_entry</code>. If it doesn't, see <a href="#troubleshooting">Troubleshooting</a>.</p>`)}
+    ${step(4, "Ask a real question", `<p class="dh-p">Try one of these. Your client may ask you to allow the tool the first time.</p>${code(`Find the best-scored ${BRAND} ontologies for ${D.topic}, with their grades.\nWhy does ${D.entryName} score what it does? Show the evidence per criterion.\nHow has ${D.entryName}'s score changed across evaluation runs?`, "Prompts")}`)}
+    ${callout(`Keep your token private: anyone with it can use your rate limit. If it leaks, revoke it on your account page and create a new one.`)}
+    ${resources([["#tools", "Available tools", "What your assistant can look up."], ["#workflow", "Example workflow", "From a question to resources you can rely on."], ["#troubleshooting", "Troubleshooting", "If the tools don't show up."]])}`;
+  };
   const TOOLS = [
     ["search_catalog", "Search by topic, domain, type, grade or format; returns scores, grades and links."],
     ["get_entry", "One resource's record and evaluation: points per criterion with the step behind each, quality checks, adopters, imports and reuse."],
