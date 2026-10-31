@@ -12,7 +12,7 @@ x-api-env: &api-env
   JWT_SECRET: ${JWT_SECRET:-sandbox-only-not-secret-sandbox-only-not-secret}
   GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID:-}
   GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET:-}
-  SUPERADMIN_EMAILS: ${SUPERADMIN_EMAILS:-test-user@example.org}   # sandbox: the test user is a superadmin
+  SUPERADMIN_EMAILS: ${SUPERADMIN_EMAILS:-sandbox-admin@example.org}   # sandbox: sign in as admin at /api/auth/dev-login?login=sandbox-admin
   DEV_LOGIN: ${DEV_LOGIN:-1}
   RATE_LIMIT_ANON: ${RATE_LIMIT_ANON:-60}
   RATE_LIMIT_USER: ${RATE_LIMIT_USER:-1000}

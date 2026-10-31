@@ -67,8 +67,7 @@
         ${u.avatarUrl ? `<img class="acc-avatar" src="${esc(u.avatarUrl)}&s=104" alt="" width="52" height="52">` : `<span class="acc-avatar">${esc(initials)}</span>`}
         <div><strong>${esc(u.name || u.login)}</strong><small><a href="${esc(u.url)}" rel="noopener">@${esc(u.login)}</a>${u.superadmin ? ' · <span class="acc-badge">superadmin</span>' : ""}</small></div>
         <span class="acc-connected">Connected with GitHub</span>
-        ${u.superadmin ? '<a class="btn-ghost btn-sm acc-admin-link" href="/admin/">Admin dashboard →</a>' : ""}
-        <button type="button" class="acc-signout" data-signout>Sign out</button>`;
+        <div class="acc-profile-actions">${u.superadmin ? '<a class="btn-ghost btn-sm" href="/admin/">Admin dashboard →</a>' : ""}<button type="button" class="btn-ghost btn-sm" data-signout>Sign out</button></div>`;
       $("[data-my-limit]").textContent = fmt(s.rateLimit.perMinute);
       $("[data-anon-limit]").textContent = fmt(s.rateLimit.anonymousPerMinute);
       $("[data-account-body]").hidden = false;

@@ -49,6 +49,15 @@
     e.currentTarget.setAttribute("aria-expanded", String(open));
   });
   window.addEventListener("hashchange", () => show(location.hash.slice(1)));
+  $$("[data-adm-signout]").forEach((b) => b.addEventListener("click", async () => {
+    await fetch("/api/auth/logout", { method: "POST", credentials: "same-origin" }).catch(() => {});
+    location.href = "/";
+  }));
+  // Run ids are start times (2026-10-31T17-31-10Z); show them as dates.
+  const runDate = (id) => {
+    const m = /^(\d{4}-\d{2}-\d{2})T(\d{2})-(\d{2})-(\d{2})Z$/.exec(id || "");
+    return m ? new Date(`${m[1]}T${m[2]}:${m[3]}:${m[4]}Z`).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) : id;
+  };
 
   // ---------- start: superadmins only ----------
   api("/api/auth/session").then((s) => {
@@ -69,7 +78,7 @@
     const stat = (label, value, note, icon) => `<div class="acc-stat"><span class="acc-eyebrow">${label}</span><span class="acc-stat-icon">${icon}</span><strong>${value}</strong><p>${note}</p></div>`;
     const svg = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
     $("[data-stats]").innerHTML = [
-      stat("Published resources", fmt(st.entries), `${fmt(st.crossDomain)} used across domains`, svg('<path d="M4 4h16v16H4zM8 4v16"/>')),
+      stat("Published resources", fmt(st.entries), `In ${fmt(st.categories)} domains${st.crossDomain ? ` · ${fmt(st.crossDomain)} span several` : ""}`, svg('<path d="M4 4h16v16H4zM8 4v16"/>')),
       stat("Awaiting review", fmt(pending), `${fmt(ac.submissions.changes_requested || 0)} waiting on contributors`, svg('<path d="M4 4h16v16H4zM4 14h5l2 3h2l2-3h5"/>')),
       stat("Evaluation coverage", `${coverage.toFixed(1)}<small>%</small>`, `${fmt(st.evaluated)} of ${fmt(st.entries)} evaluated · average ${st.averageScore ?? "—"}`, svg('<path d="m4 12 5 5L20 6"/>')),
       stat("Active users", fmt(ac.activeUsers30d), `Signed in in the last 30 days · ${fmt(ac.users)} in total`, svg('<circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3"/>')),
@@ -77,7 +86,7 @@
     const att = o.attention;
     const alert = $("[data-alert]");
     alert.hidden = !att.unevaluated;
-    alert.innerHTML = att.unevaluated ? `<span>ⓘ</span><span><b>${fmt(att.unevaluated)} resource${att.unevaluated === 1 ? "" : "s"} have no evaluation yet</b>, for example ${att.unevaluatedSample.slice(0, 3).map((x) => `<a href="/o/${esc(x.id)}/">${esc(x.name)}</a>`).join(", ")}. They are scored in the next full run.</span><a class="acc-link" href="#catalog" data-filter-grade="none">View them →</a>` : "";
+    alert.innerHTML = att.unevaluated ? `<span>ⓘ</span><span><b>${fmt(att.unevaluated)} resource${att.unevaluated === 1 ? " has" : "s have"} no evaluation yet</b>, for example ${att.unevaluatedSample.slice(0, 3).map((x) => `<a href="/o/${esc(x.id)}/">${esc(x.name)}</a>`).join(", ")}. They are scored in the next full run.</span><a class="acc-link" href="#catalog" data-filter-grade="none">View them →</a>` : "";
     $("[data-queue-count]").textContent = `${fmt(pending)} pending`;
     $("[data-queue]").innerHTML = o.queue.length
       ? o.queue.map((x) => `<tr><td><b>${esc(x.acronym || x.name || x.entryId)}</b><small>${x.updateOf ? `Correction to ${esc(x.updateOf)}` : "New resource"} · @${esc(x.submittedBy.login)}</small></td><td>${esc(KIND[x.kind] || x.kind || "—")}</td><td class="small">${ago(x.createdAt)}</td><td class="acc-right"><button type="button" class="acc-link" data-review="${x.id}">Review →</button></td></tr>`).join("")
@@ -89,7 +98,7 @@
       ["REST API", "Answering (this page uses it)", true],
       ["MCP server", `${location.origin}/mcp/`, true],
       ["Catalog data", `Loaded ${ago(h.ingestedAt)}`, !!h.ingestedAt],
-      ["Latest evaluation", ev.run ? `${ev.run.id} · rubric ${esc(ev.rubricVersion)}` : "No run loaded", !!ev.run],
+      ["Latest evaluation", ev.run ? `Run of ${runDate(ev.run.id)} · rubric ${ev.rubricVersion}` : "No run loaded", !!ev.run],
       ["GitHub sign-in", h.github ? "Configured" : "Not configured (sandbox test sign-in)", h.github],
     ];
     $("[data-health]").innerHTML = rows.map(([t, d, ok]) => `<div class="adm-health-row"><span>${t}<small>${esc(d)}</small></span><b class="${ok ? "ok" : "warn"}">${ok ? "OK" : "Check"}</b></div>`).join("");
@@ -98,7 +107,7 @@
     hp.textContent = allOk ? "Operational" : "Needs attention";
     hp.className = `adm-pill ${allOk ? "green" : "amber"}`;
     const ch = o.changes;
-    $("[data-changes-sub]").textContent = ch.previous ? `${fmt(ch.changed)} resources changed score between ${ch.previous} and ${ch.latest}.` : "Needs at least two runs.";
+    $("[data-changes-sub]").textContent = ch.previous ? `${fmt(ch.changed)} ${ch.changed === 1 ? "resource" : "resources"} changed score between the runs of ${runDate(ch.previous)} and ${runDate(ch.latest)}.` : "Needs at least two runs.";
     $("[data-changes]").innerHTML = ch.changes.length
       ? ch.changes.map((c) => { const d = (c.score ?? 0) - (c.before ?? 0); return `<tr><td><a href="/o/${esc(c.id)}/"><b>${esc(c.name)}</b></a><small>${esc(KIND[c.kind] || c.kind || "")}</small></td><td>${c.gradeBefore && c.gradeBefore !== c.grade ? `${gradePill(c.gradeBefore)} → ` : ""}${gradePill(c.grade)}</td><td class="num">${c.before ?? "—"} → <b>${c.score ?? "—"}</b></td><td class="num"><span class="adm-delta ${d >= 0 ? "up" : "down"}">${d >= 0 ? "+" : ""}${d}</span></td></tr>`; }).join("")
       : `<tr><td colspan="4"><div class="acc-empty small">No score changes between the last two runs.</div></td></tr>`;
@@ -191,7 +200,7 @@
   async function evaluations() {
     const runs = await api("/api/runs?limit=100");
     $("[data-runs]").innerHTML = runs.length
-      ? runs.map((r) => `<tr><td><b>${esc(r.id)}</b></td><td class="small">${when(r.finishedAt)}</td><td>${esc(r.scope || "—")}</td><td class="num">${fmt(r.entryCount)}</td><td>${esc(r.evaluator?.rubricVersion || r.rubricVersion || "—")}</td><td class="small">${esc(r.trigger || "—")}</td><td class="acc-right"><a class="acc-link" href="/api/runs/${encodeURIComponent(r.id)}/snapshot" download>Snapshot ↓</a></td></tr>`).join("")
+      ? runs.map((r) => `<tr><td><b>${esc(runDate(r.id))}</b><small>${esc(r.id)}</small></td><td class="small">${when(r.finishedAt)}</td><td>${esc(r.scope || "—")}</td><td class="num">${fmt(r.entryCount)}</td><td>${esc(r.evaluator?.rubricVersion || r.rubricVersion || "—")}</td><td class="small">${esc(r.trigger || "—")}</td><td class="acc-right"><a class="acc-link" href="/api/runs/${encodeURIComponent(r.id)}/snapshot" download>Snapshot ↓</a></td></tr>`).join("")
       : `<tr><td colspan="7"><div class="acc-empty small">No runs loaded yet.</div></td></tr>`;
   }
 

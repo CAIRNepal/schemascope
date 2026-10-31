@@ -26,6 +26,20 @@
     matchMedia("(min-width: 1101px)").addEventListener("change", (m) => m.matches && setOpen(false));
   }
 
+  // Menu groups (Catalog, About, the account menu): hover or focus opens them on wide screens; a click or tap toggles.
+  const closeGroups = (except) => $$("[data-nav-group].open").forEach((g) => { if (g !== except) { g.classList.remove("open"); g.querySelector(".nav-group-btn")?.setAttribute("aria-expanded", "false"); } });
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest(".nav-group-btn");
+    if (b) {
+      const g = b.closest("[data-nav-group]");
+      const open = !g.classList.contains("open");
+      closeGroups(g);
+      g.classList.toggle("open", open);
+      b.setAttribute("aria-expanded", String(open));
+    } else if (!e.target.closest("[data-nav-group]")) closeGroups();
+  });
+  document.addEventListener("keydown", (e) => e.key === "Escape" && closeGroups());
+
   // Account link: "Sign in", or the signed-in user's avatar and name (from the API on this origin).
   const account = $("[data-account]");
   if (account) account.href = `/api/auth/github/login?next=${encodeURIComponent(location.pathname + location.search)}`;
@@ -49,6 +63,29 @@
         account.title = `Signed in as @${u.login}`;
         account.innerHTML = (u.avatarUrl ? `<img src="${u.avatarUrl}&s=48" alt="" width="22" height="22">` : "") + `<span data-account-label></span>`;
         account.querySelector("[data-account-label]").textContent = u.name?.split(" ")[0] || u.login;
+        // Signed in: the name opens a small menu (your account, tokens, admin for superadmins, sign out).
+        const wrap = document.createElement("div");
+        wrap.className = "nav-group nav-user";
+        wrap.dataset.navGroup = "";
+        account.replaceWith(wrap);
+        account.classList.add("nav-group-btn");
+        account.setAttribute("aria-haspopup", "true");
+        wrap.append(account);
+        const menu = document.createElement("div");
+        menu.className = "nav-menu";
+        const item = (href, title, sub) => `<a href="${href}"><b>${title}</b>${sub ? `<small>${sub}</small>` : ""}</a>`;
+        menu.innerHTML = `<div class="nav-user-head"><b></b><small></small></div>` +
+          item("/account/", "Your account", "Overview, submissions and activity") +
+          item("/account/#tokens", "Access tokens", "For the API and AI assistants") +
+          (u.superadmin ? item("/admin/", "Admin dashboard", "Review submissions, users and limits") : "") +
+          `<button type="button" class="nav-signout" data-nav-signout>Sign out</button>`;
+        menu.querySelector(".nav-user-head b").textContent = u.name || u.login;
+        menu.querySelector(".nav-user-head small").textContent = `@${u.login}`;
+        wrap.append(menu);
+        menu.querySelector("[data-nav-signout]").addEventListener("click", async () => {
+          await fetch("/api/auth/logout", { method: "POST", credentials: "same-origin" }).catch(() => {});
+          location.href = "/";
+        });
         document.dispatchEvent(new CustomEvent("session", { detail: s }));
       })
       .catch(() => {});

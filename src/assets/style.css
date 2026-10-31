@@ -1237,3 +1237,45 @@ body.nav-open .nav-toggle .nt-close { display: inline; }
 }
 .adm-alert[hidden] { display: none; }
 .adm-grid { align-items: start; }
+/* Admin: the sidebar column runs the full height of the page; sign out in the sidebar and the top bar */
+@media (min-width: 801px) {
+  .adm { background: linear-gradient(to right, var(--surface) 236px, var(--line) 236px, var(--line) 237px, transparent 237px); }
+  .adm-side { background: transparent; border-right: 0; }
+}
+.adm-signout { justify-self: start; margin-top: 6px; }
+.adm-bar-signout { border: 1px solid var(--line); background: transparent; color: var(--muted); font: inherit; font-size: .85rem; border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+.adm-bar-signout:hover { color: var(--text); border-color: var(--muted); }
+@media (max-width: 800px) { .adm-bar-signout { margin-left: auto; } }
+.acc-profile-actions { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+.acc-profile-actions a { text-decoration: none; }
+@media (max-width: 560px) { .acc-profile-actions { margin-left: 66px; width: 100%; } }
+
+/* ---------- Grouped menu: Catalog ▾ and About ▾ open on hover or focus (click/tap toggles); the account menu too ---------- */
+.nav-group { position: relative; }
+.nav-group-btn { display: inline-flex; align-items: center; gap: 4px; color: var(--muted); background: none; border: 0; font: inherit; font-size: .95rem; padding: 6px 10px; border-radius: 8px; cursor: pointer; }
+.nav-group-btn svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .15s; }
+.nav-group-btn:hover, .nav-group-btn.current, .nav-group.open > .nav-group-btn { color: var(--text); background: var(--surface-2); }
+.nav-menu { display: none; position: absolute; top: calc(100% + 6px); left: 0; z-index: 30; min-width: 250px; padding: 6px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow-lift, 0 20px 40px -20px rgb(19 33 63 / .35)); }
+.nav-menu::before { content: ""; position: absolute; left: 0; right: 0; top: -8px; height: 8px; }
+.nav-group:hover > .nav-menu, .nav-group:focus-within > .nav-menu, .nav-group.open > .nav-menu { display: grid; gap: 2px; }
+.nav-group:hover > .nav-group-btn svg, .nav-group.open > .nav-group-btn svg { transform: rotate(180deg); }
+.nav .nav-menu a { display: grid; gap: 1px; padding: 9px 12px; border-radius: 8px; color: var(--text); }
+.nav .nav-menu a b { font-weight: 600; font-size: .92rem; }
+.nav .nav-menu a small { color: var(--muted); font-size: .78rem; }
+.nav .nav-menu a:hover, .nav .nav-menu a[aria-current] { background: var(--surface-2); }
+.nav-user { margin-left: 6px; }
+.nav-user > .nav-menu { left: auto; right: 0; }
+.nav-user > .nav-account { margin-left: 0; }
+.nav-user-head { padding: 8px 12px 10px; border-bottom: 1px solid var(--line); margin-bottom: 4px; display: grid; }
+.nav-user-head small { color: var(--muted); font-size: .8rem; }
+.nav-signout { text-align: left; border: 0; border-top: 1px solid var(--line); margin-top: 4px; background: none; color: var(--muted); font: inherit; font-size: .9rem; padding: 10px 12px; cursor: pointer; border-radius: 0 0 8px 8px; }
+.nav-signout:hover { color: var(--text); background: var(--surface-2); }
+@media (max-width: 1100px) {
+  /* In the menu panel, a group is a small heading with its links listed under it. */
+  .nav-links .nav-group-btn { pointer-events: none; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; padding: 12px 12px 2px; background: none; }
+  .nav-links .nav-group-btn svg { display: none; }
+  .nav-links .nav-menu { display: grid; position: static; box-shadow: none; border: 0; padding: 0; min-width: 0; background: none; }
+  .nav-links .nav-menu::before { display: none; }
+  .nav-user { order: 2; margin: 0; }
+  .nav-user > .nav-account { padding: 7px 10px; }
+}

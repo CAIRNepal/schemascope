@@ -325,6 +325,12 @@ function page({ title, description, pathname, body, graph = [], noindex = false,
   const canonical = abs(pathname);
   const ld = { "@context": "https://schema.org", "@graph": [...baseGraph(), ...graph] };
   const nav = (href, label) => `<a href="${href}"${pathname.startsWith(href) ? ' aria-current="page"' : ""}>${label}</a>`;
+  // A menu group: opens on hover or focus on wide screens (click or tap toggles it); on small screens the items are listed under the label.
+  const group = (label, items, extra = "") => {
+    // Items may point into one page (/api-docs/#mcp): the group is current on that page; only plain links are marked as the page.
+    const current = items.some(([h]) => pathname.startsWith(h.split("#")[0]));
+    return `<div class="nav-group" data-nav-group><button type="button" class="nav-group-btn${current ? " current" : ""}" aria-expanded="false" aria-haspopup="true">${label}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-menu">${items.map(([h, t, d]) => `<a href="${h}"${!h.includes("#") && pathname.startsWith(h) ? ' aria-current="page"' : ""}><b>${t}</b><small>${d}</small></a>`).join("")}${extra}</div></div>`;
+  };
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -374,13 +380,10 @@ ${gtmBody}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="nt-open" d="M4 7h16M4 12h16M4 17h16"/><path class="nt-close" d="M6 6l12 12M18 6 6 18"/></svg>
       </button>
       <div class="nav-links" id="nav-links">
-      ${nav("/catalog/", "Catalog")}
-      ${nav("/categories/", "Categories")}
+      ${group("Catalog", [["/catalog/", "Browse the catalog", "Search and filter every resource"], ["/categories/", "Categories", "Resources grouped by domain"]])}
       ${nav("/evaluation/", "Evaluation")}
-      ${nav("/api-docs/", "API &amp; MCP")}
-      ${nav("/roadmap/", "Roadmap")}
-      ${nav("/about/", "About")}
-      ${nav("/contact/", "Contact")}
+      ${group("Developers", [["/api-docs/#overview", "Developer hub", "Start here: guides, examples and reference"], ["/api-docs/#api", "REST API", "Search and read the catalog from your code"], ["/api-docs/#mcp", "MCP server", "Connect Claude, Cursor, VS Code and other assistants"], ["/api-docs/#llms", "Docs for LLMs", "The API reference as Markdown for your AI"]])}
+      ${group("About", [["/about/", "About", "What this is, who runs it and how"], ["/roadmap/", "Roadmap", "What's available and what's next"], ["/contact/", "Contact", "Questions, corrections and partnerships"]])}
       <a class="nav-submit" href="/submit/"${pathname.startsWith("/submit/") ? ' aria-current="page"' : ""}>Submit</a>
       </div>
       <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
@@ -403,7 +406,7 @@ ${body}
       <a href="/submit/">Submit a resource</a>
       <a href="/roadmap/">Features &amp; roadmap</a>
       <a href="/contact/">Contact</a>
-      <a href="/api-docs/">API &amp; MCP</a>
+      <a href="/api-docs/">Developer docs</a>
       <a href="/catalog.json">catalog.json</a>
       <a href="/catalog.jsonld">DCAT JSON-LD</a>
       ${config.repository ? `<a href="${attr(config.repository)}">GitHub</a>` : ""}
@@ -1785,10 +1788,10 @@ function adminPage() {
   <aside class="adm-side" data-adm-side>
     <div class="acc-eyebrow">Administration</div>
     <nav class="adm-nav" aria-label="Administration">${NAV.map(([id, label, icon]) => `<a href="#${id}" data-view-link="${id}">${icon}<span>${label}</span>${id === "submissions" ? '<b class="adm-count" data-queue-badge hidden></b>' : ""}</a>`).join("")}</nav>
-    <div class="adm-side-foot"><a href="/catalog/">↗ Open the public catalog</a><a href="/account/">Your account</a><div class="adm-me" data-admin-me></div></div>
+    <div class="adm-side-foot"><a href="/catalog/">↗ Open the public catalog</a><a href="/account/">Your account</a><div class="adm-me" data-admin-me></div><button type="button" class="btn-ghost btn-sm adm-signout" data-adm-signout>Sign out</button></div>
   </aside>
   <div class="adm-main">
-    <div class="adm-bar"><button type="button" class="btn-ghost btn-sm adm-menu" data-adm-menu aria-expanded="false">☰ Menu</button><div class="adm-crumb">Administration <span>/</span> <b data-adm-crumb>Overview</b></div><span class="adm-date" data-adm-date></span></div>
+    <div class="adm-bar"><button type="button" class="btn-ghost btn-sm adm-menu" data-adm-menu aria-expanded="false">☰ Menu</button><div class="adm-crumb">Administration <span>/</span> <b data-adm-crumb>Overview</b></div><span class="adm-date" data-adm-date></span><button type="button" class="adm-bar-signout" data-adm-signout>Sign out</button></div>
     <p class="adm-denied" data-adm-denied hidden>This page is for ${esc(brand)} superadmins. <a href="/account/">Back to your account</a></p>
     <div data-adm-views hidden>
 
