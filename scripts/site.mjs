@@ -327,7 +327,7 @@ function page({ title, description, pathname, body, graph = [], noindex = false,
   const nav = (href, label) => `<a href="${href}"${pathname.startsWith(href) ? ' aria-current="page"' : ""}>${label}</a>`;
   // A menu group: opens on hover or focus on wide screens (click or tap toggles it); on small screens the items are listed under the label.
   const group = (label, items, extra = "") => {
-    // Items may point into one page (/api-docs/#mcp): the group is current on that page; only plain links are marked as the page.
+    // Items may point into a page (/x/#part): the group is current on that page; only plain links are marked as the page.
     const current = items.some(([h]) => pathname.startsWith(h.split("#")[0]));
     return `<div class="nav-group" data-nav-group><button type="button" class="nav-group-btn${current ? " current" : ""}" aria-expanded="false" aria-haspopup="true">${label}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button><div class="nav-menu">${items.map(([h, t, d]) => `<a href="${h}"${!h.includes("#") && pathname.startsWith(h) ? ' aria-current="page"' : ""}><b>${t}</b><small>${d}</small></a>`).join("")}${extra}</div></div>`;
   };
@@ -382,7 +382,7 @@ ${gtmBody}
       <div class="nav-links" id="nav-links">
       ${group("Catalog", [["/catalog/", "Browse the catalog", "Search and filter every resource"], ["/categories/", "Categories", "Resources grouped by domain"]])}
       ${nav("/evaluation/", "Evaluation")}
-      ${group("Developers", [["/api-docs/#overview", "Developer hub", "Start here: guides, examples and reference"], ["/api-docs/#api", "REST API", "Search and read the catalog from your code"], ["/api-docs/#mcp", "MCP server", "Connect Claude, Cursor, VS Code and other assistants"], ["/api-docs/#llms", "Docs for LLMs", "The API reference as Markdown for your AI"]])}
+      ${group("Developers", [["/api-docs/", "REST API", "Search and read the catalog from your code"], ["/mcp-docs/", "MCP server", "Connect Claude, Cursor, VS Code and other assistants"]])}
       ${group("About", [["/about/", "About", "What this is, who runs it and how"], ["/roadmap/", "Roadmap", "What's available and what's next"], ["/contact/", "Contact", "Questions, corrections and partnerships"]])}
       <a class="nav-submit" href="/submit/"${pathname.startsWith("/submit/") ? ' aria-current="page"' : ""}>Submit</a>
       </div>
@@ -1704,7 +1704,7 @@ function accountPage() {
       <article class="acc-card"><div class="acc-card-head"><h2>Connect your workflow</h2></div><div class="acc-setup"><p>Bring ${esc(brand)} into the tools you already use.</p>
         <button type="button" class="acc-setup-item" data-open-connection="api"><span class="acc-symbol">${I.code}</span><span><b>Build with the API</b><small>Query the catalog from your code</small></span><span class="acc-arrow">→</span></button>
         <button type="button" class="acc-setup-item" data-open-connection="mcp"><span class="acc-symbol">${I.mcp}</span><span><b>Connect an AI client</b><small>Explore resources through MCP</small></span><span class="acc-arrow">→</span></button>
-        <a class="acc-setup-item" href="/api-docs/#llms"><span class="acc-symbol">${ic('<path d="M5 4h10l4 4v12H5zM14 4v5h5M8 13h8M8 17h5"/>')}</span><span><b>Docs for your AI assistant</b><small>Copy the API reference as Markdown</small></span><span class="acc-arrow">→</span></a>
+        <a class="acc-setup-item" href="/llms-full.txt" target="_blank" rel="noopener"><span class="acc-symbol">${ic('<path d="M5 4h10l4 4v12H5zM14 4v5h5M8 13h8M8 17h5"/>')}</span><span><b>Docs for your AI assistant</b><small>Copy the API reference as Markdown</small></span><span class="acc-arrow">→</span></a>
       </div></article>
     </div>
     <article class="acc-card acc-recent"><div class="acc-card-head"><h2>Recent activity</h2><button type="button" class="acc-link" data-go-tab="activity">View all activity →</button></div><div data-recent></div></article>
@@ -1868,7 +1868,8 @@ function adminPage() {
   return page({ title: "Administration", pathname: "/admin/", body, noindex: true, description: `${brand} administration: submissions, catalog, evaluations, users and activity.`, scripts: ["/assets/admin.js"] });
 }
 
-function apiDocsPage() {
+function apiDocsPage(section = "api") {
+  const mcp = section === "mcp";
   const brand = config.brand || config.name || "Catalog";
   // Examples use this catalog's own best-scored entry and first category, so every request works as written.
   const top = [...catalog].sort(byScore)[0] || { id: "example", name: "Example" };
@@ -1876,11 +1877,10 @@ function apiDocsPage() {
   const body = `
 <div class="devhub" data-devhub data-brand="${attr(brand)}" data-slug="${attr(brand.toLowerCase().replace(/[^a-z0-9]+/g, "-"))}"
   data-entry="${attr(top.id)}" data-entry-name="${attr(top.acronym || top.name)}" data-topic="${attr((top.tags || [])[0] || "ontology")}"
-  data-category="${attr(categories[0]?.id || "")}" data-run="${attr(lastRun)}" data-repo="${attr(config.repository || "")}">
-  <button class="dh-menu" type="button" data-dh-menu aria-expanded="false">☰ Developer docs</button>
+  data-category="${attr(categories[0]?.id || "")}" data-run="${attr(lastRun)}" data-repo="${attr(config.repository || "")}" data-section="${section}">
+  <button class="dh-menu" type="button" data-dh-menu aria-expanded="false">☰ ${mcp ? "MCP docs" : "API docs"}</button>
   <aside class="dh-side" data-dh-side>
     <input class="dh-search" type="search" placeholder="Search documentation…" aria-label="Search documentation" data-dh-search>
-    <div class="dh-switch" data-dh-switch role="tablist"></div>
     <nav data-dh-nav aria-label="Developer documentation"></nav>
   </aside>
   <div class="dh-main" data-dh-content>
@@ -1888,7 +1888,9 @@ function apiDocsPage() {
   </div>
   <aside class="dh-rail" data-dh-rail aria-label="On this page"></aside>
 </div>`;
-  return page({ title: "Developers: API & MCP", pathname: "/api-docs/", body, description: `Build on ${brand}: a REST API for applications and data pipelines, and an MCP server for AI assistants. Quickstart, authentication, rate limits, every endpoint, and MCP setup for Claude, Cursor, VS Code and Codex.`, scripts: ["/assets/apidocs.js"] });
+  return mcp
+    ? page({ title: "MCP server", pathname: "/mcp-docs/", body, description: `Connect AI assistants to ${brand} with the Model Context Protocol: what MCP is, step-by-step setup for Claude, Cursor, VS Code and Codex, the available tools and troubleshooting.`, scripts: ["/assets/apidocs.js"] })
+    : page({ title: "REST API", pathname: "/api-docs/", body, description: `Build on ${brand} with the REST API: quickstart, authentication, rate limits and fair use, every endpoint with a live "Try it", and code in cURL, Python and JavaScript.`, scripts: ["/assets/apidocs.js"] });
 }
 
 // ---------- output files ----------
@@ -1942,7 +1944,8 @@ put(
 put("submit/index.html", () => submitPage());
 put("account/index.html", () => accountPage());
 put("admin/index.html", () => adminPage());
-put("api-docs/index.html", () => apiDocsPage());
+put("api-docs/index.html", () => apiDocsPage("api"));
+put("mcp-docs/index.html", () => apiDocsPage("mcp"));
 put("about/index.html", () => aboutPage());
 put("contact/index.html", () => contactPage());
 put("roadmap/index.html", () => roadmapPage());

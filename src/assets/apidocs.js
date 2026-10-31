@@ -1,4 +1,4 @@
-// Developer hub (/api-docs/): overview, REST API (quickstart, guides, every endpoint from /openapi.json with live
+// Developer docs (/api-docs/): REST API (quickstart, guides, every endpoint from /openapi.json with live
 // "Try it"), and MCP server (client setup, tools, workflow, troubleshooting). Hash-routed, rendered in the browser.
 // Every URL is this site's own address; nothing is hard-coded.
 (() => {
@@ -14,6 +14,10 @@
   const ENV = SLUG.toUpperCase().replace(/-/g, "_") + "_TOKEN";
   const token = () => { try { return sessionStorage.getItem("new-mcp-token"); } catch { return null; } };
   const state = { open: new Set(), cfg: { tokenPrefix: "…_pat_", rateLimit: {} }, spec: null, session: null, client: store.get("dh-client") || "claude-code", lang: store.get("dh-lang") || "cURL" };
+  // Two pages share this script: the REST API docs (/api-docs/) and the MCP docs (/mcp-docs/). A link to the other
+  // section's page goes to that page.
+  const HOME = D.section === "mcp" ? "mcp" : "api";
+  const PATHS = { api: "/api-docs/", mcp: "/mcp-docs/" };
   const SAMPLE = { entry_id: D.entry, cat_id: D.category, run_id: D.run, name: "roadmap" };
 
   // ---------- building blocks ----------
@@ -78,19 +82,17 @@
     return out;
   };
   const GROUPS = () => ({
-    overview: [["Get started", [["overview", "Overview"], ["api", "REST API"], ["mcp", "MCP server"]]], ["Explore", [["guide", "Choose your integration"], ["examples", "Examples"], ["llms", "Docs for LLMs"]]]],
-    api: [["REST API", [["api", "Quickstart"], ["authentication", "Authentication"], ["rate-limits", "Rate limits"], ["pagination", "Search & pagination"], ["llms", "Docs for LLMs"]]],
+    api: [["REST API", [["api", "Quickstart"], ["authentication", "Authentication"], ["rate-limits", "Rate limits"], ["pagination", "Search & pagination"], ["examples", "Examples"]]],
       ...endpointPages().map(([tag, ops]) => [`Reference · ${tag}`, ops.map(([id, name, method]) => [id, name, method])]),
       ["Support", [["errors", "Errors & responses"]]]],
-    mcp: [["MCP server", [["mcp", "Overview"], ["connect", "Connect your client"]]], ["Reference", [["tools", "Available tools"], ["workflow", "Example workflow"]]], ["Support", [["troubleshooting", "Troubleshooting"]]]],
+    mcp: [["MCP server", [["mcp", "Overview"], ["connect", "Connect your client"]]], ["Tools", [["tools", "Available tools"], ["workflow", "Example workflow"]]], ["Support", [["troubleshooting", "Troubleshooting"]]]],
   });
   const sectionOf = (page) => {
     const g = GROUPS();
-    for (const s of ["api", "mcp"]) if (g[s].some(([, items]) => items.some(([id]) => id === page))) return s;
-    return "overview";
+    return g.mcp.some(([, items]) => items.some(([id]) => id === page)) ? "mcp" : "api";
   };
   const exists = (page) => Object.values(GROUPS()).some((g) => g.some(([, items]) => items.some(([id]) => id === page)));
-  let page = "overview", section = "overview";
+  let page = HOME, section = HOME;
 
   // Toggle one group without losing the reader's place in the sidebar.
   function renderNavKeep(group, open) {
@@ -99,10 +101,9 @@
     if (open) state.open.add(group); else { state.open.delete(group); state.forceClosed = group; }
     renderNav();
     side.scrollTop = top;
+    fitSticky();
   }
   function renderNav() {
-    $("[data-dh-switch]").innerHTML = [["overview", "Overview"], ["api", "REST API"], ["mcp", "MCP"]]
-      .map(([s, l]) => `<button type="button" role="tab" aria-selected="${section === s}" class="${section === s ? "active" : ""}" data-go="${s}">${l}</button>`).join("");
     const q = $("[data-dh-search]").value.trim().toLowerCase();
     const groups = q ? Object.values(GROUPS()).flat() : GROUPS()[section];
     const seen = new Set();
@@ -111,7 +112,7 @@
       const list = items.filter(([id, name]) => !seen.has(id) && (!q || name.toLowerCase().includes(q) || id.includes(q)));
       list.forEach(([id]) => seen.add(id));
       if (!list.length) return "";
-      const links = list.map(([id, name, method]) => `<a class="dh-item${page === id ? " active" : ""}" href="#${id}">${method ? `<span class="dh-mini m-${method}">${method.toUpperCase()}</span>` : ""}${esc(name)}</a>`).join("");
+      const links = list.map(([id, name, method]) => `<a class="dh-item${page === id ? " active" : ""}" href="${sectionOf(id) === HOME ? "" : PATHS[sectionOf(id)]}#${id}">${method ? `<span class="dh-mini m-${method}">${method.toUpperCase()}</span>` : ""}${esc(name)}</a>`).join("");
       if (!label.startsWith("Reference")) return `<div class="dh-label">${esc(label)}</div>${links}`;
       const open = q || state.open.has(label) || (state.forceClosed !== label && list.some(([id]) => id === page));
       return `<button type="button" class="dh-group" data-group="${esc(label)}" aria-expanded="${!!open}"><span>${esc(label.replace("Reference · ", ""))}</span><small>${list.length}</small></button>${open ? `<div class="dh-group-items">${links}</div>` : ""}`;
@@ -122,21 +123,7 @@
   // ---------- pages ----------
   const first = () => `curl "${ORIGIN}/api/entries?q=${encodeURIComponent(D.topic.split(" ")[0])}&sort=score&size=5"`;
   const P = {};
-  P.overview = () => hero(`${BRAND} developer hub`, `Build on <em>connected</em><br>knowledge.`, `Bring ontologies, schemas and standards into your applications and AI workflows. One catalog, two ways to connect.`) + `
-    <div class="dh-cards">
-      <a class="dh-card" href="#api"><span class="dh-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-2 18"/></svg></span><span class="dh-index">01 / PROGRAMMATIC ACCESS</span>
-        <h2>REST API</h2><p>Search the catalog, read every resource's evaluation and follow scores across runs, from code.</p><span class="dh-tag">Applications &amp; data pipelines</span><span class="dh-cta">Explore the API <span>↗</span></span></a>
-      <a class="dh-card mcp" href="#mcp"><span class="dh-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3h8v6H8zM2 15h8v6H2zm12 0h8v6h-8zM12 9v3M6 15v-3h12v3"/></svg></span><span class="dh-index">02 / AGENT INTEGRATION</span>
-        <h2>MCP server</h2><p>Give AI assistants and agents the catalog, scores and the evidence behind them.</p><span class="dh-tag">AI assistants &amp; agent workflows</span><span class="dh-cta">Connect your client <span>↗</span></span></a>
-    </div>
-    ${title("Your first request", "No account needed to read the catalog.")}
-    <div class="dh-quick"><div class="dh-quick-text"><div class="dh-number">01 / REST API QUICKSTART</div><h3>Find resources on a topic</h3><p>Search ${esc(BRAND)} and get each resource's score, grade and the version evaluated.</p><a class="dh-link" href="#api">Follow the quickstart →</a></div>${code(first())}</div>
-    ${resources([["#authentication", "Authentication", "Tokens for higher limits and your account."], ["#tools", "Explore MCP tools", "Discover what your agent can do."], ["#examples", "Integration examples", "Turn a first connection into a workflow."]])}`;
-  P.guide = () => hero("Developer guide", "Choose your <em>integration.</em>", "Two connections, one catalog.") + `
-    ${title("Which one?")}
-    <div class="dh-quick two"><div class="dh-quick-text"><div class="dh-number">REST API</div><h3>Explicit requests from code</h3><p>Applications, scripts, notebooks and data pipelines. Reading is open; a token raises your rate limit.</p><a class="dh-link" href="#api">Open the API quickstart →</a></div>
-      <div class="dh-quick-text alt"><div class="dh-number">MCP SERVER</div><h3>Let an AI assistant call tools</h3><p>Claude, Cursor, VS Code, Codex and other MCP clients search the catalog and read evidence for you. Needs a token with MCP access.</p><a class="dh-link" href="#connect">Connect your client →</a></div></div>`;
-  P.examples = () => hero("Developer guide", "Integration <em>examples.</em>", "A starting point for your next workflow.") + `
+  P.examples = () => hero("REST API", "Integration <em>examples.</em>", "A starting point for your next workflow.") + `
     ${title("In an application", "query → results → details")}
     ${code(`curl "${ORIGIN}/api/entries?q=${encodeURIComponent(D.topic.split(" ")[0])}&kind=ontology&sort=score&size=3"\ncurl "${ORIGIN}/api/entries/${D.entry}"\ncurl "${ORIGIN}/api/entries/${D.entry}/history"`, "cURL")}
     ${title("In an AI workflow", "prompt → tool call → grounded answer")}
@@ -290,28 +277,6 @@
   }
 
 
-  // Docs for LLMs: /llms.txt (index) and /llms-full.txt (everything), generated by the API from its own description.
-  const AI_TOOLS = () => [
-    ["Claude, ChatGPT, Gemini (chat)", `Press <b>Copy full reference</b> above and paste it at the start of your conversation, then ask for what you want to build.`],
-    ["Claude Code", `Ask: <code>Read ${esc(ORIGIN)}/llms-full.txt, then …</code>. It fetches the file itself.`],
-    ["Cursor", `Settings → Indexing &amp; Docs → <b>Add doc</b> → <code>${esc(ORIGIN)}/llms-full.txt</code>. Then mention <code>@${esc(BRAND)}</code> in chat.`],
-    ["VS Code (Copilot)", `In chat: <code>#fetch ${esc(ORIGIN)}/llms-full.txt</code>, then your request.`],
-    ["Windsurf, Zed and others", `Add <code>${esc(ORIGIN)}/llms-full.txt</code> as a docs source or attach it as context; most tools accept a URL or a pasted file.`],
-  ];
-  P.llms = () => hero("Docs for LLMs", `Docs your <em>AI</em> can read.`, `Give an AI assistant the whole ${esc(BRAND)} API in one Markdown file, so the code it writes works the first time.`) + `
-    <p class="dh-p">Assistants write better integration code when they can read the real documentation instead of guessing. We publish ours in the <a href="https://llmstxt.org" rel="noopener">llms.txt</a> format: plain Markdown, generated from the live API description, so it is always current. It covers every endpoint and parameter with examples, authentication, rate limits and fair use, errors, and the MCP tools.</p>
-    ${title("Two files", "Copy, or give your tool the URL")}
-    <div class="dh-llmfiles">
-      <div class="dh-llmfile"><div><span class="dh-number">FULL REFERENCE</span><h3><code>/llms-full.txt</code></h3><p>Everything in one file (about 25 KB). Use this one in most cases.</p></div><div class="dh-llmactions"><button type="button" class="dh-btn" data-copy-url="/llms-full.txt">Copy full reference</button><a class="dh-link" href="/llms-full.txt" target="_blank" rel="noopener">Open ↗</a></div></div>
-      <div class="dh-llmfile"><div><span class="dh-number">INDEX</span><h3><code>/llms.txt</code></h3><p>A short summary with one line per endpoint and tool, and links to the rest. For tools that discover docs on their own.</p></div><div class="dh-llmactions"><button type="button" class="dh-btn ghost" data-copy-url="/llms.txt">Copy index</button><a class="dh-link" href="/llms.txt" target="_blank" rel="noopener">Open ↗</a></div></div>
-    </div>
-    ${title("Use it with your tool")}
-    <table class="dh-table"><thead><tr><th>Tool</th><th>How</th></tr></thead><tbody>${AI_TOOLS().map(([a, b]) => `<tr><td><b>${a}</b></td><td>${b}</td></tr>`).join("")}</tbody></table>
-    ${title("A prompt to start with", "Edit the last line")}
-    ${code(`Read the ${BRAND} API reference at ${ORIGIN}/llms-full.txt.\nUse only the endpoints and parameters it documents. Read my token from the ${ENV} environment variable if it is set,\nhandle 429 responses by waiting for Retry-After, and cache results.\n\nTask: write a Python function that finds the five best-scored ${BRAND} ontologies for a topic and returns their names, grades and homepages.`, "Prompt")}
-    ${title("Preview")}
-    ${code(`curl "${ORIGIN}/llms.txt"`, "cURL", { run: "/llms.txt" })}
-    ${callout(`On an endpoint page, <b>Copy as Markdown</b> copies just that endpoint, for a focused question. For live catalog data inside the assistant, rather than code, connect the <a href="#mcp">MCP server</a>.`)}`;
   // One endpoint as Markdown, for pasting into an assistant.
   function endpointMarkdown(id) {
     const [, name, method, path, op] = opById(id);
@@ -362,7 +327,7 @@
     <button type="button" data-copy-md><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg>Copy for LLM</button>
     <button type="button" data-view-md><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M6 15V9l3 3 3-3v6M17 9v6m-2-2 2 2 2-2"/></svg>View as Markdown</button>
     <a href="#connect"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M6 6l2 2m8 8 2 2M6 18l2-2m8-8 2-2"/></svg>Set up agent</a>
-    <a href="#llms"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5zM14 4v5h5M8 13h8M8 17h5"/></svg>Docs for LLMs</a>
+    <a href="/llms-full.txt" target="_blank" rel="noopener" title="The whole API and MCP reference in one Markdown file, for AI assistants"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h10l4 4v12H5zM14 4v5h5M8 13h8M8 17h5"/></svg>Full reference (.txt)</a>
   </div>`;
 
   // MCP
@@ -463,11 +428,11 @@
   // ---------- render & route ----------
   const crumbs = () => {
     const pageName = Object.values(GROUPS()).flat().flatMap(([, i]) => i).find(([id]) => id === page)?.[1];
-    return `<div class="dh-crumbs"><a href="#overview">Developers</a> <span>/</span> ${section === "overview" ? "Overview" : section === "api" ? "REST API" : "MCP server"}${!["overview", "api", "mcp"].includes(page) && pageName ? ` <span>/</span> <b>${esc(pageName)}</b>` : ""}</div>`;
+    return `<div class="dh-crumbs"><a href="#${HOME}">Developers</a> <span>/</span> ${section === "api" ? "REST API" : "MCP server"}${!["api", "mcp"].includes(page) && pageName ? ` <span>/</span> <b>${esc(pageName)}</b>` : ""}</div>`;
   };
   function render() {
     renderNav();
-    const html = page.startsWith("ep-") ? (state.spec ? endpoint(page) : `<p class="dh-p dh-muted">Loading…</p>`) : (P[page] || P.overview)();
+    const html = page.startsWith("ep-") ? (state.spec ? endpoint(page) : `<p class="dh-p dh-muted">Loading…</p>`) : (P[page] || P[HOME])();
     $("[data-dh-content]").innerHTML = crumbs() + html;
     $(".dh-hero", $("[data-dh-content]"))?.insertAdjacentHTML("afterend", pageBar());
   }
@@ -495,8 +460,18 @@
       <div class="dh-rail-card cta"><h3>→ ${signedIn ? "Create a token" : "Get a token"}</h3><p>${signedIn ? `Signed in as @${esc(state.session.user.login)}. Tokens raise your limit to ${fmt(state.cfg.rateLimit.authenticatedPerMinute)} requests a minute and connect MCP clients.` : "Sign in with GitHub to create tokens for the API and MCP. It takes a minute."}</p><a class="dh-btn" href="${signin()}">${signedIn ? "Your tokens →" : "Sign in with GitHub →"}</a></div>`;
     heads.forEach((h) => spy.observe(h));
   }
+  // Sticky sidebars that are taller than the window stick by their bottom edge, so every item can be reached.
+  const HEADER = 64;
+  function fitSticky() {
+    for (const el of [$("[data-dh-side]"), $("[data-dh-rail]")]) {
+      if (!el) continue;
+      el.style.top = `${Math.min(HEADER, window.innerHeight - el.offsetHeight)}px`;
+    }
+  }
+  window.addEventListener("resize", fitSticky);
   function afterRender() {
     renderRail();
+    fitSticky();
     const form = $("[data-ep-form]");
     if (form) {
       const [, , method, path] = opById(form.dataset.ep);
@@ -505,9 +480,11 @@
   }
   function route() {
     state.forceClosed = null;
-    const want = location.hash.slice(1) || "overview";
-    page = exists(want) || (want.startsWith("ep-") && !state.spec) ? want : "overview";
-    section = page.startsWith("ep-") ? "api" : sectionOf(page);
+    const want = location.hash.slice(1) || HOME;
+    const wantSection = want.startsWith("ep-") ? "api" : exists(want) ? sectionOf(want) : HOME;
+    if (wantSection !== HOME) return location.replace(`${PATHS[wantSection]}#${want}`);
+    page = exists(want) || (want.startsWith("ep-") && !state.spec) ? want : HOME;
+    section = HOME;
     $("[data-dh-search]").value = "";
     render();
     afterRender();
@@ -560,7 +537,7 @@
       t.setAttribute("aria-expanded", String(open));
     }
   });
-  $("[data-dh-search]").addEventListener("input", renderNav);
+  $("[data-dh-search]").addEventListener("input", () => { renderNav(); fitSticky(); });
   root.addEventListener("submit", (e) => {
     if (!e.target.matches("[data-ep-form]")) return;
     e.preventDefault();

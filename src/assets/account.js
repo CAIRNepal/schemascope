@@ -179,7 +179,7 @@
     $("[data-conn-title]").textContent = conn === "api" ? "Build with structured knowledge." : "Give your AI client a trusted catalog.";
     $("[data-conn-desc]").innerHTML = conn === "api"
       ? `Reading is open to everyone. Send your token to get your higher rate limit, and keep it in an environment variable, never in your code. <a href="/api-docs/#api">API quickstart →</a>`
-      : `Your assistant can then search the catalog, read evaluations and compare runs for you. Needs a token with <b>MCP</b> access. <a href="/api-docs/#connect">Step-by-step guide →</a>`;
+      : `Your assistant can then search the catalog, read evaluations and compare runs for you. Needs a token with <b>MCP</b> access. <a href="/mcp-docs/#connect">Step-by-step guide →</a>`;
     updateCode();
   }
   function updateCode() {

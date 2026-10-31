@@ -1279,3 +1279,9 @@ body.nav-open .nav-toggle .nt-close { display: inline; }
   .nav-user { order: 2; margin: 0; }
   .nav-user > .nav-account { padding: 7px 10px; }
 }
+/* Developer docs: sidebars at full height, no inner scrolling. A sidebar taller than the window scrolls with the page
+   until its end is in view, then stays (its sticky top is set by apidocs.js). */
+@media (min-width: 761px) {
+  .dh-side, .dh-rail { height: auto; max-height: none; overflow: visible; -webkit-mask-image: none; mask-image: none; }
+  .dh-side { padding-bottom: 28px; }
+}
