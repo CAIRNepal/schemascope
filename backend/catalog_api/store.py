@@ -80,6 +80,11 @@ def content(name: str) -> Any:
     return _meta().get(f"content:{name}") if name in CONTENT else None
 
 
+def domain_graph() -> dict:
+    """Domains as nodes, shared resources and imports as weighted edges, and the resources spanning most domains."""
+    return _meta().get("domainGraph") or {"nodes": [], "edges": [], "bridges": []}
+
+
 def meta() -> dict:
     m = _meta()
     return {"site": m.get("site"), "evaluation": m.get("evaluation"), "rubric": m.get("rubric"), "ingestedAt": m.get("ingestedAt")}

@@ -71,6 +71,12 @@ def get_content(name: str):
     return doc
 
 
+@app.get("/api/domain-graph")
+def get_domain_graph():
+    """How domains connect: nodes (domains, with reach), weighted edges (shared resources + imports), bridges."""
+    return store.domain_graph()
+
+
 @app.get("/api/stats")
 def get_stats():
     return store.stats()

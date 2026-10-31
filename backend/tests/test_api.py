@@ -128,3 +128,11 @@ def test_entry_ids_that_look_like_routes(client):
     assert [x["id"] for x in client.get("/api/top-entries").json()] == ["go", "envo"]
     assert {x["id"] for x in client.get("/api/entry-ids").json()} == {"go", "envo", "sch", "top"}
     assert client.get("/api/recent-entries").status_code == 200
+
+
+def test_domain_graph(client):
+    g = client.get("/api/domain-graph").json()
+    assert {n["id"]: n["reach"] for n in g["nodes"]} == {"life": 2, "earth": 3}
+    # go spans life+earth (1) and imports envo across domains (0.5).
+    assert g["edges"] == [{"a": "earth", "b": "life", "n": 1.5}]
+    assert g["bridges"][0]["id"] == "go"

@@ -85,6 +85,40 @@ def rubric_meta() -> dict | None:
         return None
 
 
+def domain_graph(catalog: list[dict], categories: list[dict], ev: dict) -> dict:
+    """How domains connect (same model as the static site's cross-domain map).
+
+    Edge weight between two domains: resources used in both, plus 0.5 per import link from a resource in one
+    to a resource in the other. Node size: resources used in the domain at all (reach).
+    """
+    domains_of = lambda e: [e["category"], *[d for d in e.get("domains") or [] if d != e["category"]]]  # noqa: E731
+    by_key = {str(k).lower(): x for x in catalog for k in (x["id"], x.get("obo"), x.get("ols"), x.get("bioregistry")) if k}
+    weights: dict[tuple[str, str], float] = {}
+
+    def bump(a: str, b: str, n: float = 1) -> None:
+        if a != b:
+            k = tuple(sorted((a, b)))
+            weights[k] = weights.get(k, 0) + n
+
+    for e in catalog:
+        ds = domains_of(e)
+        for i in range(len(ds)):
+            for j in range(i + 1, len(ds)):
+                bump(ds[i], ds[j])
+        for k in ((ev.get(e["id"]) or {}).get("ols") or {}).get("importsFrom") or []:
+            f = by_key.get(str(k).lower())
+            if f and f["id"] != e["id"]:
+                bump(e["category"], f["category"], 0.5)
+    reach = {c["id"]: sum(1 for e in catalog if c["id"] in domains_of(e)) for c in categories}
+    score = lambda e: (ev.get(e["id"]) or {}).get("score") or 0  # noqa: E731
+    bridges = sorted(catalog, key=lambda e: (-len(domains_of(e)), -score(e)))[:7]
+    return {
+        "nodes": [{"id": c["id"], "name": c["name"], "icon": c.get("icon"), "reach": reach[c["id"]]} for c in categories],
+        "edges": sorted(({"a": a, "b": b, "n": n} for (a, b), n in weights.items()), key=lambda x: -x["n"]),
+        "bridges": [{"id": e["id"], "acronym": e.get("acronym"), "name": e["name"], "domains": domains_of(e)} for e in bridges],
+    }
+
+
 def ingest(rebuild: bool = False, db_path: Path = DB_PATH) -> dict:
     t0 = time.time()
     db_path.parent.mkdir(parents=True, exist_ok=True)
@@ -137,6 +171,8 @@ def ingest(rebuild: bool = False, db_path: Path = DB_PATH) -> dict:
                 *(m.get("name", "") for m in e.get("modules") or []), *(cat_names.get(d, "") for d in domains),
             ])
             con.execute("INSERT INTO entries_fts VALUES (?, ?, ?, ?, ?)", (e["id"], e.get("acronym") or "", e["name"], e.get("description") or "", extra))
+
+        con.execute("INSERT INTO meta VALUES (?, ?)", ("domainGraph", json.dumps(domain_graph(catalog, categories, ev))))
 
     known = {row[0] for row in con.execute("SELECT id FROM runs")}
     added = 0
