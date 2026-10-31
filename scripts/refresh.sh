@@ -57,6 +57,12 @@ node scripts/evaluate.mjs | grep -v -E '^\s+[0-9]+ [A-E] ' || true
 step "Building static site"
 node scripts/build.mjs
 
+# Load the new results into the API database (backend/), if the Python stack is set up here.
+if command -v uv >/dev/null 2>&1 && [ -f backend/pyproject.toml ]; then
+  step "Loading results into the API database"
+  (cd backend && uv run -q python -m catalog_api.ingest)
+fi
+
 step "Committing results"
 git add data/evaluation.json data/runs data/quality 2>/dev/null || true
 if git diff --cached --quiet; then

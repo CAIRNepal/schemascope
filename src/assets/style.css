@@ -523,6 +523,6 @@ mark { background: var(--gold-soft); color: inherit; border-radius: 3px; padding
 
 /* Rubric validation */
 .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0 24px; }
-.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 4px; }
-.stat b { font-size: 1.6rem; font-variant-numeric: tabular-nums; }
-.stat span { color: var(--muted); font-size: .9rem; }
+.stat-grid .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 4px; }
+.stat-grid .stat b { font-size: 1.6rem; font-variant-numeric: tabular-nums; }
+.stat-grid .stat span { color: var(--muted); font-size: .9rem; }

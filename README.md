@@ -1,6 +1,6 @@
 # SchemaScope — schemascope.org
 
-A cross-domain catalog of ontologies, vocabularies, schemas and data standards. It is harvested from the major registries, extended by discovering ontologies that no registry lists, and evaluated automatically for FAIRness, ontology quality, maintenance and adoption. Every record keeps its provenance. The site is fully static.
+A cross-domain catalog of ontologies, vocabularies, schemas and data standards. It is harvested from the major registries, extended by discovering ontologies that no registry lists, and evaluated automatically for FAIRness, ontology quality, maintenance and adoption. Every record keeps its provenance. The site is served by a FastAPI backend (JSON API + MCP server) and a server-rendered Next.js UI; the evaluation pipeline is Node.
 
 <img width="1508" height="833" alt="Screenshot 2026-10-26 at 4 42 34 PM" src="https://github.com/user-attachments/assets/70ef4c4d-9f32-4343-b466-d4998de99caf" />
 
@@ -38,6 +38,27 @@ Records are merged across sources by prefix, cross-registry mappings, ontology o
 - **Per download:** `data/sources.json` records each registry download (URL, SHA-256, size, licence), and `data/sources/*.gz` archives the raw files, so `python3 scripts/harvest.py --offline` reproduces the catalog exactly.
 - **Per evaluation:** each evaluation run is archived in `data/runs/`.
 
+## API, MCP and UI
+
+```
+data/*.json ──ingest──▶ SQLite (.local/catalog.db) ──▶ FastAPI  /api/…  (JSON, OpenAPI at /docs)
+ (evaluate,                                              │       /mcp/   (MCP, streamable HTTP)
+  rescore, quality)                                      └──▶ Next.js UI (web/, server-rendered)
+```
+
+```bash
+npm run ingest        # load data/ into .local/catalog.db (incremental; --rebuild to start over). refresh.sh runs it too
+npm run api           # API + MCP on http://127.0.0.1:8000  (needs uv: https://docs.astral.sh/uv/)
+npm run web           # UI on http://localhost:3000, reading the API
+npm run test:api      # backend tests
+```
+
+- **API** (`backend/catalog_api/`): `/api/entries` (search with `q`, filters `category`, `kind`, `grade`, `format`, `registry`, `legacy`, `sort`, pagination and facet counts), `/api/entries/{id}`, `/api/entries/{id}/history`, `/api/categories`, `/api/runs`, `/api/runs/{id}`, `/api/stats`, `/api/meta`.
+- **MCP** at `/mcp/`: tools `search_catalog`, `get_entry`, `get_entry_history`, `list_categories`, `catalog_stats`, `scoring_rubric`. Add it to Claude Code with `claude mcp add --transport http schemascope http://127.0.0.1:8000/mcp/`, or run it over stdio with `npm run mcp:stdio`.
+- **UI** (`web/`): Next.js App Router. Stylesheet and brand images come from `src/assets/` (copied on build). Pages not ported yet are proxied to the static build when `LEGACY_SITE_URL` is set.
+
+Environment: `CATALOG_REPO` (repository root; default: parent of `backend/`), `CATALOG_DB`, `CORS_ORIGINS`, `MCP_ALLOWED_HOSTS` (public host name(s) of the API, e.g. `api.schemascope.org`; localhost always works) for the API; `API_URL` (server-side), `NEXT_PUBLIC_API_URL` (links shown to readers), `REVALIDATE_SECONDS`, `LEGACY_SITE_URL` for the UI. The UI build pre-renders some pages, so the API must be reachable during `next build`.
+
 ## Domains
 
 There are 15 domains, from foundational ontologies to privacy & law (see `data/categories.json`). Each record has a primary domain and optional secondary domains, which drive the cross-domain map on the home page. Domains come from OBO Foundry domains, LOV tags, TIB classifications and keyword rules.
@@ -52,7 +73,7 @@ Use the site's `/submit/` form, which opens a GitHub issue that a bot turns into
 
 ## Deploy
 
-Vercel builds the site with `node scripts/build.mjs` into `dist/` (see `vercel.json`). Set the Application Preset to **Other** and leave the install command empty.
+Two processes: the API (`uvicorn catalog_api.app:app`, Python ≥ 3.11, with `.local/catalog.db` built by `npm run ingest`) and the UI (`cd web && npm run build && npm start`, with `API_URL` pointing at the API). The static build (`node scripts/build.mjs` → `dist/`, `vercel.json`) still works and serves the pages that are not ported yet; see S-014 in DECISIONS.md.
 
 ## License
 
