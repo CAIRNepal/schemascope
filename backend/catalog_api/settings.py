@@ -42,8 +42,9 @@ COOKIE_SECURE = os.environ.get("COOKIE_SECURE", "1" if PUBLIC_SITE_URL.startswit
 PUBLIC_API_URL = _url("PUBLIC_API_URL", PUBLIC_SITE_URL)
 
 # ---------- accounts, sign-in and rate limits ----------
-# GitHub logins that may read the full audit log (comma-separated).
-ADMIN_LOGINS = {x.strip().lower() for x in os.environ.get("ADMIN_LOGINS", "").split(",") if x.strip()}
+# Superadmins, by the verified primary email of their GitHub account (comma-separated). They can read the full
+# audit log and change rate limits (globally and per user) from the account page.
+SUPERADMIN_EMAILS = {x.strip().lower() for x in os.environ.get("SUPERADMIN_EMAILS", "").split(",") if x.strip()}
 # GitHub OAuth app (Settings → Developer settings → OAuth Apps). Callback URL: <PUBLIC_SITE_URL>/api/auth/github/callback
 GITHUB_CLIENT_ID = os.environ.get("GITHUB_CLIENT_ID", "")
 GITHUB_CLIENT_SECRET = os.environ.get("GITHUB_CLIENT_SECRET", "")
@@ -51,10 +52,30 @@ GITHUB_CLIENT_SECRET = os.environ.get("GITHUB_CLIENT_SECRET", "")
 DEV_LOGIN = os.environ.get("DEV_LOGIN") == "1"
 SESSION_HOURS = float(os.environ.get("SESSION_HOURS", 8))
 # Requests per minute: anonymous (per IP) and signed in (per user, session or token).
+# These are defaults; a superadmin can change them at runtime (stored in the database).
 RATE_LIMIT_ANON = int(os.environ.get("RATE_LIMIT_ANON", 60))
 RATE_LIMIT_USER = int(os.environ.get("RATE_LIMIT_USER", 1000))
 # Proxies whose X-Forwarded-For is trusted for the client IP (the site server runs on the same host by default).
+# Addresses or CIDR ranges, e.g. "127.0.0.1,::1" locally or "172.16.0.0/12" inside Docker.
 TRUSTED_PROXIES = {h.strip() for h in os.environ.get("TRUSTED_PROXIES", "127.0.0.1,::1").split(",") if h.strip()}
+
+
+def is_trusted_proxy(host: str) -> bool:
+    import ipaddress
+
+    if host in TRUSTED_PROXIES:
+        return True
+    try:
+        ip = ipaddress.ip_address(host)
+    except ValueError:
+        return False
+    for p in TRUSTED_PROXIES:
+        try:
+            if ip in ipaddress.ip_network(p, strict=False):
+                return True
+        except ValueError:
+            continue
+    return False
 # Token prefix, so leaked tokens are recognisable (e.g. by secret scanners).
 TOKEN_PREFIX = os.environ.get("TOKEN_PREFIX", f"{site_config().get('brand', 'cat')[:3].lower()}_pat_")
 

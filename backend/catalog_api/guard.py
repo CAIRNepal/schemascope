@@ -16,9 +16,12 @@ from fastapi import HTTPException
 from starlette.requests import Request
 
 from . import settings
+from .accounts import limit_for, rate_limits
 from .auth import client_ip, resolve
 
-EXEMPT = ("/api/health", "/api/auth/")  # sign-in and health checks never count
+# Sign-in, health checks and the superadmin endpoints never count (a superadmin must always be able to undo a
+# limit that was set too low); the admin endpoints still require a superadmin session.
+EXEMPT = ("/api/health", "/api/auth/", "/api/admin/")
 
 
 def problem(status: int, title: str, detail: str, instance: str = "", headers: dict | None = None) -> tuple[int, dict, bytes]:
@@ -56,7 +59,7 @@ window = Window()
 def is_internal(scope) -> bool:
     """A direct request from the site server (trusted host, not forwarded on behalf of a visitor)."""
     host = (scope.get("client") or ("", 0))[0]
-    return host in settings.TRUSTED_PROXIES and not any(k == b"x-forwarded-for" for k, _ in scope.get("headers") or [])
+    return settings.is_trusted_proxy(host) and not any(k == b"x-forwarded-for" for k, _ in scope.get("headers") or [])
 
 
 class Guard:
@@ -89,11 +92,12 @@ class Guard:
         elif principal and principal.kind == "token" and "api" not in principal.scopes:
             return await self._reply(send, *problem(403, "Forbidden", "This token does not have the `api` scope.", path))
 
-        key, limit = (f"user:{principal.user.id}", settings.RATE_LIMIT_USER) if principal else (f"ip:{client_ip(scope)}", settings.RATE_LIMIT_ANON)
+        limit = limit_for(principal.user if principal else None)
+        key = f"user:{principal.user.id}" if principal else f"ip:{client_ip(scope)}"
         ok, remaining, reset = window.hit(key, limit)
         rl = {"x-ratelimit-limit": str(limit), "x-ratelimit-remaining": str(remaining), "x-ratelimit-reset": str(reset)}
         if not ok:
-            hint = "" if principal else f" Sign in and use a token for {settings.RATE_LIMIT_USER} requests per minute: {settings.PUBLIC_SITE_URL}/account/"
+            hint = "" if principal else f" Sign in and use a token for {rate_limits()['authenticatedPerMinute']} requests per minute: {settings.PUBLIC_SITE_URL}/account/"
             return await self._reply(send, *problem(429, TITLES[429], f"Rate limit of {limit} requests per minute exceeded.{hint}", path,
                                                     {**rl, "retry-after": str(max(1, reset - int(time.time())))}))
 

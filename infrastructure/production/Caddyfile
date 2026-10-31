@@ -1,0 +1,16 @@
+# Public entry point: HTTPS (automatic certificates) → site server, which serves pages and proxies /api/ and /mcp/.
+{$SITE_DOMAIN} {
+	encode zstd gzip
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+		-Server
+	}
+	reverse_proxy web:3000
+}
+
+# Optional: redirect www to the apex domain.
+www.{$SITE_DOMAIN} {
+	redir https://{$SITE_DOMAIN}{uri} permanent
+}

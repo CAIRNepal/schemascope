@@ -69,7 +69,7 @@ def client(tmp_path_factory, database):
     mp.setenv("DATABASE_URL", database)
     mp.setenv("MCP_ALLOWED_HOSTS", "testserver")
     mp.setenv("JWT_SECRET", "test-secret-" + "x" * 32)
-    mp.setenv("ADMIN_LOGINS", "ada")
+    mp.setenv("SUPERADMIN_EMAILS", "ada@example.org")
     mp.setenv("DEV_LOGIN", "1")
     mp.setenv("TRUSTED_PROXIES", "testclient")
     mp.setenv("RATE_LIMIT_ANON", "1000")
@@ -270,5 +270,30 @@ def test_audit_log(client):
     actions = [a["action"] for a in mine]
     assert {"auth.login", "token.create", "auth.logout"} <= set(actions)
     assert all(a["actor"]["login"] == "ada" for a in mine) and mine[0]["ip"]
-    log = _signed_in().get("/api/audit", params={"action": "catalog.*"}).json()  # ada is an admin in this test
+    log = _signed_in().get("/api/audit", params={"action": "catalog.*"}).json()  # ada is a superadmin in this test
     assert log and log[-1]["action"] == "catalog.ingest" and log[-1]["actor"] is None and log[-1]["details"]["entries"] == 4
+
+
+def test_superadmin_rate_limits(client):
+    admin = _signed_in()  # ada@example.org is a superadmin
+    assert admin.get("/api/auth/me").json()["user"]["superadmin"] is True
+    r = admin.put("/api/admin/settings", json={"authenticatedPerMinute": 5})
+    assert r.status_code == 200 and r.json()["rateLimit"]["authenticatedPerMinute"] == 5
+    from fastapi.testclient import TestClient
+    from catalog_api.app import app
+    bob = TestClient(app)
+    bob.get("/api/auth/dev-login", params={"login": "bob"}, follow_redirects=False)
+    assert bob.get("/api/admin/settings").status_code == 403
+    bob_id = bob.get("/api/auth/me").json()["user"]["id"]
+    assert bob.get("/api/stats").headers["x-ratelimit-limit"] == "5"
+    assert admin.put(f"/api/admin/users/{bob_id}/rate-limit", json={"perMinute": 7}).status_code == 200
+    from catalog_api import accounts
+    accounts._settings_cache["at"] = 0
+    assert bob.get("/api/stats").headers["x-ratelimit-limit"] == "7"
+    assert any(u["login"] == "bob" and u["rateLimit"] == 7 for u in admin.get("/api/admin/users").json())
+    admin.put("/api/admin/settings", json={"authenticatedPerMinute": 1000})
+    from catalog_api.guard import window
+    window.counts.clear()
+    accounts._settings_cache["at"] = 0
+    actions = [a["action"] for a in admin.get("/api/audit", params={"action": "admin.*"}).json()]
+    assert "admin.rate_limits" in actions and "admin.user_rate_limit" in actions

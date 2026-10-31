@@ -101,12 +101,38 @@
     }
   });
 
-  // Sortable tables
+  // Long tables: the first rows come with the page; the rest (data-more) load after first paint and are appended
+  // in small batches while the browser is idle, so the page never freezes. table.more resolves when all are in.
+  const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 16));
+  for (const table of $$("table[data-more]")) {
+    const status = table.closest("section")?.querySelector("[data-more-status]");
+    table.more = fetch(table.dataset.more)
+      .then((r) => (r.ok ? r.text() : Promise.reject(new Error(`HTTP ${r.status}`))))
+      .then((html) => new Promise((done) => {
+        const tpl = document.createElement("template");
+        tpl.innerHTML = `<table><tbody>${html}</tbody></table>`;
+        const rows = [...tpl.content.querySelectorAll("tr")];
+        const tbody = table.tBodies[0];
+        const step = () => {
+          const frag = document.createDocumentFragment();
+          rows.splice(0, 250).forEach((tr) => frag.appendChild(tr));
+          tbody.appendChild(frag);
+          if (rows.length) idle(step);
+          else done();
+        };
+        idle(step);
+      }))
+      .then(() => status && (status.hidden = true))
+      .catch(() => status && (status.textContent = "Couldn't load the remaining rows. Reload the page to try again."));
+  }
+
+  // Sortable tables (wait for any rows still loading, so a sort covers the whole table)
   for (const table of $$("table.sortable")) {
     const ths = $$("th", table);
     ths.forEach((th, i) => {
       th.tabIndex = 0;
-      const sort = () => {
+      const sort = async () => {
+        await table.more?.catch(() => {});
         const dir = th.getAttribute("aria-sort") === "descending" ? "ascending" : "descending";
         ths.forEach((x) => x.removeAttribute("aria-sort"));
         th.setAttribute("aria-sort", dir);

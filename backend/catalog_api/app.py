@@ -46,6 +46,7 @@ TAGS = [
     {"name": "Auth", "description": "Sign in with GitHub, sessions and who you are."},
     {"name": "API tokens", "description": "Personal access tokens for scripts and MCP clients."},
     {"name": "Submissions", "description": "Add or correct catalog entries (signed in)."},
+    {"name": "Admin", "description": "Superadmins: rate limits for everyone and per user."},
     {"name": "Meta", "description": "Server, rubric and content metadata."},
 ]
 api = FastAPI(
@@ -58,7 +59,7 @@ api = FastAPI(
     openapi_tags=TAGS,
     servers=[{"url": PUBLIC_API_URL}] if PUBLIC_API_URL else None,
 )
-api.add_middleware(CORSMiddleware, allow_origins=CORS_ORIGINS, allow_methods=["GET", "POST", "DELETE", "OPTIONS"], allow_headers=["*"],
+api.add_middleware(CORSMiddleware, allow_origins=CORS_ORIGINS, allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"], allow_headers=["*"],
                    expose_headers=["X-RateLimit-Limit", "X-RateLimit-Remaining", "X-RateLimit-Reset", "Retry-After"])
 api.mount("/mcp", mcp_app)
 api.include_router(auth.router)

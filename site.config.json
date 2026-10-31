@@ -18,5 +18,13 @@
   },
   "contributorsExclude": [
     "claude"
-  ]
+  ],
+  "parent": {
+    "label": "A project of",
+    "name": "CAIR-Nepal",
+    "url": "https://cair-nepal.org",
+    "logo": "/assets/brand/cair-nepal.png",
+    "logoWidth": 640,
+    "logoHeight": 157
+  }
 }

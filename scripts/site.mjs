@@ -357,9 +357,8 @@ ${gtmHead}
 <link rel="manifest" href="/site.webmanifest">
 <link rel="alternate" type="application/json" href="/catalog.json" title="SchemaScope catalog (JSON)">
 <link rel="alternate" type="application/ld+json" href="/catalog.jsonld" title="SchemaScope catalog (DCAT JSON-LD)">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="preload" href="/assets/fonts/inter-latin-bec94a.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-serif-latin-03435c.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/style.css?v=${BUILD_ID}">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>
@@ -389,7 +388,7 @@ ${body}
 </main>
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <div class="footer-brand">${logo("logo-footer")}<p class="muted">${esc(config.description)}</p></div>
+    <div class="footer-brand">${logo("logo-footer")}<p class="muted">${esc(config.description)}</p>${config.parent ? `<a class="footer-parent" href="${attr(config.parent.url)}" rel="noopener"><span class="muted small">${esc(config.parent.label || "Part of")}</span><img src="${attr(config.parent.logo)}" alt="${attr(config.parent.name)}" width="${config.parent.logoWidth || 320}" height="${config.parent.logoHeight || 80}" loading="lazy"></a>` : ""}</div>
     <nav class="footer-links" aria-label="Footer">
       <a href="/categories/">Categories</a>
       <a href="/evaluation/">Methodology</a>
@@ -1098,6 +1097,25 @@ function workedExample() {
   </div>`;
 }
 
+// "All scores" table: the first rows render with the page; the rest load after first paint (app.js), so a large
+// catalog doesn't block the page. The finished table is the same.
+const FIRST_SCORE_ROWS = 100;
+const scoreRows = () => [...catalog].sort(byScore);
+const restRows = Math.max(0, catalog.length - FIRST_SCORE_ROWS);
+const scoreRow = (e) => {
+        const r = ev(e.id);
+        const v = versionLabel(r);
+        return `<tr>
+        <td><a href="/o/${attr(e.id)}/"><b>${esc(e.acronym || e.name)}</b></a></td>
+        <td class="muted ver-cell" title="${attr(v || "")}">${esc(v ? (v.length > 26 ? v.slice(0, 25) + "…" : v) : "—")}</td>
+        ${RUBRIC.map((rb) => `<td class="num">${r ? (r.breakdown[rb.key]?.applicable === false ? '<span class="muted">n/a</span>' : r.breakdown[rb.key]?.score ?? "—") : "—"}</td>`).join("")}
+        <td class="num${r?.penalty?.score ? " pen" : ""}">${r?.penalty ? r.penalty.score || "0" : "—"}</td>
+        <td class="num"><b>${r?.fair ?? "—"}</b></td>
+        <td class="num" data-v="${r?.score ?? -1}">${gradeBadge(e, "sm")}</td>
+        <td data-v="${attr(r?.lastActivity || "")}">${r?.lastActivity ? fmtDate(r.lastActivity) : '<span class="muted">—</span>'}</td>
+      </tr>`;
+      };
+
 function evaluationPage() {
   const rows = [...catalog].sort(byScore);
   const dist = GRADES.map((g) => ({ ...g, n: scored.filter((r) => r.grade === g.grade).length }));
@@ -1176,7 +1194,7 @@ function evaluationPage() {
 <section class="wrap section">
   <div class="section-head"><h2>All scores</h2><span class="muted small">Click a column to sort</span></div>
   <div class="table-wrap">
-  <table class="score-table sortable">
+  <table class="score-table sortable"${restRows ? ` data-more="/evaluation/rows.html?v=${BUILD_ID}" data-more-count="${restRows}"` : ""}>
     <thead><tr>
       <th data-sort="text">Resource</th><th data-sort="text">Version evaluated</th>
       ${RUBRIC.map((r) => `<th data-sort="num" class="num${r.fair ? " th-fair" : ""}" title="${attr(r.label)}">${esc(r.symbol)}<small>/${r.max}</small></th>`).join("")}
@@ -1184,23 +1202,10 @@ function evaluationPage() {
       <th data-sort="num" class="num th-fair">FAIR<small>/${FAIR_MAX}</small></th>
       <th data-sort="num" class="num">Score</th><th data-sort="text">Last activity</th>
     </tr></thead>
-    <tbody>${rows
-      .map((e) => {
-        const r = ev(e.id);
-        const v = versionLabel(r);
-        return `<tr>
-        <td><a href="/o/${attr(e.id)}/"><b>${esc(e.acronym || e.name)}</b></a></td>
-        <td class="muted ver-cell" title="${attr(v || "")}">${esc(v ? (v.length > 26 ? v.slice(0, 25) + "…" : v) : "—")}</td>
-        ${RUBRIC.map((rb) => `<td class="num">${r ? (r.breakdown[rb.key]?.applicable === false ? '<span class="muted">n/a</span>' : r.breakdown[rb.key]?.score ?? "—") : "—"}</td>`).join("")}
-        <td class="num${r?.penalty?.score ? " pen" : ""}">${r?.penalty ? r.penalty.score || "0" : "—"}</td>
-        <td class="num"><b>${r?.fair ?? "—"}</b></td>
-        <td class="num" data-v="${r?.score ?? -1}">${gradeBadge(e, "sm")}</td>
-        <td data-v="${attr(r?.lastActivity || "")}">${r?.lastActivity ? fmtDate(r.lastActivity) : '<span class="muted">—</span>'}</td>
-      </tr>`;
-      })
-      .join("")}</tbody>
+    <tbody>${scoreRows().slice(0, FIRST_SCORE_ROWS).map(scoreRow).join("")}</tbody>
   </table>
   </div>
+  ${restRows ? `<p class="muted small" data-more-status>Showing the top ${FIRST_SCORE_ROWS} of ${catalog.length.toLocaleString("en-US")}; loading the rest… <noscript><a href="/evaluation/rows.html">All rows</a></noscript></p>` : ""}
 </section>
 
 <section class="wrap section" id="runs">
@@ -1641,6 +1646,7 @@ for (const e of catalog) {
   put(`o/${e.id}/entry.json`, () => JSON.stringify(record(e), null, 2));
 }
 put("evaluation/index.html", () => evaluationPage());
+put("evaluation/rows.html", () => scoreRows().slice(FIRST_SCORE_ROWS).map(scoreRow).join(""));
 put("catalog/index.html", () => catalogPage());
 put("search/index.html", () => searchPage());
 // Entries added or corrected through the submission form (the bot records "submission #<issue>").

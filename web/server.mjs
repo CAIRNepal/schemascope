@@ -6,7 +6,8 @@
 //
 // Pages are rendered on first request and kept in a bounded cache. The server polls the API and switches to
 // new data (a new evaluation run, an edited catalog) as soon as it has been ingested, without a restart.
-import { createReadStream, existsSync, readFileSync, statSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { existsSync, readFileSync, statSync } from "node:fs";
 import http from "node:http";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -80,6 +81,13 @@ async function poll() {
 }
 setInterval(poll, POLL_SECONDS * 1000).unref();
 
+// A response body with its ETag and, for text, a gzipped copy: compressed once, served many times.
+const COMPRESSIBLE = /text|json|xml|javascript|svg|manifest/;
+function prepare(body, type) {
+  const gz = body.length > 1024 && COMPRESSIBLE.test(type) ? gzipSync(body, { level: 6 }) : null;
+  return { body, gz, type, etag: `"${createHash("sha1").update(body).digest("base64url").slice(0, 22)}"`, size: body.length + (gz?.length || 0) };
+}
+
 function render(site, key) {
   const hit = site.cache.get(key);
   if (hit) {
@@ -89,33 +97,76 @@ function render(site, key) {
   }
   const make = site.files.get(key);
   if (!make) return null;
-  const body = Buffer.from(make());
-  site.cache.set(key, body);
-  site.bytes += body.length;
+  const item = prepare(Buffer.from(make()), typeOf(key));
+  site.cache.set(key, item);
+  site.bytes += item.size;
   for (const [k, v] of site.cache) {
     if (site.bytes <= CACHE_MB * 1024 * 1024) break;
     site.cache.delete(k);
-    site.bytes -= v.length;
+    site.bytes -= v.size;
   }
-  return body;
+  return item;
+}
+
+// Static files (stylesheet, scripts, images, fonts), read and compressed once.
+const staticCache = new Map();
+function staticItem(file) {
+  const mtime = statSync(file).mtimeMs;
+  const hit = staticCache.get(file);
+  if (hit && hit.mtime === mtime) return hit;
+  const item = { ...prepare(readFileSync(file), typeOf(file)), mtime };
+  staticCache.set(file, item);
+  return item;
+}
+
+// ---------- API proxy ----------
+// /api/, /mcp/ and the API docs are served by the API on the same origin, so sign-in cookies work and clients
+// need one URL. The visitor's address goes along as X-Forwarded-For (rate limits are per visitor, not per server).
+const PROXIED = /^\/(api|mcp)(\/|$)|^\/(docs|redoc|openapi\.json)(\/|$)/;
+const api = new URL(API_URL);
+function proxy(req, res) {
+  if (req.url.startsWith("/api/site-data")) return send(req, res, 404, Buffer.from("Not found"), "text/plain");
+  const headers = { ...req.headers, host: api.host, "x-forwarded-for": [req.headers["x-forwarded-for"], req.socket.remoteAddress].filter(Boolean).join(", "),
+    "x-forwarded-proto": req.headers["x-forwarded-proto"] || "http", "x-forwarded-host": req.headers.host };
+  const up = http.request({ hostname: api.hostname, port: api.port || 80, path: req.url, method: req.method, headers }, (r) => {
+    res.writeHead(r.statusCode, r.headers);
+    r.pipe(res);
+  });
+  up.on("error", (err) => {
+    console.warn(`proxy: ${err.message}`);
+    if (!res.headersSent) send(req, res, 502, Buffer.from(JSON.stringify({ type: "about:blank", title: "Bad Gateway", status: 502, detail: "The API is not reachable." })), "application/problem+json");
+    else res.end();
+  });
+  req.pipe(up);
 }
 
 // ---------- HTTP ----------
 function send(req, res, status, body, type, headers = {}) {
-  const gz = body.length > 1024 && /\bgzip\b/.test(req.headers["accept-encoding"] || "") && /text|json|xml|javascript|svg|manifest/.test(type);
-  const out = gz ? gzipSync(body) : body;
-  res.writeHead(status, { "Content-Type": type, "Content-Length": out.length, ...(gz ? { "Content-Encoding": "gzip", Vary: "Accept-Encoding" } : {}), ...headers });
+  sendItem(req, res, status, prepare(body, type), headers);
+}
+
+function sendItem(req, res, status, item, headers = {}) {
+  if (status === 200 && req.headers["if-none-match"] === item.etag) {
+    res.writeHead(304, { ETag: item.etag, ...headers });
+    return res.end();
+  }
+  const gz = item.gz && /\bgzip\b/.test(req.headers["accept-encoding"] || "");
+  const out = gz ? item.gz : item.body;
+  res.writeHead(status, {
+    "Content-Type": item.type, "Content-Length": out.length, ETag: item.etag, Vary: "Accept-Encoding",
+    ...(gz ? { "Content-Encoding": "gzip" } : {}), ...headers,
+  });
   res.end(req.method === "HEAD" ? undefined : out);
 }
 
-function serveStatic(req, res, pathname) {
+function serveStatic(req, res, pathname, search) {
   for (const [prefix, dir] of STATIC_DIRS) {
     if (!pathname.startsWith(prefix)) continue;
     const file = path.join(dir, pathname.slice(prefix.length));
     if (!file.startsWith(dir + path.sep) || !existsSync(file) || !statSync(file).isFile()) continue;
-    res.writeHead(200, { "Content-Type": typeOf(file), "Content-Length": statSync(file).size, ...extraHeaders(pathname) });
-    if (req.method === "HEAD") return res.end(), true;
-    createReadStream(file).pipe(res);
+    // Pages link assets as /assets/x?v=<build id> and fonts by content hash: those never change, so cache them for a year.
+    const immutable = /[?&]v=/.test(search) || pathname.startsWith("/assets/fonts/");
+    sendItem(req, res, 200, staticItem(file), { ...extraHeaders(pathname), ...(immutable ? { "Cache-Control": "public, max-age=31536000, immutable" } : {}) });
     return true;
   }
   return false;
@@ -130,6 +181,7 @@ async function proxyRun(req, res, runId) {
 
 const server = http.createServer(async (req, res) => {
   try {
+    if (PROXIED.test(req.url)) return proxy(req, res);
     if (req.method !== "GET" && req.method !== "HEAD") return send(req, res, 405, Buffer.from("Method not allowed"), "text/plain", { Allow: "GET, HEAD" });
     const url = new URL(req.url, "http://x");
     let pathname;
@@ -139,7 +191,7 @@ const server = http.createServer(async (req, res) => {
       pathname = url.pathname;
     }
     if (pathname.includes("\0") || pathname.split("/").includes("..")) return send(req, res, 400, Buffer.from("Bad request"), "text/plain");
-    if (serveStatic(req, res, pathname)) return;
+    if (serveStatic(req, res, pathname, url.search)) return;
 
     // Archived run snapshots are large and immutable: stream them from the API instead of re-rendering.
     const run = pathname.match(/^\/runs\/([^/]+)\.json$/);
@@ -152,10 +204,10 @@ const server = http.createServer(async (req, res) => {
       res.writeHead(308, { Location: pathname + "/" + url.search });
       return res.end();
     }
-    const body = render(site, key);
-    if (body) return send(req, res, 200, body, typeOf(key), { "Cache-Control": "public, max-age=0, must-revalidate", ...extraHeaders(pathname) });
+    const item = render(site, key);
+    if (item) return sendItem(req, res, 200, item, { "Cache-Control": "public, max-age=0, must-revalidate", ...extraHeaders(pathname) });
     const notFound = render(site, "404.html");
-    return send(req, res, 404, notFound || Buffer.from("Not found"), "text/html; charset=utf-8");
+    return notFound ? sendItem(req, res, 404, notFound) : send(req, res, 404, Buffer.from("Not found"), "text/plain; charset=utf-8");
   } catch (err) {
     console.error(err);
     if (!res.headersSent) send(req, res, 503, Buffer.from("The catalog is temporarily unavailable."), "text/plain; charset=utf-8");

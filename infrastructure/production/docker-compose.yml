@@ -1,0 +1,84 @@
+# Production: Caddy (HTTPS) → site server → API (+ MCP) → Postgres. Only Caddy publishes ports (80, 443).
+# Secrets come from infrastructure/production/.env (see .env.example); DEV_LOGIN is never enabled here.
+#
+#   docker compose -f infrastructure/production/docker-compose.yml --env-file infrastructure/production/.env up -d --build
+#   # after each evaluation run (data/ updated by git pull):
+#   docker compose -f infrastructure/production/docker-compose.yml --env-file infrastructure/production/.env run --rm ingest
+name: schemascope
+
+x-api-env: &api-env
+  DATABASE_URL: postgresql://${POSTGRES_USER:?}:${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:?}
+  PUBLIC_SITE_URL: https://${SITE_DOMAIN:?set SITE_DOMAIN}
+  JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET (64+ random characters)}
+  GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID:?set GITHUB_CLIENT_ID}
+  GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET:?set GITHUB_CLIENT_SECRET}
+  SUPERADMIN_EMAILS: ${SUPERADMIN_EMAILS:-}
+  RATE_LIMIT_ANON: ${RATE_LIMIT_ANON:-60}
+  RATE_LIMIT_USER: ${RATE_LIMIT_USER:-1000}
+  TRUSTED_PROXIES: 172.16.0.0/12,10.0.0.0/8
+  MCP_ALLOWED_HOSTS: ${SITE_DOMAIN},api
+  CORS_ORIGINS: https://${SITE_DOMAIN}
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+
+  ingest:
+    build: { context: ../.., dockerfile: infrastructure/docker/api.Dockerfile }
+    command: ["python", "-m", "catalog_api.ingest"]
+    environment: *api-env
+    volumes: ["${DATA_DIR:-../../data}:/app/data:ro"]
+    depends_on: { db: { condition: service_healthy } }
+    restart: "no"
+
+  api:
+    build: { context: ../.., dockerfile: infrastructure/docker/api.Dockerfile }
+    restart: always
+    environment: *api-env
+    volumes: ["${DATA_DIR:-../../data}:/app/data:ro"]
+    depends_on:
+      db: { condition: service_healthy }
+      ingest: { condition: service_completed_successfully }
+    command: ["uvicorn", "catalog_api.app:app", "--host", "0.0.0.0", "--port", "8000", "--proxy-headers", "--forwarded-allow-ips", "*", "--workers", "${API_WORKERS:-1}"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build: { context: ../.., dockerfile: infrastructure/docker/web.Dockerfile }
+    restart: always
+    environment:
+      API_URL: http://api:8000
+      POLL_SECONDS: 60
+      CACHE_MB: ${WEB_CACHE_MB:-256}
+    depends_on: { api: { condition: service_healthy } }
+
+  caddy:
+    image: caddy:2-alpine
+    restart: always
+    environment:
+      SITE_DOMAIN: ${SITE_DOMAIN}
+    ports: ["80:80", "443:443", "443:443/udp"]
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on: [web]
+
+volumes:
+  pgdata:
+  caddy_data:
+  caddy_config:

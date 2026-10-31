@@ -51,6 +51,11 @@ CREATE TABLE IF NOT EXISTS tokens (
   created_at timestamptz NOT NULL DEFAULT now(), expires_at timestamptz, last_used_at timestamptz, revoked_at timestamptz
 );
 CREATE INDEX IF NOT EXISTS tokens_user ON tokens (user_id);
+ALTER TABLE users ADD COLUMN IF NOT EXISTS rate_limit int;   -- per-user override (requests/minute), set by a superadmin
+-- Runtime settings changed by superadmins (e.g. rate limits); env vars are the defaults.
+CREATE TABLE IF NOT EXISTS app_settings (
+  key text PRIMARY KEY, value jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now(), updated_by bigint
+);
 CREATE TABLE IF NOT EXISTS submissions (
   id bigserial PRIMARY KEY, user_id bigint NOT NULL REFERENCES users(id), entry_id text, update_of text,
   payload jsonb NOT NULL, notes text, issue_url text, created_at timestamptz NOT NULL DEFAULT now()

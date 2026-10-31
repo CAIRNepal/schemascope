@@ -50,12 +50,17 @@ def _from_jwt(token: str) -> Principal | None:
 
 
 def client_ip(scope) -> str:
-    """The caller's IP: X-Forwarded-For's first address when the request comes through a trusted proxy (the site server)."""
+    """The caller's IP. Behind trusted proxies (the site server, Caddy) it is the right-most X-Forwarded-For address
+    that isn't itself a trusted proxy: addresses further left were supplied by the client and can be forged."""
     host = (scope.get("client") or ("", 0))[0]
-    if host in settings.TRUSTED_PROXIES:
+    if settings.is_trusted_proxy(host):
         for k, v in scope.get("headers") or []:
             if k == b"x-forwarded-for":
-                return v.decode().split(",")[0].strip()
+                hops = [h.strip() for h in v.decode().split(",") if h.strip()]
+                for h in reversed(hops):
+                    if not settings.is_trusted_proxy(h):
+                        return h
+                return hops[0] if hops else host
     return host
 
 
@@ -93,6 +98,12 @@ def require_user(request: Request) -> Principal:
     p = resolve(request)
     if p is None:
         raise HTTPException(401, "Sign in, or send a bearer token", headers={"WWW-Authenticate": "Bearer"})
+    return p
+
+
+def require_superadmin(p: Principal) -> Principal:
+    if not p.user.is_admin:
+        raise HTTPException(403, "Superadmins only (SUPERADMIN_EMAILS)")
     return p
 
 
@@ -213,7 +224,7 @@ class Me(BaseModel):
 @router.get("/auth/me", tags=["Auth"], summary="Me", response_model=Me)
 def me(p: Principal = Depends(require_user)):
     """The signed-in user, how the request was authenticated, and the rate limit that applies."""
-    return {"user": p.user.public(), "via": p.kind, "scopes": p.scopes, "rateLimit": {"perMinute": settings.RATE_LIMIT_USER, "anonymousPerMinute": settings.RATE_LIMIT_ANON}}
+    return {"user": p.user.public(), "via": p.kind, "scopes": p.scopes, "rateLimit": {"perMinute": accounts.limit_for(p.user), **accounts.rate_limits()}}
 
 
 @router.get("/auth/config", tags=["Auth"], summary="Auth config")
@@ -222,7 +233,7 @@ def auth_config():
     return {
         "github": bool(settings.GITHUB_CLIENT_ID), "devLogin": settings.DEV_LOGIN, "sessionHours": settings.SESSION_HOURS,
         "tokenPrefix": settings.TOKEN_PREFIX, "scopes": list(accounts.SCOPES),
-        "rateLimit": {"anonymousPerMinute": settings.RATE_LIMIT_ANON, "authenticatedPerMinute": settings.RATE_LIMIT_USER},
+        "rateLimit": accounts.rate_limits(),
     }
 
 
@@ -339,7 +350,57 @@ def my_activity(limit: int = 50, before: int | None = None, p: Principal = Depen
 @router.get("/audit", tags=["Auth"], summary="Audit log (admins)")
 def audit_log(action: str | None = None, limit: int = 100, before: int | None = None, p: Principal = Depends(require_user)):
     """Everything: who signed in or out, created or revoked tokens, submitted entries, and every data load.
-    Filter with `action` (e.g. `auth.*`, `token.create`). Admins only (ADMIN_LOGINS)."""
-    if not p.user.is_admin:
-        raise HTTPException(403, "Admins only")
+    Filter with `action` (e.g. `auth.*`, `token.create`). Superadmins only (SUPERADMIN_EMAILS)."""
+    require_superadmin(p)
     return accounts.audit_entries(None, action=action, limit=limit, before=before)
+
+
+# ---------- superadmin: rate limits ----------
+class LimitsIn(BaseModel):
+    anonymousPerMinute: int | None = Field(None, ge=1, le=1_000_000, description="Per IP, without a token")
+    authenticatedPerMinute: int | None = Field(None, ge=1, le=1_000_000, description="Per user, session or token")
+
+
+class UserLimitIn(BaseModel):
+    perMinute: int | None = Field(description="Requests per minute for this user; null to use the default")
+
+
+@router.get("/admin/settings", tags=["Admin"], summary="Rate limits")
+def admin_settings(p: Principal = Depends(require_session)):
+    """Current rate limits and their defaults from the environment. Superadmins only."""
+    require_superadmin(p)
+    return {"rateLimit": accounts.rate_limits(), "defaults": {"anonymousPerMinute": settings.RATE_LIMIT_ANON, "authenticatedPerMinute": settings.RATE_LIMIT_USER}}
+
+
+@router.put("/admin/settings", tags=["Admin"], summary="Change rate limits")
+def admin_update_settings(request: Request, body: LimitsIn, p: Principal = Depends(require_session)):
+    """Change the default rate limits for everyone. Takes effect within seconds; recorded in the audit log."""
+    require_superadmin(p)
+    before = accounts.rate_limits()
+    if body.anonymousPerMinute is not None:
+        accounts.set_app_setting("rate_limit_anon", body.anonymousPerMinute, p.user)
+    if body.authenticatedPerMinute is not None:
+        accounts.set_app_setting("rate_limit_user", body.authenticatedPerMinute, p.user)
+    after = accounts.rate_limits()
+    _audit(request, "admin.rate_limits", p.user, "settings", before=before, after=after)
+    return {"rateLimit": after}
+
+
+@router.get("/admin/users", tags=["Admin"], summary="List users")
+def admin_users(q: str | None = None, p: Principal = Depends(require_session)):
+    """Signed-in users with their rate-limit override and active token count. Superadmins only."""
+    require_superadmin(p)
+    return accounts.list_users(q=q)
+
+
+@router.put("/admin/users/{user_id}/rate-limit", tags=["Admin"], summary="Set a user's rate limit")
+def admin_user_limit(request: Request, user_id: int, body: UserLimitIn, p: Principal = Depends(require_session)):
+    """Give one user (and all their tokens) a different limit, or null to use the default."""
+    require_superadmin(p)
+    if body.perMinute is not None and not 1 <= body.perMinute <= 1_000_000:
+        raise HTTPException(422, "perMinute must be between 1 and 1,000,000, or null")
+    u = accounts.set_user_rate_limit(user_id, body.perMinute)
+    if not u:
+        raise HTTPException(404, "No such user")
+    _audit(request, "admin.user_rate_limit", p.user, u.login, userId=u.id, perMinute=body.perMinute)
+    return {"user": u.public(), "rateLimit": body.perMinute}

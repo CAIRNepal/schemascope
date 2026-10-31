@@ -1,0 +1,68 @@
+# Sandbox: the full stack on one machine for testing. Postgres, API (+ MCP), site, and an ingest job that loads
+# ../../data on every `up`. Ports are published on 127.0.0.1; DEV_LOGIN is on so sign-in works without a GitHub app.
+#
+#   cp infrastructure/sandbox/.env.example infrastructure/sandbox/.env
+#   docker compose -f infrastructure/sandbox/docker-compose.yml up -d --build
+#   open http://localhost:${SITE_PORT:-8380}
+name: schemascope-sandbox
+
+x-api-env: &api-env
+  DATABASE_URL: postgresql://${POSTGRES_USER:-catalog}:${POSTGRES_PASSWORD:-catalog}@db:5432/${POSTGRES_DB:-catalog}
+  PUBLIC_SITE_URL: ${PUBLIC_SITE_URL:-http://localhost:8380}
+  JWT_SECRET: ${JWT_SECRET:-sandbox-only-not-secret-sandbox-only-not-secret}
+  GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID:-}
+  GITHUB_CLIENT_SECRET: ${GITHUB_CLIENT_SECRET:-}
+  SUPERADMIN_EMAILS: ${SUPERADMIN_EMAILS:-}
+  DEV_LOGIN: ${DEV_LOGIN:-1}
+  RATE_LIMIT_ANON: ${RATE_LIMIT_ANON:-60}
+  RATE_LIMIT_USER: ${RATE_LIMIT_USER:-1000}
+  TRUSTED_PROXIES: 127.0.0.1,::1,172.16.0.0/12,192.168.0.0/16,10.0.0.0/8
+  MCP_ALLOWED_HOSTS: ${MCP_ALLOWED_HOSTS:-localhost,api}
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-catalog}
+      POSTGRES_USER: ${POSTGRES_USER:-catalog}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-catalog}
+    ports: ["127.0.0.1:${POSTGRES_PORT:-5433}:5432"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  ingest:
+    build: { context: ../.., dockerfile: infrastructure/docker/api.Dockerfile }
+    command: ["python", "-m", "catalog_api.ingest"]
+    environment: *api-env
+    volumes: ["../../data:/app/data:ro"]
+    depends_on: { db: { condition: service_healthy } }
+    restart: "no"
+
+  api:
+    build: { context: ../.., dockerfile: infrastructure/docker/api.Dockerfile }
+    environment: *api-env
+    volumes: ["../../data:/app/data:ro"]
+    ports: ["127.0.0.1:${API_PORT:-8381}:8000"]
+    depends_on:
+      db: { condition: service_healthy }
+      ingest: { condition: service_completed_successfully }
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/health')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build: { context: ../.., dockerfile: infrastructure/docker/web.Dockerfile }
+    environment:
+      API_URL: http://api:8000
+      POLL_SECONDS: 30
+    ports: ["127.0.0.1:${SITE_PORT:-8380}:3000"]
+    depends_on: { api: { condition: service_healthy } }
+
+volumes:
+  pgdata:

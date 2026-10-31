@@ -30,17 +30,71 @@ class User:
     email: str | None
     avatar_url: str | None
     html_url: str | None
+    rate_limit: int | None = None
 
     @property
     def is_admin(self) -> bool:
-        return self.login.lower() in settings.ADMIN_LOGINS
+        """Superadmin: the account's email is listed in SUPERADMIN_EMAILS."""
+        return bool(self.email) and self.email.lower() in settings.SUPERADMIN_EMAILS
 
     def public(self) -> dict:
-        return {"id": self.id, "login": self.login, "name": self.name, "avatarUrl": self.avatar_url, "url": self.html_url, "admin": self.is_admin}
+        return {"id": self.id, "login": self.login, "name": self.name, "avatarUrl": self.avatar_url, "url": self.html_url, "superadmin": self.is_admin}
 
 
 def _user(r) -> User | None:
-    return User(r["id"], r["login"], r["name"], r["email"], r["avatar_url"], r["html_url"]) if r else None
+    return User(r["id"], r["login"], r["name"], r["email"], r["avatar_url"], r["html_url"], r.get("rate_limit")) if r else None
+
+
+# ---------- runtime settings (superadmin) ----------
+import threading as _threading
+import time as _time
+
+_settings_cache = {"at": 0.0, "value": {}}
+_settings_lock = _threading.Lock()
+
+
+def app_settings() -> dict:
+    """Settings changed at runtime, read at most every 5 s (all API workers pick up a change within seconds)."""
+    with _settings_lock:
+        if _time.time() - _settings_cache["at"] > 5:
+            _settings_cache["value"] = {r["key"]: r["value"] for r in db.rows("SELECT key, value FROM app_settings")}
+            _settings_cache["at"] = _time.time()
+        return _settings_cache["value"]
+
+
+def set_app_setting(key: str, value, user: User) -> None:
+    db.execute(
+        "INSERT INTO app_settings (key, value, updated_by) VALUES (%s, %s, %s) ON CONFLICT (key) DO UPDATE SET value = excluded.value, updated_at = now(), updated_by = excluded.updated_by",
+        (key, Jsonb(value), user.id),
+    )
+    _settings_cache["at"] = 0.0
+
+
+def rate_limits() -> dict:
+    s = app_settings()
+    return {"anonymousPerMinute": int(s.get("rate_limit_anon", settings.RATE_LIMIT_ANON)), "authenticatedPerMinute": int(s.get("rate_limit_user", settings.RATE_LIMIT_USER))}
+
+
+def limit_for(user: User | None) -> int:
+    lim = rate_limits()
+    if user is None:
+        return lim["anonymousPerMinute"]
+    return user.rate_limit if user.rate_limit is not None else lim["authenticatedPerMinute"]
+
+
+def list_users(limit: int = 200, q: str | None = None) -> list[dict]:
+    rows = db.rows(
+        "SELECT u.*, (SELECT COUNT(*) FROM tokens t WHERE t.user_id = u.id AND t.revoked_at IS NULL) AS tokens FROM users u "
+        + ("WHERE u.login ILIKE %s OR u.name ILIKE %s OR u.email ILIKE %s " if q else "")
+        + "ORDER BY u.last_login_at DESC NULLS LAST LIMIT %s",
+        ((f"%{q}%",) * 3 if q else ()) + (limit,),
+    )
+    return [{**_user(r).public(), "email": r["email"], "rateLimit": r["rate_limit"], "activeTokens": r["tokens"],
+             "createdAt": iso(r["created_at"]), "lastLoginAt": iso(r["last_login_at"])} for r in rows]
+
+
+def set_user_rate_limit(user_id: int, per_minute: int | None) -> User | None:
+    return _user(db.one("UPDATE users SET rate_limit = %s WHERE id = %s RETURNING *", (per_minute, user_id)))
 
 
 def upsert_user(gh: dict) -> User:
