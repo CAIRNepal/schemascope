@@ -5,6 +5,7 @@ import { fmtNum } from "@/lib/format";
 
 export default async function Home() {
   const [{ site, rubric }, stats, categories, top, recent] = await Promise.all([api.meta(), api.stats(), api.categories(), api.top(6), api.recent(12)]);
+  const hero = { before: "See how the world’s ", em: "schemas", after: " fit together.", ...site.hero };
   const topIds = new Set(top.map((e) => e.id));
   const recentOnly = recent.filter((e) => !topIds.has(e.id)).slice(0, 6);
   return (
@@ -12,7 +13,7 @@ export default async function Home() {
       <section className="hero">
         <div className="wrap hero-inner">
           <p className="eyebrow">{site.tagline}</p>
-          <h1>See how the world&rsquo;s <em>schemas</em> fit together.</h1>
+          <h1>{hero.before}<em>{hero.em}</em>{hero.after}</h1>
           <p className="lede">
             {site.description} Every entry is scored against the FAIR principles, ontology quality, maintenance and community adoption, with the exact
             version evaluated and full provenance.
@@ -57,6 +58,19 @@ export default async function Home() {
       <section className="wrap section browse-all">
         <Link className="btn" href="/catalog/">Browse the full catalog</Link> <Link className="btn-ghost" href="/evaluation/">How we score</Link>
       </section>
+
+      {site.sister ? (
+        <section className="wrap section sister">
+          <div className="sister-inner">
+            <div>
+              <p className="eyebrow">{site.sister.eyebrow ?? "Sister catalog"}</p>
+              <h2>{site.sister.title ?? "Looking for another domain?"}</h2>
+              <p className="muted">{site.sister.blurb ?? `See ${site.sister.name}, scored with the same rubric.`}</p>
+            </div>
+            <a className="btn" href={site.sister.url}>Explore {site.sister.name} ↗</a>
+          </div>
+        </section>
+      ) : null}
 
       <section className="wrap section cta">
         <div className="cta-inner">

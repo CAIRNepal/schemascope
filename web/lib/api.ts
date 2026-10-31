@@ -19,7 +19,11 @@ async function get<T>(path: string, params?: Record<string, string | number | bo
   return res.json() as Promise<T>;
 }
 
-export type Site = { name: string; brand?: string; url: string; tagline?: string; description?: string; repository?: string; gtmId?: string; sister?: { name: string; url: string } };
+export type Site = { name: string; brand?: string; url: string; tagline?: string; description?: string; repository?: string; gtmId?: string;
+  // Home page headline: before <em>em</em> after.
+  hero?: { before?: string; em?: string; after?: string };
+  sister?: { name: string; url: string; eyebrow?: string; title?: string; blurb?: string };
+};
 export type RubricItem = { key: string; symbol: string; label: string; fair: boolean; max: number; formula: string; how: string; ontologyOnly?: boolean };
 export type Rubric = { version: string; rubric: RubricItem[]; penalty: { label: string; formula: string; how: string }; fairMax: number; grades: { grade: string; min: number }[] };
 export type RunInfo = { id: string; startedAt?: string; finishedAt?: string; trigger?: string; evaluator?: { version?: string; rubricVersion?: string }; [k: string]: unknown };
