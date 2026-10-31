@@ -1,23 +1,22 @@
-"""Read-only queries over the ingested catalog. Used by both the HTTP API and the MCP tools."""
+"""Read-only queries over the ingested catalog (Postgres). Used by both the HTTP API and the MCP tools."""
 from __future__ import annotations
 
 import json
 import re
-import sqlite3
 import threading
+import time
 from functools import lru_cache
 from typing import Any, Literal
 
-from . import derived
-from .settings import DB_PATH
+from . import db, derived
 
 SortKey = Literal["relevance", "score", "name", "fair", "activity", "adopters"]
 SORTS = {
-    "score": "e.score IS NULL, e.score DESC, e.name COLLATE NOCASE",
-    "name": "COALESCE(e.acronym, e.name) COLLATE NOCASE",
-    "fair": "e.fair IS NULL, e.fair DESC, e.name COLLATE NOCASE",
-    "activity": "e.last_activity IS NULL, e.last_activity DESC",
-    "adopters": "e.adopters DESC, e.score IS NULL, e.score DESC",
+    "score": "e.score DESC NULLS LAST, lower(e.name)",
+    "name": "lower(COALESCE(e.acronym, e.name))",
+    "fair": "e.fair DESC NULLS LAST, lower(e.name)",
+    "activity": "e.last_activity DESC NULLS LAST",
+    "adopters": "e.adopters DESC, e.score DESC NULLS LAST",
 }
 MAX_PAGE_SIZE = 100
 
@@ -26,42 +25,35 @@ class NotIngested(RuntimeError):
     pass
 
 
-def connect() -> sqlite3.Connection:
-    if not DB_PATH.exists():
-        raise NotIngested(f"No database at {DB_PATH}. Run `python -m catalog_api.ingest` first.")
-    con = sqlite3.connect(f"file:{DB_PATH}?mode=ro", uri=True)
-    con.row_factory = sqlite3.Row
-    return con
+_gen = {"value": None, "checked": 0.0}
+_gen_lock = threading.Lock()
 
 
-_local = threading.local()
+def _generation() -> str:
+    """The time of the last ingest, re-read at most every 2 s, so cached lookups refresh without a restart."""
+    with _gen_lock:
+        if time.time() - _gen["checked"] > 2:
+            v = db.value("SELECT value FROM meta WHERE key = 'ingestedAt'")
+            if v is None:
+                raise NotIngested("The catalog has not been loaded. Run `python -m catalog_api.ingest` first.")
+            _gen["value"], _gen["checked"] = v, time.time()
+        return _gen["value"]
 
 
-def db() -> sqlite3.Connection:
-    """A read-only connection per worker thread (a connection must not be shared by concurrent requests).
-    The API never writes; a re-ingest is picked up by the next query."""
-    con = getattr(_local, "con", None)
-    if con is None:
-        con = _local.con = connect()
-    return con
-
-
-def _generation() -> int:
-    """Changes whenever the database is re-ingested, so cached lookups refresh without a restart."""
-    try:
-        return DB_PATH.stat().st_mtime_ns
-    except FileNotFoundError:
-        raise NotIngested(f"No database at {DB_PATH}. Run `python -m catalog_api.ingest` first.") from None
+def reset() -> None:
+    _gen["checked"] = 0.0
+    _meta_at.cache_clear()
+    _categories_at.cache_clear()
 
 
 @lru_cache(maxsize=2)
-def _meta_at(_gen: int) -> dict:
-    return {r["key"]: json.loads(r["value"]) for r in db().execute("SELECT key, value FROM meta")}
+def _meta_at(_gen: str) -> dict:
+    return {r["key"]: json.loads(r["value"]) for r in db.rows("SELECT key, value FROM meta")}
 
 
 @lru_cache(maxsize=2)
-def _categories_at(_gen: int) -> dict[str, dict]:
-    return {r["id"]: json.loads(r["data"]) for r in db().execute("SELECT id, data FROM categories ORDER BY position")}
+def _categories_at(_gen: str) -> dict[str, dict]:
+    return {r["id"]: json.loads(r["data"]) for r in db.rows("SELECT id, data FROM categories ORDER BY position")}
 
 
 def _meta() -> dict:
@@ -84,14 +76,13 @@ def site_data() -> str:
     """Everything the page templates (scripts/site.mjs) need, as one JSON document. Data files are passed through
     as stored; history and per-run scores come from the history table. Built as text: the evaluation alone is
     tens of MB, and re-encoding it would only cost time."""
-    con = db()
-    raw = {r["key"]: r["value"] for r in con.execute("SELECT key, value FROM raw")}
+    raw = {r["key"]: r["value"] for r in db.rows("SELECT key, value FROM raw")}
     if not raw:
         raise NotIngested("No raw data in the database. Re-run `python -m catalog_api.ingest`.")
     runs, history = [], {}
-    run_rows = con.execute("SELECT id, data FROM runs ORDER BY id").fetchall()
+    run_rows = db.rows("SELECT id, data FROM runs ORDER BY id")
     scores: dict[str, list] = {r["id"]: [] for r in run_rows}
-    for h in con.execute("SELECT entry_id, run_id, point FROM history ORDER BY entry_id, run_id"):
+    for h in db.rows("SELECT entry_id, run_id, point FROM history ORDER BY entry_id, run_id"):
         history.setdefault(h["entry_id"], []).append(h["point"])
         scores[h["run_id"]].append(json.loads(h["point"]).get("score"))
     for r in run_rows:
@@ -119,7 +110,7 @@ def meta() -> dict:
     return {"site": m.get("site"), "evaluation": m.get("evaluation"), "rubric": m.get("rubric"), "ingestedAt": m.get("ingestedAt")}
 
 
-def _summary(row: sqlite3.Row) -> dict:
+def _summary(row: dict) -> dict:
     e = json.loads(row["data"])
     facts = json.loads(row["facts"]) if row["facts"] else None
     cats = _categories()
@@ -150,10 +141,10 @@ def _summary(row: sqlite3.Row) -> dict:
     }
 
 
-def _fts_query(q: str) -> str | None:
-    """User text → an FTS5 query: every word must match, as a prefix. Quotes keep FTS syntax out."""
-    words = re.findall(r"[\w\-]+", q.lower())
-    return " AND ".join(f'"{w}"*' for w in words[:12]) or None
+def _ts_query(q: str) -> str | None:
+    """User text → a tsquery: every word must match, as a prefix (words only, so no tsquery syntax gets through)."""
+    words = re.findall(r"\w+", q.lower())
+    return " & ".join(f"{w}:*" for w in words[:12]) or None
 
 
 def search(
@@ -171,27 +162,26 @@ def search(
     """Search and filter the catalog. `category` matches the primary domain or any secondary domain."""
     size = max(1, min(size, MAX_PAGE_SIZE))
     page = max(1, page)
-    where, args, join = [], [], ""
-    fts = _fts_query(q) if q else None
-    if q and not fts:
+    where, args = [], []
+    tsq = _ts_query(q) if q else None
+    if q and not tsq:
         return {"total": 0, "page": page, "size": size, "items": [], "facets": {}}
-    if fts:
-        join = "JOIN entries_fts f ON f.id = e.id"
-        where.append("entries_fts MATCH ?")
-        args.append(fts)
+    if tsq:
+        where.append("e.search @@ to_tsquery('simple', %s)")
+        args.append(tsq)
     filters: list[tuple[str, str, list]] = []
     if category:
-        filters.append(("category", "e.id IN (SELECT entry_id FROM entry_domains WHERE category = ?)", [category]))
+        filters.append(("category", "e.id IN (SELECT entry_id FROM entry_domains WHERE category = %s)", [category]))
     if kind:
-        filters.append(("kind", "e.kind = ?", [kind]))
+        filters.append(("kind", "e.kind = %s", [kind]))
     if grade:
-        filters.append(("grade", "e.grade IS NULL" if grade == "none" else "e.grade = ?", [] if grade == "none" else [grade]))
+        filters.append(("grade", "e.grade IS NULL" if grade == "none" else "e.grade = %s", [] if grade == "none" else [grade]))
     if format:
-        filters.append(("format", "e.id IN (SELECT entry_id FROM entry_formats WHERE format = ?)", [format]))
+        filters.append(("format", "e.id IN (SELECT entry_id FROM entry_formats WHERE format = %s)", [format]))
     if registry:
-        filters.append(("registry", "e.id IN (SELECT entry_id FROM entry_registries WHERE registry = ?)", [registry]))
+        filters.append(("registry", "e.id IN (SELECT entry_id FROM entry_registries WHERE registry = %s)", [registry]))
     if not include_legacy:
-        where.append("e.legacy = 0")
+        where.append("NOT e.legacy")
 
     def clause(skip: str | None = None):
         parts = where + [sql for name, sql, _ in filters if name != skip]
@@ -201,45 +191,42 @@ def search(
     w, params = clause()
     order = SORTS.get(sort or "", None)
     order_args: list = []
-    if order is None and fts:
-        # Exact acronym/name/id matches first, then names starting with the query, then bm25
-        # (weights: id, acronym, name, description, extra; lower is better).
-        text = " ".join(re.findall(r"[\w\-]+", q.lower()))
+    if order is None and tsq:
+        # Exact acronym/name/id matches first, then names starting with the query, then text rank (weights A–D).
+        text = " ".join(re.findall(r"\w+", q.lower()))
         order = (
-            "CASE WHEN lower(e.acronym) = ? OR lower(e.name) = ? OR e.id = ? THEN 0 WHEN lower(e.name) LIKE ? THEN 1 ELSE 2 END, "
-            "bm25(entries_fts, 0, 12.0, 6.0, 1.0, 2.0), e.score IS NULL, e.score DESC"
+            "CASE WHEN lower(e.acronym) = %s OR lower(e.name) = %s OR e.id = %s THEN 0 WHEN lower(e.name) LIKE %s THEN 1 ELSE 2 END, "
+            "ts_rank(e.search, to_tsquery('simple', %s)) DESC, e.score DESC NULLS LAST"
         )
-        order_args = [text, text, text, text + "%"]
+        order_args = [text, text, text, text + "%", tsq]
     elif order is None:
         order = SORTS["score"]
-    con = db()
-    total = con.execute(f"SELECT COUNT(*) FROM entries e {join} {w}", params).fetchone()[0]
-    rows = con.execute(f"SELECT e.* FROM entries e {join} {w} ORDER BY {order} LIMIT ? OFFSET ?", [*params, *order_args, size, (page - 1) * size]).fetchall()
+    total = db.value(f"SELECT COUNT(*) FROM entries e {w}", params)
+    rows = db.rows(f"SELECT e.* FROM entries e {w} ORDER BY {order} LIMIT %s OFFSET %s", [*params, *order_args, size, (page - 1) * size])
 
     # Facet counts: each facet ignores its own filter, so the UI can show what switching it would give.
     facets: dict[str, dict[str, int]] = {}
     for name, sql in [
-        ("kind", "SELECT e.kind AS k, COUNT(*) FROM entries e {join} {w} GROUP BY k"),
-        ("grade", "SELECT COALESCE(e.grade, 'none') AS k, COUNT(*) FROM entries e {join} {w} GROUP BY k"),
-        ("category", "SELECT d.category AS k, COUNT(*) FROM entries e JOIN entry_domains d ON d.entry_id = e.id {join} {w} GROUP BY k"),
-        ("format", "SELECT x.format AS k, COUNT(*) FROM entries e JOIN entry_formats x ON x.entry_id = e.id {join} {w} GROUP BY k"),
-        ("registry", "SELECT x.registry AS k, COUNT(*) FROM entries e JOIN entry_registries x ON x.entry_id = e.id {join} {w} GROUP BY k"),
+        ("kind", "SELECT e.kind AS k, COUNT(*) AS n FROM entries e {w} GROUP BY 1"),
+        ("grade", "SELECT COALESCE(e.grade, 'none') AS k, COUNT(*) AS n FROM entries e {w} GROUP BY 1"),
+        ("category", "SELECT d.category AS k, COUNT(*) AS n FROM entries e JOIN entry_domains d ON d.entry_id = e.id {w} GROUP BY 1"),
+        ("format", "SELECT x.format AS k, COUNT(*) AS n FROM entries e JOIN entry_formats x ON x.entry_id = e.id {w} GROUP BY 1"),
+        ("registry", "SELECT x.registry AS k, COUNT(*) AS n FROM entries e JOIN entry_registries x ON x.entry_id = e.id {w} GROUP BY 1"),
     ]:
         fw, fp = clause(skip=name)
-        facets[name] = {r[0]: r[1] for r in con.execute(sql.format(join=join, w=fw), fp) if r[0] is not None}
+        facets[name] = {r["k"]: r["n"] for r in db.rows(sql.format(w=fw), fp) if r["k"] is not None}
     return {"total": total, "page": page, "size": size, "items": [_summary(r) for r in rows], "facets": facets}
 
 
 def summaries(ids: list[str]) -> list[dict]:
     if not ids:
         return []
-    rows = db().execute(f"SELECT * FROM entries WHERE id IN ({','.join('?' * len(ids))})", ids).fetchall()
-    by_id = {r["id"]: _summary(r) for r in rows}
+    by_id = {r["id"]: _summary(r) for r in db.rows("SELECT * FROM entries WHERE id = ANY(%s)", (ids,))}
     return [by_id[i] for i in ids if i in by_id]
 
 
 def history(entry_id: str) -> list[dict]:
-    rows = db().execute("SELECT point FROM history WHERE entry_id = ? ORDER BY run_id", (entry_id,)).fetchall()
+    rows = db.rows("SELECT point FROM history WHERE entry_id = %s ORDER BY run_id", (entry_id,))
     return [json.loads(r["point"]) for r in rows]
 
 
@@ -247,8 +234,8 @@ def _resolve(keys: list[str]) -> list[dict]:
     """Bioregistry-style prefixes → catalog entries where we have them, otherwise a Bioregistry link."""
     if not keys:
         return []
-    found = {r["key"]: r for r in db().execute(
-        f"SELECT k.key, e.id, e.acronym FROM entry_keys k JOIN entries e ON e.id = k.entry_id WHERE k.key IN ({','.join('?' * len(keys))})", keys
+    found = {r["key"]: r for r in db.rows(
+        "SELECT k.key, e.id, e.acronym FROM entry_keys k JOIN entries e ON e.id = k.entry_id WHERE k.key = ANY(%s)", (keys,)
     )}
     return [
         {"key": k, "entryId": found[k]["id"], "label": found[k]["acronym"] or k.upper()} if k in found
@@ -259,17 +246,14 @@ def _resolve(keys: list[str]) -> list[dict]:
 
 def entry(entry_id: str) -> dict | None:
     """Everything the entry page shows: catalog record, evaluation facts, derived lists, history and related entries."""
-    con = db()
-    row = con.execute("SELECT * FROM entries WHERE id = ?", (entry_id,)).fetchone()
+    row = db.one("SELECT * FROM entries WHERE id = %s", (entry_id,))
     if row is None:
         return None
     e = json.loads(row["data"])
     facts = json.loads(row["facts"]) if row["facts"] else None
     cats = _categories()
     h = history(entry_id)
-    related = con.execute(
-        f"SELECT * FROM entries e WHERE e.category = ? AND e.id != ? ORDER BY {SORTS['score']} LIMIT 5", (e["category"], entry_id)
-    ).fetchall()
+    related = db.rows(f"SELECT * FROM entries e WHERE e.category = %s AND e.id <> %s ORDER BY {SORTS['score']} LIMIT 5", (e["category"], entry_id))
     return {
         "entry": e,
         "summary": _summary(row),
@@ -287,9 +271,8 @@ def entry(entry_id: str) -> dict | None:
 
 
 def categories() -> list[dict]:
-    con = db()
-    primary = dict(con.execute("SELECT category, COUNT(*) FROM entries GROUP BY category").fetchall())
-    reach = dict(con.execute("SELECT category, COUNT(*) FROM entry_domains GROUP BY category").fetchall())
+    primary = {r["category"]: r["n"] for r in db.rows("SELECT category, COUNT(*) AS n FROM entries GROUP BY category")}
+    reach = {r["category"]: r["n"] for r in db.rows("SELECT category, COUNT(*) AS n FROM entry_domains GROUP BY category")}
     return [{**c, "count": primary.get(c["id"], 0), "reach": reach.get(c["id"], 0)} for c in _categories().values()]
 
 
@@ -299,19 +282,16 @@ def category(cat_id: str) -> dict | None:
 
 
 def runs(limit: int = 50) -> list[dict]:
-    rows = db().execute("SELECT data, entries FROM runs ORDER BY finished_at DESC, id DESC LIMIT ?", (limit,)).fetchall()
+    rows = db.rows("SELECT data, entries FROM runs ORDER BY finished_at DESC NULLS LAST, id DESC LIMIT %s", (limit,))
     return [{**json.loads(r["data"]), "entryCount": r["entries"]} for r in rows]
 
 
 def run(run_id: str, page: int = 1, size: int = 100) -> dict | None:
-    con = db()
-    row = con.execute("SELECT data, entries FROM runs WHERE id = ?", (run_id,)).fetchone()
+    row = db.one("SELECT data, entries FROM runs WHERE id = %s", (run_id,))
     if row is None:
         return None
     size = max(1, min(size, 500))
-    rows = con.execute(
-        "SELECT entry_id, point FROM history WHERE run_id = ? ORDER BY entry_id LIMIT ? OFFSET ?", (run_id, size, (max(1, page) - 1) * size)
-    ).fetchall()
+    rows = db.rows("SELECT entry_id, point FROM history WHERE run_id = %s ORDER BY entry_id LIMIT %s OFFSET %s", (run_id, size, (max(1, page) - 1) * size))
     return {
         "run": json.loads(row["data"]),
         "total": row["entries"],
@@ -322,34 +302,34 @@ def run(run_id: str, page: int = 1, size: int = 100) -> dict | None:
 
 
 def stats() -> dict:
-    con = db()
-    one = lambda sql: con.execute(sql).fetchone()[0]  # noqa: E731
+    v = db.value
+    avg = v("SELECT ROUND(AVG(score)::numeric, 1) FROM entries WHERE score IS NOT NULL")
     return {
-        "entries": one("SELECT COUNT(*) FROM entries"),
-        "evaluated": one("SELECT COUNT(*) FROM entries WHERE score IS NOT NULL"),
-        "categories": one("SELECT COUNT(*) FROM categories"),
-        "runs": one("SELECT COUNT(*) FROM runs"),
-        "averageScore": con.execute("SELECT ROUND(AVG(score), 1) FROM entries WHERE score IS NOT NULL").fetchone()[0],
-        "grades": dict(con.execute("SELECT COALESCE(grade, 'none'), COUNT(*) FROM entries GROUP BY 1").fetchall()),
-        "kinds": dict(con.execute("SELECT kind, COUNT(*) FROM entries GROUP BY kind").fetchall()),
-        "totalAdopters": one("SELECT COALESCE(SUM(adopters), 0) FROM entries"),
-        "crossDomain": one("SELECT COUNT(*) FROM (SELECT entry_id FROM entry_domains GROUP BY entry_id HAVING COUNT(*) > 1)"),
+        "entries": v("SELECT COUNT(*) FROM entries"),
+        "evaluated": v("SELECT COUNT(*) FROM entries WHERE score IS NOT NULL"),
+        "categories": v("SELECT COUNT(*) FROM categories"),
+        "runs": v("SELECT COUNT(*) FROM runs"),
+        "averageScore": float(avg) if avg is not None else None,
+        "grades": {r["k"]: r["n"] for r in db.rows("SELECT COALESCE(grade, 'none') AS k, COUNT(*) AS n FROM entries GROUP BY 1")},
+        "kinds": {r["k"]: r["n"] for r in db.rows("SELECT kind AS k, COUNT(*) AS n FROM entries GROUP BY 1")},
+        "totalAdopters": v("SELECT COALESCE(SUM(adopters), 0) FROM entries"),
+        "crossDomain": v("SELECT COUNT(*) FROM (SELECT entry_id FROM entry_domains GROUP BY entry_id HAVING COUNT(*) > 1) x"),
         "evaluation": _meta().get("evaluation"),
     }
 
 
 def top(n: int = 8, category: str | None = None) -> list[dict]:
-    sql = f"SELECT * FROM entries e WHERE e.score IS NOT NULL {'AND e.id IN (SELECT entry_id FROM entry_domains WHERE category = ?)' if category else ''} ORDER BY {SORTS['score']} LIMIT ?"
-    return [_summary(r) for r in db().execute(sql, ([category] if category else []) + [n])]
+    cat = "AND e.id IN (SELECT entry_id FROM entry_domains WHERE category = %s)" if category else ""
+    return [_summary(r) for r in db.rows(f"SELECT * FROM entries e WHERE e.score IS NOT NULL {cat} ORDER BY {SORTS['score']} LIMIT %s", ([category] if category else []) + [n])]
 
 
 def recently_active(n: int = 8) -> list[dict]:
-    return [_summary(r) for r in db().execute(f"SELECT * FROM entries e WHERE e.last_activity IS NOT NULL ORDER BY {SORTS['activity']} LIMIT ?", (n,))]
+    return [_summary(r) for r in db.rows(f"SELECT * FROM entries e WHERE e.last_activity IS NOT NULL ORDER BY {SORTS['activity']} LIMIT %s", (n,))]
 
 
 def ids() -> list[dict]:
     """Every entry id and its primary category, for sitemaps."""
-    return [{"id": r[0], "category": r[1]} for r in db().execute("SELECT id, category FROM entries ORDER BY id")]
+    return db.rows("SELECT id, category FROM entries ORDER BY id")
 
 
 def compact(obj: Any) -> Any:

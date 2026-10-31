@@ -8,6 +8,10 @@ dependencies = [
   "fastapi>=0.115",
   "uvicorn[standard]>=0.30",
   "mcp>=1.9",
+  "pyjwt>=2.8",
+  "httpx>=0.27",
+  "psycopg[binary]>=3.2",
+  "psycopg-pool>=3.2",
 ]
 
 [dependency-groups]
