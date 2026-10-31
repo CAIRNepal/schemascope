@@ -1,0 +1,67 @@
+{
+  "id": "seq",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/seq/versions/2011-01-30.n3",
+  "checkedAt": "2026-10-29T02:51:44.896Z",
+  "sha256": "eedb2be2c9f38c59ec6e6120a5945c8ca93d565e1fce86df4a7eddb7c8b0d78d",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl",
+        "id": "cpa",
+        "own": true
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:51:49.399Z",
+    "sha256": "eedb2be2c9f38c59ec6e6120a5945c8ca93d565e1fce86df4a7eddb7c8b0d78d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 14,
+      "WARN": 4,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:51:50.626Z",
+    "sha256": "eedb2be2c9f38c59ec6e6120a5945c8ca93d565e1fce86df4a7eddb7c8b0d78d"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3255 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/seq:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T02:51:51.406Z",
+    "sha256": "eedb2be2c9f38c59ec6e6120a5945c8ca93d565e1fce86df4a7eddb7c8b0d78d"
+  }
+}

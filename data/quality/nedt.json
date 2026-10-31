@@ -1,0 +1,79 @@
+{
+  "id": "nedt",
+  "artefact": "https://w3id.org/nedt",
+  "checkedAt": "2026-10-28T23:14:29.582Z",
+  "sha256": "eb3cbece6bcaad7620ce166b7b12b911658f6aa9c4dc7e3d36b51a28bf7a8f7c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:14:30.074Z",
+    "sha256": "eb3cbece6bcaad7620ce166b7b12b911658f6aa9c4dc7e3d36b51a28bf7a8f7c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 63,
+      "WARN": 276,
+      "INFO": 50
+    },
+    "checkedAt": "2026-10-28T23:14:31.376Z",
+    "sha256": "eb3cbece6bcaad7620ce166b7b12b911658f6aa9c4dc7e3d36b51a28bf7a8f7c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 53
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 95
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 119,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2192 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/nedt:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T23:14:32.161Z",
+    "sha256": "eb3cbece6bcaad7620ce166b7b12b911658f6aa9c4dc7e3d36b51a28bf7a8f7c"
+  }
+}

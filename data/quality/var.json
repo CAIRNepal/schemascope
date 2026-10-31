@@ -1,0 +1,111 @@
+{
+  "id": "var",
+  "artefact": "https://w3id.org/var",
+  "checkedAt": "2026-10-29T06:51:03.590Z",
+  "sha256": "6ccfaa9a8d8aa1c9d5b2e7be9460f3c0650617718e157b4c15e36f80d47c4c60",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 6,
+      "dcterms": 8,
+      "owl": 4,
+      "wgs84": 6,
+      "swrl": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T06:51:08.981Z",
+    "sha256": "6ccfaa9a8d8aa1c9d5b2e7be9460f3c0650617718e157b4c15e36f80d47c4c60"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 203,
+      "WARN": 194,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T06:51:10.258Z",
+    "sha256": "6ccfaa9a8d8aa1c9d5b2e7be9460f3c0650617718e157b4c15e36f80d47c4c60"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 2,
+    "important": 3,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P02",
+        "name": "Creating synonyms as classes",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 318
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 203
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 63
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P29",
+        "name": "Defining wrong transitive relationships",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P31",
+        "name": "Defining wrong equivalent classes",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T06:51:20.658Z",
+    "sha256": "6ccfaa9a8d8aa1c9d5b2e7be9460f3c0650617718e157b4c15e36f80d47c4c60"
+  }
+}

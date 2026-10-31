@@ -1,0 +1,11 @@
+{
+  "id": "tib-lis",
+  "artefact": "http://rds.posccaesar.org/ontology/lis14/ont/core/4.0",
+  "checkedAt": "2026-10-29T05:16:56.919Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T05:16:57.216Z"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "id": "marl",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/marl/versions/2013-05-10.n3",
+  "checkedAt": "2026-10-28T21:34:57.753Z",
+  "sha256": "b054b3fc34502ec89c3722b30c544a5367ca19e9cbcbaaf6530b59f8be38c57a",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/ns/prov-o#",
+        "id": "w3.org/ns/prov-o",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:35:00.059Z",
+    "sha256": "b054b3fc34502ec89c3722b30c544a5367ca19e9cbcbaaf6530b59f8be38c57a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "value cannot be null at this stage\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T21:35:00.979Z",
+    "sha256": "b054b3fc34502ec89c3722b30c544a5367ca19e9cbcbaaf6530b59f8be38c57a"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 9
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 9
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 4,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1982 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/marl:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T21:35:01.649Z",
+    "sha256": "b054b3fc34502ec89c3722b30c544a5367ca19e9cbcbaaf6530b59f8be38c57a"
+  }
+}

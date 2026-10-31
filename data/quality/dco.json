@@ -1,0 +1,69 @@
+{
+  "id": "dco",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/dco/versions/2021-09-30.n3",
+  "checkedAt": "2026-10-28T16:57:26.922Z",
+  "sha256": "b760a5bcb5bacb7bbed59e80c0c71c1fe5a6eb75aae87a8c36c3ef94ee480e8c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 7
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T16:57:27.230Z",
+    "sha256": "b760a5bcb5bacb7bbed59e80c0c71c1fe5a6eb75aae87a8c36c3ef94ee480e8c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 222,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T16:57:28.443Z",
+    "sha256": "b760a5bcb5bacb7bbed59e80c0c71c1fe5a6eb75aae87a8c36c3ef94ee480e8c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 104
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 188,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-786 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dco:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T16:57:29.166Z",
+    "sha256": "b760a5bcb5bacb7bbed59e80c0c71c1fe5a6eb75aae87a8c36c3ef94ee480e8c"
+  }
+}

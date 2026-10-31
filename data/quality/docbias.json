@@ -1,0 +1,104 @@
+{
+  "id": "docbias",
+  "artefact": "https://raw.githubusercontent.com/tibonto/Doc-BIAS/refs/heads/main/docbias-schema.ttl",
+  "checkedAt": "2026-10-28T17:15:16.387Z",
+  "sha256": "7e306fe60bbbc1eb85ebb4b68f9fc2fd6719516d2880bac18e286ac75016c5c7",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://w3id.org/mlso/vocab/dataset_characteristic",
+        "id": "w3id.org/mlso/vocab/dataset_characteristic",
+        "own": false
+      },
+      {
+        "iri": "http://w3id.org/mlso/vocab/evaluation_measure",
+        "id": "w3id.org/mlso/vocab/evaluation_measure",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/2004/02/skos/core",
+        "id": "skos",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dc": 7,
+      "dcterms": 11,
+      "cpa": 11,
+      "skos": 10,
+      "dcat": 4,
+      "dqv": 14,
+      "mls": 27,
+      "geop": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:15:17.188Z",
+    "sha256": "7e306fe60bbbc1eb85ebb4b68f9fc2fd6719516d2880bac18e286ac75016c5c7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 272,
+      "WARN": 438,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-28T17:15:22.991Z",
+    "sha256": "7e306fe60bbbc1eb85ebb4b68f9fc2fd6719516d2880bac18e286ac75016c5c7"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 28
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 10
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 74,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-901 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/docbias:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T17:15:23.960Z",
+    "sha256": "7e306fe60bbbc1eb85ebb4b68f9fc2fd6719516d2880bac18e286ac75016c5c7"
+  }
+}

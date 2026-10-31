@@ -1,0 +1,67 @@
+{
+  "id": "dnd5echaracter",
+  "artefact": "https://w3id.org/DnD5eCharacter",
+  "checkedAt": "2026-10-28T17:15:05.062Z",
+  "sha256": "d5fe184357d77b37021559718f55f6c6b837fd816bd6b412f40ad74b3c9ae93e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:15:05.662Z",
+    "sha256": "d5fe184357d77b37021559718f55f6c6b837fd816bd6b412f40ad74b3c9ae93e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 7,
+      "WARN": 313,
+      "INFO": 6
+    },
+    "checkedAt": "2026-10-28T17:15:08.780Z",
+    "sha256": "d5fe184357d77b37021559718f55f6c6b837fd816bd6b412f40ad74b3c9ae93e"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 11
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-895 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dnd5echaracter:/work schemascope/oops --input-file /wo"
+    ],
+    "checkedAt": "2026-10-28T17:15:09.952Z",
+    "sha256": "d5fe184357d77b37021559718f55f6c6b837fd816bd6b412f40ad74b3c9ae93e"
+  }
+}

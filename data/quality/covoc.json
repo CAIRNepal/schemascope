@@ -1,0 +1,101 @@
+{
+  "id": "covoc",
+  "artefact": "https://github.com/EBISPOT/covoc/releases/download/current/covoc.owl",
+  "checkedAt": "2026-10-28T14:22:09.388Z",
+  "sha256": "4f19b7f8a64b1c264b9f392df46e3b376201b7e57b7e7176017845ebccc9ba7a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "cido": 50,
+      "clo": 9,
+      "iao": 22,
+      "ncit": 50,
+      "obi": 17,
+      "ro": 50,
+      "ubprop": 16,
+      "bfo": 9,
+      "bspo": 16,
+      "hancestro": 5,
+      "ido": 5,
+      "mondo": 32,
+      "omit": 9,
+      "chebi": 50,
+      "ncbitaxon": 37,
+      "cl": 9,
+      "go": 35,
+      "xsd": 5,
+      "dc": 6,
+      "dcterms": 4,
+      "skos": 5,
+      "pr": 20,
+      "hp": 30,
+      "maxo": 5,
+      "doid": 19,
+      "uberon": 5,
+      "pato": 6
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T14:22:10.930Z",
+    "sha256": "4f19b7f8a64b1c264b9f392df46e3b376201b7e57b7e7176017845ebccc9ba7a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 29,
+      "WARN": 460,
+      "INFO": 12
+    },
+    "checkedAt": "2026-10-28T14:22:15.731Z",
+    "sha256": "4f19b7f8a64b1c264b9f392df46e3b376201b7e57b7e7176017845ebccc9ba7a"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 243
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 108
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 240
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 516,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-624 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/covoc:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T14:37:58.321Z",
+    "sha256": "4f19b7f8a64b1c264b9f392df46e3b376201b7e57b7e7176017845ebccc9ba7a"
+  }
+}

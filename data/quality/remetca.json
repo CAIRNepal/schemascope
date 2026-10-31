@@ -1,0 +1,85 @@
+{
+  "id": "remetca",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/remetca/versions/2014-10-14.n3",
+  "checkedAt": "2026-10-29T02:23:34.644Z",
+  "sha256": "0beb2143f358b4579aab6fd87b97110af0158c48afe9cedf5a581ce48d5c3410",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:23:36.024Z",
+    "sha256": "0beb2143f358b4579aab6fd87b97110af0158c48afe9cedf5a581ce48d5c3410"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 39,
+      "WARN": 36,
+      "INFO": 10
+    },
+    "checkedAt": "2026-10-29T02:23:37.084Z",
+    "sha256": "0beb2143f358b4579aab6fd87b97110af0158c48afe9cedf5a581ce48d5c3410"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 9
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 10,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3008 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/remetca:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T02:23:37.950Z",
+    "sha256": "0beb2143f358b4579aab6fd87b97110af0158c48afe9cedf5a581ce48d5c3410"
+  }
+}

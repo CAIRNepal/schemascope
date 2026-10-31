@@ -1,0 +1,63 @@
+{
+  "id": "earthcube-srt",
+  "artefact": "https://github.com/earthcubearchitecture-ecresourcereg/srt/raw/refs/heads/master/srt.ttl",
+  "checkedAt": "2026-10-28T17:36:19.570Z",
+  "sha256": "05e83ad101431611e52c359ef79cefe3f2224d6a922a355c7748651a0c56004a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dc": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:36:19.962Z",
+    "sha256": "05e83ad101431611e52c359ef79cefe3f2224d6a922a355c7748651a0c56004a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 2,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T17:36:20.950Z",
+    "sha256": "05e83ad101431611e52c359ef79cefe3f2224d6a922a355c7748651a0c56004a"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 9,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1006 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/earthcube-srt:/work schemascope/oops --input-file /wo"
+    ],
+    "checkedAt": "2026-10-28T17:36:21.686Z",
+    "sha256": "05e83ad101431611e52c359ef79cefe3f2224d6a922a355c7748651a0c56004a"
+  }
+}

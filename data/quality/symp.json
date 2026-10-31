@@ -1,0 +1,71 @@
+{
+  "id": "symp",
+  "artefact": "http://purl.obolibrary.org/obo/symp.owl",
+  "checkedAt": "2026-10-29T04:55:42.093Z",
+  "sha256": "9054e6a87d4af4ac18876aef953a5cf151aa0a3d82d15f8850928bd0413e5b87",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 3
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T04:55:42.495Z",
+    "sha256": "9054e6a87d4af4ac18876aef953a5cf151aa0a3d82d15f8850928bd0413e5b87"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 481,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T04:55:44.206Z",
+    "sha256": "9054e6a87d4af4ac18876aef953a5cf151aa0a3d82d15f8850928bd0413e5b87"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 126
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 946
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T04:55:59.735Z",
+    "sha256": "9054e6a87d4af4ac18876aef953a5cf151aa0a3d82d15f8850928bd0413e5b87"
+  }
+}

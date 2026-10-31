@@ -1,0 +1,11 @@
+{
+  "id": "oplmark",
+  "artefact": "http://www.openlinksw.com/ontology/market",
+  "checkedAt": "2026-10-29T00:28:15.301Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:28:15.531Z"
+  }
+}

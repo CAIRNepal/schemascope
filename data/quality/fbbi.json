@@ -1,0 +1,102 @@
+{
+  "id": "fbbi",
+  "artefact": "http://purl.obolibrary.org/obo/fbbi.owl",
+  "checkedAt": "2026-10-28T19:40:13.700Z",
+  "sha256": "3a392496fe0c24cf9a142a093a3fe2558bd362b3d881812549baf53d5cd1bf4a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 27,
+      "ro": 50,
+      "bfo": 17,
+      "go": 3,
+      "dcterms": 6,
+      "owl": 7,
+      "xsd": 3,
+      "swrl": 5
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:40:14.400Z",
+    "sha256": "3a392496fe0c24cf9a142a093a3fe2558bd362b3d881812549baf53d5cd1bf4a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 18,
+      "WARN": 480,
+      "INFO": 67
+    },
+    "checkedAt": "2026-10-28T19:40:16.071Z",
+    "sha256": "3a392496fe0c24cf9a142a093a3fe2558bd362b3d881812549baf53d5cd1bf4a"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 109
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 780
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 92
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 59
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 12
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 7
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:40:27.599Z",
+    "sha256": "3a392496fe0c24cf9a142a093a3fe2558bd362b3d881812549baf53d5cd1bf4a"
+  }
+}

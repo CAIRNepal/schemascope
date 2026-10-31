@@ -1,0 +1,113 @@
+{
+  "id": "iofcore",
+  "artefact": "https://github.com/iofoundry/ontology/raw/refs/heads/master/core/Core.rdf",
+  "checkedAt": "2026-10-28T21:13:30.968Z",
+  "sha256": "7e44642681ded2b24a3a3d316df05144c3661e2ed594f31491ea61bfda8f9be8",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.obolibrary.org/obo/bfo/2020/bfo.owl",
+        "id": "bfo",
+        "own": false
+      },
+      {
+        "iri": "https://spec.industrialontologies.org/ontology/core/meta/AnnotationVocabulary/",
+        "id": "spec.industrialontologies.org/ontology/core/meta/annotationvocabulary",
+        "own": false
+      }
+    ],
+    "uses": {
+      "iao": 4,
+      "obi": 6,
+      "ro": 8
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:13:31.586Z",
+    "sha256": "7e44642681ded2b24a3a3d316df05144c3661e2ed594f31491ea61bfda8f9be8"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "Violations: 190\n-----------------\nERROR:      7\nWARN:       182\nINFO:       1\n/work/profile.txt (No such file or directory)\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "robot": {
+      "ERROR": 7,
+      "WARN": 182,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T21:13:35.418Z",
+    "sha256": "7e44642681ded2b24a3a3d316df05144c3661e2ed594f31491ea61bfda8f9be8"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 2,
+    "important": 2,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P05",
+        "name": "Defining wrong inverse relationships",
+        "importance": "critical",
+        "affected": 6
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 176
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 23
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 20
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P29",
+        "name": "Defining wrong transitive relationships",
+        "importance": "critical",
+        "affected": 3
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 2
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:13:49.201Z",
+    "sha256": "7e44642681ded2b24a3a3d316df05144c3661e2ed594f31491ea61bfda8f9be8"
+  }
+}

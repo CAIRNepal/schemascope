@@ -1,0 +1,85 @@
+{
+  "id": "irw",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/irw/versions/2009-03-09.n3",
+  "checkedAt": "2026-10-28T21:14:46.837Z",
+  "sha256": "8ca3fc256821f434c03ca209685fc10eb084db65d4929c0cceab948d166b9d7c",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.ontologydesignpatterns.org/cp/owl/informationrealization.owl",
+        "id": "infor",
+        "own": true
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:14:47.653Z",
+    "sha256": "8ca3fc256821f434c03ca209685fc10eb084db65d4929c0cceab948d166b9d7c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 7,
+      "WARN": 34,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:14:49.371Z",
+    "sha256": "8ca3fc256821f434c03ca209685fc10eb084db65d4929c0cceab948d166b9d7c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 13,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1683 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/irw:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T21:14:50.514Z",
+    "sha256": "8ca3fc256821f434c03ca209685fc10eb084db65d4929c0cceab948d166b9d7c"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "id": "ncro",
+  "artefact": "http://purl.obolibrary.org/obo/ncro.owl",
+  "checkedAt": "2026-10-28T23:13:13.864Z",
+  "sha256": "a5bf7ba6e35933356678ab10c039a9cfe5394869d1af2f76ddefa10559198af4",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 43,
+      "iao": 50,
+      "so": 50,
+      "doid": 3,
+      "uberon": 4,
+      "ro": 11,
+      "go": 50,
+      "chebi": 8,
+      "obi": 3,
+      "rdfs": 4,
+      "owl": 5
+    },
+    "scannedMb": 3,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:13:14.376Z",
+    "sha256": "a5bf7ba6e35933356678ab10c039a9cfe5394869d1af2f76ddefa10559198af4"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 2546,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 32,
+      "WARN": 2627,
+      "INFO": 41
+    },
+    "checkedAt": "2026-10-28T23:13:18.054Z",
+    "sha256": "a5bf7ba6e35933356678ab10c039a9cfe5394869d1af2f76ddefa10559198af4"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 3086
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 16
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 19
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T23:14:29.581Z",
+    "sha256": "a5bf7ba6e35933356678ab10c039a9cfe5394869d1af2f76ddefa10559198af4"
+  }
+}

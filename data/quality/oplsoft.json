@@ -1,0 +1,11 @@
+{
+  "id": "oplsoft",
+  "artefact": "http://www.openlinksw.com/ontology/software",
+  "checkedAt": "2026-10-29T00:28:16.439Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:28:16.664Z"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "id": "ddi",
+  "artefact": "http://aber-owl.net/media/ontologies/DDI/1/ddi.owl",
+  "checkedAt": "2026-10-28T16:57:53.613Z",
+  "sha256": "b5a45fd9d6d7fb05c18e1dd166d434df070e359f27122d6d09d05a5e5a1f684f",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl",
+        "id": "protege.stanford.edu/plugins/owl/dc/protege-dc",
+        "own": false
+      },
+      {
+        "iri": "http://www.ifomis.org/bfo/1.1",
+        "id": "ifomis.org/bfo/1.1",
+        "own": false
+      },
+      {
+        "iri": "http://www.obofoundry.org/ro/ro.owl",
+        "id": "obofoundry.org/ro/ro",
+        "own": false
+      }
+    ],
+    "uses": {
+      "iao": 50,
+      "obi": 4,
+      "rdfs": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T16:57:55.043Z",
+    "sha256": "b5a45fd9d6d7fb05c18e1dd166d434df070e359f27122d6d09d05a5e5a1f684f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.obolibrary.org/obo/iao/dev/external.owl> Cause: https://raw.githubusercontent.com/information-artifact-ontology/IAO/master/src/ontology/external.owl\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T16:57:56.647Z",
+    "sha256": "b5a45fd9d6d7fb05c18e1dd166d434df070e359f27122d6d09d05a5e5a1f684f"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-797 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ddi:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T16:58:01.121Z",
+    "sha256": "b5a45fd9d6d7fb05c18e1dd166d434df070e359f27122d6d09d05a5e5a1f684f"
+  }
+}

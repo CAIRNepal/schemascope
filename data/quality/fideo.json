@@ -1,0 +1,11 @@
+{
+  "id": "fideo",
+  "artefact": "http://purl.obolibrary.org/obo/fideo.owl",
+  "checkedAt": "2026-10-28T19:41:59.387Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:42:09.902Z"
+  }
+}

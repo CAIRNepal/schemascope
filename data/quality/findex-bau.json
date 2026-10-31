@@ -1,0 +1,79 @@
+{
+  "id": "findex-bau",
+  "artefact": "https://gitlab.com/fid-bau/terminologie/findex-bau/-/raw/0.0.6/TS/findex-bau-skos.owl",
+  "checkedAt": "2026-10-28T19:42:21.533Z",
+  "sha256": "501b8cc8c3313700a8d2d94c39e06540b4cdfccb3e07f30d5d703acef81bc0f3",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/2004/02/skos/core#",
+        "id": "skos",
+        "own": false
+      }
+    ],
+    "uses": {
+      "xsd": 5,
+      "dc": 4,
+      "dcterms": 7
+    },
+    "scannedMb": 7,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:42:23.105Z",
+    "sha256": "501b8cc8c3313700a8d2d94c39e06540b4cdfccb3e07f30d5d703acef81bc0f3"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 7216,
+      "WARN": 1,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T19:42:27.344Z",
+    "sha256": "501b8cc8c3313700a8d2d94c39e06540b4cdfccb3e07f30d5d703acef81bc0f3"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:43:38.346Z",
+    "sha256": "501b8cc8c3313700a8d2d94c39e06540b4cdfccb3e07f30d5d703acef81bc0f3"
+  }
+}

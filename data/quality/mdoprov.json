@@ -1,0 +1,81 @@
+{
+  "id": "mdoprov",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/mdoprov/versions/2020-04-02.n3",
+  "checkedAt": "2026-10-28T21:49:42.125Z",
+  "sha256": "1bcf9bf70a1124fcdd1f2b829d22d03229abe961df9a62f7728393e4b1d0d1ac",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "rdf": 4,
+      "owl": 16,
+      "dcterms": 5,
+      "xsd": 4,
+      "rdfs": 7,
+      "prov": 4,
+      "core": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:49:53.172Z",
+    "sha256": "1bcf9bf70a1124fcdd1f2b829d22d03229abe961df9a62f7728393e4b1d0d1ac"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 5,
+      "WARN": 12,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:49:54.468Z",
+    "sha256": "1bcf9bf70a1124fcdd1f2b829d22d03229abe961df9a62f7728393e4b1d0d1ac"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 2,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2016 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mdoprov:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-28T21:49:55.116Z",
+    "sha256": "1bcf9bf70a1124fcdd1f2b829d22d03229abe961df9a62f7728393e4b1d0d1ac"
+  }
+}

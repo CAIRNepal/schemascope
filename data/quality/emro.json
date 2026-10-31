@@ -1,0 +1,88 @@
+{
+  "id": "emro",
+  "artefact": "http://purl.obolibrary.org/obo/emro.owl",
+  "checkedAt": "2026-10-28T19:04:33.122Z",
+  "sha256": "b6f06b2b2f0c3810e2fbb9d43bc66875183ba8b99dfd0fd61abdd2acb2080adf",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 9,
+      "iao": 50,
+      "omo": 20,
+      "ro": 31,
+      "go": 24,
+      "ncit": 14,
+      "hp": 3,
+      "mfoem": 7,
+      "omit": 10,
+      "gsso": 3,
+      "scdo": 3,
+      "uberon": 6,
+      "ncbitaxon": 3,
+      "xsd": 3,
+      "dc": 15,
+      "dcterms": 7,
+      "owl": 6,
+      "sio": 10
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:04:33.684Z",
+    "sha256": "b6f06b2b2f0c3810e2fbb9d43bc66875183ba8b99dfd0fd61abdd2acb2080adf"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 29,
+      "WARN": 66,
+      "INFO": 30
+    },
+    "checkedAt": "2026-10-28T19:04:35.159Z",
+    "sha256": "b6f06b2b2f0c3810e2fbb9d43bc66875183ba8b99dfd0fd61abdd2acb2080adf"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 105
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 31
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 12
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:04:49.817Z",
+    "sha256": "b6f06b2b2f0c3810e2fbb9d43bc66875183ba8b99dfd0fd61abdd2acb2080adf"
+  }
+}

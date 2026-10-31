@@ -1,0 +1,82 @@
+{
+  "id": "consolid",
+  "artefact": "https://w3id.org/consolid",
+  "checkedAt": "2026-10-28T13:23:02.133Z",
+  "sha256": "77d9454f9728ff03b847c9d3d6f87cd1dc69c10a301da6cdf7adcfe8f6a15f75",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 5,
+      "dcat": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T13:23:02.587Z",
+    "sha256": "77d9454f9728ff03b847c9d3d6f87cd1dc69c10a301da6cdf7adcfe8f6a15f75"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 15,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T13:23:03.803Z",
+    "sha256": "77d9454f9728ff03b847c9d3d6f87cd1dc69c10a301da6cdf7adcfe8f6a15f75"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 6
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 12,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-594 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/consolid:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-28T13:23:05.309Z",
+    "sha256": "77d9454f9728ff03b847c9d3d6f87cd1dc69c10a301da6cdf7adcfe8f6a15f75"
+  }
+}

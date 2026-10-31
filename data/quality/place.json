@@ -1,0 +1,81 @@
+{
+  "id": "place",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/place/versions/2010-11-27.n3",
+  "checkedAt": "2026-10-29T01:06:20.406Z",
+  "sha256": "94c7db62788ff0fa66ad5a559f85f31931f32ca311853d2d89e23376651f24ce",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dbpedia-owl": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:06:20.774Z",
+    "sha256": "94c7db62788ff0fa66ad5a559f85f31931f32ca311853d2d89e23376651f24ce"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 311,
+      "WARN": 59,
+      "INFO": 46
+    },
+    "checkedAt": "2026-10-29T01:06:22.682Z",
+    "sha256": "94c7db62788ff0fa66ad5a559f85f31931f32ca311853d2d89e23376651f24ce"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 47,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2641 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/place:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T01:06:23.840Z",
+    "sha256": "94c7db62788ff0fa66ad5a559f85f31931f32ca311853d2d89e23376651f24ce"
+  }
+}

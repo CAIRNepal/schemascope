@@ -1,0 +1,11 @@
+{
+  "id": "sweet-huea",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/humanEnvirAssessment.ttl",
+  "checkedAt": "2026-10-29T03:22:20.518Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:22:31.018Z"
+  }
+}

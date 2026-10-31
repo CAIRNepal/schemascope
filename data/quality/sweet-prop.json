@@ -1,0 +1,11 @@
+{
+  "id": "sweet-prop",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/prop.ttl",
+  "checkedAt": "2026-10-29T03:36:53.009Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:37:03.507Z"
+  }
+}

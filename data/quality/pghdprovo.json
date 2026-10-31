@@ -1,0 +1,11 @@
+{
+  "id": "pghdprovo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/pghdprovo/versions/2025-12-23.n3",
+  "checkedAt": "2026-10-29T00:53:21.172Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:53:23.217Z"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "id": "onyx",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/onyx/versions/2015-01-11.n3",
+  "checkedAt": "2026-10-29T00:26:24.339Z",
+  "sha256": "71b65504ad7b5a95a9ca84d86b4c960fdbb1013551db0ca42ccc2a1276450912",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/ns/prov-o#",
+        "id": "w3.org/ns/prov-o",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:26:25.377Z",
+    "sha256": "71b65504ad7b5a95a9ca84d86b4c960fdbb1013551db0ca42ccc2a1276450912"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 27,
+      "INFO": 6
+    },
+    "checkedAt": "2026-10-29T00:26:26.951Z",
+    "sha256": "71b65504ad7b5a95a9ca84d86b4c960fdbb1013551db0ca42ccc2a1276450912"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 10
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 10,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2455 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/onyx:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T00:26:27.981Z",
+    "sha256": "71b65504ad7b5a95a9ca84d86b4c960fdbb1013551db0ca42ccc2a1276450912"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "inspire-theme",
+  "artefact": "http://inspire.ec.europa.eu/theme/theme.en.rdf",
+  "checkedAt": "2026-10-28T21:09:16.464Z",
+  "sha256": "67b6e5e91750acba96dac8c829269ca3946e6f76ccb7926d914b6eb01fcb7f8b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:09:17.525Z",
+    "sha256": "67b6e5e91750acba96dac8c829269ca3946e6f76ccb7926d914b6eb01fcb7f8b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 255,
+      "WARN": 216,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:09:19.129Z",
+    "sha256": "67b6e5e91750acba96dac8c829269ca3946e6f76ccb7926d914b6eb01fcb7f8b"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:09:26.952Z",
+    "sha256": "67b6e5e91750acba96dac8c829269ca3946e6f76ccb7926d914b6eb01fcb7f8b"
+  }
+}

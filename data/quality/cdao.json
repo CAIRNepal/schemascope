@@ -1,0 +1,122 @@
+{
+  "id": "cdao",
+  "artefact": "http://purl.obolibrary.org/obo/cdao.owl",
+  "checkedAt": "2026-10-28T01:57:59.326Z",
+  "sha256": "7cefc60890f0164b9b377d511b16fc75137bc4da33cb26b7067593d0364982f8",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.obolibrary.org/obo/iao/ontology-metadata.owl",
+        "id": "iao",
+        "own": true
+      }
+    ],
+    "uses": {
+      "dc": 10,
+      "dcterms": 5,
+      "owl": 5,
+      "xsd": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:57:59.627Z",
+    "sha256": "7cefc60890f0164b9b377d511b16fc75137bc4da33cb26b7067593d0364982f8"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 214,
+      "INFO": 8
+    },
+    "checkedAt": "2026-10-28T01:58:01.671Z",
+    "sha256": "7cefc60890f0164b9b377d511b16fc75137bc4da33cb26b7067593d0364982f8"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 4,
+    "minor": 7,
+    "pitfalls": [
+      {
+        "code": "P02",
+        "name": "Creating synonyms as classes",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P05",
+        "name": "Defining wrong inverse relationships",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 181
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 22
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 50
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P25",
+        "name": "Defining a relationship as inverse to itself",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P26",
+        "name": "Defining inverse relationships for a symmetric one",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:58:10.341Z",
+    "sha256": "7cefc60890f0164b9b377d511b16fc75137bc4da33cb26b7067593d0364982f8"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "dr-lov",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/dr/versions/2010-10-12.n3",
+  "checkedAt": "2026-10-28T17:19:11.022Z",
+  "sha256": "28363afe548d119bd4b9ac13bb3b8551a5ae2a5d3762925805959c41a8ff637a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:19:11.881Z",
+    "sha256": "28363afe548d119bd4b9ac13bb3b8551a5ae2a5d3762925805959c41a8ff637a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 15,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T17:19:12.821Z",
+    "sha256": "28363afe548d119bd4b9ac13bb3b8551a5ae2a5d3762925805959c41a8ff637a"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 15
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 15
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-944 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dr-lov:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T17:19:13.597Z",
+    "sha256": "28363afe548d119bd4b9ac13bb3b8551a5ae2a5d3762925805959c41a8ff637a"
+  }
+}

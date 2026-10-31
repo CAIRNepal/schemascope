@@ -1,0 +1,87 @@
+{
+  "id": "sdgio",
+  "artefact": "https://github.com/SDG-InterfaceOntology/sdgio/raw/master/sdgio.owl",
+  "checkedAt": "2026-10-29T02:48:26.566Z",
+  "sha256": "9b0bb2f3ac1d16ccb2cefe7427b9affcee320b7cb27ef05fd02be886e4d81c9a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 50,
+      "ro": 50,
+      "bfo": 28,
+      "foodon": 50,
+      "obi": 50,
+      "pato": 30,
+      "go": 4,
+      "caro": 3,
+      "pco": 9,
+      "chebi": 35,
+      "envo": 50,
+      "ncbitaxon": 35,
+      "po": 3,
+      "uberon": 6,
+      "uo": 50,
+      "xsd": 4,
+      "owl": 9,
+      "doap": 3,
+      "swrl": 5
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:48:27.073Z",
+    "sha256": "9b0bb2f3ac1d16ccb2cefe7427b9affcee320b7cb27ef05fd02be886e4d81c9a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 249,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 93,
+      "WARN": 769,
+      "INFO": 94
+    },
+    "checkedAt": "2026-10-29T02:48:31.634Z",
+    "sha256": "9b0bb2f3ac1d16ccb2cefe7427b9affcee320b7cb27ef05fd02be886e4d81c9a"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 242
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 356,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3199 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sdgio:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T02:48:46.834Z",
+    "sha256": "9b0bb2f3ac1d16ccb2cefe7427b9affcee320b7cb27ef05fd02be886e4d81c9a"
+  }
+}

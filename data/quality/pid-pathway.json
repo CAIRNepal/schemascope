@@ -1,0 +1,69 @@
+{
+  "id": "pid-pathway",
+  "artefact": "https://w3id.org/biopragmatics/resources/pid.pathway/pid.pathway.owl",
+  "checkedAt": "2026-10-29T01:06:00.448Z",
+  "sha256": "c746f0284f42c3336bd77179d9c58a96b01ccd3ef411e08a17790baf1b7eefdc",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:06:01.459Z",
+    "sha256": "c746f0284f42c3336bd77179d9c58a96b01ccd3ef411e08a17790baf1b7eefdc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 1,
+      "INFO": 210
+    },
+    "checkedAt": "2026-10-29T01:06:03.261Z",
+    "sha256": "c746f0284f42c3336bd77179d9c58a96b01ccd3ef411e08a17790baf1b7eefdc"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 210
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 211
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T01:06:12.126Z",
+    "sha256": "c746f0284f42c3336bd77179d9c58a96b01ccd3ef411e08a17790baf1b7eefdc"
+  }
+}

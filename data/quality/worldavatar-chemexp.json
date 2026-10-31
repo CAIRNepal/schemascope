@@ -1,0 +1,92 @@
+{
+  "id": "worldavatar-chemexp",
+  "artefact": "https://raw.githubusercontent.com/TheWorldAvatar/ontology/main/ontology/ontochemexp/OntoChemExp.owl",
+  "checkedAt": "2026-10-29T07:35:50.946Z",
+  "sha256": "8c4c54e414577e79984e17f63cf7511acb36401ba2a4d478a1ec9ad758f8cd94",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 4,
+      "foaf": 6,
+      "bibo": 5,
+      "xsd": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:35:52.162Z",
+    "sha256": "8c4c54e414577e79984e17f63cf7511acb36401ba2a4d478a1ec9ad758f8cd94"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 167,
+      "WARN": 166,
+      "INFO": 17
+    },
+    "checkedAt": "2026-10-29T07:35:53.234Z",
+    "sha256": "8c4c54e414577e79984e17f63cf7511acb36401ba2a4d478a1ec9ad758f8cd94"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 2,
+    "important": 3,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 167
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 35
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 17
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P31",
+        "name": "Defining wrong equivalent classes",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:36:02.820Z",
+    "sha256": "8c4c54e414577e79984e17f63cf7511acb36401ba2a4d478a1ec9ad758f8cd94"
+  }
+}

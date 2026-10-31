@@ -1,0 +1,39 @@
+{
+  "id": "fplx",
+  "artefact": "http://aber-owl.net/media/ontologies/FPLX/1/fplx.owl",
+  "checkedAt": "2026-10-28T19:48:59.382Z",
+  "sha256": "a83b27eb288b3df31e7748f6298f5829a191f18b88b4daa06b295c1a83e244e5",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "go": 50
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:49:00.979Z",
+    "sha256": "a83b27eb288b3df31e7748f6298f5829a191f18b88b4daa06b295c1a83e244e5"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 1268,
+      "INFO": 46
+    },
+    "checkedAt": "2026-10-28T19:49:03.035Z",
+    "sha256": "a83b27eb288b3df31e7748f6298f5829a191f18b88b4daa06b295c1a83e244e5"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1263 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/fplx:/work schemascope/oops --input-file /work/ontolo",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/fplx/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T19:49:03.770Z",
+    "sha256": "a83b27eb288b3df31e7748f6298f5829a191f18b88b4daa06b295c1a83e244e5"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "toaru",
+  "artefact": "https://metadata.moe/toaru-sparql/elements/",
+  "checkedAt": "2026-10-29T05:29:43.819Z",
+  "sha256": "c3a9d8e8e059dc43b8cae7e4e311fd3b4ea54703094597b96061565ac797b5f8",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:29:44.048Z",
+    "sha256": "c3a9d8e8e059dc43b8cae7e4e311fd3b4ea54703094597b96061565ac797b5f8"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 10,
+      "WARN": 135,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T05:29:48.119Z",
+    "sha256": "c3a9d8e8e059dc43b8cae7e4e311fd3b4ea54703094597b96061565ac797b5f8"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3810 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/toaru:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T05:29:49.173Z",
+    "sha256": "c3a9d8e8e059dc43b8cae7e4e311fd3b4ea54703094597b96061565ac797b5f8"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "tribont-core",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/tribont-core/versions/2023-05-30.n3",
+  "checkedAt": "2026-10-29T05:32:05.521Z",
+  "sha256": "d31ed47cebad89a1c61e0bc356e9cc71a3264bd2ec5605f926df72d55ebb9aa4",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://w3id.org/isCharacterisedBy",
+        "id": "icb",
+        "own": true
+      }
+    ],
+    "uses": {
+      "dcterms": 9,
+      "owl": 4,
+      "icb": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:32:06.646Z",
+    "sha256": "d31ed47cebad89a1c61e0bc356e9cc71a3264bd2ec5605f926df72d55ebb9aa4"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 6,
+      "WARN": 234,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-29T05:32:09.216Z",
+    "sha256": "d31ed47cebad89a1c61e0bc356e9cc71a3264bd2ec5605f926df72d55ebb9aa4"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 18
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 208,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3852 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tribont-core:/work schemascope/oops --input-file /wor"
+    ],
+    "checkedAt": "2026-10-29T05:32:10.572Z",
+    "sha256": "d31ed47cebad89a1c61e0bc356e9cc71a3264bd2ec5605f926df72d55ebb9aa4"
+  }
+}

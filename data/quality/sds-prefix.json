@@ -1,0 +1,61 @@
+{
+  "id": "sds-prefix",
+  "artefact": "https://w3id.org/sds",
+  "checkedAt": "2026-10-29T02:49:23.751Z",
+  "sha256": "f8ff6004c7b35b02d5a63ae99db2cb1cd7a78904ec5621b9d7c0518704360555",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:49:24.178Z",
+    "sha256": "f8ff6004c7b35b02d5a63ae99db2cb1cd7a78904ec5621b9d7c0518704360555"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 8,
+      "WARN": 9,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T02:49:25.499Z",
+    "sha256": "f8ff6004c7b35b02d5a63ae99db2cb1cd7a78904ec5621b9d7c0518704360555"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3217 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sds-prefix:/work schemascope/oops --input-file /work/"
+    ],
+    "checkedAt": "2026-10-29T02:49:26.505Z",
+    "sha256": "f8ff6004c7b35b02d5a63ae99db2cb1cd7a78904ec5621b9d7c0518704360555"
+  }
+}

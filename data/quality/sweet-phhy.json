@@ -1,0 +1,11 @@
+{
+  "id": "sweet-phhy",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/phenHydro.ttl",
+  "checkedAt": "2026-10-29T03:33:22.472Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:33:32.973Z"
+  }
+}

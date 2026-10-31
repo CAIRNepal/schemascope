@@ -1,0 +1,91 @@
+{
+  "id": "ima",
+  "artefact": "https://w3id.org/ima",
+  "checkedAt": "2026-10-28T21:08:06.219Z",
+  "sha256": "3b9b1e00e9dc03bfa2994831342f7dde8b66f733588b831c69c1317f3702c460",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "is": 4,
+      "obi": 6,
+      "iao": 3,
+      "dc": 5,
+      "skos": 9,
+      "dolce": 5,
+      "biotop": 3,
+      "sio": 4,
+      "gfo": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:08:06.651Z",
+    "sha256": "3b9b1e00e9dc03bfa2994831342f7dde8b66f733588b831c69c1317f3702c460"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 10,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 17,
+      "WARN": 534,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-28T21:08:10.233Z",
+    "sha256": "3b9b1e00e9dc03bfa2994831342f7dde8b66f733588b831c69c1317f3702c460"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 415
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 9
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P21",
+        "name": "Using a miscellaneous class",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:08:22.442Z",
+    "sha256": "3b9b1e00e9dc03bfa2994831342f7dde8b66f733588b831c69c1317f3702c460"
+  }
+}

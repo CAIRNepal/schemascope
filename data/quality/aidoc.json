@@ -1,0 +1,95 @@
+{
+  "id": "aidoc",
+  "artefact": "https://w3id.org/aidoc-ap",
+  "checkedAt": "2026-10-27T23:06:25.635Z",
+  "sha256": "e3133aa31bf85ab71e4ad730c338654f515754c2f679840e0ffa683cf59610d0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "foaf": 7,
+      "dcterms": 12,
+      "skos": 8,
+      "airo": 26,
+      "prov": 3,
+      "mls": 6,
+      "vair": 7
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-27T23:06:26.075Z",
+    "sha256": "e3133aa31bf85ab71e4ad730c338654f515754c2f679840e0ffa683cf59610d0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 119,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-27T23:06:27.371Z",
+    "sha256": "e3133aa31bf85ab71e4ad730c338654f515754c2f679840e0ffa683cf59610d0"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 31
+      },
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 42
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P12",
+        "name": "Equivalent properties not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 41
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-27T23:06:35.461Z",
+    "sha256": "e3133aa31bf85ab71e4ad730c338654f515754c2f679840e0ffa683cf59610d0"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "id": "upheno",
+  "artefact": "http://purl.obolibrary.org/obo/upheno.owl",
+  "checkedAt": "2026-10-29T06:02:10.289Z",
+  "sha256": "39abd7bdb9f151ab70369e93d6fad805c109e058da0c45ec93ad4c664e32e735",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 39,
+      "bfo": 22,
+      "omo": 3,
+      "ro": 50,
+      "bspo": 50,
+      "cl": 50,
+      "go": 50,
+      "gorel": 9,
+      "uberon": 50,
+      "pato": 50,
+      "apo": 50,
+      "fbcv": 50,
+      "fypo": 50,
+      "hp": 50,
+      "mp": 50,
+      "wbphenotype": 50,
+      "phipo": 50,
+      "chebi": 50,
+      "xsd": 5,
+      "dcterms": 6,
+      "rdfs": 6,
+      "owl": 7,
+      "pr": 50,
+      "vsao": 3,
+      "pmid": 50,
+      "isbn": 7,
+      "ddpheno": 50,
+      "kupo": 3,
+      "xpo": 50,
+      "planp": 50,
+      "zp": 50,
+      "nbo": 50,
+      "mgpo": 50,
+      "fbbt": 7,
+      "so": 3,
+      "oba": 50,
+      "mpath": 50,
+      "ncbitaxon": 50,
+      "aao": 7,
+      "wbbt": 50,
+      "xao": 50,
+      "fma": 27,
+      "zfa": 50,
+      "ma": 6,
+      "emapa": 3,
+      "plana": 4
+    },
+    "scannedMb": 445,
+    "truncated": false,
+    "scannedAt": "2026-10-29T06:17:20.799Z",
+    "sha256": "39abd7bdb9f151ab70369e93d6fad805c109e058da0c45ec93ad4c664e32e735"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "timed out; ",
+    "checkedAt": "2026-10-29T06:47:21.068Z",
+    "sha256": "39abd7bdb9f151ab70369e93d6fad805c109e058da0c45ec93ad4c664e32e735"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 286
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 21985
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 232
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 194716,
+    "attempts": [],
+    "checkedAt": "2026-10-29T06:48:53.804Z",
+    "sha256": "39abd7bdb9f151ab70369e93d6fad805c109e058da0c45ec93ad4c664e32e735"
+  }
+}

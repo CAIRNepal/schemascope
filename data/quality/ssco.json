@@ -1,0 +1,11 @@
+{
+  "id": "ssco",
+  "artefact": "https://w3id.org/ssco",
+  "checkedAt": "2026-10-29T03:17:05.495Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:17:15.995Z"
+  }
+}

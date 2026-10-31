@@ -1,0 +1,106 @@
+{
+  "id": "ecao",
+  "artefact": "http://purl.obolibrary.org/obo/ecao.owl",
+  "checkedAt": "2026-10-28T17:37:24.747Z",
+  "sha256": "b9711555509d08cea3931107860db994929fc30e093d5301ef83151fbe72a272",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 24,
+      "iao": 40,
+      "ro": 50,
+      "ubprop": 16,
+      "bspo": 21,
+      "fbcv": 6,
+      "fbql": 6,
+      "cl": 50,
+      "uberon": 50,
+      "pato": 50,
+      "go": 50,
+      "chebi": 50,
+      "xsd": 6,
+      "dcterms": 6,
+      "rdfs": 6,
+      "owl": 12,
+      "clm": 4,
+      "ncbitaxon": 50,
+      "pr": 50,
+      "omo": 6,
+      "pmid": 25,
+      "nbo": 7,
+      "fma": 18,
+      "zfa": 7,
+      "mp": 5,
+      "isbn": 4,
+      "fbbt": 4,
+      "swrl": 5
+    },
+    "scannedMb": 26,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:37:25.838Z",
+    "sha256": "b9711555509d08cea3931107860db994929fc30e093d5301ef83151fbe72a272"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 321,
+      "WARN": 1507,
+      "INFO": 175
+    },
+    "checkedAt": "2026-10-28T17:37:38.470Z",
+    "sha256": "b9711555509d08cea3931107860db994929fc30e093d5301ef83151fbe72a272"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 223
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 795
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 182
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 7309,
+    "attempts": [],
+    "checkedAt": "2026-10-28T17:37:44.488Z",
+    "sha256": "b9711555509d08cea3931107860db994929fc30e093d5301ef83151fbe72a272"
+  }
+}

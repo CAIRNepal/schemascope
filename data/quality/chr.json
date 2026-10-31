@@ -1,0 +1,112 @@
+{
+  "id": "chr",
+  "artefact": "https://raw.githubusercontent.com/monarch-initiative/monochrom/refs/heads/master/chr.owl",
+  "checkedAt": "2026-10-28T02:50:54.437Z",
+  "sha256": "97848d5fba81f140ba62fd33d1098a91ae91c6213a045dbe76f53e05599600cd",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 48,
+      "bfo": 19,
+      "ro": 50,
+      "geno": 5,
+      "obi": 50,
+      "go": 50,
+      "ncbitaxon": 50,
+      "dc": 3,
+      "owl": 8,
+      "uo": 50,
+      "envo": 38,
+      "swrl": 5
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:50:54.739Z",
+    "sha256": "97848d5fba81f140ba62fd33d1098a91ae91c6213a045dbe76f53e05599600cd"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 119,
+      "WARN": 2214,
+      "INFO": 103
+    },
+    "checkedAt": "2026-10-28T02:50:57.228Z",
+    "sha256": "97848d5fba81f140ba62fd33d1098a91ae91c6213a045dbe76f53e05599600cd"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 3,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 2428
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 105
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 62
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 13
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 7
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T02:51:42.157Z",
+    "sha256": "97848d5fba81f140ba62fd33d1098a91ae91c6213a045dbe76f53e05599600cd"
+  }
+}

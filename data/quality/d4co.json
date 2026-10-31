@@ -1,0 +1,51 @@
+{
+  "id": "d4co",
+  "artefact": "https://w3id.org/d4co",
+  "checkedAt": "2026-10-28T16:28:08.149Z",
+  "sha256": "08b577780c0450fe395a005fe5b3b52359675885889bb6dddb5336444b6c622b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 35,
+      "chebi": 50,
+      "ro": 37,
+      "envo": 6,
+      "schema": 6,
+      "owl": 35,
+      "xsd": 7,
+      "dcterms": 9,
+      "skos": 10,
+      "om": 50,
+      "rdfs": 9,
+      "iao": 50,
+      "obi": 9,
+      "omo": 3,
+      "pato": 5,
+      "uo": 3,
+      "dc": 19,
+      "bibo": 21,
+      "foaf": 7
+    },
+    "scannedMb": 4,
+    "truncated": false,
+    "scannedAt": "2026-10-28T16:28:09.752Z",
+    "sha256": "08b577780c0450fe395a005fe5b3b52359675885889bb6dddb5336444b6c622b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://www.ontology-of-units-of-measure.org/resource/om-2> Cause: (certificate_unknown) No subject alternative DNS name matching www.ontology-of-units-of-measure.org found.\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T16:28:12.880Z",
+    "sha256": "08b577780c0450fe395a005fe5b3b52359675885889bb6dddb5336444b6c622b"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-729 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/d4co:/work schemascope/oops --input-file /work/ontolog",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/d4co/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T16:44:14.404Z",
+    "sha256": "08b577780c0450fe395a005fe5b3b52359675885889bb6dddb5336444b6c622b"
+  }
+}

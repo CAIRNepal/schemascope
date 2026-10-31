@@ -1,0 +1,55 @@
+{
+  "id": "mirbase",
+  "artefact": "https://w3id.org/biopragmatics/resources/mirbase/mirbase.owl",
+  "checkedAt": "2026-10-28T22:01:23.611Z",
+  "sha256": "bc95042862d14fcce65502a63188f1db7788d58f70579e153ad73ff1f60ebd8f",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 3,
+      "ncbitaxon": 50
+    },
+    "scannedMb": 40,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:01:25.129Z",
+    "sha256": "bc95042862d14fcce65502a63188f1db7788d58f70579e153ad73ff1f60ebd8f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 38591,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T22:01:45.866Z",
+    "sha256": "bc95042862d14fcce65502a63188f1db7788d58f70579e153ad73ff1f60ebd8f"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [],
+    "checkedAt": "2026-10-28T22:01:53.614Z",
+    "sha256": "bc95042862d14fcce65502a63188f1db7788d58f70579e153ad73ff1f60ebd8f"
+  }
+}

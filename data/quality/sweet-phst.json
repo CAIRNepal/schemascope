@@ -1,0 +1,11 @@
+{
+  "id": "sweet-phst",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/phenStar.ttl",
+  "checkedAt": "2026-10-29T03:34:46.484Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:34:56.985Z"
+  }
+}

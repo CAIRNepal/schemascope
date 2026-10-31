@@ -1,0 +1,73 @@
+{
+  "id": "brio",
+  "artefact": "https://w3id.org/brio",
+  "checkedAt": "2026-10-28T01:46:02.637Z",
+  "sha256": "2a9d3c115726a30d19f84a518f90cca67e7225aff317e097bc60f23472320946",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:46:03.065Z",
+    "sha256": "2a9d3c115726a30d19f84a518f90cca67e7225aff317e097bc60f23472320946"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 10,
+      "WARN": 71,
+      "INFO": 12
+    },
+    "checkedAt": "2026-10-28T01:46:04.186Z",
+    "sha256": "2a9d3c115726a30d19f84a518f90cca67e7225aff317e097bc60f23472320946"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 12
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 43,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-261 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/brio:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T01:46:04.954Z",
+    "sha256": "2a9d3c115726a30d19f84a518f90cca67e7225aff317e097bc60f23472320946"
+  }
+}

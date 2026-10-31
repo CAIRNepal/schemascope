@@ -1,0 +1,69 @@
+{
+  "id": "udsaes-fmi",
+  "artefact": "https://purl.org/fmi-ontology",
+  "checkedAt": "2026-10-29T05:46:31.212Z",
+  "sha256": "25f36e04904d980b63846cd0e6fc8aa838c3cb7878e35edfe6923754195c4df4",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:46:38.729Z",
+    "sha256": "25f36e04904d980b63846cd0e6fc8aa838c3cb7878e35edfe6923754195c4df4"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 26,
+      "WARN": 26,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-29T05:46:39.590Z",
+    "sha256": "25f36e04904d980b63846cd0e6fc8aa838c3cb7878e35edfe6923754195c4df4"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 7
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 7,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3895 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/udsaes-fmi:/work schemascope/oops --input-file /work/"
+    ],
+    "checkedAt": "2026-10-29T05:46:40.227Z",
+    "sha256": "25f36e04904d980b63846cd0e6fc8aa838c3cb7878e35edfe6923754195c4df4"
+  }
+}

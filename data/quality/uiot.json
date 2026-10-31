@@ -1,0 +1,11 @@
+{
+  "id": "uiot",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/uiot/versions/2020-12-02.n3",
+  "checkedAt": "2026-10-29T05:46:53.239Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T05:47:03.741Z"
+  }
+}

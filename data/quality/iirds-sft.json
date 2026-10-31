@@ -1,0 +1,57 @@
+{
+  "id": "iirds-sft",
+  "artefact": "https://raw.githubusercontent.com/iirds-consortium/models/main/iirds-software.rdf",
+  "checkedAt": "2026-10-28T21:07:53.889Z",
+  "sha256": "69d4610e4d4240825d4ed59b55d1cc194568dd08b7b07a44f6b8864821dcc4ce",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:07:54.069Z",
+    "sha256": "69d4610e4d4240825d4ed59b55d1cc194568dd08b7b07a44f6b8864821dcc4ce"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 23,
+      "WARN": 1,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:07:55.417Z",
+    "sha256": "69d4610e4d4240825d4ed59b55d1cc194568dd08b7b07a44f6b8864821dcc4ce"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:08:03.172Z",
+    "sha256": "69d4610e4d4240825d4ed59b55d1cc194568dd08b7b07a44f6b8864821dcc4ce"
+  }
+}

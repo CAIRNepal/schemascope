@@ -1,0 +1,85 @@
+{
+  "id": "phto",
+  "artefact": "http://rhizomik.net/ontologies/PlantHealthThreats.owl.ttl",
+  "checkedAt": "2026-10-29T01:00:33.112Z",
+  "sha256": "26b23232c023f5d8b02612f5d2af83b7e46ae6b62a684dfcf91cfe3eb4786729",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:00:33.848Z",
+    "sha256": "26b23232c023f5d8b02612f5d2af83b7e46ae6b62a684dfcf91cfe3eb4786729"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 20,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T01:00:34.868Z",
+    "sha256": "26b23232c023f5d8b02612f5d2af83b7e46ae6b62a684dfcf91cfe3eb4786729"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 6
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 6,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2621 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/phto:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T01:00:35.938Z",
+    "sha256": "26b23232c023f5d8b02612f5d2af83b7e46ae6b62a684dfcf91cfe3eb4786729"
+  }
+}

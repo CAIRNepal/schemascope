@@ -1,0 +1,69 @@
+{
+  "id": "earthcube-mola",
+  "artefact": "https://github.com/earthcubearchitecture-ecresourcereg/mola/raw/refs/heads/master/mola.ttl",
+  "checkedAt": "2026-10-28T17:36:15.182Z",
+  "sha256": "f9484bec990c1511aa168ee2fd98ad155d39152f75b0d7145b7f2441142d7bf7",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dc": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:36:15.627Z",
+    "sha256": "f9484bec990c1511aa168ee2fd98ad155d39152f75b0d7145b7f2441142d7bf7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 4,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T17:36:16.563Z",
+    "sha256": "f9484bec990c1511aa168ee2fd98ad155d39152f75b0d7145b7f2441142d7bf7"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 5,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1002 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/earthcube-mola:/work schemascope/oops --input-file /w"
+    ],
+    "checkedAt": "2026-10-28T17:36:17.274Z",
+    "sha256": "f9484bec990c1511aa168ee2fd98ad155d39152f75b0d7145b7f2441142d7bf7"
+  }
+}

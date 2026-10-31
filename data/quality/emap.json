@@ -1,0 +1,83 @@
+{
+  "id": "emap",
+  "artefact": "http://purl.obolibrary.org/obo/emap.owl",
+  "checkedAt": "2026-10-28T18:42:55.856Z",
+  "sha256": "eb66b0648fe544548858bd19e61d5085f78f5f5019f3194e0ae757008403ef69",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 22,
+    "truncated": false,
+    "scannedAt": "2026-10-28T18:42:56.796Z",
+    "sha256": "eb66b0648fe544548858bd19e61d5085f78f5f5019f3194e0ae757008403ef69"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 157,
+      "WARN": 19448,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T18:43:05.286Z",
+    "sha256": "eb66b0648fe544548858bd19e61d5085f78f5f5019f3194e0ae757008403ef69"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 19444
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 19444,
+    "attempts": [],
+    "checkedAt": "2026-10-28T18:43:10.057Z",
+    "sha256": "eb66b0648fe544548858bd19e61d5085f78f5f5019f3194e0ae757008403ef69"
+  }
+}

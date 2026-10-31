@@ -1,0 +1,11 @@
+{
+  "id": "ero",
+  "artefact": "http://purl.obolibrary.org/obo/ero.owl",
+  "checkedAt": "2026-10-28T19:28:58.605Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:28:58.903Z"
+  }
+}

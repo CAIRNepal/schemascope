@@ -1,0 +1,76 @@
+{
+  "id": "unocs",
+  "artefact": "https://w3id.org/unocs",
+  "checkedAt": "2026-10-29T05:51:18.087Z",
+  "sha256": "eb52c35f7a7915ecd7da2c9d00e0eec88987c51f6f5a41a9c34736974d091a12",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://w3id.org/iddo",
+        "id": "iddo",
+        "own": true
+      },
+      {
+        "iri": "https://w3id.org/opm#",
+        "id": "opm",
+        "own": true
+      }
+    ],
+    "uses": {
+      "bfo": 50,
+      "dc": 3,
+      "dcterms": 8
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:51:24.861Z",
+    "sha256": "eb52c35f7a7915ecd7da2c9d00e0eec88987c51f6f5a41a9c34736974d091a12"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://w3id.org/digitalconstruction/0.5/Units> Cause: https://w3id.org/var/www/w3id.org/ids/digitalconstruction/0.5/Units/xml\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T05:51:30.292Z",
+    "sha256": "eb52c35f7a7915ecd7da2c9d00e0eec88987c51f6f5a41a9c34736974d091a12"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 47
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 18
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 47,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3916 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/unocs:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T05:51:31.119Z",
+    "sha256": "eb52c35f7a7915ecd7da2c9d00e0eec88987c51f6f5a41a9c34736974d091a12"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "tddial",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/tddial/versions/2020-04-21.n3",
+  "checkedAt": "2026-10-29T04:59:20.210Z",
+  "sha256": "613da132ff539b5c47c2fb77403be0ab07e86029dccbb9d8dc23e509efb4ca21",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://w3id.org/todo/tododm",
+        "id": "tddm",
+        "own": true
+      },
+      {
+        "iri": "https://w3id.org/todo/tododt",
+        "id": "tddt",
+        "own": true
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T04:59:20.927Z",
+    "sha256": "613da132ff539b5c47c2fb77403be0ab07e86029dccbb9d8dc23e509efb4ca21"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 3,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T04:59:23.843Z",
+    "sha256": "613da132ff539b5c47c2fb77403be0ab07e86029dccbb9d8dc23e509efb4ca21"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3694 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tddial:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T04:59:25.004Z",
+    "sha256": "613da132ff539b5c47c2fb77403be0ab07e86029dccbb9d8dc23e509efb4ca21"
+  }
+}

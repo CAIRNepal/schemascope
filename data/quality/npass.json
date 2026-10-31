@@ -1,0 +1,54 @@
+{
+  "id": "npass",
+  "artefact": "https://w3id.org/biopragmatics/resources/npass/npass.owl",
+  "checkedAt": "2026-10-28T23:22:23.381Z",
+  "sha256": "0853a9ba980a3e367636e084bf5608e963bac7c6a0fb372cf3e02d0960e33ecc",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 3
+    },
+    "scannedMb": 39,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:22:25.341Z",
+    "sha256": "0853a9ba980a3e367636e084bf5608e963bac7c6a0fb372cf3e02d0960e33ecc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 208,
+      "WARN": 96420,
+      "INFO": 96420
+    },
+    "checkedAt": "2026-10-28T23:22:52.174Z",
+    "sha256": "0853a9ba980a3e367636e084bf5608e963bac7c6a0fb372cf3e02d0960e33ecc"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [],
+    "checkedAt": "2026-10-28T23:22:59.635Z",
+    "sha256": "0853a9ba980a3e367636e084bf5608e963bac7c6a0fb372cf3e02d0960e33ecc"
+  }
+}

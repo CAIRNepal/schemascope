@@ -1,0 +1,102 @@
+{
+  "id": "eem",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/eem/versions/2013-07-16.n3",
+  "checkedAt": "2026-10-28T18:06:25.935Z",
+  "sha256": "56f4793ede4dcd0f2e9ebcfe1019947474bf7911c15ace94370b382f572af2a1",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/2006/vcard/ns",
+        "id": "vcard",
+        "own": false
+      },
+      {
+        "iri": "http://purl.oclc.org/NET/ssnx/ssn",
+        "id": "purl.oclc.org/net/ssnx/ssn",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T18:06:26.446Z",
+    "sha256": "56f4793ede4dcd0f2e9ebcfe1019947474bf7911c15ace94370b382f572af2a1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://www.loa-cnr.it/ontologies/DUL.owl> Cause: Server returned HTTP response code: 403 for URL: http://www.loa-cnr.it/ontologies/DUL.owl\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T18:06:29.240Z",
+    "sha256": "56f4793ede4dcd0f2e9ebcfe1019947474bf7911c15ace94370b382f572af2a1"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 4,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 4
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 18
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 21
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 23
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 22,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1074 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/eem:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T18:06:29.938Z",
+    "sha256": "56f4793ede4dcd0f2e9ebcfe1019947474bf7911c15ace94370b382f572af2a1"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "id": "wn",
+  "artefact": "https://globalwordnet.github.io/schemas/wn",
+  "checkedAt": "2026-10-29T07:28:36.353Z",
+  "sha256": "1cf16785287bea4be6db2504686fc4e383dd775bc2d80da06b0c1e3575bd41e7",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 4,
+      "ontolex": 4,
+      "skos": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:28:38.498Z",
+    "sha256": "1cf16785287bea4be6db2504686fc4e383dd775bc2d80da06b0c1e3575bd41e7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 13,
+      "WARN": 30,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-29T07:28:39.501Z",
+    "sha256": "1cf16785287bea4be6db2504686fc4e383dd775bc2d80da06b0c1e3575bd41e7"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 9
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 7
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 7
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 97
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:28:46.796Z",
+    "sha256": "1cf16785287bea4be6db2504686fc4e383dd775bc2d80da06b0c1e3575bd41e7"
+  }
+}

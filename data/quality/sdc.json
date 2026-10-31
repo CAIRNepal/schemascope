@@ -1,0 +1,73 @@
+{
+  "id": "sdc",
+  "artefact": "https://lov.linkeddata.es/dataset/vocabs/sdc/versions/2026-06-24.n3",
+  "checkedAt": "2026-10-29T02:48:18.031Z",
+  "sha256": "bb815120826c7df09bba3075c84c8c11a1747c61997679af73e0549a9d12e481",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:48:19.015Z",
+    "sha256": "bb815120826c7df09bba3075c84c8c11a1747c61997679af73e0549a9d12e481"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 168,
+      "WARN": 168,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T02:48:22.345Z",
+    "sha256": "bb815120826c7df09bba3075c84c8c11a1747c61997679af73e0549a9d12e481"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 7
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 166,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3194 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sdc:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T02:48:23.560Z",
+    "sha256": "bb815120826c7df09bba3075c84c8c11a1747c61997679af73e0549a9d12e481"
+  }
+}

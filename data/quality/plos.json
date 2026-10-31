@@ -1,0 +1,59 @@
+{
+  "id": "plos",
+  "artefact": "http://aber-owl.net/media/ontologies/PLOSTHES/1/plosthes.owl",
+  "checkedAt": "2026-10-29T01:12:14.377Z",
+  "sha256": "49868882eed0a7eb847b0214deccc134a289d9292b848b8f0fb87866eb899d3d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "pmid": 9
+    },
+    "scannedMb": 7,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:12:16.450Z",
+    "sha256": "49868882eed0a7eb847b0214deccc134a289d9292b848b8f0fb87866eb899d3d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 10723,
+      "WARN": 8,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T01:12:26.098Z",
+    "sha256": "49868882eed0a7eb847b0214deccc134a289d9292b848b8f0fb87866eb899d3d"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T01:13:04.301Z",
+    "sha256": "49868882eed0a7eb847b0214deccc134a289d9292b848b8f0fb87866eb899d3d"
+  }
+}

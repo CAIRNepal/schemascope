@@ -1,0 +1,73 @@
+{
+  "id": "dul",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/dul/versions/2017-04-10.n3",
+  "checkedAt": "2026-10-28T17:35:38.088Z",
+  "sha256": "34cfcbc9579e1e5881cf8f2014b131dbe14b0c98a2c37e1838e0094938e36fce",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "rdf": 4,
+      "owl": 20,
+      "rdfs": 8,
+      "xsd": 3,
+      "dolce": 50
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:35:39.347Z",
+    "sha256": "34cfcbc9579e1e5881cf8f2014b131dbe14b0c98a2c37e1838e0094938e36fce"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 353,
+      "WARN": 187,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T17:35:40.723Z",
+    "sha256": "34cfcbc9579e1e5881cf8f2014b131dbe14b0c98a2c37e1838e0094938e36fce"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 10
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 75,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-982 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dul:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T17:35:41.472Z",
+    "sha256": "34cfcbc9579e1e5881cf8f2014b131dbe14b0c98a2c37e1838e0094938e36fce"
+  }
+}

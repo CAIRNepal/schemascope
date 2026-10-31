@@ -1,0 +1,67 @@
+{
+  "id": "sweet-stre",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/stateRealm.ttl",
+  "checkedAt": "2026-10-29T04:42:28.449Z",
+  "sha256": "49f8d9e77189f3894f9f1552dfe91f2898c49bf2151c51a5fc9f2933bd4639d7",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T04:42:28.887Z",
+    "sha256": "49f8d9e77189f3894f9f1552dfe91f2898c49bf2151c51a5fc9f2933bd4639d7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 1,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T04:42:59.153Z",
+    "sha256": "49f8d9e77189f3894f9f1552dfe91f2898c49bf2151c51a5fc9f2933bd4639d7"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3596 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sweet-stre:/work schemascope/oops --input-file /work/"
+    ],
+    "checkedAt": "2026-10-29T04:43:00.261Z",
+    "sha256": "49f8d9e77189f3894f9f1552dfe91f2898c49bf2151c51a5fc9f2933bd4639d7"
+  }
+}

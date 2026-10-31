@@ -1,0 +1,61 @@
+{
+  "id": "vir",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/vir/versions/2019-02-26.n3",
+  "checkedAt": "2026-10-29T06:59:46.213Z",
+  "sha256": "9c2902b2c059beb102ecd49c3f63a51d50c9b54c213cf07a06338aa7cdff13eb",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T06:59:52.998Z",
+    "sha256": "9c2902b2c059beb102ecd49c3f63a51d50c9b54c213cf07a06338aa7cdff13eb"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 39,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T06:59:54.075Z",
+    "sha256": "9c2902b2c059beb102ecd49c3f63a51d50c9b54c213cf07a06338aa7cdff13eb"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 9
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3961 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/vir:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T06:59:54.781Z",
+    "sha256": "9c2902b2c059beb102ecd49c3f63a51d50c9b54c213cf07a06338aa7cdff13eb"
+  }
+}

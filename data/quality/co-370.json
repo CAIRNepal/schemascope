@@ -1,0 +1,99 @@
+{
+  "id": "co-370",
+  "artefact": "http://cropontology.org/rdf/CO_370.owl",
+  "checkedAt": "2026-10-28T12:38:59.650Z",
+  "sha256": "a62f5f3121805680618d7e8026db61837a4e53727a314e50471324df20e848e7",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T12:39:00.648Z",
+    "sha256": "a62f5f3121805680618d7e8026db61837a4e53727a314e50471324df20e848e7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 13,
+      "WARN": 203,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T12:39:03.026Z",
+    "sha256": "a62f5f3121805680618d7e8026db61837a4e53727a314e50471324df20e848e7"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 4,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 83
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 15
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T12:39:20.746Z",
+    "sha256": "a62f5f3121805680618d7e8026db61837a4e53727a314e50471324df20e848e7"
+  }
+}

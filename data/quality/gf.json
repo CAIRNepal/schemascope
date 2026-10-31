@@ -1,0 +1,69 @@
+{
+  "id": "gf",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/gf/versions/2013-11-14.n3",
+  "checkedAt": "2026-10-28T20:22:49.980Z",
+  "sha256": "dc26db787a5123954cbbe1c4da86e627bf4c09a2caf9f84641fb8fb5b4cc62c5",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry",
+        "id": "gm",
+        "own": true
+      },
+      {
+        "iri": "http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal",
+        "id": "tm",
+        "own": true
+      },
+      {
+        "iri": "http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic",
+        "id": "basic",
+        "own": true
+      },
+      {
+        "iri": "http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic",
+        "id": "h2o",
+        "own": true
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:22:50.853Z",
+    "sha256": "dc26db787a5123954cbbe1c4da86e627bf4c09a2caf9f84641fb8fb5b4cc62c5"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry> Cause: def.seegrid.csiro.au\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T20:22:51.377Z",
+    "sha256": "dc26db787a5123954cbbe1c4da86e627bf4c09a2caf9f84641fb8fb5b4cc62c5"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1365 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gf:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T20:22:52.055Z",
+    "sha256": "dc26db787a5123954cbbe1c4da86e627bf4c09a2caf9f84641fb8fb5b4cc62c5"
+  }
+}

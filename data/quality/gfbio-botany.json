@@ -1,0 +1,69 @@
+{
+  "id": "gfbio-botany",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/botany/versions/2009-03-18.n3",
+  "checkedAt": "2026-10-28T20:22:54.170Z",
+  "sha256": "7a771a2ff04183ffa9bbce3687fa9752ac5c61f6c2655ac88f2e636ae0c5c365",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "gfbio-biol": 14
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:22:54.793Z",
+    "sha256": "7a771a2ff04183ffa9bbce3687fa9752ac5c61f6c2655ac88f2e636ae0c5c365"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 5,
+      "WARN": 113,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T20:22:55.820Z",
+    "sha256": "7a771a2ff04183ffa9bbce3687fa9752ac5c61f6c2655ac88f2e636ae0c5c365"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1369 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gfbio-botany:/work schemascope/oops --input-file /wor"
+    ],
+    "checkedAt": "2026-10-28T20:22:56.464Z",
+    "sha256": "7a771a2ff04183ffa9bbce3687fa9752ac5c61f6c2655ac88f2e636ae0c5c365"
+  }
+}

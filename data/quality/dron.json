@@ -1,0 +1,78 @@
+{
+  "id": "dron",
+  "artefact": "http://purl.obolibrary.org/obo/dron.owl",
+  "checkedAt": "2026-10-28T17:19:35.611Z",
+  "sha256": "967e5718bea18c004be492474dc041e83ff028b00cde5be386818ae97a7dd6f5",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 25,
+      "iao": 41,
+      "omo": 23,
+      "ro": 50,
+      "obi": 4,
+      "chebi": 50,
+      "xsd": 5,
+      "dc": 15,
+      "dcterms": 7,
+      "owl": 4,
+      "cob": 4,
+      "uo": 9
+    },
+    "scannedMb": 500,
+    "truncated": true,
+    "scannedAt": "2026-10-28T17:21:18.821Z",
+    "sha256": "967e5718bea18c004be492474dc041e83ff028b00cde5be386818ae97a7dd6f5"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "LocalCache.java:2952)\n\tat java.base/java.util.concurrent.ForkJoinTask.doExec(Unknown Source)\n\tat java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(Unknown Source)\n\tat java.base/java.util.concurrent.ForkJoinPool.scan(Unknown Source)\n\tat java.base/java.util.concurrent.ForkJoinPool.runWorker(Unknown Source)\n\tat java.base/java.util.concurrent.ForkJoinWorkerThread.run(Unknown Source)\n\n",
+    "checkedAt": "2026-10-28T17:23:43.734Z",
+    "sha256": "967e5718bea18c004be492474dc041e83ff028b00cde5be386818ae97a7dd6f5"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 94
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 786412
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 70
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 792797,
+    "attempts": [],
+    "checkedAt": "2026-10-28T17:27:22.976Z",
+    "sha256": "967e5718bea18c004be492474dc041e83ff028b00cde5be386818ae97a7dd6f5"
+  }
+}

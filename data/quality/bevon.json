@@ -1,0 +1,73 @@
+{
+  "id": "bevon",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/bevon/versions/2015-07-23.n3",
+  "checkedAt": "2026-10-28T01:18:45.605Z",
+  "sha256": "feda38dbf91d0a2c9878de403c5cb4dd22d9f0b13b182b677bd95cb51ceb6f50",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:18:55.248Z",
+    "sha256": "feda38dbf91d0a2c9878de403c5cb4dd22d9f0b13b182b677bd95cb51ceb6f50"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 131,
+      "WARN": 190,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-28T01:18:57.109Z",
+    "sha256": "feda38dbf91d0a2c9878de403c5cb4dd22d9f0b13b182b677bd95cb51ceb6f50"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 16
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 66,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-177 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/bevon:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T01:18:58.831Z",
+    "sha256": "feda38dbf91d0a2c9878de403c5cb4dd22d9f0b13b182b677bd95cb51ceb6f50"
+  }
+}

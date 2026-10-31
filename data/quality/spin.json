@@ -1,0 +1,11 @@
+{
+  "id": "spin",
+  "artefact": "https://spinrdf.org/spin",
+  "checkedAt": "2026-10-29T03:14:59.466Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:15:09.965Z"
+  }
+}

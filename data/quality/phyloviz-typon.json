@@ -1,0 +1,84 @@
+{
+  "id": "phyloviz-typon",
+  "artefact": "http://purl.phyloviz.net/ontology/typon",
+  "checkedAt": "2026-10-29T01:00:44.738Z",
+  "sha256": "8fe09db2dec2c2efa637de8fbf677130565254b2a0980837e94fe9975e79012a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "so": 4,
+      "xsd": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:00:45.438Z",
+    "sha256": "8fe09db2dec2c2efa637de8fbf677130565254b2a0980837e94fe9975e79012a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 8,
+      "WARN": 69,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T01:00:47.143Z",
+    "sha256": "8fe09db2dec2c2efa637de8fbf677130565254b2a0980837e94fe9975e79012a"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 52
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 20
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T01:00:55.408Z",
+    "sha256": "8fe09db2dec2c2efa637de8fbf677130565254b2a0980837e94fe9975e79012a"
+  }
+}

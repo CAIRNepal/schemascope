@@ -1,0 +1,117 @@
+{
+  "id": "bcgo",
+  "artefact": "https://github.com/obi-bcgo/bcgo/raw/master/ontology/bcgo.owl",
+  "checkedAt": "2026-10-28T00:46:14.698Z",
+  "sha256": "8dad69f04b749f0df1abdf42049b67b47cb29c9261b9386743345472a88c9478",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.obolibrary.org/obo/bfo/2014-05-03/classes-only.owl",
+        "id": "bfo",
+        "own": false
+      },
+      {
+        "iri": "http://purl.obolibrary.org/obo/ro/releases/2015-04-12/core.owl",
+        "id": "ro",
+        "own": false
+      }
+    ],
+    "uses": {
+      "iao": 26,
+      "bfo": 7,
+      "ro": 10,
+      "ncbitaxon": 3,
+      "obi": 29,
+      "cl": 10,
+      "clo": 4,
+      "so": 3,
+      "pato": 6,
+      "pr": 9,
+      "go": 6,
+      "uberon": 8,
+      "rdfs": 4,
+      "xsd": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T00:46:15.316Z",
+    "sha256": "8dad69f04b749f0df1abdf42049b67b47cb29c9261b9386743345472a88c9478"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.obolibrary.org/obo/bcgo/OBI_subset.owl> Cause: https://purl.archive.org/obo/bcgo/OBI_subset.owl\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T00:46:18.056Z",
+    "sha256": "8dad69f04b749f0df1abdf42049b67b47cb29c9261b9386743345472a88c9478"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 5,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 24
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 9
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 28
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 46
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 33
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 454,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-161 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/bcgo:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T01:01:28.760Z",
+    "sha256": "8dad69f04b749f0df1abdf42049b67b47cb29c9261b9386743345472a88c9478"
+  }
+}

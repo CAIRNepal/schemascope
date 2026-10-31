@@ -1,0 +1,63 @@
+{
+  "id": "link",
+  "artefact": "http://www.w3.org/2007/ont/link",
+  "checkedAt": "2026-10-28T21:26:44.182Z",
+  "sha256": "6d9b95465bb0aa14a904fed5ed4979ee235d2c98c02aec56cbd94caecb9aedc5",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "foaf": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:26:44.382Z",
+    "sha256": "6d9b95465bb0aa14a904fed5ed4979ee235d2c98c02aec56cbd94caecb9aedc5"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 7,
+      "WARN": 22,
+      "INFO": 5
+    },
+    "checkedAt": "2026-10-28T21:26:45.490Z",
+    "sha256": "6d9b95465bb0aa14a904fed5ed4979ee235d2c98c02aec56cbd94caecb9aedc5"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1857 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/link:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T21:26:46.455Z",
+    "sha256": "6d9b95465bb0aa14a904fed5ed4979ee235d2c98c02aec56cbd94caecb9aedc5"
+  }
+}

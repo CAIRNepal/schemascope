@@ -1,0 +1,73 @@
+{
+  "id": "ngeo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ngeo/versions/2012-02-05.n3",
+  "checkedAt": "2026-10-28T23:19:07.534Z",
+  "sha256": "2c5d9b368fcc8e7a7307b89d3b8377ebe9ff357afe5656c65b924bb26dfb8fe0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:19:08.858Z",
+    "sha256": "2c5d9b368fcc8e7a7307b89d3b8377ebe9ff357afe5656c65b924bb26dfb8fe0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://geovocab.org/mappings/geometry> Cause: Server returned HTTP response code: 522 for URL: https://geovocab.org/mappings/geometry\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T23:19:29.683Z",
+    "sha256": "2c5d9b368fcc8e7a7307b89d3b8377ebe9ff357afe5656c65b924bb26dfb8fe0"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 10
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 9,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2212 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ngeo:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T23:19:30.329Z",
+    "sha256": "2c5d9b368fcc8e7a7307b89d3b8377ebe9ff357afe5656c65b924bb26dfb8fe0"
+  }
+}

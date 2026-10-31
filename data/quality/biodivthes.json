@@ -1,0 +1,82 @@
+{
+  "id": "biodivthes",
+  "artefact": "http://aber-owl.net/media/ontologies/BIODIVTHES/1/biodivthes.owl",
+  "checkedAt": "2026-10-28T01:41:08.525Z",
+  "sha256": "59c265f9dfd807b52b76d05c8af946283ccf72975047704bf26230fa6a063c64",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "envo": 50,
+      "ncbitaxon": 3,
+      "cc": 5,
+      "xsd": 3,
+      "pato": 4,
+      "skos": 3
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:41:10.577Z",
+    "sha256": "59c265f9dfd807b52b76d05c8af946283ccf72975047704bf26230fa6a063c64"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 914,
+      "WARN": 2,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T01:41:13.001Z",
+    "sha256": "59c265f9dfd807b52b76d05c8af946283ccf72975047704bf26230fa6a063c64"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 2,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:41:31.685Z",
+    "sha256": "59c265f9dfd807b52b76d05c8af946283ccf72975047704bf26230fa6a063c64"
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "id": "epio",
+  "artefact": "http://purl.obolibrary.org/obo/epio.owl",
+  "checkedAt": "2026-10-28T19:26:29.493Z",
+  "sha256": "efafdd4605792f69b177702e84665fce845031ab8be3bbc9a030a05bd763dd05",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 37,
+      "iao": 24,
+      "mfoem": 11,
+      "ncit": 50,
+      "oae": 8,
+      "obi": 13,
+      "ro": 4,
+      "ubprop": 8,
+      "ncbitaxon": 31,
+      "cmo": 42,
+      "doid": 50,
+      "mondo": 50,
+      "nbo": 50,
+      "hp": 50,
+      "symp": 50,
+      "ero": 20,
+      "fma": 10,
+      "uberon": 50,
+      "go": 22,
+      "ogms": 21,
+      "mf": 6,
+      "pmid": 3,
+      "rdfs": 5,
+      "xsd": 5,
+      "dc": 5,
+      "owl": 5,
+      "skos": 3,
+      "mfomd": 11,
+      "mmo": 5,
+      "mp": 26,
+      "omit": 36,
+      "pato": 14,
+      "bto": 3,
+      "pw": 19,
+      "rs": 14
+    },
+    "scannedMb": 3,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:26:30.041Z",
+    "sha256": "efafdd4605792f69b177702e84665fce845031ab8be3bbc9a030a05bd763dd05"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 86,
+      "WARN": 1433,
+      "INFO": 150
+    },
+    "checkedAt": "2026-10-28T19:26:33.997Z",
+    "sha256": "efafdd4605792f69b177702e84665fce845031ab8be3bbc9a030a05bd763dd05"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 7,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 17
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1722
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 12
+      },
+      {
+        "code": "P12",
+        "name": "Equivalent properties not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 12
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 15
+      },
+      {
+        "code": "P21",
+        "name": "Using a miscellaneous class",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:27:14.392Z",
+    "sha256": "efafdd4605792f69b177702e84665fce845031ab8be3bbc9a030a05bd763dd05"
+  }
+}

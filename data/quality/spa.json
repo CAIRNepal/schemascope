@@ -1,0 +1,56 @@
+{
+  "id": "spa",
+  "artefact": "https://paul.ti.rw.fau.de/~jo00defe/voc/spa",
+  "checkedAt": "2026-10-29T03:11:51.545Z",
+  "sha256": "039d3ff6564cb3b29b9a6055416308074b07611d269f5636071b537517bb4eaf",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "wot-td": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T03:11:54.062Z",
+    "sha256": "039d3ff6564cb3b29b9a6055416308074b07611d269f5636071b537517bb4eaf"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 33,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-29T03:11:55.288Z",
+    "sha256": "039d3ff6564cb3b29b9a6055416308074b07611d269f5636071b537517bb4eaf"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3362 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/spa:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T03:11:56.144Z",
+    "sha256": "039d3ff6564cb3b29b9a6055416308074b07611d269f5636071b537517bb4eaf"
+  }
+}

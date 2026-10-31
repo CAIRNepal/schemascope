@@ -1,0 +1,113 @@
+{
+  "id": "ioio",
+  "artefact": "https://github.com/OpenLHS/IOIO/raw/refs/heads/main/IOIO.owl",
+  "checkedAt": "2026-10-28T21:13:49.201Z",
+  "sha256": "5828205d20bfd75bf3f2d460ba0f932b2d2f3060aea1bb61a60d052cdcc86285",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 45,
+      "iao": 42,
+      "ro": 49,
+      "obi": 8,
+      "omrse": 8,
+      "ncbitaxon": 5,
+      "ogms": 10,
+      "rdfs": 5,
+      "dc": 5,
+      "dcterms": 4,
+      "owl": 7,
+      "xsd": 3,
+      "swrl": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:13:50.017Z",
+    "sha256": "5828205d20bfd75bf3f2d460ba0f932b2d2f3060aea1bb61a60d052cdcc86285"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 101,
+      "INFO": 62
+    },
+    "checkedAt": "2026-10-28T21:13:51.723Z",
+    "sha256": "5828205d20bfd75bf3f2d460ba0f932b2d2f3060aea1bb61a60d052cdcc86285"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 7,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 177
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 48
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 12
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:14:01.521Z",
+    "sha256": "5828205d20bfd75bf3f2d460ba0f932b2d2f3060aea1bb61a60d052cdcc86285"
+  }
+}

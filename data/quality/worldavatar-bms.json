@@ -1,0 +1,103 @@
+{
+  "id": "worldavatar-bms",
+  "artefact": "https://raw.githubusercontent.com/TheWorldAvatar/ontology/main/ontology/ontobms/OntoBMS.owl",
+  "checkedAt": "2026-10-29T07:32:45.019Z",
+  "sha256": "f217e75878723f13144f3da91afcd6044512f78ddf1306d2f0e2fc055813a0f2",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://saref.etsi.org/saref4bldg/v1.1.2/saref4bldg.rdf",
+        "id": "saref.etsi.org/saref4bldg/v1.1.2/saref4bldg",
+        "own": false
+      }
+    ],
+    "uses": {
+      "saref-building": 4,
+      "saref": 3,
+      "om": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:32:46.717Z",
+    "sha256": "f217e75878723f13144f3da91afcd6044512f78ddf1306d2f0e2fc055813a0f2"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 49,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T07:32:51.067Z",
+    "sha256": "f217e75878723f13144f3da91afcd6044512f78ddf1306d2f0e2fc055813a0f2"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 4,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 18
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 263
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 193
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:33:14.296Z",
+    "sha256": "f217e75878723f13144f3da91afcd6044512f78ddf1306d2f0e2fc055813a0f2"
+  }
+}

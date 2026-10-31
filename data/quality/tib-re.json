@@ -1,0 +1,75 @@
+{
+  "id": "tib-re",
+  "artefact": "https://raw.githubusercontent.com/DataCreater/GBEnergy/refs/heads/main/RetailEnergy0.0.1.owl",
+  "checkedAt": "2026-10-29T05:17:57.037Z",
+  "sha256": "221a96cb4c22141743f72a1e9323f55f4c12766245f78a5c8e4009ea351a27c8",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://ontologies.semanticarts.com/o/gistCore9.7.0",
+        "id": "ontologies.semanticarts.com/o/gistcore9.7.0",
+        "own": false
+      }
+    ],
+    "uses": {
+      "skos": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:17:57.254Z",
+    "sha256": "221a96cb4c22141743f72a1e9323f55f4c12766245f78a5c8e4009ea351a27c8"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 73,
+      "WARN": 70,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T05:17:59.683Z",
+    "sha256": "221a96cb4c22141743f72a1e9323f55f4c12766245f78a5c8e4009ea351a27c8"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 70
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 70,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3766 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tib-re:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T05:18:00.910Z",
+    "sha256": "221a96cb4c22141743f72a1e9323f55f4c12766245f78a5c8e4009ea351a27c8"
+  }
+}

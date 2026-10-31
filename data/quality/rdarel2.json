@@ -1,0 +1,69 @@
+{
+  "id": "rdarel2",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/rdarel2/versions/2013-04-15.n3",
+  "checkedAt": "2026-10-29T02:18:59.219Z",
+  "sha256": "90e166946f2ccb4cf536d615e55d449940e905935cad59a526d3fd31320e5521",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "rdafrbr": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:19:00.360Z",
+    "sha256": "90e166946f2ccb4cf536d615e55d449940e905935cad59a526d3fd31320e5521"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 80,
+      "WARN": 50,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:19:01.789Z",
+    "sha256": "90e166946f2ccb4cf536d615e55d449940e905935cad59a526d3fd31320e5521"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2931 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rdarel2:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T02:19:02.758Z",
+    "sha256": "90e166946f2ccb4cf536d615e55d449940e905935cad59a526d3fd31320e5521"
+  }
+}

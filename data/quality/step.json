@@ -1,0 +1,11 @@
+{
+  "id": "step",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/step/versions/2015-11-03.n3",
+  "checkedAt": "2026-10-29T03:19:01.009Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:19:11.509Z"
+  }
+}

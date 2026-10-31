@@ -1,0 +1,46 @@
+{
+  "id": "quay",
+  "artefact": "https://w3id.org/quay",
+  "checkedAt": "2026-10-29T01:58:16.211Z",
+  "sha256": "1060fde762224809d830ea973a180610068d7a25973080c63e6bde30c63c80ff",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 22,
+      "xsd": 4,
+      "cc": 9,
+      "odrl": 50,
+      "rdfs": 9,
+      "dcterms": 16,
+      "dcat": 36,
+      "prov": 10
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:58:16.667Z",
+    "sha256": "1060fde762224809d830ea973a180610068d7a25973080c63e6bde30c63c80ff"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 252,
+      "WARN": 45,
+      "INFO": 21
+    },
+    "checkedAt": "2026-10-29T01:58:18.753Z",
+    "sha256": "1060fde762224809d830ea973a180610068d7a25973080c63e6bde30c63c80ff"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2802 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/quay:/work schemascope/oops --input-file /work/ontolo",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/quay/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-29T01:58:19.722Z",
+    "sha256": "1060fde762224809d830ea973a180610068d7a25973080c63e6bde30c63c80ff"
+  }
+}

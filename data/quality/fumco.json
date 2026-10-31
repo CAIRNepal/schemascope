@@ -1,0 +1,75 @@
+{
+  "id": "fumco",
+  "artefact": "https://w3id.org/fumco",
+  "checkedAt": "2026-10-28T19:50:18.680Z",
+  "sha256": "5f01267d2bd9d54452d044107d6273932a9123b74e6aeaba172d9a57fa5dc350",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:50:19.140Z",
+    "sha256": "5f01267d2bd9d54452d044107d6273932a9123b74e6aeaba172d9a57fa5dc350"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 6,
+      "WARN": 68,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T19:50:20.655Z",
+    "sha256": "5f01267d2bd9d54452d044107d6273932a9123b74e6aeaba172d9a57fa5dc350"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 11,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1291 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/fumco:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T19:50:21.385Z",
+    "sha256": "5f01267d2bd9d54452d044107d6273932a9123b74e6aeaba172d9a57fa5dc350"
+  }
+}

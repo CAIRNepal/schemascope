@@ -1,0 +1,47 @@
+{
+  "id": "peg",
+  "artefact": "https://w3id.org/PeGazUs",
+  "checkedAt": "2026-10-29T00:42:43.830Z",
+  "sha256": "66974b53505f531aeceff571e63c450a01935a1a2363ab525f61fad0857e715e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "foaf": 6,
+      "org": 6,
+      "owl": 31,
+      "xsd": 5,
+      "time": 44,
+      "rdfs": 9,
+      "prov": 17,
+      "dcterms": 8,
+      "skos": 11
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:42:44.499Z",
+    "sha256": "66974b53505f531aeceff571e63c450a01935a1a2363ab525f61fad0857e715e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 345,
+      "WARN": 135,
+      "INFO": 11
+    },
+    "checkedAt": "2026-10-29T00:42:45.699Z",
+    "sha256": "66974b53505f531aeceff571e63c450a01935a1a2363ab525f61fad0857e715e"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2591 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/peg:/work schemascope/oops --input-file /work/ontolog",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/peg/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-29T00:42:46.437Z",
+    "sha256": "66974b53505f531aeceff571e63c450a01935a1a2363ab525f61fad0857e715e"
+  }
+}

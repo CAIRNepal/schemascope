@@ -1,0 +1,830 @@
+{
+  "id": "edm-fibo",
+  "artefact": "https://raw.githubusercontent.com/edmcouncil/fibo/refs/heads/master/AboutFIBOProd.rdf",
+  "checkedAt": "2026-10-28T17:55:12.842Z",
+  "sha256": "91e3957aa2f3b5c82121ead716a784468a4d3f15ea32b9eadfe146dddd8df92c",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/ACTUS/ACTUSTaxonomy/",
+        "id": "spec.edmcouncil.org/fibo/ontology/actus/actustaxonomy",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/ACTUS/ACTUSContractTerms/",
+        "id": "spec.edmcouncil.org/fibo/ontology/actus/actuscontractterms",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/FunctionalEntities/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/functionalentities/functionalentities",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/FunctionalEntities/Publishers/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/functionalentities/publishers",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/CentralAsiaGovernmentEntitiesAndJurisdictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/governmententities/asianjurisdiction/centralasiagovernmententitiesandjurisdictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/EasternAsiaGovernmentEntitiesAndJurisdictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/governmententities/asianjurisdiction/easternasiagovernmententitiesandjurisdictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SoutheasternAsiaGovernmentEntitiesAndJurisdictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/governmententities/asianjurisdiction/southeasternasiagovernmententitiesandjurisdictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/SouthernAsiaGovernmentEntitiesAndJurisdictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/governmententities/asianjurisdiction/southernasiagovernmententitiesandjurisdictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/AsianJurisdiction/WesternAsiaGovernmentEntitiesAndJurisdictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/governmententities/asianjurisdiction/westernasiagovernmententitiesandjurisdictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EUGovernmentEntitiesAndJurisdictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/governmententities/europeanjurisdiction/eugovernmententitiesandjurisdictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/EasternEuropeGovernmentEntitiesAndJurisdictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/governmententities/europeanjurisdiction/easterneuropegovernmententitiesandjurisdictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/NorthernEuropeGovernmentEntitiesAndJurisdictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/governmententities/europeanjurisdiction/northerneuropegovernmententitiesandjurisdictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/SouthernEuropeGovernmentEntitiesAndJurisdictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/governmententities/europeanjurisdiction/southerneuropegovernmententitiesandjurisdictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/UKGovernmentEntitiesAndJurisdictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/governmententities/europeanjurisdiction/ukgovernmententitiesandjurisdictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/EuropeanJurisdiction/WesternEuropeGovernmentEntitiesAndJurisdictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/governmententities/europeanjurisdiction/westerneuropegovernmententitiesandjurisdictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/GovernmentEntities/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/governmententities/governmententities",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/CentralAmericanGovernmentEntitiesAndJurisdictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/governmententities/latinamericanjurisdiction/centralamericangovernmententitiesandjurisdictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/LatinAmericanJurisdiction/SouthAmericanGovernmentEntitiesAndJurisdictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/governmententities/latinamericanjurisdiction/southamericangovernmententitiesandjurisdictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CAGovernmentEntitiesAndJurisdictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/governmententities/northamericanjurisdiction/cagovernmententitiesandjurisdictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/CaribbeanGovernmentEntitiesAndJurisdictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/governmententities/northamericanjurisdiction/caribbeangovernmententitiesandjurisdictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/MXGovernmentEntitiesAndJurisdictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/governmententities/northamericanjurisdiction/mxgovernmententitiesandjurisdictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/GovernmentEntities/NorthAmericanJurisdiction/USGovernmentEntitiesAndJurisdictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/governmententities/northamericanjurisdiction/usgovernmententitiesandjurisdictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/CorporateBodies/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/legalentities/corporatebodies",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/FormalBusinessOrganizations/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/legalentities/formalbusinessorganizations",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LEIEntities/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/legalentities/leientities",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/LegalEntities/LegalPersons/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/legalentities/legalpersons",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/ControlParties/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/ownershipandcontrol/controlparties",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateControl/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/ownershipandcontrol/corporatecontrol",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/CorporateOwnership/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/ownershipandcontrol/corporateownership",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/Executives/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/ownershipandcontrol/executives",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/OwnershipAndControl/OwnershipParties/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/ownershipandcontrol/ownershipparties",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/Partnerships/Partnerships/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/partnerships/partnerships",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/PrivateLimitedCompanies/PrivateLimitedCompanies/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/privatelimitedcompanies/privatelimitedcompanies",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/SoleProprietorships/SoleProprietorships/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/soleproprietorships/soleproprietorships",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/BE/Trusts/Trusts/",
+        "id": "spec.edmcouncil.org/fibo/ontology/be/trusts/trusts",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/CAE/CorporateEvents/CorporateActions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/cae/corporateevents/corporateactions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/DER/CreditDerivatives/CreditDefaultSwaps/",
+        "id": "spec.edmcouncil.org/fibo/ontology/der/creditderivatives/creditdefaultswaps",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CommoditiesContracts/",
+        "id": "spec.edmcouncil.org/fibo/ontology/der/derivativescontracts/commoditiescontracts",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/CurrencyContracts/",
+        "id": "spec.edmcouncil.org/fibo/ontology/der/derivativescontracts/currencycontracts",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesBasics/",
+        "id": "spec.edmcouncil.org/fibo/ontology/der/derivativescontracts/derivativesbasics",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/DerivativesMasterAgreements/",
+        "id": "spec.edmcouncil.org/fibo/ontology/der/derivativescontracts/derivativesmasteragreements",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/ExoticOptions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/der/derivativescontracts/exoticoptions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/FuturesAndForwards/",
+        "id": "spec.edmcouncil.org/fibo/ontology/der/derivativescontracts/futuresandforwards",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Options/",
+        "id": "spec.edmcouncil.org/fibo/ontology/der/derivativescontracts/options",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/RightsAndWarrants/",
+        "id": "spec.edmcouncil.org/fibo/ontology/der/derivativescontracts/rightsandwarrants",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/StructuredInstruments/",
+        "id": "spec.edmcouncil.org/fibo/ontology/der/derivativescontracts/structuredinstruments",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/Swaps/",
+        "id": "spec.edmcouncil.org/fibo/ontology/der/derivativescontracts/swaps",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/DER/DerivativesContracts/SwapsIndividuals/",
+        "id": "spec.edmcouncil.org/fibo/ontology/der/derivativescontracts/swapsindividuals",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/IRSwaps/",
+        "id": "spec.edmcouncil.org/fibo/ontology/der/ratederivatives/irswaps",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/DER/RateDerivatives/RateDerivatives/",
+        "id": "spec.edmcouncil.org/fibo/ontology/der/ratederivatives/ratederivatives",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/SecurityBasedDerivatives/",
+        "id": "spec.edmcouncil.org/fibo/ontology/der/securitybasedderivatives/securitybasedderivatives",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/DER/SecurityBasedDerivatives/EquitySwaps/",
+        "id": "spec.edmcouncil.org/fibo/ontology/der/securitybasedderivatives/equityswaps",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/EXMP/LegalEntities/DowJonesIndustrialAverageCompanies/",
+        "id": "spec.edmcouncil.org/fibo/ontology/exmp/legalentities/dowjonesindustrialaveragecompanies",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/EXMP/LegalEntities/DowJonesIndustrialAverageExecutives/",
+        "id": "spec.edmcouncil.org/fibo/ontology/exmp/legalentities/dowjonesindustrialaverageexecutives",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/EXMP/LegalEntities/FinancialInstitutionExamples/",
+        "id": "spec.edmcouncil.org/fibo/ontology/exmp/legalentities/financialinstitutionexamples",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/EXMP/LegalEntities/MarketsAndExchangesExamples/",
+        "id": "spec.edmcouncil.org/fibo/ontology/exmp/legalentities/marketsandexchangesexamples",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/EXMP/Securities/EquitiesExamples/",
+        "id": "spec.edmcouncil.org/fibo/ontology/exmp/securities/equitiesexamples",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/EXMP/Securities/EquityIndexExamples/",
+        "id": "spec.edmcouncil.org/fibo/ontology/exmp/securities/equityindexexamples",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/EXMP/Securities/IRSwapExamples/",
+        "id": "spec.edmcouncil.org/fibo/ontology/exmp/securities/irswapexamples",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/CreditEvents/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/debtandequities/creditevents",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Debt/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/debtandequities/debt",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/DebtAndEquities/Guaranty/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/debtandequities/guaranty",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/FinancialInstruments/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/financialinstruments/financialinstruments",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/financialinstruments/instrumentpricing",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/Settlement/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/financialinstruments/settlement",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCenters/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/functionalentities/businesscenters",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessCentersIndividuals/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/functionalentities/businesscentersindividuals",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/BusinessRegistries/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/functionalentities/businessregistries",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/CommercialRegistrationAuthorities/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/functionalentities/commercialregistrationauthorities",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EUFinancialServicesEntities/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/functionalentities/europeanentities/eufinancialservicesentities",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EURegulatoryAgencies/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/functionalentities/europeanentities/euregulatoryagencies",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/EuropeanEntities/EuropeanFinancialServicesEntitiesIndividuals/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/functionalentities/europeanentities/europeanfinancialservicesentitiesindividuals",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/FinancialServicesEntities/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/functionalentities/financialservicesentities",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/InternationalRegistriesAndAuthorities/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/functionalentities/internationalregistriesandauthorities",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/Markets/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/functionalentities/markets",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/MarketsIndividuals/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/functionalentities/marketsindividuals",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CAFinancialServicesEntities/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/functionalentities/northamericanentities/cafinancialservicesentities",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/CARegulatoryAgencies/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/functionalentities/northamericanentities/caregulatoryagencies",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USFinancialServicesEntities/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/functionalentities/northamericanentities/usfinancialservicesentities",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/NorthAmericanEntities/USRegulatoryAgencies/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/functionalentities/northamericanentities/usregulatoryagencies",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/FunctionalEntities/RegulatoryAgencies/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/functionalentities/regulatoryagencies",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/productsandservices/clientsandaccounts",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fbc/productsandservices/financialproductsandservices",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/accounting/currencyamount",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/ISO4217-CurrencyCodes/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/accounting/iso4217-currencycodes",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/agentsandpeople/people",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/agreements/agreements",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/agreements/contracts",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Arrangements/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/arrangements/arrangements",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Assessments/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/arrangements/assessments",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/ClassificationSchemes/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/arrangements/classificationschemes",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/arrangements/documents",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/IdentifiersAndIndices/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/arrangements/identifiersandindices",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/arrangements/lifecycles",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Ratings/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/arrangements/ratings",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/arrangements/reporting",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/BusinessDates/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/datesandtimes/businessdates",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/FinancialDates/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/datesandtimes/financialdates",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/DatesAndTimes/Occurrences/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/datesandtimes/occurrences",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/GoalsAndObjectives/Objectives/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/goalsandobjectives/objectives",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCapacity/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/law/legalcapacity",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Law/LegalCore/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/law/legalcore",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/organizations/formalorganizations",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Control/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/ownershipandcontrol/control",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/Ownership/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/ownershipandcontrol/ownership",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/OwnershipAndControl/OwnershipAndControl/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/ownershipandcontrol/ownershipandcontrol",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Parties/Parties/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/parties/parties",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/places/addresses",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Places/RealProperty/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/places/realproperty",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Places/VirtualPlaces/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/places/virtualplaces",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddresses/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/places/northamerica/uspostalserviceaddresses",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Places/NorthAmerica/USPostalServiceAddressesIndividuals/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/places/northamerica/uspostalserviceaddressesindividuals",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/PaymentsAndSchedules/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/productsandservices/paymentsandschedules",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/ProductsAndServices/ProductsAndServices/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/productsandservices/productsandservices",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/relations/relations",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/Analytics/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/utilities/analytics",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/FND/Utilities/AnnotationVocabulary/",
+        "id": "spec.edmcouncil.org/fibo/ontology/fnd/utilities/annotationvocabulary",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/EconomicIndicators/",
+        "id": "spec.edmcouncil.org/fibo/ontology/ind/economicindicators/economicindicators",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/CAEconomicIndicators/",
+        "id": "spec.edmcouncil.org/fibo/ontology/ind/economicindicators/northamericanindicators/caeconomicindicators",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/IND/EconomicIndicators/NorthAmericanIndicators/USEconomicIndicators/",
+        "id": "spec.edmcouncil.org/fibo/ontology/ind/economicindicators/northamericanindicators/useconomicindicators",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/IND/ForeignExchange/ForeignExchange/",
+        "id": "spec.edmcouncil.org/fibo/ontology/ind/foreignexchange/foreignexchange",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/IND/Indicators/Indicators/",
+        "id": "spec.edmcouncil.org/fibo/ontology/ind/indicators/indicators",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/InterestRates/",
+        "id": "spec.edmcouncil.org/fibo/ontology/ind/interestrates/interestrates",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/CommonInterestRates/",
+        "id": "spec.edmcouncil.org/fibo/ontology/ind/interestrates/commoninterestrates",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/IND/InterestRates/MarketDataProviders/",
+        "id": "spec.edmcouncil.org/fibo/ontology/ind/interestrates/marketdataproviders",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/IND/MarketIndices/BasketIndices/",
+        "id": "spec.edmcouncil.org/fibo/ontology/ind/marketindices/basketindices",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansGeneral/Loans/",
+        "id": "spec.edmcouncil.org/fibo/ontology/loan/loansgeneral/loans",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CardAccounts/",
+        "id": "spec.edmcouncil.org/fibo/ontology/loan/loansspecific/cardaccounts",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/CommercialLoans/",
+        "id": "spec.edmcouncil.org/fibo/ontology/loan/loansspecific/commercialloans",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/ConsumerLoans/",
+        "id": "spec.edmcouncil.org/fibo/ontology/loan/loansspecific/consumerloans",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/GreenLoans/",
+        "id": "spec.edmcouncil.org/fibo/ontology/loan/loansspecific/greenloans",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/LOAN/LoansSpecific/StudentLoans/",
+        "id": "spec.edmcouncil.org/fibo/ontology/loan/loansspecific/studentloans",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/LOAN/RealEstateLoans/Mortgages/",
+        "id": "spec.edmcouncil.org/fibo/ontology/loan/realestateloans/mortgages",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/AssetBackedSecurities/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/debt/assetbackedsecurities",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/Bonds/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/debt/bonds",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DebtInstruments/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/debt/debtinstruments",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/DistributedLoans/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/debt/distributedloans",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/ExerciseConventions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/debt/exerciseconventions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/PoolBackedSecurities/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/debt/poolbackedsecurities",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Debt/TradedShortTermDebt/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/debt/tradedshorttermdebt",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/DepositaryReceipts/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/equities/depositaryreceipts",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityCFIClassificationIndividuals/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/equities/equitycficlassificationindividuals",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Equities/EquityInstruments/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/equities/equityinstruments",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Funds/Funds/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/funds/funds",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/EuropeanSecurities/EUSecuritiesRestrictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/securities/europeansecurities/eusecuritiesrestrictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/NorthAmericanSecurities/USSecuritiesRestrictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/securities/northamericansecurities/ussecuritiesrestrictions",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Baskets/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/securities/baskets",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/ParametricSchedules/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/securities/parametricschedules",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/Pools/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/securities/pools",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesClassification/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/securities/securitiesclassification",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentification/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/securities/securitiesidentification",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIdentificationIndividuals/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/securities/securitiesidentificationindividuals",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesIssuance/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/securities/securitiesissuance",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesListings/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/securities/securitieslistings",
+        "own": false
+      },
+      {
+        "iri": "https://spec.edmcouncil.org/fibo/ontology/SEC/Securities/SecuritiesRestrictions/",
+        "id": "spec.edmcouncil.org/fibo/ontology/sec/securities/securitiesrestrictions",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:55:13.030Z",
+    "sha256": "91e3957aa2f3b5c82121ead716a784468a4d3f15ea32b9eadfe146dddd8df92c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T17:56:10.902Z",
+    "sha256": "91e3957aa2f3b5c82121ead716a784468a4d3f15ea32b9eadfe146dddd8df92c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1065 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/edm-fibo:/work schemascope/oops --input-file /work/on"
+    ],
+    "checkedAt": "2026-10-28T18:06:13.677Z",
+    "sha256": "91e3957aa2f3b5c82121ead716a784468a4d3f15ea32b9eadfe146dddd8df92c"
+  }
+}

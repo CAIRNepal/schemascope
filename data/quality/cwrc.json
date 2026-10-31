@@ -1,0 +1,88 @@
+{
+  "id": "cwrc",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/cwrc/versions/2018-09-30.n3",
+  "checkedAt": "2026-10-28T16:10:50.003Z",
+  "sha256": "06360336d88373ab325adc63ee8cd236cbf9873332f566e6c9928dfe882523f3",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "loc-relator": 12,
+      "schema": 3
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T16:10:52.343Z",
+    "sha256": "06360336d88373ab325adc63ee8cd236cbf9873332f566e6c9928dfe882523f3"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3520,
+      "WARN": 533,
+      "INFO": 20
+    },
+    "checkedAt": "2026-10-28T16:27:32.444Z",
+    "sha256": "06360336d88373ab325adc63ee8cd236cbf9873332f566e6c9928dfe882523f3"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 13
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 78
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 72
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 33
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 124,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-720 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cwrc:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T16:27:34.664Z",
+    "sha256": "06360336d88373ab325adc63ee8cd236cbf9873332f566e6c9928dfe882523f3"
+  }
+}

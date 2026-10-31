@@ -1,0 +1,64 @@
+{
+  "id": "aic",
+  "artefact": "https://w3id.org/aic",
+  "checkedAt": "2026-10-27T23:06:21.039Z",
+  "sha256": "3c137245fb15f6a024af45e8be0aaa336aed44c1aa105f1c583718bc152f3794",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 7,
+      "rdf": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-27T23:06:21.478Z",
+    "sha256": "3c137245fb15f6a024af45e8be0aaa336aed44c1aa105f1c583718bc152f3794"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 67,
+      "INFO": 15
+    },
+    "checkedAt": "2026-10-27T23:06:22.654Z",
+    "sha256": "3c137245fb15f6a024af45e8be0aaa336aed44c1aa105f1c583718bc152f3794"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 31
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 24,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-42 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/aic:/work schemascope/oops --input-file /work/ontology."
+    ],
+    "checkedAt": "2026-10-27T23:06:23.388Z",
+    "sha256": "3c137245fb15f6a024af45e8be0aaa336aed44c1aa105f1c583718bc152f3794"
+  }
+}

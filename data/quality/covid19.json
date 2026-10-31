@@ -1,0 +1,37 @@
+{
+  "id": "covid19",
+  "artefact": "http://aber-owl.net/media/ontologies/COVID19/1/covid19.owl",
+  "checkedAt": "2026-10-28T14:22:04.889Z",
+  "sha256": "d29f52735dfffb0154daf6ac2ca7cdaa44e170be1f8adc56a399ae1b0c23640a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T14:22:06.396Z",
+    "sha256": "d29f52735dfffb0154daf6ac2ca7cdaa44e170be1f8adc56a399ae1b0c23640a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 38,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-28T14:22:08.060Z",
+    "sha256": "d29f52735dfffb0154daf6ac2ca7cdaa44e170be1f8adc56a399ae1b0c23640a"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-622 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/covid19:/work schemascope/oops --input-file /work/onto",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/covid19/ontology.owl\nfile:///var/folder"
+    ],
+    "checkedAt": "2026-10-28T14:22:09.387Z",
+    "sha256": "d29f52735dfffb0154daf6ac2ca7cdaa44e170be1f8adc56a399ae1b0c23640a"
+  }
+}

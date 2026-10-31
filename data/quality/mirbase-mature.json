@@ -1,0 +1,56 @@
+{
+  "id": "mirbase-mature",
+  "artefact": "https://w3id.org/biopragmatics/resources/mirbase.mature/mirbase.mature.owl",
+  "checkedAt": "2026-10-28T22:12:05.048Z",
+  "sha256": "ec43af4d3ed5f12478dcee93a1828c2aec0f82c1f3f9a54500d3b45b2b8e9d73",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 3
+    },
+    "scannedMb": 12,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:12:06.049Z",
+    "sha256": "ec43af4d3ed5f12478dcee93a1828c2aec0f82c1f3f9a54500d3b45b2b8e9d73"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 26,
+      "WARN": 49168,
+      "INFO": 49168
+    },
+    "checkedAt": "2026-10-28T22:12:17.289Z",
+    "sha256": "ec43af4d3ed5f12478dcee93a1828c2aec0f82c1f3f9a54500d3b45b2b8e9d73"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2071 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mirbase-mature:/work schemascope/oops --input-file /w"
+    ],
+    "checkedAt": "2026-10-28T22:22:19.645Z",
+    "sha256": "ec43af4d3ed5f12478dcee93a1828c2aec0f82c1f3f9a54500d3b45b2b8e9d73"
+  }
+}

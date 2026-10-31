@@ -1,0 +1,67 @@
+{
+  "id": "kim-hochschulfaechersystematik",
+  "artefact": "https://raw.githubusercontent.com/dini-ag-kim/hochschulfaechersystematik/master/hochschulfaechersystematik.ttl",
+  "checkedAt": "2026-10-28T21:19:08.944Z",
+  "sha256": "b2edba0dcc9f62b7a615e1e7cc995bde567d17ed174fda141fcac991d5ea614c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:19:09.167Z",
+    "sha256": "b2edba0dcc9f62b7a615e1e7cc995bde567d17ed174fda141fcac991d5ea614c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 348,
+      "WARN": 2,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:19:11.377Z",
+    "sha256": "b2edba0dcc9f62b7a615e1e7cc995bde567d17ed174fda141fcac991d5ea614c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1763 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/kim-hochschulfaechersystematik:/work schemascope/oops"
+    ],
+    "checkedAt": "2026-10-28T21:19:12.521Z",
+    "sha256": "b2edba0dcc9f62b7a615e1e7cc995bde567d17ed174fda141fcac991d5ea614c"
+  }
+}

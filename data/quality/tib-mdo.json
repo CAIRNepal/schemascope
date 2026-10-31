@@ -1,0 +1,98 @@
+{
+  "id": "tib-mdo",
+  "artefact": "https://liusemweb.github.io/mdo/full/1.0/mdo-full.owl",
+  "checkedAt": "2026-10-29T05:17:07.420Z",
+  "sha256": "3d91ef19def76927dfc46977036b839a7c1fccac72a8bcceec733de2fdc112dc",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://w3id.org/mdo/calculation/1.0/",
+        "id": "w3id.org/mdo/calculation/1.0",
+        "own": false
+      },
+      {
+        "iri": "https://w3id.org/mdo/core/1.0/",
+        "id": "w3id.org/mdo/core/1.0",
+        "own": false
+      },
+      {
+        "iri": "https://w3id.org/mdo/provenance/1.0/",
+        "id": "w3id.org/mdo/provenance/1.0",
+        "own": false
+      },
+      {
+        "iri": "https://w3id.org/mdo/structure/1.0/",
+        "id": "w3id.org/mdo/structure/1.0",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dcterms": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:17:07.580Z",
+    "sha256": "3d91ef19def76927dfc46977036b839a7c1fccac72a8bcceec733de2fdc112dc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T05:17:09.692Z",
+    "sha256": "3d91ef19def76927dfc46977036b839a7c1fccac72a8bcceec733de2fdc112dc"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 15
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 32
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T05:17:29.055Z",
+    "sha256": "3d91ef19def76927dfc46977036b839a7c1fccac72a8bcceec733de2fdc112dc"
+  }
+}

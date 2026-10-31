@@ -1,0 +1,42 @@
+{
+  "id": "coral-como",
+  "artefact": "https://raw.githubusercontent.com/jmchandonia/CORAL/refs/heads/main/example/pedometer/ontologies/context_measurement_ontology.obo",
+  "checkedAt": "2026-10-28T14:06:03.166Z",
+  "sha256": "d96d837fa6cfed7dc526b71b781b1dbeebb29b81dac30f24dc528b174b20f6a4",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "como": 50,
+      "da": 14,
+      "uo": 16,
+      "envo": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T14:06:03.371Z",
+    "sha256": "d96d837fa6cfed7dc526b71b781b1dbeebb29b81dac30f24dc528b174b20f6a4"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 6,
+      "WARN": 62,
+      "INFO": 45
+    },
+    "checkedAt": "2026-10-28T14:06:06.664Z",
+    "sha256": "d96d837fa6cfed7dc526b71b781b1dbeebb29b81dac30f24dc528b174b20f6a4"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-611 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/coral-como:/work schemascope/oops --input-file /work/o",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/coral-como/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T14:06:08.020Z",
+    "sha256": "d96d837fa6cfed7dc526b71b781b1dbeebb29b81dac30f24dc528b174b20f6a4"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "generiek",
+  "artefact": "https://data.vlaanderen.be/ns/generiek",
+  "checkedAt": "2026-10-28T20:16:22.953Z",
+  "sha256": "29ad96f01e929ae5a53efe0ca06028ae0713f1cf5a80496d48c9b6184b83ad26",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ogc-sf": 3,
+      "adms": 4,
+      "locn": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:16:23.608Z",
+    "sha256": "29ad96f01e929ae5a53efe0ca06028ae0713f1cf5a80496d48c9b6184b83ad26"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 21,
+      "WARN": 101,
+      "INFO": 27
+    },
+    "checkedAt": "2026-10-28T20:16:24.722Z",
+    "sha256": "29ad96f01e929ae5a53efe0ca06028ae0713f1cf5a80496d48c9b6184b83ad26"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 7
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 10,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1332 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/generiek:/work schemascope/oops --input-file /work/on"
+    ],
+    "checkedAt": "2026-10-28T20:16:25.449Z",
+    "sha256": "29ad96f01e929ae5a53efe0ca06028ae0713f1cf5a80496d48c9b6184b83ad26"
+  }
+}

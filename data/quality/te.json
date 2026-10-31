@@ -1,0 +1,79 @@
+{
+  "id": "te",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/te/versions/2012-08-31.n3",
+  "checkedAt": "2026-10-29T05:00:19.313Z",
+  "sha256": "1308011fdb4d6d2b020ceb1099e4824f00c133ad2dae256ccb691ad271b9e1bc",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:00:26.796Z",
+    "sha256": "1308011fdb4d6d2b020ceb1099e4824f00c133ad2dae256ccb691ad271b9e1bc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 60,
+      "WARN": 57,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T05:00:27.954Z",
+    "sha256": "1308011fdb4d6d2b020ceb1099e4824f00c133ad2dae256ccb691ad271b9e1bc"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 7
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 17
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 14
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 17,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3712 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/te:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-29T05:00:28.856Z",
+    "sha256": "1308011fdb4d6d2b020ceb1099e4824f00c133ad2dae256ccb691ad271b9e1bc"
+  }
+}

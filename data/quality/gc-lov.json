@@ -1,0 +1,100 @@
+{
+  "id": "gc-lov",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/gc/versions/2009-08-24.n3",
+  "checkedAt": "2026-10-28T20:07:59.871Z",
+  "sha256": "be116ad61b2b224ab094d2c33cde33248b9516b9372fe9f7df9a53ebcc39e160",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.oegov.org/core/owl/cc",
+        "id": "oecc",
+        "own": true
+      },
+      {
+        "iri": "http://creativecommons.org/schema.rdf",
+        "id": "creativecommons.org/schema",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/dc/elements/1.1/",
+        "id": "dc",
+        "own": false
+      },
+      {
+        "iri": "http://spinrdf.org/spin",
+        "id": "spin",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:08:01.248Z",
+    "sha256": "be116ad61b2b224ab094d2c33cde33248b9516b9372fe9f7df9a53ebcc39e160"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://www.oegov.org/core/owl/cc> Cause: http://www.oegov.org/core/owl/cc\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T20:08:02.507Z",
+    "sha256": "be116ad61b2b224ab094d2c33cde33248b9516b9372fe9f7df9a53ebcc39e160"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 12
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 15
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 12
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 16,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1310 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gc-lov:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T20:08:03.369Z",
+    "sha256": "be116ad61b2b224ab094d2c33cde33248b9516b9372fe9f7df9a53ebcc39e160"
+  }
+}

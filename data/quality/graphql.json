@@ -1,0 +1,11 @@
+{
+  "id": "graphql",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/graphql/versions/2026-01-21.n3",
+  "checkedAt": "2026-10-28T20:33:09.137Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T20:33:10.169Z"
+  }
+}

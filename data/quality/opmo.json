@@ -1,0 +1,73 @@
+{
+  "id": "opmo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/opmo/versions/2015-01-11.n3",
+  "checkedAt": "2026-10-29T00:30:48.087Z",
+  "sha256": "f4c4f3e81afdabcfca7aa0ebe0e40e3f321611eb8eb1eb8d9b68d5a19452d295",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/net/opmv/ns",
+        "id": "opmv",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:30:51.999Z",
+    "sha256": "f4c4f3e81afdabcfca7aa0ebe0e40e3f321611eb8eb1eb8d9b68d5a19452d295"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.org/net/opmv/ns> Cause: https://open-biomed.sourceforge.net/opmv/ns\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T00:30:55.537Z",
+    "sha256": "f4c4f3e81afdabcfca7aa0ebe0e40e3f321611eb8eb1eb8d9b68d5a19452d295"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 24
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 17,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2479 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/opmo:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T00:30:56.251Z",
+    "sha256": "f4c4f3e81afdabcfca7aa0ebe0e40e3f321611eb8eb1eb8d9b68d5a19452d295"
+  }
+}

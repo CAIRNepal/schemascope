@@ -1,0 +1,60 @@
+{
+  "id": "lbo",
+  "artefact": "https://github.com/AnimalGenome/livestock-breed-ontology/raw/master/current_release/lbo.owl",
+  "checkedAt": "2026-10-28T21:21:02.961Z",
+  "sha256": "88247de2385c55d67e75e70ab2df9412bd204e5e6e15b536332fbd9cb71703ea",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dc": 3,
+      "dcterms": 3
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:21:03.634Z",
+    "sha256": "88247de2385c55d67e75e70ab2df9412bd204e5e6e15b536332fbd9cb71703ea"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 67,
+      "WARN": 1103,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T21:21:06.158Z",
+    "sha256": "88247de2385c55d67e75e70ab2df9412bd204e5e6e15b536332fbd9cb71703ea"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1145
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:21:20.009Z",
+    "sha256": "88247de2385c55d67e75e70ab2df9412bd204e5e6e15b536332fbd9cb71703ea"
+  }
+}

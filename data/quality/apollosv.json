@@ -1,0 +1,110 @@
+{
+  "id": "apollosv",
+  "artefact": "http://purl.obolibrary.org/obo/apollo_sv.owl",
+  "checkedAt": "2026-10-27T23:49:04.732Z",
+  "sha256": "e2b385066b9e2552131fccb974c6f45885ca96b8b4d30c8fbcfca33882b15070",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 50,
+      "iao": 50,
+      "omo": 25,
+      "obi": 48,
+      "ro": 50,
+      "stato": 12,
+      "ncbitaxon": 50,
+      "uo": 10,
+      "ido": 38,
+      "cob": 3,
+      "omiabis": 3,
+      "omrse": 31,
+      "pato": 16,
+      "uberon": 12,
+      "ogms": 19,
+      "pco": 3,
+      "geo": 15,
+      "go": 21,
+      "vo": 4,
+      "dron": 3,
+      "xsd": 7,
+      "rdfs": 6,
+      "dc": 17,
+      "dcterms": 7,
+      "foaf": 3,
+      "owl": 13,
+      "envo": 13,
+      "doid": 5,
+      "mf": 3,
+      "swrl": 5
+    },
+    "scannedMb": 3,
+    "truncated": false,
+    "scannedAt": "2026-10-27T23:49:05.228Z",
+    "sha256": "e2b385066b9e2552131fccb974c6f45885ca96b8b4d30c8fbcfca33882b15070"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 228,
+      "WARN": 869,
+      "INFO": 170
+    },
+    "checkedAt": "2026-10-27T23:49:07.708Z",
+    "sha256": "e2b385066b9e2552131fccb974c6f45885ca96b8b4d30c8fbcfca33882b15070"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 3
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 153
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 667
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 125
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1691,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-101 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/apollosv:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-27T23:49:43.036Z",
+    "sha256": "e2b385066b9e2552131fccb974c6f45885ca96b8b4d30c8fbcfca33882b15070"
+  }
+}

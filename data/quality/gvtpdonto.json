@@ -1,0 +1,42 @@
+{
+  "id": "gvtpdonto",
+  "artefact": "https://w3id.org/GVTPDOnto",
+  "checkedAt": "2026-10-28T20:35:30.599Z",
+  "sha256": "b7e76baeabfcb6fe81a8fadd35106e71a4b929f2cc9587756827a2d32a29659e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 23,
+      "xsd": 4,
+      "rdfs": 6,
+      "dcterms": 6
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:35:31.081Z",
+    "sha256": "b7e76baeabfcb6fe81a8fadd35106e71a4b929f2cc9587756827a2d32a29659e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 313,
+      "WARN": 252,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T20:35:33.096Z",
+    "sha256": "b7e76baeabfcb6fe81a8fadd35106e71a4b929f2cc9587756827a2d32a29659e"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1461 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gvtpdonto:/work schemascope/oops --input-file /work/o",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gvtpdonto/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T20:35:34.035Z",
+    "sha256": "b7e76baeabfcb6fe81a8fadd35106e71a4b929f2cc9587756827a2d32a29659e"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "ru",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ru/versions/2009-04-08.n3",
+  "checkedAt": "2026-10-29T02:37:39.550Z",
+  "sha256": "f15a2aa481e20c1e5358ee4b698967366aafebcdbdf539eec9b1b3c59f82826f",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:37:40.150Z",
+    "sha256": "f15a2aa481e20c1e5358ee4b698967366aafebcdbdf539eec9b1b3c59f82826f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 51,
+      "WARN": 48,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:37:41.128Z",
+    "sha256": "f15a2aa481e20c1e5358ee4b698967366aafebcdbdf539eec9b1b3c59f82826f"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 3,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3090 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ru:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-29T02:37:41.851Z",
+    "sha256": "f15a2aa481e20c1e5358ee4b698967366aafebcdbdf539eec9b1b3c59f82826f"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "id": "xtypes",
+  "artefact": "http://purl.org/xtypes/",
+  "checkedAt": "2026-10-29T08:10:23.314Z",
+  "sha256": "7a3da76f54bc1e08b789878fdc105d0f46e3ea413fbf20ac3fa2a338975bc07c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T08:10:32.030Z",
+    "sha256": "7a3da76f54bc1e08b789878fdc105d0f46e3ea413fbf20ac3fa2a338975bc07c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 181,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-29T08:10:33.327Z",
+    "sha256": "7a3da76f54bc1e08b789878fdc105d0f46e3ea413fbf20ac3fa2a338975bc07c"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 67
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T08:10:41.017Z",
+    "sha256": "7a3da76f54bc1e08b789878fdc105d0f46e3ea413fbf20ac3fa2a338975bc07c"
+  }
+}

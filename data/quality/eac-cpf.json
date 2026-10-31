@@ -1,0 +1,90 @@
+{
+  "id": "eac-cpf",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/eac-cpf/versions/2013-02-18.n3",
+  "checkedAt": "2026-10-28T17:36:04.241Z",
+  "sha256": "fe6e7c0714b7a64cde997bb26dfbee78f9f065f08178aeaca2b6ce458747e55c",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/dc/terms/",
+        "id": "dcterms",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/dc/elements/1.1/",
+        "id": "dc",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:36:05.159Z",
+    "sha256": "fe6e7c0714b7a64cde997bb26dfbee78f9f065f08178aeaca2b6ce458747e55c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 35,
+      "WARN": 56,
+      "INFO": 16
+    },
+    "checkedAt": "2026-10-28T17:36:09.326Z",
+    "sha256": "fe6e7c0714b7a64cde997bb26dfbee78f9f065f08178aeaca2b6ce458747e55c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 8
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 10,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-996 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/eac-cpf:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T17:36:09.950Z",
+    "sha256": "fe6e7c0714b7a64cde997bb26dfbee78f9f065f08178aeaca2b6ce458747e55c"
+  }
+}

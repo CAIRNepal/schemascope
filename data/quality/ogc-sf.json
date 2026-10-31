@@ -1,0 +1,11 @@
+{
+  "id": "ogc-sf",
+  "artefact": "https://opengeospatial.github.io/ogc-geosparql/geosparql11/sf_geometries.ttl",
+  "checkedAt": "2026-10-29T00:01:55.649Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:01:55.814Z"
+  }
+}

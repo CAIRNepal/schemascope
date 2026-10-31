@@ -1,0 +1,67 @@
+{
+  "id": "bkb",
+  "artefact": "https://budayakb.cs.ui.ac.id/ns",
+  "checkedAt": "2026-10-28T01:44:51.539Z",
+  "sha256": "637243bc4dc9e62659b2d3a95f314080b54a177808bea354200f948d56bafc56",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:44:52.765Z",
+    "sha256": "637243bc4dc9e62659b2d3a95f314080b54a177808bea354200f948d56bafc56"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 55,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T01:44:53.731Z",
+    "sha256": "637243bc4dc9e62659b2d3a95f314080b54a177808bea354200f948d56bafc56"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 39
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-232 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/bkb:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T01:44:54.451Z",
+    "sha256": "637243bc4dc9e62659b2d3a95f314080b54a177808bea354200f948d56bafc56"
+  }
+}

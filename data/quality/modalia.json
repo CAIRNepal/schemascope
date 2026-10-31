@@ -1,0 +1,77 @@
+{
+  "id": "modalia",
+  "artefact": "https://git.rwth-aachen.de/dalia/dalia-ontology/-/raw/main/MoDalia.ttl",
+  "checkedAt": "2026-10-28T22:26:59.682Z",
+  "sha256": "cefb57012f1ad0ef9c5e1ef657b576b6f2a6a21ea33c30cca2353af78092143d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "sio": 4,
+      "dcterms": 25,
+      "skos": 6,
+      "schema": 42,
+      "fabio": 5,
+      "citedcat": 5,
+      "m4i": 23,
+      "bibo": 6,
+      "loc-relator": 7
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:27:00.587Z",
+    "sha256": "cefb57012f1ad0ef9c5e1ef657b576b6f2a6a21ea33c30cca2353af78092143d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 16,
+      "WARN": 245,
+      "INFO": 35
+    },
+    "checkedAt": "2026-10-28T22:27:01.940Z",
+    "sha256": "cefb57012f1ad0ef9c5e1ef657b576b6f2a6a21ea33c30cca2353af78092143d"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 47
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 58,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2103 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/modalia:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-28T22:27:02.779Z",
+    "sha256": "cefb57012f1ad0ef9c5e1ef657b576b6f2a6a21ea33c30cca2353af78092143d"
+  }
+}

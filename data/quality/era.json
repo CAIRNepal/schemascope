@@ -1,0 +1,11 @@
+{
+  "id": "era",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/era/versions/2026-01-23.n3",
+  "checkedAt": "2026-10-28T19:28:54.613Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:28:56.526Z"
+  }
+}

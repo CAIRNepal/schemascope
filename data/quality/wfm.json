@@ -1,0 +1,11 @@
+{
+  "id": "wfm",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/wfm/versions/2013-03-15.n3",
+  "checkedAt": "2026-10-29T07:23:43.894Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:23:54.409Z"
+  }
+}

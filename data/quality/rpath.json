@@ -1,0 +1,85 @@
+{
+  "id": "rpath",
+  "artefact": "https://w3id.org/lodsight/rdf-path",
+  "checkedAt": "2026-10-29T02:34:18.126Z",
+  "sha256": "1d79a9cab2ad96b1af4dfc55c5c95fdf4a2e5832720063d60ea6efb6f95d953b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:34:18.787Z",
+    "sha256": "1d79a9cab2ad96b1af4dfc55c5c95fdf4a2e5832720063d60ea6efb6f95d953b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 6,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T02:34:19.950Z",
+    "sha256": "1d79a9cab2ad96b1af4dfc55c5c95fdf4a2e5832720063d60ea6efb6f95d953b"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3080 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rpath:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T02:34:21.049Z",
+    "sha256": "1d79a9cab2ad96b1af4dfc55c5c95fdf4a2e5832720063d60ea6efb6f95d953b"
+  }
+}

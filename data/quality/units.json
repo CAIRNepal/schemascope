@@ -1,0 +1,73 @@
+{
+  "id": "units",
+  "artefact": "http://eulersharp.sourceforge.net/2003/03swap/units",
+  "checkedAt": "2026-10-29T05:51:13.884Z",
+  "sha256": "7378a0bd2ae71e30c134b341fb470d55bcf5a075c04b210dc9004f072eb7634a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:51:16.232Z",
+    "sha256": "7378a0bd2ae71e30c134b341fb470d55bcf5a075c04b210dc9004f072eb7634a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 21,
+      "WARN": 4,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T05:51:17.399Z",
+    "sha256": "7378a0bd2ae71e30c134b341fb470d55bcf5a075c04b210dc9004f072eb7634a"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 63
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3914 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/units:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T05:51:18.086Z",
+    "sha256": "7378a0bd2ae71e30c134b341fb470d55bcf5a075c04b210dc9004f072eb7634a"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "orphanet-ordo",
+  "artefact": "https://www.orphadata.com/data/ontologies/ordo/last_version/ordo_orphanet.owl",
+  "checkedAt": "2026-10-29T00:32:22.794Z",
+  "sha256": "997ac4cf1576d7de182e26010ca9655cb1d365c138e73a145644cb1782de42d2",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 3
+    },
+    "scannedMb": 52,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:33:04.946Z",
+    "sha256": "997ac4cf1576d7de182e26010ca9655cb1d365c138e73a145644cb1782de42d2"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 2620,
+      "WARN": 16372,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-29T00:33:21.934Z",
+    "sha256": "997ac4cf1576d7de182e26010ca9655cb1d365c138e73a145644cb1782de42d2"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:33:32.908Z",
+    "sha256": "997ac4cf1576d7de182e26010ca9655cb1d365c138e73a145644cb1782de42d2"
+  }
+}

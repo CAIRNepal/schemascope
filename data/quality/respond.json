@@ -1,0 +1,84 @@
+{
+  "id": "respond",
+  "artefact": "https://w3id.org/respond",
+  "checkedAt": "2026-10-29T02:27:29.259Z",
+  "sha256": "15e9c8deae5db6dad643e463f28689cdec072ec1b87d5a9b245d7e20fe50929c",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://w3id.org/seas/FeatureOfInterestOntology",
+        "id": "seas-qudt",
+        "own": true
+      }
+    ],
+    "uses": {
+      "seas-qudt": 4,
+      "xsd": 5,
+      "dcterms": 5,
+      "bot": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:27:29.704Z",
+    "sha256": "15e9c8deae5db6dad643e463f28689cdec072ec1b87d5a9b245d7e20fe50929c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <https://w3id.org/bot/0.3.0> Cause: https://w3id.org/bot/0.3.0\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T02:27:30.450Z",
+    "sha256": "15e9c8deae5db6dad643e463f28689cdec072ec1b87d5a9b245d7e20fe50929c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 5
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 6
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 51,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3020 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/respond:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T02:27:34.498Z",
+    "sha256": "15e9c8deae5db6dad643e463f28689cdec072ec1b87d5a9b245d7e20fe50929c"
+  }
+}

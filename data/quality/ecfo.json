@@ -1,0 +1,76 @@
+{
+  "id": "ecfo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ecfo/versions/2023-05-08.n3",
+  "checkedAt": "2026-10-28T17:37:47.287Z",
+  "sha256": "c47f8e16c4fffcc23572a690d4cecebe159ab0784c36b5ffd5dc8dcff63824dc",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "prov": 5,
+      "time": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:37:47.604Z",
+    "sha256": "c47f8e16c4fffcc23572a690d4cecebe159ab0784c36b5ffd5dc8dcff63824dc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 9,
+      "WARN": 35,
+      "INFO": 9
+    },
+    "checkedAt": "2026-10-28T17:37:48.820Z",
+    "sha256": "c47f8e16c4fffcc23572a690d4cecebe159ab0784c36b5ffd5dc8dcff63824dc"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 8
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 4,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1024 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ecfo:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T17:37:49.652Z",
+    "sha256": "c47f8e16c4fffcc23572a690d4cecebe159ab0784c36b5ffd5dc8dcff63824dc"
+  }
+}

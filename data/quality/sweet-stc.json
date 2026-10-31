@@ -1,0 +1,73 @@
+{
+  "id": "sweet-stc",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/stateChemical.ttl",
+  "checkedAt": "2026-10-29T04:37:51.011Z",
+  "sha256": "29129a7a18d59a2936e0a6a1b47e9bce4c8f5466259d747cd3cd43b4fa25a0cb",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T04:37:51.458Z",
+    "sha256": "29129a7a18d59a2936e0a6a1b47e9bce4c8f5466259d747cd3cd43b4fa25a0cb"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 2,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T04:38:26.634Z",
+    "sha256": "29129a7a18d59a2936e0a6a1b47e9bce4c8f5466259d747cd3cd43b4fa25a0cb"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 2,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3580 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sweet-stc:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-29T04:38:28.027Z",
+    "sha256": "29129a7a18d59a2936e0a6a1b47e9bce4c8f5466259d747cd3cd43b4fa25a0cb"
+  }
+}

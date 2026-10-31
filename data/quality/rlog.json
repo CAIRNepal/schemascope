@@ -1,0 +1,78 @@
+{
+  "id": "rlog",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/rlog/versions/2015-04-01.n3",
+  "checkedAt": "2026-10-29T02:31:30.260Z",
+  "sha256": "772c41590e0b151c00ffc48148089a42d9b72f7f7765f045a7e594721e97539e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 7,
+      "vann": 3,
+      "rdfs": 4,
+      "dc": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:31:31.469Z",
+    "sha256": "772c41590e0b151c00ffc48148089a42d9b72f7f7765f045a7e594721e97539e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 12,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-29T02:31:33.077Z",
+    "sha256": "772c41590e0b151c00ffc48148089a42d9b72f7f7765f045a7e594721e97539e"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 3,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3038 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rlog:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T02:31:34.258Z",
+    "sha256": "772c41590e0b151c00ffc48148089a42d9b72f7f7765f045a7e594721e97539e"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "coach",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/coach/versions/2025-02-05.n3",
+  "checkedAt": "2026-10-28T12:39:20.747Z",
+  "sha256": "2fa8697e5cca616d54e35e3bcf4bd100cb4134b8189507be2c635ef79537c347",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T12:39:22.158Z",
+    "sha256": "2fa8697e5cca616d54e35e3bcf4bd100cb4134b8189507be2c635ef79537c347"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 12,
+      "WARN": 21,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T12:39:23.316Z",
+    "sha256": "2fa8697e5cca616d54e35e3bcf4bd100cb4134b8189507be2c635ef79537c347"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 17
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 17
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-565 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/coach:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T12:39:24.909Z",
+    "sha256": "2fa8697e5cca616d54e35e3bcf4bd100cb4134b8189507be2c635ef79537c347"
+  }
+}

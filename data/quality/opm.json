@@ -1,0 +1,73 @@
+{
+  "id": "opm",
+  "artefact": "https://w3id.org/opm",
+  "checkedAt": "2026-10-29T00:28:17.120Z",
+  "sha256": "9ae8f29712134e9708236a83282aada2854e116a0364c8789f9d2928abbd5102",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:28:17.587Z",
+    "sha256": "9ae8f29712134e9708236a83282aada2854e116a0364c8789f9d2928abbd5102"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 40,
+      "WARN": 21,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-29T00:28:18.631Z",
+    "sha256": "9ae8f29712134e9708236a83282aada2854e116a0364c8789f9d2928abbd5102"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 6
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 10,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2475 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/opm:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T00:28:19.341Z",
+    "sha256": "9ae8f29712134e9708236a83282aada2854e116a0364c8789f9d2928abbd5102"
+  }
+}

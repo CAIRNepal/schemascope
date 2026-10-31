@@ -1,0 +1,141 @@
+{
+  "id": "vivo",
+  "artefact": "https://raw.githubusercontent.com/vivo-ontologies/vivo-ontology/master/vivo.owl",
+  "checkedAt": "2026-10-29T07:00:04.356Z",
+  "sha256": "711ba538a07a1eb581713209a836db291a01b31f0e8aeb673f7ef87750e596ae",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "arg": 21,
+      "bfo": 25,
+      "iao": 39,
+      "ero": 50,
+      "obi": 19,
+      "ro": 17,
+      "geop": 50,
+      "dcterms": 3,
+      "rdfs": 4,
+      "owl": 8,
+      "skos": 5,
+      "xsd": 7,
+      "foaf": 4,
+      "bibo": 50,
+      "c4o": 6,
+      "vcard": 50,
+      "fabio": 3
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:00:06.417Z",
+    "sha256": "711ba538a07a1eb581713209a836db291a01b31f0e8aeb673f7ef87750e596ae"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 99,
+      "WARN": 536,
+      "INFO": 39
+    },
+    "checkedAt": "2026-10-29T07:00:07.935Z",
+    "sha256": "711ba538a07a1eb581713209a836db291a01b31f0e8aeb673f7ef87750e596ae"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 4,
+    "minor": 9,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P05",
+        "name": "Defining wrong inverse relationships",
+        "importance": "critical",
+        "affected": 3
+      },
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 665
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 293
+      },
+      {
+        "code": "P12",
+        "name": "Equivalent properties not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 80
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 20
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 8
+      },
+      {
+        "code": "P21",
+        "name": "Using a miscellaneous class",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 14
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 20
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:00:54.848Z",
+    "sha256": "711ba538a07a1eb581713209a836db291a01b31f0e8aeb673f7ef87750e596ae"
+  }
+}

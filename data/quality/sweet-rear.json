@@ -1,0 +1,79 @@
+{
+  "id": "sweet-rear",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/realmRegion.ttl",
+  "checkedAt": "2026-10-29T04:10:05.994Z",
+  "sha256": "5a460ec92e1b0c282cac393288401d36f5faccd6527732efae20f7e4bc76a176",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T04:10:06.412Z",
+    "sha256": "5a460ec92e1b0c282cac393288401d36f5faccd6527732efae20f7e4bc76a176"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "realmRegion/NorthLatitudeLine> _:genid2147484867), ClassAssertion(<http://sweetontology.net/realmRegion/NorthLatitudeBand> _:genid2147484875)]\nINVALID ONTOLOGY FILE ERROR Could not load a valid ontology from file: ontology.owl\nFor details see: http://robot.obolibrary.org/errors#invalid-ontology-file-error\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T04:10:32.813Z",
+    "sha256": "5a460ec92e1b0c282cac393288401d36f5faccd6527732efae20f7e4bc76a176"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 11,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3488 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sweet-rear:/work schemascope/oops --input-file /work/"
+    ],
+    "checkedAt": "2026-10-29T04:10:33.522Z",
+    "sha256": "5a460ec92e1b0c282cac393288401d36f5faccd6527732efae20f7e4bc76a176"
+  }
+}

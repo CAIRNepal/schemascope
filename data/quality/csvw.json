@@ -1,0 +1,67 @@
+{
+  "id": "csvw",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/csvw/versions/2015-12-17.n3",
+  "checkedAt": "2026-10-28T15:24:58.150Z",
+  "sha256": "4a48aaa9ba3be168565b047296d5e383ed491f264ac0b7a921325677ca447290",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T15:24:59.204Z",
+    "sha256": "4a48aaa9ba3be168565b047296d5e383ed491f264ac0b7a921325677ca447290"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 77,
+      "INFO": 13
+    },
+    "checkedAt": "2026-10-28T15:25:00.978Z",
+    "sha256": "4a48aaa9ba3be168565b047296d5e383ed491f264ac0b7a921325677ca447290"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-678 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/csvw:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T15:25:02.528Z",
+    "sha256": "4a48aaa9ba3be168565b047296d5e383ed491f264ac0b7a921325677ca447290"
+  }
+}

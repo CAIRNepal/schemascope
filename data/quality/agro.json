@@ -1,0 +1,103 @@
+{
+  "id": "agro",
+  "artefact": "http://purl.obolibrary.org/obo/agro.owl",
+  "checkedAt": "2026-10-27T23:03:01.660Z",
+  "sha256": "d861a6fbf09e01fffcf4312dee29f20a15a1a4a65b2a7012e50c02f65a495b55",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 48,
+      "envo": 50,
+      "obi": 50,
+      "pato": 50,
+      "po": 50,
+      "uo": 50,
+      "iao": 50,
+      "ro": 50,
+      "foodon": 50,
+      "go": 50,
+      "caro": 6,
+      "to": 50,
+      "chebi": 50,
+      "ncbitaxon": 50,
+      "peco": 15,
+      "rdfs": 8,
+      "xsd": 9,
+      "dc": 16,
+      "foaf": 3,
+      "owl": 13,
+      "pco": 6,
+      "uberon": 35,
+      "swrl": 5
+    },
+    "scannedMb": 8,
+    "truncated": false,
+    "scannedAt": "2026-10-27T23:03:02.295Z",
+    "sha256": "d861a6fbf09e01fffcf4312dee29f20a15a1a4a65b2a7012e50c02f65a495b55"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 232,
+      "WARN": 1615,
+      "INFO": 137
+    },
+    "checkedAt": "2026-10-27T23:03:07.398Z",
+    "sha256": "d861a6fbf09e01fffcf4312dee29f20a15a1a4a65b2a7012e50c02f65a495b55"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 152
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1287
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 117
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 4160,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-29 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/agro:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-27T23:05:35.326Z",
+    "sha256": "d861a6fbf09e01fffcf4312dee29f20a15a1a4a65b2a7012e50c02f65a495b55"
+  }
+}

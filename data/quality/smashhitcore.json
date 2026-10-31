@@ -1,0 +1,140 @@
+{
+  "id": "smashhitcore",
+  "artefact": "https://raw.githubusercontent.com/smashhiteu/smashhiteu.github.io/main/ontology/smashHitCore_v06.owl",
+  "checkedAt": "2026-10-29T03:07:01.018Z",
+  "sha256": "35b2c0cb9bb76f94ee00c72de90f319f8e7aec2cfd2a030da091e79a8af2d542",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/2000/01/rdf-schema",
+        "id": "rdfs",
+        "own": false
+      }
+    ],
+    "uses": {
+      "owl": 50,
+      "rdf": 13,
+      "dcterms": 12,
+      "time": 5,
+      "prov": 7,
+      "dcat": 8,
+      "gcon": 7,
+      "odrl": 6,
+      "rdfs": 12,
+      "xsd": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T03:07:04.149Z",
+    "sha256": "35b2c0cb9bb76f94ee00c72de90f319f8e7aec2cfd2a030da091e79a8af2d542"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 78,
+      "WARN": 314,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T03:07:07.842Z",
+    "sha256": "35b2c0cb9bb76f94ee00c72de90f319f8e7aec2cfd2a030da091e79a8af2d542"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 4,
+    "minor": 9,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 14
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 18
+      },
+      {
+        "code": "P12",
+        "name": "Equivalent properties not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 76
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 18
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:07:23.753Z",
+    "sha256": "35b2c0cb9bb76f94ee00c72de90f319f8e7aec2cfd2a030da091e79a8af2d542"
+  }
+}

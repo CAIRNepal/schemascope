@@ -1,0 +1,73 @@
+{
+  "id": "mto",
+  "artefact": "https://raw.githubusercontent.com/HosseinBeygiNasrabadi/Mechanical-Testing-Ontology/main/MTO4.0.2.ttl",
+  "checkedAt": "2026-10-28T22:39:25.509Z",
+  "sha256": "e58557be4319d1284a7393e931d37768315559abe33f13fcac3a6ee298752b68",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:39:25.809Z",
+    "sha256": "e58557be4319d1284a7393e931d37768315559abe33f13fcac3a6ee298752b68"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 268,
+      "WARN": 266,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T22:39:26.981Z",
+    "sha256": "e58557be4319d1284a7393e931d37768315559abe33f13fcac3a6ee298752b68"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 165
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 165,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2149 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mto:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T22:39:27.627Z",
+    "sha256": "e58557be4319d1284a7393e931d37768315559abe33f13fcac3a6ee298752b68"
+  }
+}

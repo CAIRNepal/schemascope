@@ -1,0 +1,73 @@
+{
+  "id": "traffic",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/traffic/versions/2014-05-16.n3",
+  "checkedAt": "2026-10-29T05:31:01.607Z",
+  "sha256": "7f51fc0f06c70719869d159d74f90d9f38bfe76a48fc6be5478b8a44382ed57f",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:31:02.747Z",
+    "sha256": "7f51fc0f06c70719869d159d74f90d9f38bfe76a48fc6be5478b8a44382ed57f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 47,
+      "WARN": 40,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T05:31:04.823Z",
+    "sha256": "7f51fc0f06c70719869d159d74f90d9f38bfe76a48fc6be5478b8a44382ed57f"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 21
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 21,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3832 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/traffic:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T05:31:06.274Z",
+    "sha256": "7f51fc0f06c70719869d159d74f90d9f38bfe76a48fc6be5478b8a44382ed57f"
+  }
+}

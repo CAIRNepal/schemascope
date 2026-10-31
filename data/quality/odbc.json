@@ -1,0 +1,11 @@
+{
+  "id": "odbc",
+  "artefact": "http://www.openlinksw.com/ontology/odbc",
+  "checkedAt": "2026-10-28T23:56:28.409Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T23:56:28.703Z"
+  }
+}

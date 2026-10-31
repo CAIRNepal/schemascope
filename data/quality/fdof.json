@@ -1,0 +1,77 @@
+{
+  "id": "fdof",
+  "artefact": "https://w3id.org/fdof/ontology",
+  "checkedAt": "2026-10-28T19:41:22.893Z",
+  "sha256": "b0ba60db963f4dedf28ed199f1d0c6b89e037b0ee433eb79426875c9ae42c11b",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/nemo/gufo#/1.0.0",
+        "id": "purl.org/nemo/gufo",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dcterms": 7,
+      "modp": 3,
+      "gufo": 10
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:41:23.572Z",
+    "sha256": "b0ba60db963f4dedf28ed199f1d0c6b89e037b0ee433eb79426875c9ae42c11b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 36,
+      "WARN": 10,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T19:41:30.556Z",
+    "sha256": "b0ba60db963f4dedf28ed199f1d0c6b89e037b0ee433eb79426875c9ae42c11b"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 13,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1210 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/fdof:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T19:41:31.285Z",
+    "sha256": "b0ba60db963f4dedf28ed199f1d0c6b89e037b0ee433eb79426875c9ae42c11b"
+  }
+}

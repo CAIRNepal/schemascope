@@ -1,0 +1,58 @@
+{
+  "id": "chembl-target",
+  "artefact": "https://w3id.org/biopragmatics/resources/chembl.target/chembl.target.owl",
+  "checkedAt": "2026-10-28T02:20:03.317Z",
+  "sha256": "60e4ef9d57bf72a5f44bac9d0acfeb602abe8b9e6d1ce260ab613505190d84e9",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ro": 5,
+      "ncbitaxon": 50,
+      "dcterms": 3
+    },
+    "scannedMb": 14,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:20:04.350Z",
+    "sha256": "60e4ef9d57bf72a5f44bac9d0acfeb602abe8b9e6d1ce260ab613505190d84e9"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 5857,
+      "WARN": 16080,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T02:20:13.359Z",
+    "sha256": "60e4ef9d57bf72a5f44bac9d0acfeb602abe8b9e6d1ce260ab613505190d84e9"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-436 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/chembl-target:/work schemascope/oops --input-file /wor"
+    ],
+    "checkedAt": "2026-10-28T02:38:01.867Z",
+    "sha256": "60e4ef9d57bf72a5f44bac9d0acfeb602abe8b9e6d1ce260ab613505190d84e9"
+  }
+}

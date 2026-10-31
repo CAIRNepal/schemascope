@@ -1,0 +1,11 @@
+{
+  "id": "sweet-procc",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/procChemical.ttl",
+  "checkedAt": "2026-10-29T03:36:11.009Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:36:21.509Z"
+  }
+}

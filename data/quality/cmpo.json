@@ -1,0 +1,88 @@
+{
+  "id": "cmpo",
+  "artefact": "http://aber-owl.net/media/ontologies/CMPO/1/cmpo.owl",
+  "checkedAt": "2026-10-28T07:23:40.231Z",
+  "sha256": "fab239c679e5813ec337fe4b5439584d9ffb86c262378f6ba6cc6a8a1637fb60",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 15,
+      "ro": 50,
+      "bfo": 5,
+      "pato": 50,
+      "chebi": 5,
+      "go": 50,
+      "owl": 3,
+      "caro": 6
+    },
+    "scannedMb": 4,
+    "truncated": false,
+    "scannedAt": "2026-10-28T07:23:43.346Z",
+    "sha256": "fab239c679e5813ec337fe4b5439584d9ffb86c262378f6ba6cc6a8a1637fb60"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 10049,
+      "WARN": 10158,
+      "INFO": 38
+    },
+    "checkedAt": "2026-10-28T07:23:50.108Z",
+    "sha256": "fab239c679e5813ec337fe4b5439584d9ffb86c262378f6ba6cc6a8a1637fb60"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 7
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 306,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-493 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cmpo:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T07:35:07.681Z",
+    "sha256": "fab239c679e5813ec337fe4b5439584d9ffb86c262378f6ba6cc6a8a1637fb60"
+  }
+}

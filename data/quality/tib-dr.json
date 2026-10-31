@@ -1,0 +1,89 @@
+{
+  "id": "tib-dr",
+  "artefact": "https://raw.githubusercontent.com/tibonto/dr/master/DigitalReference.ttl",
+  "checkedAt": "2026-10-29T05:16:08.821Z",
+  "sha256": "2a8eabb436eeb71112d4034974403bac3979ae1fec803a6893f934cdfd0ef03c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "sosa": 40,
+      "dc": 3,
+      "dcterms": 9,
+      "schema": 3,
+      "rdfs": 4,
+      "xsd": 6,
+      "skos": 12,
+      "time": 50,
+      "foaf": 3
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:16:09.173Z",
+    "sha256": "2a8eabb436eeb71112d4034974403bac3979ae1fec803a6893f934cdfd0ef03c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 1,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 622,
+      "WARN": 2989,
+      "INFO": 15
+    },
+    "checkedAt": "2026-10-29T05:16:15.912Z",
+    "sha256": "2a8eabb436eeb71112d4034974403bac3979ae1fec803a6893f934cdfd0ef03c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 213
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 66
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 218
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 494
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1170,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3743 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tib-dr:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T05:16:18.273Z",
+    "sha256": "2a8eabb436eeb71112d4034974403bac3979ae1fec803a6893f934cdfd0ef03c"
+  }
+}

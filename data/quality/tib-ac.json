@@ -1,0 +1,73 @@
+{
+  "id": "tib-ac",
+  "artefact": "https://raw.githubusercontent.com/AudioCommons/ac-ontology/master/aco.ttl",
+  "checkedAt": "2026-10-29T05:16:02.002Z",
+  "sha256": "2791652398211a9f0a3198f0d4b451f3e098d59499e4409135a8bb1f2a2346c0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:16:02.689Z",
+    "sha256": "2791652398211a9f0a3198f0d4b451f3e098d59499e4409135a8bb1f2a2346c0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 32,
+      "WARN": 92,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T05:16:04.548Z",
+    "sha256": "2791652398211a9f0a3198f0d4b451f3e098d59499e4409135a8bb1f2a2346c0"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 5
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 16
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 20,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3738 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tib-ac:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T05:16:05.869Z",
+    "sha256": "2791652398211a9f0a3198f0d4b451f3e098d59499e4409135a8bb1f2a2346c0"
+  }
+}

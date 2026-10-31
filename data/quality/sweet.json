@@ -1,0 +1,11 @@
+{
+  "id": "sweet",
+  "artefact": "https://raw.githubusercontent.com/ESIPFed/sweet/master/src/sweetAll.ttl",
+  "checkedAt": "2026-10-29T03:21:28.020Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:21:38.516Z"
+  }
+}

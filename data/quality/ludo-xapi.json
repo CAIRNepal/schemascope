@@ -1,0 +1,81 @@
+{
+  "id": "ludo-xapi",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ludo-xapi/versions/2016-05-12.n3",
+  "checkedAt": "2026-10-28T21:32:56.094Z",
+  "sha256": "a28b58e6ba2f734bf0940b235e7522f50f405b38942a8a3ef73342897dca1cee",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 7
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:32:56.960Z",
+    "sha256": "a28b58e6ba2f734bf0940b235e7522f50f405b38942a8a3ef73342897dca1cee"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 26,
+      "WARN": 111,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:32:58.144Z",
+    "sha256": "a28b58e6ba2f734bf0940b235e7522f50f405b38942a8a3ef73342897dca1cee"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 14
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 36
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 41,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1960 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ludo-xapi:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-28T21:32:59.131Z",
+    "sha256": "a28b58e6ba2f734bf0940b235e7522f50f405b38942a8a3ef73342897dca1cee"
+  }
+}

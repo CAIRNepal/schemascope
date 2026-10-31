@@ -1,0 +1,84 @@
+{
+  "id": "trajecto",
+  "artefact": "https://w3id.org/trajecto",
+  "checkedAt": "2026-10-29T05:31:15.097Z",
+  "sha256": "e233b7ae84f97eab7e2e48c6302f7998b282296325017716155beb1ae54c61ec",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.datacron-project.eu/datAcron#",
+        "id": "datacron-project.eu/datacron",
+        "own": false
+      }
+    ],
+    "uses": {
+      "xsd": 6,
+      "dcterms": 9,
+      "dolce": 6,
+      "owl": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:31:15.547Z",
+    "sha256": "e233b7ae84f97eab7e2e48c6302f7998b282296325017716155beb1ae54c61ec"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://www.datacron-project.eu/datAcron#> Cause: Server returned HTTP response code: 403 for URL: http://www.datacron-project.eu/datAcron#\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T05:31:20.963Z",
+    "sha256": "e233b7ae84f97eab7e2e48c6302f7998b282296325017716155beb1ae54c61ec"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 22
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 25,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3836 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/trajecto:/work schemascope/oops --input-file /work/on"
+    ],
+    "checkedAt": "2026-10-29T05:31:29.089Z",
+    "sha256": "e233b7ae84f97eab7e2e48c6302f7998b282296325017716155beb1ae54c61ec"
+  }
+}

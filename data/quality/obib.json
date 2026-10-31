@@ -1,0 +1,128 @@
+{
+  "id": "obib",
+  "artefact": "http://purl.obolibrary.org/obo/obib.owl",
+  "checkedAt": "2026-10-28T23:48:16.063Z",
+  "sha256": "596d0be49bf485b06919ec898381eea21715d7c584dd41fb26f6828927f21616",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 48,
+      "iao": 50,
+      "omo": 3,
+      "obi": 50,
+      "ro": 47,
+      "geo": 7,
+      "ido": 11,
+      "ncbitaxon": 22,
+      "omrse": 26,
+      "omiabis": 50,
+      "chebi": 48,
+      "ogms": 9,
+      "clo": 4,
+      "cl": 9,
+      "doid": 11,
+      "fma": 17,
+      "uberon": 50,
+      "go": 4,
+      "hancestro": 9,
+      "ico": 8,
+      "ncit": 43,
+      "pato": 23,
+      "xsd": 7,
+      "rdfs": 7,
+      "dc": 17,
+      "owl": 8,
+      "uo": 30,
+      "swrl": 5
+    },
+    "scannedMb": 3,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:48:17.036Z",
+    "sha256": "596d0be49bf485b06919ec898381eea21715d7c584dd41fb26f6828927f21616"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 32,
+      "WARN": 266,
+      "INFO": 135
+    },
+    "checkedAt": "2026-10-28T23:48:23.600Z",
+    "sha256": "596d0be49bf485b06919ec898381eea21715d7c584dd41fb26f6828927f21616"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 2,
+    "important": 2,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 12
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1830
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 74
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 54
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P29",
+        "name": "Defining wrong transitive relationships",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T23:49:13.631Z",
+    "sha256": "596d0be49bf485b06919ec898381eea21715d7c584dd41fb26f6828927f21616"
+  }
+}

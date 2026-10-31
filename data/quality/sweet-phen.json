@@ -1,0 +1,11 @@
+{
+  "id": "sweet-phen",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/phenEnergy.ttl",
+  "checkedAt": "2026-10-29T03:31:26.960Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:31:37.460Z"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "id": "lsmap",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/lsmap/versions/2015-09-24.n3",
+  "checkedAt": "2026-10-28T21:32:19.183Z",
+  "sha256": "ddbb909c9889aeb19028f2cb6de9e95ab1437406e7bfcb05fa7b1fe121384a80",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-modelling.owl",
+        "id": "lswmo",
+        "own": true
+      },
+      {
+        "iri": "http://semanticscience.org/ontology/sio.owl",
+        "id": "semanticscience.org/ontology/sio",
+        "own": false
+      },
+      {
+        "iri": "http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-lifemapper-parameters.owl",
+        "id": "lswpm",
+        "own": true
+      },
+      {
+        "iri": "http://www.w3.org/ns/dcat",
+        "id": "dcat",
+        "own": false
+      },
+      {
+        "iri": "http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl",
+        "id": "ecoinformatics.org/oboe/oboe.1.0/oboe-core",
+        "own": false
+      },
+      {
+        "iri": "http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-lifemapper.owl",
+        "id": "lslife",
+        "own": true
+      },
+      {
+        "iri": "http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl",
+        "id": "edac",
+        "own": true
+      },
+      {
+        "iri": "http://www.w3.org/ns/prov-o#",
+        "id": "w3.org/ns/prov-o",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dcat": 4,
+      "lswmo": 6,
+      "edac": 4,
+      "prov": 5,
+      "lslife": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:32:20.561Z",
+    "sha256": "ddbb909c9889aeb19028f2cb6de9e95ab1437406e7bfcb05fa7b1fe121384a80"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 30,
+      "WARN": 32,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T21:32:26.642Z",
+    "sha256": "ddbb909c9889aeb19028f2cb6de9e95ab1437406e7bfcb05fa7b1fe121384a80"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1942 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/lsmap:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T21:32:27.386Z",
+    "sha256": "ddbb909c9889aeb19028f2cb6de9e95ab1437406e7bfcb05fa7b1fe121384a80"
+  }
+}

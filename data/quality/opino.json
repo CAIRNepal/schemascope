@@ -1,0 +1,79 @@
+{
+  "id": "opino",
+  "artefact": "https://w3id.org/opino",
+  "checkedAt": "2026-10-29T00:27:47.725Z",
+  "sha256": "36dae04f6126b2e3f502e919eb54b68c90d0b687fed79dd935b12bcde57256af",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/emmedi/hico/2020-03-31",
+        "id": "purl.org/emmedi/hico/2020-03-31",
+        "own": false
+      },
+      {
+        "iri": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl",
+        "id": "dolce",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/prov-o-20130430",
+        "id": "w3.org/ns/prov-o-20130430",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dolce": 22
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:27:48.802Z",
+    "sha256": "36dae04f6126b2e3f502e919eb54b68c90d0b687fed79dd935b12bcde57256af"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.org/emmedi/hico/2020-03-31> Cause: https://purl.archive.org/emmedi/hico/2020-03-31\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T00:27:50.699Z",
+    "sha256": "36dae04f6126b2e3f502e919eb54b68c90d0b687fed79dd935b12bcde57256af"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 13
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 9
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 12,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2469 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/opino:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T00:27:51.396Z",
+    "sha256": "36dae04f6126b2e3f502e919eb54b68c90d0b687fed79dd935b12bcde57256af"
+  }
+}

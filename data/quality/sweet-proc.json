@@ -1,0 +1,11 @@
+{
+  "id": "sweet-proc",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/proc.ttl",
+  "checkedAt": "2026-10-29T03:36:00.506Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:36:11.007Z"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "gleif-ra",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/gleif-ra/versions/2019-02-01.n3",
+  "checkedAt": "2026-10-28T20:23:47.613Z",
+  "sha256": "9a677464274d0aca952006a8df3efbd37e6cc2cec5485b8b31f1b5160dc5b4ce",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:23:48.456Z",
+    "sha256": "9a677464274d0aca952006a8df3efbd37e6cc2cec5485b8b31f1b5160dc5b4ce"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 2,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T20:23:50.692Z",
+    "sha256": "9a677464274d0aca952006a8df3efbd37e6cc2cec5485b8b31f1b5160dc5b4ce"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 2,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1395 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gleif-ra:/work schemascope/oops --input-file /work/on"
+    ],
+    "checkedAt": "2026-10-28T20:23:51.303Z",
+    "sha256": "9a677464274d0aca952006a8df3efbd37e6cc2cec5485b8b31f1b5160dc5b4ce"
+  }
+}

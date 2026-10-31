@@ -1,0 +1,61 @@
+{
+  "id": "riskman",
+  "artefact": "https://w3id.org/riskman/ontology",
+  "checkedAt": "2026-10-29T02:31:26.510Z",
+  "sha256": "1d418a953c4956ddc404b77864a4e6bb49300d6d25bff953487ad43c66350499",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:31:26.963Z",
+    "sha256": "1d418a953c4956ddc404b77864a4e6bb49300d6d25bff953487ad43c66350499"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 51,
+      "INFO": 22
+    },
+    "checkedAt": "2026-10-29T02:31:28.949Z",
+    "sha256": "1d418a953c4956ddc404b77864a4e6bb49300d6d25bff953487ad43c66350499"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 27
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 24,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3036 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/riskman:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T02:31:30.258Z",
+    "sha256": "1d418a953c4956ddc404b77864a4e6bb49300d6d25bff953487ad43c66350499"
+  }
+}

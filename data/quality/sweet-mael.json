@@ -1,0 +1,11 @@
+{
+  "id": "sweet-mael",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/matrElement.ttl",
+  "checkedAt": "2026-10-29T03:24:37.073Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:24:47.588Z"
+  }
+}

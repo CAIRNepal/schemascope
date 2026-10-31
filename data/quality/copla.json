@@ -1,0 +1,43 @@
+{
+  "id": "copla",
+  "artefact": "https://w3id.org/CoPla",
+  "checkedAt": "2026-10-28T13:48:40.708Z",
+  "sha256": "7ec12c5de6d67fd0eabfeda8ccda9ac163e67de24450285e5276fa152d6b8e31",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 20,
+      "xsd": 3,
+      "rdfs": 6,
+      "dc": 3,
+      "dcterms": 10
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T13:48:41.371Z",
+    "sha256": "7ec12c5de6d67fd0eabfeda8ccda9ac163e67de24450285e5276fa152d6b8e31"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 1390,
+      "WARN": 1454,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T13:48:46.072Z",
+    "sha256": "7ec12c5de6d67fd0eabfeda8ccda9ac163e67de24450285e5276fa152d6b8e31"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-604 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/copla:/work schemascope/oops --input-file /work/ontolo",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/copla/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T13:48:47.848Z",
+    "sha256": "7ec12c5de6d67fd0eabfeda8ccda9ac163e67de24450285e5276fa152d6b8e31"
+  }
+}

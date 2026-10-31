@@ -1,0 +1,11 @@
+{
+  "id": "vas",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/vas/versions/2025-11-28.n3",
+  "checkedAt": "2026-10-29T06:51:38.414Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T06:51:48.931Z"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "id": "rehabo",
+  "artefact": "https://github.com/mcwdsi/rehabo/releases/latest/download/rehabo.owl",
+  "checkedAt": "2026-10-29T02:23:20.646Z",
+  "sha256": "b6e0627b60ea9a7f3607ea425baf872aef56db0d6d2bab7502978550eaa21117",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 44,
+      "iao": 50,
+      "omo": 25,
+      "ro": 26,
+      "ogms": 4,
+      "omrse": 10,
+      "uberon": 50,
+      "rdfs": 5,
+      "xsd": 4,
+      "owl": 9,
+      "dc": 17,
+      "dcterms": 7,
+      "swrl": 5
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:23:21.261Z",
+    "sha256": "b6e0627b60ea9a7f3607ea425baf872aef56db0d6d2bab7502978550eaa21117"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 85,
+      "INFO": 43
+    },
+    "checkedAt": "2026-10-29T02:23:23.078Z",
+    "sha256": "b6e0627b60ea9a7f3607ea425baf872aef56db0d6d2bab7502978550eaa21117"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 2,
+    "important": 3,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 242
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 23
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 7
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P29",
+        "name": "Defining wrong transitive relationships",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T02:23:32.360Z",
+    "sha256": "b6e0627b60ea9a7f3607ea425baf872aef56db0d6d2bab7502978550eaa21117"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "id": "aero",
+  "artefact": "http://purl.obolibrary.org/obo/aero.owl",
+  "checkedAt": "2026-10-27T23:01:25.680Z",
+  "sha256": "c548e91e2be6e718fd192dc51deb224780532786a62d676a8883c4d11c064061",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.obolibrary.org/obo/iao.owl",
+        "id": "iao",
+        "own": true
+      }
+    ],
+    "uses": {
+      "iao": 6,
+      "ogms": 3,
+      "bfo": 4,
+      "obi": 12,
+      "uberon": 5,
+      "owl": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-27T23:01:25.989Z",
+    "sha256": "c548e91e2be6e718fd192dc51deb224780532786a62d676a8883c4d11c064061"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.obolibrary.org/obo/aero/OMRE_AEROImport.owl> Cause: https://raw.githubusercontent.com/OGMS/ogms/master/src/ontology/omre/OMRE_AEROImport.owl\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-27T23:01:27.176Z",
+    "sha256": "c548e91e2be6e718fd192dc51deb224780532786a62d676a8883c4d11c064061"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 4,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 5
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 95
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 7
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 143,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-9 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/aero:/work schemascope/oops --input-file /work/ontology."
+    ],
+    "checkedAt": "2026-10-27T23:01:30.504Z",
+    "sha256": "c548e91e2be6e718fd192dc51deb224780532786a62d676a8883c4d11c064061"
+  }
+}

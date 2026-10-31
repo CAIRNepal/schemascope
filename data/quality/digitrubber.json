@@ -1,0 +1,102 @@
+{
+  "id": "digitrubber",
+  "artefact": "https://github.com/TIBHannover/DIGIT-RUBBER/raw/refs/heads/main/digitrubber.owl",
+  "checkedAt": "2026-10-28T17:13:17.903Z",
+  "sha256": "b071f76b83efbb26bd755bd14872d8fd5147a15a3342239592fceea10b2c6c60",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 50,
+      "iao": 50,
+      "obi": 50,
+      "ro": 50,
+      "cob": 4,
+      "mi": 3,
+      "ncit": 24,
+      "chebi": 50,
+      "chmo": 5,
+      "uo": 50,
+      "pato": 14,
+      "xsd": 7,
+      "dc": 7,
+      "dcterms": 14,
+      "schema": 3,
+      "doap": 3,
+      "rdfs": 7,
+      "owl": 10,
+      "skos": 5,
+      "modp": 3,
+      "om": 4,
+      "swrl": 5
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:13:18.915Z",
+    "sha256": "b071f76b83efbb26bd755bd14872d8fd5147a15a3342239592fceea10b2c6c60"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 1629,
+      "WARN": 1280,
+      "INFO": 186
+    },
+    "checkedAt": "2026-10-28T17:13:21.412Z",
+    "sha256": "b071f76b83efbb26bd755bd14872d8fd5147a15a3342239592fceea10b2c6c60"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 6
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 114
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 202
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 59
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 748,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-871 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/digitrubber:/work schemascope/oops --input-file /work/"
+    ],
+    "checkedAt": "2026-10-28T17:14:13.613Z",
+    "sha256": "b071f76b83efbb26bd755bd14872d8fd5147a15a3342239592fceea10b2c6c60"
+  }
+}

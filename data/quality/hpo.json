@@ -1,0 +1,61 @@
+{
+  "id": "hpo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/hpo/versions/2024-04-12.n3",
+  "checkedAt": "2026-10-28T20:44:42.260Z",
+  "sha256": "a1448526bc57a98c0cea9949f6e37063d8bcb61f7bb71f27bf146e4f0e4c373f",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:44:43.370Z",
+    "sha256": "a1448526bc57a98c0cea9949f6e37063d8bcb61f7bb71f27bf146e4f0e4c373f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://w3id.org/emmo/perspectives/physicalistic> Cause: https://raw.githubusercontent.com/emmo-repo/EMMO/master/perspectives/physicalistic.ttl\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T20:45:07.183Z",
+    "sha256": "a1448526bc57a98c0cea9949f6e37063d8bcb61f7bb71f27bf146e4f0e4c373f"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 6
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 135,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1537 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/hpo:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T20:45:07.804Z",
+    "sha256": "a1448526bc57a98c0cea9949f6e37063d8bcb61f7bb71f27bf146e4f0e4c373f"
+  }
+}

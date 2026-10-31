@@ -1,0 +1,54 @@
+{
+  "id": "si-prefixes",
+  "artefact": "https://github.com/TheBIPM/SI_Digital_Framework/raw/refs/heads/main/knowledge_graphs/SI_Reference_Point/prefixes.ttl",
+  "checkedAt": "2026-10-29T02:58:41.357Z",
+  "sha256": "41da642bc8f54ff8775001ea40d70a3cef4c550305de45a4e891867fb91c928a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:58:41.617Z",
+    "sha256": "41da642bc8f54ff8775001ea40d70a3cef4c550305de45a4e891867fb91c928a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 29,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:58:43.067Z",
+    "sha256": "41da642bc8f54ff8775001ea40d70a3cef4c550305de45a4e891867fb91c928a"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3283 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/si-prefixes:/work schemascope/oops --input-file /work"
+    ],
+    "checkedAt": "2026-10-29T02:58:44.149Z",
+    "sha256": "41da642bc8f54ff8775001ea40d70a3cef4c550305de45a4e891867fb91c928a"
+  }
+}

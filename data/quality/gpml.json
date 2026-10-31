@@ -1,0 +1,11 @@
+{
+  "id": "gpml",
+  "artefact": "https://github.com/wikipathways/WpVocabularies/raw/refs/heads/master/docs/gpml.owl",
+  "checkedAt": "2026-10-28T20:33:03.634Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T20:33:04.041Z"
+  }
+}

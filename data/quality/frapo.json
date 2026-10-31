@@ -1,0 +1,73 @@
+{
+  "id": "frapo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/frapo/versions/2014-01-31.n3",
+  "checkedAt": "2026-10-28T19:49:24.470Z",
+  "sha256": "d64c68706929bfd596c47dabe8cc87501215a030d75793832e08fba07ecb2fca",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/swan/2.0/foaf-essential/",
+        "id": "purl.org/swan/2.0/foaf-essential",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:49:24.894Z",
+    "sha256": "d64c68706929bfd596c47dabe8cc87501215a030d75793832e08fba07ecb2fca"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.org/swan/2.0/foaf-essential/> Cause: http://swan-ontology.googlecode.com/svn/trunk/foaf-essential.owl\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T19:49:26.963Z",
+    "sha256": "d64c68706929bfd596c47dabe8cc87501215a030d75793832e08fba07ecb2fca"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 35
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 8
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 88,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1271 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/frapo:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T19:49:27.670Z",
+    "sha256": "d64c68706929bfd596c47dabe8cc87501215a030d75793832e08fba07ecb2fca"
+  }
+}

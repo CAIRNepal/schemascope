@@ -1,0 +1,11 @@
+{
+  "id": "sweet-marock",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/matrRock.ttl",
+  "checkedAt": "2026-10-29T03:27:25.311Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:27:35.825Z"
+  }
+}

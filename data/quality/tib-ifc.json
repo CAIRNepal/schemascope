@@ -1,0 +1,11 @@
+{
+  "id": "tib-ifc",
+  "artefact": "https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2_TC1/OWL/ontology.ttl",
+  "checkedAt": "2026-10-29T05:16:40.085Z",
+  "downloadError": "download HTTP 403",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T05:16:40.244Z"
+  }
+}

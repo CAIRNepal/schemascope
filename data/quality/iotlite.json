@@ -1,0 +1,96 @@
+{
+  "id": "iotlite",
+  "artefact": "http://iot.ee.surrey.ac.uk/fiware/ontologies/iot-lite/iot-lite.rdf",
+  "checkedAt": "2026-10-28T21:14:09.503Z",
+  "sha256": "179347aa5a9f5dc07c19bf75ac7e1ec611cee48d21005f1bd8969022da773202",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dc": 8,
+      "wgs84": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:14:09.931Z",
+    "sha256": "179347aa5a9f5dc07c19bf75ac7e1ec611cee48d21005f1bd8969022da773202"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 43,
+      "WARN": 43,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-28T21:14:11.463Z",
+    "sha256": "179347aa5a9f5dc07c19bf75ac7e1ec611cee48d21005f1bd8969022da773202"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 2,
+    "important": 3,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P02",
+        "name": "Creating synonyms as classes",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 42
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 9
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P31",
+        "name": "Defining wrong equivalent classes",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:14:19.118Z",
+    "sha256": "179347aa5a9f5dc07c19bf75ac7e1ec611cee48d21005f1bd8969022da773202"
+  }
+}

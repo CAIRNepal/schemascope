@@ -1,0 +1,11 @@
+{
+  "id": "sweet-marocki",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/matrRockIgneous.ttl",
+  "checkedAt": "2026-10-29T03:27:35.826Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:27:46.340Z"
+  }
+}

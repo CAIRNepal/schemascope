@@ -1,0 +1,66 @@
+{
+  "id": "apo",
+  "artefact": "http://purl.obolibrary.org/obo/apo.owl",
+  "checkedAt": "2026-10-27T23:48:43.835Z",
+  "sha256": "c40e919fdfb4c854d5c95a3bc6782e7731c5adda4e3bbcd71ec6200a06f23ae5",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 4,
+      "ypo": 50
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-27T23:48:44.662Z",
+    "sha256": "c40e919fdfb4c854d5c95a3bc6782e7731c5adda4e3bbcd71ec6200a06f23ae5"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 6,
+      "WARN": 81,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-27T23:48:46.258Z",
+    "sha256": "c40e919fdfb4c854d5c95a3bc6782e7731c5adda4e3bbcd71ec6200a06f23ae5"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 314
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 591
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-27T23:49:02.362Z",
+    "sha256": "c40e919fdfb4c854d5c95a3bc6782e7731c5adda4e3bbcd71ec6200a06f23ae5"
+  }
+}

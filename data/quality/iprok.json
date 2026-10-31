@@ -1,0 +1,83 @@
+{
+  "id": "iprok",
+  "artefact": "https://w3id.org/iprok",
+  "checkedAt": "2026-10-28T21:14:33.908Z",
+  "sha256": "5d637c092295fbdab8a2f3e26ab971d2e0e448083938044fa94124a7bbc2fa5f",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.opengis.net/ont/geosparql",
+        "id": "geosparql",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/2006/time",
+        "id": "time",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/prov",
+        "id": "prov",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:14:34.483Z",
+    "sha256": "5d637c092295fbdab8a2f3e26ab971d2e0e448083938044fa94124a7bbc2fa5f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 22,
+      "WARN": 1090,
+      "INFO": 25
+    },
+    "checkedAt": "2026-10-28T21:14:41.722Z",
+    "sha256": "5d637c092295fbdab8a2f3e26ab971d2e0e448083938044fa94124a7bbc2fa5f"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 92
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 271
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 138,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1679 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/iprok:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T21:14:43.232Z",
+    "sha256": "5d637c092295fbdab8a2f3e26ab971d2e0e448083938044fa94124a7bbc2fa5f"
+  }
+}

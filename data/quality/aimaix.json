@@ -1,0 +1,41 @@
+{
+  "id": "aimaix",
+  "artefact": "https://w3id.org/aimaix",
+  "checkedAt": "2026-10-27T23:06:41.385Z",
+  "sha256": "f012bf224b88757f097b5f0bfc1ec816c9fae4983c32a6314282b96ac5e1fec9",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 16,
+      "dcterms": 7,
+      "rdfs": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-27T23:06:41.826Z",
+    "sha256": "f012bf224b88757f097b5f0bfc1ec816c9fae4983c32a6314282b96ac5e1fec9"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 6,
+      "WARN": 53,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-27T23:06:43.047Z",
+    "sha256": "f012bf224b88757f097b5f0bfc1ec816c9fae4983c32a6314282b96ac5e1fec9"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-52 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/aimaix:/work schemascope/oops --input-file /work/ontolo",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/aimaix/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-27T23:06:43.805Z",
+    "sha256": "f012bf224b88757f097b5f0bfc1ec816c9fae4983c32a6314282b96ac5e1fec9"
+  }
+}

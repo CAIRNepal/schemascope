@@ -1,0 +1,69 @@
+{
+  "id": "openwemi",
+  "artefact": "https://ns.dublincore.org/openwemi/",
+  "checkedAt": "2026-10-29T00:27:45.445Z",
+  "sha256": "9f9df6c5a1c9ad873b25be33d9a53df104ac22a36e9d4a9298f5d1370e5b18af",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ov": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:27:45.825Z",
+    "sha256": "9f9df6c5a1c9ad873b25be33d9a53df104ac22a36e9d4a9298f5d1370e5b18af"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 20,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T00:27:46.810Z",
+    "sha256": "9f9df6c5a1c9ad873b25be33d9a53df104ac22a36e9d4a9298f5d1370e5b18af"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 5,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2467 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/openwemi:/work schemascope/oops --input-file /work/on"
+    ],
+    "checkedAt": "2026-10-29T00:27:47.725Z",
+    "sha256": "9f9df6c5a1c9ad873b25be33d9a53df104ac22a36e9d4a9298f5d1370e5b18af"
+  }
+}

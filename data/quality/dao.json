@@ -1,0 +1,88 @@
+{
+  "id": "dao",
+  "artefact": "https://w3id.org/daont",
+  "checkedAt": "2026-10-28T16:44:42.023Z",
+  "sha256": "35426c8fd9e423590fc3bb394918e4665f1869a2e013a387bb1c4a9627e2811e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 23,
+      "schema": 3,
+      "owl": 3,
+      "mls": 10,
+      "dcat": 4,
+      "locn": 3,
+      "okn-sd": 4,
+      "fabio": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T16:44:42.463Z",
+    "sha256": "35426c8fd9e423590fc3bb394918e4665f1869a2e013a387bb1c4a9627e2811e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 177,
+      "INFO": 54
+    },
+    "checkedAt": "2026-10-28T16:44:44.767Z",
+    "sha256": "35426c8fd9e423590fc3bb394918e4665f1869a2e013a387bb1c4a9627e2811e"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 52
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 56
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 52,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-739 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dao:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T16:44:46.143Z",
+    "sha256": "35426c8fd9e423590fc3bb394918e4665f1869a2e013a387bb1c4a9627e2811e"
+  }
+}

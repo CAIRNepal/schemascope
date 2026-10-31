@@ -1,0 +1,98 @@
+{
+  "id": "epo",
+  "artefact": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/epidemiology-ontology/epo.owl",
+  "checkedAt": "2026-10-28T19:27:14.392Z",
+  "sha256": "d0c532d78aee4e5aa5ee2e48663d315818d00c0c3f7a5e7ba4625bd448e963b2",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 9,
+      "ro": 4,
+      "trans": 14,
+      "ido": 18
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:27:14.713Z",
+    "sha256": "d0c532d78aee4e5aa5ee2e48663d315818d00c0c3f7a5e7ba4625bd448e963b2"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 13,
+      "WARN": 79,
+      "INFO": 55
+    },
+    "checkedAt": "2026-10-28T19:27:16.893Z",
+    "sha256": "d0c532d78aee4e5aa5ee2e48663d315818d00c0c3f7a5e7ba4625bd448e963b2"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 4,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P02",
+        "name": "Creating synonyms as classes",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 157
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:27:24.230Z",
+    "sha256": "d0c532d78aee4e5aa5ee2e48663d315818d00c0c3f7a5e7ba4625bd448e963b2"
+  }
+}

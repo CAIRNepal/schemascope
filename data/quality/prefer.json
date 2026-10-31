@@ -1,0 +1,97 @@
+{
+  "id": "prefer",
+  "artefact": "http://purl.obolibrary.org/obo/prefer.owl",
+  "checkedAt": "2026-10-29T01:44:09.371Z",
+  "sha256": "e038f5ee87604a5bd12621a3017f89e94756b73d38828acc74badff2e4013ae1",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 23,
+      "iao": 50,
+      "omo": 8,
+      "dc": 6,
+      "ro": 50,
+      "bspo": 18,
+      "cl": 50,
+      "obi": 50,
+      "cob": 9,
+      "chebi": 50,
+      "uberon": 50,
+      "pato": 50,
+      "go": 50,
+      "envo": 3,
+      "pr": 22,
+      "rdfs": 5,
+      "owl": 10,
+      "xsd": 4,
+      "clm": 4,
+      "ncbitaxon": 50,
+      "goche": 19,
+      "oba": 6,
+      "pmid": 15,
+      "fma": 3,
+      "swrl": 5
+    },
+    "scannedMb": 21,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:44:12.381Z",
+    "sha256": "e038f5ee87604a5bd12621a3017f89e94756b73d38828acc74badff2e4013ae1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 63,
+      "WARN": 1312,
+      "INFO": 181
+    },
+    "checkedAt": "2026-10-29T01:44:26.595Z",
+    "sha256": "e038f5ee87604a5bd12621a3017f89e94756b73d38828acc74badff2e4013ae1"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 200
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 452
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 170
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 6927,
+    "attempts": [],
+    "checkedAt": "2026-10-29T01:44:32.448Z",
+    "sha256": "e038f5ee87604a5bd12621a3017f89e94756b73d38828acc74badff2e4013ae1"
+  }
+}

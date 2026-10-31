@@ -1,0 +1,73 @@
+{
+  "id": "ptv",
+  "artefact": "https://w3id.org/ptv",
+  "checkedAt": "2026-10-29T01:56:01.304Z",
+  "sha256": "9a24e6ac34b761d3fb94733d9be3720e71b4868af3841dedbfda95a4d435c1ab",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:56:01.751Z",
+    "sha256": "9a24e6ac34b761d3fb94733d9be3720e71b4868af3841dedbfda95a4d435c1ab"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 8,
+      "WARN": 27,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T01:56:03.177Z",
+    "sha256": "9a24e6ac34b761d3fb94733d9be3720e71b4868af3841dedbfda95a4d435c1ab"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 21
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 92
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 98,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2776 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ptv:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T01:56:04.362Z",
+    "sha256": "9a24e6ac34b761d3fb94733d9be3720e71b4868af3841dedbfda95a4d435c1ab"
+  }
+}

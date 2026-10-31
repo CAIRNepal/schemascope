@@ -1,0 +1,112 @@
+{
+  "id": "chmo",
+  "artefact": "http://purl.obolibrary.org/obo/chmo.owl",
+  "checkedAt": "2026-10-28T02:49:01.671Z",
+  "sha256": "09125c379b53f6bbf5eb8e25a5d2a142fa5031b7aded5ddec758908f2c1fd2c0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 50,
+      "iao": 50,
+      "omo": 25,
+      "obi": 50,
+      "ro": 21,
+      "cob": 11,
+      "chebi": 31,
+      "rdfs": 3,
+      "xsd": 7,
+      "dc": 16,
+      "dcterms": 8,
+      "owl": 6,
+      "uberon": 4,
+      "go": 8,
+      "ncbitaxon": 11,
+      "obcs": 14,
+      "pato": 8,
+      "uo": 50
+    },
+    "scannedMb": 6,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:49:03.056Z",
+    "sha256": "09125c379b53f6bbf5eb8e25a5d2a142fa5031b7aded5ddec758908f2c1fd2c0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 177,
+      "WARN": 435,
+      "INFO": 74
+    },
+    "checkedAt": "2026-10-28T02:49:06.796Z",
+    "sha256": "09125c379b53f6bbf5eb8e25a5d2a142fa5031b7aded5ddec758908f2c1fd2c0"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 7,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 42
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 3278
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 37
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 30
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 3
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T02:50:44.626Z",
+    "sha256": "09125c379b53f6bbf5eb8e25a5d2a142fa5031b7aded5ddec758908f2c1fd2c0"
+  }
+}

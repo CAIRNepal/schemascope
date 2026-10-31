@@ -1,0 +1,83 @@
+{
+  "id": "cerealstoo",
+  "artefact": "http://rdf.ag/o/cerealstoo",
+  "checkedAt": "2026-10-28T02:07:01.500Z",
+  "sha256": "e45e693936aaafa62594447fabda1702679a27a4f5be80871dd95c3a67c15144",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "pato": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:07:02.124Z",
+    "sha256": "e45e693936aaafa62594447fabda1702679a27a4f5be80871dd95c3a67c15144"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 196,
+      "WARN": 0,
+      "INFO": 15
+    },
+    "checkedAt": "2026-10-28T02:07:04.241Z",
+    "sha256": "e45e693936aaafa62594447fabda1702679a27a4f5be80871dd95c3a67c15144"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 21
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 18
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 39
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T02:07:14.968Z",
+    "sha256": "e45e693936aaafa62594447fabda1702679a27a4f5be80871dd95c3a67c15144"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "sangyo",
+  "artefact": "https://wik.jp/sangyo/",
+  "checkedAt": "2026-10-29T02:42:33.966Z",
+  "sha256": "6908a0b5bc6f939438bf5dff6933f403298f35024f33d4c0084ae470efde4585",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:42:34.964Z",
+    "sha256": "6908a0b5bc6f939438bf5dff6933f403298f35024f33d4c0084ae470efde4585"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2131,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:42:38.200Z",
+    "sha256": "6908a0b5bc6f939438bf5dff6933f403298f35024f33d4c0084ae470efde4585"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3112 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sangyo:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T02:42:39.440Z",
+    "sha256": "6908a0b5bc6f939438bf5dff6933f403298f35024f33d4c0084ae470efde4585"
+  }
+}

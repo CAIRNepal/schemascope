@@ -1,0 +1,76 @@
+{
+  "id": "chameo",
+  "artefact": "https://w3id.org/emmo/domain/characterisation-methodology/chameo",
+  "checkedAt": "2026-10-28T02:19:19.174Z",
+  "sha256": "4b8e15b3c07b1e12b98b8561f4f4424fe8b61cde87e55da2a27c5d6becaaf912",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 9,
+      "foaf": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:19:19.525Z",
+    "sha256": "4b8e15b3c07b1e12b98b8561f4f4424fe8b61cde87e55da2a27c5d6becaaf912"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 253,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T02:19:42.221Z",
+    "sha256": "4b8e15b3c07b1e12b98b8561f4f4424fe8b61cde87e55da2a27c5d6becaaf912"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 14
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 24
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 48
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 201,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-433 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/chameo:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T02:19:43.218Z",
+    "sha256": "4b8e15b3c07b1e12b98b8561f4f4424fe8b61cde87e55da2a27c5d6becaaf912"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "uniprot-disease",
+  "artefact": "https://rest.uniprot.org/diseases/stream?compressed=false&format=obo&query=%28%2A%29",
+  "checkedAt": "2026-10-29T05:50:35.654Z",
+  "sha256": "812077abd7a827567cde04b6ee6ebdae051178edceb6645e3ae1a96ed81b06c8",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "mim": 50
+    },
+    "scannedMb": 4,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:50:41.333Z",
+    "sha256": "812077abd7a827567cde04b6ee6ebdae051178edceb6645e3ae1a96ed81b06c8"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 1601,
+      "WARN": 6,
+      "INFO": 6975
+    },
+    "checkedAt": "2026-10-29T05:50:46.429Z",
+    "sha256": "812077abd7a827567cde04b6ee6ebdae051178edceb6645e3ae1a96ed81b06c8"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3906 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/uniprot-disease:/work schemascope/oops --input-file /",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/uniprot-disease/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-29T05:50:47.220Z",
+    "sha256": "812077abd7a827567cde04b6ee6ebdae051178edceb6645e3ae1a96ed81b06c8"
+  }
+}

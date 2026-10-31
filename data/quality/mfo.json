@@ -1,0 +1,11 @@
+{
+  "id": "mfo",
+  "artefact": "http://purl.obolibrary.org/obo/mfo.owl",
+  "checkedAt": "2026-10-28T21:59:32.501Z",
+  "downloadError": "resolves to an HTML page (http://obofoundry.org/), not the ontology file",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:59:34.350Z"
+  }
+}

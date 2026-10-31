@@ -1,0 +1,81 @@
+{
+  "id": "ceon-actor",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ceon-actor/versions/2025-07-30.n3",
+  "checkedAt": "2026-10-28T02:05:12.633Z",
+  "sha256": "4301e810c2955c3bb488e81c625b424e8a1bfc190f60b6d9f68faf7db21fceb7",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ceon-actorodp": 11
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:05:13.530Z",
+    "sha256": "4301e810c2955c3bb488e81c625b424e8a1bfc190f60b6d9f68faf7db21fceb7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 6,
+      "WARN": 32,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T02:05:15.457Z",
+    "sha256": "4301e810c2955c3bb488e81c625b424e8a1bfc190f60b6d9f68faf7db21fceb7"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 9
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 37,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-379 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ceon-actor:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-28T02:05:16.720Z",
+    "sha256": "4301e810c2955c3bb488e81c625b424e8a1bfc190f60b6d9f68faf7db21fceb7"
+  }
+}

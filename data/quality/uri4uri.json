@@ -1,0 +1,61 @@
+{
+  "id": "uri4uri",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/uri4uri/versions/2013-04-01.n3",
+  "checkedAt": "2026-10-29T06:48:53.807Z",
+  "sha256": "115704367183f8ac8f1c3f900982c10f12f4c34c205062d688c969c034150068",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T06:49:03.574Z",
+    "sha256": "115704367183f8ac8f1c3f900982c10f12f4c34c205062d688c969c034150068"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 61,
+      "INFO": 23
+    },
+    "checkedAt": "2026-10-29T06:49:04.668Z",
+    "sha256": "115704367183f8ac8f1c3f900982c10f12f4c34c205062d688c969c034150068"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3923 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/uri4uri:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T06:49:05.531Z",
+    "sha256": "115704367183f8ac8f1c3f900982c10f12f4c34c205062d688c969c034150068"
+  }
+}

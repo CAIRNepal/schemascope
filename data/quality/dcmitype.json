@@ -1,0 +1,78 @@
+{
+  "id": "dcmitype",
+  "artefact": "http://aber-owl.net/media/ontologies/DCMITYPE/1/dcmitype.owl",
+  "checkedAt": "2026-10-28T16:57:15.942Z",
+  "sha256": "c840336ec229da1bc9ff424331cba0212dbf75f4310e5e7883ef0119fbc681d9",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "skos": 32,
+      "owl": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T16:57:17.138Z",
+    "sha256": "c840336ec229da1bc9ff424331cba0212dbf75f4310e5e7883ef0119fbc681d9"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 37,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T16:57:18.189Z",
+    "sha256": "c840336ec229da1bc9ff424331cba0212dbf75f4310e5e7883ef0119fbc681d9"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 15
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T16:57:24.223Z",
+    "sha256": "c840336ec229da1bc9ff424331cba0212dbf75f4310e5e7883ef0119fbc681d9"
+  }
+}

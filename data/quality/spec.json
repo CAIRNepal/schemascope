@@ -1,0 +1,11 @@
+{
+  "id": "spec",
+  "artefact": "http://www.w3.org/ns/spec",
+  "checkedAt": "2026-10-29T03:14:17.465Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:14:27.962Z"
+  }
+}

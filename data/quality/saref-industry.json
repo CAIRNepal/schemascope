@@ -1,0 +1,82 @@
+{
+  "id": "saref-industry",
+  "artefact": "https://saref.etsi.org/saref4inma/",
+  "checkedAt": "2026-10-29T02:43:34.717Z",
+  "sha256": "b4b07d9d492c675f3019c23a12c2cea37004d9778e11a19628afc1e175d12788",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "saref-building": 3,
+      "dcterms": 10
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:43:35.589Z",
+    "sha256": "b4b07d9d492c675f3019c23a12c2cea37004d9778e11a19628afc1e175d12788"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 52,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-29T02:43:38.243Z",
+    "sha256": "b4b07d9d492c675f3019c23a12c2cea37004d9778e11a19628afc1e175d12788"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 5
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 16
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 10
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 23,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3136 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/saref-industry:/work schemascope/oops --input-file /w"
+    ],
+    "checkedAt": "2026-10-29T02:43:39.371Z",
+    "sha256": "b4b07d9d492c675f3019c23a12c2cea37004d9778e11a19628afc1e175d12788"
+  }
+}

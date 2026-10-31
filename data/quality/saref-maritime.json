@@ -1,0 +1,87 @@
+{
+  "id": "saref-maritime",
+  "artefact": "https://saref.etsi.org/saref4mari/",
+  "checkedAt": "2026-10-29T02:43:44.863Z",
+  "sha256": "288b3c80aeed99c2dbe6baeedc13fc10eaada3cfdf47aa30ca355d9f45bd2a1d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 10
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:43:45.971Z",
+    "sha256": "288b3c80aeed99c2dbe6baeedc13fc10eaada3cfdf47aa30ca355d9f45bd2a1d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 129,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:43:49.468Z",
+    "sha256": "288b3c80aeed99c2dbe6baeedc13fc10eaada3cfdf47aa30ca355d9f45bd2a1d"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 57
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 18
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 62,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3140 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/saref-maritime:/work schemascope/oops --input-file /w"
+    ],
+    "checkedAt": "2026-10-29T02:43:50.674Z",
+    "sha256": "288b3c80aeed99c2dbe6baeedc13fc10eaada3cfdf47aa30ca355d9f45bd2a1d"
+  }
+}

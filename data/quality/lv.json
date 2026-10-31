@@ -1,0 +1,73 @@
+{
+  "id": "lv",
+  "artefact": "https://raw.githubusercontent.com/hbz/lobid-vocabs/master/lobid-vocab.ttl",
+  "checkedAt": "2026-10-28T21:32:59.132Z",
+  "sha256": "b2991004c011efd43d3cdfc21b49ae857e02861469b3aa8ccadad14af1a6ca8e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:32:59.337Z",
+    "sha256": "b2991004c011efd43d3cdfc21b49ae857e02861469b3aa8ccadad14af1a6ca8e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 118,
+      "WARN": 63,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T21:33:01.014Z",
+    "sha256": "b2991004c011efd43d3cdfc21b49ae857e02861469b3aa8ccadad14af1a6ca8e"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 18
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 14,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1962 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/lv:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T21:33:02.089Z",
+    "sha256": "b2991004c011efd43d3cdfc21b49ae857e02861469b3aa8ccadad14af1a6ca8e"
+  }
+}

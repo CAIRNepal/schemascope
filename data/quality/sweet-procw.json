@@ -1,0 +1,11 @@
+{
+  "id": "sweet-procw",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/procWave.ttl",
+  "checkedAt": "2026-10-29T03:36:42.507Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:36:53.008Z"
+  }
+}

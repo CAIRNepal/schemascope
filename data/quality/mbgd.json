@@ -1,0 +1,11 @@
+{
+  "id": "mbgd",
+  "artefact": "http://mbgd.genome.ad.jp/owl/mbgd.owl",
+  "checkedAt": "2026-10-28T21:46:08.844Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:46:24.244Z"
+  }
+}

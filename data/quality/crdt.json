@@ -1,0 +1,63 @@
+{
+  "id": "crdt",
+  "artefact": "https://vocab.noeldemartin.com/crdt/",
+  "checkedAt": "2026-10-28T15:05:59.506Z",
+  "sha256": "e846feda6ed6f40784a3d15a9c4549f4acc8262f282de11af2b61e2573fbcc33",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcmitype": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T15:06:00.052Z",
+    "sha256": "e846feda6ed6f40784a3d15a9c4549f4acc8262f282de11af2b61e2573fbcc33"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 16,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T15:06:01.891Z",
+    "sha256": "e846feda6ed6f40784a3d15a9c4549f4acc8262f282de11af2b61e2573fbcc33"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-656 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/crdt:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T15:06:03.308Z",
+    "sha256": "e846feda6ed6f40784a3d15a9c4549f4acc8262f282de11af2b61e2573fbcc33"
+  }
+}

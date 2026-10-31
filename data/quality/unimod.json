@@ -1,0 +1,57 @@
+{
+  "id": "unimod",
+  "artefact": "https://raw.githubusercontent.com/PRIDE-Utilities/pride-ontology/master/unimod.owl",
+  "checkedAt": "2026-10-29T05:47:24.744Z",
+  "sha256": "7c76d5df2ab9d5bd73c6f268c5dd2a797585d21ba0b9ca831628bca539516ef6",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 14,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:47:28.254Z",
+    "sha256": "7c76d5df2ab9d5bd73c6f268c5dd2a797585d21ba0b9ca831628bca539516ef6"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 30347,
+      "INFO": 8
+    },
+    "checkedAt": "2026-10-29T05:47:36.197Z",
+    "sha256": "7c76d5df2ab9d5bd73c6f268c5dd2a797585d21ba0b9ca831628bca539516ef6"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1349
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T05:48:15.263Z",
+    "sha256": "7c76d5df2ab9d5bd73c6f268c5dd2a797585d21ba0b9ca831628bca539516ef6"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "id": "sweet-propfr",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/propFraction.ttl",
+  "checkedAt": "2026-10-29T03:42:33.732Z",
+  "sha256": "42d4d53df7e2ebc670b8e87686e14c3abde38edd56450c4968cdf3ce01fbb495",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T03:42:34.157Z",
+    "sha256": "42d4d53df7e2ebc670b8e87686e14c3abde38edd56450c4968cdf3ce01fbb495"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 58,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-29T03:43:03.684Z",
+    "sha256": "42d4d53df7e2ebc670b8e87686e14c3abde38edd56450c4968cdf3ce01fbb495"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 5
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 58
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 58,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3384 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sweet-propfr:/work schemascope/oops --input-file /wor"
+    ],
+    "checkedAt": "2026-10-29T03:43:04.369Z",
+    "sha256": "42d4d53df7e2ebc670b8e87686e14c3abde38edd56450c4968cdf3ce01fbb495"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "id": "tmo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/tmo/versions/2012-07-03.n3",
+  "checkedAt": "2026-10-29T05:18:26.094Z",
+  "sha256": "283e46f0c192ca095367b9493a7501eb201a2b62140bb52a6dd0284f0d4a974b",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://translationalmedicineontology.googlecode.com/svn/trunk/ontology/tmo-external.owl",
+        "id": "translationalmedicineontology.googlecode.com/svn/trunk/ontology/tmo-external",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:18:27.606Z",
+    "sha256": "283e46f0c192ca095367b9493a7501eb201a2b62140bb52a6dd0284f0d4a974b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://translationalmedicineontology.googlecode.com/svn/trunk/ontology/tmo-external.owl> Cause: http://translationalmedicineontology.googlecode.com/svn/trunk/ontology/tmo-external.owl\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T05:18:28.430Z",
+    "sha256": "283e46f0c192ca095367b9493a7501eb201a2b62140bb52a6dd0284f0d4a974b"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 198
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 204,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3780 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tmo:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T05:18:29.298Z",
+    "sha256": "283e46f0c192ca095367b9493a7501eb201a2b62140bb52a6dd0284f0d4a974b"
+  }
+}

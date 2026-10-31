@@ -1,0 +1,11 @@
+{
+  "id": "sweet-phfi",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/phenFluidInstability.ttl",
+  "checkedAt": "2026-10-29T03:31:47.963Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:31:58.462Z"
+  }
+}

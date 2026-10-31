@@ -1,0 +1,67 @@
+{
+  "id": "hmas",
+  "artefact": "https://purl.org/hmas/",
+  "checkedAt": "2026-10-28T20:42:10.351Z",
+  "sha256": "6fd9eac86bf9d518e6e6e08fb5288a97eb9cd4abc42ad2f4ea69f6bdc03eeaea",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:42:13.896Z",
+    "sha256": "6fd9eac86bf9d518e6e6e08fb5288a97eb9cd4abc42ad2f4ea69f6bdc03eeaea"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 51,
+      "WARN": 19,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-28T20:42:15.032Z",
+    "sha256": "6fd9eac86bf9d518e6e6e08fb5288a97eb9cd4abc42ad2f4ea69f6bdc03eeaea"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 7,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1510 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/hmas:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T20:42:15.898Z",
+    "sha256": "6fd9eac86bf9d518e6e6e08fb5288a97eb9cd4abc42ad2f4ea69f6bdc03eeaea"
+  }
+}

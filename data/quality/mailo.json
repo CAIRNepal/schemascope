@@ -1,0 +1,44 @@
+{
+  "id": "mailo",
+  "artefact": "https://w3id.org/mailo",
+  "checkedAt": "2026-10-28T21:34:39.873Z",
+  "sha256": "0cf9af6c9ba29af018a9ffcb2ea77c532133a5832e997ec0fe3574dba870d3a8",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 12,
+      "rdfs": 6,
+      "xsd": 4,
+      "dcterms": 13,
+      "eli": 3,
+      "airo": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:34:40.539Z",
+    "sha256": "0cf9af6c9ba29af018a9ffcb2ea77c532133a5832e997ec0fe3574dba870d3a8"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 126,
+      "WARN": 142,
+      "INFO": 29
+    },
+    "checkedAt": "2026-10-28T21:34:45.013Z",
+    "sha256": "0cf9af6c9ba29af018a9ffcb2ea77c532133a5832e997ec0fe3574dba870d3a8"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1976 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mailo:/work schemascope/oops --input-file /work/ontol",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mailo/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T21:34:46.104Z",
+    "sha256": "0cf9af6c9ba29af018a9ffcb2ea77c532133a5832e997ec0fe3574dba870d3a8"
+  }
+}

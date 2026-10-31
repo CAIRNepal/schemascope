@@ -1,0 +1,70 @@
+{
+  "id": "rofitrda",
+  "artefact": "http://rdaregistry.info/termList/rofitrda/",
+  "checkedAt": "2026-10-29T02:32:19.827Z",
+  "sha256": "80c85ba440746d0865458a153f2441262c815d97392a9380ab627071cb1eca30",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "skos": 5,
+      "dc": 9
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:32:20.125Z",
+    "sha256": "80c85ba440746d0865458a153f2441262c815d97392a9380ab627071cb1eca30"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 12,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:32:21.844Z",
+    "sha256": "80c85ba440746d0865458a153f2441262c815d97392a9380ab627071cb1eca30"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3056 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rofitrda:/work schemascope/oops --input-file /work/on"
+    ],
+    "checkedAt": "2026-10-29T02:32:23.034Z",
+    "sha256": "80c85ba440746d0865458a153f2441262c815d97392a9380ab627071cb1eca30"
+  }
+}

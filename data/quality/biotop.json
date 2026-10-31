@@ -1,0 +1,103 @@
+{
+  "id": "biotop",
+  "artefact": "https://raw.githubusercontent.com/BioTopOntology/biotop/master/biotop.owl",
+  "checkedAt": "2026-10-28T01:42:23.882Z",
+  "sha256": "9debdd2b6b0eaa266c4dda8218e90a57db726666364c9f9a736efc4560299aea",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dc": 9,
+      "rdfs": 3,
+      "owl": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:42:24.082Z",
+    "sha256": "9debdd2b6b0eaa266c4dda8218e90a57db726666364c9f9a736efc4560299aea"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 7,
+      "WARN": 373,
+      "INFO": 64
+    },
+    "checkedAt": "2026-10-28T01:42:28.113Z",
+    "sha256": "9debdd2b6b0eaa266c4dda8218e90a57db726666364c9f9a736efc4560299aea"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 7,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 16
+      },
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 291
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 9
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 4
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:42:40.577Z",
+    "sha256": "9debdd2b6b0eaa266c4dda8218e90a57db726666364c9f9a736efc4560299aea"
+  }
+}

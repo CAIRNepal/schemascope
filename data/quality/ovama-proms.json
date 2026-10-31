@@ -1,0 +1,119 @@
+{
+  "id": "ovama-proms",
+  "artefact": "https://w3id.org/ovama-proms",
+  "checkedAt": "2026-10-29T00:35:52.340Z",
+  "sha256": "17043e55ce24ab267b799f42b16b0dd96e732c3ffdbd6d12b8987c0297ff8e1a",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://semanticscience.org/ontology/sio/v1.51/sio-release.owl",
+        "id": "semanticscience.org/ontology/sio/v1.51/sio-release",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/2004/02/skos/core",
+        "id": "skos",
+        "own": false
+      }
+    ],
+    "uses": {
+      "ncit": 10,
+      "sio": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:35:53.286Z",
+    "sha256": "17043e55ce24ab267b799f42b16b0dd96e732c3ffdbd6d12b8987c0297ff8e1a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 48,
+      "WARN": 72,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T00:35:56.470Z",
+    "sha256": "17043e55ce24ab267b799f42b16b0dd96e732c3ffdbd6d12b8987c0297ff8e1a"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 6,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 272
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 212
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 15
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P25",
+        "name": "Defining a relationship as inverse to itself",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P26",
+        "name": "Defining inverse relationships for a symmetric one",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 67
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:36:34.536Z",
+    "sha256": "17043e55ce24ab267b799f42b16b0dd96e732c3ffdbd6d12b8987c0297ff8e1a"
+  }
+}

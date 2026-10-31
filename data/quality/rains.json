@@ -1,0 +1,77 @@
+{
+  "id": "rains",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/rains/versions/2022-05-09.n3",
+  "checkedAt": "2026-10-29T02:03:58.225Z",
+  "sha256": "a0b57b5d15f83cefabd8aed179f28ffafd2961b60385ca8dd7b3f2674e43b5f6",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "eppl": 13,
+      "saont": 7,
+      "mls": 9
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:03:59.124Z",
+    "sha256": "a0b57b5d15f83cefabd8aed179f28ffafd2961b60385ca8dd7b3f2674e43b5f6"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 13,
+      "WARN": 106,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:04:00.763Z",
+    "sha256": "a0b57b5d15f83cefabd8aed179f28ffafd2961b60385ca8dd7b3f2674e43b5f6"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 10
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 8
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 8
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 83,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2818 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rains:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T02:04:02.165Z",
+    "sha256": "a0b57b5d15f83cefabd8aed179f28ffafd2961b60385ca8dd7b3f2674e43b5f6"
+  }
+}

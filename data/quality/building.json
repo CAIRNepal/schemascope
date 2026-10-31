@@ -1,0 +1,11 @@
+{
+  "id": "building",
+  "artefact": "https://bimerr.iot.linkeddata.es/def/building/ontology.xml",
+  "checkedAt": "2026-10-28T01:51:01.128Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:51:11.630Z"
+  }
+}

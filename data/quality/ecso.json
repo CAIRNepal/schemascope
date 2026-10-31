@@ -1,0 +1,113 @@
+{
+  "id": "ecso",
+  "artefact": "https://raw.githubusercontent.com/DataONEorg/sem-prov-ontologies/run4/observation/d1-ECSO.owl",
+  "checkedAt": "2026-10-28T17:52:50.808Z",
+  "sha256": "ab46e074c8f4165df687ad5e4a17099031cf31c890278ed8e0ca3e2102e9064b",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.dataone.org/odo/ECSO_/ENVO_import.owl",
+        "id": "purl.dataone.org/odo/ecso_/envo_import",
+        "own": false
+      },
+      {
+        "iri": "http://purl.dataone.org/odo/ECSO_/UO.owl",
+        "id": "purl.dataone.org/odo/ecso_/uo",
+        "own": false
+      },
+      {
+        "iri": "http://purl.dataone.org/odo/ECSO_/PATO_import.owl",
+        "id": "purl.dataone.org/odo/ecso_/pato_import",
+        "own": false
+      },
+      {
+        "iri": "http://ecoinformatics.org/oboe/oboe.1.2/oboe.owl",
+        "id": "ecoinformatics.org/oboe/oboe.1.2/oboe",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf",
+        "id": "w3.org/tr/skos-reference/skos-owl1-dl",
+        "own": false
+      }
+    ],
+    "uses": {
+      "iao": 6,
+      "bfo": 9,
+      "envo": 50,
+      "ro": 10,
+      "stato": 3,
+      "pato": 50,
+      "uo": 32,
+      "chebi": 50,
+      "xsd": 4,
+      "rdfs": 5,
+      "dc": 3,
+      "owl": 3,
+      "skos": 5
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:52:51.162Z",
+    "sha256": "ab46e074c8f4165df687ad5e4a17099031cf31c890278ed8e0ca3e2102e9064b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "cweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.dataone.org/odo/ECSO_/ENVO_import.owl> Cause: Server returned HTTP response code: 403 for URL: http://bioportal.bioontology.org/ontologies/ECSO/?p=classes&conceptid=http://purl.dataone.org/odo/ECSO_/ENVO_import.owl\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T17:52:53.176Z",
+    "sha256": "ab46e074c8f4165df687ad5e4a17099031cf31c890278ed8e0ca3e2102e9064b"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 61
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 375,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1044 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ecso:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T17:52:57.503Z",
+    "sha256": "ab46e074c8f4165df687ad5e4a17099031cf31c890278ed8e0ca3e2102e9064b"
+  }
+}

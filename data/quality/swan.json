@@ -1,0 +1,11 @@
+{
+  "id": "swan",
+  "artefact": "https://rawcdn.githack.com/pav-ontology/swan-ontology/2.0.1/swan.owl",
+  "checkedAt": "2026-10-29T03:21:17.518Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:21:28.019Z"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "hr",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/hr/versions/2013-10-23.n3",
+  "checkedAt": "2026-10-28T20:45:07.804Z",
+  "sha256": "64ee180616b6e427c5ceca36f86e71336a7ce14b27ae53ac0c90d5c1f2af98e1",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://iserve.kmi.open.ac.uk/ns/msm",
+        "id": "msm",
+        "own": true
+      },
+      {
+        "iri": "http://www.w3.org/2011/http",
+        "id": "http",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/2011/http-methods",
+        "id": "w3.org/2011/http-methods",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:45:08.880Z",
+    "sha256": "64ee180616b6e427c5ceca36f86e71336a7ce14b27ae53ac0c90d5c1f2af98e1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://iserve.kmi.open.ac.uk/ns/msm> Cause: Server returned HTTP response code: 403 for URL: https://research-archive.stem.open.ac.uk/iserve/\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T20:45:10.233Z",
+    "sha256": "64ee180616b6e427c5ceca36f86e71336a7ce14b27ae53ac0c90d5c1f2af98e1"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1539 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/hr:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T20:45:10.899Z",
+    "sha256": "64ee180616b6e427c5ceca36f86e71336a7ce14b27ae53ac0c90d5c1f2af98e1"
+  }
+}

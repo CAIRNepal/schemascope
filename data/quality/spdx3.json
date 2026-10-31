@@ -1,0 +1,11 @@
+{
+  "id": "spdx3",
+  "artefact": "https://spdx.org/rdf/3.0/spdx-model.ttl",
+  "checkedAt": "2026-10-29T03:14:06.963Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:14:17.464Z"
+  }
+}

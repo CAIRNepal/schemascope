@@ -1,0 +1,79 @@
+{
+  "id": "crsw",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/crsw/versions/2006-05-03.n3",
+  "checkedAt": "2026-10-28T15:07:11.783Z",
+  "sha256": "b6eb9a0288d90da8ef2b5b0b8350f46cc24c7fa342b6c3314d5ed35302e099a4",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.aktors.org/ontology/portal",
+        "id": "akt",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T15:07:13.633Z",
+    "sha256": "b6eb9a0288d90da8ef2b5b0b8350f46cc24c7fa342b6c3314d5ed35302e099a4"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://www.aktors.org/ontology/portal> Cause: landing.premiumsale.com\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T15:07:14.639Z",
+    "sha256": "b6eb9a0288d90da8ef2b5b0b8350f46cc24c7fa342b6c3314d5ed35302e099a4"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 11
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 4,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-670 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/crsw:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T15:07:15.660Z",
+    "sha256": "b6eb9a0288d90da8ef2b5b0b8350f46cc24c7fa342b6c3314d5ed35302e099a4"
+  }
+}

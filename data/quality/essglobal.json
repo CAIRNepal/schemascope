@@ -1,0 +1,67 @@
+{
+  "id": "essglobal",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/essglobal/versions/2015-05-04.n3",
+  "checkedAt": "2026-10-28T19:29:26.880Z",
+  "sha256": "466e87fbdb531024a9fe578d38fd62e5cd818c6666fee8ba7cd9bfaf5f995944",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:29:27.701Z",
+    "sha256": "466e87fbdb531024a9fe578d38fd62e5cd818c6666fee8ba7cd9bfaf5f995944"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 89,
+      "WARN": 68,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-28T19:29:28.699Z",
+    "sha256": "466e87fbdb531024a9fe578d38fd62e5cd818c6666fee8ba7cd9bfaf5f995944"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 9
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1158 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/essglobal:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-28T19:29:29.390Z",
+    "sha256": "466e87fbdb531024a9fe578d38fd62e5cd818c6666fee8ba7cd9bfaf5f995944"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "oplben",
+  "artefact": "http://www.openlinksw.com/ontology/benefits",
+  "checkedAt": "2026-10-29T00:28:13.247Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:28:13.473Z"
+  }
+}

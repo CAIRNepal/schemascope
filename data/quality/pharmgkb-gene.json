@@ -1,0 +1,54 @@
+{
+  "id": "pharmgkb-gene",
+  "artefact": "https://w3id.org/biopragmatics/resources/pharmgkb.gene/pharmgkb.gene.owl",
+  "checkedAt": "2026-10-29T00:56:24.447Z",
+  "sha256": "a89b752028b43ab5d93b39ec291f324405978e9ba91066994c23148c1779de1f",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 3
+    },
+    "scannedMb": 35,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:56:26.096Z",
+    "sha256": "a89b752028b43ab5d93b39ec291f324405978e9ba91066994c23148c1779de1f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 25041,
+      "INFO": 25041
+    },
+    "checkedAt": "2026-10-29T00:56:43.931Z",
+    "sha256": "a89b752028b43ab5d93b39ec291f324405978e9ba91066994c23148c1779de1f"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:56:50.861Z",
+    "sha256": "a89b752028b43ab5d93b39ec291f324405978e9ba91066994c23148c1779de1f"
+  }
+}

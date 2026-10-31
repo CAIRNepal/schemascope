@@ -1,0 +1,101 @@
+{
+  "id": "tis",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/tis/versions/2015-01-11.n3",
+  "checkedAt": "2026-10-29T05:18:19.175Z",
+  "sha256": "76f5b9426abc6e2f31b4d609295e6854880d99edc3e7d787ee9a153e4adac6d7",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.ontologydesignpatterns.org/cp/owl/timeinterval.owl",
+        "id": "ti",
+        "own": true
+      },
+      {
+        "iri": "http://www.ontologydesignpatterns.org/cp/owl/situation.owl",
+        "id": "situ",
+        "own": true
+      },
+      {
+        "iri": "http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl",
+        "id": "cpa",
+        "own": true
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:18:19.993Z",
+    "sha256": "76f5b9426abc6e2f31b4d609295e6854880d99edc3e7d787ee9a153e4adac6d7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 5,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T05:18:21.678Z",
+    "sha256": "76f5b9426abc6e2f31b4d609295e6854880d99edc3e7d787ee9a153e4adac6d7"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 3,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3776 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tis:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T05:18:22.761Z",
+    "sha256": "76f5b9426abc6e2f31b4d609295e6854880d99edc3e7d787ee9a153e4adac6d7"
+  }
+}

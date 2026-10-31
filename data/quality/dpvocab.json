@@ -1,0 +1,54 @@
+{
+  "id": "dpvocab",
+  "artefact": "https://w3c-cg.github.io/dpv/2.3/dpv/dpv.rdf",
+  "checkedAt": "2026-10-28T17:18:36.099Z",
+  "sha256": "f9108745fa5806529f43b885e980e3bd8dbeef8b9abd392a0936f088fb357a8f",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "foaf": 3,
+      "dcterms": 6
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:18:36.415Z",
+    "sha256": "f9108745fa5806529f43b885e980e3bd8dbeef8b9abd392a0936f088fb357a8f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1131,
+      "WARN": 5,
+      "INFO": 778
+    },
+    "checkedAt": "2026-10-28T17:18:38.792Z",
+    "sha256": "f9108745fa5806529f43b885e980e3bd8dbeef8b9abd392a0936f088fb357a8f"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 8
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T17:18:49.238Z",
+    "sha256": "f9108745fa5806529f43b885e980e3bd8dbeef8b9abd392a0936f088fb357a8f"
+  }
+}

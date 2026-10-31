@@ -1,0 +1,63 @@
+{
+  "id": "loc-carriers",
+  "artefact": "http://id.loc.gov/vocabulary/carriers.rdf",
+  "checkedAt": "2026-10-28T21:28:25.007Z",
+  "sha256": "2aaff79fa3595f646ebebfc2f128292c1557f34314c9403542c21f678639bac1",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:28:25.274Z",
+    "sha256": "2aaff79fa3595f646ebebfc2f128292c1557f34314c9403542c21f678639bac1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 60,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:28:26.517Z",
+    "sha256": "2aaff79fa3595f646ebebfc2f128292c1557f34314c9403542c21f678639bac1"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:28:33.054Z",
+    "sha256": "2aaff79fa3595f646ebebfc2f128292c1557f34314c9403542c21f678639bac1"
+  }
+}

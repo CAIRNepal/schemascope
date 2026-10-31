@@ -1,0 +1,100 @@
+{
+  "id": "semsur",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/semsur/versions/2018-04-20.n3",
+  "checkedAt": "2026-10-29T02:50:41.447Z",
+  "sha256": "4ba7c721bacc08fab192deaf4f1404683d34121a7a6f8a6329763f6cf2839ea2",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://swrl.stanford.edu/ontologies/3.3/swrla.owl",
+        "id": "swrl.stanford.edu/ontologies/3.3/swrla",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/spar/deo",
+        "id": "deo",
+        "own": false
+      }
+    ],
+    "uses": {
+      "doco": 50,
+      "frbr": 50,
+      "fabio": 50
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:50:53.972Z",
+    "sha256": "4ba7c721bacc08fab192deaf4f1404683d34121a7a6f8a6329763f6cf2839ea2"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://www.w3.org/2016/03/mls#> Cause: https://www.w3.org/2016/03/mls\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T02:51:00.884Z",
+    "sha256": "4ba7c721bacc08fab192deaf4f1404683d34121a7a6f8a6329763f6cf2839ea2"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 2,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P06",
+        "name": "Including cycles in a class hierarchy",
+        "importance": "critical",
+        "affected": 34
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 105
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 36
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 377
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 138
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 399,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3241 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/semsur:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T02:51:02.025Z",
+    "sha256": "4ba7c721bacc08fab192deaf4f1404683d34121a7a6f8a6329763f6cf2839ea2"
+  }
+}

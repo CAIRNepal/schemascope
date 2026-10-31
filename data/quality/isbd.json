@@ -1,0 +1,81 @@
+{
+  "id": "isbd",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/isbd/versions/2015-03-11.n3",
+  "checkedAt": "2026-10-28T21:14:56.670Z",
+  "sha256": "06f8211646298794ea50683036bd14f5dd9eef911810648cfcc73dc8d51fddde",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "frbrer": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:14:58.133Z",
+    "sha256": "06f8211646298794ea50683036bd14f5dd9eef911810648cfcc73dc8d51fddde"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 360,
+      "WARN": 195,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T21:15:00.085Z",
+    "sha256": "06f8211646298794ea50683036bd14f5dd9eef911810648cfcc73dc8d51fddde"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 3,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 27,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1687 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/isbd:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T21:15:01.408Z",
+    "sha256": "06f8211646298794ea50683036bd14f5dd9eef911810648cfcc73dc8d51fddde"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "id": "bbc",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/bbc/versions/2015-03-19.n3",
+  "checkedAt": "2026-10-28T00:45:12.896Z",
+  "sha256": "7ad5709b024e6386f33e9790aa7f976f9bc46a37d3eab0ec8e4c9bdcfaa4ff9c",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.bbc.co.uk/ontologies/creativework",
+        "id": "cwork",
+        "own": true
+      },
+      {
+        "iri": "http://purl.org/dc/elements/1.1/",
+        "id": "dc",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/dc/terms/",
+        "id": "dcterms",
+        "own": false
+      },
+      {
+        "iri": "http://www.bbc.co.uk/ontologies/provenance",
+        "id": "bbcprov",
+        "own": true
+      }
+    ],
+    "uses": {
+      "rdfs": 6,
+      "owl": 10,
+      "bbcprov": 8,
+      "xsd": 4,
+      "bbccore": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T00:45:14.962Z",
+    "sha256": "7ad5709b024e6386f33e9790aa7f976f9bc46a37d3eab0ec8e4c9bdcfaa4ff9c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "er.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1243)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1143)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadImports(OWLOntologyManagerImpl.java:1873)\n\n\n\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T00:45:17.215Z",
+    "sha256": "7ad5709b024e6386f33e9790aa7f976f9bc46a37d3eab0ec8e4c9bdcfaa4ff9c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 4
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 5,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-149 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/bbc:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T00:45:18.628Z",
+    "sha256": "7ad5709b024e6386f33e9790aa7f976f9bc46a37d3eab0ec8e4c9bdcfaa4ff9c"
+  }
+}

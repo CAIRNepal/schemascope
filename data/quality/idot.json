@@ -1,0 +1,85 @@
+{
+  "id": "idot",
+  "artefact": "https://github.com/identifiers-org/ontop/raw/refs/heads/main/idorg-ontology/idorg-ontology.ttl",
+  "checkedAt": "2026-10-28T21:07:03.779Z",
+  "sha256": "36c730af45dbc16fd24bf2b0a3de1c310e597d660e02ebf1e7534702ecc68a51",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:07:04.305Z",
+    "sha256": "36c730af45dbc16fd24bf2b0a3de1c310e597d660e02ebf1e7534702ecc68a51"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 12,
+      "WARN": 21,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:07:05.329Z",
+    "sha256": "36c730af45dbc16fd24bf2b0a3de1c310e597d660e02ebf1e7534702ecc68a51"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 2,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1614 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/idot:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T21:07:06.022Z",
+    "sha256": "36c730af45dbc16fd24bf2b0a3de1c310e597d660e02ebf1e7534702ecc68a51"
+  }
+}

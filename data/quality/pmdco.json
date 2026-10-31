@@ -1,0 +1,84 @@
+{
+  "id": "pmdco",
+  "artefact": "https://github.com/materialdigital/core-ontology/raw/refs/heads/main/pmdco.owl",
+  "checkedAt": "2026-10-29T01:13:06.463Z",
+  "sha256": "271ed21d80c5edcc1a7fe64a6a628504a10b994eed4982c6fd66591b08c182cb",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 50,
+      "bfo": 50,
+      "cob": 4,
+      "obi": 25,
+      "ro": 40,
+      "chebi": 50,
+      "uo": 12,
+      "pato": 8,
+      "xsd": 7,
+      "dcterms": 8,
+      "rdfs": 4,
+      "skos": 4,
+      "owl": 8,
+      "qudt": 4,
+      "time": 3,
+      "swrl": 5
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:13:07.296Z",
+    "sha256": "271ed21d80c5edcc1a7fe64a6a628504a10b994eed4982c6fd66591b08c182cb"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 1126,
+      "WARN": 1509,
+      "INFO": 44
+    },
+    "checkedAt": "2026-10-29T01:13:10.178Z",
+    "sha256": "271ed21d80c5edcc1a7fe64a6a628504a10b994eed4982c6fd66591b08c182cb"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 18
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 15
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1191,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2659 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/pmdco:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T01:14:08.455Z",
+    "sha256": "271ed21d80c5edcc1a7fe64a6a628504a10b994eed4982c6fd66591b08c182cb"
+  }
+}

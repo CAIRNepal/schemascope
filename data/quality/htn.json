@@ -1,0 +1,80 @@
+{
+  "id": "htn",
+  "artefact": "http://purl.obolibrary.org/obo/htn.owl",
+  "checkedAt": "2026-10-28T20:46:25.556Z",
+  "sha256": "3a37d97cc30706842afbde47543e7280907a6dc15bb4292a22a7c295242ca59c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 50,
+      "iao": 50,
+      "ro": 50,
+      "obi": 15,
+      "uo": 3,
+      "pato": 40,
+      "go": 38,
+      "ogms": 50,
+      "doid": 50,
+      "ncbitaxon": 4,
+      "vso": 47,
+      "rdfs": 4,
+      "xsd": 6,
+      "owl": 9,
+      "dc": 17,
+      "dcterms": 3,
+      "omrse": 3,
+      "pmid": 4
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:46:26.033Z",
+    "sha256": "3a37d97cc30706842afbde47543e7280907a6dc15bb4292a22a7c295242ca59c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 167,
+      "WARN": 441,
+      "INFO": 220
+    },
+    "checkedAt": "2026-10-28T20:46:28.088Z",
+    "sha256": "3a37d97cc30706842afbde47543e7280907a6dc15bb4292a22a7c295242ca59c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1551 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/htn:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T20:46:43.806Z",
+    "sha256": "3a37d97cc30706842afbde47543e7280907a6dc15bb4292a22a7c295242ca59c"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "id": "mwo",
+  "artefact": "https://github.com/ISE-FIZKarlsruhe/mwo/raw/refs/heads/main/mwo.owl",
+  "checkedAt": "2026-10-28T22:40:05.421Z",
+  "sha256": "3391c8fbf4da1d0c90c295ee0da3593584ed719e181b4b11f7c99b7439d4e5f5",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 50,
+      "bfo": 50,
+      "obi": 30,
+      "ro": 24,
+      "so": 4,
+      "t4fs": 4,
+      "dc": 5,
+      "dcterms": 7,
+      "skos": 11,
+      "xsd": 5,
+      "owl": 9,
+      "swrl": 5
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:40:06.093Z",
+    "sha256": "3391c8fbf4da1d0c90c295ee0da3593584ed719e181b4b11f7c99b7439d4e5f5"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 77,
+      "WARN": 412,
+      "INFO": 33
+    },
+    "checkedAt": "2026-10-28T22:40:07.712Z",
+    "sha256": "3391c8fbf4da1d0c90c295ee0da3593584ed719e181b4b11f7c99b7439d4e5f5"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 11
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 94,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2164 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mwo:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T22:40:50.411Z",
+    "sha256": "3391c8fbf4da1d0c90c295ee0da3593584ed719e181b4b11f7c99b7439d4e5f5"
+  }
+}

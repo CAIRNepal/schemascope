@@ -1,0 +1,66 @@
+{
+  "id": "faldo",
+  "artefact": "http://aber-owl.net/media/ontologies/FALDO/1/faldo.owl",
+  "checkedAt": "2026-10-28T19:39:53.199Z",
+  "sha256": "0d36c0f7fdfd71dfc12952a2041114e0c7882d3f0b541bb2e6e15808721f91ef",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 3,
+      "rdf": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:39:54.390Z",
+    "sha256": "0d36c0f7fdfd71dfc12952a2041114e0c7882d3f0b541bb2e6e15808721f91ef"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 26,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T19:39:55.288Z",
+    "sha256": "0d36c0f7fdfd71dfc12952a2041114e0c7882d3f0b541bb2e6e15808721f91ef"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:40:00.879Z",
+    "sha256": "0d36c0f7fdfd71dfc12952a2041114e0c7882d3f0b541bb2e6e15808721f91ef"
+  }
+}

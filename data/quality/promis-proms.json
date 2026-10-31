@@ -1,0 +1,86 @@
+{
+  "id": "promis-proms",
+  "artefact": "https://w3id.org/promis-proms",
+  "checkedAt": "2026-10-29T01:50:47.323Z",
+  "sha256": "fc4576f9dba4a15d29f95686f85647da2771f693746e9421494f48a86ed92611",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://semanticscience.org/ontology/sio/v1.51/sio-release.owl",
+        "id": "semanticscience.org/ontology/sio/v1.51/sio-release",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/2004/02/skos/core",
+        "id": "skos",
+        "own": false
+      }
+    ],
+    "uses": {
+      "ncit": 18
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:50:48.280Z",
+    "sha256": "fc4576f9dba4a15d29f95686f85647da2771f693746e9421494f48a86ed92611"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 202,
+      "WARN": 177,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T01:50:51.653Z",
+    "sha256": "fc4576f9dba4a15d29f95686f85647da2771f693746e9421494f48a86ed92611"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 157
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 157,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2749 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/promis-proms:/work schemascope/oops --input-file /wor"
+    ],
+    "checkedAt": "2026-10-29T01:50:52.355Z",
+    "sha256": "fc4576f9dba4a15d29f95686f85647da2771f693746e9421494f48a86ed92611"
+  }
+}

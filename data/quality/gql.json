@@ -1,0 +1,11 @@
+{
+  "id": "gql",
+  "artefact": "http://www.openlinksw.com/schemas/graphql",
+  "checkedAt": "2026-10-28T20:33:04.042Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T20:33:04.332Z"
+  }
+}

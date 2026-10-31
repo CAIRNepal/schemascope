@@ -1,0 +1,70 @@
+{
+  "id": "lswpm",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/lswpm/versions/2015-09-24.n3",
+  "checkedAt": "2026-10-28T21:32:32.105Z",
+  "sha256": "0892ad597bfcd09a409906b1cb5a5b862de0f8f0bb01ff1bced933e1419501b9",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://semanticscience.org/ontology/sio.owl",
+        "id": "semanticscience.org/ontology/sio",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/dcat",
+        "id": "dcat",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/prov-o#",
+        "id": "w3.org/ns/prov-o",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:32:32.680Z",
+    "sha256": "0892ad597bfcd09a409906b1cb5a5b862de0f8f0bb01ff1bced933e1419501b9"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 12,
+      "WARN": 196,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T21:32:37.882Z",
+    "sha256": "0892ad597bfcd09a409906b1cb5a5b862de0f8f0bb01ff1bced933e1419501b9"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1948 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/lswpm:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T21:32:38.806Z",
+    "sha256": "0892ad597bfcd09a409906b1cb5a5b862de0f8f0bb01ff1bced933e1419501b9"
+  }
+}

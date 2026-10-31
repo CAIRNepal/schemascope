@@ -1,0 +1,57 @@
+{
+  "id": "edifact-o",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/edifact-o/versions/2023-12-06.n3",
+  "checkedAt": "2026-10-28T17:55:02.580Z",
+  "sha256": "71e7fe531f21a3514b44c8cee4023f157b3b9063d894eb5a2d4b1eed7de0444e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "schema": 3,
+      "frapo": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:55:03.584Z",
+    "sha256": "71e7fe531f21a3514b44c8cee4023f157b3b9063d894eb5a2d4b1eed7de0444e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 9,
+      "WARN": 310,
+      "INFO": 6
+    },
+    "checkedAt": "2026-10-28T17:55:04.829Z",
+    "sha256": "71e7fe531f21a3514b44c8cee4023f157b3b9063d894eb5a2d4b1eed7de0444e"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 27,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1061 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/edifact-o:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-28T17:55:05.480Z",
+    "sha256": "71e7fe531f21a3514b44c8cee4023f157b3b9063d894eb5a2d4b1eed7de0444e"
+  }
+}

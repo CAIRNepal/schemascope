@@ -1,0 +1,11 @@
+{
+  "id": "dfc-b",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/dfcb/versions/2019-02-20.n3",
+  "checkedAt": "2026-10-28T17:01:17.154Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T17:01:17.364Z"
+  }
+}

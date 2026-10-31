@@ -1,0 +1,53 @@
+{
+  "id": "oa",
+  "artefact": "http://aber-owl.net/media/ontologies/OA/1/oa.owl",
+  "checkedAt": "2026-10-28T23:23:30.788Z",
+  "sha256": "f63a5c543e7094dccb8bea29e649554eb70b9c3926bb4f1279dd87f3c994fb2e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:23:31.965Z",
+    "sha256": "f63a5c543e7094dccb8bea29e649554eb70b9c3926bb4f1279dd87f3c994fb2e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 50,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-28T23:23:33.206Z",
+    "sha256": "f63a5c543e7094dccb8bea29e649554eb70b9c3926bb4f1279dd87f3c994fb2e"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T23:23:39.221Z",
+    "sha256": "f63a5c543e7094dccb8bea29e649554eb70b9c3926bb4f1279dd87f3c994fb2e"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "battinfo",
+  "artefact": "https://raw.githubusercontent.com/BIG-MAP/BattINFO/master/battinfo.ttl",
+  "checkedAt": "2026-10-28T00:44:09.271Z",
+  "sha256": "f5d23967492667b23474556f3e8695435d1e68c6d45b165ffd7f582421e90618",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://w3id.org/emmo/domain/battery/0.13.0-beta/battery",
+        "id": "w3id.org/emmo/domain/battery/0.13.0-beta/battery",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dcterms": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T00:44:09.524Z",
+    "sha256": "f5d23967492667b23474556f3e8695435d1e68c6d45b165ffd7f582421e90618"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T00:45:11.262Z",
+    "sha256": "f5d23967492667b23474556f3e8695435d1e68c6d45b165ffd7f582421e90618"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-147 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/battinfo:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-28T00:45:12.895Z",
+    "sha256": "f5d23967492667b23474556f3e8695435d1e68c6d45b165ffd7f582421e90618"
+  }
+}

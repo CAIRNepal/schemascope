@@ -1,0 +1,42 @@
+{
+  "id": "gfo-light",
+  "artefact": "https://w3id.org/gfo-light",
+  "checkedAt": "2026-10-28T20:23:08.144Z",
+  "sha256": "15813b1f0ab7fbdd50c6484dd26ab258f7ff2e5d58260678132256a8832b78bc",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 17,
+      "dc": 5,
+      "rdfs": 6,
+      "skos": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:23:08.512Z",
+    "sha256": "15813b1f0ab7fbdd50c6484dd26ab258f7ff2e5d58260678132256a8832b78bc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 37,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T20:23:10.170Z",
+    "sha256": "15813b1f0ab7fbdd50c6484dd26ab258f7ff2e5d58260678132256a8832b78bc"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1375 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gfo-light:/work schemascope/oops --input-file /work/o",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gfo-light/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T20:23:10.812Z",
+    "sha256": "15813b1f0ab7fbdd50c6484dd26ab258f7ff2e5d58260678132256a8832b78bc"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "id": "gx",
+  "artefact": "https://registry.lab.gaia-x.eu/development/owl/development",
+  "checkedAt": "2026-10-28T20:35:34.036Z",
+  "sha256": "abf1a8b848daf160c5e3a00cdd2fe02ef18d2d291e5e966e6b35ff12bbf8400d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "qudt": 4,
+      "vcard": 4
+    },
+    "scannedMb": 3,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:35:36.276Z",
+    "sha256": "abf1a8b848daf160c5e3a00cdd2fe02ef18d2d291e5e966e6b35ff12bbf8400d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 53,
+      "WARN": 6,
+      "INFO": 58
+    },
+    "checkedAt": "2026-10-28T20:35:46.631Z",
+    "sha256": "abf1a8b848daf160c5e3a00cdd2fe02ef18d2d291e5e966e6b35ff12bbf8400d"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 4,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 185
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 2020
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 185
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 9028,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1463 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gx:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T20:35:48.582Z",
+    "sha256": "abf1a8b848daf160c5e3a00cdd2fe02ef18d2d291e5e966e6b35ff12bbf8400d"
+  }
+}

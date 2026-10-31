@@ -1,0 +1,11 @@
+{
+  "id": "ssn-system",
+  "artefact": "http://www.w3.org/ns/ssn/systems",
+  "checkedAt": "2026-10-29T03:17:26.498Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:17:36.999Z"
+  }
+}

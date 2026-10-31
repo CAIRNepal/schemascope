@@ -1,0 +1,61 @@
+{
+  "id": "holy",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/holy/versions/2023-06-14.n3",
+  "checkedAt": "2026-10-28T20:42:26.854Z",
+  "sha256": "f033130ff43c6419caf2a0574a9f223bb618268bca7946e471a76bcae2a56f4a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:42:27.929Z",
+    "sha256": "f033130ff43c6419caf2a0574a9f223bb618268bca7946e471a76bcae2a56f4a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": false,
+    "unsatisfiable": null,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 32,
+      "WARN": 156,
+      "INFO": 6
+    },
+    "checkedAt": "2026-10-28T20:42:31.023Z",
+    "sha256": "f033130ff43c6419caf2a0574a9f223bb618268bca7946e471a76bcae2a56f4a"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 4
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 100,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1519 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/holy:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T20:42:32.256Z",
+    "sha256": "f033130ff43c6419caf2a0574a9f223bb618268bca7946e471a76bcae2a56f4a"
+  }
+}

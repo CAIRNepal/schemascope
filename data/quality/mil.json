@@ -1,0 +1,83 @@
+{
+  "id": "mil",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/mil/versions/2015-07-05.n3",
+  "checkedAt": "2026-10-28T22:01:08.159Z",
+  "sha256": "d52e4df1c4edfe5aa4fc872edbdaace2c258b0c79a0933720d23ba45b471d462",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "rdf": 4,
+      "owl": 22,
+      "dc": 7,
+      "rdfs": 6,
+      "xsd": 3,
+      "void": 5,
+      "skos": 7,
+      "cc": 3,
+      "org": 10
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:01:09.868Z",
+    "sha256": "d52e4df1c4edfe5aa4fc872edbdaace2c258b0c79a0933720d23ba45b471d462"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 4528,
+      "WARN": 41,
+      "INFO": 142
+    },
+    "checkedAt": "2026-10-28T22:01:13.880Z",
+    "sha256": "d52e4df1c4edfe5aa4fc872edbdaace2c258b0c79a0933720d23ba45b471d462"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 10
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 62
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 12
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 142,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2062 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mil:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T22:01:15.253Z",
+    "sha256": "d52e4df1c4edfe5aa4fc872edbdaace2c258b0c79a0933720d23ba45b471d462"
+  }
+}

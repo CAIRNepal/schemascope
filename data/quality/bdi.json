@@ -1,0 +1,11 @@
+{
+  "id": "bdi",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/bdi/versions/2026-04-13.n3",
+  "checkedAt": "2026-10-28T01:03:06.032Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:03:07.369Z"
+  }
+}

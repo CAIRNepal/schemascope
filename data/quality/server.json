@@ -1,0 +1,69 @@
+{
+  "id": "server",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/server/versions/2025-02-05.n3",
+  "checkedAt": "2026-10-29T02:51:51.407Z",
+  "sha256": "2261f5e5397f8153c0d11d314e2c8db07bf4ad6ab8af35c8a6da38a586b78e9e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "qudt": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:51:52.425Z",
+    "sha256": "2261f5e5397f8153c0d11d314e2c8db07bf4ad6ab8af35c8a6da38a586b78e9e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 52,
+      "INFO": 11
+    },
+    "checkedAt": "2026-10-29T02:51:53.783Z",
+    "sha256": "2261f5e5397f8153c0d11d314e2c8db07bf4ad6ab8af35c8a6da38a586b78e9e"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 8
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 23,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3257 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/server:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T02:51:54.830Z",
+    "sha256": "2261f5e5397f8153c0d11d314e2c8db07bf4ad6ab8af35c8a6da38a586b78e9e"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "zp",
+  "artefact": "http://purl.obolibrary.org/obo/zp.owl",
+  "checkedAt": "2026-10-29T08:15:30.115Z",
+  "sha256": "2117e2b532a847a89ca5a3af798fc6a2bc258add6433370a7f9cc5559970a93d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 4,
+      "bfo": 18,
+      "ro": 50,
+      "bspo": 50,
+      "pato": 50,
+      "chebi": 50,
+      "owl": 6,
+      "go": 50,
+      "mpath": 50,
+      "zfa": 50,
+      "zfs": 39
+    },
+    "scannedMb": 176,
+    "truncated": false,
+    "scannedAt": "2026-10-29T08:21:17.761Z",
+    "sha256": "2117e2b532a847a89ca5a3af798fc6a2bc258add6433370a7f9cc5559970a93d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 48157,
+      "WARN": 18867,
+      "INFO": 550
+    },
+    "checkedAt": "2026-10-29T08:22:05.605Z",
+    "sha256": "2117e2b532a847a89ca5a3af798fc6a2bc258add6433370a7f9cc5559970a93d"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 76
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 14655
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 54
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 71772,
+    "attempts": [],
+    "checkedAt": "2026-10-29T08:22:45.481Z",
+    "sha256": "2117e2b532a847a89ca5a3af798fc6a2bc258add6433370a7f9cc5559970a93d"
+  }
+}

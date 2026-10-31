@@ -1,0 +1,64 @@
+{
+  "id": "iceo",
+  "artefact": "http://purl.obolibrary.org/obo/iceo.owl",
+  "checkedAt": "2026-10-28T20:52:27.945Z",
+  "sha256": "b647e59b45ce38ddd30c06213058d9a58164b20a73dbf297e7b327a93c8c7f51",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 32,
+      "iao": 19,
+      "ogg": 50,
+      "ro": 36,
+      "chebi": 3,
+      "go": 13,
+      "ncbitaxon": 50,
+      "xsd": 8,
+      "rdfs": 5,
+      "dc": 7,
+      "otcs": 4
+    },
+    "scannedMb": 37,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:52:29.252Z",
+    "sha256": "b647e59b45ce38ddd30c06213058d9a58164b20a73dbf297e7b327a93c8c7f51"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1074,
+      "WARN": 29447,
+      "INFO": 2425
+    },
+    "checkedAt": "2026-10-28T20:52:55.922Z",
+    "sha256": "b647e59b45ce38ddd30c06213058d9a58164b20a73dbf297e7b327a93c8c7f51"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [],
+    "checkedAt": "2026-10-28T20:53:05.635Z",
+    "sha256": "b647e59b45ce38ddd30c06213058d9a58164b20a73dbf297e7b327a93c8c7f51"
+  }
+}

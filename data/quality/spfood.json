@@ -1,0 +1,11 @@
+{
+  "id": "spfood",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/spfood/versions/2015-01-11.n3",
+  "checkedAt": "2026-10-29T03:14:38.465Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:14:48.965Z"
+  }
+}

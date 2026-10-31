@@ -1,0 +1,79 @@
+{
+  "id": "tsdcr",
+  "artefact": "https://w3id.org/oseg/ont/tsdc/req",
+  "checkedAt": "2026-10-29T05:32:40.219Z",
+  "sha256": "db0cd06008d515d11da78e5c3b6dff2ecd672e69ce5a0f0d1ab88fe3557b774d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:32:40.806Z",
+    "sha256": "db0cd06008d515d11da78e5c3b6dff2ecd672e69ce5a0f0d1ab88fe3557b774d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 11,
+      "INFO": 28
+    },
+    "checkedAt": "2026-10-29T05:32:42.467Z",
+    "sha256": "db0cd06008d515d11da78e5c3b6dff2ecd672e69ce5a0f0d1ab88fe3557b774d"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 22
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 28,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3864 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tsdcr:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T05:32:43.614Z",
+    "sha256": "db0cd06008d515d11da78e5c3b6dff2ecd672e69ce5a0f0d1ab88fe3557b774d"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "id": "rosetta",
+  "artefact": "https://raw.githubusercontent.com/jacekmalec/Rosetta_ontology/master/rosetta.owl",
+  "checkedAt": "2026-10-29T02:33:46.888Z",
+  "sha256": "bc5320c8d65157db8d82d6ac00a460348e42f3266d0d0758c321d1ef6f66b2c6",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:33:47.149Z",
+    "sha256": "bc5320c8d65157db8d82d6ac00a460348e42f3266d0d0758c321d1ef6f66b2c6"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1543,
+      "WARN": 641,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-29T02:33:51.514Z",
+    "sha256": "bc5320c8d65157db8d82d6ac00a460348e42f3266d0d0758c321d1ef6f66b2c6"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 5,
+    "minor": 7,
+    "pitfalls": [
+      {
+        "code": "P02",
+        "name": "Creating synonyms as classes",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 15
+      },
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 697
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 81
+      },
+      {
+        "code": "P12",
+        "name": "Equivalent properties not explicitly declared",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 42
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 11
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T02:34:05.460Z",
+    "sha256": "bc5320c8d65157db8d82d6ac00a460348e42f3266d0d0758c321d1ef6f66b2c6"
+  }
+}

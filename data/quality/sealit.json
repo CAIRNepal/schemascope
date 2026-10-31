@@ -1,0 +1,54 @@
+{
+  "id": "sealit",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/sealit/versions/2022-06-02.n3",
+  "checkedAt": "2026-10-29T02:49:26.506Z",
+  "sha256": "b893e39677dd1e253210a6e275c3a3b69520e463c3e051b6a3b66f7646b20c96",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:49:33.783Z",
+    "sha256": "b893e39677dd1e253210a6e275c3a3b69520e463c3e051b6a3b66f7646b20c96"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 205,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T02:49:37.656Z",
+    "sha256": "b893e39677dd1e253210a6e275c3a3b69520e463c3e051b6a3b66f7646b20c96"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3219 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sealit:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T02:49:38.383Z",
+    "sha256": "b893e39677dd1e253210a6e275c3a3b69520e463c3e051b6a3b66f7646b20c96"
+  }
+}

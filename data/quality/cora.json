@@ -1,0 +1,104 @@
+{
+  "id": "cora",
+  "artefact": "https://raw.githubusercontent.com/srfiorini/IEEE1872-owl/master/cora.owl",
+  "checkedAt": "2026-10-28T13:48:52.240Z",
+  "sha256": "1efb94c11daa64bbbfeb3c02dd1dc9872a15c44b05138b7a0db9d6be289fbd83",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/ieee1872-owl/sumo-cora",
+        "id": "purl.org/ieee1872-owl/sumo-cora",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/ieee1872-owl/corax",
+        "id": "purl.org/ieee1872-owl/corax",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/ieee1872-owl/rparts",
+        "id": "purl.org/ieee1872-owl/rparts",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/ieee1872-owl/cora-bare",
+        "id": "purl.org/ieee1872-owl/cora-bare",
+        "own": false
+      }
+    ],
+    "uses": {
+      "rdfs": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T13:48:52.488Z",
+    "sha256": "1efb94c11daa64bbbfeb3c02dd1dc9872a15c44b05138b7a0db9d6be289fbd83"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 1,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 11,
+      "WARN": 8,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T14:05:40.424Z",
+    "sha256": "1efb94c11daa64bbbfeb3c02dd1dc9872a15c44b05138b7a0db9d6be289fbd83"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 101
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 13
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 37
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T14:06:03.166Z",
+    "sha256": "1efb94c11daa64bbbfeb3c02dd1dc9872a15c44b05138b7a0db9d6be289fbd83"
+  }
+}

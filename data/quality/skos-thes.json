@@ -1,0 +1,78 @@
+{
+  "id": "skos-thes",
+  "artefact": "https://www.dublincore.org/specifications/skos-thes/ns/skos-thes.ttl",
+  "checkedAt": "2026-10-29T03:01:24.734Z",
+  "sha256": "05af6f6b7f99ba09d84ae41c485d7097ca577dae31f07a58d61ca7d536bbe4b9",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/2004/02/skos/core",
+        "id": "skos",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/2008/05/skos-xl",
+        "id": "skosxl",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T03:01:25.085Z",
+    "sha256": "05af6f6b7f99ba09d84ae41c485d7097ca577dae31f07a58d61ca7d536bbe4b9"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 28,
+      "WARN": 48,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T03:01:28.145Z",
+    "sha256": "05af6f6b7f99ba09d84ae41c485d7097ca577dae31f07a58d61ca7d536bbe4b9"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 6,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3321 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/skos-thes:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-29T03:01:29.315Z",
+    "sha256": "05af6f6b7f99ba09d84ae41c485d7097ca577dae31f07a58d61ca7d536bbe4b9"
+  }
+}

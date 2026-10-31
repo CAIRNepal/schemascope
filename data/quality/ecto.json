@@ -1,0 +1,95 @@
+{
+  "id": "ecto",
+  "artefact": "http://purl.obolibrary.org/obo/ecto.owl",
+  "checkedAt": "2026-10-28T17:52:57.503Z",
+  "sha256": "c637876e3c15494ee260e05b73cea38f0b152eee5aff1c10ad6e2574d74bc5c3",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "exo": 9,
+      "iao": 26,
+      "bfo": 25,
+      "ro": 50,
+      "envo": 50,
+      "foodon": 50,
+      "maxo": 50,
+      "opmi": 4,
+      "uberon": 50,
+      "pato": 50,
+      "go": 50,
+      "chebi": 50,
+      "rdfs": 4,
+      "owl": 7,
+      "ncit": 50,
+      "ons": 7,
+      "xsd": 3,
+      "nbo": 45,
+      "ncbitaxon": 50,
+      "dron": 32,
+      "pmid": 10,
+      "fma": 3,
+      "xco": 4
+    },
+    "scannedMb": 28,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:52:59.000Z",
+    "sha256": "c637876e3c15494ee260e05b73cea38f0b152eee5aff1c10ad6e2574d74bc5c3"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 20,
+      "WARN": 4435,
+      "INFO": 183
+    },
+    "checkedAt": "2026-10-28T17:53:10.521Z",
+    "sha256": "c637876e3c15494ee260e05b73cea38f0b152eee5aff1c10ad6e2574d74bc5c3"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 162
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 3968
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 132
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 19657,
+    "attempts": [],
+    "checkedAt": "2026-10-28T17:53:16.864Z",
+    "sha256": "c637876e3c15494ee260e05b73cea38f0b152eee5aff1c10ad6e2574d74bc5c3"
+  }
+}

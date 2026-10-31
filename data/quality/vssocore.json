@@ -1,0 +1,73 @@
+{
+  "id": "vssocore",
+  "artefact": "https://raw.githubusercontent.com/w3c/vsso/gh-pages/spec/vsso-core.ttl",
+  "checkedAt": "2026-10-29T07:07:04.377Z",
+  "sha256": "daf21d00e58513dec1e964518f8a26883970f6aa48c6c854b0118e2f5e3b44c9",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:07:06.224Z",
+    "sha256": "daf21d00e58513dec1e964518f8a26883970f6aa48c6c854b0118e2f5e3b44c9"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 19,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-29T07:07:07.146Z",
+    "sha256": "daf21d00e58513dec1e964518f8a26883970f6aa48c6c854b0118e2f5e3b44c9"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 6
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 8,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-4008 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/vssocore:/work schemascope/oops --input-file /work/on"
+    ],
+    "checkedAt": "2026-10-29T07:07:07.743Z",
+    "sha256": "daf21d00e58513dec1e964518f8a26883970f6aa48c6c854b0118e2f5e3b44c9"
+  }
+}

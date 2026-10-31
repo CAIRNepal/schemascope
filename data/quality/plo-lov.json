@@ -1,0 +1,71 @@
+{
+  "id": "plo-lov",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/plo/versions/2014-08-26.n3",
+  "checkedAt": "2026-10-29T01:12:10.977Z",
+  "sha256": "382eca1981ea4a94441e577b7996eeb99dc8817164de53685bfc81597465a1d3",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "rdfs": 6,
+      "owl": 11,
+      "rdf": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:12:12.551Z",
+    "sha256": "382eca1981ea4a94441e577b7996eeb99dc8817164de53685bfc81597465a1d3"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 15,
+      "WARN": 17,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-29T01:12:13.679Z",
+    "sha256": "382eca1981ea4a94441e577b7996eeb99dc8817164de53685bfc81597465a1d3"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 3,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2653 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/plo-lov:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T01:12:14.376Z",
+    "sha256": "382eca1981ea4a94441e577b7996eeb99dc8817164de53685bfc81597465a1d3"
+  }
+}

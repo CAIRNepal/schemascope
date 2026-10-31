@@ -1,0 +1,85 @@
+{
+  "id": "iddo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/iddo/versions/2021-12-06.n3",
+  "checkedAt": "2026-10-28T21:04:36.407Z",
+  "sha256": "e0f3a977e86f491fab3a0e1121fdf33759fb91514b467496ae9710a3adb0a4a5",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:04:38.386Z",
+    "sha256": "e0f3a977e86f491fab3a0e1121fdf33759fb91514b467496ae9710a3adb0a4a5"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 173,
+      "WARN": 78,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:04:39.916Z",
+    "sha256": "e0f3a977e86f491fab3a0e1121fdf33759fb91514b467496ae9710a3adb0a4a5"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 19
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 26
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 6,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1600 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/iddo:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T21:04:41.194Z",
+    "sha256": "e0f3a977e86f491fab3a0e1121fdf33759fb91514b467496ae9710a3adb0a4a5"
+  }
+}

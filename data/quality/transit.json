@@ -1,0 +1,75 @@
+{
+  "id": "transit",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/transit/versions/2011-03-28.n3",
+  "checkedAt": "2026-10-29T05:31:38.116Z",
+  "sha256": "9defdeff51b2388299fd7f89df6374bdea806770d6c5d74e7b6a5802d7b9d3ef",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:31:39.191Z",
+    "sha256": "9defdeff51b2388299fd7f89df6374bdea806770d6c5d74e7b6a5802d7b9d3ef"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 19,
+      "WARN": 58,
+      "INFO": 12
+    },
+    "checkedAt": "2026-10-29T05:31:40.362Z",
+    "sha256": "9defdeff51b2388299fd7f89df6374bdea806770d6c5d74e7b6a5802d7b9d3ef"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 5
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 18
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 25,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3840 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/transit:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T05:31:41.365Z",
+    "sha256": "9defdeff51b2388299fd7f89df6374bdea806770d6c5d74e7b6a5802d7b9d3ef"
+  }
+}

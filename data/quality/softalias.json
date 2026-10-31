@@ -1,0 +1,63 @@
+{
+  "id": "softalias",
+  "artefact": "https://w3id.org/softalias",
+  "checkedAt": "2026-10-29T03:09:18.346Z",
+  "sha256": "0bb146119b5e281bc7b854420fa4027b5e36da3f126695e99b1e5d06d5721918",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T03:09:23.771Z",
+    "sha256": "0bb146119b5e281bc7b854420fa4027b5e36da3f126695e99b1e5d06d5721918"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 7,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-29T03:09:25.934Z",
+    "sha256": "0bb146119b5e281bc7b854420fa4027b5e36da3f126695e99b1e5d06d5721918"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3352 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/softalias:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-29T03:09:27.457Z",
+    "sha256": "0bb146119b5e281bc7b854420fa4027b5e36da3f126695e99b1e5d06d5721918"
+  }
+}

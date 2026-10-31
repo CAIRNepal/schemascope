@@ -1,0 +1,85 @@
+{
+  "id": "worldavatar-energysystem",
+  "artefact": "https://raw.githubusercontent.com/TheWorldAvatar/ontology/main/ontology/ontoenergysystem/ontoenergysystem.owl",
+  "checkedAt": "2026-10-29T07:40:08.759Z",
+  "sha256": "aebecfc7d330a9d71cbba20ef90a78a2de33fe5b0bb3bdadccbe28da457361a1",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://github.com/TheWorldAvatar/ontology/raw/refs/heads/main/ontology/ontocape/upper_level/system.owl",
+        "id": "github.com/theworldavatar/ontology/raw/refs/heads/main/ontology/ontocape/upper_level/system",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:40:10.192Z",
+    "sha256": "aebecfc7d330a9d71cbba20ef90a78a2de33fe5b0bb3bdadccbe28da457361a1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 1,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 45,
+      "WARN": 43,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-29T07:40:42.040Z",
+    "sha256": "aebecfc7d330a9d71cbba20ef90a78a2de33fe5b0bb3bdadccbe28da457361a1"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 13
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 7
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 13,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-4112 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/worldavatar-energysystem:/work schemascope/oops --inp"
+    ],
+    "checkedAt": "2026-10-29T07:42:21.889Z",
+    "sha256": "aebecfc7d330a9d71cbba20ef90a78a2de33fe5b0bb3bdadccbe28da457361a1"
+  }
+}

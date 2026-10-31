@@ -1,0 +1,71 @@
+{
+  "id": "ebucore",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ebucore/versions/2015-08-04.n3",
+  "checkedAt": "2026-10-28T17:36:33.601Z",
+  "sha256": "dac06c45a73e29e4aa351e7173023f1497ebd6c34d7b7343d4971a3345e8d233",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/2004/02/skos/core",
+        "id": "skos",
+        "own": false
+      }
+    ],
+    "uses": {
+      "rdf": 5,
+      "owl": 10,
+      "dc": 16,
+      "dcterms": 16,
+      "xsd": 12,
+      "rdfs": 9,
+      "bbccore": 12,
+      "skos": 32,
+      "foaf": 15,
+      "ma-ont": 47
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:36:34.183Z",
+    "sha256": "dac06c45a73e29e4aa351e7173023f1497ebd6c34d7b7343d4971a3345e8d233"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 175,
+      "WARN": 548,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T17:36:36.282Z",
+    "sha256": "dac06c45a73e29e4aa351e7173023f1497ebd6c34d7b7343d4971a3345e8d233"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1016 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ebucore:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-28T17:36:37.042Z",
+    "sha256": "dac06c45a73e29e4aa351e7173023f1497ebd6c34d7b7343d4971a3345e8d233"
+  }
+}

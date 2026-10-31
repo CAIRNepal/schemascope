@@ -1,0 +1,69 @@
+{
+  "id": "frbrer",
+  "artefact": "http://iflastandards.info/ns/fr/frbr/frbrer.xml",
+  "checkedAt": "2026-10-28T19:49:40.959Z",
+  "sha256": "313553add50652ff303c9789cffd9c9ccb2ec37375c672f1b7e7f4f6972ac40b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:49:41.686Z",
+    "sha256": "313553add50652ff303c9789cffd9c9ccb2ec37375c672f1b7e7f4f6972ac40b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 436,
+      "WARN": 218,
+      "INFO": 10
+    },
+    "checkedAt": "2026-10-28T19:49:43.212Z",
+    "sha256": "313553add50652ff303c9789cffd9c9ccb2ec37375c672f1b7e7f4f6972ac40b"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:49:48.945Z",
+    "sha256": "313553add50652ff303c9789cffd9c9ccb2ec37375c672f1b7e7f4f6972ac40b"
+  }
+}

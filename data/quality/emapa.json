@@ -1,0 +1,84 @@
+{
+  "id": "emapa",
+  "artefact": "http://purl.obolibrary.org/obo/emapa.owl",
+  "checkedAt": "2026-10-28T18:43:10.058Z",
+  "sha256": "19a7095e549e54856d035ae52d266a1bb8c4036803995696ca2581afeecf950c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ts": 29,
+      "iao": 5,
+      "ro": 6,
+      "owl": 3
+    },
+    "scannedMb": 11,
+    "truncated": false,
+    "scannedAt": "2026-10-28T18:43:10.633Z",
+    "sha256": "19a7095e549e54856d035ae52d266a1bb8c4036803995696ca2581afeecf950c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 7968,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-28T18:43:16.229Z",
+    "sha256": "19a7095e549e54856d035ae52d266a1bb8c4036803995696ca2581afeecf950c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 9
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 8665
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 9
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 8883,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1101 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/emapa:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T18:53:18.927Z",
+    "sha256": "19a7095e549e54856d035ae52d266a1bb8c4036803995696ca2581afeecf950c"
+  }
+}

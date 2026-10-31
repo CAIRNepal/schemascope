@@ -1,0 +1,108 @@
+{
+  "id": "airco",
+  "artefact": "https://w3id.org/airco",
+  "checkedAt": "2026-10-27T23:06:55.707Z",
+  "sha256": "8ab9d69968e0b5914563d289885d5c104c161d25e3a6cb08bf5fc044239eb721",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://w3id.org/airo",
+        "id": "airo",
+        "own": true
+      },
+      {
+        "iri": "https://w3id.org/vair",
+        "id": "vair",
+        "own": true
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-27T23:06:56.234Z",
+    "sha256": "8ab9d69968e0b5914563d289885d5c104c161d25e3a6cb08bf5fc044239eb721"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 303,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-27T23:06:58.840Z",
+    "sha256": "8ab9d69968e0b5914563d289885d5c104c161d25e3a6cb08bf5fc044239eb721"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 5,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 25
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 13
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 32
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 17
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 33
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 269,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-56 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/airco:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-27T23:06:59.567Z",
+    "sha256": "8ab9d69968e0b5914563d289885d5c104c161d25e3a6cb08bf5fc044239eb721"
+  }
+}

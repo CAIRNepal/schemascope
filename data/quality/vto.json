@@ -1,0 +1,73 @@
+{
+  "id": "vto",
+  "artefact": "http://purl.obolibrary.org/obo/vto.owl",
+  "checkedAt": "2026-10-29T07:08:51.774Z",
+  "sha256": "962952bc0ed4ad5a000bd3bdac8c6e85dc0ae9cc2a84d4783124cced7362a42f",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "taxrank": 50,
+      "xsd": 5,
+      "dc": 3,
+      "paleodbtaxon": 5,
+      "ncbitaxon": 50,
+      "ato": 50,
+      "tto": 50
+    },
+    "scannedMb": 153,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:09:07.961Z",
+    "sha256": "962952bc0ed4ad5a000bd3bdac8c6e85dc0ae9cc2a84d4783124cced7362a42f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 3212,
+      "WARN": 110300,
+      "INFO": 8
+    },
+    "checkedAt": "2026-10-29T07:09:46.149Z",
+    "sha256": "962952bc0ed4ad5a000bd3bdac8c6e85dc0ae9cc2a84d4783124cced7362a42f"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 107145
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 107254,
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:10:15.909Z",
+    "sha256": "962952bc0ed4ad5a000bd3bdac8c6e85dc0ae9cc2a84d4783124cced7362a42f"
+  }
+}

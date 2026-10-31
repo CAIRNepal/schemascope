@@ -1,0 +1,108 @@
+{
+  "id": "sioc-types",
+  "artefact": "http://rdfs.org/sioc/types",
+  "checkedAt": "2026-10-29T03:01:04.039Z",
+  "sha256": "7b0d28a6caed11f5c81f6f3e9c2bd8a92e2d5aed6351857a71c8b609a312e908",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://rdfs.org/sioc/ns#",
+        "id": "sioc-core",
+        "own": true
+      }
+    ],
+    "uses": {
+      "owl": 3,
+      "sioc-core": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T03:01:04.339Z",
+    "sha256": "7b0d28a6caed11f5c81f6f3e9c2bd8a92e2d5aed6351857a71c8b609a312e908"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 38,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T03:01:06.331Z",
+    "sha256": "7b0d28a6caed11f5c81f6f3e9c2bd8a92e2d5aed6351857a71c8b609a312e908"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 4,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 13
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 48
+      },
+      {
+        "code": "P12",
+        "name": "Equivalent properties not explicitly declared",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 24
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:01:14.975Z",
+    "sha256": "7b0d28a6caed11f5c81f6f3e9c2bd8a92e2d5aed6351857a71c8b609a312e908"
+  }
+}

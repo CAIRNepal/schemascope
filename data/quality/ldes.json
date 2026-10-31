@@ -1,0 +1,67 @@
+{
+  "id": "ldes",
+  "artefact": "https://w3id.org/ldes",
+  "checkedAt": "2026-10-28T21:21:38.491Z",
+  "sha256": "6d5e64d60afd2135be57ba436fd7fb72246c5b796cc70604daca225f7f1abefb",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:21:38.933Z",
+    "sha256": "6d5e64d60afd2135be57ba436fd7fb72246c5b796cc70604daca225f7f1abefb"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 5,
+      "WARN": 28,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-28T21:21:40.229Z",
+    "sha256": "6d5e64d60afd2135be57ba436fd7fb72246c5b796cc70604daca225f7f1abefb"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1812 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ldes:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T21:21:41.255Z",
+    "sha256": "6d5e64d60afd2135be57ba436fd7fb72246c5b796cc70604daca225f7f1abefb"
+  }
+}

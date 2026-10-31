@@ -1,0 +1,67 @@
+{
+  "id": "medred",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/medred/versions/2017-05-08.n3",
+  "checkedAt": "2026-10-28T21:51:25.803Z",
+  "sha256": "e708c5ca3a6ff821d3600591a3dd719245af62314fe056c28cd92479322df0d2",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:51:39.108Z",
+    "sha256": "e708c5ca3a6ff821d3600591a3dd719245af62314fe056c28cd92479322df0d2"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "er.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1243)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1143)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadImports(OWLOntologyManagerImpl.java:1873)\n\n\n\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T21:51:46.217Z",
+    "sha256": "e708c5ca3a6ff821d3600591a3dd719245af62314fe056c28cd92479322df0d2"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 6
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 13,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2029 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/medred:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T21:51:46.809Z",
+    "sha256": "e708c5ca3a6ff821d3600591a3dd719245af62314fe056c28cd92479322df0d2"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "olo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/olo/versions/2010-07-23.n3",
+  "checkedAt": "2026-10-29T00:06:55.017Z",
+  "sha256": "d7bfd3c498e1e36aee81d972439112754646a6bd28d06ec6576942a9562e38ef",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/dc/elements/1.1/",
+        "id": "dc",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/2003/06/sw-vocab-status/ns",
+        "id": "vs",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:06:55.815Z",
+    "sha256": "d7bfd3c498e1e36aee81d972439112754646a6bd28d06ec6576942a9562e38ef"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 25,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T00:06:59.514Z",
+    "sha256": "d7bfd3c498e1e36aee81d972439112754646a6bd28d06ec6576942a9562e38ef"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 2,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2382 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/olo:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T00:07:00.827Z",
+    "sha256": "d7bfd3c498e1e36aee81d972439112754646a6bd28d06ec6576942a9562e38ef"
+  }
+}

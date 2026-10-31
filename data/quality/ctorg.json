@@ -1,0 +1,79 @@
+{
+  "id": "ctorg",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ctorg/versions/2013-04-24.n3",
+  "checkedAt": "2026-10-28T15:52:45.973Z",
+  "sha256": "723aa8c3561170c3b493fefcb316d8ed2390f02e05024f2d00bd73941b09fe4c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T15:52:46.828Z",
+    "sha256": "723aa8c3561170c3b493fefcb316d8ed2390f02e05024f2d00bd73941b09fe4c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 20,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T15:52:48.200Z",
+    "sha256": "723aa8c3561170c3b493fefcb316d8ed2390f02e05024f2d00bd73941b09fe4c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 8
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 5,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-698 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ctorg:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T15:52:49.627Z",
+    "sha256": "723aa8c3561170c3b493fefcb316d8ed2390f02e05024f2d00bd73941b09fe4c"
+  }
+}

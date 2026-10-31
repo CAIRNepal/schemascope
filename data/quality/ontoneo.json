@@ -1,0 +1,119 @@
+{
+  "id": "ontoneo",
+  "artefact": "http://purl.obolibrary.org/obo/ontoneo.owl",
+  "checkedAt": "2026-10-29T00:24:04.550Z",
+  "sha256": "03dae64d1982dd779e5a415e9d6c229374d2a736d5ba399fd578b27c47c11dcd",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "cvdo": 5,
+      "iao": 50,
+      "oae": 6,
+      "ro": 50,
+      "ubprop": 4,
+      "bfo": 46,
+      "obi": 38,
+      "omiabis": 4,
+      "omrse": 34,
+      "ogms": 40,
+      "pato": 42,
+      "ncbitaxon": 11,
+      "cl": 16,
+      "go": 28,
+      "caro": 6,
+      "mi": 3,
+      "eco": 7,
+      "fma": 50,
+      "cmo": 5,
+      "doid": 50,
+      "uberon": 21,
+      "xsd": 23,
+      "owl": 12,
+      "dc": 10,
+      "dcterms": 6,
+      "sio": 20,
+      "rdfs": 5,
+      "foaf": 5,
+      "hp": 19,
+      "mp": 6,
+      "symp": 50,
+      "vso": 18,
+      "vo": 17
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:24:04.886Z",
+    "sha256": "03dae64d1982dd779e5a415e9d6c229374d2a736d5ba399fd578b27c47c11dcd"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": false,
+    "unsatisfiable": null,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2456,
+      "WARN": 987,
+      "INFO": 287
+    },
+    "checkedAt": "2026-10-29T00:24:10.427Z",
+    "sha256": "03dae64d1982dd779e5a415e9d6c229374d2a736d5ba399fd578b27c47c11dcd"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 3
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 404
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 699
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 268
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1384,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2443 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ontoneo:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T00:25:40.256Z",
+    "sha256": "03dae64d1982dd779e5a415e9d6c229374d2a736d5ba399fd578b27c47c11dcd"
+  }
+}

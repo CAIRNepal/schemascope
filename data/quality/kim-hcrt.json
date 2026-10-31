@@ -1,0 +1,67 @@
+{
+  "id": "kim-hcrt",
+  "artefact": "https://raw.githubusercontent.com/dini-ag-kim/hcrt/master/hcrt.ttl",
+  "checkedAt": "2026-10-28T21:19:06.112Z",
+  "sha256": "ccd271bbc6bfa33061ac55d1b52df3047fabe22f3b19f6767917ec6de83a3b02",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:19:06.256Z",
+    "sha256": "ccd271bbc6bfa33061ac55d1b52df3047fabe22f3b19f6767917ec6de83a3b02"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 30,
+      "WARN": 1,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:19:07.757Z",
+    "sha256": "ccd271bbc6bfa33061ac55d1b52df3047fabe22f3b19f6767917ec6de83a3b02"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1761 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/kim-hcrt:/work schemascope/oops --input-file /work/on"
+    ],
+    "checkedAt": "2026-10-28T21:19:08.942Z",
+    "sha256": "ccd271bbc6bfa33061ac55d1b52df3047fabe22f3b19f6767917ec6de83a3b02"
+  }
+}

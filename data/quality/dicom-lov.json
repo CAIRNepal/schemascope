@@ -1,0 +1,93 @@
+{
+  "id": "dicom-lov",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/dicom/versions/2015-01-11.n3",
+  "checkedAt": "2026-10-28T17:01:55.926Z",
+  "sha256": "3bfd5679b354c63da9edb5ec5ed50926bc47d6bcd23fe0b8e45f91cbd261ba38",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 6
+    },
+    "scannedMb": 5,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:01:58.222Z",
+    "sha256": "3bfd5679b354c63da9edb5ec5ed50926bc47d6bcd23fe0b8e45f91cbd261ba38"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 8577,
+      "WARN": 9397,
+      "INFO": 1592
+    },
+    "checkedAt": "2026-10-28T17:02:04.184Z",
+    "sha256": "3bfd5679b354c63da9edb5ec5ed50926bc47d6bcd23fe0b8e45f91cbd261ba38"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 774
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1592
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 2529
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1592,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-853 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dicom-lov:/work schemascope/oops --input-file /work/on"
+    ],
+    "checkedAt": "2026-10-28T17:02:05.881Z",
+    "sha256": "3bfd5679b354c63da9edb5ec5ed50926bc47d6bcd23fe0b8e45f91cbd261ba38"
+  }
+}

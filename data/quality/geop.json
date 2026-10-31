@@ -1,0 +1,73 @@
+{
+  "id": "geop",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/geop/versions/2011-01-18.n3",
+  "checkedAt": "2026-10-28T20:18:38.276Z",
+  "sha256": "8de8436bdfb8fed4bbccecb0ec167d5fbffb847c7840f19a4c965b6849810630",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:18:40.052Z",
+    "sha256": "8de8436bdfb8fed4bbccecb0ec167d5fbffb847c7840f19a4c965b6849810630"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 421,
+      "WARN": 112,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T20:18:42.424Z",
+    "sha256": "8de8436bdfb8fed4bbccecb0ec167d5fbffb847c7840f19a4c965b6849810630"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 11,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1356 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/geop:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T20:18:43.531Z",
+    "sha256": "8de8436bdfb8fed4bbccecb0ec167d5fbffb847c7840f19a4c965b6849810630"
+  }
+}

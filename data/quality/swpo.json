@@ -1,0 +1,82 @@
+{
+  "id": "swpo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/swpo/versions/2004-10-20.n3",
+  "checkedAt": "2026-10-29T04:55:13.178Z",
+  "sha256": "1638d1ef413c9d456ae459cae028884ed17f77a38e21815ba902597d99e9dcff",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 5,
+      "owl": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T04:55:14.179Z",
+    "sha256": "1638d1ef413c9d456ae459cae028884ed17f77a38e21815ba902597d99e9dcff"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 27,
+      "WARN": 174,
+      "INFO": 10
+    },
+    "checkedAt": "2026-10-29T04:55:17.022Z",
+    "sha256": "1638d1ef413c9d456ae459cae028884ed17f77a38e21815ba902597d99e9dcff"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 35
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 57,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3646 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/swpo:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T04:55:18.156Z",
+    "sha256": "1638d1ef413c9d456ae459cae028884ed17f77a38e21815ba902597d99e9dcff"
+  }
+}

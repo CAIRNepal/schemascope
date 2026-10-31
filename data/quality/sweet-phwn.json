@@ -1,0 +1,11 @@
+{
+  "id": "sweet-phwn",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/phenWaveNoise.ttl",
+  "checkedAt": "2026-10-29T03:35:50.004Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:36:00.505Z"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "hra",
+  "artefact": "https://cdn.humanatlas.io/digital-objects/collection/hra-ols/latest/graph.ttl",
+  "checkedAt": "2026-10-28T20:45:10.900Z",
+  "sha256": "b6472cbeadef30098f190c23fb5a860bc59fc56feac55161148b4a586150c639",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 16,
+      "pcl": 50,
+      "ro": 17,
+      "ubprop": 23,
+      "dcterms": 13,
+      "rdfs": 4,
+      "cl": 50,
+      "uberon": 50,
+      "pmid": 21,
+      "isbn": 6,
+      "nlxanat": 3,
+      "zfa": 7,
+      "fma": 24,
+      "aao": 10,
+      "mp": 6,
+      "xao": 3,
+      "go": 8,
+      "fbbt": 4,
+      "bto": 4
+    },
+    "scannedMb": 34,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:45:14.200Z",
+    "sha256": "b6472cbeadef30098f190c23fb5a860bc59fc56feac55161148b4a586150c639"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1097,
+      "WARN": 19341,
+      "INFO": 16
+    },
+    "checkedAt": "2026-10-28T20:45:38.087Z",
+    "sha256": "b6472cbeadef30098f190c23fb5a860bc59fc56feac55161148b4a586150c639"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [],
+    "checkedAt": "2026-10-28T20:45:48.840Z",
+    "sha256": "b6472cbeadef30098f190c23fb5a860bc59fc56feac55161148b4a586150c639"
+  }
+}

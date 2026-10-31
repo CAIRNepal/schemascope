@@ -1,0 +1,76 @@
+{
+  "id": "cocoon",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/cocoon/versions/2019-02-04.n3",
+  "checkedAt": "2026-10-28T12:39:30.008Z",
+  "sha256": "efe04cc3e315b983fda40aa2eb3ffb7ea068b4e48c25dde1c7222edb1e5034ba",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "gr": 4,
+      "foaf": 10
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T12:39:31.000Z",
+    "sha256": "efe04cc3e315b983fda40aa2eb3ffb7ea068b4e48c25dde1c7222edb1e5034ba"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 52,
+      "WARN": 50,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T12:39:32.840Z",
+    "sha256": "efe04cc3e315b983fda40aa2eb3ffb7ea068b4e48c25dde1c7222edb1e5034ba"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 21
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 29
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 21
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 29,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-569 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cocoon:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T12:39:34.380Z",
+    "sha256": "efe04cc3e315b983fda40aa2eb3ffb7ea068b4e48c25dde1c7222edb1e5034ba"
+  }
+}

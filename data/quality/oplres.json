@@ -1,0 +1,11 @@
+{
+  "id": "oplres",
+  "artefact": "http://www.openlinksw.com/ontology/restrictions",
+  "checkedAt": "2026-10-29T00:28:16.205Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:28:16.437Z"
+  }
+}

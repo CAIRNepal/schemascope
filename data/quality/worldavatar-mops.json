@@ -1,0 +1,79 @@
+{
+  "id": "worldavatar-mops",
+  "artefact": "https://raw.githubusercontent.com/TheWorldAvatar/ontology/main/ontology/ontomops/ontomops-ogm.ttl",
+  "checkedAt": "2026-10-29T07:50:38.687Z",
+  "sha256": "92c9def3b1820608f3c3366fdf87245ae667cb97a8143eb4d930b445116e01b7",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:50:40.339Z",
+    "sha256": "92c9def3b1820608f3c3366fdf87245ae667cb97a8143eb4d930b445116e01b7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 73,
+      "WARN": 70,
+      "INFO": 16
+    },
+    "checkedAt": "2026-10-29T07:50:41.416Z",
+    "sha256": "92c9def3b1820608f3c3366fdf87245ae667cb97a8143eb4d930b445116e01b7"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 26
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 26
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 26,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-4148 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/worldavatar-mops:/work schemascope/oops --input-file "
+    ],
+    "checkedAt": "2026-10-29T07:50:42.090Z",
+    "sha256": "92c9def3b1820608f3c3366fdf87245ae667cb97a8143eb4d930b445116e01b7"
+  }
+}

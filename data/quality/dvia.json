@@ -1,0 +1,61 @@
+{
+  "id": "dvia",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/dvia/versions/2013-10-09.n3",
+  "checkedAt": "2026-10-28T17:35:56.410Z",
+  "sha256": "9b9498e8e8ddd8ab05950f0960ee2d483706e5a6e2b1e6b5cb9601f3505846e2",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:35:56.829Z",
+    "sha256": "9b9498e8e8ddd8ab05950f0960ee2d483706e5a6e2b1e6b5cb9601f3505846e2"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 40,
+      "WARN": 20,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T17:35:57.909Z",
+    "sha256": "9b9498e8e8ddd8ab05950f0960ee2d483706e5a6e2b1e6b5cb9601f3505846e2"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 6
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 3,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-988 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dvia:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T17:35:58.623Z",
+    "sha256": "9b9498e8e8ddd8ab05950f0960ee2d483706e5a6e2b1e6b5cb9601f3505846e2"
+  }
+}

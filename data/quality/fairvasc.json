@@ -1,0 +1,82 @@
+{
+  "id": "fairvasc",
+  "artefact": "https://w3id.org/FAIRVASC",
+  "checkedAt": "2026-10-28T19:39:34.393Z",
+  "sha256": "46ac8c66a90ab8c868b8996b16b090b65314684392b0e4dcd402288bc37c4e55",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dc": 5,
+      "xsd": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:39:35.503Z",
+    "sha256": "46ac8c66a90ab8c868b8996b16b090b65314684392b0e4dcd402288bc37c4e55"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 134,
+      "WARN": 67,
+      "INFO": 11
+    },
+    "checkedAt": "2026-10-28T19:39:38.983Z",
+    "sha256": "46ac8c66a90ab8c868b8996b16b090b65314684392b0e4dcd402288bc37c4e55"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 12
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 20,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1196 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/fairvasc:/work schemascope/oops --input-file /work/on"
+    ],
+    "checkedAt": "2026-10-28T19:39:53.198Z",
+    "sha256": "46ac8c66a90ab8c868b8996b16b090b65314684392b0e4dcd402288bc37c4e55"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "skosxl",
+  "artefact": "http://www.w3.org/TR/skos-reference/skos-xl.rdf",
+  "checkedAt": "2026-10-29T03:01:38.457Z",
+  "sha256": "fb6519c5719250d77f17a84ac28c75660c7de09da7286dda138bbe9d8f834b9a",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/2004/02/skos/core",
+        "id": "skos",
+        "own": true
+      }
+    ],
+    "uses": {
+      "owl": 4,
+      "skos": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T03:01:38.664Z",
+    "sha256": "fb6519c5719250d77f17a84ac28c75660c7de09da7286dda138bbe9d8f834b9a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 6,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T03:01:40.724Z",
+    "sha256": "fb6519c5719250d77f17a84ac28c75660c7de09da7286dda138bbe9d8f834b9a"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 17
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 8
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:01:48.383Z",
+    "sha256": "fb6519c5719250d77f17a84ac28c75660c7de09da7286dda138bbe9d8f834b9a"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "stopp",
+  "artefact": "https://w3id.org/stopp",
+  "checkedAt": "2026-10-29T03:19:11.511Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:19:22.008Z"
+  }
+}

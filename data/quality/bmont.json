@@ -1,0 +1,117 @@
+{
+  "id": "bmont",
+  "artefact": "http://purl.obolibrary.org/obo/bmont.owl",
+  "checkedAt": "2026-10-28T01:45:06.458Z",
+  "sha256": "f4a906578d4d68485bb595cd45a2cdc282d1cf3b65a82dd333d709b9ebebccf5",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 38,
+      "iao": 29,
+      "ncit": 50,
+      "obi": 29,
+      "ogg": 15,
+      "ro": 6,
+      "scdo": 8,
+      "stato": 5,
+      "ubprop": 8,
+      "pr": 24,
+      "doid": 50,
+      "opmi": 17,
+      "go": 12,
+      "uberon": 22,
+      "chebi": 27,
+      "cl": 7,
+      "ncbitaxon": 5,
+      "cmo": 8,
+      "mondo": 24,
+      "hp": 8,
+      "ogms": 8,
+      "maxo": 9,
+      "mpath": 3,
+      "symp": 4,
+      "obcs": 3,
+      "omit": 28,
+      "pato": 9,
+      "skos": 8,
+      "rdfs": 5,
+      "xsd": 4,
+      "owl": 4,
+      "dc": 8,
+      "dcterms": 6,
+      "sio": 14,
+      "foaf": 3
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:45:06.911Z",
+    "sha256": "f4a906578d4d68485bb595cd45a2cdc282d1cf3b65a82dd333d709b9ebebccf5"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 136,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 212,
+      "WARN": 457,
+      "INFO": 86
+    },
+    "checkedAt": "2026-10-28T01:45:09.616Z",
+    "sha256": "f4a906578d4d68485bb595cd45a2cdc282d1cf3b65a82dd333d709b9ebebccf5"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 534
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 8
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 12
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:45:22.347Z",
+    "sha256": "f4a906578d4d68485bb595cd45a2cdc282d1cf3b65a82dd333d709b9ebebccf5"
+  }
+}

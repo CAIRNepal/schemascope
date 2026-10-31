@@ -1,0 +1,11 @@
+{
+  "id": "sustaingraph",
+  "artefact": "https://netmode.gitlab.io/sustaingraph-ontology/ontology.ttl",
+  "checkedAt": "2026-10-29T03:20:56.518Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:21:07.017Z"
+  }
+}

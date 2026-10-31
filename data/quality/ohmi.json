@@ -1,0 +1,109 @@
+{
+  "id": "ohmi",
+  "artefact": "http://purl.obolibrary.org/obo/ohmi.owl",
+  "checkedAt": "2026-10-29T00:04:17.031Z",
+  "sha256": "f7c809d9dba32784fd22b8449418b82e2ac5dff7e89bdc67aacfb10df66c3706",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 29,
+      "iao": 50,
+      "omo": 25,
+      "obi": 50,
+      "ro": 50,
+      "ubprop": 6,
+      "doid": 43,
+      "uberon": 24,
+      "chebi": 8,
+      "cl": 3,
+      "cmo": 6,
+      "envo": 5,
+      "go": 5,
+      "hp": 4,
+      "ncbitaxon": 50,
+      "rdfs": 4,
+      "xsd": 6,
+      "dc": 15,
+      "dcterms": 8,
+      "owl": 12,
+      "foaf": 3,
+      "pato": 9,
+      "pco": 15
+    },
+    "scannedMb": 3,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:04:17.506Z",
+    "sha256": "f7c809d9dba32784fd22b8449418b82e2ac5dff7e89bdc67aacfb10df66c3706"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 47,
+      "WARN": 737,
+      "INFO": 303
+    },
+    "checkedAt": "2026-10-29T00:04:22.616Z",
+    "sha256": "f7c809d9dba32784fd22b8449418b82e2ac5dff7e89bdc67aacfb10df66c3706"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 116
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 588
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 82
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1723,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2365 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ohmi:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T00:05:46.564Z",
+    "sha256": "f7c809d9dba32784fd22b8449418b82e2ac5dff7e89bdc67aacfb10df66c3706"
+  }
+}

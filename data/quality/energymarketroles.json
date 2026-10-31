@@ -1,0 +1,60 @@
+{
+  "id": "energymarketroles",
+  "artefact": "https://innoweb.mondragon.edu/ontologies/dabgeo/common-domain/energymarketroles/1.0/ontology.ttl",
+  "checkedAt": "2026-10-28T19:04:53.148Z",
+  "sha256": "69da6b7d286444d101ab5137cd3332decb64d2040afefa665173475aa5647fa2",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.purl.org/dabgeo/common-domain/actor",
+        "id": "purl.org/dabgeo/common-domain/actor",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:04:53.718Z",
+    "sha256": "69da6b7d286444d101ab5137cd3332decb64d2040afefa665173475aa5647fa2"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 5,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T19:04:57.407Z",
+    "sha256": "69da6b7d286444d101ab5137cd3332decb64d2040afefa665173475aa5647fa2"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1119 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/energymarketroles:/work schemascope/oops --input-file"
+    ],
+    "checkedAt": "2026-10-28T19:04:58.028Z",
+    "sha256": "69da6b7d286444d101ab5137cd3332decb64d2040afefa665173475aa5647fa2"
+  }
+}

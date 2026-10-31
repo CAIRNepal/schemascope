@@ -1,0 +1,11 @@
+{
+  "id": "sur",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/sur/versions/2020-07-23.n3",
+  "checkedAt": "2026-10-29T03:20:35.515Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:20:46.012Z"
+  }
+}

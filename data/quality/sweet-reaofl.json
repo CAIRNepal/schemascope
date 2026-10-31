@@ -1,0 +1,79 @@
+{
+  "id": "sweet-reaofl",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/realmOceanFloor.ttl",
+  "checkedAt": "2026-10-29T04:09:34.291Z",
+  "sha256": "54fd18c4f16f90cd9d3a7e61a44ca7a436ec7473ea07d28a2f7191a7646895ab",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T04:09:34.715Z",
+    "sha256": "54fd18c4f16f90cd9d3a7e61a44ca7a436ec7473ea07d28a2f7191a7646895ab"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 24,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-29T04:10:05.209Z",
+    "sha256": "54fd18c4f16f90cd9d3a7e61a44ca7a436ec7473ea07d28a2f7191a7646895ab"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 9
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 21
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 21,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3486 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sweet-reaofl:/work schemascope/oops --input-file /wor"
+    ],
+    "checkedAt": "2026-10-29T04:10:05.993Z",
+    "sha256": "54fd18c4f16f90cd9d3a7e61a44ca7a436ec7473ea07d28a2f7191a7646895ab"
+  }
+}

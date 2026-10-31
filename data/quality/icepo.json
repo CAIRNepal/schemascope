@@ -1,0 +1,11 @@
+{
+  "id": "icepo",
+  "artefact": "https://download.nextprot.org/pub/current_release/controlled_vocabularies/icepo.obo",
+  "checkedAt": "2026-10-28T20:53:05.636Z",
+  "downloadError": "resolves to an HTML page (https://www.expasy.org/archives/nextprot), not the ontology file",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T20:53:07.131Z"
+  }
+}

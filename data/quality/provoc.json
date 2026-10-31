@@ -1,0 +1,73 @@
+{
+  "id": "provoc",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/provoc/versions/2016-02-18.n3",
+  "checkedAt": "2026-10-29T01:51:07.308Z",
+  "sha256": "fc329461504f80ae13fea26c599d64de9100c34d83cafb2190c90fefe63b328d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:51:14.492Z",
+    "sha256": "fc329461504f80ae13fea26c599d64de9100c34d83cafb2190c90fefe63b328d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 29,
+      "WARN": 28,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T01:51:15.579Z",
+    "sha256": "fc329461504f80ae13fea26c599d64de9100c34d83cafb2190c90fefe63b328d"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 3
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 15
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2755 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/provoc:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T01:51:16.280Z",
+    "sha256": "fc329461504f80ae13fea26c599d64de9100c34d83cafb2190c90fefe63b328d"
+  }
+}

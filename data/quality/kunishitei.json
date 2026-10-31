@@ -1,0 +1,61 @@
+{
+  "id": "kunishitei",
+  "artefact": "https://wik.jp/kunishitei/",
+  "checkedAt": "2026-10-28T21:20:02.960Z",
+  "sha256": "b71ecde19f68ef38451026f57d4d596470a0387bf291f6c27b39221e4c0b7a8d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:20:03.776Z",
+    "sha256": "b71ecde19f68ef38451026f57d4d596470a0387bf291f6c27b39221e4c0b7a8d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 35,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:20:04.782Z",
+    "sha256": "b71ecde19f68ef38451026f57d4d596470a0387bf291f6c27b39221e4c0b7a8d"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1777 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/kunishitei:/work schemascope/oops --input-file /work/"
+    ],
+    "checkedAt": "2026-10-28T21:20:05.461Z",
+    "sha256": "b71ecde19f68ef38451026f57d4d596470a0387bf291f6c27b39221e4c0b7a8d"
+  }
+}

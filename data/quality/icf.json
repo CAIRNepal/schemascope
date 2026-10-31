@@ -1,0 +1,107 @@
+{
+  "id": "icf",
+  "artefact": "http://aber-owl.net/media/ontologies/ICF/1/icf.owl",
+  "checkedAt": "2026-10-28T20:53:07.132Z",
+  "sha256": "ab3bca176884966c86114d9bf16a6b1b341dacef70176b98aec85008aa8f239b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 4
+    },
+    "scannedMb": 3,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:53:09.045Z",
+    "sha256": "ab3bca176884966c86114d9bf16a6b1b341dacef70176b98aec85008aa8f239b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 719,
+      "WARN": 104,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-28T20:53:12.816Z",
+    "sha256": "ab3bca176884966c86114d9bf16a6b1b341dacef70176b98aec85008aa8f239b"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 3,
+    "minor": 7,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P05",
+        "name": "Defining wrong inverse relationships",
+        "importance": "critical",
+        "affected": 3
+      },
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1605
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 15
+      },
+      {
+        "code": "P12",
+        "name": "Equivalent properties not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 35
+      },
+      {
+        "code": "P21",
+        "name": "Using a miscellaneous class",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 45
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T20:53:37.496Z",
+    "sha256": "ab3bca176884966c86114d9bf16a6b1b341dacef70176b98aec85008aa8f239b"
+  }
+}

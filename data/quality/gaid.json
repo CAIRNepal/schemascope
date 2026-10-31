@@ -1,0 +1,37 @@
+{
+  "id": "gaid",
+  "artefact": "https://sourceforge.net/projects/gemina/files/gemina%20ontologies/gemina_ontologies_2008-01-25/gemina_anatomy.obo/download",
+  "checkedAt": "2026-10-28T19:51:21.802Z",
+  "sha256": "f9f5a14210b36211dd1c2941a4a790fc93e9a9531a3e0640bbee0d05db2c0488",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:51:23.380Z",
+    "sha256": "f9f5a14210b36211dd1c2941a4a790fc93e9a9531a3e0640bbee0d05db2c0488"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 7,
+      "WARN": 240,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T19:51:25.354Z",
+    "sha256": "f9f5a14210b36211dd1c2941a4a790fc93e9a9531a3e0640bbee0d05db2c0488"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1298 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gaid:/work schemascope/oops --input-file /work/ontolo",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gaid/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T19:51:26.097Z",
+    "sha256": "f9f5a14210b36211dd1c2941a4a790fc93e9a9531a3e0640bbee0d05db2c0488"
+  }
+}

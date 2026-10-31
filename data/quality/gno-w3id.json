@@ -1,0 +1,66 @@
+{
+  "id": "gno-w3id",
+  "artefact": "https://w3id.org/gno",
+  "checkedAt": "2026-10-28T20:27:44.986Z",
+  "sha256": "d872eafcd38af11fdbe0ce21552ab6c36d83f4bce315fcba37364d1fd97ca80d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:27:45.457Z",
+    "sha256": "d872eafcd38af11fdbe0ce21552ab6c36d83f4bce315fcba37364d1fd97ca80d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "Violations: 38\n-----------------\nERROR:      6\nWARN:       29\nINFO:       3\n/work/profile.txt (No such file or directory)\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "robot": {
+      "ERROR": 6,
+      "WARN": 29,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T20:27:46.681Z",
+    "sha256": "d872eafcd38af11fdbe0ce21552ab6c36d83f4bce315fcba37364d1fd97ca80d"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 7,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1410 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gno-w3id:/work schemascope/oops --input-file /work/on"
+    ],
+    "checkedAt": "2026-10-28T20:27:47.742Z",
+    "sha256": "d872eafcd38af11fdbe0ce21552ab6c36d83f4bce315fcba37364d1fd97ca80d"
+  }
+}

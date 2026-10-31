@@ -1,0 +1,77 @@
+{
+  "id": "mmo",
+  "artefact": "http://purl.obolibrary.org/obo/mmo.owl",
+  "checkedAt": "2026-10-28T22:24:59.895Z",
+  "sha256": "b5e26e3769989a64d9c536fb7306ee33e0f8df291b70ca28980fbc19c26f2d2e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 4
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:25:00.691Z",
+    "sha256": "b5e26e3769989a64d9c536fb7306ee33e0f8df291b70ca28980fbc19c26f2d2e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 7,
+      "WARN": 99,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T22:25:02.558Z",
+    "sha256": "b5e26e3769989a64d9c536fb7306ee33e0f8df291b70ca28980fbc19c26f2d2e"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 17
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 854
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T22:25:16.278Z",
+    "sha256": "b5e26e3769989a64d9c536fb7306ee33e0f8df291b70ca28980fbc19c26f2d2e"
+  }
+}

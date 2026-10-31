@@ -1,0 +1,39 @@
+{
+  "id": "edda",
+  "artefact": "http://aber-owl.net/media/ontologies/EDDA/1/edda.owl",
+  "checkedAt": "2026-10-28T17:54:58.887Z",
+  "sha256": "9fb065a2f0a6ce5adce6beb0ab88e5b368e98edf8554ba2339e0a3d40daa1ccc",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://ontologies.dbmi.pitt.edu/edda/TermMapping.owl",
+        "id": "ontologies.dbmi.pitt.edu/edda/termmapping",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dc": 15
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:55:01.081Z",
+    "sha256": "9fb065a2f0a6ce5adce6beb0ab88e5b368e98edf8554ba2339e0a3d40daa1ccc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://ontologies.dbmi.pitt.edu/edda/TermMapping.owl> Cause: ontologies.dbmi.pitt.edu\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T17:55:01.853Z",
+    "sha256": "9fb065a2f0a6ce5adce6beb0ab88e5b368e98edf8554ba2339e0a3d40daa1ccc"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1059 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/edda:/work schemascope/oops --input-file /work/ontolo",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/edda/ontology.owl\nfile:///var/folders/q"
+    ],
+    "checkedAt": "2026-10-28T17:55:02.579Z",
+    "sha256": "9fb065a2f0a6ce5adce6beb0ab88e5b368e98edf8554ba2339e0a3d40daa1ccc"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "id": "ispra",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ispra/versions/2015-12-14.n3",
+  "checkedAt": "2026-10-28T21:15:26.113Z",
+  "sha256": "f234602dd159ed8c79ba350e3cf8d238e1c5b814e8fada6e18dd3443c6765e1e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:15:26.427Z",
+    "sha256": "f234602dd159ed8c79ba350e3cf8d238e1c5b814e8fada6e18dd3443c6765e1e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 196,
+      "WARN": 98,
+      "INFO": 18
+    },
+    "checkedAt": "2026-10-28T21:15:28.340Z",
+    "sha256": "f234602dd159ed8c79ba350e3cf8d238e1c5b814e8fada6e18dd3443c6765e1e"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 8
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 31
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 37,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1701 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ispra:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T21:15:29.438Z",
+    "sha256": "f234602dd159ed8c79ba350e3cf8d238e1c5b814e8fada6e18dd3443c6765e1e"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "id": "iladub",
+  "artefact": "https://w3id.org/iladub",
+  "checkedAt": "2026-10-28T21:08:03.173Z",
+  "sha256": "5fd84dc67df805a38817bb2d0e33f03aa7e2795293e21fd68bac07d83891817b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:08:03.641Z",
+    "sha256": "5fd84dc67df805a38817bb2d0e33f03aa7e2795293e21fd68bac07d83891817b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 17,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-28T21:08:04.865Z",
+    "sha256": "5fd84dc67df805a38817bb2d0e33f03aa7e2795293e21fd68bac07d83891817b"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 7
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 6,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1632 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/iladub:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T21:08:06.218Z",
+    "sha256": "5fd84dc67df805a38817bb2d0e33f03aa7e2795293e21fd68bac07d83891817b"
+  }
+}

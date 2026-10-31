@@ -1,0 +1,69 @@
+{
+  "id": "rdaemm",
+  "artefact": "http://rdaregistry.info/termList/emulsionMicro/",
+  "checkedAt": "2026-10-29T02:16:36.918Z",
+  "sha256": "63655b5ad08066e54efd9a1e168d978b82273b083053d9a2f6bb8f46571037ad",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "skos": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:16:37.215Z",
+    "sha256": "63655b5ad08066e54efd9a1e168d978b82273b083053d9a2f6bb8f46571037ad"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 9,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:16:38.654Z",
+    "sha256": "63655b5ad08066e54efd9a1e168d978b82273b083053d9a2f6bb8f46571037ad"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2865 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rdaemm:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T02:16:39.713Z",
+    "sha256": "63655b5ad08066e54efd9a1e168d978b82273b083053d9a2f6bb8f46571037ad"
+  }
+}

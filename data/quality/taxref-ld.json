@@ -1,0 +1,95 @@
+{
+  "id": "taxref-ld",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/taxref-ld/versions/2022-07-29.n3",
+  "checkedAt": "2026-10-29T04:58:54.511Z",
+  "sha256": "3cf83a4e53804bfdc674673b6c919264040a5a4a79e9e3100cb4d83ea98c8b20",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "envo": 5,
+      "uberon": 13,
+      "ecocore": 27,
+      "ncit": 5,
+      "taxrank": 26,
+      "ncbitaxon": 24,
+      "bibo": 3,
+      "taxonconcept": 35,
+      "bioportal-geospecies": 36
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T04:59:00.203Z",
+    "sha256": "3cf83a4e53804bfdc674673b6c919264040a5a4a79e9e3100cb4d83ea98c8b20"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 155,
+      "WARN": 125,
+      "INFO": 17
+    },
+    "checkedAt": "2026-10-29T04:59:01.537Z",
+    "sha256": "3cf83a4e53804bfdc674673b6c919264040a5a4a79e9e3100cb4d83ea98c8b20"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 7
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 6
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 2,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3686 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/taxref-ld:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-29T04:59:02.246Z",
+    "sha256": "3cf83a4e53804bfdc674673b6c919264040a5a4a79e9e3100cb4d83ea98c8b20"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "id": "ma-ont",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ma-ont/versions/2013-03-20.n3",
+  "checkedAt": "2026-10-28T21:34:36.954Z",
+  "sha256": "338d388f053e80f8b4abb27d9eaef78b430d2a28a9f88143fd8931ffba04d0ae",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://dublincore.org/2008/01/14/dcelements.rdf",
+        "id": "dublincore.org/2008/01/14/dcelements",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:34:37.901Z",
+    "sha256": "338d388f053e80f8b4abb27d9eaef78b430d2a28a9f88143fd8931ffba04d0ae"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 83,
+      "WARN": 97,
+      "INFO": 6
+    },
+    "checkedAt": "2026-10-28T21:34:39.264Z",
+    "sha256": "338d388f053e80f8b4abb27d9eaef78b430d2a28a9f88143fd8931ffba04d0ae"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 48
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 14
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 14
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 14,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1974 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ma-ont:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T21:34:39.873Z",
+    "sha256": "338d388f053e80f8b4abb27d9eaef78b430d2a28a9f88143fd8931ffba04d0ae"
+  }
+}

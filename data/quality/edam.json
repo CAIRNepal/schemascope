@@ -1,0 +1,73 @@
+{
+  "id": "edam",
+  "artefact": "https://raw.githubusercontent.com/edamontology/edamontology/master/releases/EDAM.owl",
+  "checkedAt": "2026-10-28T17:53:20.396Z",
+  "sha256": "a3ebbd7df78f845854c285389f5e788bb6a4852bb50cc6f7a991843dbc538158",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "is": 4,
+      "obi": 7,
+      "iao": 4,
+      "bfo": 4,
+      "dc": 6,
+      "biotop": 7,
+      "sio": 16,
+      "gfo": 6,
+      "skos": 3
+    },
+    "scannedMb": 3,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:53:20.977Z",
+    "sha256": "a3ebbd7df78f845854c285389f5e788bb6a4852bb50cc6f7a991843dbc538158"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1254,
+      "WARN": 3747,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-28T17:53:24.342Z",
+    "sha256": "a3ebbd7df78f845854c285389f5e788bb6a4852bb50cc6f7a991843dbc538158"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 2831
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T17:54:52.611Z",
+    "sha256": "a3ebbd7df78f845854c285389f5e788bb6a4852bb50cc6f7a991843dbc538158"
+  }
+}

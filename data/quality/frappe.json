@@ -1,0 +1,87 @@
+{
+  "id": "frappe",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/frappe/versions/2015-04-28.n3",
+  "checkedAt": "2026-10-28T19:49:27.671Z",
+  "sha256": "475f085ec439cb3074306f24cefc181a6ea1f449a3611b50bee65fa5875842b4",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/NET/c4dm/event.owl",
+        "id": "event",
+        "own": false
+      },
+      {
+        "iri": "http://www.opengis.net/ont/geosparql",
+        "id": "geosparql",
+        "own": false
+      },
+      {
+        "iri": "http://www.opengis.net/ont/gml",
+        "id": "gml",
+        "own": false
+      },
+      {
+        "iri": "http://www.opengis.net/ont/sf",
+        "id": "ogc-sf",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/2006/time",
+        "id": "time",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:49:28.500Z",
+    "sha256": "475f085ec439cb3074306f24cefc181a6ea1f449a3611b50bee65fa5875842b4"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.org/NET/c4dm/event.owl> Cause: Server returned HTTP response code: 403 for URL: https://motools.sourceforge.net/event/\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T19:49:32.465Z",
+    "sha256": "475f085ec439cb3074306f24cefc181a6ea1f449a3611b50bee65fa5875842b4"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 4
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 9,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1273 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/frappe:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T19:49:33.138Z",
+    "sha256": "475f085ec439cb3074306f24cefc181a6ea1f449a3611b50bee65fa5875842b4"
+  }
+}

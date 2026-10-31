@@ -1,0 +1,83 @@
+{
+  "id": "pr",
+  "artefact": "http://purl.obolibrary.org/obo/pr.owl",
+  "checkedAt": "2026-10-29T01:29:31.704Z",
+  "sha256": "b9dc8168e08a24a660f2821a1319aabefb89c80c329a631ff35a688522a63679",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 5,
+      "bfo": 3,
+      "ro": 16,
+      "chebi": 50,
+      "so": 7,
+      "ncbitaxon": 50,
+      "xsd": 6,
+      "owl": 3,
+      "gno": 50,
+      "go": 50,
+      "pmid": 50,
+      "mod": 50,
+      "hgnc": 50,
+      "mgi": 10,
+      "ncbigene": 26,
+      "rgd": 7,
+      "cgnc": 4
+    },
+    "scannedMb": 500,
+    "truncated": true,
+    "scannedAt": "2026-10-29T01:34:26.421Z",
+    "sha256": "b9dc8168e08a24a660f2821a1319aabefb89c80c329a631ff35a688522a63679"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "Exception in thread \"main\" java.lang.OutOfMemoryError: Java heap space\n",
+    "checkedAt": "2026-10-29T01:37:09.539Z",
+    "sha256": "b9dc8168e08a24a660f2821a1319aabefb89c80c329a631ff35a688522a63679"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 23
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 4321
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 24
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 245694,
+    "attempts": [],
+    "checkedAt": "2026-10-29T01:43:48.892Z",
+    "sha256": "b9dc8168e08a24a660f2821a1319aabefb89c80c329a631ff35a688522a63679"
+  }
+}

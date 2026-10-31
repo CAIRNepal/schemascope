@@ -1,0 +1,11 @@
+{
+  "id": "eol",
+  "artefact": "http://sicpa-web.cati.inrae.fr/ontologies/visualisation/ontologie/atol/creation_fichier_owl.php?filename=eol.owl",
+  "checkedAt": "2026-10-28T19:26:16.488Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:26:27.004Z"
+  }
+}

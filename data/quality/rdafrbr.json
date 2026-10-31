@@ -1,0 +1,79 @@
+{
+  "id": "rdafrbr",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/rdafrbr/versions/2012-03-26.n3",
+  "checkedAt": "2026-10-29T02:16:53.622Z",
+  "sha256": "340fb69858cd57a6cff18cc52dcbe6e8eac1850e44ce7cc2e5d84cd0d2ade5e7",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:17:00.299Z",
+    "sha256": "340fb69858cd57a6cff18cc52dcbe6e8eac1850e44ce7cc2e5d84cd0d2ade5e7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 5,
+      "WARN": 19,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-29T02:17:01.310Z",
+    "sha256": "340fb69858cd57a6cff18cc52dcbe6e8eac1850e44ce7cc2e5d84cd0d2ade5e7"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 14,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2875 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rdafrbr:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T02:17:02.015Z",
+    "sha256": "340fb69858cd57a6cff18cc52dcbe6e8eac1850e44ce7cc2e5d84cd0d2ade5e7"
+  }
+}

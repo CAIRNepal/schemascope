@@ -1,0 +1,61 @@
+{
+  "id": "cpt",
+  "artefact": "https://w3id.org/biopragmatics/resources/cpt/cpt.owl",
+  "checkedAt": "2026-10-28T14:50:20.903Z",
+  "sha256": "b6d51191706046d3ec2717da6af24e6926e665587415d3b84b8d35253a81fe69",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T14:50:21.690Z",
+    "sha256": "b6d51191706046d3ec2717da6af24e6926e665587415d3b84b8d35253a81fe69"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 41,
+      "WARN": 158,
+      "INFO": 158
+    },
+    "checkedAt": "2026-10-28T14:50:23.779Z",
+    "sha256": "b6d51191706046d3ec2717da6af24e6926e665587415d3b84b8d35253a81fe69"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-648 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cpt:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T15:05:43.271Z",
+    "sha256": "b6d51191706046d3ec2717da6af24e6926e665587415d3b84b8d35253a81fe69"
+  }
+}

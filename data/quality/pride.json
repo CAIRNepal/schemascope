@@ -1,0 +1,111 @@
+{
+  "id": "pride",
+  "artefact": "https://raw.githubusercontent.com/PRIDE-Utilities/pride-ontology/master/pride_cv.owl",
+  "checkedAt": "2026-10-29T01:44:44.007Z",
+  "sha256": "81e1db3147f4d7c1260e02832d3d4ed8030723d6f966a9df99790a09383ecec2",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.obolibrary.org/obo/chmo.owl",
+        "id": "chmo",
+        "own": false
+      },
+      {
+        "iri": "http://www.ebi.ac.uk/efo/efo.owl",
+        "id": "ebi.ac.uk/efo/efo",
+        "own": false
+      }
+    ],
+    "uses": {
+      "ncit": 11,
+      "bfo": 4,
+      "efo": 5,
+      "ms": 5,
+      "pmid": 4,
+      "mixs": 50
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:44:44.250Z",
+    "sha256": "81e1db3147f4d7c1260e02832d3d4ed8030723d6f966a9df99790a09383ecec2"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 13,
+      "INFO": 19
+    },
+    "checkedAt": "2026-10-29T01:46:12.439Z",
+    "sha256": "81e1db3147f4d7c1260e02832d3d4ed8030723d6f966a9df99790a09383ecec2"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 7,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 106
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 4280
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 37
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 30
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 3
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T01:49:33.537Z",
+    "sha256": "81e1db3147f4d7c1260e02832d3d4ed8030723d6f966a9df99790a09383ecec2"
+  }
+}

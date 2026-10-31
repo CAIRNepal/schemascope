@@ -1,0 +1,110 @@
+{
+  "id": "premis",
+  "artefact": "https://raw.githubusercontent.com/lcnetdev/PREMIS/master/premis3.owl",
+  "checkedAt": "2026-10-29T01:44:32.450Z",
+  "sha256": "ce9edc1a1d7a6092d4da653e28f92926b3f1bc7e77ef571e0f8412e2cbea3108",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/ns/prov-o-20130430",
+        "id": "w3.org/ns/prov-o-20130430",
+        "own": false
+      }
+    ],
+    "uses": {
+      "xsd": 3,
+      "prov": 6,
+      "foaf": 3,
+      "dcterms": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:44:33.276Z",
+    "sha256": "ce9edc1a1d7a6092d4da653e28f92926b3f1bc7e77ef571e0f8412e2cbea3108"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 67,
+      "INFO": 14
+    },
+    "checkedAt": "2026-10-29T01:44:35.259Z",
+    "sha256": "ce9edc1a1d7a6092d4da653e28f92926b3f1bc7e77ef571e0f8412e2cbea3108"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 4,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 68
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 54
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 9
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T01:44:44.006Z",
+    "sha256": "ce9edc1a1d7a6092d4da653e28f92926b3f1bc7e77ef571e0f8412e2cbea3108"
+  }
+}

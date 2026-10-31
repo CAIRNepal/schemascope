@@ -1,0 +1,94 @@
+{
+  "id": "pato",
+  "artefact": "http://purl.obolibrary.org/obo/pato.owl",
+  "checkedAt": "2026-10-29T00:37:29.364Z",
+  "sha256": "27c1bb7d2bfeb3592274b27ad1632bc7834a71f38d216210730fc44060d3ef0c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 5,
+      "ro": 50,
+      "bfo": 18,
+      "bspo": 15,
+      "cl": 50,
+      "uberon": 50,
+      "cob": 4,
+      "go": 50,
+      "chebi": 50,
+      "pmid": 15,
+      "xsd": 4,
+      "dc": 4,
+      "dcterms": 3,
+      "rdfs": 4,
+      "owl": 8,
+      "clm": 3,
+      "ncbitaxon": 34,
+      "nbo": 3,
+      "rbo": 3,
+      "pco": 8,
+      "mp": 3,
+      "fma": 3
+    },
+    "scannedMb": 21,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:37:30.222Z",
+    "sha256": "27c1bb7d2bfeb3592274b27ad1632bc7834a71f38d216210730fc44060d3ef0c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 27,
+      "WARN": 490,
+      "INFO": 137
+    },
+    "checkedAt": "2026-10-29T00:37:38.854Z",
+    "sha256": "27c1bb7d2bfeb3592274b27ad1632bc7834a71f38d216210730fc44060d3ef0c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 201
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1230
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 172
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 8713,
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:37:43.335Z",
+    "sha256": "27c1bb7d2bfeb3592274b27ad1632bc7834a71f38d216210730fc44060d3ef0c"
+  }
+}

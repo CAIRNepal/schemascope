@@ -1,0 +1,11 @@
+{
+  "id": "sso",
+  "artefact": "https://w3id.org/sso",
+  "checkedAt": "2026-10-29T03:17:47.499Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:17:58.001Z"
+  }
+}

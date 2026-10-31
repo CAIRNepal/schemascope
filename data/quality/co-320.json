@@ -1,0 +1,11 @@
+{
+  "id": "co-320",
+  "artefact": "http://cropontology.org/rdf/CO_320.owl",
+  "checkedAt": "2026-10-28T07:35:49.404Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T07:53:21.721Z"
+  }
+}

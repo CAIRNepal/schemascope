@@ -1,0 +1,92 @@
+{
+  "id": "demlab",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/demlab/versions/2014-09-02.n3",
+  "checkedAt": "2026-10-28T16:58:56.143Z",
+  "sha256": "c42938a46b65027c5776cb410e6206b643145ee919a3589c5512e3bf2e1aa702",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/2006/time",
+        "id": "time",
+        "own": false
+      },
+      {
+        "iri": "http://xmlns.com/foaf/0.1/",
+        "id": "foaf",
+        "own": false
+      }
+    ],
+    "uses": {
+      "time": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T16:58:57.282Z",
+    "sha256": "c42938a46b65027c5776cb410e6206b643145ee919a3589c5512e3bf2e1aa702"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 93,
+      "WARN": 178,
+      "INFO": 16
+    },
+    "checkedAt": "2026-10-28T16:58:59.689Z",
+    "sha256": "c42938a46b65027c5776cb410e6206b643145ee919a3589c5512e3bf2e1aa702"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 54
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 9
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 54,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-809 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/demlab:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T16:59:00.640Z",
+    "sha256": "c42938a46b65027c5776cb410e6206b643145ee919a3589c5512e3bf2e1aa702"
+  }
+}

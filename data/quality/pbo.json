@@ -1,0 +1,109 @@
+{
+  "id": "pbo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/pbo/versions/2010-09-13.n3",
+  "checkedAt": "2026-10-29T00:38:02.263Z",
+  "sha256": "8c57a35be037d19e5a904e60d31fbdfda38667e2ce9d4f828b9cfada395c00a3",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/NET/c4dm/event.owl",
+        "id": "event",
+        "own": true
+      },
+      {
+        "iri": "http://purl.org/dc/elements/1.1/",
+        "id": "dc",
+        "own": true
+      },
+      {
+        "iri": "http://purl.org/ontology/bibo/",
+        "id": "bibo",
+        "own": true
+      },
+      {
+        "iri": "http://purl.org/ontology/olo/core",
+        "id": "olo",
+        "own": true
+      },
+      {
+        "iri": "http://purl.org/ontology/similarity/",
+        "id": "sim-lov",
+        "own": true
+      },
+      {
+        "iri": "http://purl.org/vocab/frbr/core",
+        "id": "frbr",
+        "own": true
+      },
+      {
+        "iri": "http://www.w3.org/2003/06/sw-vocab-status/ns",
+        "id": "vs",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:38:03.633Z",
+    "sha256": "8c57a35be037d19e5a904e60d31fbdfda38667e2ce9d4f828b9cfada395c00a3"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.org/NET/c4dm/event.owl> Cause: Server returned HTTP response code: 403 for URL: https://motools.sourceforge.net/event/\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T00:38:06.370Z",
+    "sha256": "8c57a35be037d19e5a904e60d31fbdfda38667e2ce9d4f828b9cfada395c00a3"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 6
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 7,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2565 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/pbo:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T00:38:07.081Z",
+    "sha256": "8c57a35be037d19e5a904e60d31fbdfda38667e2ce9d4f828b9cfada395c00a3"
+  }
+}

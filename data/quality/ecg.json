@@ -1,0 +1,105 @@
+{
+  "id": "ecg",
+  "artefact": "http://aber-owl.net/media/ontologies/ECG/1/ecg.owl",
+  "checkedAt": "2026-10-28T17:37:49.653Z",
+  "sha256": "cd3c2f21032f70b0589563d7c1bcc081c91c4a0282d428181ddc840d74dc543e",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.ifomis.org/bfo/1.1",
+        "id": "ifomis.org/bfo/1.1",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:37:52.518Z",
+    "sha256": "cd3c2f21032f70b0589563d7c1bcc081c91c4a0282d428181ddc840d74dc543e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 8,
+      "WARN": 1152,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T17:37:55.204Z",
+    "sha256": "cd3c2f21032f70b0589563d7c1bcc081c91c4a0282d428181ddc840d74dc543e"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 4,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P02",
+        "name": "Creating synonyms as classes",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 908
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 72
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 38
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T17:38:19.549Z",
+    "sha256": "cd3c2f21032f70b0589563d7c1bcc081c91c4a0282d428181ddc840d74dc543e"
+  }
+}

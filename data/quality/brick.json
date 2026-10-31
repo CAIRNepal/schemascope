@@ -1,0 +1,109 @@
+{
+  "id": "brick",
+  "artefact": "https://brickschema.org/schema/Brick.ttl",
+  "checkedAt": "2026-10-28T01:45:59.507Z",
+  "sha256": "6631d217d480b1942f7c273bf59a8b0b992ac169dec53735a6f5d8f67a037bbe",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://data.ashrae.org/bacnet/2020",
+        "id": "data.ashrae.org/bacnet/2020",
+        "own": false
+      },
+      {
+        "iri": "http://qudt.org/2.1/collection/usertest",
+        "id": "qudt.org/2.1/collection/usertest",
+        "own": false
+      },
+      {
+        "iri": "http://qudt.org/2.1/schema/facade/qudt",
+        "id": "qudt.org/2.1/schema/facade/qudt",
+        "own": false
+      },
+      {
+        "iri": "http://qudt.org/2.1/schema/shacl/overlay/qudt",
+        "id": "qudt.org/2.1/schema/shacl/overlay/qudt",
+        "own": false
+      },
+      {
+        "iri": "http://qudt.org/2.1/schema/shacl/qudt",
+        "id": "qudt.org/2.1/schema/shacl/qudt",
+        "own": false
+      },
+      {
+        "iri": "http://qudt.org/2.1/vocab/dimensionvector",
+        "id": "qudt.org/2.1/vocab/dimensionvector",
+        "own": false
+      },
+      {
+        "iri": "http://qudt.org/2.1/vocab/prefix",
+        "id": "qudt.org/2.1/vocab/prefix",
+        "own": false
+      },
+      {
+        "iri": "http://qudt.org/2.1/vocab/quantitykind",
+        "id": "qudt.org/2.1/vocab/quantitykind",
+        "own": false
+      },
+      {
+        "iri": "http://qudt.org/2.1/vocab/sou",
+        "id": "sou",
+        "own": false
+      },
+      {
+        "iri": "http://qudt.org/2.1/vocab/unit",
+        "id": "qudt.org/2.1/vocab/unit",
+        "own": false
+      },
+      {
+        "iri": "https://w3id.org/rec",
+        "id": "w3id.org/rec",
+        "own": false
+      },
+      {
+        "iri": "https://w3id.org/rec/recimports",
+        "id": "w3id.org/rec/recimports",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:46:00.083Z",
+    "sha256": "6631d217d480b1942f7c273bf59a8b0b992ac169dec53735a6f5d8f67a037bbe"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://data.ashrae.org/bacnet/2020> Cause: https://data.ashrae.org/bacnet/2020\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T01:46:01.381Z",
+    "sha256": "6631d217d480b1942f7c273bf59a8b0b992ac169dec53735a6f5d8f67a037bbe"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-259 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/brick:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T01:46:02.635Z",
+    "sha256": "6631d217d480b1942f7c273bf59a8b0b992ac169dec53735a6f5d8f67a037bbe"
+  }
+}

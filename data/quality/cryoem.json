@@ -1,0 +1,11 @@
+{
+  "id": "cryoem",
+  "artefact": "http://scipion.i2pc.es/ontology/cryoem.owl",
+  "checkedAt": "2026-10-28T15:07:15.661Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T15:07:26.177Z"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "id": "envthes",
+  "artefact": "http://aber-owl.net/media/ontologies/ENVTHES/1/envthes.owl",
+  "checkedAt": "2026-10-28T19:23:19.121Z",
+  "sha256": "df4748f2b33db21683a91c111bcd602b66a7b9a12cdaae01c1a60c89cfb77c30",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "soy": 4,
+      "envo": 50,
+      "ncbitaxon": 4,
+      "pato": 5,
+      "chebi": 9,
+      "ero": 3,
+      "go": 4,
+      "obcs": 6,
+      "obi": 4,
+      "stato": 5,
+      "to": 13,
+      "sio": 7
+    },
+    "scannedMb": 3,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:23:21.141Z",
+    "sha256": "df4748f2b33db21683a91c111bcd602b66a7b9a12cdaae01c1a60c89cfb77c30"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2742,
+      "WARN": 18,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T19:23:25.952Z",
+    "sha256": "df4748f2b33db21683a91c111bcd602b66a7b9a12cdaae01c1a60c89cfb77c30"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 9
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1131 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/envthes:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-28T19:23:27.860Z",
+    "sha256": "df4748f2b33db21683a91c111bcd602b66a7b9a12cdaae01c1a60c89cfb77c30"
+  }
+}

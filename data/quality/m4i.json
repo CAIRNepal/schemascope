@@ -1,0 +1,94 @@
+{
+  "id": "m4i",
+  "artefact": "https://nfdi4ing.pages.rwth-aachen.de/metadata4ing/metadata4ing/ontology.ttl",
+  "checkedAt": "2026-10-28T21:33:22.838Z",
+  "sha256": "7b0e6859272e75da01c4b9b4a048b3f62be9a575afb9a47aa6947af18a4b1f76",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 3,
+      "bfo": 8,
+      "ro": 9,
+      "dcterms": 18,
+      "vann": 3,
+      "doap": 3,
+      "dcat": 13,
+      "schema": 27,
+      "skos": 10,
+      "foaf": 9,
+      "prov": 14,
+      "sio": 3,
+      "pimsii": 16,
+      "qudt": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:33:24.029Z",
+    "sha256": "7b0e6859272e75da01c4b9b4a048b3f62be9a575afb9a47aa6947af18a4b1f76"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "2026-10-28 21:33:25,116 ERROR org.obolibrary.robot.ReportOperation - Could not complete query 'equivalent_class_axiom_no_genus' - report may be incomplete.\nCause:\niri cannot be null\nreport#MISSING ENTITY BINDING query 'equivalent_class_axiom_no_genus' must include an '?entity'\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T21:33:25.247Z",
+    "sha256": "7b0e6859272e75da01c4b9b4a048b3f62be9a575afb9a47aa6947af18a4b1f76"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 19
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 34
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 12,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1970 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/m4i:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T21:33:26.340Z",
+    "sha256": "7b0e6859272e75da01c4b9b4a048b3f62be9a575afb9a47aa6947af18a4b1f76"
+  }
+}

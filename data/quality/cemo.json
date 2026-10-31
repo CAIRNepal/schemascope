@@ -1,0 +1,105 @@
+{
+  "id": "cemo",
+  "artefact": "https://raw.githubusercontent.com/NuriaQueralt/covid19-epidemiology-ontology/main/owl/cemo.owl",
+  "checkedAt": "2026-10-28T02:04:47.358Z",
+  "sha256": "6265437fabfba6d63cbaa6d825590d5a94a152db7bf63847a04a816a41d46b00",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.obolibrary.org/obo/bfo/2019-08-26/bfo.owl",
+        "id": "bfo",
+        "own": false
+      }
+    ],
+    "uses": {
+      "bfo": 15,
+      "iao": 8,
+      "obi": 7,
+      "ro": 7,
+      "stato": 11,
+      "ido": 19,
+      "ncit": 5,
+      "ogms": 4,
+      "xsd": 3,
+      "dcterms": 5,
+      "gfo": 19
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:04:47.568Z",
+    "sha256": "6265437fabfba6d63cbaa6d825590d5a94a152db7bf63847a04a816a41d46b00"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 234,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T02:04:52.663Z",
+    "sha256": "6265437fabfba6d63cbaa6d825590d5a94a152db7bf63847a04a816a41d46b00"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P02",
+        "name": "Creating synonyms as classes",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 21
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 215
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 15
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 15
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 2
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T02:05:05.196Z",
+    "sha256": "6265437fabfba6d63cbaa6d825590d5a94a152db7bf63847a04a816a41d46b00"
+  }
+}

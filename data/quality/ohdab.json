@@ -1,0 +1,11 @@
+{
+  "id": "ohdab",
+  "artefact": "https://raw.githubusercontent.com/ts4nfdi/Wikibase-ts-convert/refs/heads/main/ohdab/OhdAB.ttl",
+  "checkedAt": "2026-10-29T00:04:16.878Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:04:17.031Z"
+  }
+}

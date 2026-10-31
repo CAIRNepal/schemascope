@@ -1,0 +1,89 @@
+{
+  "id": "sim",
+  "artefact": "https://raw.githubusercontent.com/OCDO/DSIM/refs/heads/main/dislocation-sim-model-ontology.owl",
+  "checkedAt": "2026-10-29T02:59:24.406Z",
+  "sha256": "d0600566158974f147a3cb7190dfe238c4233e6499b0c664841ba61183a757ce",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 7,
+      "dcterms": 5,
+      "qudt": 9,
+      "prov": 7,
+      "owl": 3,
+      "core": 12,
+      "mdo-struc": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:59:24.621Z",
+    "sha256": "d0600566158974f147a3cb7190dfe238c4233e6499b0c664841ba61183a757ce"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 42,
+      "WARN": 96,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-29T02:59:26.203Z",
+    "sha256": "d0600566158974f147a3cb7190dfe238c4233e6499b0c664841ba61183a757ce"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 1,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 54
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 40
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 13
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P29",
+        "name": "Defining wrong transitive relationships",
+        "importance": "critical",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T02:59:33.479Z",
+    "sha256": "d0600566158974f147a3cb7190dfe238c4233e6499b0c664841ba61183a757ce"
+  }
+}

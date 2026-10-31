@@ -1,0 +1,89 @@
+{
+  "id": "dlo",
+  "artefact": "https://w3id.org/dlo",
+  "checkedAt": "2026-10-28T17:14:38.975Z",
+  "sha256": "5c562be34eae5ba4ab2f0c24ae2dca2a90c5129924149a6c25d62923d4d2bc7c",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://protege.stanford.edu/plugins/owl/dc/protege-dc.owl",
+        "id": "protege.stanford.edu/plugins/owl/dc/protege-dc",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/dcat",
+        "id": "dcat",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/prov-o-20130430",
+        "id": "w3.org/ns/prov-o-20130430",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:14:39.661Z",
+    "sha256": "5c562be34eae5ba4ab2f0c24ae2dca2a90c5129924149a6c25d62923d4d2bc7c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 10,
+      "WARN": 30,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T17:14:43.918Z",
+    "sha256": "5c562be34eae5ba4ab2f0c24ae2dca2a90c5129924149a6c25d62923d4d2bc7c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 7
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 21,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-885 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dlo:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T17:14:44.676Z",
+    "sha256": "5c562be34eae5ba4ab2f0c24ae2dca2a90c5129924149a6c25d62923d4d2bc7c"
+  }
+}

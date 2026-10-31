@@ -1,0 +1,79 @@
+{
+  "id": "saref-environment",
+  "artefact": "https://saref.etsi.org/saref4envi/",
+  "checkedAt": "2026-10-29T02:43:24.899Z",
+  "sha256": "b8f4bdb0ec7e4c9517d563c3297994e1f7c26d4e2076617f5eb31c148251f2d8",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:43:25.892Z",
+    "sha256": "b8f4bdb0ec7e4c9517d563c3297994e1f7c26d4e2076617f5eb31c148251f2d8"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 93,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-29T02:43:28.502Z",
+    "sha256": "b8f4bdb0ec7e4c9517d563c3297994e1f7c26d4e2076617f5eb31c148251f2d8"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 23
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 66,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3132 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/saref-environment:/work schemascope/oops --input-file"
+    ],
+    "checkedAt": "2026-10-29T02:43:29.750Z",
+    "sha256": "b8f4bdb0ec7e4c9517d563c3297994e1f7c26d4e2076617f5eb31c148251f2d8"
+  }
+}

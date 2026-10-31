@@ -1,0 +1,67 @@
+{
+  "id": "nrv",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/nrv/versions/2017-08-08.n3",
+  "checkedAt": "2026-10-28T23:23:07.763Z",
+  "sha256": "9ad84f47b7ecc192496e34d892679f96edf74ae74c9473692d9ce5c93577e9fc",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:23:13.440Z",
+    "sha256": "9ad84f47b7ecc192496e34d892679f96edf74ae74c9473692d9ce5c93577e9fc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 45,
+      "INFO": 6
+    },
+    "checkedAt": "2026-10-28T23:23:14.509Z",
+    "sha256": "9ad84f47b7ecc192496e34d892679f96edf74ae74c9473692d9ce5c93577e9fc"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2260 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/nrv:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T23:23:15.241Z",
+    "sha256": "9ad84f47b7ecc192496e34d892679f96edf74ae74c9473692d9ce5c93577e9fc"
+  }
+}

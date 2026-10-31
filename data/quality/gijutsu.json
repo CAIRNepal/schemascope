@@ -1,0 +1,61 @@
+{
+  "id": "gijutsu",
+  "artefact": "https://wik.jp/gijutsu/",
+  "checkedAt": "2026-10-28T20:23:10.813Z",
+  "sha256": "d88e77f325fb5eaaa85174a7f63d9001e7f39ff5ec91ae9e0b981340442e5148",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:23:11.333Z",
+    "sha256": "d88e77f325fb5eaaa85174a7f63d9001e7f39ff5ec91ae9e0b981340442e5148"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 23,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T20:23:12.430Z",
+    "sha256": "d88e77f325fb5eaaa85174a7f63d9001e7f39ff5ec91ae9e0b981340442e5148"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1377 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gijutsu:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-28T20:23:13.130Z",
+    "sha256": "d88e77f325fb5eaaa85174a7f63d9001e7f39ff5ec91ae9e0b981340442e5148"
+  }
+}

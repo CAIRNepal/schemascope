@@ -1,0 +1,68 @@
+{
+  "id": "oslo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/oslo/versions/2014-05-30.n3",
+  "checkedAt": "2026-10-29T00:33:58.683Z",
+  "sha256": "20a60a81c554eafbbe0471216baaaba2acf4ccfc177eba39e125d3a54f7f4fad",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "locn": 17,
+      "schema": 3,
+      "adms": 3,
+      "dcterms": 3,
+      "rov": 6,
+      "person": 8
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:33:59.865Z",
+    "sha256": "20a60a81c554eafbbe0471216baaaba2acf4ccfc177eba39e125d3a54f7f4fad"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 21,
+      "WARN": 122,
+      "INFO": 14
+    },
+    "checkedAt": "2026-10-29T00:34:01.061Z",
+    "sha256": "20a60a81c554eafbbe0471216baaaba2acf4ccfc177eba39e125d3a54f7f4fad"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 6,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2516 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/oslo:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T00:34:01.850Z",
+    "sha256": "20a60a81c554eafbbe0471216baaaba2acf4ccfc177eba39e125d3a54f7f4fad"
+  }
+}

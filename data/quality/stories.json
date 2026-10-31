@@ -1,0 +1,11 @@
+{
+  "id": "stories",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/stories/versions/2013-05-16.n3",
+  "checkedAt": "2026-10-29T03:19:22.009Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:19:32.508Z"
+  }
+}

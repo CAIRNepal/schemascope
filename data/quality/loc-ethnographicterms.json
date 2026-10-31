@@ -1,0 +1,63 @@
+{
+  "id": "loc-ethnographicterms",
+  "artefact": "http://id.loc.gov/vocabulary/ethnographicTerms.rdf",
+  "checkedAt": "2026-10-28T21:29:10.185Z",
+  "sha256": "eb9385dd47e86db5f06c29a3e0d18a484f85d830a0860aaf9b9a2a54c1461ca0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:29:10.443Z",
+    "sha256": "eb9385dd47e86db5f06c29a3e0d18a484f85d830a0860aaf9b9a2a54c1461ca0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 30,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:29:11.574Z",
+    "sha256": "eb9385dd47e86db5f06c29a3e0d18a484f85d830a0860aaf9b9a2a54c1461ca0"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 8
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:29:18.064Z",
+    "sha256": "eb9385dd47e86db5f06c29a3e0d18a484f85d830a0860aaf9b9a2a54c1461ca0"
+  }
+}

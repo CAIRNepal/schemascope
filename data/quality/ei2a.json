@@ -1,0 +1,85 @@
+{
+  "id": "ei2a",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ei2a/versions/2021-10-21.n3",
+  "checkedAt": "2026-10-28T18:42:04.586Z",
+  "sha256": "1f6bc3f426823efdc0a18acadabcc46bc5bdf342cad775ded4262f89293456d6",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dc": 7,
+      "skos": 10,
+      "qb": 16,
+      "schema": 33,
+      "gtfs": 14,
+      "time": 4,
+      "vcard": 9,
+      "org": 20,
+      "prov": 5,
+      "sosa": 6,
+      "foaf": 9
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T18:42:05.608Z",
+    "sha256": "1f6bc3f426823efdc0a18acadabcc46bc5bdf342cad775ded4262f89293456d6"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 144,
+      "WARN": 171,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-28T18:42:06.848Z",
+    "sha256": "1f6bc3f426823efdc0a18acadabcc46bc5bdf342cad775ded4262f89293456d6"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 2,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1085 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ei2a:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T18:42:07.546Z",
+    "sha256": "1f6bc3f426823efdc0a18acadabcc46bc5bdf342cad775ded4262f89293456d6"
+  }
+}

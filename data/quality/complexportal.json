@@ -1,0 +1,59 @@
+{
+  "id": "complexportal",
+  "artefact": "https://w3id.org/biopragmatics/resources/complexportal/complexportal.owl",
+  "checkedAt": "2026-10-28T13:05:03.436Z",
+  "sha256": "5f3846d83865d12f9b6a45a4fd105ad3969126eeb5d762de6a7cf0a442f39d6a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ncbitaxon": 26,
+      "dcterms": 3,
+      "chebi": 50,
+      "pr": 26
+    },
+    "scannedMb": 15,
+    "truncated": false,
+    "scannedAt": "2026-10-28T13:05:06.754Z",
+    "sha256": "5f3846d83865d12f9b6a45a4fd105ad3969126eeb5d762de6a7cf0a442f39d6a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2204,
+      "WARN": 5,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T13:05:21.383Z",
+    "sha256": "5f3846d83865d12f9b6a45a4fd105ad3969126eeb5d762de6a7cf0a442f39d6a"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-586 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/complexportal:/work schemascope/oops --input-file /wor"
+    ],
+    "checkedAt": "2026-10-28T13:22:36.522Z",
+    "sha256": "5f3846d83865d12f9b6a45a4fd105ad3969126eeb5d762de6a7cf0a442f39d6a"
+  }
+}

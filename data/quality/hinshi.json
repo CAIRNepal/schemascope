@@ -1,0 +1,61 @@
+{
+  "id": "hinshi",
+  "artefact": "https://wik.jp/hinshi/",
+  "checkedAt": "2026-10-28T20:41:49.691Z",
+  "sha256": "452dafb1cd15a0a8691a5581943295c0ef1329492a951c32e5d8834b298eea6c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:41:50.154Z",
+    "sha256": "452dafb1cd15a0a8691a5581943295c0ef1329492a951c32e5d8834b298eea6c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 33,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T20:41:51.707Z",
+    "sha256": "452dafb1cd15a0a8691a5581943295c0ef1329492a951c32e5d8834b298eea6c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1506 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/hinshi:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T20:41:52.942Z",
+    "sha256": "452dafb1cd15a0a8691a5581943295c0ef1329492a951c32e5d8834b298eea6c"
+  }
+}

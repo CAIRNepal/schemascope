@@ -1,0 +1,91 @@
+{
+  "id": "rdfa",
+  "artefact": "http://www.w3.org/ns/rdfa.ttl",
+  "checkedAt": "2026-10-29T02:20:17.721Z",
+  "sha256": "6140e2c48125c790eb099e75bf079b726d43b92b87cb11e2f268ff8edfaa37aa",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:20:17.938Z",
+    "sha256": "6140e2c48125c790eb099e75bf079b726d43b92b87cb11e2f268ff8edfaa37aa"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 22,
+      "WARN": 20,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-29T02:20:19.135Z",
+    "sha256": "6140e2c48125c790eb099e75bf079b726d43b92b87cb11e2f268ff8edfaa37aa"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 4,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 10
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 3,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2973 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rdfa:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T02:20:20.120Z",
+    "sha256": "6140e2c48125c790eb099e75bf079b726d43b92b87cb11e2f268ff8edfaa37aa"
+  }
+}

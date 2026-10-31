@@ -1,0 +1,56 @@
+{
+  "id": "pfam",
+  "artefact": "https://w3id.org/biopragmatics/resources/pfam/pfam.owl",
+  "checkedAt": "2026-10-29T00:43:01.596Z",
+  "sha256": "0e6ac25efe202451d2d3dd846235d7eff12956d8e315e9b39cc9166601eb3748",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 3
+    },
+    "scannedMb": 9,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:43:02.877Z",
+    "sha256": "0e6ac25efe202451d2d3dd846235d7eff12956d8e315e9b39cc9166601eb3748"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 26321,
+      "INFO": 13524
+    },
+    "checkedAt": "2026-10-29T00:43:09.409Z",
+    "sha256": "0e6ac25efe202451d2d3dd846235d7eff12956d8e315e9b39cc9166601eb3748"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2599 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/pfam:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T00:53:11.260Z",
+    "sha256": "0e6ac25efe202451d2d3dd846235d7eff12956d8e315e9b39cc9166601eb3748"
+  }
+}

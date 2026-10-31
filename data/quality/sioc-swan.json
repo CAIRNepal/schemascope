@@ -1,0 +1,85 @@
+{
+  "id": "sioc-swan",
+  "artefact": "http://rdfs.org/sioc/swan#",
+  "checkedAt": "2026-10-29T03:00:59.506Z",
+  "sha256": "0ae3572f1aefc6ba30fcc8f0fa87aa2f4e25e2ccc02fd33f0fecea7b7db88bac",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://rdfs.org/sioc/ns#",
+        "id": "sioc-core",
+        "own": true
+      },
+      {
+        "iri": "http://rdfs.org/sioc/types#",
+        "id": "sioc-types",
+        "own": true
+      },
+      {
+        "iri": "http://swan.mindinformatics.org/ontologies/1.2/swan.owl",
+        "id": "swan.mindinformatics.org/ontologies/1.2/swan",
+        "own": false
+      }
+    ],
+    "uses": {
+      "sioc-core": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T03:00:59.722Z",
+    "sha256": "0ae3572f1aefc6ba30fcc8f0fa87aa2f4e25e2ccc02fd33f0fecea7b7db88bac"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://swan.mindinformatics.org/ontologies/1.2/swan.owl> Cause: swan.mindinformatics.org\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T03:01:01.158Z",
+    "sha256": "0ae3572f1aefc6ba30fcc8f0fa87aa2f4e25e2ccc02fd33f0fecea7b7db88bac"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3313 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sioc-swan:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-29T03:01:04.038Z",
+    "sha256": "0ae3572f1aefc6ba30fcc8f0fa87aa2f4e25e2ccc02fd33f0fecea7b7db88bac"
+  }
+}

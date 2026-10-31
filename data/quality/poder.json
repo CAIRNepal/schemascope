@@ -1,0 +1,85 @@
+{
+  "id": "poder",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/poder/versions/2012-05-17.n3",
+  "checkedAt": "2026-10-29T01:17:13.220Z",
+  "sha256": "44c35c07c9690841d6a0ceb794cf909eb3c15bc4d25ad806848fb61862de5d1a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:17:14.165Z",
+    "sha256": "44c35c07c9690841d6a0ceb794cf909eb3c15bc4d25ad806848fb61862de5d1a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 282,
+      "WARN": 28,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-29T01:17:15.453Z",
+    "sha256": "44c35c07c9690841d6a0ceb794cf909eb3c15bc4d25ad806848fb61862de5d1a"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 42
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 40,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2691 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/poder:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T01:17:16.170Z",
+    "sha256": "44c35c07c9690841d6a0ceb794cf909eb3c15bc4d25ad806848fb61862de5d1a"
+  }
+}

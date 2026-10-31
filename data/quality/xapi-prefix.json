@@ -1,0 +1,88 @@
+{
+  "id": "xapi-prefix",
+  "artefact": "https://w3id.org/xapi/ontology",
+  "checkedAt": "2026-10-29T08:04:26.606Z",
+  "sha256": "cfe5a7491d93eaaf35a1fd1c578034e2c5e730e97131431bd4f8f76447f6ba58",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 7,
+      "foaf": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T08:04:30.230Z",
+    "sha256": "cfe5a7491d93eaaf35a1fd1c578034e2c5e730e97131431bd4f8f76447f6ba58"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 7,
+      "WARN": 69,
+      "INFO": 10
+    },
+    "checkedAt": "2026-10-29T08:04:31.387Z",
+    "sha256": "cfe5a7491d93eaaf35a1fd1c578034e2c5e730e97131431bd4f8f76447f6ba58"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 9
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 34,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-4220 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/xapi-prefix:/work schemascope/oops --input-file /work"
+    ],
+    "checkedAt": "2026-10-29T08:04:32.093Z",
+    "sha256": "cfe5a7491d93eaaf35a1fd1c578034e2c5e730e97131431bd4f8f76447f6ba58"
+  }
+}

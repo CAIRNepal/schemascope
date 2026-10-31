@@ -1,0 +1,79 @@
+{
+  "id": "tno-interconnect-flexibility",
+  "artefact": "https://gitlab.inesctec.pt/interconnect-public/ontology/-/raw/master/ontology/Interconnect/ic-flex.ttl",
+  "checkedAt": "2026-10-29T05:18:44.847Z",
+  "sha256": "8d385041a013fac4ee9b8efc60bb2bb5b754d6efc356374ef682344a02f461ea",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:18:45.024Z",
+    "sha256": "8d385041a013fac4ee9b8efc60bb2bb5b754d6efc356374ef682344a02f461ea"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://ontology.tno.nl/interconnect/incentivetable> Cause: https://ontology.tno.nl/interconnect/incentivetable\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T05:18:46.328Z",
+    "sha256": "8d385041a013fac4ee9b8efc60bb2bb5b754d6efc356374ef682344a02f461ea"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 11
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 16,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3788 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tno-interconnect-flexibility:/work schemascope/oops -"
+    ],
+    "checkedAt": "2026-10-29T05:18:47.114Z",
+    "sha256": "8d385041a013fac4ee9b8efc60bb2bb5b754d6efc356374ef682344a02f461ea"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "id": "gexo",
+  "artefact": "https://www.bio.ntnu.no/ontology/GeXO/gexo.owl",
+  "checkedAt": "2026-10-28T20:18:57.878Z",
+  "sha256": "70afd730fb360cf1bd0f64a2e61da68efebd09658a85bdccce6950d55a1d1fdb",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ro": 7,
+      "sio": 24,
+      "go": 50,
+      "mi": 50,
+      "mod": 50,
+      "ncbitaxon": 3
+    },
+    "scannedMb": 259,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:21:21.533Z",
+    "sha256": "70afd730fb360cf1bd0f64a2e61da68efebd09658a85bdccce6950d55a1d1fdb"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "INVALID ONTOLOGY FILE ERROR Could not load a valid ontology from file: ontology.owl\nFor details see: http://robot.obolibrary.org/errors#invalid-ontology-file-error\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T20:21:29.896Z",
+    "sha256": "70afd730fb360cf1bd0f64a2e61da68efebd09658a85bdccce6950d55a1d1fdb"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 12
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 12
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 166254,
+    "attempts": [],
+    "checkedAt": "2026-10-28T20:22:49.979Z",
+    "sha256": "70afd730fb360cf1bd0f64a2e61da68efebd09658a85bdccce6950d55a1d1fdb"
+  }
+}

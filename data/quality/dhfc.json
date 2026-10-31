@@ -1,0 +1,42 @@
+{
+  "id": "dhfc",
+  "artefact": "https://w3id.org/DHFC",
+  "checkedAt": "2026-10-28T17:01:49.026Z",
+  "sha256": "76f9b9f532addffd519984d5752e1c0825d29043d8c6cfed8a63342788152132",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "swrl": 8,
+      "xsd": 3,
+      "rdfs": 7,
+      "owl": 19
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:01:50.204Z",
+    "sha256": "76f9b9f532addffd519984d5752e1c0825d29043d8c6cfed8a63342788152132"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 119,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-28T17:01:51.436Z",
+    "sha256": "76f9b9f532addffd519984d5752e1c0825d29043d8c6cfed8a63342788152132"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-847 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dhfc:/work schemascope/oops --input-file /work/ontolog",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dhfc/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T17:01:52.199Z",
+    "sha256": "76f9b9f532addffd519984d5752e1c0825d29043d8c6cfed8a63342788152132"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "id": "csro",
+  "artefact": "https://w3id.org/csro/ontology",
+  "checkedAt": "2026-10-28T15:24:46.393Z",
+  "sha256": "1ab1e6a06706cfd844680eb3107a383e8bc2903f527d5e8bf752b73c5dbddf70",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://d3fend.mitre.org/ontologies/d3fend.owl",
+        "id": "d3fend.mitre.org/ontologies/d3fend",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dc": 7
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T15:24:48.156Z",
+    "sha256": "1ab1e6a06706cfd844680eb3107a383e8bc2903f527d5e8bf752b73c5dbddf70"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2762,
+      "WARN": 75,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T15:24:56.341Z",
+    "sha256": "1ab1e6a06706cfd844680eb3107a383e8bc2903f527d5e8bf752b73c5dbddf70"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 31
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 32,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-676 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/csro:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T15:24:58.149Z",
+    "sha256": "1ab1e6a06706cfd844680eb3107a383e8bc2903f527d5e8bf752b73c5dbddf70"
+  }
+}

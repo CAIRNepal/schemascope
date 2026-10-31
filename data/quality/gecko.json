@@ -1,0 +1,80 @@
+{
+  "id": "gecko",
+  "artefact": "http://purl.obolibrary.org/obo/gecko.owl",
+  "checkedAt": "2026-10-28T20:08:51.929Z",
+  "sha256": "3187e9ceb9a98316dcbed900a7afc88ead1d4c3d5fdb7eec7b08644521c3fb65",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 16,
+      "bfo": 8,
+      "cmo": 7,
+      "eupath": 7,
+      "obi": 16,
+      "uberon": 6,
+      "stato": 3,
+      "pato": 3,
+      "mondo": 19,
+      "rdfs": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:08:52.412Z",
+    "sha256": "3187e9ceb9a98316dcbed900a7afc88ead1d4c3d5fdb7eec7b08644521c3fb65"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 72,
+      "INFO": 14
+    },
+    "checkedAt": "2026-10-28T20:08:53.453Z",
+    "sha256": "3187e9ceb9a98316dcbed900a7afc88ead1d4c3d5fdb7eec7b08644521c3fb65"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 146
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T20:09:00.716Z",
+    "sha256": "3187e9ceb9a98316dcbed900a7afc88ead1d4c3d5fdb7eec7b08644521c3fb65"
+  }
+}

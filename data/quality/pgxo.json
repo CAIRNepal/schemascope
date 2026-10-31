@@ -1,0 +1,40 @@
+{
+  "id": "pgxo",
+  "artefact": "http://ns.inria.fr/pgxo/",
+  "checkedAt": "2026-10-29T00:53:23.218Z",
+  "sha256": "c5df9cec65bf9effecbbb2c7381c65a70911f5844475d67a3bc6d63a2c6adcf5",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 9,
+      "rdfs": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:53:24.557Z",
+    "sha256": "c5df9cec65bf9effecbbb2c7381c65a70911f5844475d67a3bc6d63a2c6adcf5"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 55,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-29T00:53:25.521Z",
+    "sha256": "c5df9cec65bf9effecbbb2c7381c65a70911f5844475d67a3bc6d63a2c6adcf5"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2603 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/pgxo:/work schemascope/oops --input-file /work/ontolo",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/pgxo/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-29T00:53:26.251Z",
+    "sha256": "c5df9cec65bf9effecbbb2c7381c65a70911f5844475d67a3bc6d63a2c6adcf5"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "afo",
+  "artefact": "https://purl.allotrope.org/voc/afo/merged/REC/2025/03/merged-without-qudt-and-inferred.ttl",
+  "checkedAt": "2026-10-27T23:01:59.562Z",
+  "sha256": "64e6522793a725284afd9a669dcc551f2dc73e635271f90a2acc02ed834e1b13",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 50,
+      "iao": 43,
+      "obi": 13,
+      "ro": 50,
+      "dc": 15,
+      "dcterms": 49,
+      "skos": 32,
+      "foaf": 4,
+      "ncit": 8,
+      "chebi": 27,
+      "envo": 3,
+      "pato": 50,
+      "sh": 3
+    },
+    "scannedMb": 3,
+    "truncated": false,
+    "scannedAt": "2026-10-27T23:01:59.992Z",
+    "sha256": "64e6522793a725284afd9a669dcc551f2dc73e635271f90a2acc02ed834e1b13"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 69,
+      "WARN": 3850,
+      "INFO": 19
+    },
+    "checkedAt": "2026-10-27T23:02:04.344Z",
+    "sha256": "64e6522793a725284afd9a669dcc551f2dc73e635271f90a2acc02ed834e1b13"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-17 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/afo:/work schemascope/oops --input-file /work/ontology."
+    ],
+    "checkedAt": "2026-10-27T23:02:06.117Z",
+    "sha256": "64e6522793a725284afd9a669dcc551f2dc73e635271f90a2acc02ed834e1b13"
+  }
+}

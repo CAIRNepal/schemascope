@@ -1,0 +1,99 @@
+{
+  "id": "reo",
+  "artefact": "https://github.com/tis-lab/reagent-ontology/raw/master/reo/ontology_files/reo_pre-merged_or_reasoned_files/reo_reasoned_9-6-12.owl",
+  "checkedAt": "2026-10-29T02:23:37.951Z",
+  "sha256": "a7065c3ea9d956cf69dae8bc16d65e41b26e3a6b12ca08a7746a542fd52e73fc",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 50,
+      "bfo": 14,
+      "obi": 50,
+      "ero": 26,
+      "doid": 11,
+      "ro": 7,
+      "go": 37,
+      "so": 50,
+      "chebi": 50,
+      "pr": 6,
+      "pato": 35,
+      "caro": 41,
+      "cl": 50,
+      "ncbitaxon": 50,
+      "clo": 10,
+      "uberon": 35,
+      "vsao": 3,
+      "po": 5,
+      "xsd": 4,
+      "dc": 14,
+      "owl": 8,
+      "mod": 47,
+      "mpath": 3,
+      "ogms": 8,
+      "uo": 9
+    },
+    "scannedMb": 4,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:23:38.956Z",
+    "sha256": "a7065c3ea9d956cf69dae8bc16d65e41b26e3a6b12ca08a7746a542fd52e73fc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 375,
+      "WARN": 1291,
+      "INFO": 657
+    },
+    "checkedAt": "2026-10-29T02:23:43.707Z",
+    "sha256": "a7065c3ea9d956cf69dae8bc16d65e41b26e3a6b12ca08a7746a542fd52e73fc"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 83
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 734
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 73
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 3033,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3010 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/reo:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T02:25:08.795Z",
+    "sha256": "a7065c3ea9d956cf69dae8bc16d65e41b26e3a6b12ca08a7746a542fd52e73fc"
+  }
+}

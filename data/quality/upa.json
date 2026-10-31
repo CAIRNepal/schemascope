@@ -1,0 +1,89 @@
+{
+  "id": "upa",
+  "artefact": "http://purl.obolibrary.org/obo/upa.owl",
+  "checkedAt": "2026-10-29T05:51:51.096Z",
+  "sha256": "1ea0465c2222592bdeea3197a687ba26c74818263e1e6c5e8838baafcb6838ce",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 15,
+      "ro": 50,
+      "bfo": 11,
+      "go": 17,
+      "xsd": 4,
+      "rdfs": 3,
+      "owl": 5,
+      "pmid": 38,
+      "swrl": 5
+    },
+    "scannedMb": 19,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:51:56.695Z",
+    "sha256": "1ea0465c2222592bdeea3197a687ba26c74818263e1e6c5e8838baafcb6838ce"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 111,
+      "WARN": 2662,
+      "INFO": 54
+    },
+    "checkedAt": "2026-10-29T05:52:04.412Z",
+    "sha256": "1ea0465c2222592bdeea3197a687ba26c74818263e1e6c5e8838baafcb6838ce"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 79
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 2601
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 54
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 4672,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3920 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/upa:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T06:02:10.288Z",
+    "sha256": "1ea0465c2222592bdeea3197a687ba26c74818263e1e6c5e8838baafcb6838ce"
+  }
+}

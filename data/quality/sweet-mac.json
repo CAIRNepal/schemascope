@@ -1,0 +1,11 @@
+{
+  "id": "sweet-mac",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/matrCompound.ttl",
+  "checkedAt": "2026-10-29T03:24:26.553Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:24:37.072Z"
+  }
+}

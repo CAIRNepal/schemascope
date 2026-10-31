@@ -1,0 +1,31 @@
+{
+  "id": "reactome",
+  "artefact": "https://w3id.org/biopragmatics/resources/reactome/reactome.owl.gz",
+  "checkedAt": "2026-10-29T02:22:23.309Z",
+  "sha256": "654e49c0f286508088744b592b39e462e81364472919e04da3fcb7416fffd980",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 10,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:22:25.382Z",
+    "sha256": "654e49c0f286508088744b592b39e462e81364472919e04da3fcb7416fffd980"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "INVALID ONTOLOGY FILE ERROR Could not load a valid ontology from file: ontology.owl\nFor details see: http://robot.obolibrary.org/errors#invalid-ontology-file-error\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T02:22:25.984Z",
+    "sha256": "654e49c0f286508088744b592b39e462e81364472919e04da3fcb7416fffd980"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2992 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/reactome:/work schemascope/oops --input-file /work/on",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/reactome/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-29T02:22:26.513Z",
+    "sha256": "654e49c0f286508088744b592b39e462e81364472919e04da3fcb7416fffd980"
+  }
+}

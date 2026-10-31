@@ -1,0 +1,76 @@
+{
+  "id": "ludo-gp",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ludo-gm/versions/2016-08-26.n3",
+  "checkedAt": "2026-10-28T21:32:49.760Z",
+  "sha256": "29dc5c1f6fb49e24cbfd811cdbb893f67b636cb7ff03289118da93968fdc312d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ludo-gm": 50,
+      "xsd": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:32:50.083Z",
+    "sha256": "29dc5c1f6fb49e24cbfd811cdbb893f67b636cb7ff03289118da93968fdc312d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 9,
+      "WARN": 130,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T21:32:51.477Z",
+    "sha256": "29dc5c1f6fb49e24cbfd811cdbb893f67b636cb7ff03289118da93968fdc312d"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 43
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 62,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1956 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ludo-gp:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-28T21:32:52.504Z",
+    "sha256": "29dc5c1f6fb49e24cbfd811cdbb893f67b636cb7ff03289118da93968fdc312d"
+  }
+}

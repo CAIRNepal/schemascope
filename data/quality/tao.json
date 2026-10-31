@@ -1,0 +1,104 @@
+{
+  "id": "tao",
+  "artefact": "http://purl.obolibrary.org/obo/tao.owl",
+  "checkedAt": "2026-10-29T04:56:43.478Z",
+  "sha256": "f9182471f9b8abf79367a34c4a944fecb80aadd894c9d4a86d75dc4c4218ebc2",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 3,
+      "bfo": 3,
+      "ro": 5,
+      "caro": 50,
+      "cl": 37,
+      "vsao": 50,
+      "go": 22,
+      "pato": 5,
+      "xsd": 3,
+      "owl": 4
+    },
+    "scannedMb": 5,
+    "truncated": false,
+    "scannedAt": "2026-10-29T04:56:44.527Z",
+    "sha256": "f9182471f9b8abf79367a34c4a944fecb80aadd894c9d4a86d75dc4c4218ebc2"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 427,
+      "WARN": 1649,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-29T04:56:49.837Z",
+    "sha256": "f9182471f9b8abf79367a34c4a944fecb80aadd894c9d4a86d75dc4c4218ebc2"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 4,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 149
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 3146
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 19
+      },
+      {
+        "code": "P12",
+        "name": "Equivalent properties not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 14
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T04:58:18.525Z",
+    "sha256": "f9182471f9b8abf79367a34c4a944fecb80aadd894c9d4a86d75dc4c4218ebc2"
+  }
+}

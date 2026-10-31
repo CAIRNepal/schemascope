@@ -1,0 +1,54 @@
+{
+  "id": "aug",
+  "artefact": "https://w3id.org/augmanitai/lexicon/",
+  "checkedAt": "2026-10-28T00:02:02.227Z",
+  "sha256": "053926ab9822d5022259f373b478ecf6a7e7fde0dd9e03a63ec6454f29c519ea",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T00:02:04.554Z",
+    "sha256": "053926ab9822d5022259f373b478ecf6a7e7fde0dd9e03a63ec6454f29c519ea"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 182,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T00:02:06.763Z",
+    "sha256": "053926ab9822d5022259f373b478ecf6a7e7fde0dd9e03a63ec6454f29c519ea"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-131 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/aug:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T00:02:08.145Z",
+    "sha256": "053926ab9822d5022259f373b478ecf6a7e7fde0dd9e03a63ec6454f29c519ea"
+  }
+}

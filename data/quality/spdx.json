@@ -1,0 +1,11 @@
+{
+  "id": "spdx",
+  "artefact": "https://w3id.org/biopragmatics/resources/spdx/spdx.owl",
+  "checkedAt": "2026-10-29T03:13:56.461Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:14:06.962Z"
+  }
+}

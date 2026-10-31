@@ -1,0 +1,85 @@
+{
+  "id": "gaz",
+  "artefact": "http://purl.obolibrary.org/obo/gaz.owl",
+  "checkedAt": "2026-10-28T19:54:39.204Z",
+  "sha256": "3961bb86e7b2c364d76ed03cf8b36aac3080b99d8bf578d62bcdc27f702bcc6f",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 4,
+      "isbn": 9,
+      "xsd": 5,
+      "owl": 4,
+      "centre": 50,
+      "az": 4,
+      "program": 22
+    },
+    "scannedMb": 500,
+    "truncated": true,
+    "scannedAt": "2026-10-28T19:58:57.865Z",
+    "sha256": "3961bb86e7b2c364d76ed03cf8b36aac3080b99d8bf578d62bcdc27f702bcc6f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "eportOperation.java:238)\n\tat org.obolibrary.robot.ReportCommand.execute(ReportCommand.java:153)\n\tat org.obolibrary.robot.CommandManager.executeCommand(CommandManager.java:244)\n\tat org.obolibrary.robot.CommandManager.execute(CommandManager.java:188)\n\tat org.obolibrary.robot.CommandManager.main(CommandManager.java:135)\n\tat org.obolibrary.robot.CommandLineInterface.main(CommandLineInterface.java:65)\n",
+    "checkedAt": "2026-10-28T20:01:33.364Z",
+    "sha256": "3961bb86e7b2c364d76ed03cf8b36aac3080b99d8bf578d62bcdc27f702bcc6f"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 15
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 144589
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 15
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 668838,
+    "attempts": [],
+    "checkedAt": "2026-10-28T20:07:59.866Z",
+    "sha256": "3961bb86e7b2c364d76ed03cf8b36aac3080b99d8bf578d62bcdc27f702bcc6f"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "id": "choosenprefix",
+  "artefact": "https://w3id.org/halo-ontology",
+  "checkedAt": "2026-10-28T02:50:44.627Z",
+  "sha256": "c0b690cd1897b36cf38caed4235a0db8ee70799ccfc112e2f2b9d4f8ffd19fb6",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dc": 4,
+      "owl": 3,
+      "xsd": 3,
+      "schema": 12
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:50:45.077Z",
+    "sha256": "c0b690cd1897b36cf38caed4235a0db8ee70799ccfc112e2f2b9d4f8ffd19fb6"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 1,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 8,
+      "WARN": 31,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-28T02:50:46.644Z",
+    "sha256": "c0b690cd1897b36cf38caed4235a0db8ee70799ccfc112e2f2b9d4f8ffd19fb6"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 2,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 44
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 9
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 5
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T02:50:51.837Z",
+    "sha256": "c0b690cd1897b36cf38caed4235a0db8ee70799ccfc112e2f2b9d4f8ffd19fb6"
+  }
+}

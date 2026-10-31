@@ -1,0 +1,86 @@
+{
+  "id": "tribont-sample",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/tribont-sample/versions/2023-05-30.n3",
+  "checkedAt": "2026-10-29T05:32:26.415Z",
+  "sha256": "8270441a0955f9b76c12ae7cc897c167199cd3b55022b63132e6566e438ee3e8",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://w3id.org/tribont/material",
+        "id": "tribont-material",
+        "own": true
+      }
+    ],
+    "uses": {
+      "dcterms": 8,
+      "owl": 4,
+      "icb": 4,
+      "tribont-core": 5,
+      "tribont-material": 5,
+      "swrl": 12
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:32:27.892Z",
+    "sha256": "8270441a0955f9b76c12ae7cc897c167199cd3b55022b63132e6566e438ee3e8"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 27,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T05:32:31.754Z",
+    "sha256": "8270441a0955f9b76c12ae7cc897c167199cd3b55022b63132e6566e438ee3e8"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 14
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 21,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3858 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tribont-sample:/work schemascope/oops --input-file /w"
+    ],
+    "checkedAt": "2026-10-29T05:32:32.980Z",
+    "sha256": "8270441a0955f9b76c12ae7cc897c167199cd3b55022b63132e6566e438ee3e8"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "id": "tp",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/tp/versions/2015-06-08.n3",
+  "checkedAt": "2026-10-29T05:30:25.683Z",
+  "sha256": "8306917c427f2839f6bd16b1085ab2659495e66a60b5ffcfc3a955c7d2d2d847",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/acco/ns#",
+        "id": "acco",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/vocommons/voaf",
+        "id": "voaf",
+        "own": false
+      },
+      {
+        "iri": "http://schema.rdfs.org/all",
+        "id": "schema.rdfs.org/all",
+        "own": false
+      },
+      {
+        "iri": "http://www.semanticweb.org/ontologies/2012/4/accommodation-17042012.owl",
+        "id": "semanticweb.org/ontologies/2012/4/accommodation-17042012",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dbpedia-owl": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:30:26.581Z",
+    "sha256": "8306917c427f2839f6bd16b1085ab2659495e66a60b5ffcfc3a955c7d2d2d847"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.org/acco/ns#> Cause: ontologies.sti-innsbruck.at\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T05:30:29.089Z",
+    "sha256": "8306917c427f2839f6bd16b1085ab2659495e66a60b5ffcfc3a955c7d2d2d847"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 4
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 5,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3826 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tp:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-29T05:30:29.791Z",
+    "sha256": "8306917c427f2839f6bd16b1085ab2659495e66a60b5ffcfc3a955c7d2d2d847"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "dicom",
+  "artefact": "https://dicom.nema.org/MEDICAL/Dicom/Resources/Ontology/dcm.owl.zip",
+  "checkedAt": "2026-10-28T17:01:54.416Z",
+  "sha256": "181ce913e2da8eb5855f2917d5bf33b571c2ec24c2792a188f8192cee5ad51ed",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:01:54.905Z",
+    "sha256": "181ce913e2da8eb5855f2917d5bf33b571c2ec24c2792a188f8192cee5ad51ed"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "INVALID ONTOLOGY FILE ERROR Could not load a valid ontology from file: ontology.owl\nFor details see: http://robot.obolibrary.org/errors#invalid-ontology-file-error\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T17:01:55.478Z",
+    "sha256": "181ce913e2da8eb5855f2917d5bf33b571c2ec24c2792a188f8192cee5ad51ed"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-851 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dicom:/work schemascope/oops --input-file /work/ontolo",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dicom/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T17:01:55.926Z",
+    "sha256": "181ce913e2da8eb5855f2917d5bf33b571c2ec24c2792a188f8192cee5ad51ed"
+  }
+}

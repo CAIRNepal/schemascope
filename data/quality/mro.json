@@ -1,0 +1,86 @@
+{
+  "id": "mro",
+  "artefact": "http://purl.obolibrary.org/obo/mro.owl",
+  "checkedAt": "2026-10-28T22:32:30.651Z",
+  "sha256": "f01d1a64d0e742483f296acc183d0c919cb59fde9f8f3f2ed870be2717331a2f",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 8,
+      "obi": 15,
+      "ro": 9,
+      "eco": 5,
+      "go": 3,
+      "so": 3,
+      "ncbitaxon": 50,
+      "dc": 3
+    },
+    "scannedMb": 67,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:32:38.235Z",
+    "sha256": "f01d1a64d0e742483f296acc183d0c919cb59fde9f8f3f2ed870be2717331a2f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 56384,
+      "INFO": 9
+    },
+    "checkedAt": "2026-10-28T22:33:50.521Z",
+    "sha256": "f01d1a64d0e742483f296acc183d0c919cb59fde9f8f3f2ed870be2717331a2f"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 19
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 51398
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 19
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 51445,
+    "attempts": [],
+    "checkedAt": "2026-10-28T22:34:05.909Z",
+    "sha256": "f01d1a64d0e742483f296acc183d0c919cb59fde9f8f3f2ed870be2717331a2f"
+  }
+}

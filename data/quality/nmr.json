@@ -1,0 +1,84 @@
+{
+  "id": "nmr",
+  "artefact": "https://nmrml.org/cv/stable/nmrCV.owl",
+  "checkedAt": "2026-10-28T23:21:09.200Z",
+  "sha256": "ed467203dda4014ac2aa127afb6a825db7ad37fbc820330315d304c926465950",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.obolibrary.org/obo/bfo.owl",
+        "id": "bfo",
+        "own": false
+      }
+    ],
+    "uses": {
+      "bfo": 5,
+      "skos": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:21:09.460Z",
+    "sha256": "ed467203dda4014ac2aa127afb6a825db7ad37fbc820330315d304c926465950"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 13,
+      "WARN": 648,
+      "INFO": 10
+    },
+    "checkedAt": "2026-10-28T23:21:12.563Z",
+    "sha256": "ed467203dda4014ac2aa127afb6a825db7ad37fbc820330315d304c926465950"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 570
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 37
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T23:21:28.941Z",
+    "sha256": "ed467203dda4014ac2aa127afb6a825db7ad37fbc820330315d304c926465950"
+  }
+}

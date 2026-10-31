@@ -1,0 +1,37 @@
+{
+  "id": "rrao",
+  "artefact": "https://w3id.org/rrao",
+  "checkedAt": "2026-10-29T02:34:21.049Z",
+  "sha256": "b5fdb9fbad9e27ede07cab385f9ed4c0406cbfaa42162d7b15972a94a6d463c5",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 14,
+      "dc": 7,
+      "xsd": 8,
+      "rdfs": 8,
+      "odrl": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:34:22.585Z",
+    "sha256": "b5fdb9fbad9e27ede07cab385f9ed4c0406cbfaa42162d7b15972a94a6d463c5"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://i-lab.aegean.gr/ontologies/rrao/iccs#> Cause: https://i-lab.aegean.gr/ontologies/rrao/iccs\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T02:34:24.664Z",
+    "sha256": "b5fdb9fbad9e27ede07cab385f9ed4c0406cbfaa42162d7b15972a94a6d463c5"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3082 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rrao:/work schemascope/oops --input-file /work/ontolo",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rrao/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-29T02:34:25.462Z",
+    "sha256": "b5fdb9fbad9e27ede07cab385f9ed4c0406cbfaa42162d7b15972a94a6d463c5"
+  }
+}

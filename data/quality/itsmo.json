@@ -1,0 +1,79 @@
+{
+  "id": "itsmo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/itsmo/versions/2025-02-02.n3",
+  "checkedAt": "2026-10-28T21:16:32.974Z",
+  "sha256": "6bd0731cd0af90bdd5c1ce53b3b04d3e931e36af7a31968a09cdf56f857f2c2c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 9,
+      "schema": 12,
+      "prov": 4,
+      "foaf": 3,
+      "skos": 7
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:16:34.048Z",
+    "sha256": "6bd0731cd0af90bdd5c1ce53b3b04d3e931e36af7a31968a09cdf56f857f2c2c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 28,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 49,
+      "WARN": 88,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T21:16:36.735Z",
+    "sha256": "6bd0731cd0af90bdd5c1ce53b3b04d3e931e36af7a31968a09cdf56f857f2c2c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 16
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 45,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1711 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/itsmo:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T21:16:37.920Z",
+    "sha256": "6bd0731cd0af90bdd5c1ce53b3b04d3e931e36af7a31968a09cdf56f857f2c2c"
+  }
+}

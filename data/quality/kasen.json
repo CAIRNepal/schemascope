@@ -1,0 +1,61 @@
+{
+  "id": "kasen",
+  "artefact": "https://wik.jp/kasen/",
+  "checkedAt": "2026-10-28T21:17:14.410Z",
+  "sha256": "d7cebea70f4dc7170611793f32c7c340126e3cc670fbca7ceeca40c9a86af482",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:17:14.806Z",
+    "sha256": "d7cebea70f4dc7170611793f32c7c340126e3cc670fbca7ceeca40c9a86af482"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 118,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:17:16.640Z",
+    "sha256": "d7cebea70f4dc7170611793f32c7c340126e3cc670fbca7ceeca40c9a86af482"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1733 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/kasen:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T21:17:17.792Z",
+    "sha256": "d7cebea70f4dc7170611793f32c7c340126e3cc670fbca7ceeca40c9a86af482"
+  }
+}

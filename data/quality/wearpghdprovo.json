@@ -1,0 +1,88 @@
+{
+  "id": "wearpghdprovo",
+  "artefact": "https://w3id.org/wearpghdprovo",
+  "checkedAt": "2026-10-29T07:23:01.040Z",
+  "sha256": "65223edfd74b1d9aca70dcaa8718313f2487f316399878ee200bf6fac8926738",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ncit": 3,
+      "owl": 5,
+      "prov": 41,
+      "pghdprovo": 50,
+      "xsd": 5,
+      "foaf": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:23:06.618Z",
+    "sha256": "65223edfd74b1d9aca70dcaa8718313f2487f316399878ee200bf6fac8926738"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 28,
+      "WARN": 123,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-29T07:23:07.742Z",
+    "sha256": "65223edfd74b1d9aca70dcaa8718313f2487f316399878ee200bf6fac8926738"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 13
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:23:15.229Z",
+    "sha256": "65223edfd74b1d9aca70dcaa8718313f2487f316399878ee200bf6fac8926738"
+  }
+}

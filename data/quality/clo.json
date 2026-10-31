@@ -1,0 +1,104 @@
+{
+  "id": "clo",
+  "artefact": "http://purl.obolibrary.org/obo/clo.owl",
+  "checkedAt": "2026-10-28T06:31:12.803Z",
+  "sha256": "64b8167d3bdf789d902906053fcec29c0644d34e22378032fa0d2e03915d8920",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 50,
+      "bfo": 24,
+      "omo": 25,
+      "obi": 45,
+      "ro": 50,
+      "ubprop": 14,
+      "doid": 50,
+      "cob": 31,
+      "uberon": 50,
+      "cl": 50,
+      "chebi": 6,
+      "ncbitaxon": 50,
+      "go": 20,
+      "xsd": 5,
+      "owl": 9,
+      "dc": 16,
+      "dcterms": 8,
+      "skos": 6,
+      "id": 50,
+      "bto": 5,
+      "pato": 17,
+      "envo": 3,
+      "pmid": 4,
+      "fma": 16,
+      "zfa": 5,
+      "swrl": 5
+    },
+    "scannedMb": 38,
+    "truncated": false,
+    "scannedAt": "2026-10-28T06:31:14.066Z",
+    "sha256": "64b8167d3bdf789d902906053fcec29c0644d34e22378032fa0d2e03915d8920"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 13,
+      "WARN": 37218,
+      "INFO": 250
+    },
+    "checkedAt": "2026-10-28T06:48:23.109Z",
+    "sha256": "64b8167d3bdf789d902906053fcec29c0644d34e22378032fa0d2e03915d8920"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 70
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 7410
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 54
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 40851,
+    "attempts": [],
+    "checkedAt": "2026-10-28T06:48:37.087Z",
+    "sha256": "64b8167d3bdf789d902906053fcec29c0644d34e22378032fa0d2e03915d8920"
+  }
+}

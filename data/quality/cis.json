@@ -1,0 +1,11 @@
+{
+  "id": "cis",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/cis/versions/2016-03-30.n3",
+  "checkedAt": "2026-10-28T05:09:49.376Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T05:09:59.889Z"
+  }
+}

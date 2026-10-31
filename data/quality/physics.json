@@ -1,0 +1,135 @@
+{
+  "id": "physics",
+  "artefact": "http://www.astro.umd.edu/~eshaya/astro-onto/owl/physics.owl",
+  "checkedAt": "2026-10-29T01:01:01.707Z",
+  "sha256": "64f50cd929568ded74e4ff0422c44d6a1d848d10a0dbe278dccc6ee0eb92ddc3",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:01:04.494Z",
+    "sha256": "64f50cd929568ded74e4ff0422c44d6a1d848d10a0dbe278dccc6ee0eb92ddc3"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 201,
+      "WARN": 674,
+      "INFO": 240
+    },
+    "checkedAt": "2026-10-29T01:01:12.079Z",
+    "sha256": "64f50cd929568ded74e4ff0422c44d6a1d848d10a0dbe278dccc6ee0eb92ddc3"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 2,
+    "important": 7,
+    "minor": 7,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1120
+      },
+      {
+        "code": "P05",
+        "name": "Defining wrong inverse relationships",
+        "importance": "critical",
+        "affected": 3
+      },
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 4163
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 43
+      },
+      {
+        "code": "P12",
+        "name": "Equivalent properties not explicitly declared",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 146
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P25",
+        "name": "Defining a relationship as inverse to itself",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P26",
+        "name": "Defining inverse relationships for a symmetric one",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P29",
+        "name": "Defining wrong transitive relationships",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 97
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T01:05:41.135Z",
+    "sha256": "64f50cd929568ded74e4ff0422c44d6a1d848d10a0dbe278dccc6ee0eb92ddc3"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "whisky",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/whisky/versions/2008-09-25.n3",
+  "checkedAt": "2026-10-29T07:24:09.877Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:24:20.392Z"
+  }
+}

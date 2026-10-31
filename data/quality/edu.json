@@ -1,0 +1,75 @@
+{
+  "id": "edu",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/edu/versions/2020-02-14.n3",
+  "checkedAt": "2026-10-28T18:06:13.678Z",
+  "sha256": "46fd71ba21c84ee1f32fc898725571cf864a5915c44ffd2ed0f11296280150d7",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://schema.org/",
+        "id": "schema",
+        "own": false
+      }
+    ],
+    "uses": {
+      "schema": 8
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T18:06:17.692Z",
+    "sha256": "46fd71ba21c84ee1f32fc898725571cf864a5915c44ffd2ed0f11296280150d7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "er.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1243)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1143)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadImports(OWLOntologyManagerImpl.java:1873)\n\n\n\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T18:06:19.251Z",
+    "sha256": "46fd71ba21c84ee1f32fc898725571cf864a5915c44ffd2ed0f11296280150d7"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 11
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 30,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1067 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/edu:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T18:06:19.888Z",
+    "sha256": "46fd71ba21c84ee1f32fc898725571cf864a5915c44ffd2ed0f11296280150d7"
+  }
+}

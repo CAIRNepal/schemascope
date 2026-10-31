@@ -1,0 +1,78 @@
+{
+  "id": "nfdi4dso",
+  "artefact": "https://ise-fizkarlsruhe.github.io/NFDI4DS-Ontology/ontology.ttl",
+  "checkedAt": "2026-10-28T23:18:04.363Z",
+  "sha256": "7396286849af7093a1311321bab8c485c46c23e4ff55b97246ca655b7efb227c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 17,
+      "bfo": 10,
+      "ro": 6,
+      "dcterms": 8,
+      "schema": 9,
+      "skos": 3,
+      "fabio": 5,
+      "time": 5,
+      "foaf": 3,
+      "swrl": 11
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:18:04.670Z",
+    "sha256": "7396286849af7093a1311321bab8c485c46c23e4ff55b97246ca655b7efb227c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <https://nfdi.fiz-karlsruhe.de/ontology/2.0.0> Cause: Unexpected end of file from server\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T23:18:36.585Z",
+    "sha256": "7396286849af7093a1311321bab8c485c46c23e4ff55b97246ca655b7efb227c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 40
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 15
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 90,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2206 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/nfdi4dso:/work schemascope/oops --input-file /work/on"
+    ],
+    "checkedAt": "2026-10-28T23:18:37.361Z",
+    "sha256": "7396286849af7093a1311321bab8c485c46c23e4ff55b97246ca655b7efb227c"
+  }
+}

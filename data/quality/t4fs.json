@@ -1,0 +1,96 @@
+{
+  "id": "t4fs",
+  "artefact": "http://purl.obolibrary.org/obo/t4fs.owl",
+  "checkedAt": "2026-10-29T04:56:03.068Z",
+  "sha256": "11a3ada96ac23df1cbe9175c7f6946337c3c4b6d6d297f837548fe38a4d18278",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 14,
+      "iao": 38,
+      "ro": 12,
+      "tf4s": 7,
+      "dc": 4,
+      "dcterms": 3,
+      "owl": 5,
+      "swrl": 5
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T04:56:03.790Z",
+    "sha256": "11a3ada96ac23df1cbe9175c7f6946337c3c4b6d6d297f837548fe38a4d18278"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 26,
+      "WARN": 102,
+      "INFO": 17
+    },
+    "checkedAt": "2026-10-29T04:56:05.968Z",
+    "sha256": "11a3ada96ac23df1cbe9175c7f6946337c3c4b6d6d297f837548fe38a4d18278"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 549
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 9
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 15
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 72
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T04:56:16.802Z",
+    "sha256": "11a3ada96ac23df1cbe9175c7f6946337c3c4b6d6d297f837548fe38a4d18278"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "worldavatar-wastemanagement",
+  "artefact": "https://raw.githubusercontent.com/TheWorldAvatar/ontology/main/ontology/ontowastemanagement/ontowastemanagement.owl",
+  "checkedAt": "2026-10-29T08:01:41.451Z",
+  "sha256": "0c708a3207ed899c54dfc970a557586d2a33e33e4919aeb32531914c20cb9481",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T08:01:42.857Z",
+    "sha256": "0c708a3207ed899c54dfc970a557586d2a33e33e4919aeb32531914c20cb9481"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 64,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-29T08:01:43.903Z",
+    "sha256": "0c708a3207ed899c54dfc970a557586d2a33e33e4919aeb32531914c20cb9481"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T08:01:50.569Z",
+    "sha256": "0c708a3207ed899c54dfc970a557586d2a33e33e4919aeb32531914c20cb9481"
+  }
+}

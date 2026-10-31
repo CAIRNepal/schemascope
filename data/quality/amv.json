@@ -1,0 +1,61 @@
+{
+  "id": "amv",
+  "artefact": "https://github.com/biswanathdutta/amv/raw/refs/heads/main/AMV_Ontology_9June2022.owl",
+  "checkedAt": "2026-10-27T23:08:15.983Z",
+  "sha256": "aa236cbc096e727a01f19719577ca5fd37d792025c585a398c3e5c809f939c8f",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 8,
+      "dc": 5,
+      "dcterms": 23,
+      "owl": 5,
+      "foaf": 13,
+      "schema": 4,
+      "prov": 8,
+      "bibo": 25,
+      "dcat": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-27T23:08:16.708Z",
+    "sha256": "aa236cbc096e727a01f19719577ca5fd37d792025c585a398c3e5c809f939c8f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 77,
+      "WARN": 197,
+      "INFO": 18
+    },
+    "checkedAt": "2026-10-27T23:08:18.077Z",
+    "sha256": "aa236cbc096e727a01f19719577ca5fd37d792025c585a398c3e5c809f939c8f"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 0,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 42
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-27T23:08:26.285Z",
+    "sha256": "aa236cbc096e727a01f19719577ca5fd37d792025c585a398c3e5c809f939c8f"
+  }
+}

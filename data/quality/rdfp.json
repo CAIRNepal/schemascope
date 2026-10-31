@@ -1,0 +1,73 @@
+{
+  "id": "rdfp",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/rdfp/versions/2016-08-31.n3",
+  "checkedAt": "2026-10-29T02:20:26.130Z",
+  "sha256": "f7ca57ffc6f3c2dad13fabf5429f130918e684287bb3e1c768dabb0e3ba8e864",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:20:26.650Z",
+    "sha256": "f7ca57ffc6f3c2dad13fabf5429f130918e684287bb3e1c768dabb0e3ba8e864"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 19,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-29T02:20:28.098Z",
+    "sha256": "f7ca57ffc6f3c2dad13fabf5429f130918e684287bb3e1c768dabb0e3ba8e864"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 6
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 9,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2979 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rdfp:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T02:20:29.160Z",
+    "sha256": "f7ca57ffc6f3c2dad13fabf5429f130918e684287bb3e1c768dabb0e3ba8e864"
+  }
+}

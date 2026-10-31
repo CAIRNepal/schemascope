@@ -1,0 +1,60 @@
+{
+  "id": "drugcentral",
+  "artefact": "https://w3id.org/biopragmatics/resources/drugcentral/drugcentral.owl",
+  "checkedAt": "2026-10-28T17:27:28.680Z",
+  "sha256": "71fa42f47f735d0d582de7573c7ecdb1a58bef099f750980ca88db8aad22ae96",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "chebi": 50,
+      "dcterms": 3
+    },
+    "scannedMb": 12,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:27:29.928Z",
+    "sha256": "71fa42f47f735d0d582de7573c7ecdb1a58bef099f750980ca88db8aad22ae96"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 5006,
+      "INFO": 4995
+    },
+    "checkedAt": "2026-10-28T17:27:40.138Z",
+    "sha256": "71fa42f47f735d0d582de7573c7ecdb1a58bef099f750980ca88db8aad22ae96"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 4995
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1728
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T17:33:57.117Z",
+    "sha256": "71fa42f47f735d0d582de7573c7ecdb1a58bef099f750980ca88db8aad22ae96"
+  }
+}

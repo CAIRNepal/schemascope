@@ -1,0 +1,64 @@
+{
+  "id": "icb",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/icb/versions/2023-05-30.n3",
+  "checkedAt": "2026-10-28T20:47:38.507Z",
+  "sha256": "fd3030ca45a51526020b87af5b193b049a607ada0e4d9833a5a7d20082104f22",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 9,
+      "swrl": 11
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:47:39.358Z",
+    "sha256": "fd3030ca45a51526020b87af5b193b049a607ada0e4d9833a5a7d20082104f22"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 15,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T20:47:40.404Z",
+    "sha256": "fd3030ca45a51526020b87af5b193b049a607ada0e4d9833a5a7d20082104f22"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 6
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 3,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1579 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/icb:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T20:47:41.166Z",
+    "sha256": "fd3030ca45a51526020b87af5b193b049a607ada0e4d9833a5a7d20082104f22"
+  }
+}

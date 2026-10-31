@@ -1,0 +1,56 @@
+{
+  "id": "cgnc",
+  "artefact": "https://w3id.org/biopragmatics/resources/cgnc/cgnc.owl",
+  "checkedAt": "2026-10-28T02:08:48.180Z",
+  "sha256": "7ee1278e9a95f480d4d141d3ce27b9300a027847ea58c40a897840f451f46b33",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 3
+    },
+    "scannedMb": 20,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:08:49.376Z",
+    "sha256": "7ee1278e9a95f480d4d141d3ce27b9300a027847ea58c40a897840f451f46b33"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 7,
+      "WARN": 26088,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T02:09:02.959Z",
+    "sha256": "7ee1278e9a95f480d4d141d3ce27b9300a027847ea58c40a897840f451f46b33"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-427 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cgnc:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T02:19:07.764Z",
+    "sha256": "7ee1278e9a95f480d4d141d3ce27b9300a027847ea58c40a897840f451f46b33"
+  }
+}

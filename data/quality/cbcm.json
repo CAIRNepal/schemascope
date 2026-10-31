@@ -1,0 +1,73 @@
+{
+  "id": "cbcm",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/cbcm/versions/2021-12-10.n3",
+  "checkedAt": "2026-10-28T01:52:54.951Z",
+  "sha256": "56e053d09e334fdfc6b1271c2381bf6540ea0c959000a52373686bed40c2dfc6",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.obolibrary.org/obo/bfo/2019-08-26/bfo.owl",
+        "id": "bfo",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:52:55.950Z",
+    "sha256": "56e053d09e334fdfc6b1271c2381bf6540ea0c959000a52373686bed40c2dfc6"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 1,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 87,
+      "WARN": 222,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-28T01:52:58.842Z",
+    "sha256": "56e053d09e334fdfc6b1271c2381bf6540ea0c959000a52373686bed40c2dfc6"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 26
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 37
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 118,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-317 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cbcm:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T01:52:59.728Z",
+    "sha256": "56e053d09e334fdfc6b1271c2381bf6540ea0c959000a52373686bed40c2dfc6"
+  }
+}

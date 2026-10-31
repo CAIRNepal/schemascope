@@ -1,0 +1,65 @@
+{
+  "id": "cem",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/cem/versions/2022-06-14.n3",
+  "checkedAt": "2026-10-28T02:04:43.659Z",
+  "sha256": "b5a15e58fed6e399983883d152abae4c72c0eff030fc17ecd012eadddcf51337",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "rdf": 5,
+      "owl": 20,
+      "dcterms": 15,
+      "foaf": 4,
+      "xsd": 5,
+      "rdfs": 9,
+      "skos": 4,
+      "sem": 15,
+      "schema": 35,
+      "lode": 4,
+      "dolce": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:04:44.877Z",
+    "sha256": "b5a15e58fed6e399983883d152abae4c72c0eff030fc17ecd012eadddcf51337"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "Violations: 79\n-----------------\nERROR:      0\nWARN:       76\nINFO:       3\n/work/profile.txt (No such file or directory)\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "robot": {
+      "ERROR": 0,
+      "WARN": 76,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T02:04:46.199Z",
+    "sha256": "b5a15e58fed6e399983883d152abae4c72c0eff030fc17ecd012eadddcf51337"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-370 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cem:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T02:04:47.357Z",
+    "sha256": "b5a15e58fed6e399983883d152abae4c72c0eff030fc17ecd012eadddcf51337"
+  }
+}

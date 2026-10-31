@@ -1,0 +1,72 @@
+{
+  "id": "bot-lov",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/bot/versions/2017-04-01.n3",
+  "checkedAt": "2026-10-28T01:45:42.538Z",
+  "sha256": "0c99aad4f457e0b4c128f64100068a93569ada27e7bd74137379de0ce98a83be",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://www.w3.org/ns/dcat",
+        "id": "w3.org/ns/dcat",
+        "own": false
+      },
+      {
+        "iri": "https://joinup.ec.europa.eu/site/core_vocabularies/registry/dcat-ap/DCAT-AP_v1.1.rdf",
+        "id": "joinup.ec.europa.eu/site/core_vocabularies/registry/dcat-ap/dcat-ap_v1.1",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:45:43.340Z",
+    "sha256": "0c99aad4f457e0b4c128f64100068a93569ada27e7bd74137379de0ce98a83be"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <https://joinup.ec.europa.eu/site/core_vocabularies/registry/dcat-ap/DCAT-AP_v1.1.rdf> Cause: https://interoperable-europe.ec.europa.eu/site/core_vocabularies/registry/dcat-ap/DCAT-AP_v1.1.rdf\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T01:45:47.968Z",
+    "sha256": "0c99aad4f457e0b4c128f64100068a93569ada27e7bd74137379de0ce98a83be"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 8
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 2,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-249 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/bot-lov:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T01:45:48.586Z",
+    "sha256": "0c99aad4f457e0b4c128f64100068a93569ada27e7bd74137379de0ce98a83be"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "tib-mdv",
+  "artefact": "https://data.nist.gov/od/dm/nmrr/vocab/",
+  "checkedAt": "2026-10-29T05:17:29.056Z",
+  "sha256": "4e9c7d4b3c6dd5781a9f26199d6356928c05300f693ac52c614a088b77bb42e9",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:17:30.308Z",
+    "sha256": "4e9c7d4b3c6dd5781a9f26199d6356928c05300f693ac52c614a088b77bb42e9"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 997,
+      "WARN": 1,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T05:17:31.747Z",
+    "sha256": "4e9c7d4b3c6dd5781a9f26199d6356928c05300f693ac52c614a088b77bb42e9"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T05:17:41.326Z",
+    "sha256": "4e9c7d4b3c6dd5781a9f26199d6356928c05300f693ac52c614a088b77bb42e9"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "bimerr-op",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/bimerr-op/versions/2020-06-25.n3",
+  "checkedAt": "2026-10-28T01:40:41.392Z",
+  "sha256": "70e9d9b1e4aaf1cd38ec4e787356ca97fde7cddd40f220de6e1aae2c4b3c7c53",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dc": 5,
+      "dcterms": 3,
+      "xsd": 4,
+      "time": 8,
+      "skos": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:40:42.303Z",
+    "sha256": "70e9d9b1e4aaf1cd38ec4e787356ca97fde7cddd40f220de6e1aae2c4b3c7c53"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 115,
+      "INFO": 10
+    },
+    "checkedAt": "2026-10-28T01:40:43.482Z",
+    "sha256": "70e9d9b1e4aaf1cd38ec4e787356ca97fde7cddd40f220de6e1aae2c4b3c7c53"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 5
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 23
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 52,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-201 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/bimerr-op:/work schemascope/oops --input-file /work/on"
+    ],
+    "checkedAt": "2026-10-28T01:40:44.238Z",
+    "sha256": "70e9d9b1e4aaf1cd38ec4e787356ca97fde7cddd40f220de6e1aae2c4b3c7c53"
+  }
+}

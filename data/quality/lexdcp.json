@@ -1,0 +1,84 @@
+{
+  "id": "lexdcp",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/lexdcp/versions/2016-01-10.n3",
+  "checkedAt": "2026-10-28T21:22:41.660Z",
+  "sha256": "e9aaa0e16fa9f17be5a7f1c59bce1602a5283074521ed8ddcde5929e06fe8542",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/ns/lemon/ontolex",
+        "id": "ontolex",
+        "own": true
+      }
+    ],
+    "uses": {
+      "rdf": 4,
+      "owl": 8,
+      "dc": 8,
+      "rdfs": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:22:42.811Z",
+    "sha256": "e9aaa0e16fa9f17be5a7f1c59bce1602a5283074521ed8ddcde5929e06fe8542"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 40,
+      "WARN": 4,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T21:22:44.440Z",
+    "sha256": "e9aaa0e16fa9f17be5a7f1c59bce1602a5283074521ed8ddcde5929e06fe8542"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 2,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1830 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/lexdcp:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T21:22:45.620Z",
+    "sha256": "e9aaa0e16fa9f17be5a7f1c59bce1602a5283074521ed8ddcde5929e06fe8542"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "oex",
+  "artefact": "https://w3id.org/OntoExhibit",
+  "checkedAt": "2026-10-28T23:58:08.054Z",
+  "sha256": "083a96f4d4e43e02c9303e4f4a5fb24fdcefcdd26eff55e9f7300adb47177df0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 5,
+      "dcterms": 11,
+      "schema": 7,
+      "owl": 8
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:58:08.582Z",
+    "sha256": "083a96f4d4e43e02c9303e4f4a5fb24fdcefcdd26eff55e9f7300adb47177df0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 901,
+      "WARN": 644,
+      "INFO": 9
+    },
+    "checkedAt": "2026-10-28T23:58:12.061Z",
+    "sha256": "083a96f4d4e43e02c9303e4f4a5fb24fdcefcdd26eff55e9f7300adb47177df0"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 97
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 227,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2346 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/oex:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T00:01:25.176Z",
+    "sha256": "083a96f4d4e43e02c9303e4f4a5fb24fdcefcdd26eff55e9f7300adb47177df0"
+  }
+}

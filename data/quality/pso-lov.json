@@ -1,0 +1,72 @@
+{
+  "id": "pso-lov",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/pso/versions/2014-02-01.n3",
+  "checkedAt": "2026-10-29T01:55:47.552Z",
+  "sha256": "e8cb59dfd942830a67c75db3306566742c5a5270171017944da82898d8d86796",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.ontologydesignpatterns.org/cp/owl/participation.owl",
+        "id": "odpart",
+        "own": false
+      },
+      {
+        "iri": "http://www.essepuntato.it/2012/04/tvc",
+        "id": "tvc",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:55:52.182Z",
+    "sha256": "e8cb59dfd942830a67c75db3306566742c5a5270171017944da82898d8d86796"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "er.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1243)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1143)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadImports(OWLOntologyManagerImpl.java:1873)\n\n\n\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T01:55:54.458Z",
+    "sha256": "e8cb59dfd942830a67c75db3306566742c5a5270171017944da82898d8d86796"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 5,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2770 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/pso-lov:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T01:55:55.220Z",
+    "sha256": "e8cb59dfd942830a67c75db3306566742c5a5270171017944da82898d8d86796"
+  }
+}

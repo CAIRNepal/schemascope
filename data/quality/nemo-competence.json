@@ -1,0 +1,81 @@
+{
+  "id": "nemo-competence",
+  "artefact": "https://github.com/jpalmeida/competence-ontology/raw/refs/heads/main/competence.ttl",
+  "checkedAt": "2026-10-28T23:14:32.162Z",
+  "sha256": "0e4f92751413c61108c8ab7d1ec1b12d93dd5ec5c967bd77aa64042d2beb7cc5",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/nemo/gufo#",
+        "id": "gufo",
+        "own": false
+      }
+    ],
+    "uses": {
+      "gufo": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:14:32.607Z",
+    "sha256": "0e4f92751413c61108c8ab7d1ec1b12d93dd5ec5c967bd77aa64042d2beb7cc5"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 14,
+      "WARN": 4,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T23:14:39.943Z",
+    "sha256": "0e4f92751413c61108c8ab7d1ec1b12d93dd5ec5c967bd77aa64042d2beb7cc5"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 12
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 12,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2194 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/nemo-competence:/work schemascope/oops --input-file /"
+    ],
+    "checkedAt": "2026-10-28T23:14:40.771Z",
+    "sha256": "0e4f92751413c61108c8ab7d1ec1b12d93dd5ec5c967bd77aa64042d2beb7cc5"
+  }
+}

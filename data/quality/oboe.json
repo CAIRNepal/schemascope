@@ -1,0 +1,93 @@
+{
+  "id": "oboe",
+  "artefact": "https://raw.githubusercontent.com/NCEAS/oboe/refs/heads/master/oboe.owl",
+  "checkedAt": "2026-10-28T23:49:26.870Z",
+  "sha256": "ca0ca4325f2ba4f3918dd444534fe7b7a81beb4126208c25edde4cc135b9f532",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:49:27.052Z",
+    "sha256": "ca0ca4325f2ba4f3918dd444534fe7b7a81beb4126208c25edde4cc135b9f532"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T23:49:30.132Z",
+    "sha256": "ca0ca4325f2ba4f3918dd444534fe7b7a81beb4126208c25edde4cc135b9f532"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P02",
+        "name": "Creating synonyms as classes",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 277
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 17
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 9
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T23:49:44.469Z",
+    "sha256": "ca0ca4325f2ba4f3918dd444534fe7b7a81beb4126208c25edde4cc135b9f532"
+  }
+}

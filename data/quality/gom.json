@@ -1,0 +1,79 @@
+{
+  "id": "gom",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/gom/versions/2019-10-24.n3",
+  "checkedAt": "2026-10-28T20:30:40.789Z",
+  "sha256": "4f1e0db3ef0548ddf0bfc9ffa208a8063bd321bd202fc184a5d201681b40f0f1",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:30:41.691Z",
+    "sha256": "4f1e0db3ef0548ddf0bfc9ffa208a8063bd321bd202fc184a5d201681b40f0f1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 7,
+      "WARN": 40,
+      "INFO": 5
+    },
+    "checkedAt": "2026-10-28T20:30:42.754Z",
+    "sha256": "4f1e0db3ef0548ddf0bfc9ffa208a8063bd321bd202fc184a5d201681b40f0f1"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 9
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 10,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1416 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gom:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T20:30:43.447Z",
+    "sha256": "4f1e0db3ef0548ddf0bfc9ffa208a8063bd321bd202fc184a5d201681b40f0f1"
+  }
+}

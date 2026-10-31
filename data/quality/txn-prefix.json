@@ -1,0 +1,131 @@
+{
+  "id": "txn-prefix",
+  "artefact": "http://purl.org/biodiversity/eol/",
+  "checkedAt": "2026-10-29T05:34:07.418Z",
+  "sha256": "ea5ca4b101bf7825654215c2812d258f3c3a1ddede72e3e4642d623bbc544e40",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/biodiversity/taxon/",
+        "id": "taxon",
+        "own": true
+      }
+    ],
+    "uses": {
+      "dcterms": 8
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:34:09.054Z",
+    "sha256": "ea5ca4b101bf7825654215c2812d258f3c3a1ddede72e3e4642d623bbc544e40"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 43,
+      "INFO": 17
+    },
+    "checkedAt": "2026-10-29T05:34:11.875Z",
+    "sha256": "ea5ca4b101bf7825654215c2812d258f3c3a1ddede72e3e4642d623bbc544e40"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 5,
+    "minor": 9,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 39
+      },
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 102
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 53
+      },
+      {
+        "code": "P12",
+        "name": "Equivalent properties not explicitly declared",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 30
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 36
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T05:34:20.447Z",
+    "sha256": "ea5ca4b101bf7825654215c2812d258f3c3a1ddede72e3e4642d623bbc544e40"
+  }
+}

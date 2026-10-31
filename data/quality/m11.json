@@ -1,0 +1,79 @@
+{
+  "id": "m11",
+  "artefact": "https://w3id.org/m11-rdf",
+  "checkedAt": "2026-10-28T21:33:05.771Z",
+  "sha256": "f42f14501d6aa98418e274b8dc601db6f69f613465799b6691b1c164dce0c702",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ncit": 50,
+      "xsd": 3,
+      "owl": 5
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:33:06.283Z",
+    "sha256": "f42f14501d6aa98418e274b8dc601db6f69f613465799b6691b1c164dce0c702"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 469,
+      "WARN": 55,
+      "INFO": 5
+    },
+    "checkedAt": "2026-10-28T21:33:09.178Z",
+    "sha256": "f42f14501d6aa98418e274b8dc601db6f69f613465799b6691b1c164dce0c702"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 7
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 24
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 12
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:33:19.651Z",
+    "sha256": "f42f14501d6aa98418e274b8dc601db6f69f613465799b6691b1c164dce0c702"
+  }
+}

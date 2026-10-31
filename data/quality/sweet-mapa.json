@@ -1,0 +1,11 @@
+{
+  "id": "sweet-mapa",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/matrParticle.ttl",
+  "checkedAt": "2026-10-29T03:27:04.288Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:27:14.802Z"
+  }
+}

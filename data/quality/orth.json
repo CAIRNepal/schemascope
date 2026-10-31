@@ -1,0 +1,72 @@
+{
+  "id": "orth",
+  "artefact": "https://github.com/qfo/OrthologyOntology/raw/master/orthOntology_RC_v2_A.owl",
+  "checkedAt": "2026-10-29T00:33:32.909Z",
+  "sha256": "90c029dd3f0c2cb397d1c9838c8c23ffa8c48c13c2d4cfb0154fb8713db53493",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "cdao": 8,
+      "ro": 3,
+      "so": 4,
+      "sio": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:33:33.411Z",
+    "sha256": "90c029dd3f0c2cb397d1c9838c8c23ffa8c48c13c2d4cfb0154fb8713db53493"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 19,
+      "WARN": 37,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-29T00:33:34.281Z",
+    "sha256": "90c029dd3f0c2cb397d1c9838c8c23ffa8c48c13c2d4cfb0154fb8713db53493"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2504 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/orth:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T00:33:34.979Z",
+    "sha256": "90c029dd3f0c2cb397d1c9838c8c23ffa8c48c13c2d4cfb0154fb8713db53493"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "id": "worldavatar-compchem",
+  "artefact": "https://raw.githubusercontent.com/TheWorldAvatar/ontology/refs/heads/main/ontology/ontocompchem/ontocompchem.owl",
+  "checkedAt": "2026-10-29T07:38:21.808Z",
+  "sha256": "dc5b1939f2a8de45c191a5bd6eae48fbcb73b371721ba6a72fa078e4976b5604",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.daml.org/2003/01/periodictable/PeriodicTable.owl",
+        "id": "daml.org/2003/01/periodictable/periodictable",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:38:22.919Z",
+    "sha256": "dc5b1939f2a8de45c191a5bd6eae48fbcb73b371721ba6a72fa078e4976b5604"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 110,
+      "WARN": 112,
+      "INFO": 5
+    },
+    "checkedAt": "2026-10-29T07:38:27.471Z",
+    "sha256": "dc5b1939f2a8de45c191a5bd6eae48fbcb73b371721ba6a72fa078e4976b5604"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 19
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 9
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 21,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-4091 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/worldavatar-compchem:/work schemascope/oops --input-f"
+    ],
+    "checkedAt": "2026-10-29T07:38:28.178Z",
+    "sha256": "dc5b1939f2a8de45c191a5bd6eae48fbcb73b371721ba6a72fa078e4976b5604"
+  }
+}

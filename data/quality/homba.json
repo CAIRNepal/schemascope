@@ -1,0 +1,11 @@
+{
+  "id": "homba",
+  "artefact": "https://purl.brain-bican.org/ontology/homba.owl",
+  "checkedAt": "2026-10-28T20:42:40.912Z",
+  "downloadError": "resolves to an HTML page (https://github.com/brain-bican/purl.brain-bican.org/), not the ontology file",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T20:42:41.697Z"
+  }
+}

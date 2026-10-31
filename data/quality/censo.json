@@ -1,0 +1,45 @@
+{
+  "id": "censo",
+  "artefact": "https://w3id.org/censo",
+  "checkedAt": "2026-10-28T02:05:05.196Z",
+  "sha256": "76faecc7544f0aff97e034ed387b04728fd5be49dfb096ec9f9746c620b04b4a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 20,
+      "rdfs": 7,
+      "prov": 3,
+      "sosa": 4,
+      "skos": 4,
+      "xsd": 5,
+      "dcterms": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:05:05.649Z",
+    "sha256": "76faecc7544f0aff97e034ed387b04728fd5be49dfb096ec9f9746c620b04b4a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 95,
+      "INFO": 19
+    },
+    "checkedAt": "2026-10-28T02:05:06.944Z",
+    "sha256": "76faecc7544f0aff97e034ed387b04728fd5be49dfb096ec9f9746c620b04b4a"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-375 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/censo:/work schemascope/oops --input-file /work/ontolo",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/censo/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T02:05:08.064Z",
+    "sha256": "76faecc7544f0aff97e034ed387b04728fd5be49dfb096ec9f9746c620b04b4a"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "emmo-cif",
+  "artefact": "https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/ontology/cif-core.ttl",
+  "checkedAt": "2026-10-28T18:54:17.406Z",
+  "sha256": "de5bbb7fb005a070499d834451d9b2572eb4a9ed6daa2d28c4b9597422684fe2",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://emmo.info/emmo/cif-ddl",
+        "id": "emmo.info/emmo/cif-ddl",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T18:54:17.736Z",
+    "sha256": "de5bbb7fb005a070499d834451d9b2572eb4a9ed6daa2d28c4b9597422684fe2"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://emmo.info/emmo/cif-ddl> Cause: (certificate_expired) PKIX path validation failed: java.security.cert.CertPathValidatorException: validity check failed\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T18:54:18.884Z",
+    "sha256": "de5bbb7fb005a070499d834451d9b2572eb4a9ed6daa2d28c4b9597422684fe2"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1182
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1182,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1109 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/emmo-cif:/work schemascope/oops --input-file /work/on"
+    ],
+    "checkedAt": "2026-10-28T18:54:19.822Z",
+    "sha256": "de5bbb7fb005a070499d834451d9b2572eb4a9ed6daa2d28c4b9597422684fe2"
+  }
+}

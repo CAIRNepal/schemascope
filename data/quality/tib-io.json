@@ -1,0 +1,11 @@
+{
+  "id": "tib-io",
+  "artefact": "https://bimerr.iot.linkeddata.es/def/information-objects/ontology.xml",
+  "checkedAt": "2026-10-29T05:16:40.244Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T05:16:50.587Z"
+  }
+}

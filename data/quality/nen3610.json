@@ -1,0 +1,100 @@
+{
+  "id": "nen3610",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/nen3610/versions/2022-06-01.n3",
+  "checkedAt": "2026-10-28T23:15:01.161Z",
+  "sha256": "01145a0684f617234d85d8b112d1bb34437631aac4095683604fae0ac14f92f3",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://modellen.geostandaarden.nl/def/nen3610/SemantischModel",
+        "id": "modellen.geostandaarden.nl/def/nen3610/semantischmodel",
+        "own": false
+      },
+      {
+        "iri": "http://modellen.geostandaarden.nl/def/nen3610/Basisinformatie-elementen",
+        "id": "modellen.geostandaarden.nl/def/nen3610/basisinformatie-elementen",
+        "own": false
+      },
+      {
+        "iri": "http://modellen.geostandaarden.nl/def/nen3610/Waardelijsten",
+        "id": "modellen.geostandaarden.nl/def/nen3610/waardelijsten",
+        "own": false
+      },
+      {
+        "iri": "https://definities.geostandaarden.nl/rest/v1/nen3610/data?uri=http%3A%2F%2Fdefinities.geostandaarden.nl%2Fnen3610%2Fid%2Fcollectie%2Fmogelijk_geen_waarde&format=text/turtle",
+        "id": "definities.geostandaarden.nl/rest/v1/nen3610/data",
+        "own": false
+      }
+    ],
+    "uses": {
+      "owl": 5,
+      "rdfs": 4,
+      "xsd": 5,
+      "skos": 3,
+      "sh": 23
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:15:02.471Z",
+    "sha256": "01145a0684f617234d85d8b112d1bb34437631aac4095683604fae0ac14f92f3"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "rden.nl%2Fnen3610%2Fid%2Fcollectie%2Fmogelijk_geen_waarde&format=text/turtle> Cause: Server returned HTTP response code: 403 for URL: https://definities.geostandaarden.nl/rest/v1/nen3610/data?uri=http%3A%2F%2Fdefinities.geostandaarden.nl%2Fnen3610%2Fid%2Fcollectie%2Fmogelijk_geen_waarde&format=text/turtle\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T23:15:08.392Z",
+    "sha256": "01145a0684f617234d85d8b112d1bb34437631aac4095683604fae0ac14f92f3"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 25,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2198 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/nen3610:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-28T23:15:09.422Z",
+    "sha256": "01145a0684f617234d85d8b112d1bb34437631aac4095683604fae0ac14f92f3"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "id": "scsn-core",
+  "artefact": "http://ontology.tno.nl/dfcore.ttl",
+  "checkedAt": "2026-10-29T02:48:04.123Z",
+  "sha256": "ba1f1cccefafccd0b211318f2c171cf529e9673102895c930258c31ddeadb7fc",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:48:04.952Z",
+    "sha256": "ba1f1cccefafccd0b211318f2c171cf529e9673102895c930258c31ddeadb7fc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 169,
+      "WARN": 98,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:48:06.103Z",
+    "sha256": "ba1f1cccefafccd0b211318f2c171cf529e9673102895c930258c31ddeadb7fc"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 10
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 15
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 13,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3188 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/scsn-core:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-29T02:48:06.768Z",
+    "sha256": "ba1f1cccefafccd0b211318f2c171cf529e9673102895c930258c31ddeadb7fc"
+  }
+}

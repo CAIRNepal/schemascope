@@ -1,0 +1,93 @@
+{
+  "id": "bibframe",
+  "artefact": "https://id.loc.gov/ontologies/bibframe.rdf",
+  "checkedAt": "2026-10-28T01:34:40.134Z",
+  "sha256": "bac76ca817071521f8ef6e49a71cc2044d4ff4b019e7b7fefa1f5847ec6c69ca",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:34:40.610Z",
+    "sha256": "bac76ca817071521f8ef6e49a71cc2044d4ff4b019e7b7fefa1f5847ec6c69ca"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 110,
+      "WARN": 455,
+      "INFO": 89
+    },
+    "checkedAt": "2026-10-28T01:34:43.519Z",
+    "sha256": "bac76ca817071521f8ef6e49a71cc2044d4ff4b019e7b7fefa1f5847ec6c69ca"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 17
+      },
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 131
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 107
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:35:02.249Z",
+    "sha256": "bac76ca817071521f8ef6e49a71cc2044d4ff4b019e7b7fefa1f5847ec6c69ca"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "dqc",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/dqc/versions/2011-03-28.n3",
+  "checkedAt": "2026-10-28T17:18:55.579Z",
+  "sha256": "884075f2ee53a9da927ebfe3819463b0cbeb380b2b187f77c6be0767accc36b1",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://spinrdf.org/spin",
+        "id": "spin",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:19:01.336Z",
+    "sha256": "884075f2ee53a9da927ebfe3819463b0cbeb380b2b187f77c6be0767accc36b1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "er.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1243)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1143)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadImports(OWLOntologyManagerImpl.java:1873)\n\n\n\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T17:19:02.772Z",
+    "sha256": "884075f2ee53a9da927ebfe3819463b0cbeb380b2b187f77c6be0767accc36b1"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 34
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-936 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dqc:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T17:19:03.417Z",
+    "sha256": "884075f2ee53a9da927ebfe3819463b0cbeb380b2b187f77c6be0767accc36b1"
+  }
+}

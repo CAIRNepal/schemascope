@@ -1,0 +1,125 @@
+{
+  "id": "ons",
+  "artefact": "http://purl.obolibrary.org/obo/ons.owl",
+  "checkedAt": "2026-10-29T00:15:44.691Z",
+  "sha256": "b63755c7d098c69fdf5d3f97de269d92223a6eea2d8393b1f38ec80eba8a859d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 50,
+      "ico": 5,
+      "obi": 50,
+      "bfo": 12,
+      "ro": 45,
+      "cob": 8,
+      "chebi": 50,
+      "ncit": 44,
+      "cl": 3,
+      "uberon": 45,
+      "cmo": 25,
+      "envo": 3,
+      "foodon": 50,
+      "go": 50,
+      "hp": 16,
+      "ogms": 14,
+      "ncbitaxon": 50,
+      "rdfs": 3,
+      "xsd": 7,
+      "dcterms": 4,
+      "owl": 8,
+      "sio": 23,
+      "pato": 50,
+      "oba": 14,
+      "obcs": 5,
+      "obib": 8,
+      "ohmi": 4,
+      "omp": 17,
+      "po": 3,
+      "stato": 5,
+      "uo": 50
+    },
+    "scannedMb": 3,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:15:45.118Z",
+    "sha256": "b63755c7d098c69fdf5d3f97de269d92223a6eea2d8393b1f38ec80eba8a859d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3579,
+      "WARN": 3647,
+      "INFO": 196
+    },
+    "checkedAt": "2026-10-29T00:15:53.217Z",
+    "sha256": "b63755c7d098c69fdf5d3f97de269d92223a6eea2d8393b1f38ec80eba8a859d"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 4,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 37
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 4900
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 78
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 69
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:18:04.050Z",
+    "sha256": "b63755c7d098c69fdf5d3f97de269d92223a6eea2d8393b1f38ec80eba8a859d"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "simu",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/simu/versions/2023-01-10.n3",
+  "checkedAt": "2026-10-29T02:59:33.480Z",
+  "sha256": "4cec10432743cc2716159b3ccf682be5a68ec0cc88bb71819777aa4f1e07b9be",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "semiotics": 4,
+      "situ": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:59:35.175Z",
+    "sha256": "4cec10432743cc2716159b3ccf682be5a68ec0cc88bb71819777aa4f1e07b9be"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 43,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T02:59:36.701Z",
+    "sha256": "4cec10432743cc2716159b3ccf682be5a68ec0cc88bb71819777aa4f1e07b9be"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 14,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3299 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/simu:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T02:59:38.127Z",
+    "sha256": "4cec10432743cc2716159b3ccf682be5a68ec0cc88bb71819777aa4f1e07b9be"
+  }
+}

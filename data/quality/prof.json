@@ -1,0 +1,79 @@
+{
+  "id": "prof",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/prof/versions/2018-02-16.n3",
+  "checkedAt": "2026-10-29T01:50:14.752Z",
+  "sha256": "73a301c32f670a73589a35f36d6503596a1888680f5aec4ab6216c84a9f59a90",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:50:29.113Z",
+    "sha256": "73a301c32f670a73589a35f36d6503596a1888680f5aec4ab6216c84a9f59a90"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 12,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T01:50:30.159Z",
+    "sha256": "73a301c32f670a73589a35f36d6503596a1888680f5aec4ab6216c84a9f59a90"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 6
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 3,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2741 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/prof:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T01:50:30.863Z",
+    "sha256": "73a301c32f670a73589a35f36d6503596a1888680f5aec4ab6216c84a9f59a90"
+  }
+}

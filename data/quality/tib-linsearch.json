@@ -1,0 +1,65 @@
+{
+  "id": "tib-linsearch",
+  "artefact": "https://raw.githubusercontent.com/TIBHannover/annif_automated_indexing_at_tib/main/vocab/LinSearch/linsearch20230105.ttl",
+  "checkedAt": "2026-10-29T05:16:52.698Z",
+  "sha256": "066ceee8b4ece3b5107e51b866dc6b3ba7739d01a09d713132760abd47b6f3fc",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/2004/02/skos/core",
+        "id": "skos",
+        "own": false
+      },
+      {
+        "iri": "http://purl.obolibrary.org/obo/IAO_0100001",
+        "id": "iao_0100001",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:16:52.884Z",
+    "sha256": "066ceee8b4ece3b5107e51b866dc6b3ba7739d01a09d713132760abd47b6f3fc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 29,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T05:16:55.693Z",
+    "sha256": "066ceee8b4ece3b5107e51b866dc6b3ba7739d01a09d713132760abd47b6f3fc"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3754 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tib-linsearch:/work schemascope/oops --input-file /wo"
+    ],
+    "checkedAt": "2026-10-29T05:16:56.917Z",
+    "sha256": "066ceee8b4ece3b5107e51b866dc6b3ba7739d01a09d713132760abd47b6f3fc"
+  }
+}

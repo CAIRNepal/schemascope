@@ -1,0 +1,85 @@
+{
+  "id": "solidhealthconnect",
+  "artefact": "https://w3id.org/solidhealthconnect",
+  "checkedAt": "2026-10-29T03:09:31.590Z",
+  "sha256": "8e092de78e64a6b3f2340d1513a8d43795f64647253d5e0be93cdd82a672549f",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T03:09:37.540Z",
+    "sha256": "8e092de78e64a6b3f2340d1513a8d43795f64647253d5e0be93cdd82a672549f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 105,
+      "WARN": 124,
+      "INFO": 51
+    },
+    "checkedAt": "2026-10-29T03:10:21.086Z",
+    "sha256": "8e092de78e64a6b3f2340d1513a8d43795f64647253d5e0be93cdd82a672549f"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 98
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 6
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 99,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3356 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/solidhealthconnect:/work schemascope/oops --input-fil"
+    ],
+    "checkedAt": "2026-10-29T03:10:22.270Z",
+    "sha256": "8e092de78e64a6b3f2340d1513a8d43795f64647253d5e0be93cdd82a672549f"
+  }
+}

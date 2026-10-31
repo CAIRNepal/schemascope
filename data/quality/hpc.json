@@ -1,0 +1,85 @@
+{
+  "id": "hpc",
+  "artefact": "https://hpc-fair.github.io/ontology/ontology.ttl",
+  "checkedAt": "2026-10-28T20:44:26.500Z",
+  "sha256": "8a5f1970a6b54f36b5776142fd32fa75a057d1d56f4bc01f3697ffab161b6abc",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dc": 7,
+      "dcterms": 4,
+      "owl": 3,
+      "skos": 4,
+      "prov": 10
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:44:26.712Z",
+    "sha256": "8a5f1970a6b54f36b5776142fd32fa75a057d1d56f4bc01f3697ffab161b6abc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 691,
+      "WARN": 691,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T20:44:29.205Z",
+    "sha256": "8a5f1970a6b54f36b5776142fd32fa75a057d1d56f4bc01f3697ffab161b6abc"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 5
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 172
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 371
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 133
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 371,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1533 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/hpc:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T20:44:30.346Z",
+    "sha256": "8a5f1970a6b54f36b5776142fd32fa75a057d1d56f4bc01f3697ffab161b6abc"
+  }
+}

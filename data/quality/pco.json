@@ -1,0 +1,94 @@
+{
+  "id": "pco",
+  "artefact": "http://purl.obolibrary.org/obo/pco.owl",
+  "checkedAt": "2026-10-29T00:38:55.450Z",
+  "sha256": "c2363da29b19c5af1876b1d5078c8b4958ec43e752eed2fb7eb75f0225d47507",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 28,
+      "iao": 50,
+      "ro": 50,
+      "pato": 32,
+      "caro": 3,
+      "go": 11,
+      "ncbitaxon": 50,
+      "genepio": 6,
+      "xsd": 5,
+      "dc": 16,
+      "dcterms": 3,
+      "rdfs": 6,
+      "owl": 7,
+      "swrl": 5
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:38:55.914Z",
+    "sha256": "c2363da29b19c5af1876b1d5078c8b4958ec43e752eed2fb7eb75f0225d47507"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 57,
+      "WARN": 204,
+      "INFO": 74
+    },
+    "checkedAt": "2026-10-29T00:38:57.753Z",
+    "sha256": "c2363da29b19c5af1876b1d5078c8b4958ec43e752eed2fb7eb75f0225d47507"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 79
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 70
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 52
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 212,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2575 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/pco:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T00:39:03.940Z",
+    "sha256": "c2363da29b19c5af1876b1d5078c8b4958ec43e752eed2fb7eb75f0225d47507"
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "id": "biomodels-kisao",
+  "artefact": "http://purl.obolibrary.org/obo/kisao.owl",
+  "checkedAt": "2026-10-28T01:41:35.565Z",
+  "sha256": "6186252501536277e178aa8d027d691144574d6861a1dfd244ed9bdf16d60426",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 10,
+      "dcterms": 3,
+      "owl": 6
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:41:35.911Z",
+    "sha256": "6186252501536277e178aa8d027d691144574d6861a1dfd244ed9bdf16d60426"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 351,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 547,
+      "INFO": 6
+    },
+    "checkedAt": "2026-10-28T01:41:38.266Z",
+    "sha256": "6186252501536277e178aa8d027d691144574d6861a1dfd244ed9bdf16d60426"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 45
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:41:53.404Z",
+    "sha256": "6186252501536277e178aa8d027d691144574d6861a1dfd244ed9bdf16d60426"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "srmo",
+  "artefact": "https://w3id.org/srmo",
+  "checkedAt": "2026-10-29T03:16:33.989Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:16:44.489Z"
+  }
+}

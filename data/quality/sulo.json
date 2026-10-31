@@ -1,0 +1,11 @@
+{
+  "id": "sulo",
+  "artefact": "https://w3id.org/sulo/sulo.ttl",
+  "checkedAt": "2026-10-29T03:19:53.515Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:20:04.012Z"
+  }
+}

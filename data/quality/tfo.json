@@ -1,0 +1,73 @@
+{
+  "id": "tfo",
+  "artefact": "http://opendata.inrae.fr/PO2/Ontology/transformON.rdf",
+  "checkedAt": "2026-10-29T05:01:27.214Z",
+  "sha256": "50d25c9d14385ed2be50545ea44efa6456128f77919b7630e7a2f101c4e14ddd",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://quantum.mia-ps.inrae.fr/PO2/core/2.5.3.ttl",
+        "id": "quantum.mia-ps.inrae.fr/po2/core/2.5.3",
+        "own": false
+      }
+    ],
+    "uses": {
+      "owl": 3
+    },
+    "scannedMb": 24,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:01:39.178Z",
+    "sha256": "50d25c9d14385ed2be50545ea44efa6456128f77919b7630e7a2f101c4e14ddd"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 10692,
+      "WARN": 10659,
+      "INFO": 8
+    },
+    "checkedAt": "2026-10-29T05:01:55.202Z",
+    "sha256": "50d25c9d14385ed2be50545ea44efa6456128f77919b7630e7a2f101c4e14ddd"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 10659
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 10666,
+    "attempts": [],
+    "checkedAt": "2026-10-29T05:02:01.944Z",
+    "sha256": "50d25c9d14385ed2be50545ea44efa6456128f77919b7630e7a2f101c4e14ddd"
+  }
+}

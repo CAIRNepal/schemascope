@@ -1,0 +1,109 @@
+{
+  "id": "coypu",
+  "artefact": "https://gitlab.com/coypu-project/coy-ontology/-/raw/main/ontology/global/coy.ttl",
+  "checkedAt": "2026-10-28T14:37:58.322Z",
+  "sha256": "bbb7a204111dbcc98f0bc4fe856aa4806da4f31782ef5c474bf887de1c66a2a2",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://schema.coypu.org/em-dat/1.0",
+        "id": "schema.coypu.org/em-dat/1.0",
+        "own": false
+      },
+      {
+        "iri": "https://schema.coypu.org/gta/1.0",
+        "id": "schema.coypu.org/gta/1.0",
+        "own": false
+      },
+      {
+        "iri": "https://schema.coypu.org/ta/1.0",
+        "id": "schema.coypu.org/ta/1.0",
+        "own": false
+      },
+      {
+        "iri": "https://schema.coypu.org/vtf/1.4",
+        "id": "schema.coypu.org/vtf/1.4",
+        "own": false
+      },
+      {
+        "iri": "https://schema.coypu.org/world-port-index/1.0",
+        "id": "schema.coypu.org/world-port-index/1.0",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dcterms": 6,
+      "schema": 7,
+      "cidoc-crm": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T14:37:58.741Z",
+    "sha256": "bbb7a204111dbcc98f0bc4fe856aa4806da4f31782ef5c474bf887de1c66a2a2"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <https://schema.coypu.org/em-dat/1.0> Cause: Connect timed out\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T14:38:20.127Z",
+    "sha256": "bbb7a204111dbcc98f0bc4fe856aa4806da4f31782ef5c474bf887de1c66a2a2"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 32
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 26
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 83,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-626 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/coypu:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T14:38:20.979Z",
+    "sha256": "bbb7a204111dbcc98f0bc4fe856aa4806da4f31782ef5c474bf887de1c66a2a2"
+  }
+}

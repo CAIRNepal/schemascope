@@ -1,0 +1,55 @@
+{
+  "id": "sor",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/sor/versions/2015-05-12.n3",
+  "checkedAt": "2026-10-29T03:10:22.270Z",
+  "sha256": "52daa8a815c63fee6261bead3b0f7839a161c0f10204da9db62c259b8240ddca",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T03:10:27.929Z",
+    "sha256": "52daa8a815c63fee6261bead3b0f7839a161c0f10204da9db62c259b8240ddca"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.org/vocab/relationship/> Cause: Remote host terminated the handshake\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T03:11:18.250Z",
+    "sha256": "52daa8a815c63fee6261bead3b0f7839a161c0f10204da9db62c259b8240ddca"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 50
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3358 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sor:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T03:11:19.069Z",
+    "sha256": "52daa8a815c63fee6261bead3b0f7839a161c0f10204da9db62c259b8240ddca"
+  }
+}

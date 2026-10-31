@@ -1,0 +1,41 @@
+{
+  "id": "tib-mt",
+  "artefact": "https://w3id.org/mobilitydcat-ap/mobility-theme",
+  "checkedAt": "2026-10-29T05:17:44.480Z",
+  "sha256": "7cdebcc0f4f30038d23c22796b207c58b97da9d82176f0ce8f225faf44c8ecac",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 8,
+      "dcterms": 7,
+      "skos": 9
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:17:44.804Z",
+    "sha256": "7cdebcc0f4f30038d23c22796b207c58b97da9d82176f0ce8f225faf44c8ecac"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 125,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T05:17:46.637Z",
+    "sha256": "7cdebcc0f4f30038d23c22796b207c58b97da9d82176f0ce8f225faf44c8ecac"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3762 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tib-mt:/work schemascope/oops --input-file /work/onto",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tib-mt/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-29T05:17:47.852Z",
+    "sha256": "7cdebcc0f4f30038d23c22796b207c58b97da9d82176f0ce8f225faf44c8ecac"
+  }
+}

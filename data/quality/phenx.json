@@ -1,0 +1,63 @@
+{
+  "id": "phenx",
+  "artefact": "http://aber-owl.net/media/ontologies/PHENX/1/phenx.owl",
+  "checkedAt": "2026-10-29T00:59:47.013Z",
+  "sha256": "80689818c8cc2d92c572cf694353dedba69d2769bd3f7bbf8711cc971c2b0c65",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:59:48.705Z",
+    "sha256": "80689818c8cc2d92c572cf694353dedba69d2769bd3f7bbf8711cc971c2b0c65"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 545,
+      "INFO": 27
+    },
+    "checkedAt": "2026-10-29T00:59:50.276Z",
+    "sha256": "80689818c8cc2d92c572cf694353dedba69d2769bd3f7bbf8711cc971c2b0c65"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 27
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 533
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T01:00:04.239Z",
+    "sha256": "80689818c8cc2d92c572cf694353dedba69d2769bd3f7bbf8711cc971c2b0c65"
+  }
+}

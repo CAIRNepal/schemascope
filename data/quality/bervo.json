@@ -1,0 +1,64 @@
+{
+  "id": "bervo",
+  "artefact": "https://github.com/bioepic-data/bervo/raw/refs/heads/main/bervo.owl",
+  "checkedAt": "2026-10-28T01:03:16.566Z",
+  "sha256": "d2febf1bcf5b84636567442552698856313c17f34c6a5ae8a2cb38a2cf280588",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 3,
+      "envo": 50,
+      "chebi": 50,
+      "po": 13,
+      "como": 50,
+      "pato": 14,
+      "go": 3,
+      "ncbitaxon": 5,
+      "chmo": 5
+    },
+    "scannedMb": 4,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:03:17.611Z",
+    "sha256": "d2febf1bcf5b84636567442552698856313c17f34c6a5ae8a2cb38a2cf280588"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 5,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-28T01:03:23.418Z",
+    "sha256": "d2febf1bcf5b84636567442552698856313c17f34c6a5ae8a2cb38a2cf280588"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-173 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/bervo:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T01:18:41.226Z",
+    "sha256": "d2febf1bcf5b84636567442552698856313c17f34c6a5ae8a2cb38a2cf280588"
+  }
+}

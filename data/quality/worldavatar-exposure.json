@@ -1,0 +1,71 @@
+{
+  "id": "worldavatar-exposure",
+  "artefact": "https://raw.githubusercontent.com/TheWorldAvatar/ontology/main/ontology/ontoexposure/OntoExposure.owl",
+  "checkedAt": "2026-10-29T07:44:49.176Z",
+  "sha256": "b4cb6f65424da36965573e5b247a7dcf753d0a2470359ea6c53d114433d3f3db",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:44:50.546Z",
+    "sha256": "b4cb6f65424da36965573e5b247a7dcf753d0a2470359ea6c53d114433d3f3db"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 33,
+      "WARN": 39,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-29T07:44:51.475Z",
+    "sha256": "b4cb6f65424da36965573e5b247a7dcf753d0a2470359ea6c53d114433d3f3db"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 29
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:44:58.222Z",
+    "sha256": "b4cb6f65424da36965573e5b247a7dcf753d0a2470359ea6c53d114433d3f3db"
+  }
+}

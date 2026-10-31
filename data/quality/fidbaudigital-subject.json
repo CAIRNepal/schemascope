@@ -1,0 +1,67 @@
+{
+  "id": "fidbaudigital-subject",
+  "artefact": "https://purl.org/fidbaudigital/subjects",
+  "checkedAt": "2026-10-28T19:41:49.091Z",
+  "sha256": "78260eb817de685e01d6ffb36d59736538709cd6b14cb0bc77b8f22bc4caad5a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 5,
+      "dcterms": 5,
+      "dc": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:41:50.983Z",
+    "sha256": "78260eb817de685e01d6ffb36d59736538709cd6b14cb0bc77b8f22bc4caad5a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 169,
+      "WARN": 1,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T19:41:52.257Z",
+    "sha256": "78260eb817de685e01d6ffb36d59736538709cd6b14cb0bc77b8f22bc4caad5a"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:41:59.386Z",
+    "sha256": "78260eb817de685e01d6ffb36d59736538709cd6b14cb0bc77b8f22bc4caad5a"
+  }
+}

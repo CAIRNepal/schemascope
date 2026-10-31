@@ -1,0 +1,41 @@
+{
+  "id": "meno",
+  "artefact": "https://github.com/stap-m/midlevel-energy-ontology/raw/refs/heads/dev/ontology/src/midlevel-energy.owl",
+  "checkedAt": "2026-10-28T21:51:46.810Z",
+  "sha256": "83c6ba0a49469267f51e5a933a5c50e3d666df9795ee16df5dac0151e6fc2a5c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 6,
+      "bfo": 9,
+      "ro": 8
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:51:47.336Z",
+    "sha256": "83c6ba0a49469267f51e5a933a5c50e3d666df9795ee16df5dac0151e6fc2a5c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 8,
+      "WARN": 7,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T21:51:48.962Z",
+    "sha256": "83c6ba0a49469267f51e5a933a5c50e3d666df9795ee16df5dac0151e6fc2a5c"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2031 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/meno:/work schemascope/oops --input-file /work/ontolo",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/meno/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T21:51:49.643Z",
+    "sha256": "83c6ba0a49469267f51e5a933a5c50e3d666df9795ee16df5dac0151e6fc2a5c"
+  }
+}

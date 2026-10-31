@@ -1,0 +1,69 @@
+{
+  "id": "tib-tso",
+  "artefact": "https://raw.githubusercontent.com/RWTH-E3D/tso/master/tubes.ttl",
+  "checkedAt": "2026-10-29T05:18:07.869Z",
+  "sha256": "e974cbcb73ebd5e6eff89b8e52d1f074ffb4c6b7b4f0db67e0bbbb8267b55163",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 7
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:18:08.068Z",
+    "sha256": "e974cbcb73ebd5e6eff89b8e52d1f074ffb4c6b7b4f0db67e0bbbb8267b55163"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 285,
+      "WARN": 141,
+      "INFO": 9
+    },
+    "checkedAt": "2026-10-29T05:18:09.894Z",
+    "sha256": "e974cbcb73ebd5e6eff89b8e52d1f074ffb4c6b7b4f0db67e0bbbb8267b55163"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 47
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 40,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3770 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tib-tso:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T05:18:10.854Z",
+    "sha256": "e974cbcb73ebd5e6eff89b8e52d1f074ffb4c6b7b4f0db67e0bbbb8267b55163"
+  }
+}

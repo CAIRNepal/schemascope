@@ -1,0 +1,67 @@
+{
+  "id": "bibtex",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/bibtex/versions/2003-12-29.n3",
+  "checkedAt": "2026-10-28T01:35:02.249Z",
+  "sha256": "ef3bcfb3250292cbe7b03a2ca58406426f4cd2b7eac816923c1b9c648867bc6a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:35:03.045Z",
+    "sha256": "ef3bcfb3250292cbe7b03a2ca58406426f4cd2b7eac816923c1b9c648867bc6a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 57,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T01:38:42.025Z",
+    "sha256": "ef3bcfb3250292cbe7b03a2ca58406426f4cd2b7eac816923c1b9c648867bc6a"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 15,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-183 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/bibtex:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T01:38:43.229Z",
+    "sha256": "ef3bcfb3250292cbe7b03a2ca58406426f4cd2b7eac816923c1b9c648867bc6a"
+  }
+}

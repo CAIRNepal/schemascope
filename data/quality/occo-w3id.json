@@ -1,0 +1,48 @@
+{
+  "id": "occo-w3id",
+  "artefact": "https://w3id.org/occo",
+  "checkedAt": "2026-10-28T23:55:40.763Z",
+  "sha256": "611e786a49ed85d482cfa33eaafc50e8ea1e15cbd73b3023e9e685424fb021df",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 13,
+      "xsd": 6,
+      "qudt": 4,
+      "prov": 9,
+      "sosa": 11,
+      "dcterms": 12,
+      "rdfs": 7,
+      "time": 4,
+      "ofo": 4,
+      "saref-building": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:55:41.425Z",
+    "sha256": "611e786a49ed85d482cfa33eaafc50e8ea1e15cbd73b3023e9e685424fb021df"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 11,
+      "WARN": 76,
+      "INFO": 14
+    },
+    "checkedAt": "2026-10-28T23:55:44.079Z",
+    "sha256": "611e786a49ed85d482cfa33eaafc50e8ea1e15cbd73b3023e9e685424fb021df"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2318 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/occo-w3id:/work schemascope/oops --input-file /work/o",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/occo-w3id/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T23:55:45.609Z",
+    "sha256": "611e786a49ed85d482cfa33eaafc50e8ea1e15cbd73b3023e9e685424fb021df"
+  }
+}

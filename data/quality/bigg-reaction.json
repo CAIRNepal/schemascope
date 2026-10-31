@@ -1,0 +1,55 @@
+{
+  "id": "bigg-reaction",
+  "artefact": "https://w3id.org/biopragmatics/resources/bigg.reaction/bigg.reaction.owl",
+  "checkedAt": "2026-10-28T01:39:30.579Z",
+  "sha256": "5e2a45a13eef28cd380846b110d01c3f92758123b1a3e51147af7b79140b9563",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ro": 4,
+      "dcterms": 3
+    },
+    "scannedMb": 47,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:39:32.595Z",
+    "sha256": "5e2a45a13eef28cd380846b110d01c3f92758123b1a3e51147af7b79140b9563"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 22392,
+      "WARN": 8224,
+      "INFO": 28301
+    },
+    "checkedAt": "2026-10-28T01:39:50.527Z",
+    "sha256": "5e2a45a13eef28cd380846b110d01c3f92758123b1a3e51147af7b79140b9563"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:39:58.153Z",
+    "sha256": "5e2a45a13eef28cd380846b110d01c3f92758123b1a3e51147af7b79140b9563"
+  }
+}

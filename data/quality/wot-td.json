@@ -1,0 +1,11 @@
+{
+  "id": "wot-td",
+  "artefact": "https://akswnc7.informatik.uni-leipzig.de/dstreitmatter/archivo/w3.org/2019--wot--td/2021.09.22-190316/2019--wot--td_type=parsed.ttl",
+  "checkedAt": "2026-10-29T08:02:20.352Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T08:02:22.786Z"
+  }
+}

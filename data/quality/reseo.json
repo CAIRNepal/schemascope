@@ -1,0 +1,88 @@
+{
+  "id": "reseo",
+  "artefact": "https://w3id.org/reseo",
+  "checkedAt": "2026-10-29T02:26:23.357Z",
+  "sha256": "8c08a87249ba0f60fd98e01e74579acb65760e54133ff7fc4bca3107e1f78d33",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://aemet.linkeddata.es/ontology/aemet.owl",
+        "id": "aemet.linkeddata.es/ontology/aemet",
+        "own": false
+      },
+      {
+        "iri": "http://www.opengis.net/ont/geosparql",
+        "id": "geosparql",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/2006/time#",
+        "id": "time",
+        "own": false
+      }
+    ],
+    "uses": {
+      "xsd": 7,
+      "dcterms": 4,
+      "owl": 6,
+      "swrl": 7
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:26:23.783Z",
+    "sha256": "8c08a87249ba0f60fd98e01e74579acb65760e54133ff7fc4bca3107e1f78d33"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://aemet.linkeddata.es/ontology/aemet.owl> Cause: Unexpected end of file from server\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T02:26:45.354Z",
+    "sha256": "8c08a87249ba0f60fd98e01e74579acb65760e54133ff7fc4bca3107e1f78d33"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 0,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 32
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 6
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 32,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3018 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/reseo:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T02:27:29.259Z",
+    "sha256": "8c08a87249ba0f60fd98e01e74579acb65760e54133ff7fc4bca3107e1f78d33"
+  }
+}

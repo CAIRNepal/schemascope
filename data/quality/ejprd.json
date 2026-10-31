@@ -1,0 +1,78 @@
+{
+  "id": "ejprd",
+  "artefact": "https://github.com/EBISPOT/EJP-Ontology/raw/refs/heads/master/ejp-rd.owl",
+  "checkedAt": "2026-10-28T18:42:10.334Z",
+  "sha256": "6e265aef930f54da96e95668afb84a02f79187dfd8bd61884d5f5afae52bf50d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 7,
+      "iao": 12,
+      "ncit": 50,
+      "doid": 50,
+      "hp": 10,
+      "mondo": 50,
+      "orphanet": 50,
+      "xsd": 5,
+      "dc": 10,
+      "dcterms": 5,
+      "skos": 5,
+      "sio": 5
+    },
+    "scannedMb": 21,
+    "truncated": false,
+    "scannedAt": "2026-10-28T18:42:11.806Z",
+    "sha256": "6e265aef930f54da96e95668afb84a02f79187dfd8bd61884d5f5afae52bf50d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2601,
+      "WARN": 3240,
+      "INFO": 57
+    },
+    "checkedAt": "2026-10-28T18:42:25.356Z",
+    "sha256": "6e265aef930f54da96e95668afb84a02f79187dfd8bd61884d5f5afae52bf50d"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 221
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 778,
+    "attempts": [],
+    "checkedAt": "2026-10-28T18:42:29.766Z",
+    "sha256": "6e265aef930f54da96e95668afb84a02f79187dfd8bd61884d5f5afae52bf50d"
+  }
+}

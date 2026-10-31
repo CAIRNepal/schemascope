@@ -1,0 +1,56 @@
+{
+  "id": "arco",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/arco/versions/2019-06-01.n3",
+  "checkedAt": "2026-10-27T23:49:48.644Z",
+  "sha256": "1bd1dbd0c01b0d6b6062ad603bd3cc70117564a0718042c61dabbac7bdf71c51",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "cis": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-27T23:49:53.317Z",
+    "sha256": "1bd1dbd0c01b0d6b6062ad603bd3cc70117564a0718042c61dabbac7bdf71c51"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 99,
+      "WARN": 57,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-27T23:49:54.472Z",
+    "sha256": "1bd1dbd0c01b0d6b6062ad603bd3cc70117564a0718042c61dabbac7bdf71c51"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 10,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-107 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/arco:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-27T23:49:55.231Z",
+    "sha256": "1bd1dbd0c01b0d6b6062ad603bd3cc70117564a0718042c61dabbac7bdf71c51"
+  }
+}

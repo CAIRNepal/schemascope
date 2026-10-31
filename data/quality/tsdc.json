@@ -1,0 +1,79 @@
+{
+  "id": "tsdc",
+  "artefact": "https://w3id.org/oseg/ont/tsdc/core",
+  "checkedAt": "2026-10-29T05:32:36.769Z",
+  "sha256": "65c86082c87f1384d79011f3ab48657cb37dba19a55d2eb6803c1a2ddcaf1dd1",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:32:37.940Z",
+    "sha256": "65c86082c87f1384d79011f3ab48657cb37dba19a55d2eb6803c1a2ddcaf1dd1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 4,
+      "INFO": 18
+    },
+    "checkedAt": "2026-10-29T05:32:39.285Z",
+    "sha256": "65c86082c87f1384d79011f3ab48657cb37dba19a55d2eb6803c1a2ddcaf1dd1"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 18,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3862 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tsdc:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T05:32:40.217Z",
+    "sha256": "65c86082c87f1384d79011f3ab48657cb37dba19a55d2eb6803c1a2ddcaf1dd1"
+  }
+}

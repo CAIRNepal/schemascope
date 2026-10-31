@@ -1,0 +1,71 @@
+{
+  "id": "cc",
+  "artefact": "https://creativecommons.org/schema.rdf",
+  "checkedAt": "2026-10-28T01:53:13.895Z",
+  "sha256": "3f5949ce6af4ad0c351853f8d6641e43444e0d65f631030ce5b94509d350ffb6",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:53:14.086Z",
+    "sha256": "3f5949ce6af4ad0c351853f8d6641e43444e0d65f631030ce5b94509d350ffb6"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 8,
+      "WARN": 21,
+      "INFO": 5
+    },
+    "checkedAt": "2026-10-28T01:53:15.054Z",
+    "sha256": "3f5949ce6af4ad0c351853f8d6641e43444e0d65f631030ce5b94509d350ffb6"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 23
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:53:20.364Z",
+    "sha256": "3f5949ce6af4ad0c351853f8d6641e43444e0d65f631030ce5b94509d350ffb6"
+  }
+}

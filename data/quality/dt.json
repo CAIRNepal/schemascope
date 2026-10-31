@@ -1,0 +1,65 @@
+{
+  "id": "dt",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/dt/versions/2024-06-11.n3",
+  "checkedAt": "2026-10-28T17:34:23.925Z",
+  "sha256": "e02340acd7d85799f585ed31582af516c9d2e998b0aac8ba9ed3245c52fd9e0e",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://w3id.org/loin",
+        "id": "loin",
+        "own": true
+      },
+      {
+        "iri": "https://w3id.org/isoprops",
+        "id": "isoprops",
+        "own": true
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:34:25.936Z",
+    "sha256": "e02340acd7d85799f585ed31582af516c9d2e998b0aac8ba9ed3245c52fd9e0e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 17,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 31,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T17:34:30.985Z",
+    "sha256": "e02340acd7d85799f585ed31582af516c9d2e998b0aac8ba9ed3245c52fd9e0e"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-974 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dt:/work schemascope/oops --input-file /work/ontology."
+    ],
+    "checkedAt": "2026-10-28T17:34:31.599Z",
+    "sha256": "e02340acd7d85799f585ed31582af516c9d2e998b0aac8ba9ed3245c52fd9e0e"
+  }
+}

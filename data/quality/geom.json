@@ -1,0 +1,76 @@
+{
+  "id": "geom",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/geom/versions/2015-01-11.n3",
+  "checkedAt": "2026-10-28T20:17:18.725Z",
+  "sha256": "f023964bca6eee7fcc433e924fda2b2c9fe89f8cf37864c3b39677155db36b04",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ogc-sf": 14,
+      "xsd": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:17:19.569Z",
+    "sha256": "f023964bca6eee7fcc433e924fda2b2c9fe89f8cf37864c3b39677155db36b04"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 69,
+      "WARN": 39,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T20:17:20.636Z",
+    "sha256": "f023964bca6eee7fcc433e924fda2b2c9fe89f8cf37864c3b39677155db36b04"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 14
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 16,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1348 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/geom:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T20:17:21.266Z",
+    "sha256": "f023964bca6eee7fcc433e924fda2b2c9fe89f8cf37864c3b39677155db36b04"
+  }
+}

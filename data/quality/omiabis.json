@@ -1,0 +1,54 @@
+{
+  "id": "omiabis",
+  "artefact": "http://purl.obolibrary.org/obo/omiabis.owl",
+  "checkedAt": "2026-10-29T00:07:44.558Z",
+  "sha256": "5fb35c1476beebef8625d2219a7f1a6fb1c07ead2e73ecba32a425cf247c15e0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 50,
+      "iao": 50,
+      "obi": 50,
+      "ro": 15,
+      "geo": 7,
+      "ncbitaxon": 13,
+      "omrse": 4,
+      "chebi": 6,
+      "cl": 3,
+      "pato": 12,
+      "uberon": 3,
+      "ogms": 5,
+      "rdfs": 4,
+      "xsd": 3,
+      "dc": 4,
+      "owl": 11
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:07:44.927Z",
+    "sha256": "5fb35c1476beebef8625d2219a7f1a6fb1c07ead2e73ecba32a425cf247c15e0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 1,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 59,
+      "WARN": 213,
+      "INFO": 144
+    },
+    "checkedAt": "2026-10-29T00:07:49.433Z",
+    "sha256": "5fb35c1476beebef8625d2219a7f1a6fb1c07ead2e73ecba32a425cf247c15e0"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2391 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/omiabis:/work schemascope/oops --input-file /work/ont",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/omiabis/ontology.owl\nfile:///var/folder"
+    ],
+    "checkedAt": "2026-10-29T00:07:50.912Z",
+    "sha256": "5fb35c1476beebef8625d2219a7f1a6fb1c07ead2e73ecba32a425cf247c15e0"
+  }
+}

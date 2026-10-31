@@ -1,0 +1,54 @@
+{
+  "id": "notify",
+  "artefact": "http://www.w3.org/ns/solid/notifications",
+  "checkedAt": "2026-10-28T23:22:17.682Z",
+  "sha256": "4ef6270d6284fb57b8f9c483ea526946eb0c5715be7392457bf3cd2d97651367",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:22:17.880Z",
+    "sha256": "4ef6270d6284fb57b8f9c483ea526946eb0c5715be7392457bf3cd2d97651367"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 13,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T23:22:19.248Z",
+    "sha256": "4ef6270d6284fb57b8f9c483ea526946eb0c5715be7392457bf3cd2d97651367"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2251 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/notify:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T23:22:20.364Z",
+    "sha256": "4ef6270d6284fb57b8f9c483ea526946eb0c5715be7392457bf3cd2d97651367"
+  }
+}

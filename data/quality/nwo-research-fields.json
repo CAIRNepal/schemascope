@@ -1,0 +1,31 @@
+{
+  "id": "nwo-research-fields",
+  "artefact": "https://w3id.org/nwo-research-fields",
+  "checkedAt": "2026-10-28T23:23:23.513Z",
+  "sha256": "ff40a41f1e6f81d84bae237111c8ef2ec32f3b023334a03b934a3bf514bc2bdf",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:23:23.959Z",
+    "sha256": "ff40a41f1e6f81d84bae237111c8ef2ec32f3b023334a03b934a3bf514bc2bdf"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "Not a valid (absolute) IRI: @context\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T23:23:24.733Z",
+    "sha256": "ff40a41f1e6f81d84bae237111c8ef2ec32f3b023334a03b934a3bf514bc2bdf"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2266 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/nwo-research-fields:/work schemascope/oops --input-fi",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/nwo-research-fields/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T23:23:25.789Z",
+    "sha256": "ff40a41f1e6f81d84bae237111c8ef2ec32f3b023334a03b934a3bf514bc2bdf"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "id": "vick",
+  "artefact": "https://w3id.org/vick",
+  "checkedAt": "2026-10-29T06:58:45.637Z",
+  "sha256": "3d8a5da82c30f4fb703f31f6f63e3f8a9371dad5fb80b3213ac547cfd9d5cbac",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 50,
+      "iao": 50,
+      "omo": 22,
+      "ico": 19,
+      "oae": 12,
+      "obi": 29,
+      "ogg": 7,
+      "omrse": 50,
+      "oostt": 7,
+      "ro": 50,
+      "uo": 3,
+      "obib": 6,
+      "omiabis": 6,
+      "ncbitaxon": 50,
+      "pato": 11,
+      "vico": 50,
+      "vo": 50,
+      "symp": 14,
+      "go": 6,
+      "chebi": 13,
+      "doid": 40,
+      "gaz": 50,
+      "rdfs": 7,
+      "xsd": 9,
+      "dc": 17,
+      "dcterms": 7,
+      "foaf": 3,
+      "owl": 13,
+      "ogms": 4,
+      "uberon": 5,
+      "swrl": 5
+    },
+    "scannedMb": 3,
+    "truncated": false,
+    "scannedAt": "2026-10-29T06:58:52.108Z",
+    "sha256": "3d8a5da82c30f4fb703f31f6f63e3f8a9371dad5fb80b3213ac547cfd9d5cbac"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 203,
+      "WARN": 912,
+      "INFO": 363
+    },
+    "checkedAt": "2026-10-29T06:58:54.911Z",
+    "sha256": "3d8a5da82c30f4fb703f31f6f63e3f8a9371dad5fb80b3213ac547cfd9d5cbac"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 121
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 122,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3957 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/vick:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T06:59:34.299Z",
+    "sha256": "3d8a5da82c30f4fb703f31f6f63e3f8a9371dad5fb80b3213ac547cfd9d5cbac"
+  }
+}

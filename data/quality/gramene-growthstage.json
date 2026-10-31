@@ -1,0 +1,47 @@
+{
+  "id": "gramene-growthstage",
+  "artefact": "http://aber-owl.net/media/ontologies/GRO-CPGA/1/gro-cpga.owl",
+  "checkedAt": "2026-10-28T20:33:04.333Z",
+  "sha256": "adb2f60e0edbda0c68c4cee06ea837543d2d7dfd6fb81a4de575d906b328405c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "po": 50,
+      "isbn": 45,
+      "go": 21,
+      "pmid": 46,
+      "jstor": 5,
+      "pato": 10,
+      "caro": 5,
+      "fna": 3,
+      "bfo": 3
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:33:06.034Z",
+    "sha256": "adb2f60e0edbda0c68c4cee06ea837543d2d7dfd6fb81a4de575d906b328405c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 13,
+      "WARN": 146,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T20:33:08.486Z",
+    "sha256": "adb2f60e0edbda0c68c4cee06ea837543d2d7dfd6fb81a4de575d906b328405c"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1424 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gramene-growthstage:/work schemascope/oops --input-fi",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gramene-growthstage/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T20:33:09.136Z",
+    "sha256": "adb2f60e0edbda0c68c4cee06ea837543d2d7dfd6fb81a4de575d906b328405c"
+  }
+}

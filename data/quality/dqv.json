@@ -1,0 +1,85 @@
+{
+  "id": "dqv",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/dqv/versions/2016-08-26.n3",
+  "checkedAt": "2026-10-28T17:19:06.437Z",
+  "sha256": "e3b8adb03c726c38bc9db3742321d3be3dc66795506203999cf542f9aa95cd76",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:19:06.854Z",
+    "sha256": "e3b8adb03c726c38bc9db3742321d3be3dc66795506203999cf542f9aa95cd76"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 6,
+      "WARN": 21,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-28T17:19:07.785Z",
+    "sha256": "e3b8adb03c726c38bc9db3742321d3be3dc66795506203999cf542f9aa95cd76"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 4,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 10,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-940 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dqv:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T17:19:08.508Z",
+    "sha256": "e3b8adb03c726c38bc9db3742321d3be3dc66795506203999cf542f9aa95cd76"
+  }
+}

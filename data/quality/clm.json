@@ -1,0 +1,92 @@
+{
+  "id": "clm",
+  "artefact": "https://github.com/Cellular-Semantics/CellMark/raw/refs/heads/main/clm.owl",
+  "checkedAt": "2026-10-28T05:59:35.920Z",
+  "sha256": "e94d1bb4b4341119dac4da5c14944a49d0400b3f85fa1d3751ac24d63e0d6e2c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ro": 50,
+      "bfo": 12,
+      "bspo": 20,
+      "cl": 50,
+      "uberon": 50,
+      "so": 18,
+      "chebi": 50,
+      "pr": 50,
+      "ncbitaxon": 50,
+      "go": 50,
+      "pato": 50,
+      "dc": 3,
+      "dcterms": 4,
+      "owl": 3,
+      "xsd": 3,
+      "pmid": 22,
+      "isbn": 3,
+      "fma": 3
+    },
+    "scannedMb": 17,
+    "truncated": false,
+    "scannedAt": "2026-10-28T05:59:36.846Z",
+    "sha256": "e94d1bb4b4341119dac4da5c14944a49d0400b3f85fa1d3751ac24d63e0d6e2c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 34,
+      "WARN": 460,
+      "INFO": 11
+    },
+    "checkedAt": "2026-10-28T06:15:18.516Z",
+    "sha256": "e94d1bb4b4341119dac4da5c14944a49d0400b3f85fa1d3751ac24d63e0d6e2c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 156
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 532
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 155
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 7774,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-484 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/clm:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T06:31:12.802Z",
+    "sha256": "e94d1bb4b4341119dac4da5c14944a49d0400b3f85fa1d3751ac24d63e0d6e2c"
+  }
+}

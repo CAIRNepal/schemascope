@@ -1,0 +1,11 @@
+{
+  "id": "sweet-pho",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/phenOcean.ttl",
+  "checkedAt": "2026-10-29T03:33:43.476Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:33:53.977Z"
+  }
+}

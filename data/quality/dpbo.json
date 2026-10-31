@@ -1,0 +1,65 @@
+{
+  "id": "dpbo",
+  "artefact": "https://raw.githubusercontent.com/nfdi4plants/nfdi4plants_ontology/refs/heads/main/dpbo.obo",
+  "checkedAt": "2026-10-28T17:16:45.271Z",
+  "sha256": "e299d6c1c427a3b7c2448446a21e0c5deaa3555390b05dd39337d480e879c9aa",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 9,
+      "bao": 17,
+      "obi": 39,
+      "peco": 6,
+      "envo": 6,
+      "ncit": 9,
+      "genepio": 50,
+      "ms": 6,
+      "fbcv": 6,
+      "afr": 6,
+      "agro": 25,
+      "bto": 5,
+      "chmo": 20,
+      "mixs": 5,
+      "pato": 3,
+      "efo": 50,
+      "uo": 3,
+      "snomed": 5,
+      "pmid": 6,
+      "mco": 14,
+      "micro": 4,
+      "so": 6,
+      "nmr": 6,
+      "po": 4,
+      "pride": 39,
+      "sio": 4,
+      "dc": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:16:45.515Z",
+    "sha256": "e299d6c1c427a3b7c2448446a21e0c5deaa3555390b05dd39337d480e879c9aa"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 183,
+      "WARN": 185,
+      "INFO": 384
+    },
+    "checkedAt": "2026-10-28T17:16:47.111Z",
+    "sha256": "e299d6c1c427a3b7c2448446a21e0c5deaa3555390b05dd39337d480e879c9aa"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-914 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dpbo:/work schemascope/oops --input-file /work/ontolog",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dpbo/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T17:16:47.929Z",
+    "sha256": "e299d6c1c427a3b7c2448446a21e0c5deaa3555390b05dd39337d480e879c9aa"
+  }
+}

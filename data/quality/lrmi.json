@@ -1,0 +1,73 @@
+{
+  "id": "lrmi",
+  "artefact": "https://www.dublincore.org/specifications/lrmi/lrmi_terms/2022-06-14/lrmi-terms.ttl",
+  "checkedAt": "2026-10-28T21:32:09.374Z",
+  "sha256": "223f68bab4b0d3b2fa0a5f6a520fdbf3b6a5fa3e0b59cf791e6b92e16246fe6e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:32:09.558Z",
+    "sha256": "223f68bab4b0d3b2fa0a5f6a520fdbf3b6a5fa3e0b59cf791e6b92e16246fe6e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 24,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:32:10.569Z",
+    "sha256": "223f68bab4b0d3b2fa0a5f6a520fdbf3b6a5fa3e0b59cf791e6b92e16246fe6e"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1938 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/lrmi:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T21:32:11.268Z",
+    "sha256": "223f68bab4b0d3b2fa0a5f6a520fdbf3b6a5fa3e0b59cf791e6b92e16246fe6e"
+  }
+}

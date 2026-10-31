@@ -1,0 +1,67 @@
+{
+  "id": "loc-preservation",
+  "artefact": "http://id.loc.gov/vocabulary/preservation.rdf",
+  "checkedAt": "2026-10-28T21:30:43.010Z",
+  "sha256": "9c2d3cf0913eaf7b659c9f23637d37593ddc56bfbe38420ba75d2711b4e8e4cd",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:30:43.313Z",
+    "sha256": "9c2d3cf0913eaf7b659c9f23637d37593ddc56bfbe38420ba75d2711b4e8e4cd"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:30:44.614Z",
+    "sha256": "9c2d3cf0913eaf7b659c9f23637d37593ddc56bfbe38420ba75d2711b4e8e4cd"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1908 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/loc-preservation:/work schemascope/oops --input-file "
+    ],
+    "checkedAt": "2026-10-28T21:30:45.711Z",
+    "sha256": "9c2d3cf0913eaf7b659c9f23637d37593ddc56bfbe38420ba75d2711b4e8e4cd"
+  }
+}

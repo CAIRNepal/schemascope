@@ -1,0 +1,11 @@
+{
+  "id": "hoip",
+  "artefact": "https://github.com/yuki-yamagata/hoip/blob/c70ae6d4868ca951d075cec409e863fa4abe19b2/hoip_0308.owl",
+  "checkedAt": "2026-10-28T20:42:19.609Z",
+  "downloadError": "resolves to an HTML page (https://github.com/yuki-yamagata/hoip/blob/c70ae6d4868ca951d075cec409e863fa4abe19b2/hoip_0308.owl), not the ontology file",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T20:42:20.314Z"
+  }
+}

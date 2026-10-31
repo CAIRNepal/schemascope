@@ -1,0 +1,63 @@
+{
+  "id": "loc-graphicmaterials",
+  "artefact": "http://id.loc.gov/vocabulary/graphicMaterials.rdf",
+  "checkedAt": "2026-10-28T21:29:25.845Z",
+  "sha256": "5c0821bd46ec53cb5e95b9630b08d38d213877112af15db422b71248b95e1bcb",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:29:26.056Z",
+    "sha256": "5c0821bd46ec53cb5e95b9630b08d38d213877112af15db422b71248b95e1bcb"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 7785,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:29:30.620Z",
+    "sha256": "5c0821bd46ec53cb5e95b9630b08d38d213877112af15db422b71248b95e1bcb"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:29:46.647Z",
+    "sha256": "5c0821bd46ec53cb5e95b9630b08d38d213877112af15db422b71248b95e1bcb"
+  }
+}

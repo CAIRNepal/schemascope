@@ -1,0 +1,73 @@
+{
+  "id": "si",
+  "artefact": "https://github.com/TheBIPM/SI_Digital_Framework/raw/refs/heads/main/knowledge_graphs/SI_Reference_Point/si.ttl",
+  "checkedAt": "2026-10-29T02:58:33.942Z",
+  "sha256": "c2026f8aa1ac27d957b5d7be63cbb302bcb89047decd81bf052a62a5109d438e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:58:34.635Z",
+    "sha256": "c2026f8aa1ac27d957b5d7be63cbb302bcb89047decd81bf052a62a5109d438e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 144,
+      "WARN": 65,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-29T02:58:35.743Z",
+    "sha256": "c2026f8aa1ac27d957b5d7be63cbb302bcb89047decd81bf052a62a5109d438e"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 8
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 21
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 19,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3277 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/si:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-29T02:58:36.438Z",
+    "sha256": "c2026f8aa1ac27d957b5d7be63cbb302bcb89047decd81bf052a62a5109d438e"
+  }
+}

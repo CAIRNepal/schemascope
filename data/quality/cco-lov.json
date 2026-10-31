@@ -1,0 +1,130 @@
+{
+  "id": "cco-lov",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/cco/versions/2010-09-26.n3",
+  "checkedAt": "2026-10-28T01:57:15.404Z",
+  "sha256": "54ac84e89aa65197950a9e99e55e5b1b0692b4972815ee4a90676b80b55cde23",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/NET/scovo",
+        "id": "scovo",
+        "own": true
+      },
+      {
+        "iri": "http://purl.org/ontology/wo/core",
+        "id": "wlo",
+        "own": true
+      },
+      {
+        "iri": "http://purl.org/dc/terms/",
+        "id": "dcterms",
+        "own": true
+      },
+      {
+        "iri": "http://purl.org/dc/elements/1.1/",
+        "id": "dc",
+        "own": true
+      },
+      {
+        "iri": "http://purl.org/vocab/vann/",
+        "id": "vann",
+        "own": true
+      },
+      {
+        "iri": "http://www.w3.org/2006/time",
+        "id": "time",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/NET/c4dm/event.owl",
+        "id": "event",
+        "own": true
+      },
+      {
+        "iri": "http://www.w3.org/2003/06/sw-vocab-status/ns",
+        "id": "vs",
+        "own": false
+      },
+      {
+        "iri": "http://xmlns.com/foaf/0.1/",
+        "id": "foaf",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/ontology/ao/core",
+        "id": "ao",
+        "own": true
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:57:16.223Z",
+    "sha256": "54ac84e89aa65197950a9e99e55e5b1b0692b4972815ee4a90676b80b55cde23"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.org/NET/scovo> Cause: Connect timed out\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T01:57:39.363Z",
+    "sha256": "54ac84e89aa65197950a9e99e55e5b1b0692b4972815ee4a90676b80b55cde23"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 12
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 18
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 2,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-334 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cco-lov:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T01:57:40.281Z",
+    "sha256": "54ac84e89aa65197950a9e99e55e5b1b0692b4972815ee4a90676b80b55cde23"
+  }
+}

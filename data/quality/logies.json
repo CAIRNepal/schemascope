@@ -1,0 +1,73 @@
+{
+  "id": "logies",
+  "artefact": "https://data.vlaanderen.be/ns/logies",
+  "checkedAt": "2026-10-28T21:31:30.305Z",
+  "sha256": "0f27952c27213f8a6d0e17f71c3033a81b52f8875e7f8a8bda71fef41170d7b1",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:31:30.729Z",
+    "sha256": "0f27952c27213f8a6d0e17f71c3033a81b52f8875e7f8a8bda71fef41170d7b1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 68,
+      "INFO": 5
+    },
+    "checkedAt": "2026-10-28T21:31:31.954Z",
+    "sha256": "0f27952c27213f8a6d0e17f71c3033a81b52f8875e7f8a8bda71fef41170d7b1"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 15
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 9,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1924 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/logies:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T21:31:32.807Z",
+    "sha256": "0f27952c27213f8a6d0e17f71c3033a81b52f8875e7f8a8bda71fef41170d7b1"
+  }
+}

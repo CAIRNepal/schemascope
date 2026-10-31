@@ -1,0 +1,81 @@
+{
+  "id": "obpi",
+  "artefact": "https://w3id.org/obpi",
+  "checkedAt": "2026-10-28T23:50:36.423Z",
+  "sha256": "01c16895f54f1d0557d306fa0a8cbbfa97f16ca289a9b75c3f59e81dbb132ebc",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:50:36.921Z",
+    "sha256": "01c16895f54f1d0557d306fa0a8cbbfa97f16ca289a9b75c3f59e81dbb132ebc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <https://w3id.org/digitalconstruction/0.5/Processes> Cause: https://w3id.org/var/www/w3id.org/ids/digitalconstruction/0.5/Processes/xml\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T23:50:38.082Z",
+    "sha256": "01c16895f54f1d0557d306fa0a8cbbfa97f16ca289a9b75c3f59e81dbb132ebc"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 3
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 13
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 65
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 23
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 65,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2308 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/obpi:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T23:50:39.327Z",
+    "sha256": "01c16895f54f1d0557d306fa0a8cbbfa97f16ca289a9b75c3f59e81dbb132ebc"
+  }
+}

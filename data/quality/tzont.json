@@ -1,0 +1,11 @@
+{
+  "id": "tzont",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/tzont/versions/2006-12-31.n3",
+  "checkedAt": "2026-10-29T05:44:38.799Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T05:44:49.311Z"
+  }
+}

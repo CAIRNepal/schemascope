@@ -1,0 +1,84 @@
+{
+  "id": "nomen",
+  "artefact": "http://purl.obolibrary.org/obo/nomen.owl",
+  "checkedAt": "2026-10-28T23:21:58.957Z",
+  "sha256": "3e7a4853ea6e704ec2429e7bc71b4b2fc3d447e1c3c750cb903a7130bba7f463",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 4,
+      "owl": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:21:59.299Z",
+    "sha256": "3e7a4853ea6e704ec2429e7bc71b4b2fc3d447e1c3c750cb903a7130bba7f463"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 17,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 19,
+      "WARN": 388,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T23:22:02.179Z",
+    "sha256": "3e7a4853ea6e704ec2429e7bc71b4b2fc3d447e1c3c750cb903a7130bba7f463"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 361
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 114
+      },
+      {
+        "code": "P12",
+        "name": "Equivalent properties not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 114
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T23:22:11.123Z",
+    "sha256": "3e7a4853ea6e704ec2429e7bc71b4b2fc3d447e1c3c750cb903a7130bba7f463"
+  }
+}

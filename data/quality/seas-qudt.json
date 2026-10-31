@@ -1,0 +1,61 @@
+{
+  "id": "seas-qudt",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/seas-qudt/versions/2016-09-19.n3",
+  "checkedAt": "2026-10-29T02:49:43.931Z",
+  "sha256": "6f09529109595fc0745bb0e92e4a4979d982500eb94f70cf11423cf3e1a2b8ba",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:49:50.166Z",
+    "sha256": "6f09529109595fc0745bb0e92e4a4979d982500eb94f70cf11423cf3e1a2b8ba"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 5,
+      "WARN": 4,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:49:52.799Z",
+    "sha256": "6f09529109595fc0745bb0e92e4a4979d982500eb94f70cf11423cf3e1a2b8ba"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3223 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/seas-qudt:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-29T02:49:54.166Z",
+    "sha256": "6f09529109595fc0745bb0e92e4a4979d982500eb94f70cf11423cf3e1a2b8ba"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "oboinowl",
+  "artefact": "http://www.geneontology.org/formats/oboInOwl.owl",
+  "checkedAt": "2026-10-28T23:50:27.920Z",
+  "sha256": "6397be34d11ac0950fb6a554e0e9fc3cb34ac9575af46feeea5704c357cb2b2b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "rdfs": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:50:28.522Z",
+    "sha256": "6397be34d11ac0950fb6a554e0e9fc3cb34ac9575af46feeea5704c357cb2b2b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 10,
+      "WARN": 12,
+      "INFO": 13
+    },
+    "checkedAt": "2026-10-28T23:50:29.770Z",
+    "sha256": "6397be34d11ac0950fb6a554e0e9fc3cb34ac9575af46feeea5704c357cb2b2b"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T23:50:36.422Z",
+    "sha256": "6397be34d11ac0950fb6a554e0e9fc3cb34ac9575af46feeea5704c357cb2b2b"
+  }
+}

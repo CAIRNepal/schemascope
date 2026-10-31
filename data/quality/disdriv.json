@@ -1,0 +1,75 @@
+{
+  "id": "disdriv",
+  "artefact": "http://purl.obolibrary.org/obo/disdriv.owl",
+  "checkedAt": "2026-10-28T17:14:21.942Z",
+  "sha256": "fd45c6fa849ca2667bd31bb65fc3d8c56e2b55a9f18a16cdc109de35548aabd3",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "chebi": 46,
+      "envo": 3,
+      "exo": 4,
+      "ncit": 15,
+      "omit": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:14:22.207Z",
+    "sha256": "fd45c6fa849ca2667bd31bb65fc3d8c56e2b55a9f18a16cdc109de35548aabd3"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 5,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T17:14:23.352Z",
+    "sha256": "fd45c6fa849ca2667bd31bb65fc3d8c56e2b55a9f18a16cdc109de35548aabd3"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 88
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 4
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T17:14:30.136Z",
+    "sha256": "fd45c6fa849ca2667bd31bb65fc3d8c56e2b55a9f18a16cdc109de35548aabd3"
+  }
+}

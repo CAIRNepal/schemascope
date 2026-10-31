@@ -1,0 +1,56 @@
+{
+  "id": "ec",
+  "artefact": "https://w3id.org/biopragmatics/resources/ec/ec.owl",
+  "checkedAt": "2026-10-28T17:36:38.972Z",
+  "sha256": "2f312cfc37d0d603af85fd534a13cf90a5c4c45a7fbfc899a37e1de3087150f5",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ro": 3,
+      "go": 50,
+      "dcterms": 4
+    },
+    "scannedMb": 62,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:36:42.123Z",
+    "sha256": "2f312cfc37d0d603af85fd534a13cf90a5c4c45a7fbfc899a37e1de3087150f5"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 173,
+      "WARN": 1664,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-28T17:37:14.128Z",
+    "sha256": "2f312cfc37d0d603af85fd534a13cf90a5c4c45a7fbfc899a37e1de3087150f5"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [],
+    "checkedAt": "2026-10-28T17:37:24.746Z",
+    "sha256": "2f312cfc37d0d603af85fd534a13cf90a5c4c45a7fbfc899a37e1de3087150f5"
+  }
+}

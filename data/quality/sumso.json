@@ -1,0 +1,11 @@
+{
+  "id": "sumso",
+  "artefact": "https://github.com/gioUbbiali/Sustainable-Meat-Systems-Ontology/raw/refs/heads/main/sumso.ttl",
+  "checkedAt": "2026-10-29T03:20:14.515Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:20:25.013Z"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "id": "malfo",
+  "artefact": "https://w3id.org/malfo",
+  "checkedAt": "2026-10-28T21:34:46.105Z",
+  "sha256": "50e50ef67296c496b94660f4b77d73dcfd5ab477fdbad0d164925a508718a1c7",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:34:46.583Z",
+    "sha256": "50e50ef67296c496b94660f4b77d73dcfd5ab477fdbad0d164925a508718a1c7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 30,
+      "INFO": 5
+    },
+    "checkedAt": "2026-10-28T21:34:48.035Z",
+    "sha256": "50e50ef67296c496b94660f4b77d73dcfd5ab477fdbad0d164925a508718a1c7"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 12
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 14,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1978 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/malfo:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T21:34:49.037Z",
+    "sha256": "50e50ef67296c496b94660f4b77d73dcfd5ab477fdbad0d164925a508718a1c7"
+  }
+}

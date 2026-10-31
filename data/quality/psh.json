@@ -1,0 +1,66 @@
+{
+  "id": "psh",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/psh/versions/2023-03-16.n3",
+  "checkedAt": "2026-10-29T01:52:21.263Z",
+  "sha256": "fbcc91a9dc2c10fcd625ccea26830e5944674f9c6bf926e193c2ec9f00449ca6",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "rdfs": 8,
+      "dcterms": 7,
+      "xsd": 4,
+      "sh": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:52:25.929Z",
+    "sha256": "fbcc91a9dc2c10fcd625ccea26830e5944674f9c6bf926e193c2ec9f00449ca6"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 8,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T01:52:26.803Z",
+    "sha256": "fbcc91a9dc2c10fcd625ccea26830e5944674f9c6bf926e193c2ec9f00449ca6"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2762 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/psh:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T01:52:27.517Z",
+    "sha256": "fbcc91a9dc2c10fcd625ccea26830e5944674f9c6bf926e193c2ec9f00449ca6"
+  }
+}

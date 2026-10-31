@@ -1,0 +1,79 @@
+{
+  "id": "event",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/event/versions/2007-10-25.n3",
+  "checkedAt": "2026-10-28T19:35:37.645Z",
+  "sha256": "2ef0aca9c5f9cd9efd4efd44019d338b63dc71d132eb47204e2e4c4cea55e3e7",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/2006/time",
+        "id": "time",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:35:39.034Z",
+    "sha256": "2ef0aca9c5f9cd9efd4efd44019d338b63dc71d132eb47204e2e4c4cea55e3e7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 9,
+      "WARN": 23,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T19:35:40.526Z",
+    "sha256": "2ef0aca9c5f9cd9efd4efd44019d338b63dc71d132eb47204e2e4c4cea55e3e7"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 12
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 10
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 3,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1170 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/event:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T19:35:41.178Z",
+    "sha256": "2ef0aca9c5f9cd9efd4efd44019d338b63dc71d132eb47204e2e4c4cea55e3e7"
+  }
+}

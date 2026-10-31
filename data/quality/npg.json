@@ -1,0 +1,75 @@
+{
+  "id": "npg",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/npg/versions/2015-04-30.n3",
+  "checkedAt": "2026-10-28T23:22:59.636Z",
+  "sha256": "ecedeb0273226abe79f2661f669384fecc4f8499342c3d2d02f2de39e81026e3",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/2004/02/skos/core",
+        "id": "skos",
+        "own": false
+      }
+    ],
+    "uses": {
+      "fabio": 7
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:23:00.982Z",
+    "sha256": "ecedeb0273226abe79f2661f669384fecc4f8499342c3d2d02f2de39e81026e3"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 121,
+      "WARN": 133,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T23:23:03.036Z",
+    "sha256": "ecedeb0273226abe79f2661f669384fecc4f8499342c3d2d02f2de39e81026e3"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 27
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 45,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2256 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/npg:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T23:23:04.047Z",
+    "sha256": "ecedeb0273226abe79f2661f669384fecc4f8499342c3d2d02f2de39e81026e3"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "id": "dcndl",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/dcndl/versions/2011-12-01.n3",
+  "checkedAt": "2026-10-28T16:57:24.223Z",
+  "sha256": "512fe65a80f2abe80c6f1aa5a65769c07980b1b610bfe09984179941d15f7f0b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dc": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T16:57:25.031Z",
+    "sha256": "512fe65a80f2abe80c6f1aa5a65769c07980b1b610bfe09984179941d15f7f0b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 125,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T16:57:26.222Z",
+    "sha256": "512fe65a80f2abe80c6f1aa5a65769c07980b1b610bfe09984179941d15f7f0b"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-784 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dcndl:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T16:57:26.921Z",
+    "sha256": "512fe65a80f2abe80c6f1aa5a65769c07980b1b610bfe09984179941d15f7f0b"
+  }
+}

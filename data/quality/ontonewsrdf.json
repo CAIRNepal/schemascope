@@ -1,0 +1,82 @@
+{
+  "id": "ontonewsrdf",
+  "artefact": "https://w3id.org/ontonewsrdf",
+  "checkedAt": "2026-10-29T00:25:40.259Z",
+  "sha256": "77b473488f94ed04f59391dfd645575a5fac1088c7ba485a8d47be48d9e8e86c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "schema": 4,
+      "owl": 6,
+      "dcat": 3,
+      "xsd": 4,
+      "dcterms": 7,
+      "rdfs": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:25:40.669Z",
+    "sha256": "77b473488f94ed04f59391dfd645575a5fac1088c7ba485a8d47be48d9e8e86c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 6,
+      "WARN": 6,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T00:25:42.202Z",
+    "sha256": "77b473488f94ed04f59391dfd645575a5fac1088c7ba485a8d47be48d9e8e86c"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 42
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 31
+      },
+      {
+        "code": "P12",
+        "name": "Equivalent properties not explicitly declared",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:25:50.269Z",
+    "sha256": "77b473488f94ed04f59391dfd645575a5fac1088c7ba485a8d47be48d9e8e86c"
+  }
+}

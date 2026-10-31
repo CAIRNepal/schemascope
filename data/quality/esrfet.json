@@ -1,0 +1,77 @@
+{
+  "id": "esrfet",
+  "artefact": "https://pan-ontologies.github.io/esrf-ontologies/esrfet/latest/ontology.owl",
+  "checkedAt": "2026-10-28T19:29:18.984Z",
+  "sha256": "ed55543d8f0c943af05ee9d3f1e20123b2c1f8ec2c9e61c172df9736826bed4b",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/pan-science/PaNET/PaNET.owl",
+        "id": "purl.org/pan-science/panet/panet",
+        "own": false
+      }
+    ],
+    "uses": {
+      "xsd": 4,
+      "dcterms": 7,
+      "foaf": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:29:19.544Z",
+    "sha256": "ed55543d8f0c943af05ee9d3f1e20123b2c1f8ec2c9e61c172df9736826bed4b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 132,
+      "WARN": 258,
+      "INFO": 74
+    },
+    "checkedAt": "2026-10-28T19:29:22.915Z",
+    "sha256": "ed55543d8f0c943af05ee9d3f1e20123b2c1f8ec2c9e61c172df9736826bed4b"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 116
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 8
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 246,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1156 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/esrfet:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T19:29:26.879Z",
+    "sha256": "ed55543d8f0c943af05ee9d3f1e20123b2c1f8ec2c9e61c172df9736826bed4b"
+  }
+}

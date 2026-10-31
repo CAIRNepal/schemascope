@@ -1,0 +1,108 @@
+{
+  "id": "lexvo-ontology",
+  "artefact": "http://lexvo.org/ontology",
+  "checkedAt": "2026-10-28T21:22:59.286Z",
+  "sha256": "0f3ae8a4390cb3ed4b393fe15b7cafdc46bb50cf8325b40542444d2bc4ed50d4",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "skosxl": 3,
+      "skos": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:22:59.833Z",
+    "sha256": "0f3ae8a4390cb3ed4b393fe15b7cafdc46bb50cf8325b40542444d2bc4ed50d4"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 9,
+      "WARN": 36,
+      "INFO": 5
+    },
+    "checkedAt": "2026-10-28T21:23:00.946Z",
+    "sha256": "0f3ae8a4390cb3ed4b393fe15b7cafdc46bb50cf8325b40542444d2bc4ed50d4"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 6,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 26
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P25",
+        "name": "Defining a relationship as inverse to itself",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 14
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:23:07.261Z",
+    "sha256": "0f3ae8a4390cb3ed4b393fe15b7cafdc46bb50cf8325b40542444d2bc4ed50d4"
+  }
+}

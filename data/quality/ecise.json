@@ -1,0 +1,42 @@
+{
+  "id": "ecise",
+  "artefact": "https://w3id.org/ecise",
+  "checkedAt": "2026-10-28T17:38:27.844Z",
+  "sha256": "a227e39b81643f66a70c0dd53f8bc8b80573ea28450dbb71929f91a91d2b1ef0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 11,
+      "dc": 9,
+      "xsd": 12,
+      "rdfs": 6
+    },
+    "scannedMb": 7,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:38:38.219Z",
+    "sha256": "a227e39b81643f66a70c0dd53f8bc8b80573ea28450dbb71929f91a91d2b1ef0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 784,
+      "WARN": 1692,
+      "INFO": 17
+    },
+    "checkedAt": "2026-10-28T17:38:42.619Z",
+    "sha256": "a227e39b81643f66a70c0dd53f8bc8b80573ea28450dbb71929f91a91d2b1ef0"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1030 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ecise:/work schemascope/oops --input-file /work/ontol",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ecise/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T17:38:43.529Z",
+    "sha256": "a227e39b81643f66a70c0dd53f8bc8b80573ea28450dbb71929f91a91d2b1ef0"
+  }
+}

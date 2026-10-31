@@ -1,0 +1,73 @@
+{
+  "id": "c4o",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/c4o/versions/2013-05-11.n3",
+  "checkedAt": "2026-10-28T01:51:26.482Z",
+  "sha256": "0941c529633231b36d75cdcd235be3587433c03790dc91e48df0656d8ea90c77",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/spar/biro",
+        "id": "biro",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:51:26.773Z",
+    "sha256": "0941c529633231b36d75cdcd235be3587433c03790dc91e48df0656d8ea90c77"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.org/co> Cause: https://dwellonit.sourceforge.net/co\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T01:51:30.853Z",
+    "sha256": "0941c529633231b36d75cdcd235be3587433c03790dc91e48df0656d8ea90c77"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 0,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 7,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-285 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/c4o:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T01:51:31.593Z",
+    "sha256": "0941c529633231b36d75cdcd235be3587433c03790dc91e48df0656d8ea90c77"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "rcao",
+  "artefact": "https://lov.linkeddata.es/dataset/vocabs/rcao/versions/2026-04-25.n3",
+  "checkedAt": "2026-10-29T02:15:25.104Z",
+  "sha256": "8646b3f83884d8f8fb4181fbd9523bc3045b9a77c5cd7465b7f795a1ddcf2c85",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://vcd.vicomtech.org/ontology/automotive#",
+        "id": "vcd.vicomtech.org/ontology/automotive",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/prov-o#",
+        "id": "w3.org/ns/prov-o",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dcterms": 11,
+      "schema": 6,
+      "skos": 7,
+      "prov": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:15:29.771Z",
+    "sha256": "8646b3f83884d8f8fb4181fbd9523bc3045b9a77c5cd7465b7f795a1ddcf2c85"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "er.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1243)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1143)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadImports(OWLOntologyManagerImpl.java:1873)\n\n\n\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T02:15:35.126Z",
+    "sha256": "8646b3f83884d8f8fb4181fbd9523bc3045b9a77c5cd7465b7f795a1ddcf2c85"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 27
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 12
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 27,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2837 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rcao:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T02:15:35.854Z",
+    "sha256": "8646b3f83884d8f8fb4181fbd9523bc3045b9a77c5cd7465b7f795a1ddcf2c85"
+  }
+}

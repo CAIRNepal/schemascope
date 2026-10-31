@@ -1,0 +1,111 @@
+{
+  "id": "duo",
+  "artefact": "http://purl.obolibrary.org/obo/duo.owl",
+  "checkedAt": "2026-10-28T17:35:41.473Z",
+  "sha256": "6a34ce09ae07b1e37c6756e049c12129fd1104e7d9e6e2f8cee84d2ab374c45b",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.obolibrary.org/obo/iao.owl",
+        "id": "iao",
+        "own": true
+      }
+    ],
+    "uses": {
+      "obi": 5,
+      "iao": 50,
+      "bfo": 36,
+      "pato": 5,
+      "uo": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:35:42.080Z",
+    "sha256": "6a34ce09ae07b1e37c6756e049c12129fd1104e7d9e6e2f8cee84d2ab374c45b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 262,
+      "WARN": 260,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T17:35:43.604Z",
+    "sha256": "6a34ce09ae07b1e37c6756e049c12129fd1104e7d9e6e2f8cee84d2ab374c45b"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 2,
+    "important": 2,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 330
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 36
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 15
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P29",
+        "name": "Defining wrong transitive relationships",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T17:35:53.681Z",
+    "sha256": "6a34ce09ae07b1e37c6756e049c12129fd1104e7d9e6e2f8cee84d2ab374c45b"
+  }
+}

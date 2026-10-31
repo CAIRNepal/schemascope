@@ -1,0 +1,82 @@
+{
+  "id": "gdprov",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/gdprov/versions/2018-04-06.n3",
+  "checkedAt": "2026-10-28T20:08:21.870Z",
+  "sha256": "6b7084fa5769055d662886b077e68e6941f8f5bcd8eff6158bb7e53d8ef29754",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/net/p-plan#",
+        "id": "p-plan",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/prov-o-20130430",
+        "id": "w3.org/ns/prov-o-20130430",
+        "own": false
+      }
+    ],
+    "uses": {
+      "gdprt": 50,
+      "p-plan": 10,
+      "dcterms": 7
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:08:22.916Z",
+    "sha256": "6b7084fa5769055d662886b077e68e6941f8f5bcd8eff6158bb7e53d8ef29754"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.org/net/p-plan#> Cause: Unexpected end of file from server\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T20:08:46.466Z",
+    "sha256": "6b7084fa5769055d662886b077e68e6941f8f5bcd8eff6158bb7e53d8ef29754"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 15
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 9
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 20
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 102,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1320 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gdprov:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T20:08:47.168Z",
+    "sha256": "6b7084fa5769055d662886b077e68e6941f8f5bcd8eff6158bb7e53d8ef29754"
+  }
+}

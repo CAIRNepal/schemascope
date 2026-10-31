@@ -1,0 +1,66 @@
+{
+  "id": "ncbitaxon",
+  "artefact": "http://purl.obolibrary.org/obo/ncbitaxon.owl",
+  "checkedAt": "2026-10-28T22:41:38.246Z",
+  "sha256": "fec2677da6cafd43d24a6d0359f6523da5f79b4db9e5dfbe0fa2efb98b0d4981",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "omo": 4,
+      "taxrank": 41,
+      "dcterms": 3,
+      "humz": 12,
+      "kuhe": 3,
+      "casiz": 4
+    },
+    "scannedMb": 500,
+    "truncated": true,
+    "scannedAt": "2026-10-28T22:45:47.433Z",
+    "sha256": "fec2677da6cafd43d24a6d0359f6523da5f79b4db9e5dfbe0fa2efb98b0d4981"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "eption(Unknown Source)\n\tat java.base/java.util.concurrent.ForkJoinTask.doExec(Unknown Source)\n\tat java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(Unknown Source)\n\tat java.base/java.util.concurrent.ForkJoinPool.scan(Unknown Source)\n\tat java.base/java.util.concurrent.ForkJoinPool.runWorker(Unknown Source)\n\tat java.base/java.util.concurrent.ForkJoinWorkerThread.run(Unknown Source)\n",
+    "checkedAt": "2026-10-28T22:47:55.840Z",
+    "sha256": "fec2677da6cafd43d24a6d0359f6523da5f79b4db9e5dfbe0fa2efb98b0d4981"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 2854536
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 2854537,
+    "attempts": [],
+    "checkedAt": "2026-10-28T23:04:47.684Z",
+    "sha256": "fec2677da6cafd43d24a6d0359f6523da5f79b4db9e5dfbe0fa2efb98b0d4981"
+  }
+}

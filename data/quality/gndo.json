@@ -1,0 +1,138 @@
+{
+  "id": "gndo",
+  "artefact": "https://d-nb.info/standards/elementset/gnd.rdf",
+  "checkedAt": "2026-10-28T20:24:33.313Z",
+  "sha256": "3ad2263ab924e0d99248512b90580a67d2aaf7f2cd9a930f1ad35202c44872dd",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 5,
+      "owl": 8,
+      "rdfs": 4,
+      "rdac": 3,
+      "foaf": 11,
+      "skos": 5,
+      "rdau": 40,
+      "rdaa": 38
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:24:34.969Z",
+    "sha256": "3ad2263ab924e0d99248512b90580a67d2aaf7f2cd9a930f1ad35202c44872dd"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 726,
+      "WARN": 342,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-28T20:24:36.470Z",
+    "sha256": "3ad2263ab924e0d99248512b90580a67d2aaf7f2cd9a930f1ad35202c44872dd"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 4,
+    "minor": 10,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 13
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 169
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 52
+      },
+      {
+        "code": "P12",
+        "name": "Equivalent properties not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 153
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 19
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 15
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P31",
+        "name": "Defining wrong equivalent classes",
+        "importance": "critical",
+        "affected": 3
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 7
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 88
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T20:24:55.736Z",
+    "sha256": "3ad2263ab924e0d99248512b90580a67d2aaf7f2cd9a930f1ad35202c44872dd"
+  }
+}

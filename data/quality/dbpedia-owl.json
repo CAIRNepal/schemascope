@@ -1,0 +1,77 @@
+{
+  "id": "dbpedia-owl",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/dbpedia-owl/versions/2016-05-21.n3",
+  "checkedAt": "2026-10-28T16:56:22.175Z",
+  "sha256": "bac625c4da5bb30ba3a40faa28c3656c13bdd16e93012a12d4e9ea5e28e8a777",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "schema": 50,
+      "bibo": 3,
+      "dcmitype": 3
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T16:56:24.218Z",
+    "sha256": "bac625c4da5bb30ba3a40faa28c3656c13bdd16e93012a12d4e9ea5e28e8a777"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 18,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 12205,
+      "WARN": 4485,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T16:56:30.024Z",
+    "sha256": "bac625c4da5bb30ba3a40faa28c3656c13bdd16e93012a12d4e9ea5e28e8a777"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 395
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 451
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1103
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 754,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-770 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dbpedia-owl:/work schemascope/oops --input-file /work/"
+    ],
+    "checkedAt": "2026-10-28T16:56:31.297Z",
+    "sha256": "bac625c4da5bb30ba3a40faa28c3656c13bdd16e93012a12d4e9ea5e28e8a777"
+  }
+}

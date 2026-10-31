@@ -1,0 +1,11 @@
+{
+  "id": "orpha",
+  "artefact": "http://www.orphadata.org/data/ORDO/ordo_orphanet.owl",
+  "checkedAt": "2026-10-29T00:32:12.290Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:32:22.793Z"
+  }
+}

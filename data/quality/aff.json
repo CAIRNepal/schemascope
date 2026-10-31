@@ -1,0 +1,69 @@
+{
+  "id": "aff",
+  "artefact": "https://w3id.org/affectedBy",
+  "checkedAt": "2026-10-27T23:01:36.652Z",
+  "sha256": "3aea59722baab36e4ce823eb2a59528b1911fe75ac554b3d89f01940227c1d9d",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl",
+        "id": "cpa",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-27T23:01:37.088Z",
+    "sha256": "3aea59722baab36e4ce823eb2a59528b1911fe75ac554b3d89f01940227c1d9d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 5,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-27T23:01:38.396Z",
+    "sha256": "3aea59722baab36e4ce823eb2a59528b1911fe75ac554b3d89f01940227c1d9d"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-27T23:01:59.561Z",
+    "sha256": "3aea59722baab36e4ce823eb2a59528b1911fe75ac554b3d89f01940227c1d9d"
+  }
+}

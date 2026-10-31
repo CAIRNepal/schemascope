@@ -1,0 +1,90 @@
+{
+  "id": "seo",
+  "artefact": "https://github.com/saidfathalla/SEOontology/raw/refs/heads/master/SEO.owl",
+  "checkedAt": "2026-10-29T02:51:15.600Z",
+  "sha256": "761841551824b00ed30acc0e54c3b0df53619038f498ba98f23b09b2bfbcdf60",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.essepuntato.it/2012/04/tvc",
+        "id": "tvc",
+        "own": false
+      },
+      {
+        "iri": "http://xmlns.com/foaf/0.1/",
+        "id": "foaf",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dcterms": 50,
+      "xsd": 6,
+      "dc": 15,
+      "foaf": 3,
+      "swrc": 4,
+      "doco": 7,
+      "pattern": 15,
+      "frbr": 7,
+      "fabio": 9,
+      "swrl": 7,
+      "sioc-core": 9
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:51:16.176Z",
+    "sha256": "761841551824b00ed30acc0e54c3b0df53619038f498ba98f23b09b2bfbcdf60"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "er.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1243)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1143)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadImports(OWLOntologyManagerImpl.java:1873)\n\n\n\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T02:51:17.553Z",
+    "sha256": "761841551824b00ed30acc0e54c3b0df53619038f498ba98f23b09b2bfbcdf60"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 8
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 23
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 67,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3247 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/seo:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T02:51:22.225Z",
+    "sha256": "761841551824b00ed30acc0e54c3b0df53619038f498ba98f23b09b2bfbcdf60"
+  }
+}

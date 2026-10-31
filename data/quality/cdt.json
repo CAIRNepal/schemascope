@@ -1,0 +1,66 @@
+{
+  "id": "cdt",
+  "artefact": "https://raw.githubusercontent.com/oral-health-and-disease-ontologies/ohd-ontology/f19378ff192b6f9ea16133e85671e8359fc371cd/src/ontology/archive/CDTCodes%20as%20Classes_pruned.owl",
+  "checkedAt": "2026-10-28T02:01:08.040Z",
+  "sha256": "a2caa05e3200c050f2c8f73c9abf3da325cca66179007bac3dfa7bec519e73a8",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 3,
+      "dc": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:01:08.259Z",
+    "sha256": "a2caa05e3200c050f2c8f73c9abf3da325cca66179007bac3dfa7bec519e73a8"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 89,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T02:01:09.762Z",
+    "sha256": "a2caa05e3200c050f2c8f73c9abf3da325cca66179007bac3dfa7bec519e73a8"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 87
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T02:01:16.158Z",
+    "sha256": "a2caa05e3200c050f2c8f73c9abf3da325cca66179007bac3dfa7bec519e73a8"
+  }
+}

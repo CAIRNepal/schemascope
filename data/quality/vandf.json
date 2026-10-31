@@ -1,0 +1,89 @@
+{
+  "id": "vandf",
+  "artefact": "http://aber-owl.net/media/ontologies/VANDF/1/vandf.owl",
+  "checkedAt": "2026-10-29T06:49:58.457Z",
+  "sha256": "eb16d6e271e010ea81a4986da4f004d71a1e9753f300d5ee9d16c950db4f65aa",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/2004/02/skos/core",
+        "id": "skos",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 69,
+    "truncated": false,
+    "scannedAt": "2026-10-29T06:50:08.192Z",
+    "sha256": "eb16d6e271e010ea81a4986da4f004d71a1e9753f300d5ee9d16c950db4f65aa"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 31340,
+      "WARN": 20,
+      "INFO": 31212
+    },
+    "checkedAt": "2026-10-29T06:50:44.696Z",
+    "sha256": "eb16d6e271e010ea81a4986da4f004d71a1e9753f300d5ee9d16c950db4f65aa"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 31337
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 4
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 31337,
+    "attempts": [],
+    "checkedAt": "2026-10-29T06:50:59.542Z",
+    "sha256": "eb16d6e271e010ea81a4986da4f004d71a1e9753f300d5ee9d16c950db4f65aa"
+  }
+}

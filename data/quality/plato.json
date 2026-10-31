@@ -1,0 +1,67 @@
+{
+  "id": "plato",
+  "artefact": "https://w3id.org/plato",
+  "checkedAt": "2026-10-29T01:11:57.795Z",
+  "sha256": "3b441edf7e15d762a29a31b5614430c3d2b23cc4809e7af07a7238d7ce28584f",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:11:58.383Z",
+    "sha256": "3b441edf7e15d762a29a31b5614430c3d2b23cc4809e7af07a7238d7ce28584f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 93,
+      "WARN": 159,
+      "INFO": 8
+    },
+    "checkedAt": "2026-10-29T01:12:00.125Z",
+    "sha256": "3b441edf7e15d762a29a31b5614430c3d2b23cc4809e7af07a7238d7ce28584f"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 49
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 21,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2649 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/plato:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T01:12:01.190Z",
+    "sha256": "3b441edf7e15d762a29a31b5614430c3d2b23cc4809e7af07a7238d7ce28584f"
+  }
+}

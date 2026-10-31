@@ -1,0 +1,33 @@
+{
+  "id": "cto",
+  "artefact": "http://purl.obolibrary.org/obo/cto.owl",
+  "checkedAt": "2026-10-28T15:52:32.125Z",
+  "sha256": "9eb6c989f26ed9079eff28efb5d11c3b0b05eb8af47691d224740042b7501a5b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ncit": 4
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T15:52:32.522Z",
+    "sha256": "9eb6c989f26ed9079eff28efb5d11c3b0b05eb8af47691d224740042b7501a5b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "datatype rdf:langString requires a language tag\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T15:52:34.127Z",
+    "sha256": "9eb6c989f26ed9079eff28efb5d11c3b0b05eb8af47691d224740042b7501a5b"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-692 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cto:/work schemascope/oops --input-file /work/ontology",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cto/ontology.owl\nfile:///var/folders/qc"
+    ],
+    "checkedAt": "2026-10-28T15:52:35.550Z",
+    "sha256": "9eb6c989f26ed9079eff28efb5d11c3b0b05eb8af47691d224740042b7501a5b"
+  }
+}

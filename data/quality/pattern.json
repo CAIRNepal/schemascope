@@ -1,0 +1,67 @@
+{
+  "id": "pattern",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/pattern/versions/2013-07-16.n3",
+  "checkedAt": "2026-10-29T00:37:43.336Z",
+  "sha256": "7d705fc9e16159876c8486b82e86d163ae2d9f8b2b81dbd0369bcb8a4cbff78b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:37:50.356Z",
+    "sha256": "7d705fc9e16159876c8486b82e86d163ae2d9f8b2b81dbd0369bcb8a4cbff78b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 28,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-29T00:37:51.622Z",
+    "sha256": "7d705fc9e16159876c8486b82e86d163ae2d9f8b2b81dbd0369bcb8a4cbff78b"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 20,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2557 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/pattern:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T00:37:52.311Z",
+    "sha256": "7d705fc9e16159876c8486b82e86d163ae2d9f8b2b81dbd0369bcb8a4cbff78b"
+  }
+}

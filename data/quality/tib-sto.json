@@ -1,0 +1,79 @@
+{
+  "id": "tib-sto",
+  "artefact": "https://i40-tools.github.io/I40KG/docs/serializations/ontology.ttl",
+  "checkedAt": "2026-10-29T05:18:00.911Z",
+  "sha256": "6c668bcb99f4e886732a89c5ec72b9053ab9c5193ed194f081af8824135f0bd5",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://raw.githubusercontent.com/i40-Tools/StandardOntology/master/concerns.ttl",
+        "id": "raw.githubusercontent.com/i40-tools/standardontology/master/concerns",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/i40-Tools/StandardOntology/master/sto.ttl",
+        "id": "raw.githubusercontent.com/i40-tools/standardontology/master/sto",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dcterms": 17,
+      "dc": 5,
+      "skos": 5,
+      "foaf": 10,
+      "om": 4,
+      "dolce": 6
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:18:01.268Z",
+    "sha256": "6c668bcb99f4e886732a89c5ec72b9053ab9c5193ed194f081af8824135f0bd5"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 235,
+      "WARN": 127,
+      "INFO": 8
+    },
+    "checkedAt": "2026-10-29T05:18:06.487Z",
+    "sha256": "6c668bcb99f4e886732a89c5ec72b9053ab9c5193ed194f081af8824135f0bd5"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3768 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tib-sto:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T05:18:07.868Z",
+    "sha256": "6c668bcb99f4e886732a89c5ec72b9053ab9c5193ed194f081af8824135f0bd5"
+  }
+}

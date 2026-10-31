@@ -1,0 +1,101 @@
+{
+  "id": "cao",
+  "artefact": "https://champ.stuchalk.domains.unf.edu/images/ontology/cao.owl",
+  "checkedAt": "2026-10-28T01:51:33.207Z",
+  "sha256": "5fefd0f0420c7b45b81d0b0aab07ef6ea1dade0e4d80a10a0ea78d4877d7f554",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 24,
+      "chmo": 45,
+      "chebi": 38,
+      "bfo": 6,
+      "obcs": 3,
+      "pato": 16,
+      "obi": 16,
+      "stato": 12,
+      "dc": 16,
+      "sio": 22,
+      "foaf": 4,
+      "vivo": 7,
+      "vcard": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:51:33.534Z",
+    "sha256": "5fefd0f0420c7b45b81d0b0aab07ef6ea1dade0e4d80a10a0ea78d4877d7f554"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 12,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 56,
+      "WARN": 288,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-28T01:51:35.688Z",
+    "sha256": "5fefd0f0420c7b45b81d0b0aab07ef6ea1dade0e4d80a10a0ea78d4877d7f554"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 2,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P02",
+        "name": "Creating synonyms as classes",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 450
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 14
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 21
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 8
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:51:43.275Z",
+    "sha256": "5fefd0f0420c7b45b81d0b0aab07ef6ea1dade0e4d80a10a0ea78d4877d7f554"
+  }
+}

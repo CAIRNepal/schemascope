@@ -1,0 +1,91 @@
+{
+  "id": "msr",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/msr/versions/2009-06-06.n3",
+  "checkedAt": "2026-10-28T22:39:17.340Z",
+  "sha256": "5080b2e8e1fe6925e925b08111308c77e67169a444788f1c962ffa727d334811",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:39:21.415Z",
+    "sha256": "5080b2e8e1fe6925e925b08111308c77e67169a444788f1c962ffa727d334811"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 11,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T22:39:22.365Z",
+    "sha256": "5080b2e8e1fe6925e925b08111308c77e67169a444788f1c962ffa727d334811"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 4,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 6,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2145 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/msr:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T22:39:22.956Z",
+    "sha256": "5080b2e8e1fe6925e925b08111308c77e67169a444788f1c962ffa727d334811"
+  }
+}

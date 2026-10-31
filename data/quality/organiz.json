@@ -1,0 +1,73 @@
+{
+  "id": "organiz",
+  "artefact": "http://eulersharp.sourceforge.net/2003/03swap/organization",
+  "checkedAt": "2026-10-29T00:31:40.771Z",
+  "sha256": "85b8140228589b59d709e01ee4c2f9608c35f315b985b1e3d42a2135005d0c31",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:31:41.025Z",
+    "sha256": "85b8140228589b59d709e01ee4c2f9608c35f315b985b1e3d42a2135005d0c31"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 6,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T00:31:42.060Z",
+    "sha256": "85b8140228589b59d709e01ee4c2f9608c35f315b985b1e3d42a2135005d0c31"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2495 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/organiz:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T00:31:42.797Z",
+    "sha256": "85b8140228589b59d709e01ee4c2f9608c35f315b985b1e3d42a2135005d0c31"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "id": "empty",
+  "artefact": "https://github.com/Waltham-Data-Science/empty-ontology/raw/refs/heads/main/empty.owl",
+  "checkedAt": "2026-10-28T18:54:22.551Z",
+  "sha256": "4bd738516b3b14e28ff043540fb03690bb4ae06745a07d4e18880c04e6d4c085",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 44,
+      "bfo": 21,
+      "ro": 50,
+      "bspo": 23,
+      "cl": 50,
+      "obi": 50,
+      "cob": 8,
+      "uberon": 50,
+      "pato": 50,
+      "go": 50,
+      "chebi": 50,
+      "pr": 50,
+      "clm": 4,
+      "ncbitaxon": 50,
+      "dcterms": 3,
+      "owl": 9,
+      "ncit": 50,
+      "envo": 40,
+      "so": 3,
+      "nbo": 14,
+      "uo": 50,
+      "swrl": 5
+    },
+    "scannedMb": 11,
+    "truncated": false,
+    "scannedAt": "2026-10-28T18:54:23.438Z",
+    "sha256": "4bd738516b3b14e28ff043540fb03690bb4ae06745a07d4e18880c04e6d4c085"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 258,
+      "WARN": 7774,
+      "INFO": 174
+    },
+    "checkedAt": "2026-10-28T18:54:30.136Z",
+    "sha256": "4bd738516b3b14e28ff043540fb03690bb4ae06745a07d4e18880c04e6d4c085"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 250
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 7598
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 200
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 8367,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1113 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/empty:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T19:04:33.120Z",
+    "sha256": "4bd738516b3b14e28ff043540fb03690bb4ae06745a07d4e18880c04e6d4c085"
+  }
+}

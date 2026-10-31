@@ -1,0 +1,77 @@
+{
+  "id": "vitro",
+  "artefact": "https://raw.githubusercontent.com/vivo-archive/Linked-Data-Indexer/refs/heads/master/src/main/resources/vitro-0.7.owl",
+  "checkedAt": "2026-10-29T06:59:54.782Z",
+  "sha256": "c9a50a7c8fa50f505c62a40a8b821d22c6aeef48a5394a46889170cdc9bb58bc",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T06:59:56.530Z",
+    "sha256": "c9a50a7c8fa50f505c62a40a8b821d22c6aeef48a5394a46889170cdc9bb58bc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 12,
+      "WARN": 10,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T06:59:57.537Z",
+    "sha256": "c9a50a7c8fa50f505c62a40a8b821d22c6aeef48a5394a46889170cdc9bb58bc"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 33
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 129
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 87
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 8
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:00:04.355Z",
+    "sha256": "c9a50a7c8fa50f505c62a40a8b821d22c6aeef48a5394a46889170cdc9bb58bc"
+  }
+}

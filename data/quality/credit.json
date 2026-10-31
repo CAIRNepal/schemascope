@@ -1,0 +1,71 @@
+{
+  "id": "credit",
+  "artefact": "https://w3id.org/biopragmatics/resources/credit/credit.owl",
+  "checkedAt": "2026-10-28T15:06:07.159Z",
+  "sha256": "6b2c72621e59af717f42a7ee334fb65c0f71a35420e0e5d2c139c82441551698",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T15:06:08.223Z",
+    "sha256": "6b2c72621e59af717f42a7ee334fb65c0f71a35420e0e5d2c139c82441551698"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 17,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-28T15:06:09.834Z",
+    "sha256": "6b2c72621e59af717f42a7ee334fb65c0f71a35420e0e5d2c139c82441551698"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T15:06:17.993Z",
+    "sha256": "6b2c72621e59af717f42a7ee334fb65c0f71a35420e0e5d2c139c82441551698"
+  }
+}

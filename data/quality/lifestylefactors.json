@@ -1,0 +1,95 @@
+{
+  "id": "lifestylefactors",
+  "artefact": "https://raw.githubusercontent.com/EsmaeilNourani/Lifestyle-factors-ontology/main/LSFO/owl/LSFO.owl",
+  "checkedAt": "2026-10-28T21:23:28.067Z",
+  "sha256": "276202399c666c49882938a12d061b5935916778aa6d934821b520862c5149fc",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "lfid": 50,
+      "ncit": 50,
+      "gsso": 50,
+      "envo": 27,
+      "mesh": 50,
+      "go": 6,
+      "foodon": 50,
+      "chebi": 50,
+      "maxo": 14,
+      "ons": 50,
+      "txpo": 6,
+      "cdno": 10,
+      "pato": 4,
+      "nbo": 9,
+      "ncbitaxon": 50,
+      "doid": 5,
+      "peco": 6,
+      "imr": 4,
+      "fobi": 3,
+      "dpo-lov": 3,
+      "pr": 4,
+      "uberon": 7,
+      "oostt": 3,
+      "mondo": 7,
+      "sio": 6
+    },
+    "scannedMb": 9,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:23:28.627Z",
+    "sha256": "276202399c666c49882938a12d061b5935916778aa6d934821b520862c5149fc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 97,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 5638,
+      "INFO": 8
+    },
+    "checkedAt": "2026-10-28T21:23:37.108Z",
+    "sha256": "276202399c666c49882938a12d061b5935916778aa6d934821b520862c5149fc"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 5599
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 8
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:26:34.289Z",
+    "sha256": "276202399c666c49882938a12d061b5935916778aa6d934821b520862c5149fc"
+  }
+}

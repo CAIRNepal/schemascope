@@ -1,0 +1,101 @@
+{
+  "id": "oeo",
+  "artefact": "https://openenergyplatform.org/ontology/oeo/dev/oeo-full.owl",
+  "checkedAt": "2026-10-28T23:57:03.237Z",
+  "sha256": "fd9c47d107ab5dff2d553aab7d15bfcdfd6045c72fd4071b5d6d29d304540b0a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 49,
+      "iao": 50,
+      "ro": 50,
+      "stato": 7,
+      "uo": 50,
+      "rdfs": 9,
+      "owl": 16,
+      "xsd": 9,
+      "dc": 6,
+      "dcterms": 5,
+      "skos": 7,
+      "chebi": 15,
+      "envo": 40
+    },
+    "scannedMb": 4,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:57:05.073Z",
+    "sha256": "fd9c47d107ab5dff2d553aab7d15bfcdfd6045c72fd4071b5d6d29d304540b0a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 72,
+      "WARN": 307,
+      "INFO": 223
+    },
+    "checkedAt": "2026-10-28T23:57:10.287Z",
+    "sha256": "fd9c47d107ab5dff2d553aab7d15bfcdfd6045c72fd4071b5d6d29d304540b0a"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1633
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 84
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 122
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 13
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 10
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T23:58:08.053Z",
+    "sha256": "fd9c47d107ab5dff2d553aab7d15bfcdfd6045c72fd4071b5d6d29d304540b0a"
+  }
+}

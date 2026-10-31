@@ -1,0 +1,54 @@
+{
+  "id": "dggrs",
+  "artefact": "https://w3id.org/dggrs",
+  "checkedAt": "2026-10-28T17:01:34.432Z",
+  "sha256": "2b10ed14201020eb508afff40c95725b4dca974333c1235dcbc0a290f05707bf",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:01:34.872Z",
+    "sha256": "2b10ed14201020eb508afff40c95725b4dca974333c1235dcbc0a290f05707bf"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 9,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T17:01:35.970Z",
+    "sha256": "2b10ed14201020eb508afff40c95725b4dca974333c1235dcbc0a290f05707bf"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-841 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dggrs:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T17:01:36.900Z",
+    "sha256": "2b10ed14201020eb508afff40c95725b4dca974333c1235dcbc0a290f05707bf"
+  }
+}

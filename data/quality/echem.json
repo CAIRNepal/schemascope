@@ -1,0 +1,82 @@
+{
+  "id": "echem",
+  "artefact": "https://w3id.org/emmo/domain/electrochemistry",
+  "checkedAt": "2026-10-28T17:38:19.550Z",
+  "sha256": "16cdc71b94003d985bf9fe7dbcc73bf49af4d1f8694c92dc442be1d46d11b7fe",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "om": 4,
+      "chameo": 50
+    },
+    "scannedMb": 5,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:38:20.685Z",
+    "sha256": "16cdc71b94003d985bf9fe7dbcc73bf49af4d1f8694c92dc442be1d46d11b7fe"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 265,
+      "WARN": 4896,
+      "INFO": 33
+    },
+    "checkedAt": "2026-10-28T17:38:25.636Z",
+    "sha256": "16cdc71b94003d985bf9fe7dbcc73bf49af4d1f8694c92dc442be1d46d11b7fe"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 35
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 25
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 73
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1883,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1028 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/echem:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T17:38:27.843Z",
+    "sha256": "16cdc71b94003d985bf9fe7dbcc73bf49af4d1f8694c92dc442be1d46d11b7fe"
+  }
+}

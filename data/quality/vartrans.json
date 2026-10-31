@@ -1,0 +1,11 @@
+{
+  "id": "vartrans",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/vartrans/versions/2016-01-10.n3",
+  "checkedAt": "2026-10-29T06:51:27.893Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T06:51:38.408Z"
+  }
+}

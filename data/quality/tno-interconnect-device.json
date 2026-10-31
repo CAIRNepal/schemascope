@@ -1,0 +1,79 @@
+{
+  "id": "tno-interconnect-device",
+  "artefact": "https://gitlab.inesctec.pt/interconnect-public/ontology/-/raw/master/ontology/Interconnect/ic-device.ttl",
+  "checkedAt": "2026-10-29T05:18:42.454Z",
+  "sha256": "ee44bd06d9bf3d478a17de3edce71e7c500cda5a7b5fdbcbb5e57bdd0b5d3f77",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:18:43.047Z",
+    "sha256": "ee44bd06d9bf3d478a17de3edce71e7c500cda5a7b5fdbcbb5e57bdd0b5d3f77"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 17,
+      "WARN": 59,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T05:18:44.131Z",
+    "sha256": "ee44bd06d9bf3d478a17de3edce71e7c500cda5a7b5fdbcbb5e57bdd0b5d3f77"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 37
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 53,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3786 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tno-interconnect-device:/work schemascope/oops --inpu"
+    ],
+    "checkedAt": "2026-10-29T05:18:44.846Z",
+    "sha256": "ee44bd06d9bf3d478a17de3edce71e7c500cda5a7b5fdbcbb5e57bdd0b5d3f77"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "dsim",
+  "artefact": "https://w3id.org/ontosim-dis",
+  "checkedAt": "2026-10-28T17:34:04.985Z",
+  "sha256": "317f3e71e6ee8737cbf2b9c6c5667587b92aaf9b0e61402ae2f043184077a974",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 3,
+      "bfo": 15,
+      "ro": 5,
+      "ogms": 10,
+      "dcterms": 6,
+      "skos": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:34:05.575Z",
+    "sha256": "317f3e71e6ee8737cbf2b9c6c5667587b92aaf9b0e61402ae2f043184077a974"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 294,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T17:34:06.894Z",
+    "sha256": "317f3e71e6ee8737cbf2b9c6c5667587b92aaf9b0e61402ae2f043184077a974"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 69
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 123,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-963 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dsim:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T17:34:07.661Z",
+    "sha256": "317f3e71e6ee8737cbf2b9c6c5667587b92aaf9b0e61402ae2f043184077a974"
+  }
+}

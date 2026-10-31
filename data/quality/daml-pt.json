@@ -1,0 +1,69 @@
+{
+  "id": "daml-pt",
+  "artefact": "https://www.daml.org/2003/01/periodictable/PeriodicTable.owl",
+  "checkedAt": "2026-10-28T16:44:23.110Z",
+  "sha256": "5c7eeeb723168d837353e65e06b77a225fa3b8e30bc7134b7e1b26a36f259727",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T16:44:23.290Z",
+    "sha256": "5c7eeeb723168d837353e65e06b77a225fa3b8e30bc7134b7e1b26a36f259727"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 152,
+      "WARN": 4,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T16:44:25.468Z",
+    "sha256": "5c7eeeb723168d837353e65e06b77a225fa3b8e30bc7134b7e1b26a36f259727"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 19
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 13
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T16:44:37.725Z",
+    "sha256": "5c7eeeb723168d837353e65e06b77a225fa3b8e30bc7134b7e1b26a36f259727"
+  }
+}

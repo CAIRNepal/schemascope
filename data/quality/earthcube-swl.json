@@ -1,0 +1,70 @@
+{
+  "id": "earthcube-swl",
+  "artefact": "https://earthcubearchitecture-ecresourcereg.github.io/swl/ontology.ttl",
+  "checkedAt": "2026-10-28T17:36:21.686Z",
+  "sha256": "33cb73ea1c77ccb4ee1a66da4a1ed6a6912cf4f929800ed23fc2ced5bde45d4b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 3,
+      "cc": 12
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:36:22.075Z",
+    "sha256": "33cb73ea1c77ccb4ee1a66da4a1ed6a6912cf4f929800ed23fc2ced5bde45d4b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 10,
+      "WARN": 30,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T17:36:22.946Z",
+    "sha256": "33cb73ea1c77ccb4ee1a66da4a1ed6a6912cf4f929800ed23fc2ced5bde45d4b"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1008 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/earthcube-swl:/work schemascope/oops --input-file /wo"
+    ],
+    "checkedAt": "2026-10-28T17:36:23.638Z",
+    "sha256": "33cb73ea1c77ccb4ee1a66da4a1ed6a6912cf4f929800ed23fc2ced5bde45d4b"
+  }
+}

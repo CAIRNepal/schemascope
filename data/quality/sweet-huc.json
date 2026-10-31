@@ -1,0 +1,11 @@
+{
+  "id": "sweet-huc",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/humanCommerce.ttl",
+  "checkedAt": "2026-10-29T03:21:59.519Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:22:10.018Z"
+  }
+}

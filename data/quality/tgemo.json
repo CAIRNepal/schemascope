@@ -1,0 +1,118 @@
+{
+  "id": "tgemo",
+  "artefact": "https://github.com/PavlidisLab/TGEMO/raw/refs/heads/master/TGEMO.OWL",
+  "checkedAt": "2026-10-29T05:02:28.859Z",
+  "sha256": "86876a2a9872bab314e37648fb44341f2b1e30bf564623ead59c6a5dec23dd36",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.obolibrary.org/obo/clo.owl",
+        "id": "clo",
+        "own": false
+      },
+      {
+        "iri": "http://purl.obolibrary.org/obo/geno.owl",
+        "id": "geno",
+        "own": false
+      },
+      {
+        "iri": "http://purl.obolibrary.org/obo/ro.owl",
+        "id": "ro",
+        "own": false
+      },
+      {
+        "iri": "http://purl.obolibrary.org/obo/so.owl",
+        "id": "so",
+        "own": false
+      },
+      {
+        "iri": "http://www.geneontology.org/formats/oboInOwl",
+        "id": "geneontology.org/formats/oboinowl",
+        "own": false
+      },
+      {
+        "iri": "https://www.ebi.ac.uk/efo/efo.owl",
+        "id": "ebi.ac.uk/efo/efo",
+        "own": false
+      }
+    ],
+    "uses": {
+      "ro": 6,
+      "geno": 3,
+      "so": 3,
+      "mondo": 21,
+      "ncit": 4,
+      "ecto": 16,
+      "hancestro": 11
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:02:29.418Z",
+    "sha256": "86876a2a9872bab314e37648fb44341f2b1e30bf564623ead59c6a5dec23dd36"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 11,
+      "WARN": 23,
+      "INFO": 20
+    },
+    "checkedAt": "2026-10-29T05:04:33.817Z",
+    "sha256": "86876a2a9872bab314e37648fb44341f2b1e30bf564623ead59c6a5dec23dd36"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 11
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 11
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 81,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3728 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tgemo:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T05:14:34.373Z",
+    "sha256": "86876a2a9872bab314e37648fb44341f2b1e30bf564623ead59c6a5dec23dd36"
+  }
+}

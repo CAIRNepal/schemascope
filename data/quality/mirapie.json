@@ -1,0 +1,45 @@
+{
+  "id": "mirapie",
+  "artefact": "https://w3id.org/mirapie",
+  "checkedAt": "2026-10-28T22:01:18.182Z",
+  "sha256": "de19bbc193dfc488922dd4610dd970e7bac371a7814b57340c0adf7bff41251b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 9,
+      "owl": 22,
+      "rdfs": 10,
+      "prov": 50,
+      "dc": 5,
+      "dcterms": 50,
+      "xsd": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:01:21.390Z",
+    "sha256": "de19bbc193dfc488922dd4610dd970e7bac371a7814b57340c0adf7bff41251b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 63,
+      "WARN": 146,
+      "INFO": 6
+    },
+    "checkedAt": "2026-10-28T22:01:22.622Z",
+    "sha256": "de19bbc193dfc488922dd4610dd970e7bac371a7814b57340c0adf7bff41251b"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2066 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mirapie:/work schemascope/oops --input-file /work/ont",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mirapie/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T22:01:23.610Z",
+    "sha256": "de19bbc193dfc488922dd4610dd970e7bac371a7814b57340c0adf7bff41251b"
+  }
+}

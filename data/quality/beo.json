@@ -1,0 +1,75 @@
+{
+  "id": "beo",
+  "artefact": "https://w3id.org/beo",
+  "checkedAt": "2026-10-28T01:03:11.911Z",
+  "sha256": "9c89986aadbce920c9591c0fff9b35c993abc626674484c3e62940687d0fc1d0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dc": 8
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:03:12.360Z",
+    "sha256": "9c89986aadbce920c9591c0fff9b35c993abc626674484c3e62940687d0fc1d0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 716,
+      "WARN": 377,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T01:03:15.009Z",
+    "sha256": "9c89986aadbce920c9591c0fff9b35c993abc626674484c3e62940687d0fc1d0"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 4
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 4
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 352,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-171 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/beo:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T01:03:16.564Z",
+    "sha256": "9c89986aadbce920c9591c0fff9b35c993abc626674484c3e62940687d0fc1d0"
+  }
+}

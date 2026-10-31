@@ -1,0 +1,131 @@
+{
+  "id": "graves",
+  "artefact": "http://rdf.muninn-project.org/ontologies/graves",
+  "checkedAt": "2026-10-28T20:33:10.169Z",
+  "sha256": "2377f7baa5fbeb824ce980c97e31c0dec68c578d0a269f26d3908b8219850b33",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "lgdo": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:33:10.500Z",
+    "sha256": "2377f7baa5fbeb824ce980c97e31c0dec68c578d0a269f26d3908b8219850b33"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 311,
+      "WARN": 148,
+      "INFO": 48
+    },
+    "checkedAt": "2026-10-28T20:33:11.695Z",
+    "sha256": "2377f7baa5fbeb824ce980c97e31c0dec68c578d0a269f26d3908b8219850b33"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 2,
+    "important": 4,
+    "minor": 9,
+    "pitfalls": [
+      {
+        "code": "P02",
+        "name": "Creating synonyms as classes",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 43
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 39
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 10
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 7
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 18
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 11
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P31",
+        "name": "Defining wrong equivalent classes",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 16
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T20:33:17.837Z",
+    "sha256": "2377f7baa5fbeb824ce980c97e31c0dec68c578d0a269f26d3908b8219850b33"
+  }
+}

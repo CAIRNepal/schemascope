@@ -1,0 +1,110 @@
+{
+  "id": "txpo",
+  "artefact": "http://purl.obolibrary.org/obo/txpo.owl",
+  "checkedAt": "2026-10-29T05:34:20.448Z",
+  "sha256": "52dec38466ae599d8aa39c2fc8c8811fa864794f73b70a658ae1fb5b95895eaa",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 18,
+      "ogg": 50,
+      "ro": 35,
+      "ubprop": 7,
+      "bfo": 39,
+      "chebi": 50,
+      "uberon": 50,
+      "ncit": 50,
+      "obi": 11,
+      "doid": 9,
+      "go": 50,
+      "imr": 50,
+      "pato": 50,
+      "pr": 4,
+      "xsd": 3,
+      "dc": 12,
+      "rdfs": 5,
+      "owl": 4,
+      "pmid": 50,
+      "cl": 41,
+      "goche": 3,
+      "hino": 14,
+      "iev": 7,
+      "hp": 4,
+      "mp": 4,
+      "ncbitaxon": 27,
+      "ogms": 5,
+      "mpath": 3,
+      "fma": 4,
+      "uo": 48
+    },
+    "scannedMb": 18,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:34:21.419Z",
+    "sha256": "52dec38466ae599d8aa39c2fc8c8811fa864794f73b70a658ae1fb5b95895eaa"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 216,
+      "WARN": 4819,
+      "INFO": 187
+    },
+    "checkedAt": "2026-10-29T05:34:34.526Z",
+    "sha256": "52dec38466ae599d8aa39c2fc8c8811fa864794f73b70a658ae1fb5b95895eaa"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 65
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 3292
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 25
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 9405,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3885 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/txpo:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T05:44:38.798Z",
+    "sha256": "52dec38466ae599d8aa39c2fc8c8811fa864794f73b70a658ae1fb5b95895eaa"
+  }
+}

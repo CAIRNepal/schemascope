@@ -1,0 +1,87 @@
+{
+  "id": "sibo",
+  "artefact": "http://purl.obolibrary.org/obo/sibo.owl",
+  "checkedAt": "2026-10-29T02:58:49.833Z",
+  "sha256": "5afbbe877cac9efd6ce02e9bb4ffb62b051e5391083b3c99def5b1374dc406e1",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:58:50.170Z",
+    "sha256": "5afbbe877cac9efd6ce02e9bb4ffb62b051e5391083b3c99def5b1374dc406e1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 78,
+      "WARN": 420,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-29T02:58:52.248Z",
+    "sha256": "5afbbe877cac9efd6ce02e9bb4ffb62b051e5391083b3c99def5b1374dc406e1"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 4,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 47
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 450
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 7
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 7
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T02:59:01.642Z",
+    "sha256": "5afbbe877cac9efd6ce02e9bb4ffb62b051e5391083b3c99def5b1374dc406e1"
+  }
+}

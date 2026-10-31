@@ -1,0 +1,63 @@
+{
+  "id": "fwo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/fwo/versions/2025-11-22.n3",
+  "checkedAt": "2026-10-28T19:50:21.385Z",
+  "sha256": "2840e8519217e70585bed8e487d4e0cebe7863d91593b20479ac31f4b763ae47",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 15
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:50:22.433Z",
+    "sha256": "2840e8519217e70585bed8e487d4e0cebe7863d91593b20479ac31f4b763ae47"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "er.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1243)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1143)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadImports(OWLOntologyManagerImpl.java:1873)\n\n\n\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T19:50:32.895Z",
+    "sha256": "2840e8519217e70585bed8e487d4e0cebe7863d91593b20479ac31f4b763ae47"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 7
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 13,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1293 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/fwo:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T19:50:33.597Z",
+    "sha256": "2840e8519217e70585bed8e487d4e0cebe7863d91593b20479ac31f4b763ae47"
+  }
+}

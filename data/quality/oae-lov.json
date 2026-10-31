@@ -1,0 +1,74 @@
+{
+  "id": "oae-lov",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/oae/versions/2015-03-25.n3",
+  "checkedAt": "2026-10-28T23:34:00.507Z",
+  "sha256": "5f9f62495885fbabb99c15ab103a61f088141a2496a4a4e976d9829f1117ade6",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.ics.forth.gr/isl/oncm/core",
+        "id": "onc",
+        "own": true
+      },
+      {
+        "iri": "http://www.w3.org/ns/oa#",
+        "id": "oa",
+        "own": false
+      }
+    ],
+    "uses": {
+      "oa": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:34:01.463Z",
+    "sha256": "5f9f62495885fbabb99c15ab103a61f088141a2496a4a4e976d9829f1117ade6"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://www.ics.forth.gr/isl/oncm/core> Cause: (certificate_unknown) PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T23:34:03.011Z",
+    "sha256": "5f9f62495885fbabb99c15ab103a61f088141a2496a4a4e976d9829f1117ade6"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2279 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/oae-lov:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-28T23:34:03.777Z",
+    "sha256": "5f9f62495885fbabb99c15ab103a61f088141a2496a4a4e976d9829f1117ade6"
+  }
+}

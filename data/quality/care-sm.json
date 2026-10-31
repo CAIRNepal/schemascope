@@ -1,0 +1,67 @@
+{
+  "id": "care-sm",
+  "artefact": "https://w3id.org/CARE-SM",
+  "checkedAt": "2026-10-28T01:51:53.968Z",
+  "sha256": "660ca9d799ef855626888480769f41f5309b0f519aca094085098d3a159d61a4",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:51:54.394Z",
+    "sha256": "660ca9d799ef855626888480769f41f5309b0f519aca094085098d3a159d61a4"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 25,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T01:51:55.414Z",
+    "sha256": "660ca9d799ef855626888480769f41f5309b0f519aca094085098d3a159d61a4"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-296 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/care-sm:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T01:51:56.182Z",
+    "sha256": "660ca9d799ef855626888480769f41f5309b0f519aca094085098d3a159d61a4"
+  }
+}

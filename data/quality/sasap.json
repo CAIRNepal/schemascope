@@ -1,0 +1,73 @@
+{
+  "id": "sasap",
+  "artefact": "http://aber-owl.net/media/ontologies/SASAP/1/sasap.owl",
+  "checkedAt": "2026-10-29T02:44:25.002Z",
+  "sha256": "a7b76065fbea6a1424013c65c9909766e7621737db8e759997743737aa026766",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "gaz": 18,
+      "dc": 5,
+      "skos": 5,
+      "schema": 9,
+      "vivo": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:44:26.502Z",
+    "sha256": "a7b76065fbea6a1424013c65c9909766e7621737db8e759997743737aa026766"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 7,
+      "WARN": 42,
+      "INFO": 6
+    },
+    "checkedAt": "2026-10-29T02:44:27.901Z",
+    "sha256": "a7b76065fbea6a1424013c65c9909766e7621737db8e759997743737aa026766"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 13
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 25,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3152 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sasap:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T02:44:28.970Z",
+    "sha256": "a7b76065fbea6a1424013c65c9909766e7621737db8e759997743737aa026766"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "id": "tib-gpo",
+  "artefact": "https://raw.githubusercontent.com/General-Process-Ontology/ontology/master/GPO.ttl",
+  "checkedAt": "2026-10-29T05:16:22.033Z",
+  "sha256": "34adeddfc27dffec2814588c1e866df56ead38e587f4e465d1c107bcac64f946",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://w3id.org/emmo/1.0.0-beta7",
+        "id": "w3id.org/emmo/1.0.0-beta7",
+        "own": false
+      }
+    ],
+    "uses": {
+      "emmo": 23
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:16:22.166Z",
+    "sha256": "34adeddfc27dffec2814588c1e866df56ead38e587f4e465d1c107bcac64f946"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 187,
+      "WARN": 192,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T05:16:36.229Z",
+    "sha256": "34adeddfc27dffec2814588c1e866df56ead38e587f4e465d1c107bcac64f946"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 4,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 15
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 12
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 157
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 14
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 183,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3748 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tib-gpo:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T05:16:37.191Z",
+    "sha256": "34adeddfc27dffec2814588c1e866df56ead38e587f4e465d1c107bcac64f946"
+  }
+}

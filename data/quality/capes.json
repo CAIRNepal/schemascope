@@ -1,0 +1,81 @@
+{
+  "id": "capes",
+  "artefact": "http://vocab.capes.gov.br/def/vcav",
+  "checkedAt": "2026-10-28T01:51:43.275Z",
+  "sha256": "c2932cfa6d9c906ca7840584d7c1e1b31f1c612a7570ba00a94d6a7528cd6079",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 3,
+      "schema": 11,
+      "foaf": 3,
+      "xsd": 3,
+      "vcard": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:51:45.124Z",
+    "sha256": "c2932cfa6d9c906ca7840584d7c1e1b31f1c612a7570ba00a94d6a7528cd6079"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 92,
+      "WARN": 60,
+      "INFO": 10
+    },
+    "checkedAt": "2026-10-28T01:51:46.206Z",
+    "sha256": "c2932cfa6d9c906ca7840584d7c1e1b31f1c612a7570ba00a94d6a7528cd6079"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 2,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 29
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 26
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 15
+      },
+      {
+        "code": "P31",
+        "name": "Defining wrong equivalent classes",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:51:51.824Z",
+    "sha256": "c2932cfa6d9c906ca7840584d7c1e1b31f1c612a7570ba00a94d6a7528cd6079"
+  }
+}

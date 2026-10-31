@@ -1,0 +1,11 @@
+{
+  "id": "spt",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/spt/versions/2014-01-14.n3",
+  "checkedAt": "2026-10-29T03:15:30.977Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:15:41.479Z"
+  }
+}

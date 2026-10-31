@@ -1,0 +1,79 @@
+{
+  "id": "tno-interconnect-incentive",
+  "artefact": "https://gitlab.inesctec.pt/interconnect-public/ontology/-/raw/master/ontology/Interconnect/ic-incentive.ttl",
+  "checkedAt": "2026-10-29T05:18:49.923Z",
+  "sha256": "337e68bc7b2379232d75169047145c61ccdc2003853c4cc60b030f3b5e3a8fca",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:18:50.119Z",
+    "sha256": "337e68bc7b2379232d75169047145c61ccdc2003853c4cc60b030f3b5e3a8fca"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 10,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-29T05:18:51.675Z",
+    "sha256": "337e68bc7b2379232d75169047145c61ccdc2003853c4cc60b030f3b5e3a8fca"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 4,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3792 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tno-interconnect-incentive:/work schemascope/oops --i"
+    ],
+    "checkedAt": "2026-10-29T05:18:52.729Z",
+    "sha256": "337e68bc7b2379232d75169047145c61ccdc2003853c4cc60b030f3b5e3a8fca"
+  }
+}

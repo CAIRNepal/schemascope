@@ -1,0 +1,87 @@
+{
+  "id": "birnlex",
+  "artefact": "http://aber-owl.net/media/ontologies/BIRNLEX/1/birnlex.owl",
+  "checkedAt": "2026-10-28T01:42:40.577Z",
+  "sha256": "75bec54aee3e61bb47563a6068c9e48c5647ccdaaec41523664e6c451f8f2ec1",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 4,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:42:42.750Z",
+    "sha256": "75bec54aee3e61bb47563a6068c9e48c5647ccdaaec41523664e6c451f8f2ec1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 121,
+      "WARN": 4650,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T01:42:45.993Z",
+    "sha256": "75bec54aee3e61bb47563a6068c9e48c5647ccdaaec41523664e6c451f8f2ec1"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 4,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 8
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 3589
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 9
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 13
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 241
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:44:47.418Z",
+    "sha256": "75bec54aee3e61bb47563a6068c9e48c5647ccdaaec41523664e6c451f8f2ec1"
+  }
+}

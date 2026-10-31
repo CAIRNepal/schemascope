@@ -1,0 +1,11 @@
+{
+  "id": "sweet-phod",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/phenOceanDynamics.ttl",
+  "checkedAt": "2026-10-29T03:34:04.479Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:34:14.980Z"
+  }
+}

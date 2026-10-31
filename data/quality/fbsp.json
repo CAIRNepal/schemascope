@@ -1,0 +1,11 @@
+{
+  "id": "fbsp",
+  "artefact": "http://purl.obolibrary.org/obo/fbsp.owl",
+  "checkedAt": "2026-10-28T19:41:22.534Z",
+  "downloadError": "download HTTP 403",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:41:22.892Z"
+  }
+}

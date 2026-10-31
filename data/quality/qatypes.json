@@ -1,0 +1,92 @@
+{
+  "id": "qatypes",
+  "artefact": "https://w3id.org/qatypes",
+  "checkedAt": "2026-10-29T01:57:28.145Z",
+  "sha256": "7186d7a0b3975767f77dc13616f7c9e1e0c79b838919dadd1168dc34530e725f",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/ns/sparql-service-description#",
+        "id": "sd",
+        "own": false
+      },
+      {
+        "iri": "http://spinrdf.org/sp",
+        "id": "sp",
+        "own": false
+      },
+      {
+        "iri": "http://lsq.aksw.org/vocab#",
+        "id": "lsq",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/oa#",
+        "id": "oa",
+        "own": false
+      }
+    ],
+    "uses": {
+      "lsq": 13,
+      "owl": 4,
+      "sp": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:57:28.646Z",
+    "sha256": "7186d7a0b3975767f77dc13616f7c9e1e0c79b838919dadd1168dc34530e725f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "er.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1243)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1143)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadImports(OWLOntologyManagerImpl.java:1873)\n\n\n\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T01:57:30.407Z",
+    "sha256": "7186d7a0b3975767f77dc13616f7c9e1e0c79b838919dadd1168dc34530e725f"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 34,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2790 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/qatypes:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T01:57:45.359Z",
+    "sha256": "7186d7a0b3975767f77dc13616f7c9e1e0c79b838919dadd1168dc34530e725f"
+  }
+}

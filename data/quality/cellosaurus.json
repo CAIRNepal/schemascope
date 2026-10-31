@@ -1,0 +1,50 @@
+{
+  "id": "cellosaurus",
+  "artefact": "https://ftp.expasy.org/databases/cellosaurus/cellosaurus.obo",
+  "checkedAt": "2026-10-28T02:01:37.060Z",
+  "sha256": "f3776ec0686998c1330ea3bd4db6ddfc2ddbd7bd0d54f4ffa6c036657b51060d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ecacc": 50,
+      "pubmed": 50,
+      "hgnc": 50,
+      "mgi": 50,
+      "ximbio": 50,
+      "kclb": 50,
+      "cosmic": 50,
+      "cancertools": 50,
+      "vgnc": 50,
+      "bcrc": 50,
+      "cls": 50,
+      "gdsc": 50,
+      "tngb": 13
+    },
+    "scannedMb": 119,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:01:43.130Z",
+    "sha256": "f3776ec0686998c1330ea3bd4db6ddfc2ddbd7bd0d54f4ffa6c036657b51060d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 172951,
+      "INFO": 83178
+    },
+    "checkedAt": "2026-10-28T02:04:43.373Z",
+    "sha256": "f3776ec0686998c1330ea3bd4db6ddfc2ddbd7bd0d54f4ffa6c036657b51060d"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cellosaurus/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T02:04:43.658Z",
+    "sha256": "f3776ec0686998c1330ea3bd4db6ddfc2ddbd7bd0d54f4ffa6c036657b51060d"
+  }
+}

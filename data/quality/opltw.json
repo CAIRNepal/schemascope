@@ -1,0 +1,11 @@
+{
+  "id": "opltw",
+  "artefact": "http://www.openlinksw.com/schemas/twitter",
+  "checkedAt": "2026-10-29T00:28:16.665Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:28:16.890Z"
+  }
+}

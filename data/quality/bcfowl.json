@@ -1,0 +1,76 @@
+{
+  "id": "bcfowl",
+  "artefact": "https://w3id.org/bcfOWL",
+  "checkedAt": "2026-10-28T00:46:10.655Z",
+  "sha256": "e24d90d8612f1dd40f93f6bf8858752f8f06f831472a68cae4aa16191d9ea686",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 10,
+      "schema": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T00:46:11.097Z",
+    "sha256": "e24d90d8612f1dd40f93f6bf8858752f8f06f831472a68cae4aa16191d9ea686"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 70,
+      "INFO": 11
+    },
+    "checkedAt": "2026-10-28T00:46:12.963Z",
+    "sha256": "e24d90d8612f1dd40f93f6bf8858752f8f06f831472a68cae4aa16191d9ea686"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 32
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 18,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-159 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/bcfowl:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T00:46:14.696Z",
+    "sha256": "e24d90d8612f1dd40f93f6bf8858752f8f06f831472a68cae4aa16191d9ea686"
+  }
+}

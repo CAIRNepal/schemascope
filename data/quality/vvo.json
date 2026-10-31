@@ -1,0 +1,72 @@
+{
+  "id": "vvo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/vvo/versions/2010-10-12.n3",
+  "checkedAt": "2026-10-29T07:10:15.910Z",
+  "sha256": "1f29b82e2dd4c96c9e4c547ea389ebc9c23b1b004183ffaf7db99c8027383441",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/vso/ns",
+        "id": "vso-lov",
+        "own": true
+      },
+      {
+        "iri": "http://purl.org/goodrelations/v1",
+        "id": "gr",
+        "own": true
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:10:28.059Z",
+    "sha256": "1f29b82e2dd4c96c9e4c547ea389ebc9c23b1b004183ffaf7db99c8027383441"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.org/vso/ns> Cause: Server returned HTTP response code: 401 for URL: http://www.heppnetz.de/ontologies/vso/ns\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T07:10:34.819Z",
+    "sha256": "1f29b82e2dd4c96c9e4c547ea389ebc9c23b1b004183ffaf7db99c8027383441"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 23
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 16,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-4013 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/vvo:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T07:10:35.489Z",
+    "sha256": "1f29b82e2dd4c96c9e4c547ea389ebc9c23b1b004183ffaf7db99c8027383441"
+  }
+}

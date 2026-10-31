@@ -1,0 +1,75 @@
+{
+  "id": "martialis",
+  "artefact": "https://w3id.org/martialis/ontology",
+  "checkedAt": "2026-10-28T21:35:15.063Z",
+  "sha256": "d3d61290db2e5d5585edbedc57e2a5a158e6f9920c62387b4c0733f43ceda0a7",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "vann": 3,
+      "dcterms": 14,
+      "skos": 6,
+      "schema": 50,
+      "bibo": 10,
+      "org": 5,
+      "prov": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:35:15.987Z",
+    "sha256": "d3d61290db2e5d5585edbedc57e2a5a158e6f9920c62387b4c0733f43ceda0a7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 1413,
+      "WARN": 188,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:35:26.043Z",
+    "sha256": "d3d61290db2e5d5585edbedc57e2a5a158e6f9920c62387b4c0733f43ceda0a7"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 39
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 93
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 41,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1987 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/martialis:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-28T21:35:26.820Z",
+    "sha256": "d3d61290db2e5d5585edbedc57e2a5a158e6f9920c62387b4c0733f43ceda0a7"
+  }
+}

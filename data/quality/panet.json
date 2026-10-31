@@ -1,0 +1,67 @@
+{
+  "id": "panet",
+  "artefact": "https://github.com/pan-ontologies/PaNET/releases/download/v1.3.0/PaNET.owl",
+  "checkedAt": "2026-10-29T00:36:56.169Z",
+  "sha256": "e2583e4bc85e62585135dd6be3a686df40212ca652512931b575fd7e2d5397bb",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "foaf": 4,
+      "dcterms": 4,
+      "owl": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:36:56.572Z",
+    "sha256": "e2583e4bc85e62585135dd6be3a686df40212ca652512931b575fd7e2d5397bb"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 146,
+      "WARN": 616,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-29T00:36:58.324Z",
+    "sha256": "e2583e4bc85e62585135dd6be3a686df40212ca652512931b575fd7e2d5397bb"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 0,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P02",
+        "name": "Creating synonyms as classes",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 512
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:37:07.297Z",
+    "sha256": "e2583e4bc85e62585135dd6be3a686df40212ca652512931b575fd7e2d5397bb"
+  }
+}

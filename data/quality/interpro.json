@@ -1,0 +1,57 @@
+{
+  "id": "interpro",
+  "artefact": "https://w3id.org/biopragmatics/resources/interpro/interpro.owl",
+  "checkedAt": "2026-10-28T21:09:26.953Z",
+  "sha256": "d092bc28b8fa7f7c5657f6c5649ed9d2266545c1017faab3800ffe53255e5a78",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ro": 4,
+      "go": 50,
+      "dcterms": 3,
+      "doap": 3
+    },
+    "scannedMb": 24,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:09:28.187Z",
+    "sha256": "d092bc28b8fa7f7c5657f6c5649ed9d2266545c1017faab3800ffe53255e5a78"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 49677,
+      "INFO": 30853
+    },
+    "checkedAt": "2026-10-28T21:09:46.553Z",
+    "sha256": "d092bc28b8fa7f7c5657f6c5649ed9d2266545c1017faab3800ffe53255e5a78"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:09:52.680Z",
+    "sha256": "d092bc28b8fa7f7c5657f6c5649ed9d2266545c1017faab3800ffe53255e5a78"
+  }
+}

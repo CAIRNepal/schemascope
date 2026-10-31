@@ -1,0 +1,69 @@
+{
+  "id": "mathmoddb",
+  "artefact": "https://mardi4nfdi.github.io/MathModDB/ontology.ttl",
+  "checkedAt": "2026-10-28T21:35:45.763Z",
+  "sha256": "e59ce862ef46722b779e6b899f7be5b8d404d10e24d01c884812b6dcdec6d214",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 9
+    },
+    "scannedMb": 8,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:35:47.025Z",
+    "sha256": "e59ce862ef46722b779e6b899f7be5b8d404d10e24d01c884812b6dcdec6d214"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 11,
+      "WARN": 282,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-28T21:35:50.776Z",
+    "sha256": "e59ce862ef46722b779e6b899f7be5b8d404d10e24d01c884812b6dcdec6d214"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 7
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 7,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1995 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mathmoddb:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-28T21:35:52.714Z",
+    "sha256": "e59ce862ef46722b779e6b899f7be5b8d404d10e24d01c884812b6dcdec6d214"
+  }
+}

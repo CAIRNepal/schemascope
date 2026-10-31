@@ -1,0 +1,81 @@
+{
+  "id": "vibe-ontology",
+  "artefact": "https://w3id.org/vibe-ontology",
+  "checkedAt": "2026-10-29T06:58:23.498Z",
+  "sha256": "0edb1e797b5630f6f66d9f08d21edab68e912fd69fa3697b0a1444236f4348b7",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.ontologydesignpatterns.org/ont/d0.owl",
+        "id": "ontologydesignpatterns.org/ont/d0",
+        "own": false
+      },
+      {
+        "iri": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl",
+        "id": "dolce",
+        "own": false
+      }
+    ],
+    "uses": {
+      "skos": 6,
+      "dolce": 12
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T06:58:29.285Z",
+    "sha256": "0edb1e797b5630f6f66d9f08d21edab68e912fd69fa3697b0a1444236f4348b7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 524,
+      "WARN": 91,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T06:58:35.122Z",
+    "sha256": "0edb1e797b5630f6f66d9f08d21edab68e912fd69fa3697b0a1444236f4348b7"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 27
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 48,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3953 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/vibe-ontology:/work schemascope/oops --input-file /wo"
+    ],
+    "checkedAt": "2026-10-29T06:58:35.837Z",
+    "sha256": "0edb1e797b5630f6f66d9f08d21edab68e912fd69fa3697b0a1444236f4348b7"
+  }
+}

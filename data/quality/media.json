@@ -1,0 +1,84 @@
+{
+  "id": "media",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/media/versions/2008-07-09.n3",
+  "checkedAt": "2026-10-28T21:50:59.752Z",
+  "sha256": "7d5527387bf59ebc3c93e26b27e699261c7a8db214d26dfb5892883803d69b1e",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/1999/xhtml/vocab#",
+        "id": "xhv",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/dc/terms/",
+        "id": "dcterms",
+        "own": true
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:51:10.670Z",
+    "sha256": "7d5527387bf59ebc3c93e26b27e699261c7a8db214d26dfb5892883803d69b1e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "er.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1243)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1143)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadImports(OWLOntologyManagerImpl.java:1873)\n\n\n\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T21:51:13.932Z",
+    "sha256": "7d5527387bf59ebc3c93e26b27e699261c7a8db214d26dfb5892883803d69b1e"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 3,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 2,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2026 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/media:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T21:51:14.541Z",
+    "sha256": "7d5527387bf59ebc3c93e26b27e699261c7a8db214d26dfb5892883803d69b1e"
+  }
+}

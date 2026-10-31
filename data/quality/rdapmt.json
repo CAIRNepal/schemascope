@@ -1,0 +1,69 @@
+{
+  "id": "rdapmt",
+  "artefact": "http://rdaregistry.info/termList/prodTactile/",
+  "checkedAt": "2026-10-29T02:18:45.387Z",
+  "sha256": "4238fff014a59e28388f7759c5a4b28137bda1864a2fefc5b924b9a12aa8d7dd",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "skos": 7
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:18:45.539Z",
+    "sha256": "4238fff014a59e28388f7759c5a4b28137bda1864a2fefc5b924b9a12aa8d7dd"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 9,
+      "WARN": 1,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:18:47.145Z",
+    "sha256": "4238fff014a59e28388f7759c5a4b28137bda1864a2fefc5b924b9a12aa8d7dd"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2923 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rdapmt:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T02:18:48.316Z",
+    "sha256": "4238fff014a59e28388f7759c5a4b28137bda1864a2fefc5b924b9a12aa8d7dd"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "worldavatar-classschedule",
+  "artefact": "https://raw.githubusercontent.com/TheWorldAvatar/ontology/main/ontology/ontoclassschedule/OntoClassSchedule.owl",
+  "checkedAt": "2026-10-29T07:37:55.953Z",
+  "sha256": "485c756a62a6f9be1fe4c2960e3971edfdcd83b98758df31ce749f0b35164dbf",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/2006/time#",
+        "id": "time",
+        "own": false
+      }
+    ],
+    "uses": {
+      "xsd": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:37:57.246Z",
+    "sha256": "485c756a62a6f9be1fe4c2960e3971edfdcd83b98758df31ce749f0b35164dbf"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 18,
+      "WARN": 15,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T07:38:00.882Z",
+    "sha256": "485c756a62a6f9be1fe4c2960e3971edfdcd83b98758df31ce749f0b35164dbf"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 16
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 19
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 16
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:38:12.572Z",
+    "sha256": "485c756a62a6f9be1fe4c2960e3971edfdcd83b98758df31ce749f0b35164dbf"
+  }
+}

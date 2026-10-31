@@ -1,0 +1,81 @@
+{
+  "id": "rdag1",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/rdag1/versions/2012-08-30.n3",
+  "checkedAt": "2026-10-29T02:17:08.499Z",
+  "sha256": "61666adc45bc0068f85f752b1ada2b5d71cf5bb144053b254a3137f3989be1c7",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "rdafrbr": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:17:17.111Z",
+    "sha256": "61666adc45bc0068f85f752b1ada2b5d71cf5bb144053b254a3137f3989be1c7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 8,
+      "WARN": 521,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T02:17:18.930Z",
+    "sha256": "61666adc45bc0068f85f752b1ada2b5d71cf5bb144053b254a3137f3989be1c7"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 3,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 10,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2881 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rdag1:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T02:17:20.060Z",
+    "sha256": "61666adc45bc0068f85f752b1ada2b5d71cf5bb144053b254a3137f3989be1c7"
+  }
+}

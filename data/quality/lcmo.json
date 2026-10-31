@@ -1,0 +1,88 @@
+{
+  "id": "lcmo",
+  "artefact": "https://w3id.org/lcmo",
+  "checkedAt": "2026-10-28T21:21:26.654Z",
+  "sha256": "8827e61ac5d9e7029608ebbdfd88d7807f1e86513a6b6f46c652b319bcc172ac",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dc": 5,
+      "schema": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:21:27.141Z",
+    "sha256": "8827e61ac5d9e7029608ebbdfd88d7807f1e86513a6b6f46c652b319bcc172ac"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 46,
+      "WARN": 43,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:21:28.441Z",
+    "sha256": "8827e61ac5d9e7029608ebbdfd88d7807f1e86513a6b6f46c652b319bcc172ac"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 10
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 19
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 21
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 19,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1806 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/lcmo:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T21:21:29.437Z",
+    "sha256": "8827e61ac5d9e7029608ebbdfd88d7807f1e86513a6b6f46c652b319bcc172ac"
+  }
+}

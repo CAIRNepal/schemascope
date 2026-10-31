@@ -1,0 +1,93 @@
+{
+  "id": "ontoavida",
+  "artefact": "http://purl.obolibrary.org/obo/ontoavida.owl",
+  "checkedAt": "2026-10-29T00:22:41.346Z",
+  "sha256": "3da46c81ccb8c5219fe9a5a1ca083dab351c29f4c83dd3bac9555594593629d6",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 8,
+      "ro": 11,
+      "dc": 3,
+      "owl": 7,
+      "xsd": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:22:41.972Z",
+    "sha256": "3da46c81ccb8c5219fe9a5a1ca083dab351c29f4c83dd3bac9555594593629d6"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 1,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T00:22:43.507Z",
+    "sha256": "3da46c81ccb8c5219fe9a5a1ca083dab351c29f4c83dd3bac9555594593629d6"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 16
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 709
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 517
+      },
+      {
+        "code": "P33",
+        "name": "Creating a property chain with just one property",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:23:00.817Z",
+    "sha256": "3da46c81ccb8c5219fe9a5a1ca083dab351c29f4c83dd3bac9555594593629d6"
+  }
+}

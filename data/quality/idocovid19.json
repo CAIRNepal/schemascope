@@ -1,0 +1,114 @@
+{
+  "id": "idocovid19",
+  "artefact": "https://raw.githubusercontent.com/infectious-disease-ontology-extensions/ido-covid-19/master/ontology/ido%20covid-19",
+  "checkedAt": "2026-10-28T21:05:03.469Z",
+  "sha256": "f00ee0ef8c20e8d637ea7fb4731e3c484f23386d5568b8520ddb447f43a3cc4f",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 41,
+      "iao": 50,
+      "ro": 30,
+      "ido": 50,
+      "obi": 17,
+      "vido": 35,
+      "ogms": 5,
+      "chebi": 8,
+      "go": 31,
+      "covido": 38,
+      "ncbitaxon": 15,
+      "ero": 6,
+      "geo": 3,
+      "trans": 4,
+      "uberon": 5,
+      "omrse": 4,
+      "rdfs": 4,
+      "xsd": 3,
+      "dc": 17,
+      "owl": 7
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:05:03.732Z",
+    "sha256": "f00ee0ef8c20e8d637ea7fb4731e3c484f23386d5568b8520ddb447f43a3cc4f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 74,
+      "WARN": 67,
+      "INFO": 121
+    },
+    "checkedAt": "2026-10-28T21:05:06.131Z",
+    "sha256": "f00ee0ef8c20e8d637ea7fb4731e3c484f23386d5568b8520ddb447f43a3cc4f"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 484
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 24
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 7
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:05:17.646Z",
+    "sha256": "f00ee0ef8c20e8d637ea7fb4731e3c484f23386d5568b8520ddb447f43a3cc4f"
+  }
+}

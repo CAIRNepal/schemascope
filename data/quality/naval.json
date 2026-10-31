@@ -1,0 +1,105 @@
+{
+  "id": "naval",
+  "artefact": "http://rdf.muninn-project.org/ontologies/naval",
+  "checkedAt": "2026-10-28T22:41:14.957Z",
+  "sha256": "2cb19448d3b6d853308a9f776a12e1171921c3412b9a84a48df87c9f9878c4c1",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:41:15.342Z",
+    "sha256": "2cb19448d3b6d853308a9f776a12e1171921c3412b9a84a48df87c9f9878c4c1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 449,
+      "WARN": 7,
+      "INFO": 22
+    },
+    "checkedAt": "2026-10-28T22:41:17.162Z",
+    "sha256": "2cb19448d3b6d853308a9f776a12e1171921c3412b9a84a48df87c9f9878c4c1"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 2,
+    "minor": 8,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 33
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 18
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 19
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 15
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 8
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 16
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T22:41:25.858Z",
+    "sha256": "2cb19448d3b6d853308a9f776a12e1171921c3412b9a84a48df87c9f9878c4c1"
+  }
+}

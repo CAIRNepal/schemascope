@@ -1,0 +1,61 @@
+{
+  "id": "orkg-properties-ontology-consolidated",
+  "artefact": "https://w3id.org/orkg-properties-ontology-consolidated",
+  "checkedAt": "2026-10-29T00:31:55.981Z",
+  "sha256": "8ca35db767a56277bab9596ca312688cd998b4530b4eb4733a86be7211bc2333",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 3,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:31:56.574Z",
+    "sha256": "8ca35db767a56277bab9596ca312688cd998b4530b4eb4733a86be7211bc2333"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1114,
+      "WARN": 14193,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T00:32:01.425Z",
+    "sha256": "8ca35db767a56277bab9596ca312688cd998b4530b4eb4733a86be7211bc2333"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2499 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/orkg-properties-ontology-consolidated:/work schemasco"
+    ],
+    "checkedAt": "2026-10-29T00:32:03.748Z",
+    "sha256": "8ca35db767a56277bab9596ca312688cd998b4530b4eb4733a86be7211bc2333"
+  }
+}

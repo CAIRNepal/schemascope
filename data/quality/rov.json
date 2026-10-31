@@ -1,0 +1,79 @@
+{
+  "id": "rov",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/rov/versions/2013-12-21.n3",
+  "checkedAt": "2026-10-29T02:34:14.702Z",
+  "sha256": "73f4aa2ca2da248305bfc788424b765e952e8e1893cd4b58fedaadf20c26a9a2",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:34:16.480Z",
+    "sha256": "73f4aa2ca2da248305bfc788424b765e952e8e1893cd4b58fedaadf20c26a9a2"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 7,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:34:17.501Z",
+    "sha256": "73f4aa2ca2da248305bfc788424b765e952e8e1893cd4b58fedaadf20c26a9a2"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3078 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rov:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T02:34:18.125Z",
+    "sha256": "73f4aa2ca2da248305bfc788424b765e952e8e1893cd4b58fedaadf20c26a9a2"
+  }
+}

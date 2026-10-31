@@ -1,0 +1,155 @@
+{
+  "id": "micro",
+  "artefact": "http://purl.obolibrary.org/obo/micro.owl",
+  "checkedAt": "2026-10-28T22:00:34.961Z",
+  "sha256": "ef21dbfab755143a9c390ad274d4e1405f344f6a8dbfbd749de09af0b4b54910",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/BFO_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/bfo_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/BSPO_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/bspo_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/CHMO_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/chmo_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/CL_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/cl_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/ChEBI_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/chebi_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/DRON_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/dron_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/ENVO_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/envo_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/FMA_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/fma_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/GO_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/go_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/IAO_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/iao_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/IDO_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/ido_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/NCBITax_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/ncbitax_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/NDF-RT_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/ndf-rt_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/OBI_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/obi_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/PATO_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/pato_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/PO_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/po_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/PR_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/pr_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/REO_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/reo_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/RO_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/ro_imports",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/carrineblank/MicrO/master/MicrOandImportModules/Uberon_imports.owl",
+        "id": "raw.githubusercontent.com/carrineblank/micro/master/microandimportmodules/uberon_imports",
+        "own": false
+      }
+    ],
+    "uses": {
+      "iao": 4,
+      "bfo": 15,
+      "bspo": 12,
+      "obi": 20,
+      "ro": 20,
+      "chebi": 50,
+      "chmo": 15,
+      "cl": 7,
+      "envo": 32,
+      "go": 50,
+      "ido": 17,
+      "ncbitaxon": 50,
+      "pato": 50,
+      "po": 8,
+      "temp": 5,
+      "uberon": 16
+    },
+    "scannedMb": 10,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:00:35.733Z",
+    "sha256": "ef21dbfab755143a9c390ad274d4e1405f344f6a8dbfbd749de09af0b4b54910"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 103,
+      "WARN": 4446,
+      "INFO": 2581
+    },
+    "checkedAt": "2026-10-28T22:01:02.382Z",
+    "sha256": "ef21dbfab755143a9c390ad274d4e1405f344f6a8dbfbd749de09af0b4b54910"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2058 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/micro:/work schemascope/oops --input-file /work/ontol",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/micro/ontology.owl\nFailed to convert Li"
+    ],
+    "checkedAt": "2026-10-28T22:01:04.837Z",
+    "sha256": "ef21dbfab755143a9c390ad274d4e1405f344f6a8dbfbd749de09af0b4b54910"
+  }
+}

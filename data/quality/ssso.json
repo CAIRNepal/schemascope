@@ -1,0 +1,11 @@
+{
+  "id": "ssso",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ssso/versions/2014-07-02.n3",
+  "checkedAt": "2026-10-29T03:17:58.003Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:18:08.503Z"
+  }
+}

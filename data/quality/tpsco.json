@@ -1,0 +1,69 @@
+{
+  "id": "tpsco",
+  "artefact": "https://w3id.org/tpsco",
+  "checkedAt": "2026-10-29T05:30:51.696Z",
+  "sha256": "781cd7d9e2ea30b39a4c89789abdf20f4b6cd5dfb8802de76979761c3fbfbda5",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:30:52.269Z",
+    "sha256": "781cd7d9e2ea30b39a4c89789abdf20f4b6cd5dfb8802de76979761c3fbfbda5"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 93,
+      "WARN": 26,
+      "INFO": 5
+    },
+    "checkedAt": "2026-10-29T05:30:53.857Z",
+    "sha256": "781cd7d9e2ea30b39a4c89789abdf20f4b6cd5dfb8802de76979761c3fbfbda5"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 0,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 9
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T05:31:01.606Z",
+    "sha256": "781cd7d9e2ea30b39a4c89789abdf20f4b6cd5dfb8802de76979761c3fbfbda5"
+  }
+}

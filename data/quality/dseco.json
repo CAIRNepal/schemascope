@@ -1,0 +1,11 @@
+{
+  "id": "dseco",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/dseco/versions/2025-06-14.n3",
+  "checkedAt": "2026-10-28T17:34:04.545Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T17:34:04.984Z"
+  }
+}

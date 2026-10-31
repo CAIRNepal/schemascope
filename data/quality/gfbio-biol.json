@@ -1,0 +1,54 @@
+{
+  "id": "gfbio-biol",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/biol/versions/2008-10-06.n3",
+  "checkedAt": "2026-10-28T20:22:52.056Z",
+  "sha256": "66d0b44e9257e0dbfc3f1a488c34d8c5453c19631070247a9b30d7f72da26147",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:22:52.371Z",
+    "sha256": "66d0b44e9257e0dbfc3f1a488c34d8c5453c19631070247a9b30d7f72da26147"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 7,
+      "WARN": 22,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T20:22:53.447Z",
+    "sha256": "66d0b44e9257e0dbfc3f1a488c34d8c5453c19631070247a9b30d7f72da26147"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1367 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gfbio-biol:/work schemascope/oops --input-file /work/"
+    ],
+    "checkedAt": "2026-10-28T20:22:54.170Z",
+    "sha256": "66d0b44e9257e0dbfc3f1a488c34d8c5453c19631070247a9b30d7f72da26147"
+  }
+}

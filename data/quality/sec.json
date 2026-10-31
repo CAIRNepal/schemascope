@@ -1,0 +1,31 @@
+{
+  "id": "sec",
+  "artefact": "https://w3id.org/security",
+  "checkedAt": "2026-10-29T02:49:54.168Z",
+  "sha256": "02c4b4882bbf2bf4cf5270bb2dcc2b394bdd56167f45a1eefbe5c39bc44ac270",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:49:54.598Z",
+    "sha256": "02c4b4882bbf2bf4cf5270bb2dcc2b394bdd56167f45a1eefbe5c39bc44ac270"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "Not a valid (absolute) IRI: @context\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T02:49:55.530Z",
+    "sha256": "02c4b4882bbf2bf4cf5270bb2dcc2b394bdd56167f45a1eefbe5c39bc44ac270"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3225 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sec:/work schemascope/oops --input-file /work/ontolog",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sec/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-29T02:49:56.680Z",
+    "sha256": "02c4b4882bbf2bf4cf5270bb2dcc2b394bdd56167f45a1eefbe5c39bc44ac270"
+  }
+}

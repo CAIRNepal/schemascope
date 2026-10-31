@@ -1,0 +1,78 @@
+{
+  "id": "conference",
+  "artefact": "https://w3id.org/scholarlydata/ontology/conference-ontology.owl",
+  "checkedAt": "2026-10-28T13:22:44.772Z",
+  "sha256": "802e11055cc868546b28b49d05888f11a87b31005c400409b99709c770e6b644",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dc": 3,
+      "dcterms": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T13:22:45.997Z",
+    "sha256": "802e11055cc868546b28b49d05888f11a87b31005c400409b99709c770e6b644"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 6,
+      "WARN": 87,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-28T13:22:47.775Z",
+    "sha256": "802e11055cc868546b28b49d05888f11a87b31005c400409b99709c770e6b644"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 9
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 17
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 44
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 2
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T13:23:02.132Z",
+    "sha256": "802e11055cc868546b28b49d05888f11a87b31005c400409b99709c770e6b644"
+  }
+}

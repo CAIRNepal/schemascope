@@ -1,0 +1,42 @@
+{
+  "id": "colactdont",
+  "artefact": "https://w3id.org/ColActDOnt",
+  "checkedAt": "2026-10-28T12:47:31.712Z",
+  "sha256": "a39a540368102c3efc11fafbdcd10ec48d06aef9bcc88c82fb014f9da7620e26",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "rdfs": 7,
+      "owl": 19,
+      "xsd": 6,
+      "dc": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T12:47:32.296Z",
+    "sha256": "a39a540368102c3efc11fafbdcd10ec48d06aef9bcc88c82fb014f9da7620e26"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 131,
+      "WARN": 184,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-28T12:47:34.563Z",
+    "sha256": "a39a540368102c3efc11fafbdcd10ec48d06aef9bcc88c82fb014f9da7620e26"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-574 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/colactdont:/work schemascope/oops --input-file /work/o",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/colactdont/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T12:47:36.070Z",
+    "sha256": "a39a540368102c3efc11fafbdcd10ec48d06aef9bcc88c82fb014f9da7620e26"
+  }
+}

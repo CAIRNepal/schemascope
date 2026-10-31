@@ -1,0 +1,85 @@
+{
+  "id": "lmm2",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/lmm2/versions/2010-02-09.n3",
+  "checkedAt": "2026-10-28T21:28:16.854Z",
+  "sha256": "7b51519685b8fa698fc1276ef6bc08f73dc46e2723287cb112b1bbe2bce94529",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.ontologydesignpatterns.org/ont/lmm/LMM_L1.owl",
+        "id": "lmm1",
+        "own": true
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:28:17.765Z",
+    "sha256": "7b51519685b8fa698fc1276ef6bc08f73dc46e2723287cb112b1bbe2bce94529"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 10,
+      "WARN": 37,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-28T21:28:20.597Z",
+    "sha256": "7b51519685b8fa698fc1276ef6bc08f73dc46e2723287cb112b1bbe2bce94529"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 9
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 26,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1872 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/lmm2:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T21:28:21.607Z",
+    "sha256": "7b51519685b8fa698fc1276ef6bc08f73dc46e2723287cb112b1bbe2bce94529"
+  }
+}

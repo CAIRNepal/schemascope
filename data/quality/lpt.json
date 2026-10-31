@@ -1,0 +1,81 @@
+{
+  "id": "lpt",
+  "artefact": "https://github.com/AnimalGenome/livestock-product-trait-ontology/raw/master/current_release/lpt.owl",
+  "checkedAt": "2026-10-28T21:31:50.490Z",
+  "sha256": "6491b91dc15a0bd89c4adda9d23e666585829716abcd137b5dc28bffec4ed05b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 4,
+      "owl": 3,
+      "xsd": 3,
+      "dc": 3,
+      "dcterms": 3
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:31:51.159Z",
+    "sha256": "6491b91dc15a0bd89c4adda9d23e666585829716abcd137b5dc28bffec4ed05b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 17,
+      "WARN": 52,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T21:31:52.896Z",
+    "sha256": "6491b91dc15a0bd89c4adda9d23e666585829716abcd137b5dc28bffec4ed05b"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 2,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P03",
+        "name": "Creating the relationship \"is\" instead of using \"rdfs:subClassOf\", \"rdf:type\" or \"owl:sameAs\"",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 23
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 550
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:32:09.373Z",
+    "sha256": "6491b91dc15a0bd89c4adda9d23e666585829716abcd137b5dc28bffec4ed05b"
+  }
+}

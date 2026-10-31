@@ -1,0 +1,43 @@
+{
+  "id": "culco",
+  "artefact": "https://w3id.org/culco",
+  "checkedAt": "2026-10-28T15:53:00.847Z",
+  "sha256": "e75cf995d5d536a73a9ff4e52a91b36fbf78abf3a2638d6f751bb35665ec6d58",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 7,
+      "owl": 8,
+      "schema": 5,
+      "rdfs": 7,
+      "foaf": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T15:53:01.261Z",
+    "sha256": "e75cf995d5d536a73a9ff4e52a91b36fbf78abf3a2638d6f751bb35665ec6d58"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 5,
+      "WARN": 8,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-28T15:53:03.237Z",
+    "sha256": "e75cf995d5d536a73a9ff4e52a91b36fbf78abf3a2638d6f751bb35665ec6d58"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-706 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/culco:/work schemascope/oops --input-file /work/ontolo",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/culco/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T15:53:04.577Z",
+    "sha256": "e75cf995d5d536a73a9ff4e52a91b36fbf78abf3a2638d6f751bb35665ec6d58"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "glass",
+  "artefact": "https://raw.githubusercontent.com/materialdigital/glasdigital-ontology/main/pmd_go.ttl",
+  "checkedAt": "2026-10-28T20:23:15.884Z",
+  "sha256": "9fba6d25e49fe1fb9f6b285e6a6cd9b99aefd9376714106c650b05667aa516df",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 4,
+      "dcterms": 4,
+      "skos": 4,
+      "wikibase": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:23:16.122Z",
+    "sha256": "9fba6d25e49fe1fb9f6b285e6a6cd9b99aefd9376714106c650b05667aa516df"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 7,
+      "WARN": 361,
+      "INFO": 14
+    },
+    "checkedAt": "2026-10-28T20:23:17.509Z",
+    "sha256": "9fba6d25e49fe1fb9f6b285e6a6cd9b99aefd9376714106c650b05667aa516df"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1381 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/glass:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T20:23:18.321Z",
+    "sha256": "9fba6d25e49fe1fb9f6b285e6a6cd9b99aefd9376714106c650b05667aa516df"
+  }
+}

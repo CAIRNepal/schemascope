@@ -1,0 +1,101 @@
+{
+  "id": "onsir",
+  "artefact": "https://w3id.org/onsir",
+  "checkedAt": "2026-10-29T00:18:04.051Z",
+  "sha256": "c2d5742f84abb0494f88310acc4f737075dcd972f4ac5a7808a6b51afb6a256d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "po": 20,
+      "chebi": 5,
+      "ncbitaxon": 8,
+      "to": 16,
+      "pato": 3,
+      "peco": 10,
+      "bfo": 3,
+      "iao": 4,
+      "owl": 9,
+      "xsd": 6,
+      "qudt": 3,
+      "skos": 7,
+      "dcterms": 10
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:18:04.586Z",
+    "sha256": "c2d5742f84abb0494f88310acc4f737075dcd972f4ac5a7808a6b51afb6a256d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 9,
+      "INFO": 21
+    },
+    "checkedAt": "2026-10-29T00:18:06.504Z",
+    "sha256": "c2d5742f84abb0494f88310acc4f737075dcd972f4ac5a7808a6b51afb6a256d"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 17
+      },
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 27
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 5
+      },
+      {
+        "code": "P12",
+        "name": "Equivalent properties not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 24
+      },
+      {
+        "code": "P21",
+        "name": "Using a miscellaneous class",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:18:19.124Z",
+    "sha256": "c2d5742f84abb0494f88310acc4f737075dcd972f4ac5a7808a6b51afb6a256d"
+  }
+}

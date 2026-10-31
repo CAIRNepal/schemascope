@@ -1,0 +1,79 @@
+{
+  "id": "cartograph-provenance",
+  "artefact": "https://w3id.org/cartograph-provenance",
+  "checkedAt": "2026-10-28T01:52:41.501Z",
+  "sha256": "9f3e67ea3238a324dffc2e6fa44a3da3c1f1e3d066b4095ada1741264d9ed212",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/ns/prov#",
+        "id": "prov",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:52:41.964Z",
+    "sha256": "9f3e67ea3238a324dffc2e6fa44a3da3c1f1e3d066b4095ada1741264d9ed212"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 15,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T01:52:44.480Z",
+    "sha256": "9f3e67ea3238a324dffc2e6fa44a3da3c1f1e3d066b4095ada1741264d9ed212"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 5
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 9,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-306 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cartograph-provenance:/work schemascope/oops --input-f"
+    ],
+    "checkedAt": "2026-10-28T01:52:45.278Z",
+    "sha256": "9f3e67ea3238a324dffc2e6fa44a3da3c1f1e3d066b4095ada1741264d9ed212"
+  }
+}

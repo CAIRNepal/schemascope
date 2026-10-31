@@ -1,0 +1,73 @@
+{
+  "id": "tsrto",
+  "artefact": "https://raw.githubusercontent.com/HosseinBeygiNasrabadi/Tensile-Stress-Relaxation-Test-Ontology-TSRTO-/main/TSRTO3.0.1.ttl",
+  "checkedAt": "2026-10-29T05:32:49.635Z",
+  "sha256": "735026b7d04c99066787b515ee3fbc624f388bf54601d72045aa84b81d0d78b3",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:32:49.902Z",
+    "sha256": "735026b7d04c99066787b515ee3fbc624f388bf54601d72045aa84b81d0d78b3"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 151,
+      "WARN": 78,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T05:32:51.486Z",
+    "sha256": "735026b7d04c99066787b515ee3fbc624f388bf54601d72045aa84b81d0d78b3"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 28
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 28,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3870 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tsrto:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T05:32:52.586Z",
+    "sha256": "735026b7d04c99066787b515ee3fbc624f388bf54601d72045aa84b81d0d78b3"
+  }
+}

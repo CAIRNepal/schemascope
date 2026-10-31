@@ -1,0 +1,11 @@
+{
+  "id": "ucum",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ucum/versions/2008-01-01.n3",
+  "checkedAt": "2026-10-29T05:46:13.510Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T05:46:24.012Z"
+  }
+}

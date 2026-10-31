@@ -1,0 +1,97 @@
+{
+  "id": "pain",
+  "artefact": "http://purl.obolibrary.org/obo/pain.owl",
+  "checkedAt": "2026-10-29T00:36:39.515Z",
+  "sha256": "926c451860946a0f34b9a3f66ee35490061c825ae24631d81dbc7b592f0c7b25",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 13,
+      "iao": 35,
+      "omo": 23,
+      "ncit": 32,
+      "ro": 38,
+      "ubprop": 9,
+      "go": 50,
+      "cl": 16,
+      "uberon": 50,
+      "emro": 4,
+      "ncbitaxon": 10,
+      "ogms": 9,
+      "ohd": 50,
+      "mondo": 6,
+      "hp": 20,
+      "symp": 19,
+      "omit": 10,
+      "scdo": 3,
+      "pato": 43,
+      "fma": 3,
+      "xsd": 4,
+      "rdfs": 4,
+      "dc": 16,
+      "dcterms": 8,
+      "skos": 7,
+      "owl": 5,
+      "sio": 3
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:36:39.871Z",
+    "sha256": "926c451860946a0f34b9a3f66ee35490061c825ae24631d81dbc7b592f0c7b25"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 89,
+      "WARN": 126,
+      "INFO": 36
+    },
+    "checkedAt": "2026-10-29T00:36:42.277Z",
+    "sha256": "926c451860946a0f34b9a3f66ee35490061c825ae24631d81dbc7b592f0c7b25"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 437
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 37
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 19
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 150
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:36:56.168Z",
+    "sha256": "926c451860946a0f34b9a3f66ee35490061c825ae24631d81dbc7b592f0c7b25"
+  }
+}

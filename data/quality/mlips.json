@@ -1,0 +1,83 @@
+{
+  "id": "mlips",
+  "artefact": "https://w3id.org/mlips",
+  "checkedAt": "2026-10-28T22:24:41.305Z",
+  "sha256": "6a3592e48e77ba38b66ed4dad254ca767848d0eaa0aa2ea09d65e536c0bf3c67",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/ns/prov-o",
+        "id": "w3.org/ns/prov-o",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/mls",
+        "id": "mls",
+        "own": false
+      }
+    ],
+    "uses": {
+      "rdfs": 10,
+      "owl": 20,
+      "xsd": 5,
+      "prov": 6,
+      "schema": 8,
+      "mls": 8,
+      "qudt": 7,
+      "dcterms": 8,
+      "voaf": 3,
+      "rdf": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:24:43.377Z",
+    "sha256": "6a3592e48e77ba38b66ed4dad254ca767848d0eaa0aa2ea09d65e536c0bf3c67"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 22,
+      "WARN": 124,
+      "INFO": 14
+    },
+    "checkedAt": "2026-10-28T22:24:46.412Z",
+    "sha256": "6a3592e48e77ba38b66ed4dad254ca767848d0eaa0aa2ea09d65e536c0bf3c67"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2079 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mlips:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T22:24:47.072Z",
+    "sha256": "6a3592e48e77ba38b66ed4dad254ca767848d0eaa0aa2ea09d65e536c0bf3c67"
+  }
+}

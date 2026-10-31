@@ -1,0 +1,93 @@
+{
+  "id": "hw",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/hw/versions/2014-05-12.n3",
+  "checkedAt": "2026-10-28T20:47:00.498Z",
+  "sha256": "47706eeb7bc1b0e237d6ca307d7914eb450505b69d2a149da40144cd9ff3d85d",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/2006/time",
+        "id": "time",
+        "own": false
+      }
+    ],
+    "uses": {
+      "wgs84": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:47:01.542Z",
+    "sha256": "47706eeb7bc1b0e237d6ca307d7914eb450505b69d2a149da40144cd9ff3d85d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 61,
+      "WARN": 63,
+      "INFO": 8
+    },
+    "checkedAt": "2026-10-28T20:47:03.307Z",
+    "sha256": "47706eeb7bc1b0e237d6ca307d7914eb450505b69d2a149da40144cd9ff3d85d"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 106
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 14
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 106,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1563 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/hw:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T20:47:04.342Z",
+    "sha256": "47706eeb7bc1b0e237d6ca307d7914eb450505b69d2a149da40144cd9ff3d85d"
+  }
+}

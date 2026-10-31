@@ -1,0 +1,91 @@
+{
+  "id": "tddom",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/tddom/versions/2020-04-21.n3",
+  "checkedAt": "2026-10-29T04:59:34.964Z",
+  "sha256": "0846b6b9b22479ef2e00fe12b8eb4fa8e3631e19dfdcb5ffa338af354f762aef",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://w3id.org/todo/tododfa",
+        "id": "tddfa",
+        "own": true
+      },
+      {
+        "iri": "https://w3id.org/todo/tododw",
+        "id": "tddw",
+        "own": true
+      }
+    ],
+    "uses": {
+      "rdf": 4,
+      "owl": 21,
+      "dcterms": 8,
+      "xsd": 7,
+      "rdfs": 7,
+      "tddfa": 16
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T04:59:38.018Z",
+    "sha256": "0846b6b9b22479ef2e00fe12b8eb4fa8e3631e19dfdcb5ffa338af354f762aef"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 23,
+      "WARN": 75,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-29T04:59:40.366Z",
+    "sha256": "0846b6b9b22479ef2e00fe12b8eb4fa8e3631e19dfdcb5ffa338af354f762aef"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 34
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 12
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 27,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3698 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tddom:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T04:59:41.774Z",
+    "sha256": "0846b6b9b22479ef2e00fe12b8eb4fa8e3631e19dfdcb5ffa338af354f762aef"
+  }
+}

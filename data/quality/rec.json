@@ -1,0 +1,112 @@
+{
+  "id": "rec",
+  "artefact": "https://web.archive.org/web/20250116013621/https://smiy.sourceforge.net/rec/rdf/recommendationontology.owl",
+  "checkedAt": "2026-10-29T02:22:26.514Z",
+  "sha256": "4353d877a8d35cddb6501731f8228d2686a9aa03d63fcba1b16c2ca463415b0f",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/dc/elements/1.1/",
+        "id": "dc",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/dc/terms/",
+        "id": "dcterms",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/ontology/ao/core",
+        "id": "ao",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/ontology/olo/core#",
+        "id": "olo",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/ontology/similarity/",
+        "id": "sim-lov",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/2003/06/sw-vocab-status/ns",
+        "id": "vs",
+        "own": false
+      },
+      {
+        "iri": "http://xmlns.com/foaf/0.1/",
+        "id": "foaf",
+        "own": false
+      }
+    ],
+    "uses": {
+      "owl": 3,
+      "dcterms": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:22:27.010Z",
+    "sha256": "4353d877a8d35cddb6501731f8228d2686a9aa03d63fcba1b16c2ca463415b0f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.org/ontology/ao/core> Cause: https://smiy.sourceforge.io/ao/associationontology\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T02:22:32.820Z",
+    "sha256": "4353d877a8d35cddb6501731f8228d2686a9aa03d63fcba1b16c2ca463415b0f"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 2,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2994 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rec:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T02:23:02.125Z",
+    "sha256": "4353d877a8d35cddb6501731f8228d2686a9aa03d63fcba1b16c2ca463415b0f"
+  }
+}

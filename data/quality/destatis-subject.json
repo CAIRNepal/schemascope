@@ -1,0 +1,63 @@
+{
+  "id": "destatis-subject",
+  "artefact": "https://raw.githubusercontent.com/VIVO-DE/destatis_faecherklassifikation/master/faecherklassifikation.rdf",
+  "checkedAt": "2026-10-28T17:01:04.659Z",
+  "sha256": "d92485bb2cb85fe0037236a3220b1e739a8db3f9b09174b00f77f671943a6617",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:01:05.064Z",
+    "sha256": "d92485bb2cb85fe0037236a3220b1e739a8db3f9b09174b00f77f671943a6617"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 740,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T17:01:06.880Z",
+    "sha256": "d92485bb2cb85fe0037236a3220b1e739a8db3f9b09174b00f77f671943a6617"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T17:01:14.610Z",
+    "sha256": "d92485bb2cb85fe0037236a3220b1e739a8db3f9b09174b00f77f671943a6617"
+  }
+}

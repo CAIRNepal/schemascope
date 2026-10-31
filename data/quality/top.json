@@ -1,0 +1,67 @@
+{
+  "id": "top",
+  "artefact": "http://w3id.org/topologicpy",
+  "checkedAt": "2026-10-29T05:30:14.359Z",
+  "sha256": "5828bf7cf3d96059212cdbf1a5fda7305a0cc9c1ab2f3b4570b0c80f070a918e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:30:14.901Z",
+    "sha256": "5828bf7cf3d96059212cdbf1a5fda7305a0cc9c1ab2f3b4570b0c80f070a918e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 120,
+      "INFO": 15
+    },
+    "checkedAt": "2026-10-29T05:30:16.322Z",
+    "sha256": "5828bf7cf3d96059212cdbf1a5fda7305a0cc9c1ab2f3b4570b0c80f070a918e"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 17
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 57,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3822 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/top:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T05:30:17.497Z",
+    "sha256": "5828bf7cf3d96059212cdbf1a5fda7305a0cc9c1ab2f3b4570b0c80f070a918e"
+  }
+}

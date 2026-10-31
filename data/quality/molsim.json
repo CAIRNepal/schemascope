@@ -1,0 +1,97 @@
+{
+  "id": "molsim",
+  "artefact": "https://github.com/CPCLab/molsim-ontology/raw/refs/heads/main/molsim.owl",
+  "checkedAt": "2026-10-28T22:27:21.278Z",
+  "sha256": "87dd80f367bbc4e36a7e0acfffbd63cc0b9a52a1ee684e177449bb1175dd962e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 49,
+      "stato": 21,
+      "obi": 6,
+      "ro": 5,
+      "go": 4,
+      "ncit": 8,
+      "uo": 50,
+      "chmo": 4,
+      "mi": 20,
+      "dcterms": 7,
+      "rdfs": 4,
+      "skos": 3,
+      "owl": 7,
+      "xsd": 4,
+      "so": 29
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:27:22.430Z",
+    "sha256": "87dd80f367bbc4e36a7e0acfffbd63cc0b9a52a1ee684e177449bb1175dd962e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 8,
+      "WARN": 32,
+      "INFO": 26
+    },
+    "checkedAt": "2026-10-28T22:27:24.579Z",
+    "sha256": "87dd80f367bbc4e36a7e0acfffbd63cc0b9a52a1ee684e177449bb1175dd962e"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 45
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 2249
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 122
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 28
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 8
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 74
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T22:28:17.605Z",
+    "sha256": "87dd80f367bbc4e36a7e0acfffbd63cc0b9a52a1ee684e177449bb1175dd962e"
+  }
+}

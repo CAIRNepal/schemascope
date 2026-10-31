@@ -1,0 +1,68 @@
+{
+  "id": "emmo",
+  "artefact": "https://raw.githubusercontent.com/emmo-repo/EMMO/master/emmo.ttl",
+  "checkedAt": "2026-10-28T18:53:40.456Z",
+  "sha256": "4b6c545904771a134daab70194508874a48ce96cc77d821244b552d1494453e1",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://w3id.org/emmo/1.0.3/disciplines",
+        "id": "w3id.org/emmo/1.0.3/disciplines",
+        "own": false
+      },
+      {
+        "iri": "https://w3id.org/emmo/1.0.3/contributors-mappings",
+        "id": "w3id.org/emmo/1.0.3/contributors-mappings",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dcterms": 7,
+      "foaf": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T18:53:40.704Z",
+    "sha256": "4b6c545904771a134daab70194508874a48ce96cc77d821244b552d1494453e1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T18:54:16.727Z",
+    "sha256": "4b6c545904771a134daab70194508874a48ce96cc77d821244b552d1494453e1"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1107 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/emmo:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T18:54:17.405Z",
+    "sha256": "4b6c545904771a134daab70194508874a48ce96cc77d821244b552d1494453e1"
+  }
+}

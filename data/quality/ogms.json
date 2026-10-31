@@ -1,0 +1,64 @@
+{
+  "id": "ogms",
+  "artefact": "http://purl.obolibrary.org/obo/ogms.owl",
+  "checkedAt": "2026-10-29T00:01:56.871Z",
+  "sha256": "e602524ec895844ee715334586850ecb77b1d3ed2668cec4b9f1dbc00c25b4c2",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 38,
+      "iao": 50,
+      "ido": 3,
+      "xsd": 3,
+      "rdfs": 3,
+      "dc": 16
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:01:57.279Z",
+    "sha256": "e602524ec895844ee715334586850ecb77b1d3ed2668cec4b9f1dbc00c25b4c2"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 6,
+      "WARN": 72,
+      "INFO": 20
+    },
+    "checkedAt": "2026-10-29T00:01:59.331Z",
+    "sha256": "e602524ec895844ee715334586850ecb77b1d3ed2668cec4b9f1dbc00c25b4c2"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 184
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:02:07.836Z",
+    "sha256": "e602524ec895844ee715334586850ecb77b1d3ed2668cec4b9f1dbc00c25b4c2"
+  }
+}

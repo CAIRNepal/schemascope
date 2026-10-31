@@ -1,0 +1,11 @@
+{
+  "id": "ogi",
+  "artefact": "http://purl.obolibrary.org/obo/ogi.owl",
+  "checkedAt": "2026-10-29T00:01:56.571Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:01:56.869Z"
+  }
+}

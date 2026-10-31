@@ -1,0 +1,79 @@
+{
+  "id": "tb",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/tb/versions/2020-04-01.n3",
+  "checkedAt": "2026-10-29T04:59:02.247Z",
+  "sha256": "7caa6801af6c572ef1dfb06ff7ff1cd13760e43ee24e21a239b15730bfda0112",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/2004/02/skos/core#",
+        "id": "skos",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/2006/time#",
+        "id": "time",
+        "own": false
+      },
+      {
+        "iri": "http://xmlns.com/foaf/0.1/",
+        "id": "foaf",
+        "own": false
+      }
+    ],
+    "uses": {
+      "rdf": 5,
+      "owl": 19,
+      "dcterms": 4,
+      "rdfs": 7,
+      "xsd": 3,
+      "time": 4,
+      "lgdo": 16,
+      "skos": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T04:59:05.616Z",
+    "sha256": "7caa6801af6c572ef1dfb06ff7ff1cd13760e43ee24e21a239b15730bfda0112"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 70,
+      "INFO": 6
+    },
+    "checkedAt": "2026-10-29T04:59:08.115Z",
+    "sha256": "7caa6801af6c572ef1dfb06ff7ff1cd13760e43ee24e21a239b15730bfda0112"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 127,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3688 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tb:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-29T04:59:08.969Z",
+    "sha256": "7caa6801af6c572ef1dfb06ff7ff1cd13760e43ee24e21a239b15730bfda0112"
+  }
+}

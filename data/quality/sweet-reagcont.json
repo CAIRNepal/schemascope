@@ -1,0 +1,91 @@
+{
+  "id": "sweet-reagcont",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/realmGeolContinental.ttl",
+  "checkedAt": "2026-10-29T04:00:18.712Z",
+  "sha256": "92995ac749595d1c4e233e3c31f6294dc7473e97de58f91d876ef39e89d60134",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T04:00:19.143Z",
+    "sha256": "92995ac749595d1c4e233e3c31f6294dc7473e97de58f91d876ef39e89d60134"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 10,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T04:00:50.119Z",
+    "sha256": "92995ac749595d1c4e233e3c31f6294dc7473e97de58f91d876ef39e89d60134"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 4,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 13
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 13,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3454 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sweet-reagcont:/work schemascope/oops --input-file /w"
+    ],
+    "checkedAt": "2026-10-29T04:00:50.883Z",
+    "sha256": "92995ac749595d1c4e233e3c31f6294dc7473e97de58f91d876ef39e89d60134"
+  }
+}

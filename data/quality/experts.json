@@ -1,0 +1,114 @@
+{
+  "id": "experts",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/experts/versions/2024-04-12.n3",
+  "checkedAt": "2026-10-28T19:38:42.977Z",
+  "sha256": "17ec62a59fd193d9755cf11ebf12bdec8ac38b56dac3201ae8326e1b451afb39",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://xmlns.com/foaf/0.1/",
+        "id": "foaf",
+        "own": false
+      },
+      {
+        "iri": "http://emmo.info/emmo/1.0.0-beta3/top",
+        "id": "emmo.info/emmo/1.0.0-beta3/top",
+        "own": false
+      },
+      {
+        "iri": "http://emmo.info/emmo/1.0.0-beta3/middle/semiotics",
+        "id": "emmo.info/emmo/1.0.0-beta3/middle/semiotics",
+        "own": false
+      },
+      {
+        "iri": "http://emmo.info/emmo/domain/oie/characterisation-methods",
+        "id": "emmo.info/emmo/domain/oie/characterisation-methods",
+        "own": false
+      },
+      {
+        "iri": "http://emmo.info/emmo/domain/oie/manufacturing",
+        "id": "emmo.info/emmo/domain/oie/manufacturing",
+        "own": false
+      },
+      {
+        "iri": "http://emmo.info/emmo/domain/oie/materials",
+        "id": "emmo.info/emmo/domain/oie/materials",
+        "own": false
+      },
+      {
+        "iri": "http://emmo.info/emmo/domain/oie/models",
+        "id": "emmo.info/emmo/domain/oie/models",
+        "own": false
+      },
+      {
+        "iri": "http://emmo.info/emmo/domain/oie/software",
+        "id": "emmo.info/emmo/domain/oie/software",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:38:45.418Z",
+    "sha256": "17ec62a59fd193d9755cf11ebf12bdec8ac38b56dac3201ae8326e1b451afb39"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://emmo.info/emmo/1.0.0-beta3/top> Cause: (certificate_expired) PKIX path validation failed: java.security.cert.CertPathValidatorException: validity check failed\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T19:38:46.982Z",
+    "sha256": "17ec62a59fd193d9755cf11ebf12bdec8ac38b56dac3201ae8326e1b451afb39"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 15
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 27,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1184 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/experts:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-28T19:38:47.682Z",
+    "sha256": "17ec62a59fd193d9755cf11ebf12bdec8ac38b56dac3201ae8326e1b451afb39"
+  }
+}

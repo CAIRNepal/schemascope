@@ -1,0 +1,76 @@
+{
+  "id": "nmrcv2025",
+  "artefact": "http://nmrML.org/nmrCV.owl",
+  "checkedAt": "2026-10-28T23:21:28.943Z",
+  "sha256": "2fc99bced64691fa925d58855d16fd8bac4190b4d673d9d36e862a53973a4b8b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 42,
+      "iao": 50,
+      "omo": 22,
+      "ro": 26,
+      "obi": 26,
+      "chebi": 50,
+      "xsd": 4,
+      "rdfs": 4,
+      "dc": 16,
+      "dcterms": 10,
+      "doap": 7,
+      "skos": 5,
+      "owl": 9,
+      "swrl": 5
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:21:29.129Z",
+    "sha256": "2fc99bced64691fa925d58855d16fd8bac4190b4d673d9d36e862a53973a4b8b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 30,
+      "WARN": 818,
+      "INFO": 49
+    },
+    "checkedAt": "2026-10-28T23:21:32.495Z",
+    "sha256": "2fc99bced64691fa925d58855d16fd8bac4190b4d673d9d36e862a53973a4b8b"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 384
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 824,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2238 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/nmrcv2025:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-28T23:21:46.743Z",
+    "sha256": "2fc99bced64691fa925d58855d16fd8bac4190b4d673d9d36e862a53973a4b8b"
+  }
+}

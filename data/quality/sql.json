@@ -1,0 +1,11 @@
+{
+  "id": "sql",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/sql/versions/2014-07-31.n3",
+  "checkedAt": "2026-10-29T03:15:51.979Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:16:02.480Z"
+  }
+}

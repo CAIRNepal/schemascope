@@ -1,0 +1,73 @@
+{
+  "id": "narn",
+  "artefact": "https://w3id.org/narn",
+  "checkedAt": "2026-10-28T22:41:07.843Z",
+  "sha256": "6faf3f29c9b73980e9105a79e2ccbd2753804647fd0fd3687ea2a35c396044cc",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:41:08.318Z",
+    "sha256": "6faf3f29c9b73980e9105a79e2ccbd2753804647fd0fd3687ea2a35c396044cc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": false,
+    "unsatisfiable": null,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 5,
+      "WARN": 238,
+      "INFO": 18
+    },
+    "checkedAt": "2026-10-28T22:41:10.960Z",
+    "sha256": "6faf3f29c9b73980e9105a79e2ccbd2753804647fd0fd3687ea2a35c396044cc"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 71
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 68
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 129,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2173 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/narn:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T22:41:12.081Z",
+    "sha256": "6faf3f29c9b73980e9105a79e2ccbd2753804647fd0fd3687ea2a35c396044cc"
+  }
+}

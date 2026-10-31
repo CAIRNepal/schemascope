@@ -1,0 +1,87 @@
+{
+  "id": "itm",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/itm/versions/2014-06-19.n3",
+  "checkedAt": "2026-10-28T21:15:40.727Z",
+  "sha256": "65235a27c7595600f2c181b8371d5452cbabdb78a9e43022097014dc038bb9c6",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "spcm": 10
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:15:41.555Z",
+    "sha256": "65235a27c7595600f2c181b8371d5452cbabdb78a9e43022097014dc038bb9c6"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 39,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-28T21:15:43.020Z",
+    "sha256": "65235a27c7595600f2c181b8371d5452cbabdb78a9e43022097014dc038bb9c6"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 3
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 10,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1707 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/itm:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T21:15:44.311Z",
+    "sha256": "65235a27c7595600f2c181b8371d5452cbabdb78a9e43022097014dc038bb9c6"
+  }
+}

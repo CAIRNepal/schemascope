@@ -1,0 +1,61 @@
+{
+  "id": "dgaterms",
+  "artefact": "https://w3id.org/dgaterms",
+  "checkedAt": "2026-10-28T17:01:31.530Z",
+  "sha256": "875d9bb244183a819b96400545d70d6ee23c0701fd6000168a8795df793971bf",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:01:32.273Z",
+    "sha256": "875d9bb244183a819b96400545d70d6ee23c0701fd6000168a8795df793971bf"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 132,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T17:01:33.596Z",
+    "sha256": "875d9bb244183a819b96400545d70d6ee23c0701fd6000168a8795df793971bf"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 37
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-839 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dgaterms:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-28T17:01:34.431Z",
+    "sha256": "875d9bb244183a819b96400545d70d6ee23c0701fd6000168a8795df793971bf"
+  }
+}

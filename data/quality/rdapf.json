@@ -1,0 +1,70 @@
+{
+  "id": "rdapf",
+  "artefact": "http://rdaregistry.info/termList/presFormat/",
+  "checkedAt": "2026-10-29T02:18:39.076Z",
+  "sha256": "3b5a5ceb1dd6ac6e9acf5f121f6f725015a6c1925bf02100b1683c2f1f52b0c2",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "skos": 7,
+      "dc": 9
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:18:39.256Z",
+    "sha256": "3b5a5ceb1dd6ac6e9acf5f121f6f725015a6c1925bf02100b1683c2f1f52b0c2"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 17,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:18:41.166Z",
+    "sha256": "3b5a5ceb1dd6ac6e9acf5f121f6f725015a6c1925bf02100b1683c2f1f52b0c2"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2919 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rdapf:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T02:18:42.340Z",
+    "sha256": "3b5a5ceb1dd6ac6e9acf5f121f6f725015a6c1925bf02100b1683c2f1f52b0c2"
+  }
+}

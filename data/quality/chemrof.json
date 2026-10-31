@@ -1,0 +1,99 @@
+{
+  "id": "chemrof",
+  "artefact": "https://w3id.org/chemrof/chemrof.owl.ttl",
+  "checkedAt": "2026-10-28T02:38:45.347Z",
+  "sha256": "8e470989ea44fbc80d5c953feda77914b2cc00887535ef92357c6ecc2af284da",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "chebi": 50,
+      "cheminf": 14,
+      "fix": 13,
+      "rxno": 13,
+      "cob": 6,
+      "bfo": 4,
+      "sio": 13
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:38:45.696Z",
+    "sha256": "8e470989ea44fbc80d5c953feda77914b2cc00887535ef92357c6ecc2af284da"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 10,
+      "WARN": 600,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T02:38:47.386Z",
+    "sha256": "8e470989ea44fbc80d5c953feda77914b2cc00887535ef92357c6ecc2af284da"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 4,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 56
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 66
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 72
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 247,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-443 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/chemrof:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T02:38:48.174Z",
+    "sha256": "8e470989ea44fbc80d5c953feda77914b2cc00887535ef92357c6ecc2af284da"
+  }
+}

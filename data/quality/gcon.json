@@ -1,0 +1,78 @@
+{
+  "id": "gcon",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/gcon/versions/2018-11-25.n3",
+  "checkedAt": "2026-10-28T20:08:06.060Z",
+  "sha256": "4617ac06bec215eb50f30a70b07d1e0b85b4611d9b483081ab53728b2f4c6bfc",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "gdprov": 6,
+      "prov": 11,
+      "dcterms": 8,
+      "gdprt": 7
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:08:06.389Z",
+    "sha256": "4617ac06bec215eb50f30a70b07d1e0b85b4611d9b483081ab53728b2f4c6bfc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 68,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-28T20:08:07.711Z",
+    "sha256": "4617ac06bec215eb50f30a70b07d1e0b85b4611d9b483081ab53728b2f4c6bfc"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 12
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 38,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1314 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gcon:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T20:08:08.696Z",
+    "sha256": "4617ac06bec215eb50f30a70b07d1e0b85b4611d9b483081ab53728b2f4c6bfc"
+  }
+}

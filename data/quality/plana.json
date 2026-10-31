@@ -1,0 +1,93 @@
+{
+  "id": "plana",
+  "artefact": "http://purl.obolibrary.org/obo/plana.owl",
+  "checkedAt": "2026-10-29T01:06:23.841Z",
+  "sha256": "368c1f41e7dea1e8a9c5b27a442cf3046c8b348f64e6f668d763d0b674ebd2ab",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 23,
+      "iao": 50,
+      "ro": 50,
+      "ubprop": 5,
+      "foaf": 5,
+      "bspo": 50,
+      "fbcv": 4,
+      "fbql": 4,
+      "obi": 3,
+      "caro": 7,
+      "pato": 12,
+      "go": 50,
+      "uberon": 17,
+      "dc": 7,
+      "xsd": 3,
+      "dcterms": 6,
+      "doap": 4,
+      "owl": 8,
+      "swrl": 5
+    },
+    "scannedMb": 3,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:06:24.250Z",
+    "sha256": "368c1f41e7dea1e8a9c5b27a442cf3046c8b348f64e6f668d763d0b674ebd2ab"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 56,
+      "WARN": 177,
+      "INFO": 216
+    },
+    "checkedAt": "2026-10-29T01:06:28.499Z",
+    "sha256": "368c1f41e7dea1e8a9c5b27a442cf3046c8b348f64e6f668d763d0b674ebd2ab"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 121
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 12
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 91
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 875,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2643 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/plana:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T01:06:53.725Z",
+    "sha256": "368c1f41e7dea1e8a9c5b27a442cf3046c8b348f64e6f668d763d0b674ebd2ab"
+  }
+}

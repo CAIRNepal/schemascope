@@ -1,0 +1,11 @@
+{
+  "id": "sou",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/sou/versions/2016-07-04.n3",
+  "checkedAt": "2026-10-29T03:11:25.922Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:11:41.041Z"
+  }
+}

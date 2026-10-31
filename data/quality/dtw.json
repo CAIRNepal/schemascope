@@ -1,0 +1,11 @@
+{
+  "id": "dtw",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/dtw/versions/2025-06-15.n3",
+  "checkedAt": "2026-10-28T17:34:31.600Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T17:34:32.523Z"
+  }
+}

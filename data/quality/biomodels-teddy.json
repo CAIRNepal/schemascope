@@ -1,0 +1,111 @@
+{
+  "id": "biomodels-teddy",
+  "artefact": "http://svn.code.sf.net/p/teddyontology/code/teddy/tags/current/teddy-inferred.owl",
+  "checkedAt": "2026-10-28T01:41:53.404Z",
+  "sha256": "05c36084d92d33e99cd2a164a0c6771959d4f26bdffcd98dde50064e0fc2bbb0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:41:54.256Z",
+    "sha256": "05c36084d92d33e99cd2a164a0c6771959d4f26bdffcd98dde50064e0fc2bbb0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3218,
+      "WARN": 193,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T01:41:56.871Z",
+    "sha256": "05c36084d92d33e99cd2a164a0c6771959d4f26bdffcd98dde50064e0fc2bbb0"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 5,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 9
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 10
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P25",
+        "name": "Defining a relationship as inverse to itself",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P26",
+        "name": "Defining inverse relationships for a symmetric one",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P29",
+        "name": "Defining wrong transitive relationships",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:42:10.096Z",
+    "sha256": "05c36084d92d33e99cd2a164a0c6771959d4f26bdffcd98dde50064e0fc2bbb0"
+  }
+}

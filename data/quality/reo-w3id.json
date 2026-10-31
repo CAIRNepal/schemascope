@@ -1,0 +1,67 @@
+{
+  "id": "reo-w3id",
+  "artefact": "https://w3id.org/reo",
+  "checkedAt": "2026-10-29T02:25:08.796Z",
+  "sha256": "cba2570eb3e1678951ac1a7b6110120de7c80094060a9a0af1314fec1e2cf8cf",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:25:09.305Z",
+    "sha256": "cba2570eb3e1678951ac1a7b6110120de7c80094060a9a0af1314fec1e2cf8cf"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 55,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:25:10.908Z",
+    "sha256": "cba2570eb3e1678951ac1a7b6110120de7c80094060a9a0af1314fec1e2cf8cf"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 30
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 9,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3012 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/reo-w3id:/work schemascope/oops --input-file /work/on"
+    ],
+    "checkedAt": "2026-10-29T02:25:12.047Z",
+    "sha256": "cba2570eb3e1678951ac1a7b6110120de7c80094060a9a0af1314fec1e2cf8cf"
+  }
+}

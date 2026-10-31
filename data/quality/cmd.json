@@ -1,0 +1,11 @@
+{
+  "id": "cmd",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/cmd/versions/2024-05-06.n3",
+  "checkedAt": "2026-10-28T06:48:57.365Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T07:05:13.771Z"
+  }
+}

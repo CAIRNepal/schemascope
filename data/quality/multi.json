@@ -1,0 +1,61 @@
+{
+  "id": "multi",
+  "artefact": "https://semanticweb.tools/ont/multi",
+  "checkedAt": "2026-10-28T22:39:30.547Z",
+  "sha256": "3d1a947ca5754dab907673faf6d06cc00c9f1a2f947f5de8674117df96637de4",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl",
+        "id": "dolce",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dc": 4,
+      "ontolex": 5,
+      "dolce": 21
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:39:32.067Z",
+    "sha256": "3d1a947ca5754dab907673faf6d06cc00c9f1a2f947f5de8674117df96637de4"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 11,
+      "WARN": 117,
+      "INFO": 5
+    },
+    "checkedAt": "2026-10-28T22:39:34.341Z",
+    "sha256": "3d1a947ca5754dab907673faf6d06cc00c9f1a2f947f5de8674117df96637de4"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 0,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 120
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T22:39:45.607Z",
+    "sha256": "3d1a947ca5754dab907673faf6d06cc00c9f1a2f947f5de8674117df96637de4"
+  }
+}

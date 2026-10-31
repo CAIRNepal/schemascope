@@ -1,0 +1,58 @@
+{
+  "id": "ctp",
+  "artefact": "https://w3id.org/ctp",
+  "checkedAt": "2026-10-28T15:52:49.628Z",
+  "sha256": "3f3403e2c6a9d4c6f60eb2e31293d3a5e06588fa275c53a45da7827e202ad6d2",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 9,
+      "vann": 3,
+      "skos": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T15:52:50.093Z",
+    "sha256": "3f3403e2c6a9d4c6f60eb2e31293d3a5e06588fa275c53a45da7827e202ad6d2"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 103,
+      "INFO": 17
+    },
+    "checkedAt": "2026-10-28T15:52:52.375Z",
+    "sha256": "3f3403e2c6a9d4c6f60eb2e31293d3a5e06588fa275c53a45da7827e202ad6d2"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 23,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-700 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ctp:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T15:52:53.716Z",
+    "sha256": "3f3403e2c6a9d4c6f60eb2e31293d3a5e06588fa275c53a45da7827e202ad6d2"
+  }
+}

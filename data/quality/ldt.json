@@ -1,0 +1,72 @@
+{
+  "id": "ldt",
+  "artefact": "https://www.w3.org/ns/ldt",
+  "checkedAt": "2026-10-28T21:21:55.652Z",
+  "sha256": "fe6d7f99d0a463a5d2a48ea9dca2bf3bec74c41b23a73306070b447ef27822e8",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://spinrdf.org/sp",
+        "id": "sp",
+        "own": false
+      },
+      {
+        "iri": "http://spinrdf.org/spin",
+        "id": "spin",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:21:55.906Z",
+    "sha256": "fe6d7f99d0a463a5d2a48ea9dca2bf3bec74c41b23a73306070b447ef27822e8"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "er.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1243)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1143)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadImports(OWLOntologyManagerImpl.java:1873)\n\n\n\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T21:21:57.264Z",
+    "sha256": "fe6d7f99d0a463a5d2a48ea9dca2bf3bec74c41b23a73306070b447ef27822e8"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 10
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1820 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ldt:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T21:21:58.215Z",
+    "sha256": "fe6d7f99d0a463a5d2a48ea9dca2bf3bec74c41b23a73306070b447ef27822e8"
+  }
+}

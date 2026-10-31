@@ -1,0 +1,11 @@
+{
+  "id": "kpio",
+  "artefact": "https://bimerr.iot.linkeddata.es/def/key-performance-indicator/ontology.ttl",
+  "checkedAt": "2026-10-28T21:19:52.452Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:20:02.959Z"
+  }
+}

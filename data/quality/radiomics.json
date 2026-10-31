@@ -1,0 +1,98 @@
+{
+  "id": "radiomics",
+  "artefact": "http://purl.obolibrary.org/obo/ro.owl",
+  "checkedAt": "2026-10-29T01:58:55.421Z",
+  "sha256": "9a3190d49564743aa00f0b0f2e2d9c5fc5673ac7bb3c369284bf490294d42f77",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 50,
+      "bfo": 25,
+      "omo": 25,
+      "cl": 7,
+      "go": 18,
+      "envo": 44,
+      "uberon": 9,
+      "pato": 6,
+      "cob": 6,
+      "mi": 3,
+      "chebi": 11,
+      "hom": 50,
+      "xsd": 6,
+      "owl": 11,
+      "dc": 4,
+      "dcterms": 9,
+      "rdfs": 6,
+      "swrl": 5
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:58:55.853Z",
+    "sha256": "9a3190d49564743aa00f0b0f2e2d9c5fc5673ac7bb3c369284bf490294d42f77"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 20,
+      "WARN": 173,
+      "INFO": 279
+    },
+    "checkedAt": "2026-10-29T01:58:58.681Z",
+    "sha256": "9a3190d49564743aa00f0b0f2e2d9c5fc5673ac7bb3c369284bf490294d42f77"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 5
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 580
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 458
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 57,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2811 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/radiomics:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-29T02:02:39.933Z",
+    "sha256": "9a3190d49564743aa00f0b0f2e2d9c5fc5673ac7bb3c369284bf490294d42f77"
+  }
+}

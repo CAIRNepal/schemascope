@@ -1,0 +1,64 @@
+{
+  "id": "sargon2",
+  "artefact": "https://sumon-tun.github.io/SARGON2/OnToology/sargon2.owl/documentation/ontology.ttl",
+  "checkedAt": "2026-10-29T02:44:07.875Z",
+  "sha256": "355429a5bb2ddb7371a603b581d0c12adbbf44bd7be5105e128274793a313c5c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 10,
+      "xsd": 4
+    },
+    "scannedMb": 7,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:44:08.948Z",
+    "sha256": "355429a5bb2ddb7371a603b581d0c12adbbf44bd7be5105e128274793a313c5c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 10541,
+      "WARN": 8457,
+      "INFO": 9
+    },
+    "checkedAt": "2026-10-29T02:44:22.529Z",
+    "sha256": "355429a5bb2ddb7371a603b581d0c12adbbf44bd7be5105e128274793a313c5c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 7
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 7,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3150 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sargon2:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T02:44:25.001Z",
+    "sha256": "355429a5bb2ddb7371a603b581d0c12adbbf44bd7be5105e128274793a313c5c"
+  }
+}

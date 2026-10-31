@@ -1,0 +1,82 @@
+{
+  "id": "scosy",
+  "artefact": "https://w3id.org/scosy",
+  "checkedAt": "2026-10-29T02:47:24.599Z",
+  "sha256": "57babc75d3a5f7c2425f38039d81241ba73445e481c71d51f08d8c794ba0b7ed",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.com/cosy",
+        "id": "purl.com/cosy",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dcterms": 4,
+      "gufo": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:47:24.943Z",
+    "sha256": "57babc75d3a5f7c2425f38039d81241ba73445e481c71d51f08d8c794ba0b7ed"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 1,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 5,
+      "WARN": 8,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:47:58.344Z",
+    "sha256": "57babc75d3a5f7c2425f38039d81241ba73445e481c71d51f08d8c794ba0b7ed"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 7
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 8,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3182 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/scosy:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T02:47:59.027Z",
+    "sha256": "57babc75d3a5f7c2425f38039d81241ba73445e481c71d51f08d8c794ba0b7ed"
+  }
+}

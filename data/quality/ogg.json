@@ -1,0 +1,11 @@
+{
+  "id": "ogg",
+  "artefact": "http://purl.obolibrary.org/obo/ogg.owl",
+  "checkedAt": "2026-10-29T00:01:55.818Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:01:56.570Z"
+  }
+}

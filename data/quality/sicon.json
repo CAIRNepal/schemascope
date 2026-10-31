@@ -1,0 +1,70 @@
+{
+  "id": "sicon",
+  "artefact": "https://w3id.org/sicon",
+  "checkedAt": "2026-10-29T02:59:01.643Z",
+  "sha256": "eec99307f1155bfd1a1d87a7f9be342a6a2c9c76523716411672c7df76818b26",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 9,
+      "foaf": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:59:02.880Z",
+    "sha256": "eec99307f1155bfd1a1d87a7f9be342a6a2c9c76523716411672c7df76818b26"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 37,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-29T02:59:04.006Z",
+    "sha256": "eec99307f1155bfd1a1d87a7f9be342a6a2c9c76523716411672c7df76818b26"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 20
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 17
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 7,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3291 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sicon:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T02:59:04.950Z",
+    "sha256": "eec99307f1155bfd1a1d87a7f9be342a6a2c9c76523716411672c7df76818b26"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "schulart",
+  "artefact": "https://w3id.org/schulart",
+  "checkedAt": "2026-10-29T02:46:47.633Z",
+  "sha256": "1ef80554b574d161fa5da653579caa846aa98af2d167e402fd804fdda70174de",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 17,
+      "dcterms": 7,
+      "rdfs": 7,
+      "skos": 12
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:46:48.109Z",
+    "sha256": "1ef80554b574d161fa5da653579caa846aa98af2d167e402fd804fdda70174de"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 119,
+      "WARN": 48,
+      "INFO": 5
+    },
+    "checkedAt": "2026-10-29T02:46:49.404Z",
+    "sha256": "1ef80554b574d161fa5da653579caa846aa98af2d167e402fd804fdda70174de"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3169 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/schulart:/work schemascope/oops --input-file /work/on",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/schulart/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-29T02:46:50.146Z",
+    "sha256": "1ef80554b574d161fa5da653579caa846aa98af2d167e402fd804fdda70174de"
+  }
+}

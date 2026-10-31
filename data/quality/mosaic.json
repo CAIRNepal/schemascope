@@ -1,0 +1,97 @@
+{
+  "id": "mosaic",
+  "artefact": "https://ontologies.dataone.org/MOSAiC.owl",
+  "checkedAt": "2026-10-28T22:29:39.735Z",
+  "sha256": "8841572b3b6d7defd012f5644a355b0b3d85413e3a9f7548beae60eb42654279",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 6,
+      "dc": 4,
+      "dcterms": 6,
+      "skos": 3,
+      "owl": 7,
+      "time": 13,
+      "prov": 4,
+      "sosa": 4,
+      "schema": 26
+    },
+    "scannedMb": 9,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:29:40.251Z",
+    "sha256": "8841572b3b6d7defd012f5644a355b0b3d85413e3a9f7548beae60eb42654279"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 68,
+      "WARN": 278,
+      "INFO": 8
+    },
+    "checkedAt": "2026-10-28T22:29:46.927Z",
+    "sha256": "8841572b3b6d7defd012f5644a355b0b3d85413e3a9f7548beae60eb42654279"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 2,
+    "important": 2,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 7
+      },
+      {
+        "code": "P05",
+        "name": "Defining wrong inverse relationships",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 259
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 18
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P31",
+        "name": "Defining wrong equivalent classes",
+        "importance": "critical",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T22:30:14.265Z",
+    "sha256": "8841572b3b6d7defd012f5644a355b0b3d85413e3a9f7548beae60eb42654279"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "mqio-metric",
+  "artefact": "https://w3id.org/MQIO-metrics",
+  "checkedAt": "2026-10-28T22:32:23.350Z",
+  "sha256": "d93e685798ccf60440fa444a98f6605831a604ba8a3f84d41a83e06e4473e3a1",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 4,
+      "owl": 4,
+      "dqv": 5,
+      "rdfs": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:32:23.697Z",
+    "sha256": "d93e685798ccf60440fa444a98f6605831a604ba8a3f84d41a83e06e4473e3a1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 37,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T22:32:24.709Z",
+    "sha256": "d93e685798ccf60440fa444a98f6605831a604ba8a3f84d41a83e06e4473e3a1"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2128 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mqio-metric:/work schemascope/oops --input-file /work",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mqio-metric/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T22:32:25.396Z",
+    "sha256": "d93e685798ccf60440fa444a98f6605831a604ba8a3f84d41a83e06e4473e3a1"
+  }
+}

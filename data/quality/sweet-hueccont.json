@@ -1,0 +1,11 @@
+{
+  "id": "sweet-hueccont",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/humanEnvirControl.ttl",
+  "checkedAt": "2026-10-29T03:22:31.019Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:22:41.520Z"
+  }
+}

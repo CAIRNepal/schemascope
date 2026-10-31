@@ -1,0 +1,75 @@
+{
+  "id": "san-lod",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/san-lod/versions/2015-03-02.n3",
+  "checkedAt": "2026-10-29T02:42:29.734Z",
+  "sha256": "e6657320a763bb303211b7db9724f4960564b140c7a03d98b88d3f2e841501c7",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:42:31.079Z",
+    "sha256": "e6657320a763bb303211b7db9724f4960564b140c7a03d98b88d3f2e841501c7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 16,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 9,
+      "WARN": 122,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:42:32.936Z",
+    "sha256": "e6657320a763bb303211b7db9724f4960564b140c7a03d98b88d3f2e841501c7"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 21
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 26
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 27,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3110 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/san-lod:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T02:42:33.965Z",
+    "sha256": "e6657320a763bb303211b7db9724f4960564b140c7a03d98b88d3f2e841501c7"
+  }
+}

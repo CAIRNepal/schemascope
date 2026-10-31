@@ -1,0 +1,85 @@
+{
+  "id": "mlso",
+  "artefact": "https://w3id.org/mlso",
+  "checkedAt": "2026-10-28T22:24:53.771Z",
+  "sha256": "d5aa5066896148ab838df6b345def938f697a92ebabaaa3298e515b96ce0f5b4",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://raw.githubusercontent.com/ML-Schema/core/master/MLSchema.ttl",
+        "id": "raw.githubusercontent.com/ml-schema/core/master/mlschema",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dcterms": 20,
+      "dcat": 10,
+      "mls": 37,
+      "fabio": 3,
+      "okn-sd": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:24:54.345Z",
+    "sha256": "d5aa5066896148ab838df6b345def938f697a92ebabaaa3298e515b96ce0f5b4"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 19,
+      "WARN": 96,
+      "INFO": 25
+    },
+    "checkedAt": "2026-10-28T22:24:55.928Z",
+    "sha256": "d5aa5066896148ab838df6b345def938f697a92ebabaaa3298e515b96ce0f5b4"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 16
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 3,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2083 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mlso:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T22:24:56.635Z",
+    "sha256": "d5aa5066896148ab838df6b345def938f697a92ebabaaa3298e515b96ce0f5b4"
+  }
+}

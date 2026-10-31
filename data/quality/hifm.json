@@ -1,0 +1,67 @@
+{
+  "id": "hifm",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/hifm/versions/2014-04-01.n3",
+  "checkedAt": "2026-10-28T20:41:46.544Z",
+  "sha256": "ab1d28559901d7d9497043689c05d53be530cf83f6c0e05e084bda0c9086959c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:41:47.377Z",
+    "sha256": "ab1d28559901d7d9497043689c05d53be530cf83f6c0e05e084bda0c9086959c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 11,
+      "WARN": 10,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T20:41:48.611Z",
+    "sha256": "ab1d28559901d7d9497043689c05d53be530cf83f6c0e05e084bda0c9086959c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1504 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/hifm:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T20:41:49.690Z",
+    "sha256": "ab1d28559901d7d9497043689c05d53be530cf83f6c0e05e084bda0c9086959c"
+  }
+}

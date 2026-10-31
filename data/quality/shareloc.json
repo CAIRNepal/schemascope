@@ -1,0 +1,63 @@
+{
+  "id": "shareloc",
+  "artefact": "https://raw.githubusercontent.com/imodpasteur/ShareLoc.XYZ/ontology/shareloc.owl",
+  "checkedAt": "2026-10-29T02:57:54.823Z",
+  "sha256": "17fa27b0f72ad5f6b3013888e7295b1df9a525df08b2b4a2435eceec49f41989",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:57:55.017Z",
+    "sha256": "17fa27b0f72ad5f6b3013888e7295b1df9a525df08b2b4a2435eceec49f41989"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 5,
+      "WARN": 95,
+      "INFO": 10
+    },
+    "checkedAt": "2026-10-29T02:57:56.155Z",
+    "sha256": "17fa27b0f72ad5f6b3013888e7295b1df9a525df08b2b4a2435eceec49f41989"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 95
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T02:58:02.114Z",
+    "sha256": "17fa27b0f72ad5f6b3013888e7295b1df9a525df08b2b4a2435eceec49f41989"
+  }
+}

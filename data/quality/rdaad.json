@@ -1,0 +1,59 @@
+{
+  "id": "rdaad",
+  "artefact": "http://rdaregistry.info/Elements/a/datatype/",
+  "checkedAt": "2026-10-29T02:15:45.637Z",
+  "sha256": "4402ca280c737446360e63e2850538e86ec01bca08f8c5376e30ee51119aceae",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "rdaa": 50,
+      "dc": 9,
+      "rdfs": 4,
+      "rdac": 5
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:15:46.434Z",
+    "sha256": "4402ca280c737446360e63e2850538e86ec01bca08f8c5376e30ee51119aceae"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 48,
+      "WARN": 1104,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:15:48.693Z",
+    "sha256": "4402ca280c737446360e63e2850538e86ec01bca08f8c5376e30ee51119aceae"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2841 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rdaad:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T02:15:50.011Z",
+    "sha256": "4402ca280c737446360e63e2850538e86ec01bca08f8c5376e30ee51119aceae"
+  }
+}

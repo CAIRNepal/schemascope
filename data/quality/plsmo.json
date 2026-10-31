@@ -1,0 +1,80 @@
+{
+  "id": "plsmo",
+  "artefact": "https://raw.githubusercontent.com/plasma-mds/plasma-ontology/refs/heads/master/plasma-ontology.ttl",
+  "checkedAt": "2026-10-29T01:13:04.302Z",
+  "sha256": "6adbbcbdc1b1439ca604a6cb43c765d3c18a7801bb74d3a455496f2632178c9d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 3,
+      "dcterms": 6,
+      "qudt": 8,
+      "bibo": 4,
+      "vivo": 9,
+      "foaf": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:13:04.497Z",
+    "sha256": "6adbbcbdc1b1439ca604a6cb43c765d3c18a7801bb74d3a455496f2632178c9d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 55,
+      "WARN": 125,
+      "INFO": 11
+    },
+    "checkedAt": "2026-10-29T01:13:05.710Z",
+    "sha256": "6adbbcbdc1b1439ca604a6cb43c765d3c18a7801bb74d3a455496f2632178c9d"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 17
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 20
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 39,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2657 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/plsmo:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T01:13:06.462Z",
+    "sha256": "6adbbcbdc1b1439ca604a6cb43c765d3c18a7801bb74d3a455496f2632178c9d"
+  }
+}

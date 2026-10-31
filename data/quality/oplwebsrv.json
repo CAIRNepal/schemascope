@@ -1,0 +1,11 @@
+{
+  "id": "oplwebsrv",
+  "artefact": "http://www.openlinksw.com/ontology/webservices",
+  "checkedAt": "2026-10-29T00:28:16.890Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:28:17.119Z"
+  }
+}

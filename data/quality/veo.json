@@ -1,0 +1,61 @@
+{
+  "id": "veo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/veo/versions/2014-09-01.n3",
+  "checkedAt": "2026-10-29T06:58:01.979Z",
+  "sha256": "9513d5554db8fb08bf6acc3b9f8e4b7ee70111b7ee64a1fe3baf09f8e6f8ebf1",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T06:58:10.458Z",
+    "sha256": "9513d5554db8fb08bf6acc3b9f8e4b7ee70111b7ee64a1fe3baf09f8e6f8ebf1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 23,
+      "WARN": 22,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T06:58:11.441Z",
+    "sha256": "9513d5554db8fb08bf6acc3b9f8e4b7ee70111b7ee64a1fe3baf09f8e6f8ebf1"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3949 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/veo:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T06:58:12.126Z",
+    "sha256": "9513d5554db8fb08bf6acc3b9f8e4b7ee70111b7ee64a1fe3baf09f8e6f8ebf1"
+  }
+}

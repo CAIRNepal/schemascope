@@ -1,0 +1,76 @@
+{
+  "id": "iobc",
+  "artefact": "http://aber-owl.net/media/ontologies/IOBC/1/iobc.owl",
+  "checkedAt": "2026-10-28T21:10:03.559Z",
+  "sha256": "aba73ca5ad531fc3e7f3c9a505a2992fde07fdcab543e5eb46a30761fda654da",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 5,
+      "ro": 6,
+      "dcterms": 5,
+      "sio": 50,
+      "skos": 11,
+      "xkos": 3,
+      "owl": 6,
+      "chebi": 7,
+      "go": 13,
+      "pr": 10
+    },
+    "scannedMb": 172,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:10:14.917Z",
+    "sha256": "aba73ca5ad531fc3e7f3c9a505a2992fde07fdcab543e5eb46a30761fda654da"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 4372,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 410644,
+      "WARN": 69748,
+      "INFO": 17
+    },
+    "checkedAt": "2026-10-28T21:12:41.344Z",
+    "sha256": "aba73ca5ad531fc3e7f3c9a505a2992fde07fdcab543e5eb46a30761fda654da"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P06",
+        "name": "Including cycles in a class hierarchy",
+        "importance": "critical",
+        "affected": 3
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:13:30.966Z",
+    "sha256": "aba73ca5ad531fc3e7f3c9a505a2992fde07fdcab543e5eb46a30761fda654da"
+  }
+}

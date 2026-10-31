@@ -1,0 +1,54 @@
+{
+  "id": "locn",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/locn/versions/2015-03-23.n3",
+  "checkedAt": "2026-10-28T21:31:22.634Z",
+  "sha256": "83bae82944e1a1dae621b6c2117e9debdea0eed31fe97a8906705012de2b4ca8",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:31:23.649Z",
+    "sha256": "83bae82944e1a1dae621b6c2117e9debdea0eed31fe97a8906705012de2b4ca8"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 28,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T21:31:24.694Z",
+    "sha256": "83bae82944e1a1dae621b6c2117e9debdea0eed31fe97a8906705012de2b4ca8"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1918 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/locn:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T21:31:25.453Z",
+    "sha256": "83bae82944e1a1dae621b6c2117e9debdea0eed31fe97a8906705012de2b4ca8"
+  }
+}

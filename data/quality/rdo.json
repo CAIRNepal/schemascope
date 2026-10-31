@@ -1,0 +1,89 @@
+{
+  "id": "rdo",
+  "artefact": "https://download.rgd.mcw.edu/pub/data_release/ontology_obo_files/disease/RDO.owl",
+  "checkedAt": "2026-10-29T02:20:46.824Z",
+  "sha256": "fe2dd741ab7efcf2ec1603473eae33a4288acfecdecf47cc4fe32fec9e805497",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 4,
+      "doid": 50,
+      "mesh": 50,
+      "mim": 50,
+      "omia": 50
+    },
+    "scannedMb": 48,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:20:48.356Z",
+    "sha256": "fe2dd741ab7efcf2ec1603473eae33a4288acfecdecf47cc4fe32fec9e805497"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 104,
+      "WARN": 6450,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-29T02:22:01.488Z",
+    "sha256": "fe2dd741ab7efcf2ec1603473eae33a4288acfecdecf47cc4fe32fec9e805497"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 10901
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 25207,
+    "attempts": [],
+    "checkedAt": "2026-10-29T02:22:10.553Z",
+    "sha256": "fe2dd741ab7efcf2ec1603473eae33a4288acfecdecf47cc4fe32fec9e805497"
+  }
+}

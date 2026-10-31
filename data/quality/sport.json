@@ -1,0 +1,11 @@
+{
+  "id": "sport",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/sport/versions/2016-01-01.n3",
+  "checkedAt": "2026-10-29T03:15:09.966Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:15:20.472Z"
+  }
+}

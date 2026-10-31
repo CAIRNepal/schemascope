@@ -1,0 +1,64 @@
+{
+  "id": "rdft",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/rdft/versions/2014-02-25.n3",
+  "checkedAt": "2026-10-29T02:20:31.261Z",
+  "sha256": "697a2651a2978911641059b9641571a759d8feca00c57bfae222e1af7cd9d899",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 3,
+      "rdfs": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:20:33.805Z",
+    "sha256": "697a2651a2978911641059b9641571a759d8feca00c57bfae222e1af7cd9d899"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 23,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-29T02:20:34.736Z",
+    "sha256": "697a2651a2978911641059b9641571a759d8feca00c57bfae222e1af7cd9d899"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2983 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rdft:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T02:20:35.687Z",
+    "sha256": "697a2651a2978911641059b9641571a759d8feca00c57bfae222e1af7cd9d899"
+  }
+}

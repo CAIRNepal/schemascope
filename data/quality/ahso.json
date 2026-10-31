@@ -1,0 +1,73 @@
+{
+  "id": "ahso",
+  "artefact": "https://w3id.org/ahso",
+  "checkedAt": "2026-10-27T23:06:06.528Z",
+  "sha256": "ad34ce4c578371e67fc21e67f1b8dd6eb079fd4bea0303149730ff94f25ccb8a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 14,
+      "ncbitaxon": 5,
+      "dcterms": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-27T23:06:07.416Z",
+    "sha256": "ad34ce4c578371e67fc21e67f1b8dd6eb079fd4bea0303149730ff94f25ccb8a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 27,
+      "WARN": 45,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-27T23:06:08.491Z",
+    "sha256": "ad34ce4c578371e67fc21e67f1b8dd6eb079fd4bea0303149730ff94f25ccb8a"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 48
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-27T23:06:14.660Z",
+    "sha256": "ad34ce4c578371e67fc21e67f1b8dd6eb079fd4bea0303149730ff94f25ccb8a"
+  }
+}

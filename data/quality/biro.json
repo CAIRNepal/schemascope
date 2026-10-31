@@ -1,0 +1,66 @@
+{
+  "id": "biro",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/biro/versions/2013-05-11.n3",
+  "checkedAt": "2026-10-28T01:44:47.419Z",
+  "sha256": "d822b5a987f9f5ed55dc94ac992c764f0828c4bfb2632723801983306eec6f7a",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/co",
+        "id": "co",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/spar/frbr",
+        "id": "purl.org/spar/frbr",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:44:48.404Z",
+    "sha256": "d822b5a987f9f5ed55dc94ac992c764f0828c4bfb2632723801983306eec6f7a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.org/co> Cause: https://dwellonit.sourceforge.net/co\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T01:44:50.812Z",
+    "sha256": "d822b5a987f9f5ed55dc94ac992c764f0828c4bfb2632723801983306eec6f7a"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 6,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-230 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/biro:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T01:44:51.538Z",
+    "sha256": "d822b5a987f9f5ed55dc94ac992c764f0828c4bfb2632723801983306eec6f7a"
+  }
+}

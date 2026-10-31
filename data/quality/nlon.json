@@ -1,0 +1,120 @@
+{
+  "id": "nlon",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/nlon/versions/2015-11-23.n3",
+  "checkedAt": "2026-10-28T23:20:45.092Z",
+  "sha256": "cc1207d1724d89a9f181402af089eb358da54fafbc2f5b73ddd76173be65a017",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/dc/elements/1.1/",
+        "id": "dc",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/2004/02/skos/core",
+        "id": "skos",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/ontology/bibo/",
+        "id": "bibo",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/dc/dcam/",
+        "id": "dcam",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/dc/dcmitype/",
+        "id": "dcmitype",
+        "own": false
+      },
+      {
+        "iri": "http://xmlns.com/foaf/0.1/",
+        "id": "foaf",
+        "own": false
+      }
+    ],
+    "uses": {
+      "rdf": 5,
+      "owl": 8,
+      "rdfs": 8,
+      "xsd": 6,
+      "dcterms": 7,
+      "dc": 4,
+      "foaf": 8,
+      "bibo": 7,
+      "skos": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:20:46.758Z",
+    "sha256": "cc1207d1724d89a9f181402af089eb358da54fafbc2f5b73ddd76173be65a017"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 476,
+      "WARN": 169,
+      "INFO": 13
+    },
+    "checkedAt": "2026-10-28T23:20:54.019Z",
+    "sha256": "cc1207d1724d89a9f181402af089eb358da54fafbc2f5b73ddd76173be65a017"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 12
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 19
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 19
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 24,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2230 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/nlon:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T23:20:55.150Z",
+    "sha256": "cc1207d1724d89a9f181402af089eb358da54fafbc2f5b73ddd76173be65a017"
+  }
+}

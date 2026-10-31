@@ -1,0 +1,11 @@
+{
+  "id": "stac",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/stac/versions/2013-06-02.n3",
+  "checkedAt": "2026-10-29T03:18:29.507Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:18:40.005Z"
+  }
+}

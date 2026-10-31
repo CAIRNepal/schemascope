@@ -1,0 +1,85 @@
+{
+  "id": "bflc",
+  "artefact": "https://id.loc.gov/ontologies/bflc.rdf",
+  "checkedAt": "2026-10-28T01:18:58.832Z",
+  "sha256": "d396491738c56e645555e08a42827e995c3de3464b210ae6d87a5ff542cdf00e",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://id.loc.gov/vocabulary/relators",
+        "id": "loc-relator",
+        "own": true
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:18:59.202Z",
+    "sha256": "d396491738c56e645555e08a42827e995c3de3464b210ae6d87a5ff542cdf00e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 323,
+      "WARN": 57,
+      "INFO": 12
+    },
+    "checkedAt": "2026-10-28T01:19:03.250Z",
+    "sha256": "d396491738c56e645555e08a42827e995c3de3464b210ae6d87a5ff542cdf00e"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 7
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 11
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 13
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 28,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-179 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/bflc:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T01:34:40.133Z",
+    "sha256": "d396491738c56e645555e08a42827e995c3de3464b210ae6d87a5ff542cdf00e"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "cso",
+  "artefact": "https://cso.kmi.open.ac.uk/download/version-3.5/CSO.3.5.owl.zip",
+  "checkedAt": "2026-10-28T15:07:26.178Z",
+  "sha256": "b047d292c11510c02188622334ade995cf8cb9bcb1db331dfe2cc6b736d50500",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T15:07:27.404Z",
+    "sha256": "b047d292c11510c02188622334ade995cf8cb9bcb1db331dfe2cc6b736d50500"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "INVALID ONTOLOGY FILE ERROR Could not load a valid ontology from file: ontology.owl\nFor details see: http://robot.obolibrary.org/errors#invalid-ontology-file-error\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T15:07:28.072Z",
+    "sha256": "b047d292c11510c02188622334ade995cf8cb9bcb1db331dfe2cc6b736d50500"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-672 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cso:/work schemascope/oops --input-file /work/ontology",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cso/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T15:07:28.864Z",
+    "sha256": "b047d292c11510c02188622334ade995cf8cb9bcb1db331dfe2cc6b736d50500"
+  }
+}

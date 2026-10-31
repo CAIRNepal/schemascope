@@ -1,0 +1,11 @@
+{
+  "id": "sweet-phw",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/phenWave.ttl",
+  "checkedAt": "2026-10-29T03:35:39.503Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:35:50.003Z"
+  }
+}

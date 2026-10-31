@@ -1,0 +1,66 @@
+{
+  "id": "rec-w3id",
+  "artefact": "https://w3id.org/rec",
+  "checkedAt": "2026-10-29T02:23:02.126Z",
+  "sha256": "00b4d280e677e9cb70cd63194cd78a2b5e6ea88f7e799bd24447450e195dbc42",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://datashapes.org/dash",
+        "id": "datashapes.org/dash",
+        "own": false
+      },
+      {
+        "iri": "https://brickschema.org/schema/1.3/Brick",
+        "id": "brickschema.org/schema/1.3/brick",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:23:02.751Z",
+    "sha256": "00b4d280e677e9cb70cd63194cd78a2b5e6ea88f7e799bd24447450e195dbc42"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <https://w3id.org/rec/brickpatches> Cause: https://doc.realestatecore.io/brickpatches/\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T02:23:06.854Z",
+    "sha256": "00b4d280e677e9cb70cd63194cd78a2b5e6ea88f7e799bd24447450e195dbc42"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2996 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rec-w3id:/work schemascope/oops --input-file /work/on"
+    ],
+    "checkedAt": "2026-10-29T02:23:07.623Z",
+    "sha256": "00b4d280e677e9cb70cd63194cd78a2b5e6ea88f7e799bd24447450e195dbc42"
+  }
+}

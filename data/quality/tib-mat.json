@@ -1,0 +1,11 @@
+{
+  "id": "tib-mat",
+  "artefact": "https://bimerr.iot.linkeddata.es/def/material-properties/ontology.ttl",
+  "checkedAt": "2026-10-29T05:16:57.217Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T05:17:07.419Z"
+  }
+}

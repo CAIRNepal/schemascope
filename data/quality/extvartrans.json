@@ -1,0 +1,96 @@
+{
+  "id": "extvartrans",
+  "artefact": "https://w3id.org/EXTVARTRANS",
+  "checkedAt": "2026-10-28T19:39:02.749Z",
+  "sha256": "40e56caeaccd447cde0a8ac11e84dec82814c1b6a0613e28f52cabf602860831",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/ns/lemon/vartrans",
+        "id": "vartrans",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dc": 3,
+      "vartrans": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:39:04.764Z",
+    "sha256": "40e56caeaccd447cde0a8ac11e84dec82814c1b6a0613e28f52cabf602860831"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 7,
+      "WARN": 51,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T19:39:06.301Z",
+    "sha256": "40e56caeaccd447cde0a8ac11e84dec82814c1b6a0613e28f52cabf602860831"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 7,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 9
+      },
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 61
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 15
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 27
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:39:14.074Z",
+    "sha256": "40e56caeaccd447cde0a8ac11e84dec82814c1b6a0613e28f52cabf602860831"
+  }
+}

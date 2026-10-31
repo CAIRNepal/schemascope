@@ -1,0 +1,114 @@
+{
+  "id": "ohpi",
+  "artefact": "http://purl.obolibrary.org/obo/ohpi.owl",
+  "checkedAt": "2026-10-29T00:05:50.294Z",
+  "sha256": "1f13ff554349f4b8b013d395036d930f57654310a2988e6f7e28439e48d4dc51",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 50,
+      "clo": 50,
+      "iao": 50,
+      "ino": 13,
+      "obi": 50,
+      "ogg": 50,
+      "ro": 50,
+      "ubprop": 16,
+      "uberon": 50,
+      "bspo": 18,
+      "vo": 50,
+      "ido": 48,
+      "cl": 27,
+      "caro": 8,
+      "fma": 25,
+      "pato": 14,
+      "go": 50,
+      "eco": 10,
+      "ncbitaxon": 50,
+      "doid": 50,
+      "sio": 5,
+      "rdfs": 8,
+      "xsd": 7,
+      "dc": 10,
+      "dcterms": 4,
+      "rdf": 3,
+      "foaf": 3,
+      "owl": 15,
+      "ogms": 4,
+      "pmid": 50,
+      "zfa": 7,
+      "xao": 3,
+      "mp": 4,
+      "fbbt": 4,
+      "uo": 50,
+      "swrl": 5
+    },
+    "scannedMb": 29,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:05:51.580Z",
+    "sha256": "1f13ff554349f4b8b013d395036d930f57654310a2988e6f7e28439e48d4dc51"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3719,
+      "WARN": 8251,
+      "INFO": 530
+    },
+    "checkedAt": "2026-10-29T00:06:09.798Z",
+    "sha256": "1f13ff554349f4b8b013d395036d930f57654310a2988e6f7e28439e48d4dc51"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 4
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 210
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 7586
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 186
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 11287,
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:06:18.693Z",
+    "sha256": "1f13ff554349f4b8b013d395036d930f57654310a2988e6f7e28439e48d4dc51"
+  }
+}

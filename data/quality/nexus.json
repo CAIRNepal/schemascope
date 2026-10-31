@@ -1,0 +1,101 @@
+{
+  "id": "nexus",
+  "artefact": "https://github.com/nexusformat/NeXusOntology/raw/refs/heads/main/ontology/NeXusOntology.owl",
+  "checkedAt": "2026-10-28T23:15:09.423Z",
+  "sha256": "524db95d05ae1fb64a3d20457f75805a320c85cbb34f09dc52b6fcc9f5011427",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 5
+    },
+    "scannedMb": 4,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:15:10.324Z",
+    "sha256": "524db95d05ae1fb64a3d20457f75805a320c85cbb34f09dc52b6fcc9f5011427"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 134,
+      "WARN": 2720,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T23:15:15.680Z",
+    "sha256": "524db95d05ae1fb64a3d20457f75805a320c85cbb34f09dc52b6fcc9f5011427"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 3,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 628
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 20
+      },
+      {
+        "code": "P31",
+        "name": "Defining wrong equivalent classes",
+        "importance": "critical",
+        "affected": 8
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T23:17:37.108Z",
+    "sha256": "524db95d05ae1fb64a3d20457f75805a320c85cbb34f09dc52b6fcc9f5011427"
+  }
+}

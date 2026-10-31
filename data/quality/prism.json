@@ -1,0 +1,84 @@
+{
+  "id": "prism",
+  "artefact": "https://w3id.org/prism",
+  "checkedAt": "2026-10-29T01:49:33.538Z",
+  "sha256": "62bef4ed7bae23a74267edbaaf9bb706ec955e9e76cb2961df7d206374a47e28",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://w3id.org/airo",
+        "id": "airo",
+        "own": true
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:49:33.975Z",
+    "sha256": "62bef4ed7bae23a74267edbaaf9bb706ec955e9e76cb2961df7d206374a47e28"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "Violations: 105\n-----------------\nERROR:      0\nWARN:       87\nINFO:       18\n/work/profile.txt (No such file or directory)\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "robot": {
+      "ERROR": 0,
+      "WARN": 87,
+      "INFO": 18
+    },
+    "checkedAt": "2026-10-29T01:49:35.693Z",
+    "sha256": "62bef4ed7bae23a74267edbaaf9bb706ec955e9e76cb2961df7d206374a47e28"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 14
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 31
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 85,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2733 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/prism:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T01:49:36.420Z",
+    "sha256": "62bef4ed7bae23a74267edbaaf9bb706ec955e9e76cb2961df7d206374a47e28"
+  }
+}

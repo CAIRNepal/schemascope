@@ -1,0 +1,65 @@
+{
+  "id": "eau",
+  "artefact": "https://lov.linkeddata.es/dataset/vocabs/eau/versions/2026-08-18.n3",
+  "checkedAt": "2026-10-28T17:36:23.638Z",
+  "sha256": "1a1a34e609538797430ee17223d3da2b65030a72927f85f4f9bb1ac140297a3e",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/ns/sosa/",
+        "id": "sosa",
+        "own": false
+      },
+      {
+        "iri": "https://saref.etsi.org/saref4watr/v2.1.1/",
+        "id": "saref.etsi.org/saref4watr/v2.1.1",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:36:24.094Z",
+    "sha256": "1a1a34e609538797430ee17223d3da2b65030a72927f85f4f9bb1ac140297a3e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 159,
+      "WARN": 44,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T17:36:27.305Z",
+    "sha256": "1a1a34e609538797430ee17223d3da2b65030a72927f85f4f9bb1ac140297a3e"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 11,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1010 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/eau:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T17:36:28.039Z",
+    "sha256": "1a1a34e609538797430ee17223d3da2b65030a72927f85f4f9bb1ac140297a3e"
+  }
+}

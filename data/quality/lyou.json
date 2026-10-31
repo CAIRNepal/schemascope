@@ -1,0 +1,73 @@
+{
+  "id": "lyou",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/lyou/versions/2012-12-01.n3",
+  "checkedAt": "2026-10-28T21:33:02.090Z",
+  "sha256": "b7aec3d400f3c8517a6e078bad3e6ee673e216f90d0ab8c166d258ba5f5a1c33",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:33:03.046Z",
+    "sha256": "b7aec3d400f3c8517a6e078bad3e6ee673e216f90d0ab8c166d258ba5f5a1c33"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 65,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:33:04.651Z",
+    "sha256": "b7aec3d400f3c8517a6e078bad3e6ee673e216f90d0ab8c166d258ba5f5a1c33"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 60
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1964 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/lyou:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T21:33:05.770Z",
+    "sha256": "b7aec3d400f3c8517a6e078bad3e6ee673e216f90d0ab8c166d258ba5f5a1c33"
+  }
+}

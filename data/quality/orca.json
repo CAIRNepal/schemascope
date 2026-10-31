@@ -1,0 +1,67 @@
+{
+  "id": "orca",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/orca/versions/2012-11-09.n3",
+  "checkedAt": "2026-10-29T00:31:32.439Z",
+  "sha256": "e499523914f2b4f45e92c19e3cc66de96e61bac352c446d9b909589057d6c2ef",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:31:33.001Z",
+    "sha256": "e499523914f2b4f45e92c19e3cc66de96e61bac352c446d9b909589057d6c2ef"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 6,
+      "WARN": 10,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-29T00:31:34.009Z",
+    "sha256": "e499523914f2b4f45e92c19e3cc66de96e61bac352c446d9b909589057d6c2ef"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 3,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2489 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/orca:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T00:31:34.702Z",
+    "sha256": "e499523914f2b4f45e92c19e3cc66de96e61bac352c446d9b909589057d6c2ef"
+  }
+}

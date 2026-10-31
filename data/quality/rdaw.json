@@ -1,0 +1,76 @@
+{
+  "id": "rdaw",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/rdaw/versions/2015-12-31.n3",
+  "checkedAt": "2026-10-29T02:19:51.526Z",
+  "sha256": "ffe3ce1d723a884eb3e705eba1a4022e6265008bb0f909adcd57b2a834b7f750",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "skos": 6,
+      "rdau": 50,
+      "rdfs": 5,
+      "rdac": 8,
+      "rdaa": 50,
+      "rdam": 8,
+      "rdae": 8,
+      "rdai": 7
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:19:54.833Z",
+    "sha256": "ffe3ce1d723a884eb3e705eba1a4022e6265008bb0f909adcd57b2a834b7f750"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 9,
+      "WARN": 53,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:19:56.783Z",
+    "sha256": "ffe3ce1d723a884eb3e705eba1a4022e6265008bb0f909adcd57b2a834b7f750"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2961 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rdaw:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T02:19:57.968Z",
+    "sha256": "ffe3ce1d723a884eb3e705eba1a4022e6265008bb0f909adcd57b2a834b7f750"
+  }
+}

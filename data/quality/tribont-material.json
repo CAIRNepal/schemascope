@@ -1,0 +1,90 @@
+{
+  "id": "tribont-material",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/tribont-material/versions/2023-06-02.n3",
+  "checkedAt": "2026-10-29T05:32:15.676Z",
+  "sha256": "74be92efc3c00cfa5dce4e0d4012ed889b30314f3327151d3e56b711dd6df485",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://w3id.org/tribont/core",
+        "id": "tribont-core",
+        "own": true
+      }
+    ],
+    "uses": {
+      "dcterms": 7,
+      "owl": 4,
+      "icb": 5,
+      "tribont-core": 22
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:32:22.942Z",
+    "sha256": "74be92efc3c00cfa5dce4e0d4012ed889b30314f3327151d3e56b711dd6df485"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 172,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T05:32:25.678Z",
+    "sha256": "74be92efc3c00cfa5dce4e0d4012ed889b30314f3327151d3e56b711dd6df485"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 164,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3856 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tribont-material:/work schemascope/oops --input-file "
+    ],
+    "checkedAt": "2026-10-29T05:32:26.414Z",
+    "sha256": "74be92efc3c00cfa5dce4e0d4012ed889b30314f3327151d3e56b711dd6df485"
+  }
+}

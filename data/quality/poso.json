@@ -1,0 +1,93 @@
+{
+  "id": "poso",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/poso/versions/2022-07-25.n3",
+  "checkedAt": "2026-10-29T01:28:15.915Z",
+  "sha256": "6555126f47218b18bcec205c238d81ee6ca06593c5a7cdf4fa07ec590dc79358",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/ns/ssn/",
+        "id": "w3.org/ns/ssn",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/ssn/systems/",
+        "id": "w3.org/ns/ssn/systems",
+        "own": false
+      }
+    ],
+    "uses": {
+      "sosa": 6,
+      "dcterms": 9
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:28:21.236Z",
+    "sha256": "6555126f47218b18bcec205c238d81ee6ca06593c5a7cdf4fa07ec590dc79358"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 58,
+      "WARN": 84,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T01:28:23.243Z",
+    "sha256": "6555126f47218b18bcec205c238d81ee6ca06593c5a7cdf4fa07ec590dc79358"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 9
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 14
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 59,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2704 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/poso:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T01:28:23.951Z",
+    "sha256": "6555126f47218b18bcec205c238d81ee6ca06593c5a7cdf4fa07ec590dc79358"
+  }
+}

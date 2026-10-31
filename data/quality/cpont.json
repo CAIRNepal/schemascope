@@ -1,0 +1,11 @@
+{
+  "id": "cpont",
+  "artefact": "https://w3id.org/cpont/cpont.owl",
+  "checkedAt": "2026-10-28T14:49:59.745Z",
+  "downloadError": "resolves to an HTML page (https://gitlab.c-path.org/users/sign_in), not the ontology file",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T14:50:00.425Z"
+  }
+}

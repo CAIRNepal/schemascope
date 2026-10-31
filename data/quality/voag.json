@@ -1,0 +1,88 @@
+{
+  "id": "voag",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/voag/versions/2012-11-01.n3",
+  "checkedAt": "2026-10-29T07:01:47.902Z",
+  "sha256": "d938d44f48ffb799dca75873763613bce4b3e3f2611cd3ebd7ef32927758faae",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.linkedmodel.org/schema/vaem-xina",
+        "id": "linkedmodel.org/schema/vaem-xina",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/20120724/prov",
+        "id": "w3.org/ns/20120724/prov",
+        "own": false
+      },
+      {
+        "iri": "http://www.linkedmodel.org/schema/vaem",
+        "id": "vaem",
+        "own": false
+      },
+      {
+        "iri": "http://www.linkedmodel.org/schema/dtype",
+        "id": "dtype",
+        "own": false
+      },
+      {
+        "iri": "http://rdfs.org/ns/void",
+        "id": "void",
+        "own": false
+      },
+      {
+        "iri": "http://www.linkedmodel.org/1.2/schema/vaem-xics",
+        "id": "linkedmodel.org/1.2/schema/vaem-xics",
+        "own": false
+      }
+    ],
+    "uses": {
+      "prov": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:01:59.398Z",
+    "sha256": "d938d44f48ffb799dca75873763613bce4b3e3f2611cd3ebd7ef32927758faae"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://www.linkedmodel.org/schema/vaem-xina> Cause: http://www.linkedmodel.org/schema/vaem-xina\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T07:02:01.338Z",
+    "sha256": "d938d44f48ffb799dca75873763613bce4b3e3f2611cd3ebd7ef32927758faae"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3972 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/voag:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T07:02:01.949Z",
+    "sha256": "d938d44f48ffb799dca75873763613bce4b3e3f2611cd3ebd7ef32927758faae"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "eupont",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/eupont/versions/2018-02-09.n3",
+  "checkedAt": "2026-10-28T19:33:22.491Z",
+  "sha256": "0d1dfcbcfb056c239823bbdd2c2c9689e37e8ca38d8c6fb8898fe87583a9c79b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:33:24.349Z",
+    "sha256": "0d1dfcbcfb056c239823bbdd2c2c9689e37e8ca38d8c6fb8898fe87583a9c79b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 17,
+      "WARN": 724,
+      "INFO": 6
+    },
+    "checkedAt": "2026-10-28T19:33:26.284Z",
+    "sha256": "0d1dfcbcfb056c239823bbdd2c2c9689e37e8ca38d8c6fb8898fe87583a9c79b"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 5
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 684
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 23
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 685,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1162 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/eupont:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T19:33:26.998Z",
+    "sha256": "0d1dfcbcfb056c239823bbdd2c2c9689e37e8ca38d8c6fb8898fe87583a9c79b"
+  }
+}

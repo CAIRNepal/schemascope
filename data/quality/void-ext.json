@@ -1,0 +1,61 @@
+{
+  "id": "void-ext",
+  "artefact": "http://ldf.fi/void-ext",
+  "checkedAt": "2026-10-29T07:02:44.833Z",
+  "sha256": "bb2c2c7c3e9e4644a21b63ef6a7e6fe2226f49b50b788c541a78c173dd059ba5",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:02:49.846Z",
+    "sha256": "bb2c2c7c3e9e4644a21b63ef6a7e6fe2226f49b50b788c541a78c173dd059ba5"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://rdfs.org/ns/void> Cause: Unexpected end of file from server\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T07:03:32.215Z",
+    "sha256": "bb2c2c7c3e9e4644a21b63ef6a7e6fe2226f49b50b788c541a78c173dd059ba5"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 17
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3980 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/void-ext:/work schemascope/oops --input-file /work/on"
+    ],
+    "checkedAt": "2026-10-29T07:03:32.907Z",
+    "sha256": "bb2c2c7c3e9e4644a21b63ef6a7e6fe2226f49b50b788c541a78c173dd059ba5"
+  }
+}

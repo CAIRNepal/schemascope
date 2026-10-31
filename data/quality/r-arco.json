@@ -1,0 +1,99 @@
+{
+  "id": "r-arco",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/r-arco/versions/2019-10-24.n3",
+  "checkedAt": "2026-10-29T01:58:31.897Z",
+  "sha256": "72c95a1bcf9eaefd8688e6d1decc688d355be85c44526d732c8f17b9c503d9cc",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://w3id.org/arco/ontology/cultural-event",
+        "id": "cevent",
+        "own": true
+      },
+      {
+        "iri": "https://w3id.org/arco/ontology/context-description",
+        "id": "cdesc",
+        "own": true
+      },
+      {
+        "iri": "https://w3id.org/arco/ontology/denotative-description",
+        "id": "ddesc",
+        "own": true
+      },
+      {
+        "iri": "https://w3id.org/arco/ontology/catalogue",
+        "id": "ctlog",
+        "own": true
+      },
+      {
+        "iri": "https://w3id.org/arco/ontology/location",
+        "id": "a-loc",
+        "own": true
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:58:38.111Z",
+    "sha256": "72c95a1bcf9eaefd8688e6d1decc688d355be85c44526d732c8f17b9c503d9cc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 216,
+      "WARN": 104,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T01:58:46.261Z",
+    "sha256": "72c95a1bcf9eaefd8688e6d1decc688d355be85c44526d732c8f17b9c503d9cc"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 71
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 66
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 71
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 103,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2807 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/r-arco:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T01:58:47.306Z",
+    "sha256": "72c95a1bcf9eaefd8688e6d1decc688d355be85c44526d732c8f17b9c503d9cc"
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "id": "salmon",
+  "artefact": "http://aber-owl.net/media/ontologies/SALMON/1/salmon.owl",
+  "checkedAt": "2026-10-29T02:41:49.110Z",
+  "sha256": "4dc47e4ae5111db480205177e6003ec01f044db5b71172a605e8450fafe944dc",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl",
+        "id": "ecoinformatics.org/oboe/oboe.1.2/oboe-core",
+        "own": false
+      },
+      {
+        "iri": "http://purl.obolibrary.org/obo/envo/releases/2021-05-14/subsets/astronomical-body-part-hierarchy.owl",
+        "id": "envo",
+        "own": false
+      },
+      {
+        "iri": "http://www.opengis.net/ont/geosparql",
+        "id": "geosparql",
+        "own": false
+      }
+    ],
+    "uses": {
+      "iao": 3,
+      "envo": 20,
+      "pato": 4,
+      "pco": 8,
+      "gaz": 3,
+      "dc": 5,
+      "schema": 6,
+      "skos": 9,
+      "time": 3,
+      "sio": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:41:50.709Z",
+    "sha256": "4dc47e4ae5111db480205177e6003ec01f044db5b71172a605e8450fafe944dc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 58,
+      "WARN": 459,
+      "INFO": 20
+    },
+    "checkedAt": "2026-10-29T02:41:57.582Z",
+    "sha256": "4dc47e4ae5111db480205177e6003ec01f044db5b71172a605e8450fafe944dc"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 105
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 4
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 428,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3099 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/salmon:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T02:41:58.763Z",
+    "sha256": "4dc47e4ae5111db480205177e6003ec01f044db5b71172a605e8450fafe944dc"
+  }
+}

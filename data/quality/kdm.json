@@ -1,0 +1,79 @@
+{
+  "id": "kdm",
+  "artefact": "https://w3id.org/kdm",
+  "checkedAt": "2026-10-28T21:17:20.509Z",
+  "sha256": "5fe8fa205317d3489f81de37529c9dd4f0f11d9f73d4634f631775f1a79fcefc",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 4,
+      "dcterms": 8,
+      "skos": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:17:22.192Z",
+    "sha256": "5fe8fa205317d3489f81de37529c9dd4f0f11d9f73d4634f631775f1a79fcefc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 19,
+      "WARN": 137,
+      "INFO": 12
+    },
+    "checkedAt": "2026-10-28T21:17:23.643Z",
+    "sha256": "5fe8fa205317d3489f81de37529c9dd4f0f11d9f73d4634f631775f1a79fcefc"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 1,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 30
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:17:31.447Z",
+    "sha256": "5fe8fa205317d3489f81de37529c9dd4f0f11d9f73d4634f631775f1a79fcefc"
+  }
+}

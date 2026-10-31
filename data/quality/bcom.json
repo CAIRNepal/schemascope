@@ -1,0 +1,67 @@
+{
+  "id": "bcom",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/bcom/versions/2021-07-26.n3",
+  "checkedAt": "2026-10-28T01:02:55.236Z",
+  "sha256": "38a81921e55d496cc08f100ac473efcd53ccdc20da67f71d7828d8a55717dbde",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:02:57.478Z",
+    "sha256": "38a81921e55d496cc08f100ac473efcd53ccdc20da67f71d7828d8a55717dbde"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 66,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T01:02:59.384Z",
+    "sha256": "38a81921e55d496cc08f100ac473efcd53ccdc20da67f71d7828d8a55717dbde"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 8,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-165 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/bcom:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T01:03:01.410Z",
+    "sha256": "38a81921e55d496cc08f100ac473efcd53ccdc20da67f71d7828d8a55717dbde"
+  }
+}

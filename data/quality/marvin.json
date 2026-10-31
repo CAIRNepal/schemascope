@@ -1,0 +1,73 @@
+{
+  "id": "marvin",
+  "artefact": "https://w3id.org/marvin",
+  "checkedAt": "2026-10-28T21:35:26.821Z",
+  "sha256": "86949eca09727665e793e9bff0336a9a69a9a97cdb2616fe0d8034a99623baeb",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://informationexchangestandard.org/ont/ies/common/5.0.3/",
+        "id": "informationexchangestandard.org/ont/ies/common/5.0.3",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:35:27.303Z",
+    "sha256": "86949eca09727665e793e9bff0336a9a69a9a97cdb2616fe0d8034a99623baeb"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "er.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1243)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1143)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadImports(OWLOntologyManagerImpl.java:1873)\n\n\n\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T21:35:39.724Z",
+    "sha256": "86949eca09727665e793e9bff0336a9a69a9a97cdb2616fe0d8034a99623baeb"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 38
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 28
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 3,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1989 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/marvin:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T21:35:40.341Z",
+    "sha256": "86949eca09727665e793e9bff0336a9a69a9a97cdb2616fe0d8034a99623baeb"
+  }
+}

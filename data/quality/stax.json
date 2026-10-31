@@ -1,0 +1,11 @@
+{
+  "id": "stax",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/stax/versions/2024-01-09.n3",
+  "checkedAt": "2026-10-29T03:18:50.505Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:19:01.007Z"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "flybase",
+  "artefact": "https://w3id.org/biopragmatics/resources/flybase/flybase.owl",
+  "checkedAt": "2026-10-28T19:44:49.528Z",
+  "sha256": "ac62b016a631020486fe500347a869f8b0e548dde6d8f807afdead37a84bebcf",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "so": 12,
+      "dcterms": 3
+    },
+    "scannedMb": 26,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:44:51.528Z",
+    "sha256": "ac62b016a631020486fe500347a869f8b0e548dde6d8f807afdead37a84bebcf"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 30552,
+      "INFO": 12
+    },
+    "checkedAt": "2026-10-28T19:44:58.702Z",
+    "sha256": "ac62b016a631020486fe500347a869f8b0e548dde6d8f807afdead37a84bebcf"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:45:01.309Z",
+    "sha256": "ac62b016a631020486fe500347a869f8b0e548dde6d8f807afdead37a84bebcf"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "id": "elm",
+  "artefact": "http://data.europa.eu/snb/model/elm/",
+  "checkedAt": "2026-10-28T18:42:43.307Z",
+  "sha256": "73a22887c7ff772eedfe84d00ffbba7b1f9bc00d738e5deabca19b22cff6b20e",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/ns/locn#",
+        "id": "locn",
+        "own": false
+      },
+      {
+        "iri": "https://w3id.org/security#",
+        "id": "w3id.org/security",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/regorg#",
+        "id": "rov",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "id": "rdf",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/person#",
+        "id": "person",
+        "own": false
+      },
+      {
+        "iri": "https://www.w3.org/2018/credentials#",
+        "id": "w3.org/2018/credentials",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/adms#",
+        "id": "adms",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/2004/02/skos/core#",
+        "id": "skos",
+        "own": false
+      },
+      {
+        "iri": "http://xmlns.com/foaf/0.1/",
+        "id": "foaf",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/dc/terms/",
+        "id": "dcterms",
+        "own": false
+      }
+    ],
+    "uses": {
+      "xsd": 8,
+      "owl": 5,
+      "foaf": 3,
+      "dcterms": 7
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T18:42:45.951Z",
+    "sha256": "73a22887c7ff772eedfe84d00ffbba7b1f9bc00d738e5deabca19b22cff6b20e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://www.w3.org/ns/locn#> Cause: Server returned HTTP response code: 502 for URL: https://uri.semic.eu/w3c/ns/locn\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T18:42:47.272Z",
+    "sha256": "73a22887c7ff772eedfe84d00ffbba7b1f9bc00d738e5deabca19b22cff6b20e"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 42
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 106
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 50,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1098 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/elm:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T18:42:55.855Z",
+    "sha256": "73a22887c7ff772eedfe84d00ffbba7b1f9bc00d738e5deabca19b22cff6b20e"
+  }
+}

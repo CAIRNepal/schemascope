@@ -1,0 +1,81 @@
+{
+  "id": "nihss",
+  "artefact": "https://mre.zcu.cz/ontology/nihss.owl",
+  "checkedAt": "2026-10-28T23:19:53.454Z",
+  "sha256": "d9f3900250e8ed9023517bb06e4cb4e9974ced44e31e32378a756196a59d2711",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:19:54.522Z",
+    "sha256": "d9f3900250e8ed9023517bb06e4cb4e9974ced44e31e32378a756196a59d2711"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 177,
+      "WARN": 31,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T23:19:55.918Z",
+    "sha256": "d9f3900250e8ed9023517bb06e4cb4e9974ced44e31e32378a756196a59d2711"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 38
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 16
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T23:20:05.778Z",
+    "sha256": "d9f3900250e8ed9023517bb06e4cb4e9974ced44e31e32378a756196a59d2711"
+  }
+}

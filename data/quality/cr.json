@@ -1,0 +1,61 @@
+{
+  "id": "cr",
+  "artefact": "https://w3id.org/cr",
+  "checkedAt": "2026-10-28T15:05:51.156Z",
+  "sha256": "d5c0c13d3848c6d87ff27f7a49e23fd78a214af7a5bd13428f50976951cb51ac",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T15:05:51.624Z",
+    "sha256": "d5c0c13d3848c6d87ff27f7a49e23fd78a214af7a5bd13428f50976951cb51ac"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <https://w3id.org/cterm> Cause: https://cpm-ont-network.github.io/terminology/ontology.rdf\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T15:05:53.615Z",
+    "sha256": "d5c0c13d3848c6d87ff27f7a49e23fd78a214af7a5bd13428f50976951cb51ac"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 21
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 7
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 13,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-652 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cr:/work schemascope/oops --input-file /work/ontology."
+    ],
+    "checkedAt": "2026-10-28T15:05:55.280Z",
+    "sha256": "d5c0c13d3848c6d87ff27f7a49e23fd78a214af7a5bd13428f50976951cb51ac"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "sweet-phg",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/phenGeol.ttl",
+  "checkedAt": "2026-10-29T03:32:08.963Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:32:19.464Z"
+  }
+}

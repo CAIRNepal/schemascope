@@ -1,0 +1,73 @@
+{
+  "id": "arp",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/arp/versions/2018-01-15.n3",
+  "checkedAt": "2026-10-28T00:00:08.753Z",
+  "sha256": "89b63104c0a162a0f6b3fbccf2fa7775518b7399dd4e18cdd5471b8a9d8dbfe6",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://erlangen-crm.org/current/",
+        "id": "ecrm",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T00:00:09.585Z",
+    "sha256": "89b63104c0a162a0f6b3fbccf2fa7775518b7399dd4e18cdd5471b8a9d8dbfe6"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://www.arpenteur.org/ontology/nadlShip-1.6.owl> Cause: Connect timed out\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T00:00:30.305Z",
+    "sha256": "89b63104c0a162a0f6b3fbccf2fa7775518b7399dd4e18cdd5471b8a9d8dbfe6"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 0,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 8
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 73
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 46
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 74,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-113 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/arp:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T00:00:31.005Z",
+    "sha256": "89b63104c0a162a0f6b3fbccf2fa7775518b7399dd4e18cdd5471b8a9d8dbfe6"
+  }
+}

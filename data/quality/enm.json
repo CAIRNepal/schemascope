@@ -1,0 +1,61 @@
+{
+  "id": "enm",
+  "artefact": "http://enanomapper.github.io/ontologies/enanomapper.owl",
+  "checkedAt": "2026-10-28T19:05:06.042Z",
+  "sha256": "7c03a32940bdd9cb0b2ffe2aefa37d61956841faeb80f2353dbe7f395480554e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:05:06.290Z",
+    "sha256": "7c03a32940bdd9cb0b2ffe2aefa37d61956841faeb80f2353dbe7f395480554e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T19:05:18.649Z",
+    "sha256": "7c03a32940bdd9cb0b2ffe2aefa37d61956841faeb80f2353dbe7f395480554e"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1123 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/enm:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T19:15:18.852Z",
+    "sha256": "7c03a32940bdd9cb0b2ffe2aefa37d61956841faeb80f2353dbe7f395480554e"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "dront",
+  "artefact": "https://w3id.org/onto4drone",
+  "checkedAt": "2026-10-28T17:27:22.978Z",
+  "sha256": "7b714ef3314d006ef3ea581dfb3d15c0d0417acb8c2b1daef75fb515ee96cfec",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 21,
+      "xsd": 5,
+      "skos": 12,
+      "swrl": 10,
+      "rdfs": 8,
+      "dc": 6,
+      "dolce": 16,
+      "ogc-sf": 3
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:27:26.260Z",
+    "sha256": "7b714ef3314d006ef3ea581dfb3d15c0d0417acb8c2b1daef75fb515ee96cfec"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://www.datacron-project.eu/datAcron#> Cause: Server returned HTTP response code: 403 for URL: http://www.datacron-project.eu/datAcron#\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T17:27:27.433Z",
+    "sha256": "7b714ef3314d006ef3ea581dfb3d15c0d0417acb8c2b1daef75fb515ee96cfec"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-953 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dront:/work schemascope/oops --input-file /work/ontolo",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dront/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T17:27:28.678Z",
+    "sha256": "7b714ef3314d006ef3ea581dfb3d15c0d0417acb8c2b1daef75fb515ee96cfec"
+  }
+}

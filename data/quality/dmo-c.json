@@ -1,0 +1,37 @@
+{
+  "id": "dmo-c",
+  "artefact": "https://w3id.org/dmo",
+  "checkedAt": "2026-10-28T17:14:49.672Z",
+  "sha256": "015cbd738fb9137cbce51bac6ab6ad7be880fd4d69567c9aa7cacf6984acb82d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 9,
+      "csvw": 3,
+      "dcterms": 7,
+      "rdfs": 5,
+      "qb": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:14:50.371Z",
+    "sha256": "015cbd738fb9137cbce51bac6ab6ad7be880fd4d69567c9aa7cacf6984acb82d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "er.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1243)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1143)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadImports(OWLOntologyManagerImpl.java:1873)\n\n\n\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T17:14:59.968Z",
+    "sha256": "015cbd738fb9137cbce51bac6ab6ad7be880fd4d69567c9aa7cacf6984acb82d"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-891 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dmo-c:/work schemascope/oops --input-file /work/ontolo",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dmo-c/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T17:15:00.842Z",
+    "sha256": "015cbd738fb9137cbce51bac6ab6ad7be880fd4d69567c9aa7cacf6984acb82d"
+  }
+}

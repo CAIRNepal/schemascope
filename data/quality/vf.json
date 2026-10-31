@@ -1,0 +1,73 @@
+{
+  "id": "vf",
+  "artefact": "https://w3id.org/valueflows/ont/vf",
+  "checkedAt": "2026-10-29T06:58:12.127Z",
+  "sha256": "47cada8122561100520702e2998c2949f6f4f42ba550c36797791882cbc48ece",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T06:58:17.423Z",
+    "sha256": "47cada8122561100520702e2998c2949f6f4f42ba550c36797791882cbc48ece"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 178,
+      "INFO": 61
+    },
+    "checkedAt": "2026-10-29T06:58:18.733Z",
+    "sha256": "47cada8122561100520702e2998c2949f6f4f42ba550c36797791882cbc48ece"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 30
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 55
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 67,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3951 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/vf:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-29T06:58:19.426Z",
+    "sha256": "47cada8122561100520702e2998c2949f6f4f42ba550c36797791882cbc48ece"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "rdafmn",
+  "artefact": "http://rdaregistry.info/termList/MusNotation/",
+  "checkedAt": "2026-10-29T02:16:47.374Z",
+  "sha256": "60f105afe53760a0b54409e19fed76386caa47a4c7e490d9976e862d8acded66",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "skos": 8,
+      "dc": 9
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:16:47.556Z",
+    "sha256": "60f105afe53760a0b54409e19fed76386caa47a4c7e490d9976e862d8acded66"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 21,
+      "WARN": 19,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:16:49.285Z",
+    "sha256": "60f105afe53760a0b54409e19fed76386caa47a4c7e490d9976e862d8acded66"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2871 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rdafmn:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T02:16:50.440Z",
+    "sha256": "60f105afe53760a0b54409e19fed76386caa47a4c7e490d9976e862d8acded66"
+  }
+}

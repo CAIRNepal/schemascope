@@ -1,0 +1,89 @@
+{
+  "id": "dtx-srti",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/dtx_srti/versions/2022-03-03.n3",
+  "checkedAt": "2026-10-28T17:34:32.524Z",
+  "sha256": "d3826850774c0d2a34e323fdc39459a56fdc81c9e2f4b511b756eaf1fd4a0fe8",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.opengis.net/ont/geosparql",
+        "id": "geosparql",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/2006/time#2016",
+        "id": "time",
+        "own": false
+      },
+      {
+        "iri": "https://ec.europa.eu/eurostat/ramon/ontologies/geographic.rdf",
+        "id": "ec.europa.eu/eurostat/ramon/ontologies/geographic",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dcterms": 11,
+      "skos": 13,
+      "geosparql": 33,
+      "time": 50,
+      "wgs84": 4
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:34:33.530Z",
+    "sha256": "d3826850774c0d2a34e323fdc39459a56fdc81c9e2f4b511b756eaf1fd4a0fe8"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <https://ec.europa.eu/eurostat/ramon/ontologies/geographic.rdf> Cause: https://ec.europa.eu/eurostat/ramon/ontologies/geographic.rdf\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T17:34:38.659Z",
+    "sha256": "d3826850774c0d2a34e323fdc39459a56fdc81c9e2f4b511b756eaf1fd4a0fe8"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 12
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 249
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 209
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 250,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-976 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dtx-srti:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-28T17:34:39.405Z",
+    "sha256": "d3826850774c0d2a34e323fdc39459a56fdc81c9e2f4b511b756eaf1fd4a0fe8"
+  }
+}

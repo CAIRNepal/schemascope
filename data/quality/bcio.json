@@ -1,0 +1,11 @@
+{
+  "id": "bcio",
+  "artefact": "http://humanbehaviourchange.org/ontology/bcio.owl",
+  "checkedAt": "2026-10-28T01:01:28.761Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:01:29.392Z"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "ic",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ic/versions/2015-04-16.n3",
+  "checkedAt": "2026-10-28T20:47:22.015Z",
+  "sha256": "5de923dd1e886b7250fc5547e5f786316c192da61534fd349a7845524b417b33",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 4,
+      "schema": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:47:23.844Z",
+    "sha256": "5de923dd1e886b7250fc5547e5f786316c192da61534fd349a7845524b417b33"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 19,
+      "WARN": 57,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T20:47:24.852Z",
+    "sha256": "5de923dd1e886b7250fc5547e5f786316c192da61534fd349a7845524b417b33"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 14
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 14
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 16
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 18,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1573 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ic:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T20:47:25.827Z",
+    "sha256": "5de923dd1e886b7250fc5547e5f786316c192da61534fd349a7845524b417b33"
+  }
+}

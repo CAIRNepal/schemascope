@@ -1,0 +1,104 @@
+{
+  "id": "kim-lp",
+  "artefact": "https://github.com/dini-ag-kim/school-curriculum-pg/raw/refs/heads/main/lp.owl",
+  "checkedAt": "2026-10-28T21:19:12.522Z",
+  "sha256": "9af689c1e8901e80100eba786b05ce4055fc60499d9a12c04013f91cc32a5de3",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 50,
+      "iao": 40,
+      "ro": 14,
+      "dc": 6,
+      "dcterms": 8,
+      "xsd": 5,
+      "rdfs": 3,
+      "skos": 11,
+      "owl": 6,
+      "swrl": 5
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:19:13.107Z",
+    "sha256": "9af689c1e8901e80100eba786b05ce4055fc60499d9a12c04013f91cc32a5de3"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 121,
+      "WARN": 746,
+      "INFO": 24
+    },
+    "checkedAt": "2026-10-28T21:19:16.161Z",
+    "sha256": "9af689c1e8901e80100eba786b05ce4055fc60499d9a12c04013f91cc32a5de3"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 2,
+    "important": 2,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P05",
+        "name": "Defining wrong inverse relationships",
+        "importance": "critical",
+        "affected": 3
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 571
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 38
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 27
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:19:33.195Z",
+    "sha256": "9af689c1e8901e80100eba786b05ce4055fc60499d9a12c04013f91cc32a5de3"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "id": "haishutsu",
+  "artefact": "https://wik.jp/haishutsu/",
+  "checkedAt": "2026-10-28T20:35:58.152Z",
+  "sha256": "640595fcfe041c681bfc653dc6f876647f937a35dca2dfc3b3a3d62eddf4df60",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:35:58.624Z",
+    "sha256": "640595fcfe041c681bfc653dc6f876647f937a35dca2dfc3b3a3d62eddf4df60"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 68,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T20:35:59.865Z",
+    "sha256": "640595fcfe041c681bfc653dc6f876647f937a35dca2dfc3b3a3d62eddf4df60"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1471 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/haishutsu:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-28T20:36:00.657Z",
+    "sha256": "640595fcfe041c681bfc653dc6f876647f937a35dca2dfc3b3a3d62eddf4df60"
+  }
+}

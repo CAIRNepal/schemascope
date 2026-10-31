@@ -1,0 +1,63 @@
+{
+  "id": "gard",
+  "artefact": "https://w3id.org/biopragmatics/resources/gard/gard.owl",
+  "checkedAt": "2026-10-28T19:52:13.686Z",
+  "sha256": "7f8621b2fd1b49d816792fb5a6c22738647d784f409b9694877c058ccedeb2cb",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 5,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:52:14.911Z",
+    "sha256": "7f8621b2fd1b49d816792fb5a6c22738647d784f409b9694877c058ccedeb2cb"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 6110,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T19:52:18.787Z",
+    "sha256": "7f8621b2fd1b49d816792fb5a6c22738647d784f409b9694877c058ccedeb2cb"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 6110
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:54:39.203Z",
+    "sha256": "7f8621b2fd1b49d816792fb5a6c22738647d784f409b9694877c058ccedeb2cb"
+  }
+}

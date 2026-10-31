@@ -1,0 +1,106 @@
+{
+  "id": "msio",
+  "artefact": "https://raw.githubusercontent.com/MSI-Metabolomics-Standards-Initiative/MSIO/master/releases/latest_release/MSIO-merged-reasoned.owl",
+  "checkedAt": "2026-10-28T22:38:36.039Z",
+  "sha256": "d37cdafe886cef25531cf3a861b9c60bbdeb6e553cd362977545d978400a06b0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 44,
+      "iao": 50,
+      "obi": 50,
+      "ro": 17,
+      "duo": 25,
+      "uo": 21,
+      "ncbitaxon": 13,
+      "chmo": 42,
+      "chebi": 50,
+      "cl": 3,
+      "go": 6,
+      "rdfs": 4,
+      "xsd": 7,
+      "dc": 17,
+      "doap": 8,
+      "skos": 6,
+      "owl": 9,
+      "ms": 3
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:38:36.257Z",
+    "sha256": "d37cdafe886cef25531cf3a861b9c60bbdeb6e553cd362977545d978400a06b0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 103,
+      "WARN": 884,
+      "INFO": 248
+    },
+    "checkedAt": "2026-10-28T22:38:38.545Z",
+    "sha256": "d37cdafe886cef25531cf3a861b9c60bbdeb6e553cd362977545d978400a06b0"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1124
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 31
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 23
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 38
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 4
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T22:38:59.289Z",
+    "sha256": "d37cdafe886cef25531cf3a861b9c60bbdeb6e553cd362977545d978400a06b0"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "plasma",
+  "artefact": "https://w3id.org/plasma",
+  "checkedAt": "2026-10-29T01:11:54.946Z",
+  "sha256": "234017c3723a76c373c2582b309fb40e724af4f706ac35112d133cdafd670024",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:11:55.665Z",
+    "sha256": "234017c3723a76c373c2582b309fb40e724af4f706ac35112d133cdafd670024"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 123,
+      "INFO": 6
+    },
+    "checkedAt": "2026-10-29T01:11:56.806Z",
+    "sha256": "234017c3723a76c373c2582b309fb40e724af4f706ac35112d133cdafd670024"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 4,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2647 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/plasma:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T01:11:57.793Z",
+    "sha256": "234017c3723a76c373c2582b309fb40e724af4f706ac35112d133cdafd670024"
+  }
+}

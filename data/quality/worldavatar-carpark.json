@@ -1,0 +1,81 @@
+{
+  "id": "worldavatar-carpark",
+  "artefact": "https://raw.githubusercontent.com/TheWorldAvatar/ontology/main/ontology/ontocarpark/OntoCarpark.owl",
+  "checkedAt": "2026-10-29T07:35:34.493Z",
+  "sha256": "79945df6be25f67b3596cc924fd7bddd76f953730b6ffbbd8affd060946026f1",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:35:35.953Z",
+    "sha256": "79945df6be25f67b3596cc924fd7bddd76f953730b6ffbbd8affd060946026f1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 14,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-29T07:35:36.923Z",
+    "sha256": "79945df6be25f67b3596cc924fd7bddd76f953730b6ffbbd8affd060946026f1"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:35:42.776Z",
+    "sha256": "79945df6be25f67b3596cc924fd7bddd76f953730b6ffbbd8affd060946026f1"
+  }
+}

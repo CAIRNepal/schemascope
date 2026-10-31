@@ -1,0 +1,11 @@
+{
+  "id": "mo",
+  "artefact": "http://purl.obolibrary.org/obo/mo.owl",
+  "checkedAt": "2026-10-28T22:25:25.170Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T22:25:26.991Z"
+  }
+}

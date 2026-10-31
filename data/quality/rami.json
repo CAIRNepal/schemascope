@@ -1,0 +1,91 @@
+{
+  "id": "rami",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/rami/versions/2015-11-30.n3",
+  "checkedAt": "2026-10-29T02:14:16.635Z",
+  "sha256": "2e5d2c548f5047e46edff2da7a320beaa2ac7991ea184d3d1f79f0770691f028",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:14:17.782Z",
+    "sha256": "2e5d2c548f5047e46edff2da7a320beaa2ac7991ea184d3d1f79f0770691f028"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 69,
+      "WARN": 61,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-29T02:14:19.611Z",
+    "sha256": "2e5d2c548f5047e46edff2da7a320beaa2ac7991ea184d3d1f79f0770691f028"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 13
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 20,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2822 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rami:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T02:14:21.174Z",
+    "sha256": "2e5d2c548f5047e46edff2da7a320beaa2ac7991ea184d3d1f79f0770691f028"
+  }
+}

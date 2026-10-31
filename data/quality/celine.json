@@ -1,0 +1,98 @@
+{
+  "id": "celine",
+  "artefact": "https://w3id.org/celine-eu",
+  "checkedAt": "2026-10-28T02:01:26.221Z",
+  "sha256": "b7056abaadd03ce1c7bdfc50029b5f53a21a42cea6bffeaefe21ef8d07e7a7b7",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://purl.org/peco/peco-core",
+        "id": "purl.org/peco/peco-core",
+        "own": false
+      },
+      {
+        "iri": "https://raw.githubusercontent.com/w3c/sdw/dee1bdd3c339d8a0ab512c7f9bc97a08912ad7d6/ssn/integrated/sosa.ttl",
+        "id": "raw.githubusercontent.com/w3c/sdw/dee1bdd3c339d8a0ab512c7f9bc97a08912ad7d6/ssn/integrated/sosa",
+        "own": false
+      },
+      {
+        "iri": "https://saref.etsi.org/core/v3.1.1/saref.ttl",
+        "id": "saref.etsi.org/core/v3.1.1/saref",
+        "own": false
+      },
+      {
+        "iri": "https://saref.etsi.org/saref4ener/v1.2.1/saref4ener.ttl",
+        "id": "saref.etsi.org/saref4ener/v1.2.1/saref4ener",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dcterms": 5,
+      "skos": 12,
+      "sosa": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:01:26.697Z",
+    "sha256": "b7056abaadd03ce1c7bdfc50029b5f53a21a42cea6bffeaefe21ef8d07e7a7b7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 120,
+      "WARN": 122,
+      "INFO": 19
+    },
+    "checkedAt": "2026-10-28T02:01:36.265Z",
+    "sha256": "b7056abaadd03ce1c7bdfc50029b5f53a21a42cea6bffeaefe21ef8d07e7a7b7"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 54
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 32,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-367 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/celine:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T02:01:37.060Z",
+    "sha256": "b7056abaadd03ce1c7bdfc50029b5f53a21a42cea6bffeaefe21ef8d07e7a7b7"
+  }
+}

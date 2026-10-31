@@ -1,0 +1,11 @@
+{
+  "id": "sumso-w3id",
+  "artefact": "https://w3id.org/sumso",
+  "checkedAt": "2026-10-29T03:20:25.014Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:20:35.514Z"
+  }
+}

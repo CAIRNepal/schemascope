@@ -1,0 +1,11 @@
+{
+  "id": "uby",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/uby/versions/2015-10-04.n3",
+  "checkedAt": "2026-10-29T05:45:27.762Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T05:45:38.261Z"
+  }
+}

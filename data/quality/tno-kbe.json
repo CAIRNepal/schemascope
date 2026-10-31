@@ -1,0 +1,71 @@
+{
+  "id": "tno-kbe",
+  "artefact": "http://ontology.tno.nl/KnowledgeBaseExplanation.owl",
+  "checkedAt": "2026-10-29T05:19:17.068Z",
+  "sha256": "7d049237aa03339ec3b1d251d0575c4284124016b0ddf06c2445a54a27dce651",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://daselab.cs.wright.edu/data/ODP-Tree.owl",
+        "id": "daselab.cs.wright.edu/data/odp-tree",
+        "own": false
+      }
+    ],
+    "uses": {
+      "xsd": 6,
+      "dcterms": 8,
+      "rdf": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:19:18.006Z",
+    "sha256": "7d049237aa03339ec3b1d251d0575c4284124016b0ddf06c2445a54a27dce651"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://daselab.cs.wright.edu/data/ODP-Tree.owl> Cause: daselab.cs.wright.edu\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T05:19:18.902Z",
+    "sha256": "7d049237aa03339ec3b1d251d0575c4284124016b0ddf06c2445a54a27dce651"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 15
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 62,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3804 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tno-kbe:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T05:19:20.390Z",
+    "sha256": "7d049237aa03339ec3b1d251d0575c4284124016b0ddf06c2445a54a27dce651"
+  }
+}

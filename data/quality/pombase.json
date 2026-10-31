@@ -1,0 +1,58 @@
+{
+  "id": "pombase",
+  "artefact": "https://w3id.org/biopragmatics/resources/pombase/pombase.owl",
+  "checkedAt": "2026-10-29T01:17:35.637Z",
+  "sha256": "4a24bdbf5e756567dc51492cd5806c2d0d13446c4b1b14899c55bf932616c326",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ro": 4,
+      "so": 8,
+      "dcterms": 3
+    },
+    "scannedMb": 13,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:17:36.623Z",
+    "sha256": "4a24bdbf5e756567dc51492cd5806c2d0d13446c4b1b14899c55bf932616c326"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 8174,
+      "WARN": 7572,
+      "INFO": 8
+    },
+    "checkedAt": "2026-10-29T01:17:42.813Z",
+    "sha256": "4a24bdbf5e756567dc51492cd5806c2d0d13446c4b1b14899c55bf932616c326"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2698 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/pombase:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T01:27:45.859Z",
+    "sha256": "4a24bdbf5e756567dc51492cd5806c2d0d13446c4b1b14899c55bf932616c326"
+  }
+}

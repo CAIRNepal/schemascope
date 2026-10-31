@@ -1,0 +1,61 @@
+{
+  "id": "ttrpg",
+  "artefact": "https://w3id.org/TTRpg",
+  "checkedAt": "2026-10-29T05:33:38.890Z",
+  "sha256": "5cb0f1297ad7e6aa81b5341f108c477af4d0417ead79e8afcf1cd11c59252bd0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:33:39.361Z",
+    "sha256": "5cb0f1297ad7e6aa81b5341f108c477af4d0417ead79e8afcf1cd11c59252bd0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 6,
+      "WARN": 38,
+      "INFO": 10
+    },
+    "checkedAt": "2026-10-29T05:33:40.587Z",
+    "sha256": "5cb0f1297ad7e6aa81b5341f108c477af4d0417ead79e8afcf1cd11c59252bd0"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3875 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ttrpg:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T05:33:41.768Z",
+    "sha256": "5cb0f1297ad7e6aa81b5341f108c477af4d0417ead79e8afcf1cd11c59252bd0"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "cff",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/cff/versions/2011-06-20.n3",
+  "checkedAt": "2026-10-28T02:08:30.139Z",
+  "sha256": "506a0ccfd767174b6abc97c5de24fb6340b97e88db5b0a46eb85a45426ece378",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.oclc.org/NET/ssnx/qu/qu",
+        "id": "qu",
+        "own": true
+      },
+      {
+        "iri": "http://purl.oclc.org/NET/ssnx/cf/cf-property",
+        "id": "cfp",
+        "own": true
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:08:31.102Z",
+    "sha256": "506a0ccfd767174b6abc97c5de24fb6340b97e88db5b0a46eb85a45426ece378"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://www.loa-cnr.it/ontologies/DUL.owl> Cause: Server returned HTTP response code: 403 for URL: http://www.loa-cnr.it/ontologies/DUL.owl\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T02:08:34.873Z",
+    "sha256": "506a0ccfd767174b6abc97c5de24fb6340b97e88db5b0a46eb85a45426ece378"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 11
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 11,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-421 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cff:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T02:08:35.679Z",
+    "sha256": "506a0ccfd767174b6abc97c5de24fb6340b97e88db5b0a46eb85a45426ece378"
+  }
+}

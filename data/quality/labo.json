@@ -1,0 +1,82 @@
+{
+  "id": "labo",
+  "artefact": "http://purl.obolibrary.org/obo/labo.owl",
+  "checkedAt": "2026-10-28T21:20:17.956Z",
+  "sha256": "edebab71df1d8dcdf6b530e82f9ef30b15e0df1c2de3213c9be4984d82bfa21e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 42,
+      "iao": 43,
+      "obi": 22,
+      "ro": 14,
+      "hado": 3,
+      "omiabis": 4,
+      "pdro": 6,
+      "ogms": 7,
+      "opmi": 8,
+      "rdfs": 5,
+      "dc": 11,
+      "owl": 8
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:20:18.477Z",
+    "sha256": "edebab71df1d8dcdf6b530e82f9ef30b15e0df1c2de3213c9be4984d82bfa21e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 107,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 116,
+      "WARN": 127,
+      "INFO": 62
+    },
+    "checkedAt": "2026-10-28T21:20:21.506Z",
+    "sha256": "edebab71df1d8dcdf6b530e82f9ef30b15e0df1c2de3213c9be4984d82bfa21e"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 192
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 23
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 7
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:20:30.621Z",
+    "sha256": "edebab71df1d8dcdf6b530e82f9ef30b15e0df1c2de3213c9be4984d82bfa21e"
+  }
+}

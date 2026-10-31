@@ -1,0 +1,151 @@
+{
+  "id": "opmi",
+  "artefact": "http://purl.obolibrary.org/obo/opmi.owl",
+  "checkedAt": "2026-10-29T00:28:19.342Z",
+  "sha256": "081b02ed22e0c9006ffe1bd4fe68b0f2e8076e3fb989af5595f2ddb1020f7570",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 36,
+      "iao": 50,
+      "ico": 7,
+      "ncit": 50,
+      "oae": 50,
+      "obi": 50,
+      "ro": 50,
+      "ubprop": 9,
+      "bspo": 10,
+      "ncbitaxon": 47,
+      "omrse": 50,
+      "pco": 5,
+      "chebi": 50,
+      "cl": 3,
+      "cmo": 50,
+      "sio": 4,
+      "rdfs": 5,
+      "xsd": 7,
+      "dc": 9,
+      "dcterms": 4,
+      "owl": 12,
+      "skos": 4,
+      "dron": 5,
+      "ogms": 15,
+      "envo": 45,
+      "pato": 15,
+      "gaz": 12,
+      "go": 10,
+      "hp": 38,
+      "mondo": 44,
+      "doid": 35,
+      "uberon": 50,
+      "obib": 4
+    },
+    "scannedMb": 5,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:28:19.841Z",
+    "sha256": "081b02ed22e0c9006ffe1bd4fe68b0f2e8076e3fb989af5595f2ddb1020f7570"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 266,
+      "WARN": 2761,
+      "INFO": 210
+    },
+    "checkedAt": "2026-10-29T00:28:25.323Z",
+    "sha256": "081b02ed22e0c9006ffe1bd4fe68b0f2e8076e3fb989af5595f2ddb1020f7570"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 3,
+    "minor": 9,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 4037
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 125
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 94
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P29",
+        "name": "Defining wrong transitive relationships",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 21
+      },
+      {
+        "code": "P33",
+        "name": "Creating a property chain with just one property",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:30:48.087Z",
+    "sha256": "081b02ed22e0c9006ffe1bd4fe68b0f2e8076e3fb989af5595f2ddb1020f7570"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "id": "sweet-propti",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/propTime.ttl",
+  "checkedAt": "2026-10-29T03:52:42.950Z",
+  "sha256": "e685d88dcba7a35b6244026265eb429972be617710302d28b821c36ebbf5b874",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "time": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T03:52:43.355Z",
+    "sha256": "e685d88dcba7a35b6244026265eb429972be617710302d28b821c36ebbf5b874"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 42,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-29T03:53:14.301Z",
+    "sha256": "e685d88dcba7a35b6244026265eb429972be617710302d28b821c36ebbf5b874"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 4,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 5
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 38
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 38,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3424 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sweet-propti:/work schemascope/oops --input-file /wor"
+    ],
+    "checkedAt": "2026-10-29T03:53:14.999Z",
+    "sha256": "e685d88dcba7a35b6244026265eb429972be617710302d28b821c36ebbf5b874"
+  }
+}

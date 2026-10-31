@@ -1,0 +1,73 @@
+{
+  "id": "dqm",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/dqm/versions/2011-10-09.n3",
+  "checkedAt": "2026-10-28T17:19:03.418Z",
+  "sha256": "21af86954a9778129f258989e77ab702bc4d9e0e04b5b403a4cb9649890a5230",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:19:04.465Z",
+    "sha256": "21af86954a9778129f258989e77ab702bc4d9e0e04b5b403a4cb9649890a5230"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 12,
+      "WARN": 162,
+      "INFO": 9
+    },
+    "checkedAt": "2026-10-28T17:19:05.680Z",
+    "sha256": "21af86954a9778129f258989e77ab702bc4d9e0e04b5b403a4cb9649890a5230"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 21
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 40
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 66,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-938 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dqm:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T17:19:06.436Z",
+    "sha256": "21af86954a9778129f258989e77ab702bc4d9e0e04b5b403a4cb9649890a5230"
+  }
+}

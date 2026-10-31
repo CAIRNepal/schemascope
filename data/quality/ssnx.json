@@ -1,0 +1,11 @@
+{
+  "id": "ssnx",
+  "artefact": "http://purl.oclc.org/NET/ssnx/ssn",
+  "checkedAt": "2026-10-29T03:17:36.999Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:17:47.497Z"
+  }
+}

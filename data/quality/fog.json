@@ -1,0 +1,67 @@
+{
+  "id": "fog",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/fog/versions/2019-05-27.n3",
+  "checkedAt": "2026-10-28T19:46:55.624Z",
+  "sha256": "b6c602c578d1083d5ed73148aa6e8457cd6fc8dd24d8e9d95e3424456caba0c0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:46:56.470Z",
+    "sha256": "b6c602c578d1083d5ed73148aa6e8457cd6fc8dd24d8e9d95e3424456caba0c0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 111,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T19:46:57.600Z",
+    "sha256": "b6c602c578d1083d5ed73148aa6e8457cd6fc8dd24d8e9d95e3424456caba0c0"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 13
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 13
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1249 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/fog:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T19:46:58.288Z",
+    "sha256": "b6c602c578d1083d5ed73148aa6e8457cd6fc8dd24d8e9d95e3424456caba0c0"
+  }
+}

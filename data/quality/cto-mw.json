@@ -1,0 +1,83 @@
+{
+  "id": "cto-mw",
+  "artefact": "https://raw.githubusercontent.com/HosseinBeygiNasrabadi/creep-testing-ontology/main/cto.ttl",
+  "checkedAt": "2026-10-28T15:52:39.343Z",
+  "sha256": "463adacf733979439238dce886d6410f0da6ea2388d988ebb8ba669fe8536dcc",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 38,
+      "bfo": 50,
+      "cob": 4,
+      "obi": 25,
+      "ro": 31,
+      "chebi": 50,
+      "uo": 8,
+      "dcterms": 8,
+      "skos": 4
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T15:52:39.677Z",
+    "sha256": "463adacf733979439238dce886d6410f0da6ea2388d988ebb8ba669fe8536dcc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 650,
+      "WARN": 1215,
+      "INFO": 40
+    },
+    "checkedAt": "2026-10-28T15:52:44.175Z",
+    "sha256": "463adacf733979439238dce886d6410f0da6ea2388d988ebb8ba669fe8536dcc"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 7
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 17
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 4
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 957,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-696 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cto-mw:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T15:52:45.973Z",
+    "sha256": "463adacf733979439238dce886d6410f0da6ea2388d988ebb8ba669fe8536dcc"
+  }
+}

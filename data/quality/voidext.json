@@ -1,0 +1,75 @@
+{
+  "id": "voidext",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/voidext/versions/2019-01-30.n3",
+  "checkedAt": "2026-10-29T07:03:32.908Z",
+  "sha256": "e3fdc2c7500423bc5fad2974df4800ef1e3ca6091cbd892bca288c241f94c32b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "rdf": 5,
+      "owl": 17,
+      "dcterms": 14,
+      "xsd": 4,
+      "foaf": 6,
+      "void": 31,
+      "rdfs": 10
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:03:36.384Z",
+    "sha256": "e3fdc2c7500423bc5fad2974df4800ef1e3ca6091cbd892bca288c241f94c32b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 14,
+      "WARN": 53,
+      "INFO": 5
+    },
+    "checkedAt": "2026-10-29T07:03:37.505Z",
+    "sha256": "e3fdc2c7500423bc5fad2974df4800ef1e3ca6091cbd892bca288c241f94c32b"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 4
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 6,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3982 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/voidext:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T07:03:38.269Z",
+    "sha256": "e3fdc2c7500423bc5fad2974df4800ef1e3ca6091cbd892bca288c241f94c32b"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "sty",
+  "artefact": "https://w3id.org/biopragmatics/resources/sty/sty.owl",
+  "checkedAt": "2026-10-29T03:19:43.012Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:19:53.514Z"
+  }
+}

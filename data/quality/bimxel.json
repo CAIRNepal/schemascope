@@ -1,0 +1,38 @@
+{
+  "id": "bimxel",
+  "artefact": "https://w3id.org/bimxel",
+  "checkedAt": "2026-10-28T01:40:44.238Z",
+  "sha256": "46b9d5e59ad81c00fa2e064cb6b281fd5520ee6fdf9fe7cc9bffdba7a0b166e9",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 9,
+      "rdfs": 8,
+      "bot": 3,
+      "saref": 4,
+      "prov": 3,
+      "dcterms": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:40:46.115Z",
+    "sha256": "46b9d5e59ad81c00fa2e064cb6b281fd5520ee6fdf9fe7cc9bffdba7a0b166e9"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "er.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1243)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1143)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadImports(OWLOntologyManagerImpl.java:1873)\n\n\n\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T01:40:57.117Z",
+    "sha256": "46b9d5e59ad81c00fa2e064cb6b281fd5520ee6fdf9fe7cc9bffdba7a0b166e9"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-203 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/bimxel:/work schemascope/oops --input-file /work/ontol",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/bimxel/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T01:40:57.886Z",
+    "sha256": "46b9d5e59ad81c00fa2e064cb6b281fd5520ee6fdf9fe7cc9bffdba7a0b166e9"
+  }
+}

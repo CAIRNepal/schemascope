@@ -1,0 +1,99 @@
+{
+  "id": "tfsco",
+  "artefact": "https://purl.archive.org/tfsco/latest",
+  "checkedAt": "2026-10-29T05:02:01.945Z",
+  "sha256": "ffccf613af0d9740d36f1a1e9710d12dcdc51c6bc092881102dcab1f8563b3a8",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.obolibrary.org/obo/bfo/2019-08-26/bfo.owl",
+        "id": "bfo",
+        "own": false
+      },
+      {
+        "iri": "http://purl.obolibrary.org/obo/ro/releases/2024-04-24/core.owl",
+        "id": "ro",
+        "own": false
+      }
+    ],
+    "uses": {
+      "iao": 50,
+      "bfo": 24,
+      "ro": 50,
+      "obi": 46,
+      "pato": 50,
+      "chebi": 7,
+      "chmo": 40,
+      "uo": 23,
+      "ncit": 9,
+      "xsd": 4,
+      "owl": 6,
+      "dc": 7,
+      "dcterms": 11,
+      "skos": 3
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:02:03.196Z",
+    "sha256": "ffccf613af0d9740d36f1a1e9710d12dcdc51c6bc092881102dcab1f8563b3a8"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 30,
+      "WARN": 260,
+      "INFO": 318
+    },
+    "checkedAt": "2026-10-29T05:02:08.939Z",
+    "sha256": "ffccf613af0d9740d36f1a1e9710d12dcdc51c6bc092881102dcab1f8563b3a8"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 204
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 535,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3725 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tfsco:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T05:02:28.857Z",
+    "sha256": "ffccf613af0d9740d36f1a1e9710d12dcdc51c6bc092881102dcab1f8563b3a8"
+  }
+}

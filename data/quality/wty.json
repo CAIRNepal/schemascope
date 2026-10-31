@@ -1,0 +1,11 @@
+{
+  "id": "wty",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/wty/versions/2025-12-28.n3",
+  "checkedAt": "2026-10-29T08:02:39.659Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T08:02:42.963Z"
+  }
+}

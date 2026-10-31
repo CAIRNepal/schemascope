@@ -1,0 +1,77 @@
+{
+  "id": "xao",
+  "artefact": "http://purl.obolibrary.org/obo/xao.owl",
+  "checkedAt": "2026-10-29T08:02:42.964Z",
+  "sha256": "35db632535cc255ec039b61fd77ba0c5a171d35fe50ed0017ea01b74280816e3",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 3
+    },
+    "scannedMb": 4,
+    "truncated": false,
+    "scannedAt": "2026-10-29T08:02:46.967Z",
+    "sha256": "35db632535cc255ec039b61fd77ba0c5a171d35fe50ed0017ea01b74280816e3"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 32,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-29T08:02:49.889Z",
+    "sha256": "35db632535cc255ec039b61fd77ba0c5a171d35fe50ed0017ea01b74280816e3"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 51
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1832
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 5
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T08:04:20.894Z",
+    "sha256": "35db632535cc255ec039b61fd77ba0c5a171d35fe50ed0017ea01b74280816e3"
+  }
+}

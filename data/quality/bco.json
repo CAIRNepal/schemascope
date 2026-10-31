@@ -1,0 +1,96 @@
+{
+  "id": "bco",
+  "artefact": "http://purl.obolibrary.org/obo/bco.owl",
+  "checkedAt": "2026-10-28T01:02:41.127Z",
+  "sha256": "ccd231904600b69ca201ca0c49863976c2b44bb18daac3710e9109cf449eb805",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 50,
+      "bfo": 29,
+      "obi": 50,
+      "ro": 50,
+      "pco": 5,
+      "chebi": 4,
+      "cl": 3,
+      "go": 8,
+      "ncbitaxon": 50,
+      "xsd": 5,
+      "dc": 16,
+      "dcterms": 6,
+      "rdfs": 7,
+      "rdf": 3,
+      "owl": 12,
+      "swrl": 5
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:02:41.658Z",
+    "sha256": "ccd231904600b69ca201ca0c49863976c2b44bb18daac3710e9109cf449eb805"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "2026-10-28 01:02:43,597 ERROR org.obolibrary.robot.ReportOperation - Could not complete query 'annotation_whitespace' - report may be incomplete.\nCause:\niri cannot be null\nreport#MISSING ENTITY BINDING query 'annotation_whitespace' must include an '?entity'\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T01:02:43.825Z",
+    "sha256": "ccd231904600b69ca201ca0c49863976c2b44bb18daac3710e9109cf449eb805"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 2,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P06",
+        "name": "Including cycles in a class hierarchy",
+        "importance": "critical",
+        "affected": 8
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 80
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 53
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 48
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 217,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-163 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/bco:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T01:02:55.234Z",
+    "sha256": "ccd231904600b69ca201ca0c49863976c2b44bb18daac3710e9109cf449eb805"
+  }
+}

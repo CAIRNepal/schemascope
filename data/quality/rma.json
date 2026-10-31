@@ -1,0 +1,11 @@
+{
+  "id": "rma",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/rma/versions/2025-12-28.n3",
+  "checkedAt": "2026-10-29T02:31:43.718Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T02:31:49.091Z"
+  }
+}

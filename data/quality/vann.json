@@ -1,0 +1,54 @@
+{
+  "id": "vann",
+  "artefact": "https://vocab.org/vann/vann-vocab-20100607.rdf",
+  "checkedAt": "2026-10-29T06:50:59.544Z",
+  "sha256": "cd314dbeebfd4fe1840fdddfc3873b4e813a06d8fae80b1e442e2bb918ef3dd8",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T06:51:01.946Z",
+    "sha256": "cd314dbeebfd4fe1840fdddfc3873b4e813a06d8fae80b1e442e2bb918ef3dd8"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 6,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T06:51:02.903Z",
+    "sha256": "cd314dbeebfd4fe1840fdddfc3873b4e813a06d8fae80b1e442e2bb918ef3dd8"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3936 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/vann:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T06:51:03.589Z",
+    "sha256": "cd314dbeebfd4fe1840fdddfc3873b4e813a06d8fae80b1e442e2bb918ef3dd8"
+  }
+}

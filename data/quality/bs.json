@@ -1,0 +1,40 @@
+{
+  "id": "bs",
+  "artefact": "https://raw.githubusercontent.com/The-Sequence-Ontology/SO-Ontologies/master/Ontology_Files/subsets/biosapiens.obo",
+  "checkedAt": "2026-10-28T01:46:15.692Z",
+  "sha256": "03803dd1fa54756b6cc87f77f8be4597e43e1306c5f5af741d2e9619dd7fc9b1",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "so": 50,
+      "pmid": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:46:15.917Z",
+    "sha256": "03803dd1fa54756b6cc87f77f8be4597e43e1306c5f5af741d2e9619dd7fc9b1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 5,
+      "WARN": 51,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-28T01:46:17.438Z",
+    "sha256": "03803dd1fa54756b6cc87f77f8be4597e43e1306c5f5af741d2e9619dd7fc9b1"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-271 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/bs:/work schemascope/oops --input-file /work/ontology.",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/bs/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T01:46:18.219Z",
+    "sha256": "03803dd1fa54756b6cc87f77f8be4597e43e1306c5f5af741d2e9619dd7fc9b1"
+  }
+}

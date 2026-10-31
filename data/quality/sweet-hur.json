@@ -1,0 +1,11 @@
+{
+  "id": "sweet-hur",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/humanResearch.ttl",
+  "checkedAt": "2026-10-29T03:23:23.522Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:23:34.025Z"
+  }
+}

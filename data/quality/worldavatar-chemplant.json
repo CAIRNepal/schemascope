@@ -1,0 +1,89 @@
+{
+  "id": "worldavatar-chemplant",
+  "artefact": "https://raw.githubusercontent.com/TheWorldAvatar/ontology/main/ontology/ontochemplant/OntoChemPlant.owl",
+  "checkedAt": "2026-10-29T07:36:02.821Z",
+  "sha256": "2367f582bb07dc5723098c2e379c6eac0742546498147a36c37aaf943c0cf4ab",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ic": 3,
+      "om": 13,
+      "xsd": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:36:04.244Z",
+    "sha256": "2367f582bb07dc5723098c2e379c6eac0742546498147a36c37aaf943c0cf4ab"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 5,
+      "WARN": 107,
+      "INFO": 18
+    },
+    "checkedAt": "2026-10-29T07:36:05.319Z",
+    "sha256": "2367f582bb07dc5723098c2e379c6eac0742546498147a36c37aaf943c0cf4ab"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 9
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 28
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 54,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-4083 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/worldavatar-chemplant:/work schemascope/oops --input-"
+    ],
+    "checkedAt": "2026-10-29T07:36:05.952Z",
+    "sha256": "2367f582bb07dc5723098c2e379c6eac0742546498147a36c37aaf943c0cf4ab"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "mibc",
+  "artefact": "http://marineinfo.org/ns/library/bibcodes",
+  "checkedAt": "2026-10-28T22:00:29.089Z",
+  "sha256": "92ede5dd2388fea461130ae2f30bd97b995defac911c8ba19992b686c6b0ee40",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:00:29.782Z",
+    "sha256": "92ede5dd2388fea461130ae2f30bd97b995defac911c8ba19992b686c6b0ee40"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 9,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T22:00:31.332Z",
+    "sha256": "92ede5dd2388fea461130ae2f30bd97b995defac911c8ba19992b686c6b0ee40"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2053 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mibc:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T22:00:32.381Z",
+    "sha256": "92ede5dd2388fea461130ae2f30bd97b995defac911c8ba19992b686c6b0ee40"
+  }
+}

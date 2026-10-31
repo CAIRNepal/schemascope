@@ -1,0 +1,75 @@
+{
+  "id": "tno-interconnect-units",
+  "artefact": "https://gitlab.inesctec.pt/interconnect-public/ontology/-/raw/master/ontology/Interconnect/ic-units.ttl",
+  "checkedAt": "2026-10-29T05:19:13.102Z",
+  "sha256": "99a9e689452c7821303d25cf7921edf4cdd980170335ad7aac3d8918f66bca81",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "om": 42
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:19:13.299Z",
+    "sha256": "99a9e689452c7821303d25cf7921edf4cdd980170335ad7aac3d8918f66bca81"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 10,
+      "WARN": 16,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T05:19:14.303Z",
+    "sha256": "99a9e689452c7821303d25cf7921edf4cdd980170335ad7aac3d8918f66bca81"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 10
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 16,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3800 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tno-interconnect-units:/work schemascope/oops --input"
+    ],
+    "checkedAt": "2026-10-29T05:19:14.901Z",
+    "sha256": "99a9e689452c7821303d25cf7921edf4cdd980170335ad7aac3d8918f66bca81"
+  }
+}

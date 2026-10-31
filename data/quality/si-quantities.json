@@ -1,0 +1,54 @@
+{
+  "id": "si-quantities",
+  "artefact": "https://github.com/TheBIPM/SI_Digital_Framework/raw/refs/heads/main/knowledge_graphs/quantities/quantities.ttl",
+  "checkedAt": "2026-10-29T02:58:44.150Z",
+  "sha256": "02da5ff92a7283aca5efba8ea652cbf7763d80f0f234a61828a81e5d98e75994",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:58:44.408Z",
+    "sha256": "02da5ff92a7283aca5efba8ea652cbf7763d80f0f234a61828a81e5d98e75994"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 153,
+      "WARN": 2,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:58:46.016Z",
+    "sha256": "02da5ff92a7283aca5efba8ea652cbf7763d80f0f234a61828a81e5d98e75994"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3285 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/si-quantities:/work schemascope/oops --input-file /wo"
+    ],
+    "checkedAt": "2026-10-29T02:58:46.910Z",
+    "sha256": "02da5ff92a7283aca5efba8ea652cbf7763d80f0f234a61828a81e5d98e75994"
+  }
+}

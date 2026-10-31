@@ -1,0 +1,11 @@
+{
+  "id": "sure",
+  "artefact": "http://ns.inria.fr/sure",
+  "checkedAt": "2026-10-29T03:20:46.014Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:20:56.515Z"
+  }
+}

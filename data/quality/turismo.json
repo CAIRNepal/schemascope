@@ -1,0 +1,73 @@
+{
+  "id": "turismo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/turismo/versions/2007-11-02.n3",
+  "checkedAt": "2026-10-29T05:33:41.769Z",
+  "sha256": "cdf300a964fad6ae263ef9845a39ec4f26716c73163d88717cbd54c60ab9f267",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:33:43.708Z",
+    "sha256": "cdf300a964fad6ae263ef9845a39ec4f26716c73163d88717cbd54c60ab9f267"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 212,
+      "WARN": 84,
+      "INFO": 9
+    },
+    "checkedAt": "2026-10-29T05:33:45.184Z",
+    "sha256": "cdf300a964fad6ae263ef9845a39ec4f26716c73163d88717cbd54c60ab9f267"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 34,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3877 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/turismo:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T05:33:46.491Z",
+    "sha256": "cdf300a964fad6ae263ef9845a39ec4f26716c73163d88717cbd54c60ab9f267"
+  }
+}

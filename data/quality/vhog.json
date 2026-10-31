@@ -1,0 +1,11 @@
+{
+  "id": "vhog",
+  "artefact": "http://purl.obolibrary.org/obo/vhog.owl",
+  "checkedAt": "2026-10-29T06:58:21.185Z",
+  "downloadError": "download HTTP 403",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T06:58:23.497Z"
+  }
+}

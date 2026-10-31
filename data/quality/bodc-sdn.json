@@ -1,0 +1,67 @@
+{
+  "id": "bodc-sdn",
+  "artefact": "http://vocab.nerc.ac.uk/scheme/SDNDEV/current/",
+  "checkedAt": "2026-10-28T01:45:24.232Z",
+  "sha256": "2ce3a7eefde8be95dea38213d371fc30264455a1090d54c8ac1d5a3e36cbc8c0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 3,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:45:32.616Z",
+    "sha256": "2ce3a7eefde8be95dea38213d371fc30264455a1090d54c8ac1d5a3e36cbc8c0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2724,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T01:45:35.091Z",
+    "sha256": "2ce3a7eefde8be95dea38213d371fc30264455a1090d54c8ac1d5a3e36cbc8c0"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-241 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/bodc-sdn:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-28T01:45:36.037Z",
+    "sha256": "2ce3a7eefde8be95dea38213d371fc30264455a1090d54c8ac1d5a3e36cbc8c0"
+  }
+}

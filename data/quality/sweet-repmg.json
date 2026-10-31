@@ -1,0 +1,79 @@
+{
+  "id": "sweet-repmg",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/reprMathGraph.ttl",
+  "checkedAt": "2026-10-29T04:24:10.595Z",
+  "sha256": "124f91be45d186d0472c065d9904b4c78485dd2fab606fc5c3f956032981809d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T04:24:11.017Z",
+    "sha256": "124f91be45d186d0472c065d9904b4c78485dd2fab606fc5c3f956032981809d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 28,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-29T04:24:47.468Z",
+    "sha256": "124f91be45d186d0472c065d9904b4c78485dd2fab606fc5c3f956032981809d"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 7
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 26
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 7
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 26,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3536 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sweet-repmg:/work schemascope/oops --input-file /work"
+    ],
+    "checkedAt": "2026-10-29T04:24:49.224Z",
+    "sha256": "124f91be45d186d0472c065d9904b4c78485dd2fab606fc5c3f956032981809d"
+  }
+}

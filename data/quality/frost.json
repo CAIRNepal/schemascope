@@ -1,0 +1,108 @@
+{
+  "id": "frost",
+  "artefact": "https://w3id.org/frost",
+  "checkedAt": "2026-10-28T19:49:51.627Z",
+  "sha256": "47f9f2914c03b7cd5b5d006b880fb6625165910ce6ab928ed07434b6dfb58f7b",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/2006/time#",
+        "id": "time",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/prov#",
+        "id": "prov",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/sosa/",
+        "id": "sosa",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/ssn/",
+        "id": "w3.org/ns/ssn",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3id.org/def/caso#",
+        "id": "caso",
+        "own": true
+      }
+    ],
+    "uses": {
+      "dcterms": 9,
+      "dc": 5,
+      "skos": 9,
+      "prov": 9,
+      "time": 50,
+      "om": 3,
+      "sosa": 36,
+      "caso": 19
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:49:52.766Z",
+    "sha256": "47f9f2914c03b7cd5b5d006b880fb6625165910ce6ab928ed07434b6dfb58f7b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 192,
+      "WARN": 219,
+      "INFO": 6
+    },
+    "checkedAt": "2026-10-28T19:49:57.199Z",
+    "sha256": "47f9f2914c03b7cd5b5d006b880fb6625165910ce6ab928ed07434b6dfb58f7b"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 22
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 27,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1281 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/frost:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T19:49:57.980Z",
+    "sha256": "47f9f2914c03b7cd5b5d006b880fb6625165910ce6ab928ed07434b6dfb58f7b"
+  }
+}

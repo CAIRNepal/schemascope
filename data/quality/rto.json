@@ -1,0 +1,11 @@
+{
+  "id": "rto",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/railtopo/versions/2021-04-20.n3",
+  "checkedAt": "2026-10-29T02:37:39.080Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T02:37:39.548Z"
+  }
+}

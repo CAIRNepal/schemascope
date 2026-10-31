@@ -1,0 +1,105 @@
+{
+  "id": "obi",
+  "artefact": "http://purl.obolibrary.org/obo/obi.owl",
+  "checkedAt": "2026-10-28T23:38:04.617Z",
+  "sha256": "8874abcca971ee26b4e4442198387916d788d14af3519e1040474908ed12b946",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 50,
+      "bfo": 20,
+      "omo": 25,
+      "cob": 31,
+      "ro": 30,
+      "ncbitaxon": 50,
+      "chebi": 50,
+      "chmo": 5,
+      "pato": 50,
+      "clo": 6,
+      "cl": 49,
+      "uberon": 50,
+      "go": 50,
+      "envo": 6,
+      "foodon": 4,
+      "pr": 42,
+      "hp": 3,
+      "ido": 5,
+      "mro": 33,
+      "oba": 11,
+      "omrse": 4,
+      "ogms": 6,
+      "so": 11,
+      "pmid": 50,
+      "xsd": 8,
+      "dc": 15,
+      "dcterms": 5,
+      "rdfs": 4,
+      "owl": 9,
+      "uo": 50,
+      "genepio": 3
+    },
+    "scannedMb": 10,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:38:05.388Z",
+    "sha256": "8874abcca971ee26b4e4442198387916d788d14af3519e1040474908ed12b946"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 67,
+      "WARN": 327,
+      "INFO": 386
+    },
+    "checkedAt": "2026-10-28T23:38:12.331Z",
+    "sha256": "8874abcca971ee26b4e4442198387916d788d14af3519e1040474908ed12b946"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 75
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 172
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 74
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 5238,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2292 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/obi:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T23:48:16.061Z",
+    "sha256": "8874abcca971ee26b4e4442198387916d788d14af3519e1040474908ed12b946"
+  }
+}

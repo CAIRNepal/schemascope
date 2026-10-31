@@ -1,0 +1,75 @@
+{
+  "id": "ontie",
+  "artefact": "https://raw.githubusercontent.com/IEDB/ONTIE/master/ontie.owl",
+  "checkedAt": "2026-10-29T00:18:19.125Z",
+  "sha256": "d481428d494637844926fdd8856e183b5e3fc8ef8b6ca920f519856db729bb7b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 10,
+      "obi": 13,
+      "doid": 38,
+      "ncbitaxon": 50,
+      "pr": 8
+    },
+    "scannedMb": 4,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:18:19.503Z",
+    "sha256": "d481428d494637844926fdd8856e183b5e3fc8ef8b6ca920f519856db729bb7b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 11,
+      "WARN": 6008,
+      "INFO": 5
+    },
+    "checkedAt": "2026-10-29T00:18:27.162Z",
+    "sha256": "d481428d494637844926fdd8856e183b5e3fc8ef8b6ca920f519856db729bb7b"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 5957
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:22:41.346Z",
+    "sha256": "d481428d494637844926fdd8856e183b5e3fc8ef8b6ca920f519856db729bb7b"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "phdd",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/phdd/versions/2014-05-25.n3",
+  "checkedAt": "2026-10-29T00:59:42.742Z",
+  "sha256": "e4883b3f83713f15aaa7f79f1156371b2393dc6a61ef9159ef3c100e3d2f692c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:59:45.226Z",
+    "sha256": "e4883b3f83713f15aaa7f79f1156371b2393dc6a61ef9159ef3c100e3d2f692c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 45,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-29T00:59:46.315Z",
+    "sha256": "e4883b3f83713f15aaa7f79f1156371b2393dc6a61ef9159ef3c100e3d2f692c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 7
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 8
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 10,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2614 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/phdd:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T00:59:47.011Z",
+    "sha256": "e4883b3f83713f15aaa7f79f1156371b2393dc6a61ef9159ef3c100e3d2f692c"
+  }
+}

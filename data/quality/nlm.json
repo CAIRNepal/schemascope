@@ -1,0 +1,55 @@
+{
+  "id": "nlm",
+  "artefact": "https://w3id.org/biopragmatics/resources/nlm/nlm.owl",
+  "checkedAt": "2026-10-28T23:20:11.090Z",
+  "sha256": "59f5c3deaa3db286c0970c7921dca7efa955406f0aafa1c7becd33d74107e54a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 4,
+      "uniprot-core": 3
+    },
+    "scannedMb": 31,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:20:12.756Z",
+    "sha256": "59f5c3deaa3db286c0970c7921dca7efa955406f0aafa1c7becd33d74107e54a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 228,
+      "WARN": 8,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T23:20:27.539Z",
+    "sha256": "59f5c3deaa3db286c0970c7921dca7efa955406f0aafa1c7becd33d74107e54a"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [],
+    "checkedAt": "2026-10-28T23:20:34.740Z",
+    "sha256": "59f5c3deaa3db286c0970c7921dca7efa955406f0aafa1c7becd33d74107e54a"
+  }
+}

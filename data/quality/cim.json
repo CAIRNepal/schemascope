@@ -1,0 +1,93 @@
+{
+  "id": "cim",
+  "artefact": "https://raw.githubusercontent.com/cimug-org/IEC-CIM-Ontology/refs/heads/main/TheCimOntology.owl",
+  "checkedAt": "2026-10-28T02:52:30.673Z",
+  "sha256": "0004e2933ddd9d38eb9041a3d2afa3eada6473d0b0ab07d90887c13a8a31b9e1",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 10
+    },
+    "scannedMb": 8,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:52:31.360Z",
+    "sha256": "0004e2933ddd9d38eb9041a3d2afa3eada6473d0b0ab07d90887c13a8a31b9e1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 35452,
+      "WARN": 10919,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T02:52:38.560Z",
+    "sha256": "0004e2933ddd9d38eb9041a3d2afa3eada6473d0b0ab07d90887c13a8a31b9e1"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 112
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 4109
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1933,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-463 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cim:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T04:52:27.924Z",
+    "sha256": "0004e2933ddd9d38eb9041a3d2afa3eada6473d0b0ab07d90887c13a8a31b9e1"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "id": "hsv",
+  "artefact": "https://w3id.org/hsv",
+  "checkedAt": "2026-10-28T20:46:23.508Z",
+  "sha256": "dd8ec811236722578cab711d52c6b1155e1ffcfd21fadac0e0849334249e0895",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:46:23.919Z",
+    "sha256": "dd8ec811236722578cab711d52c6b1155e1ffcfd21fadac0e0849334249e0895"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 27,
+      "INFO": 8
+    },
+    "checkedAt": "2026-10-28T20:46:24.930Z",
+    "sha256": "dd8ec811236722578cab711d52c6b1155e1ffcfd21fadac0e0849334249e0895"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 7
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 16,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1549 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/hsv:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T20:46:25.556Z",
+    "sha256": "dd8ec811236722578cab711d52c6b1155e1ffcfd21fadac0e0849334249e0895"
+  }
+}

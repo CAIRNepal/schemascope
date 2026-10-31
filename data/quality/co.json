@@ -1,0 +1,75 @@
+{
+  "id": "co",
+  "artefact": "https://github.com/collections-ontology/collections-ontology/raw/refs/heads/master/collections.owl",
+  "checkedAt": "2026-10-28T07:35:29.935Z",
+  "sha256": "4288bd13661118cf49aea485a769d9f4a6907b68a58161d28c1828f30eeec608",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/spar/error",
+        "id": "purl.org/spar/error",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T07:35:31.137Z",
+    "sha256": "4288bd13661118cf49aea485a769d9f4a6907b68a58161d28c1828f30eeec608"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 22,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T07:35:35.586Z",
+    "sha256": "4288bd13661118cf49aea485a769d9f4a6907b68a58161d28c1828f30eeec608"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 10
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T07:35:49.404Z",
+    "sha256": "4288bd13661118cf49aea485a769d9f4a6907b68a58161d28c1828f30eeec608"
+  }
+}

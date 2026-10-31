@@ -1,0 +1,67 @@
+{
+  "id": "sco",
+  "artefact": "https://w3id.org/sco",
+  "checkedAt": "2026-10-29T02:47:01.489Z",
+  "sha256": "8e842b2cc51907b2e6414ec4a544b6eb3f7b7775517f92a336d561434f2865e5",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.obolibrary.org/obo/bfo/2020/bfo.owl",
+        "id": "bfo",
+        "own": false
+      }
+    ],
+    "uses": {
+      "iao": 14,
+      "bfo": 7,
+      "ro": 24,
+      "ino": 3,
+      "omo": 4,
+      "dcterms": 3
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:47:01.877Z",
+    "sha256": "8e842b2cc51907b2e6414ec4a544b6eb3f7b7775517f92a336d561434f2865e5"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 927,
+      "WARN": 181,
+      "INFO": 268
+    },
+    "checkedAt": "2026-10-29T02:47:04.964Z",
+    "sha256": "8e842b2cc51907b2e6414ec4a544b6eb3f7b7775517f92a336d561434f2865e5"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 40,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3175 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sco:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T02:47:06.143Z",
+    "sha256": "8e842b2cc51907b2e6414ec4a544b6eb3f7b7775517f92a336d561434f2865e5"
+  }
+}

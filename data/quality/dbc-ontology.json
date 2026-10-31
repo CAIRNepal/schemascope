@@ -1,0 +1,82 @@
+{
+  "id": "dbc-ontology",
+  "artefact": "https://w3id.org/dbc-ontology",
+  "checkedAt": "2026-10-28T16:52:03.444Z",
+  "sha256": "1effc7dfd3235cc59a9537625921fd808384f527b507cf4789bd26785473761f",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://qudt.org/3.0.0/schema/qudt",
+        "id": "qudt.org/3.0.0/schema/qudt",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/sosa/",
+        "id": "sosa",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/ssn/",
+        "id": "w3.org/ns/ssn",
+        "own": false
+      }
+    ],
+    "uses": {
+      "xsd": 5,
+      "foaf": 4,
+      "qudt": 8,
+      "sosa": 13
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T16:52:03.878Z",
+    "sha256": "1effc7dfd3235cc59a9537625921fd808384f527b507cf4789bd26785473761f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 40,
+      "INFO": 5
+    },
+    "checkedAt": "2026-10-28T16:56:09.018Z",
+    "sha256": "1effc7dfd3235cc59a9537625921fd808384f527b507cf4789bd26785473761f"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 8
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 6,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-761 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dbc-ontology:/work schemascope/oops --input-file /work"
+    ],
+    "checkedAt": "2026-10-28T16:56:14.726Z",
+    "sha256": "1effc7dfd3235cc59a9537625921fd808384f527b507cf4789bd26785473761f"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "id": "noria",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/noria/versions/2022-12-15.n3",
+  "checkedAt": "2026-10-28T23:22:14.363Z",
+  "sha256": "26236267ab917a20faf5917ae6b37bc754979a1207f9549e17226ad514cbab7d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 20,
+      "foaf": 4,
+      "pep": 8,
+      "skos": 5,
+      "seas-qudt": 11,
+      "bot": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:22:15.918Z",
+    "sha256": "26236267ab917a20faf5917ae6b37bc754979a1207f9549e17226ad514cbab7d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <https://w3id.org/noria/ontology/ApplicationOntology-0.2> Cause: https://raw.githubusercontent.com/Orange-OpenSource/noria-ontology/master/ontology/ApplicationOntology-0.2/noria.ttl\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T23:22:16.843Z",
+    "sha256": "26236267ab917a20faf5917ae6b37bc754979a1207f9549e17226ad514cbab7d"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 8
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 21
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 75
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 26,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2249 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/noria:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T23:22:17.681Z",
+    "sha256": "26236267ab917a20faf5917ae6b37bc754979a1207f9549e17226ad514cbab7d"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "lado",
+  "artefact": "https://wissit.pages.gitlab.rlp.net/lado/ontology.ttl",
+  "checkedAt": "2026-10-28T21:20:34.621Z",
+  "sha256": "d6fe61cd3158d57e74e38df0785c28995a738b53b3a3babccb8118592a2ee555",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dc": 7,
+      "dcterms": 5,
+      "skos": 24,
+      "geosparql": 6,
+      "cidoc-crm": 50,
+      "cc": 3,
+      "prov": 15,
+      "foaf": 4,
+      "ogc-sf": 4
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:20:35.762Z",
+    "sha256": "d6fe61cd3158d57e74e38df0785c28995a738b53b3a3babccb8118592a2ee555"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2425,
+      "WARN": 555,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:20:38.612Z",
+    "sha256": "d6fe61cd3158d57e74e38df0785c28995a738b53b3a3babccb8118592a2ee555"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 21
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 36
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 36
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 36,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1788 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/lado:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T21:20:39.905Z",
+    "sha256": "d6fe61cd3158d57e74e38df0785c28995a738b53b3a3babccb8118592a2ee555"
+  }
+}

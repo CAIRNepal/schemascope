@@ -1,0 +1,67 @@
+{
+  "id": "physh",
+  "artefact": "https://raw.githubusercontent.com/physh-org/PhySH/master/physh.ttl",
+  "checkedAt": "2026-10-29T01:00:55.408Z",
+  "sha256": "32cdfd00b9e581e12123d656adf1cc6f9a70ef27c6daac37d95896b8c7097e25",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:00:55.681Z",
+    "sha256": "32cdfd00b9e581e12123d656adf1cc6f9a70ef27c6daac37d95896b8c7097e25"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3913,
+      "WARN": 5,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T01:01:00.161Z",
+    "sha256": "32cdfd00b9e581e12123d656adf1cc6f9a70ef27c6daac37d95896b8c7097e25"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2627 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/physh:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T01:01:01.705Z",
+    "sha256": "32cdfd00b9e581e12123d656adf1cc6f9a70ef27c6daac37d95896b8c7097e25"
+  }
+}

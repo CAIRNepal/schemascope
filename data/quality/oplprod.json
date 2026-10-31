@@ -1,0 +1,11 @@
+{
+  "id": "oplprod",
+  "artefact": "http://www.openlinksw.com/ontology/products",
+  "checkedAt": "2026-10-29T00:28:15.971Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:28:16.204Z"
+  }
+}

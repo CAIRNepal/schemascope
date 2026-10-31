@@ -1,0 +1,125 @@
+{
+  "id": "polymat",
+  "artefact": "https://w3id.org/polymat",
+  "checkedAt": "2026-10-29T01:17:19.717Z",
+  "sha256": "0911d89d106e30225ac3c292b1085af8042d76d788beabcaff0c11fba3dfd2f8",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 12,
+      "ro": 18,
+      "ncit": 10,
+      "chebi": 5,
+      "mop": 7,
+      "chmo": 10,
+      "dcterms": 8,
+      "owl": 5,
+      "skos": 3,
+      "xsd": 3,
+      "sio": 4,
+      "om": 15,
+      "prov": 26
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:17:20.527Z",
+    "sha256": "0911d89d106e30225ac3c292b1085af8042d76d788beabcaff0c11fba3dfd2f8"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 18,
+      "WARN": 283,
+      "INFO": 12
+    },
+    "checkedAt": "2026-10-29T01:17:21.817Z",
+    "sha256": "0911d89d106e30225ac3c292b1085af8042d76d788beabcaff0c11fba3dfd2f8"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 2,
+    "important": 4,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P05",
+        "name": "Defining wrong inverse relationships",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 20
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 19
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P25",
+        "name": "Defining a relationship as inverse to itself",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 4
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T01:17:35.637Z",
+    "sha256": "0911d89d106e30225ac3c292b1085af8042d76d788beabcaff0c11fba3dfd2f8"
+  }
+}

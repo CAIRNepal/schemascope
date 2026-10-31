@@ -1,0 +1,87 @@
+{
+  "id": "ontoim",
+  "artefact": "https://w3id.org/ontoim",
+  "checkedAt": "2026-10-29T00:23:36.751Z",
+  "sha256": "66095447e76936fc0a4291eec447595dcc4d3c00956b9798d0b2a70f4d1da5d1",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://dati.beniculturali.it/cis",
+        "id": "cis",
+        "own": false
+      }
+    ],
+    "uses": {
+      "schema": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:23:37.211Z",
+    "sha256": "66095447e76936fc0a4291eec447595dcc4d3c00956b9798d0b2a70f4d1da5d1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://dati.beniculturali.it/cis> Cause: Connect timed out\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T00:23:58.017Z",
+    "sha256": "66095447e76936fc0a4291eec447595dcc4d3c00956b9798d0b2a70f4d1da5d1"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 19
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 12
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 18
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 74
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 77,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2436 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ontoim:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T00:23:58.758Z",
+    "sha256": "66095447e76936fc0a4291eec447595dcc4d3c00956b9798d0b2a70f4d1da5d1"
+  }
+}

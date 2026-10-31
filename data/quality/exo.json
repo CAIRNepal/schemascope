@@ -1,0 +1,73 @@
+{
+  "id": "exo",
+  "artefact": "http://purl.obolibrary.org/obo/exo.owl",
+  "checkedAt": "2026-10-28T19:38:31.010Z",
+  "sha256": "c85ed9fd27c97b245b44eccd5174a7276237e8ce0335adf2d80a71fae18e28ef",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 4,
+      "bfo": 3,
+      "dc": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:38:31.630Z",
+    "sha256": "c85ed9fd27c97b245b44eccd5174a7276237e8ce0335adf2d80a71fae18e28ef"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 9,
+      "WARN": 21,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T19:38:32.995Z",
+    "sha256": "c85ed9fd27c97b245b44eccd5174a7276237e8ce0335adf2d80a71fae18e28ef"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 176
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 8
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:38:40.759Z",
+    "sha256": "c85ed9fd27c97b245b44eccd5174a7276237e8ce0335adf2d80a71fae18e28ef"
+  }
+}

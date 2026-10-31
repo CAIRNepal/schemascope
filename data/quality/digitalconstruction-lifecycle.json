@@ -1,0 +1,93 @@
+{
+  "id": "digitalconstruction-lifecycle",
+  "artefact": "https://digitalconstruction.github.io/Lifecycle/v/0.5/lifecycle.ttl",
+  "checkedAt": "2026-10-28T17:12:56.333Z",
+  "sha256": "4049e5491501ebda2bdd2d56219ac7398fa8525d102299faddffcdcc8f2d2379",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://w3id.org/digitalconstruction/0.5/Agents/agents.ttl",
+        "id": "w3id.org/digitalconstruction/0.5/agents/agents",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dcterms": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:12:56.473Z",
+    "sha256": "4049e5491501ebda2bdd2d56219ac7398fa8525d102299faddffcdcc8f2d2379"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 1,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 27,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T17:13:05.695Z",
+    "sha256": "4049e5491501ebda2bdd2d56219ac7398fa8525d102299faddffcdcc8f2d2379"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 5
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 8,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-866 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/digitalconstruction-lifecycle:/work schemascope/oops -"
+    ],
+    "checkedAt": "2026-10-28T17:13:06.402Z",
+    "sha256": "4049e5491501ebda2bdd2d56219ac7398fa8525d102299faddffcdcc8f2d2379"
+  }
+}

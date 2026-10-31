@@ -1,0 +1,57 @@
+{
+  "id": "bigg-metabolite",
+  "artefact": "https://w3id.org/biopragmatics/resources/bigg.metabolite/bigg.metabolite.owl",
+  "checkedAt": "2026-10-28T01:38:54.486Z",
+  "sha256": "0eaed63ac62b9ab7d1045ef0acae237a2d914503d631cd5d3c81a57e63737767",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "ro": 3,
+      "go": 18,
+      "dcterms": 3,
+      "chebi": 50
+    },
+    "scannedMb": 41,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:38:55.956Z",
+    "sha256": "0eaed63ac62b9ab7d1045ef0acae237a2d914503d631cd5d3c81a57e63737767"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 4498,
+      "WARN": 10707,
+      "INFO": 19
+    },
+    "checkedAt": "2026-10-28T01:39:10.790Z",
+    "sha256": "0eaed63ac62b9ab7d1045ef0acae237a2d914503d631cd5d3c81a57e63737767"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:39:17.880Z",
+    "sha256": "0eaed63ac62b9ab7d1045ef0acae237a2d914503d631cd5d3c81a57e63737767"
+  }
+}

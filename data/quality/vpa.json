@@ -1,0 +1,82 @@
+{
+  "id": "vpa",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/vpa/versions/2025-05-23.n3",
+  "checkedAt": "2026-10-29T07:03:50.318Z",
+  "sha256": "e3feaa8f83822e1a02626fc1ed9458208672e8a438fb908f6e0455427e6826d0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "rdf": 6,
+      "owl": 17,
+      "dcterms": 8,
+      "foaf": 7,
+      "xsd": 3,
+      "rdfs": 10,
+      "skos": 7,
+      "era": 10
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:03:53.817Z",
+    "sha256": "e3feaa8f83822e1a02626fc1ed9458208672e8a438fb908f6e0455427e6826d0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 7,
+      "WARN": 53,
+      "INFO": 8
+    },
+    "checkedAt": "2026-10-29T07:03:54.912Z",
+    "sha256": "e3feaa8f83822e1a02626fc1ed9458208672e8a438fb908f6e0455427e6826d0"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 24
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 12,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3988 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/vpa:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T07:03:55.604Z",
+    "sha256": "e3feaa8f83822e1a02626fc1ed9458208672e8a438fb908f6e0455427e6826d0"
+  }
+}

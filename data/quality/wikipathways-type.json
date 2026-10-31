@@ -1,0 +1,11 @@
+{
+  "id": "wikipathways-type",
+  "artefact": "https://github.com/wikipathways/WpVocabularies/raw/refs/heads/master/docs/wpTypes.owl",
+  "checkedAt": "2026-10-29T07:27:23.915Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:27:25.623Z"
+  }
+}

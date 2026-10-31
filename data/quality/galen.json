@@ -1,0 +1,79 @@
+{
+  "id": "galen",
+  "artefact": "http://aber-owl.net/media/ontologies/GALEN/1/galen.owl",
+  "checkedAt": "2026-10-28T19:51:43.343Z",
+  "sha256": "46a668dd235db0a793eae7cd47952444078aa62abf4448fb5b27f301055d38a1",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 8
+    },
+    "scannedMb": 21,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:51:46.643Z",
+    "sha256": "46a668dd235db0a793eae7cd47952444078aa62abf4448fb5b27f301055d38a1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 16519,
+      "WARN": 16518,
+      "INFO": 478
+    },
+    "checkedAt": "2026-10-28T19:51:55.394Z",
+    "sha256": "46a668dd235db0a793eae7cd47952444078aa62abf4448fb5b27f301055d38a1"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 950
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 23141
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 23141,
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:52:01.398Z",
+    "sha256": "46a668dd235db0a793eae7cd47952444078aa62abf4448fb5b27f301055d38a1"
+  }
+}

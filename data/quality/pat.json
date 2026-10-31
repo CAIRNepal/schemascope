@@ -1,0 +1,85 @@
+{
+  "id": "pat",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/pat/versions/2015-01-20.n3",
+  "checkedAt": "2026-10-29T00:37:23.867Z",
+  "sha256": "7dd7636f0b551a6771a4d31c9d6c2995942d44b81b42b0735e0965af028b32fb",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:37:24.200Z",
+    "sha256": "7dd7636f0b551a6771a4d31c9d6c2995942d44b81b42b0735e0965af028b32fb"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 17,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-29T00:37:25.288Z",
+    "sha256": "7dd7636f0b551a6771a4d31c9d6c2995942d44b81b42b0735e0965af028b32fb"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 10
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 6,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2552 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/pat:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T00:37:26.057Z",
+    "sha256": "7dd7636f0b551a6771a4d31c9d6c2995942d44b81b42b0735e0965af028b32fb"
+  }
+}

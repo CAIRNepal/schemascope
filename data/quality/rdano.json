@@ -1,0 +1,59 @@
+{
+  "id": "rdano",
+  "artefact": "http://rdaregistry.info/Elements/n/object/",
+  "checkedAt": "2026-10-29T02:18:24.927Z",
+  "sha256": "af106029e3f71b7ee68190918aa0e30382d2726b73a94aa9a638ed831f2f51c5",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 3,
+      "dc": 9,
+      "rdfs": 5,
+      "rdac": 13
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:18:25.252Z",
+    "sha256": "af106029e3f71b7ee68190918aa0e30382d2726b73a94aa9a638ed831f2f51c5"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 27,
+      "WARN": 179,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:18:27.597Z",
+    "sha256": "af106029e3f71b7ee68190918aa0e30382d2726b73a94aa9a638ed831f2f51c5"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2911 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rdano:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T02:18:28.776Z",
+    "sha256": "af106029e3f71b7ee68190918aa0e30382d2726b73a94aa9a638ed831f2f51c5"
+  }
+}

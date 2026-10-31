@@ -1,0 +1,49 @@
+{
+  "id": "ftm",
+  "artefact": "https://w3id.org/ftm",
+  "checkedAt": "2026-10-28T19:49:57.981Z",
+  "sha256": "81c6667cf4393a19d8dd099e5cf9ae30c5e835da90ac4c21762d75dd16e16d9b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "foaf": 5,
+      "dcterms": 3,
+      "dc": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:49:58.528Z",
+    "sha256": "81c6667cf4393a19d8dd099e5cf9ae30c5e835da90ac4c21762d75dd16e16d9b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 204,
+      "WARN": 660,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-28T19:50:00.498Z",
+    "sha256": "81c6667cf4393a19d8dd099e5cf9ae30c5e835da90ac4c21762d75dd16e16d9b"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:50:06.487Z",
+    "sha256": "81c6667cf4393a19d8dd099e5cf9ae30c5e835da90ac4c21762d75dd16e16d9b"
+  }
+}

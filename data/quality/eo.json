@@ -1,0 +1,132 @@
+{
+  "id": "eo",
+  "artefact": "https://github.com/Planteome/plant-experimental-conditions-ontology/raw/refs/heads/master/peco.owl",
+  "checkedAt": "2026-10-28T19:23:27.861Z",
+  "sha256": "5a75230cb6ec03a5ceb04b7ae5665d65530fdaa8691e6729c3d120261085dbfe",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.obolibrary.org/obo/peco/imports/chebi_import.owl",
+        "id": "peco",
+        "own": false
+      },
+      {
+        "iri": "http://purl.obolibrary.org/obo/peco/imports/envo_import.owl",
+        "id": "peco",
+        "own": false
+      },
+      {
+        "iri": "http://purl.obolibrary.org/obo/peco/imports/ncbitaxon_import.owl",
+        "id": "peco",
+        "own": false
+      },
+      {
+        "iri": "http://purl.obolibrary.org/obo/peco/imports/ro_import.owl",
+        "id": "peco",
+        "own": false
+      },
+      {
+        "iri": "http://purl.obolibrary.org/obo/peco/patterns/exposure-chebi_pattern.owl",
+        "id": "peco",
+        "own": false
+      },
+      {
+        "iri": "http://purl.obolibrary.org/obo/peco/patterns/exposure-chebi_role_pattern.owl",
+        "id": "peco",
+        "own": false
+      },
+      {
+        "iri": "http://purl.obolibrary.org/obo/peco/patterns/exposure-ncbitaxon_pattern.owl",
+        "id": "peco",
+        "own": false
+      }
+    ],
+    "uses": {
+      "iao": 3,
+      "bfo": 14,
+      "chebi": 50,
+      "envo": 50,
+      "pato": 30,
+      "peco": 50,
+      "ncbitaxon": 50,
+      "pco": 4
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:23:28.542Z",
+    "sha256": "5a75230cb6ec03a5ceb04b7ae5665d65530fdaa8691e6729c3d120261085dbfe"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 2024,
+      "WARN": 2035,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T19:23:34.169Z",
+    "sha256": "5a75230cb6ec03a5ceb04b7ae5665d65530fdaa8691e6729c3d120261085dbfe"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 636
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 3183
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 52
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 28
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:26:16.487Z",
+    "sha256": "5a75230cb6ec03a5ceb04b7ae5665d65530fdaa8691e6729c3d120261085dbfe"
+  }
+}

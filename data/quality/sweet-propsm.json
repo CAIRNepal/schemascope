@@ -1,0 +1,73 @@
+{
+  "id": "sweet-propsm",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/propSpaceMultidimensional.ttl",
+  "checkedAt": "2026-10-29T03:49:43.525Z",
+  "sha256": "9811ebbf61542ae75ddf12191474d4a5b3b7bd40ccfe387490c76e395fb2ca9a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T03:49:44.023Z",
+    "sha256": "9811ebbf61542ae75ddf12191474d4a5b3b7bd40ccfe387490c76e395fb2ca9a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://sweetontology.net/reprMath> Cause: Connect timed out\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T03:50:05.545Z",
+    "sha256": "9811ebbf61542ae75ddf12191474d4a5b3b7bd40ccfe387490c76e395fb2ca9a"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 13
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 13,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3412 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sweet-propsm:/work schemascope/oops --input-file /wor"
+    ],
+    "checkedAt": "2026-10-29T03:50:06.231Z",
+    "sha256": "9811ebbf61542ae75ddf12191474d4a5b3b7bd40ccfe387490c76e395fb2ca9a"
+  }
+}

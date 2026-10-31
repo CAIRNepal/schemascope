@@ -1,0 +1,85 @@
+{
+  "id": "woc-ontology",
+  "artefact": "https://raw.githubusercontent.com/codeontology/parser/master/ontology/CodeOntology.owl",
+  "checkedAt": "2026-10-29T07:28:57.315Z",
+  "sha256": "7772aec91d0a0be79b633668795fe3a3984c4d76d9a9880af283b2fdd4472fac",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xkos": 6,
+      "owl": 6,
+      "xsd": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:28:59.500Z",
+    "sha256": "7772aec91d0a0be79b633668795fe3a3984c4d76d9a9880af283b2fdd4472fac"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 5,
+      "WARN": 165,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-29T07:29:00.563Z",
+    "sha256": "7772aec91d0a0be79b633668795fe3a3984c4d76d9a9880af283b2fdd4472fac"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 3,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P05",
+        "name": "Defining wrong inverse relationships",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 7
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 17
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:29:09.645Z",
+    "sha256": "7772aec91d0a0be79b633668795fe3a3984c4d76d9a9880af283b2fdd4472fac"
+  }
+}

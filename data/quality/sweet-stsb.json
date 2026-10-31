@@ -1,0 +1,73 @@
+{
+  "id": "sweet-stsb",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/stateSpectralBand.ttl",
+  "checkedAt": "2026-10-29T04:46:11.889Z",
+  "sha256": "b983fea9bbfb93d23054183a10d223dd4eefb2fa031b3b508ffc908c5a0b44b6",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T04:46:12.432Z",
+    "sha256": "b983fea9bbfb93d23054183a10d223dd4eefb2fa031b3b508ffc908c5a0b44b6"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 13,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-29T04:46:43.986Z",
+    "sha256": "b983fea9bbfb93d23054183a10d223dd4eefb2fa031b3b508ffc908c5a0b44b6"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 13
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 13,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3608 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sweet-stsb:/work schemascope/oops --input-file /work/"
+    ],
+    "checkedAt": "2026-10-29T04:46:45.244Z",
+    "sha256": "b983fea9bbfb93d23054183a10d223dd4eefb2fa031b3b508ffc908c5a0b44b6"
+  }
+}

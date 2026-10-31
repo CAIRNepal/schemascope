@@ -1,0 +1,11 @@
+{
+  "id": "oplcert",
+  "artefact": "http://www.openlinksw.com/schemas/cert",
+  "checkedAt": "2026-10-29T00:28:13.692Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:28:13.923Z"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "id": "saws",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/saws/versions/2013-06-07.n3",
+  "checkedAt": "2026-10-29T02:44:28.971Z",
+  "sha256": "caf9213002e5e4c0326ef686d19f4afa3ea8abb0e7599b888fecd3f58323a863",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:44:35.316Z",
+    "sha256": "caf9213002e5e4c0326ef686d19f4afa3ea8abb0e7599b888fecd3f58323a863"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": false,
+    "unsatisfiable": null,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 12,
+      "WARN": 124,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:44:40.140Z",
+    "sha256": "caf9213002e5e4c0326ef686d19f4afa3ea8abb0e7599b888fecd3f58323a863"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 16
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 16
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 25
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 32,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3155 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/saws:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T02:44:41.448Z",
+    "sha256": "caf9213002e5e4c0326ef686d19f4afa3ea8abb0e7599b888fecd3f58323a863"
+  }
+}

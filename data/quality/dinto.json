@@ -1,0 +1,11 @@
+{
+  "id": "dinto",
+  "artefact": "http://purl.obolibrary.org/obo/dinto.owl",
+  "checkedAt": "2026-10-28T17:14:13.614Z",
+  "downloadError": "resolves to an HTML page (https://github.com/labda/DINTO), not the ontology file",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T17:14:15.862Z"
+  }
+}

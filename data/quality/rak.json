@@ -1,0 +1,97 @@
+{
+  "id": "rak",
+  "artefact": "https://w3id.org/rubalkhali",
+  "checkedAt": "2026-10-29T02:04:02.167Z",
+  "sha256": "82268dcb206526a97266e0c2e8ad9467dc492aa6313f8917a6f11275929f02db",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://bio2vec.net/data/empty-quarter/kg/3.0.1/modules/sio.owl",
+        "id": "bio2vec.net/data/empty-quarter/kg/3.0.1/modules/sio",
+        "own": false
+      },
+      {
+        "iri": "https://bio2vec.net/data/empty-quarter/kg/3.0.1/modules/envo.owl",
+        "id": "bio2vec.net/data/empty-quarter/kg/3.0.1/modules/envo",
+        "own": false
+      },
+      {
+        "iri": "https://bio2vec.net/data/empty-quarter/kg/3.0.1/modules/pato.owl",
+        "id": "bio2vec.net/data/empty-quarter/kg/3.0.1/modules/pato",
+        "own": false
+      },
+      {
+        "iri": "https://bio2vec.net/data/empty-quarter/kg/3.0.1/modules/uo.owl",
+        "id": "bio2vec.net/data/empty-quarter/kg/3.0.1/modules/uo",
+        "own": false
+      }
+    ],
+    "uses": {
+      "pato": 4,
+      "envo": 10,
+      "owl": 5,
+      "sio": 41,
+      "xsd": 3,
+      "dcterms": 9,
+      "pav": 3,
+      "dcat": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:04:04.062Z",
+    "sha256": "82268dcb206526a97266e0c2e8ad9467dc492aa6313f8917a6f11275929f02db"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 18,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T02:04:16.252Z",
+    "sha256": "82268dcb206526a97266e0c2e8ad9467dc492aa6313f8917a6f11275929f02db"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 11
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 297,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2820 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rak:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T02:14:16.633Z",
+    "sha256": "82268dcb206526a97266e0c2e8ad9467dc492aa6313f8917a6f11275929f02db"
+  }
+}

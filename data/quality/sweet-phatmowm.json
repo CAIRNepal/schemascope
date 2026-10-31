@@ -1,0 +1,11 @@
+{
+  "id": "sweet-phatmowm",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/phenAtmoWindMesoscale.ttl",
+  "checkedAt": "2026-10-29T03:30:02.951Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:30:13.452Z"
+  }
+}

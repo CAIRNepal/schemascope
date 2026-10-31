@@ -1,0 +1,90 @@
+{
+  "id": "vibso",
+  "artefact": "https://raw.githubusercontent.com/NFDI4Chem/VibrationalSpectroscopyOntology/main/vibso.owl",
+  "checkedAt": "2026-10-29T06:58:35.838Z",
+  "sha256": "c115673db1b40837afe2fc8795d0ccb939b9b30996dc5e7a960e681691148e1a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 43,
+      "iao": 50,
+      "omo": 21,
+      "obi": 50,
+      "ro": 29,
+      "stato": 8,
+      "chebi": 3,
+      "chmo": 50,
+      "uo": 50,
+      "pato": 23,
+      "rdfs": 4,
+      "xsd": 7,
+      "dc": 16,
+      "dcterms": 8,
+      "doap": 3,
+      "owl": 12
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T06:58:37.895Z",
+    "sha256": "c115673db1b40837afe2fc8795d0ccb939b9b30996dc5e7a960e681691148e1a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 34,
+      "WARN": 197,
+      "INFO": 59
+    },
+    "checkedAt": "2026-10-29T06:58:39.560Z",
+    "sha256": "c115673db1b40837afe2fc8795d0ccb939b9b30996dc5e7a960e681691148e1a"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 30
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 71
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 16
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 477,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3955 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/vibso:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T06:58:45.636Z",
+    "sha256": "c115673db1b40837afe2fc8795d0ccb939b9b30996dc5e7a960e681691148e1a"
+  }
+}

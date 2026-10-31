@@ -1,0 +1,83 @@
+{
+  "id": "coho",
+  "artefact": "https://raw.githubusercontent.com/EBISPOT/cohort-ontology/refs/heads/main/coho.owl",
+  "checkedAt": "2026-10-28T12:39:38.279Z",
+  "sha256": "b0e26c5de6f3d149ffae77220af2e1fa9db2824daa81d8ae5bc130d086223a26",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 50,
+      "bfo": 19,
+      "omo": 25,
+      "ro": 50,
+      "ncit": 3,
+      "ecto": 50,
+      "go": 3,
+      "hp": 50,
+      "mondo": 50,
+      "xsd": 6,
+      "dc": 15,
+      "dcterms": 6,
+      "rdfs": 3,
+      "owl": 6,
+      "envo": 38,
+      "pmid": 50,
+      "swrl": 5
+    },
+    "scannedMb": 21,
+    "truncated": false,
+    "scannedAt": "2026-10-28T12:39:39.535Z",
+    "sha256": "b0e26c5de6f3d149ffae77220af2e1fa9db2824daa81d8ae5bc130d086223a26"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 26,
+      "WARN": 109,
+      "INFO": 70
+    },
+    "checkedAt": "2026-10-28T12:47:25.372Z",
+    "sha256": "b0e26c5de6f3d149ffae77220af2e1fa9db2824daa81d8ae5bc130d086223a26"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 8
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 3,
+    "attempts": [],
+    "checkedAt": "2026-10-28T12:47:31.709Z",
+    "sha256": "b0e26c5de6f3d149ffae77220af2e1fa9db2824daa81d8ae5bc130d086223a26"
+  }
+}

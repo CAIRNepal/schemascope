@@ -1,0 +1,68 @@
+{
+  "id": "mso-em",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/mso-em/versions/2024-07-10.n3",
+  "checkedAt": "2026-10-28T22:39:13.009Z",
+  "sha256": "032157b6dd81dd383e0bed8bf75404a9827acdf92fe87c2725c9e009616adea7",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://batcat.info/semantics/mso-em-2024-07/dol-inclusions.ttl",
+        "id": "batcat.info/semantics/mso-em-2024-07/dol-inclusions",
+        "own": false
+      },
+      {
+        "iri": "https://batcat.info/semantics/mso-em-2024-07/agency.ttl",
+        "id": "batcat.info/semantics/mso-em-2024-07/agency",
+        "own": false
+      }
+    ],
+    "uses": {
+      "owl": 4,
+      "dcterms": 10
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:39:13.953Z",
+    "sha256": "032157b6dd81dd383e0bed8bf75404a9827acdf92fe87c2725c9e009616adea7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T22:39:16.643Z",
+    "sha256": "032157b6dd81dd383e0bed8bf75404a9827acdf92fe87c2725c9e009616adea7"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2143 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mso-em:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T22:39:17.339Z",
+    "sha256": "032157b6dd81dd383e0bed8bf75404a9827acdf92fe87c2725c9e009616adea7"
+  }
+}

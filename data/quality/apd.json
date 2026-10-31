@@ -1,0 +1,57 @@
+{
+  "id": "apd",
+  "artefact": "https://w3id.org/APD",
+  "checkedAt": "2026-10-27T23:48:41.892Z",
+  "sha256": "5f7fab3bda09e0e4fbcc67b7bfabb6c70cf5d4529a76030651919eb2b207a563",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "chebi": 50,
+      "chmo": 3,
+      "cl": 4,
+      "ecocore": 6,
+      "envo": 45,
+      "flopo": 31,
+      "go": 50,
+      "iao": 3,
+      "ncbitaxon": 3,
+      "ncit": 50,
+      "obi": 5,
+      "omit": 7,
+      "pato": 50,
+      "po": 50,
+      "stato": 11,
+      "to": 50,
+      "uberon": 5,
+      "uo": 4,
+      "envthes": 29,
+      "dcterms": 16,
+      "skos": 19,
+      "xsd": 3,
+      "sio": 11,
+      "ecso": 10,
+      "efo": 4
+    },
+    "scannedMb": 4,
+    "truncated": false,
+    "scannedAt": "2026-10-27T23:48:42.504Z",
+    "sha256": "5f7fab3bda09e0e4fbcc67b7bfabb6c70cf5d4529a76030651919eb2b207a563"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "Not a valid (absolute) IRI: @graph\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-27T23:48:43.052Z",
+    "sha256": "5f7fab3bda09e0e4fbcc67b7bfabb6c70cf5d4529a76030651919eb2b207a563"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-95 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/apd:/work schemascope/oops --input-file /work/ontology.",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/apd/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-27T23:48:43.834Z",
+    "sha256": "5f7fab3bda09e0e4fbcc67b7bfabb6c70cf5d4529a76030651919eb2b207a563"
+  }
+}

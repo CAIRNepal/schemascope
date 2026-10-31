@@ -1,0 +1,76 @@
+{
+  "id": "roleo",
+  "artefact": "http://aber-owl.net/media/ontologies/ROLEO/1/roleo.owl",
+  "checkedAt": "2026-10-29T02:32:39.056Z",
+  "sha256": "ace9865ffc89f46594ecbc3070a25fb9a049b3a36447bf94d3b9d1d380c70bc7",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 7,
+      "iao": 14,
+      "ico": 3,
+      "dc": 9,
+      "rdfs": 5,
+      "xsd": 4
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:32:40.759Z",
+    "sha256": "ace9865ffc89f46594ecbc3070a25fb9a049b3a36447bf94d3b9d1d380c70bc7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 633,
+      "WARN": 2153,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-29T02:32:45.755Z",
+    "sha256": "ace9865ffc89f46594ecbc3070a25fb9a049b3a36447bf94d3b9d1d380c70bc7"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1998
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 9
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T02:33:18.046Z",
+    "sha256": "ace9865ffc89f46594ecbc3070a25fb9a049b3a36447bf94d3b9d1d380c70bc7"
+  }
+}

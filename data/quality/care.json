@@ -1,0 +1,73 @@
+{
+  "id": "care",
+  "artefact": "http://eulersharp.sourceforge.net/2003/03swap/care",
+  "checkedAt": "2026-10-28T01:51:51.824Z",
+  "sha256": "4fbd36608d00992fd192016917e69ec039dc6e822bf5a9b923bfc079e3ff9657",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:51:52.247Z",
+    "sha256": "4fbd36608d00992fd192016917e69ec039dc6e822bf5a9b923bfc079e3ff9657"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 4,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T01:51:53.199Z",
+    "sha256": "4fbd36608d00992fd192016917e69ec039dc6e822bf5a9b923bfc079e3ff9657"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-294 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/care:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T01:51:53.967Z",
+    "sha256": "4fbd36608d00992fd192016917e69ec039dc6e822bf5a9b923bfc079e3ff9657"
+  }
+}

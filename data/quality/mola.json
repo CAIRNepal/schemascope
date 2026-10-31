@@ -1,0 +1,87 @@
+{
+  "id": "mola",
+  "artefact": "https://w3id.org/MOLA",
+  "checkedAt": "2026-10-28T22:27:10.106Z",
+  "sha256": "ad2554ad4f2fd5c6e9ece663f782dca71f1e104df86fd2e1564d0c744cc1411e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 6,
+      "dc": 3,
+      "dcterms": 6,
+      "owl": 3,
+      "wgs84": 7
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:27:11.881Z",
+    "sha256": "ad2554ad4f2fd5c6e9ece663f782dca71f1e104df86fd2e1564d0c744cc1411e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 6,
+      "WARN": 48,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T22:27:12.903Z",
+    "sha256": "ad2554ad4f2fd5c6e9ece663f782dca71f1e104df86fd2e1564d0c744cc1411e"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 2,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P05",
+        "name": "Defining wrong inverse relationships",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 7
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 7
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 4
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T22:27:21.277Z",
+    "sha256": "ad2554ad4f2fd5c6e9ece663f782dca71f1e104df86fd2e1564d0c744cc1411e"
+  }
+}

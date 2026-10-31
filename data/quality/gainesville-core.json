@@ -1,0 +1,11 @@
+{
+  "id": "gainesville-core",
+  "artefact": "http://ontologies.makolab.com/gc06/gc.owl",
+  "checkedAt": "2026-10-28T19:51:32.824Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:51:43.341Z"
+  }
+}

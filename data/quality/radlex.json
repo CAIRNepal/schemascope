@@ -1,0 +1,59 @@
+{
+  "id": "radlex",
+  "artefact": "http://aber-owl.net/media/ontologies/RADLEX/1/radlex.owl",
+  "checkedAt": "2026-10-29T02:02:43.416Z",
+  "sha256": "b13aac45f6f9bd74428c976cb018b86aeb7a248683917cfd9ffea253b63b29b1",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 65,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:02:48.596Z",
+    "sha256": "b13aac45f6f9bd74428c976cb018b86aeb7a248683917cfd9ffea253b63b29b1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 92844,
+      "WARN": 22906,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T02:03:20.565Z",
+    "sha256": "b13aac45f6f9bd74428c976cb018b86aeb7a248683917cfd9ffea253b63b29b1"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [],
+    "checkedAt": "2026-10-29T02:03:37.252Z",
+    "sha256": "b13aac45f6f9bd74428c976cb018b86aeb7a248683917cfd9ffea253b63b29b1"
+  }
+}

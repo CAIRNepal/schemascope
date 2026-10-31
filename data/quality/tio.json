@@ -1,0 +1,63 @@
+{
+  "id": "tio",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/tio/versions/2010-11-17.n3",
+  "checkedAt": "2026-10-29T05:18:15.921Z",
+  "sha256": "4643c30acdbcc806a930dcb9ca6e1a7e65f3b8c52b1578bee23c733dba0f540f",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/goodrelations/v1",
+        "id": "gr",
+        "own": true
+      }
+    ],
+    "uses": {
+      "xsd": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:18:16.350Z",
+    "sha256": "4643c30acdbcc806a930dcb9ca6e1a7e65f3b8c52b1578bee23c733dba0f540f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.org/goodrelations/v1> Cause: Server returned HTTP response code: 401 for URL: http://www.heppnetz.de/ontologies/goodrelations/v1\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T05:18:18.360Z",
+    "sha256": "4643c30acdbcc806a930dcb9ca6e1a7e65f3b8c52b1578bee23c733dba0f540f"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 21
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 16,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3774 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tio:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T05:18:19.174Z",
+    "sha256": "4643c30acdbcc806a930dcb9ca6e1a7e65f3b8c52b1578bee23c733dba0f540f"
+  }
+}

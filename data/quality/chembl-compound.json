@@ -1,0 +1,54 @@
+{
+  "id": "chembl-compound",
+  "artefact": "https://w3id.org/biopragmatics/resources/chembl.compound/chembl.compound.owl",
+  "checkedAt": "2026-10-28T02:19:43.219Z",
+  "sha256": "ff116e5edff3577a551da1126fffcee10f5746bf4f9d87b3b45e396129cad674",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 3
+    },
+    "scannedMb": 30,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:19:45.532Z",
+    "sha256": "ff116e5edff3577a551da1126fffcee10f5746bf4f9d87b3b45e396129cad674"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 194,
+      "WARN": 42300,
+      "INFO": 42299
+    },
+    "checkedAt": "2026-10-28T02:19:59.284Z",
+    "sha256": "ff116e5edff3577a551da1126fffcee10f5746bf4f9d87b3b45e396129cad674"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [],
+    "checkedAt": "2026-10-28T02:20:03.317Z",
+    "sha256": "ff116e5edff3577a551da1126fffcee10f5746bf4f9d87b3b45e396129cad674"
+  }
+}

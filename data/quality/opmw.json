@@ -1,0 +1,86 @@
+{
+  "id": "opmw",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/opmw/versions/2014-12-22.n3",
+  "checkedAt": "2026-10-29T00:30:56.251Z",
+  "sha256": "c645638afbbc013fe3f6dbc192704039f7bbda1f165827880eb365e30b7f9928",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/net/p-plan#",
+        "id": "p-plan",
+        "own": false
+      },
+      {
+        "iri": "http://openprovenance.org/model/opmo-20101012.owl",
+        "id": "openprovenance.org/model/opmo-20101012",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/prov-o-20130430",
+        "id": "w3.org/ns/prov-o-20130430",
+        "own": false
+      }
+    ],
+    "uses": {
+      "p-plan": 9,
+      "prov": 7
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:30:57.612Z",
+    "sha256": "c645638afbbc013fe3f6dbc192704039f7bbda1f165827880eb365e30b7f9928"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://purl.org/net/p-plan#> Cause: Unexpected end of file from server\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T00:31:20.362Z",
+    "sha256": "c645638afbbc013fe3f6dbc192704039f7bbda1f165827880eb365e30b7f9928"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 10
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 8,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2481 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/opmw:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T00:31:21.109Z",
+    "sha256": "c645638afbbc013fe3f6dbc192704039f7bbda1f165827880eb365e30b7f9928"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "vrti",
+  "artefact": "https://www.w3id.org/virtual-treasury/ontology",
+  "checkedAt": "2026-10-29T07:04:13.530Z",
+  "sha256": "fe300e0d750cf564dcd3945f9b946ad024538f6fc3c36bce2cc74c4fe9b8f425",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "foaf": 4,
+      "dcterms": 11,
+      "owl": 7,
+      "cidoc-crm": 7,
+      "rdfs": 6
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:04:18.834Z",
+    "sha256": "fe300e0d750cf564dcd3945f9b946ad024538f6fc3c36bce2cc74c4fe9b8f425"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 10,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T07:04:27.131Z",
+    "sha256": "fe300e0d750cf564dcd3945f9b946ad024538f6fc3c36bce2cc74c4fe9b8f425"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3994 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/vrti:/work schemascope/oops --input-file /work/ontolo",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/vrti/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-29T07:04:27.827Z",
+    "sha256": "fe300e0d750cf564dcd3945f9b946ad024538f6fc3c36bce2cc74c4fe9b8f425"
+  }
+}

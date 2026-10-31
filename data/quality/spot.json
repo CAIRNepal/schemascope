@@ -1,0 +1,11 @@
+{
+  "id": "spot",
+  "artefact": "https://w3id.org/spot",
+  "checkedAt": "2026-10-29T03:15:20.474Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:15:30.976Z"
+  }
+}

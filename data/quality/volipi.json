@@ -1,0 +1,41 @@
+{
+  "id": "volipi",
+  "artefact": "http://data.sparna.fr/ontologies/volipi",
+  "checkedAt": "2026-10-29T07:03:43.523Z",
+  "sha256": "87e8577141f89952a0b256d7b5b5ecab0ef7a5ac7cc382049d893cb5c38454fd",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 4,
+      "dcterms": 3,
+      "rdfs": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:03:48.831Z",
+    "sha256": "87e8577141f89952a0b256d7b5b5ecab0ef7a5ac7cc382049d893cb5c38454fd"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 4,
+      "WARN": 9,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T07:03:49.638Z",
+    "sha256": "87e8577141f89952a0b256d7b5b5ecab0ef7a5ac7cc382049d893cb5c38454fd"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3986 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/volipi:/work schemascope/oops --input-file /work/onto",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/volipi/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-29T07:03:50.317Z",
+    "sha256": "87e8577141f89952a0b256d7b5b5ecab0ef7a5ac7cc382049d893cb5c38454fd"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "id": "mds",
+  "artefact": "https://w3id.org/mds",
+  "checkedAt": "2026-10-28T21:50:26.387Z",
+  "sha256": "61a1ee1415412a066cd3b61caf1db10f4c91165a0ea5a26833b1832f935d9d96",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 12
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:50:27.243Z",
+    "sha256": "61a1ee1415412a066cd3b61caf1db10f4c91165a0ea5a26833b1832f935d9d96"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 59,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 68,
+      "WARN": 4101,
+      "INFO": 64
+    },
+    "checkedAt": "2026-10-28T21:50:31.550Z",
+    "sha256": "61a1ee1415412a066cd3b61caf1db10f4c91165a0ea5a26833b1832f935d9d96"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 20
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 30
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 14
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 45
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 177
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 2347,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2021 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mds:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T21:50:32.793Z",
+    "sha256": "61a1ee1415412a066cd3b61caf1db10f4c91165a0ea5a26833b1832f935d9d96"
+  }
+}

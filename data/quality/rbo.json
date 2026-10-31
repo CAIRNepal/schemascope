@@ -1,0 +1,124 @@
+{
+  "id": "rbo",
+  "artefact": "http://purl.obolibrary.org/obo/rbo.owl",
+  "checkedAt": "2026-10-29T02:14:51.080Z",
+  "sha256": "5b5968bbd83d3103b9448fb17d85f09c7c0643f07314e4ae331e30f01ee1f593",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 41,
+      "geno": 5,
+      "iao": 50,
+      "obi": 50,
+      "ro": 50,
+      "ubprop": 16,
+      "bspo": 19,
+      "fbcv": 4,
+      "fbql": 4,
+      "envo": 50,
+      "cob": 12,
+      "caro": 11,
+      "pato": 50,
+      "cl": 50,
+      "go": 50,
+      "uberon": 50,
+      "eco": 9,
+      "chebi": 50,
+      "pco": 7,
+      "xsd": 7,
+      "dc": 10,
+      "dcterms": 11,
+      "rdfs": 7,
+      "skos": 7,
+      "foaf": 4,
+      "owl": 14,
+      "pr": 50,
+      "so": 3,
+      "chmo": 4,
+      "ncbitaxon": 50,
+      "po": 39,
+      "doid": 50,
+      "pmid": 26,
+      "hancestro": 3,
+      "omo": 4,
+      "nbo": 7,
+      "obcs": 6,
+      "obib": 9,
+      "uo": 50,
+      "slso": 50,
+      "fma": 22,
+      "mp": 7,
+      "zfa": 7,
+      "isbn": 4,
+      "fbbt": 4,
+      "swrl": 5
+    },
+    "scannedMb": 29,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:14:52.603Z",
+    "sha256": "5b5968bbd83d3103b9448fb17d85f09c7c0643f07314e4ae331e30f01ee1f593"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 1053,
+      "WARN": 2667,
+      "INFO": 235
+    },
+    "checkedAt": "2026-10-29T02:15:10.154Z",
+    "sha256": "5b5968bbd83d3103b9448fb17d85f09c7c0643f07314e4ae331e30f01ee1f593"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 17
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 233
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1066
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 193
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 9151,
+    "attempts": [],
+    "checkedAt": "2026-10-29T02:15:17.006Z",
+    "sha256": "5b5968bbd83d3103b9448fb17d85f09c7c0643f07314e4ae331e30f01ee1f593"
+  }
+}

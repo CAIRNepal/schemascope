@@ -1,0 +1,99 @@
+{
+  "id": "caro",
+  "artefact": "http://purl.obolibrary.org/obo/caro.owl",
+  "checkedAt": "2026-10-28T01:52:02.103Z",
+  "sha256": "e8dea6df338d1ba10022bccb092db0b8d2b1b5e128cc741a2eef059b72818a6d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 28,
+      "iao": 23,
+      "ro": 50,
+      "go": 50,
+      "pato": 37,
+      "chebi": 50,
+      "xsd": 4,
+      "dc": 8,
+      "dcterms": 5,
+      "owl": 9,
+      "pr": 4,
+      "fbbt": 50,
+      "swrl": 5
+    },
+    "scannedMb": 10,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:52:02.791Z",
+    "sha256": "e8dea6df338d1ba10022bccb092db0b8d2b1b5e128cc741a2eef059b72818a6d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 8477,
+      "WARN": 3715,
+      "INFO": 809
+    },
+    "checkedAt": "2026-10-28T01:52:08.779Z",
+    "sha256": "e8dea6df338d1ba10022bccb092db0b8d2b1b5e128cc741a2eef059b72818a6d"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 2,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P06",
+        "name": "Including cycles in a class hierarchy",
+        "importance": "critical",
+        "affected": 4
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 128
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 74
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 88
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 720,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-300 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/caro:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T01:52:24.997Z",
+    "sha256": "e8dea6df338d1ba10022bccb092db0b8d2b1b5e128cc741a2eef059b72818a6d"
+  }
+}

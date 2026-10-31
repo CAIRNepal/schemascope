@@ -1,0 +1,97 @@
+{
+  "id": "aopo",
+  "artefact": "https://github.com/DataSciBurgoon/aop-ontology/raw/refs/heads/master/aopo.owl",
+  "checkedAt": "2026-10-27T23:08:32.071Z",
+  "sha256": "68aa8b06faeadf3febdafc5afd11a540d7325d27d426fdaf12269c19fdfab269",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.obolibrary.org/obo/chebi.owl",
+        "id": "chebi",
+        "own": false
+      },
+      {
+        "iri": "http://purl.obolibrary.org/obo/hp.owl",
+        "id": "hp",
+        "own": false
+      },
+      {
+        "iri": "http://www.bioassayontology.org/bao/bao_core.owl",
+        "id": "bioassayontology.org/bao/bao_core",
+        "own": false
+      }
+    ],
+    "uses": {
+      "xsd": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-27T23:08:32.620Z",
+    "sha256": "68aa8b06faeadf3febdafc5afd11a540d7325d27d426fdaf12269c19fdfab269"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "timed out; ",
+    "checkedAt": "2026-10-27T23:38:32.893Z",
+    "sha256": "68aa8b06faeadf3febdafc5afd11a540d7325d27d426fdaf12269c19fdfab269"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 45
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 85
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 48
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 87,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-87 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/aopo:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-27T23:48:33.474Z",
+    "sha256": "68aa8b06faeadf3febdafc5afd11a540d7325d27d426fdaf12269c19fdfab269"
+  }
+}

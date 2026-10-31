@@ -1,0 +1,67 @@
+{
+  "id": "situ",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/situ/versions/2015-01-11.n3",
+  "checkedAt": "2026-10-29T03:01:19.500Z",
+  "sha256": "8353b6af9e1204c550509d3eab7ef6f4402e52516314658c134372b9732b5ae7",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl",
+        "id": "cpa",
+        "own": true
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T03:01:22.447Z",
+    "sha256": "8353b6af9e1204c550509d3eab7ef6f4402e52516314658c134372b9732b5ae7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 3,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T03:01:23.648Z",
+    "sha256": "8353b6af9e1204c550509d3eab7ef6f4402e52516314658c134372b9732b5ae7"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3319 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/situ:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T03:01:24.733Z",
+    "sha256": "8353b6af9e1204c550509d3eab7ef6f4402e52516314658c134372b9732b5ae7"
+  }
+}

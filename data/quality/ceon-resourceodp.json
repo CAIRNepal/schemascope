@@ -1,0 +1,82 @@
+{
+  "id": "ceon-resourceodp",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ceon-resourceODP/versions/2025-07-30.n3",
+  "checkedAt": "2026-10-28T02:05:46.814Z",
+  "sha256": "2ec369e838ca7195d8733c3891a01221343327de100bcb19f5464528c603833d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 3,
+      "geosparql": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:05:47.688Z",
+    "sha256": "2ec369e838ca7195d8733c3891a01221343327de100bcb19f5464528c603833d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 27,
+      "INFO": 6
+    },
+    "checkedAt": "2026-10-28T02:05:48.886Z",
+    "sha256": "2ec369e838ca7195d8733c3891a01221343327de100bcb19f5464528c603833d"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 13
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 13,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-397 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ceon-resourceodp:/work schemascope/oops --input-file /"
+    ],
+    "checkedAt": "2026-10-28T02:05:49.970Z",
+    "sha256": "2ec369e838ca7195d8733c3891a01221343327de100bcb19f5464528c603833d"
+  }
+}

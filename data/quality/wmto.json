@@ -1,0 +1,99 @@
+{
+  "id": "wmto",
+  "artefact": "https://w3id.org/wmto",
+  "checkedAt": "2026-10-29T07:28:18.220Z",
+  "sha256": "f01659015c9d8f91831bf7ac91335f9baca1af19f15b5a0da257d91ce83b51df",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/ns/org#",
+        "id": "org",
+        "own": false
+      },
+      {
+        "iri": "http://xmlns.com/foaf/0.1/",
+        "id": "foaf",
+        "own": false
+      },
+      {
+        "iri": "https://brickschema.org/schema/Brick#",
+        "id": "brickschema.org/schema/brick",
+        "own": false
+      },
+      {
+        "iri": "https://schema.org/",
+        "id": "schema",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dc": 3,
+      "dcterms": 3,
+      "schema": 5,
+      "org": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:28:24.256Z",
+    "sha256": "f01659015c9d8f91831bf7ac91335f9baca1af19f15b5a0da257d91ce83b51df"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://data.ashrae.org/bacnet/2020> Cause: https://data.ashrae.org/bacnet/2020\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T07:28:35.656Z",
+    "sha256": "f01659015c9d8f91831bf7ac91335f9baca1af19f15b5a0da257d91ce83b51df"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 8
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 14,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-4043 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/wmto:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T07:28:36.351Z",
+    "sha256": "f01659015c9d8f91831bf7ac91335f9baca1af19f15b5a0da257d91ce83b51df"
+  }
+}

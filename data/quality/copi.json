@@ -1,0 +1,63 @@
+{
+  "id": "copi",
+  "artefact": "https://www.inf.ufrgs.br/ontologies/copi/",
+  "checkedAt": "2026-10-28T13:48:29.302Z",
+  "sha256": "c9e083f721ae4f7a37e3acd32d404ed05b96004d29edb5cb41e9dc42249ba676",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 50,
+      "ro": 8,
+      "obi": 6,
+      "iao": 4,
+      "dc": 4,
+      "dcterms": 15,
+      "rdfs": 4,
+      "skos": 8
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T13:48:34.210Z",
+    "sha256": "c9e083f721ae4f7a37e3acd32d404ed05b96004d29edb5cb41e9dc42249ba676"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 1538,
+      "WARN": 1067,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-28T13:48:38.643Z",
+    "sha256": "c9e083f721ae4f7a37e3acd32d404ed05b96004d29edb5cb41e9dc42249ba676"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 760,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-602 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/copi:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T13:48:40.707Z",
+    "sha256": "c9e083f721ae4f7a37e3acd32d404ed05b96004d29edb5cb41e9dc42249ba676"
+  }
+}

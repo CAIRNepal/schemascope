@@ -1,0 +1,57 @@
+{
+  "id": "hom",
+  "artefact": "http://purl.obolibrary.org/obo/hom.owl",
+  "checkedAt": "2026-10-28T20:42:32.257Z",
+  "sha256": "809a1a78e9938509fc1a9fe18ec636836bd1a7e442a63d6e097f38342a83e644",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:42:32.689Z",
+    "sha256": "809a1a78e9938509fc1a9fe18ec636836bd1a7e442a63d6e097f38342a83e644"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 12,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T20:42:34.489Z",
+    "sha256": "809a1a78e9938509fc1a9fe18ec636836bd1a7e442a63d6e097f38342a83e644"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 47
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T20:42:40.912Z",
+    "sha256": "809a1a78e9938509fc1a9fe18ec636836bd1a7e442a63d6e097f38342a83e644"
+  }
+}

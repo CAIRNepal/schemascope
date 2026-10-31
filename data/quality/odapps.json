@@ -1,0 +1,79 @@
+{
+  "id": "odapps",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/odapps/versions/2014-06-16.n3",
+  "checkedAt": "2026-10-28T23:56:24.000Z",
+  "sha256": "499dae0088cafc71db2b757e4f42e8ab68c5bdce633607048171347e75832e56",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:56:24.764Z",
+    "sha256": "499dae0088cafc71db2b757e4f42e8ab68c5bdce633607048171347e75832e56"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 11,
+      "WARN": 25,
+      "INFO": 5
+    },
+    "checkedAt": "2026-10-28T23:56:26.811Z",
+    "sha256": "499dae0088cafc71db2b757e4f42e8ab68c5bdce633607048171347e75832e56"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 6
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 9
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2332 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/odapps:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T23:56:28.408Z",
+    "sha256": "499dae0088cafc71db2b757e4f42e8ab68c5bdce633607048171347e75832e56"
+  }
+}

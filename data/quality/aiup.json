@@ -1,0 +1,61 @@
+{
+  "id": "aiup",
+  "artefact": "http://w3id.org/aiup",
+  "checkedAt": "2026-10-27T23:07:28.637Z",
+  "sha256": "72087fdb629b4587fedddb3f607ea7071cd4bc2adbb94edbff63ddb33fd9165d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-27T23:07:29.116Z",
+    "sha256": "72087fdb629b4587fedddb3f607ea7071cd4bc2adbb94edbff63ddb33fd9165d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 2,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-27T23:07:30.254Z",
+    "sha256": "72087fdb629b4587fedddb3f607ea7071cd4bc2adbb94edbff63ddb33fd9165d"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 7
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 4,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-63 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/aiup:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-27T23:07:31.011Z",
+    "sha256": "72087fdb629b4587fedddb3f607ea7071cd4bc2adbb94edbff63ddb33fd9165d"
+  }
+}

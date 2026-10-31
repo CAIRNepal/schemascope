@@ -1,0 +1,120 @@
+{
+  "id": "cido",
+  "artefact": "https://github.com/CIDO-ontology/cido/raw/master/cido.owl",
+  "checkedAt": "2026-10-28T02:51:46.116Z",
+  "sha256": "bb17610749edccc346921524ed1836475e91421fa1b391f90b9dc9c37691376a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 50,
+      "dron": 50,
+      "iao": 50,
+      "ncit": 20,
+      "oae": 50,
+      "obi": 50,
+      "ogg": 50,
+      "opmi": 50,
+      "ro": 50,
+      "ubprop": 9,
+      "vo": 50,
+      "chebi": 50,
+      "pr": 50,
+      "ogms": 8,
+      "ido": 23,
+      "doid": 50,
+      "go": 50,
+      "xsd": 10,
+      "rdfs": 6,
+      "dc": 9,
+      "dcterms": 5,
+      "rdf": 4,
+      "owl": 11,
+      "foaf": 4,
+      "ncbitaxon": 50,
+      "compound": 6,
+      "uberon": 50,
+      "hp": 50,
+      "obcs": 11,
+      "envo": 9,
+      "pato": 19,
+      "cl": 9,
+      "pmid": 12,
+      "so": 3,
+      "omrse": 8,
+      "id": 40
+    },
+    "scannedMb": 47,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:51:47.832Z",
+    "sha256": "bb17610749edccc346921524ed1836475e91421fa1b391f90b9dc9c37691376a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1157,
+      "WARN": 6047,
+      "INFO": 386
+    },
+    "checkedAt": "2026-10-28T02:52:09.590Z",
+    "sha256": "bb17610749edccc346921524ed1836475e91421fa1b391f90b9dc9c37691376a"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 310
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 3856
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 310
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 30917,
+    "attempts": [],
+    "checkedAt": "2026-10-28T02:52:19.284Z",
+    "sha256": "bb17610749edccc346921524ed1836475e91421fa1b391f90b9dc9c37691376a"
+  }
+}

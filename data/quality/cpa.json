@@ -1,0 +1,11 @@
+{
+  "id": "cpa",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/cpa/versions/2009-06-02.n3",
+  "checkedAt": "2026-10-28T14:38:35.452Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T14:49:27.057Z"
+  }
+}

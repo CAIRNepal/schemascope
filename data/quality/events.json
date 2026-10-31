@@ -1,0 +1,91 @@
+{
+  "id": "events",
+  "artefact": "http://eulersharp.sourceforge.net/2003/03swap/event",
+  "checkedAt": "2026-10-28T19:35:41.178Z",
+  "sha256": "df156ca194a1cbe584a13d8569283c5546abc631c7dcf3ffcbcf3178f2864c51",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:35:41.709Z",
+    "sha256": "df156ca194a1cbe584a13d8569283c5546abc631c7dcf3ffcbcf3178f2864c51"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 156,
+      "WARN": 220,
+      "INFO": 68
+    },
+    "checkedAt": "2026-10-28T19:35:43.440Z",
+    "sha256": "df156ca194a1cbe584a13d8569283c5546abc631c7dcf3ffcbcf3178f2864c51"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 4,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 68
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1172 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/events:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T19:35:44.246Z",
+    "sha256": "df156ca194a1cbe584a13d8569283c5546abc631c7dcf3ffcbcf3178f2864c51"
+  }
+}

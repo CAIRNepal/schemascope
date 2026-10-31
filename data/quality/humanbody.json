@@ -1,0 +1,79 @@
+{
+  "id": "humanbody",
+  "artefact": "http://eulersharp.sourceforge.net/2003/03swap/humanBody",
+  "checkedAt": "2026-10-28T20:46:58.039Z",
+  "sha256": "cecd342683150867d79a51938300d71f581503be2e6e96bb3326b47867c79479",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:46:58.208Z",
+    "sha256": "cecd342683150867d79a51938300d71f581503be2e6e96bb3326b47867c79479"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 8,
+      "WARN": 30,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T20:46:59.527Z",
+    "sha256": "cecd342683150867d79a51938300d71f581503be2e6e96bb3326b47867c79479"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 19
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 12
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 7
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1561 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/humanbody:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-28T20:47:00.497Z",
+    "sha256": "cecd342683150867d79a51938300d71f581503be2e6e96bb3326b47867c79479"
+  }
+}

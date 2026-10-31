@@ -1,0 +1,73 @@
+{
+  "id": "osmo",
+  "artefact": "https://gitlab.com/vimmp-semantics/vimmp-ontologies/-/raw/alignment-with-emmo-2022/osmo/osmo.ttl",
+  "checkedAt": "2026-10-29T00:34:05.228Z",
+  "sha256": "06d95e646e2f94df423d854fd6dec922c9aa1961ad12d6a9f71db514c455e70b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:34:05.689Z",
+    "sha256": "06d95e646e2f94df423d854fd6dec922c9aa1961ad12d6a9f71db514c455e70b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 40,
+      "WARN": 291,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T00:34:07.213Z",
+    "sha256": "06d95e646e2f94df423d854fd6dec922c9aa1961ad12d6a9f71db514c455e70b"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 0,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 5
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 116
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 148,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2520 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/osmo:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T00:34:07.998Z",
+    "sha256": "06d95e646e2f94df423d854fd6dec922c9aa1961ad12d6a9f71db514c455e70b"
+  }
+}

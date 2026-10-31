@@ -1,0 +1,91 @@
+{
+  "id": "worldavatar-transport",
+  "artefact": "https://raw.githubusercontent.com/TheWorldAvatar/ontology/main/ontology/ontotransport/OntoTransport.owl",
+  "checkedAt": "2026-10-29T07:59:07.724Z",
+  "sha256": "71d4db805eb9abfcf4a843656669b7ff49cacb344a94b0ee456ad2d8c4351673",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.theworldavatar.com/ontology/ontoeip/ecoindustrialpark/EcoIndustrialPark.owl",
+        "id": "theworldavatar.com/ontology/ontoeip/ecoindustrialpark/ecoindustrialpark",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:59:09.536Z",
+    "sha256": "71d4db805eb9abfcf4a843656669b7ff49cacb344a94b0ee456ad2d8c4351673"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 26,
+      "WARN": 23,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T07:59:26.540Z",
+    "sha256": "71d4db805eb9abfcf4a843656669b7ff49cacb344a94b0ee456ad2d8c4351673"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 13
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 7
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 13,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-4194 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/worldavatar-transport:/work schemascope/oops --input-"
+    ],
+    "checkedAt": "2026-10-29T08:00:28.858Z",
+    "sha256": "71d4db805eb9abfcf4a843656669b7ff49cacb344a94b0ee456ad2d8c4351673"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "id": "synsem",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/synsem/versions/2016-01-10.n3",
+  "checkedAt": "2026-10-29T04:55:59.736Z",
+  "sha256": "b09c3bb10689d69509bbb9c8a5fcf3690aa335cd3f1bf553b442fba7deca68ec",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/ns/lemon/ontolex",
+        "id": "ontolex",
+        "own": true
+      }
+    ],
+    "uses": {
+      "rdfs": 6,
+      "rdf": 4,
+      "owl": 13,
+      "xsd": 3,
+      "dc": 8,
+      "ontolex": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T04:56:00.700Z",
+    "sha256": "b09c3bb10689d69509bbb9c8a5fcf3690aa335cd3f1bf553b442fba7deca68ec"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 186,
+      "WARN": 16,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-29T04:56:02.206Z",
+    "sha256": "b09c3bb10689d69509bbb9c8a5fcf3690aa335cd3f1bf553b442fba7deca68ec"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 7
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 12
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 3,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3656 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/synsem:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T04:56:03.067Z",
+    "sha256": "b09c3bb10689d69509bbb9c8a5fcf3690aa335cd3f1bf553b442fba7deca68ec"
+  }
+}

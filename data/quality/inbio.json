@@ -1,0 +1,53 @@
+{
+  "id": "inbio",
+  "artefact": "https://github.com/fusion-jena/INBIO/raw/refs/heads/main/ontology/INBIO-1.2.0.owl",
+  "checkedAt": "2026-10-28T21:08:30.224Z",
+  "sha256": "125d548916be4b6150ecedbf5a6297cf35f37f275ec1b2151d111902b0b16d4f",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 50,
+      "ncit": 50,
+      "obi": 6,
+      "ro": 35,
+      "envo": 50,
+      "bfo": 12,
+      "pato": 30,
+      "go": 4,
+      "pco": 5,
+      "geo": 10,
+      "ncbitaxon": 50,
+      "xsd": 8,
+      "dc": 5,
+      "rdfs": 3,
+      "owl": 8
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:08:30.930Z",
+    "sha256": "125d548916be4b6150ecedbf5a6297cf35f37f275ec1b2151d111902b0b16d4f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 165,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 60,
+      "WARN": 680,
+      "INFO": 15
+    },
+    "checkedAt": "2026-10-28T21:08:35.481Z",
+    "sha256": "125d548916be4b6150ecedbf5a6297cf35f37f275ec1b2151d111902b0b16d4f"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1642 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/inbio:/work schemascope/oops --input-file /work/ontol",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/inbio/ontology.owl\nFailed to convert Li"
+    ],
+    "checkedAt": "2026-10-28T21:08:44.968Z",
+    "sha256": "125d548916be4b6150ecedbf5a6297cf35f37f275ec1b2151d111902b0b16d4f"
+  }
+}

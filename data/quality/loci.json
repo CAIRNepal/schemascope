@@ -1,0 +1,78 @@
+{
+  "id": "loci",
+  "artefact": "http://linked.data.gov.au/def/loci",
+  "checkedAt": "2026-10-28T21:30:59.482Z",
+  "sha256": "e0de95812b7cd16780d125483d6df499613e73334fc591b34c0eb4991ce83911",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://vocab.deri.ie/void",
+        "id": "vocab.deri.ie/void",
+        "own": false
+      },
+      {
+        "iri": "http://www.opengis.net/ont/geosparql",
+        "id": "geosparql",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:31:01.210Z",
+    "sha256": "e0de95812b7cd16780d125483d6df499613e73334fc591b34c0eb4991ce83911"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://vocab.deri.ie/void> Cause: Connect timed out\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T21:31:22.033Z",
+    "sha256": "e0de95812b7cd16780d125483d6df499613e73334fc591b34c0eb4991ce83911"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 4,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1916 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/loci:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T21:31:22.634Z",
+    "sha256": "e0de95812b7cd16780d125483d6df499613e73334fc591b34c0eb4991ce83911"
+  }
+}

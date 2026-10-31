@@ -1,0 +1,51 @@
+{
+  "id": "worldavatar-kgrouter",
+  "artefact": "https://raw.githubusercontent.com/TheWorldAvatar/ontology/main/ontology/ontokgrouter/OntoKGRouter.owl",
+  "checkedAt": "2026-10-29T07:47:35.362Z",
+  "sha256": "5b4ec07dbf304d57a60c55bed21158b27b9e9413dd113a9005caee709ee19fee",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:47:36.964Z",
+    "sha256": "5b4ec07dbf304d57a60c55bed21158b27b9e9413dd113a9005caee709ee19fee"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 7,
+      "WARN": 4,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T07:47:37.854Z",
+    "sha256": "5b4ec07dbf304d57a60c55bed21158b27b9e9413dd113a9005caee709ee19fee"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:47:43.889Z",
+    "sha256": "5b4ec07dbf304d57a60c55bed21158b27b9e9413dd113a9005caee709ee19fee"
+  }
+}

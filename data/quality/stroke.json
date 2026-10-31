@@ -1,0 +1,11 @@
+{
+  "id": "stroke",
+  "artefact": "https://mre.zcu.cz/ontology/stroke.owl",
+  "checkedAt": "2026-10-29T03:19:32.509Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:19:43.010Z"
+  }
+}

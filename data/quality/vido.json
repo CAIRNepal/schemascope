@@ -1,0 +1,11 @@
+{
+  "id": "vido",
+  "artefact": "https://raw.githubusercontent.com/infectious-disease-ontology-extensions/ido-virus/master/ontology/vido.owl",
+  "checkedAt": "2026-10-29T06:59:34.300Z",
+  "downloadError": "download HTTP 404",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T06:59:35.485Z"
+  }
+}

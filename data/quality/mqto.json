@@ -1,0 +1,39 @@
+{
+  "id": "mqto",
+  "artefact": "https://w3id.org/mqto",
+  "checkedAt": "2026-10-28T22:32:25.398Z",
+  "sha256": "d75699911b29dbda0f448df5efd47954731934cf798421225f51221924e65af6",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 15,
+      "pko": 4,
+      "dcterms": 14,
+      "schema": 5,
+      "xsd": 8,
+      "rdfs": 9,
+      "sosa": 7
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:32:25.845Z",
+    "sha256": "d75699911b29dbda0f448df5efd47954731934cf798421225f51221924e65af6"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://rds.posccaesar.org/ontology/lis14/ont/ido-ssn/0.1> Cause: http://rds.posccaesar.org/ontology/lis14/ont/ido-ssn/0.1\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T22:32:26.775Z",
+    "sha256": "d75699911b29dbda0f448df5efd47954731934cf798421225f51221924e65af6"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2130 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mqto:/work schemascope/oops --input-file /work/ontolo",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mqto/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T22:32:27.457Z",
+    "sha256": "d75699911b29dbda0f448df5efd47954731934cf798421225f51221924e65af6"
+  }
+}

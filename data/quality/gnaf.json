@@ -1,0 +1,89 @@
+{
+  "id": "gnaf",
+  "artefact": "http://linked.data.gov.au/def/gnaf",
+  "checkedAt": "2026-10-28T20:24:26.913Z",
+  "sha256": "b33a957d94dcb4780171b6414590c6ef10012c5768c0c7638fc1c8f3d16ecda9",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.opengis.net/ont/geosparql",
+        "id": "geosparql",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dcterms": 11,
+      "schema": 3,
+      "owl": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:24:28.357Z",
+    "sha256": "b33a957d94dcb4780171b6414590c6ef10012c5768c0c7638fc1c8f3d16ecda9"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 8,
+      "WARN": 46,
+      "INFO": 6
+    },
+    "checkedAt": "2026-10-28T20:24:32.613Z",
+    "sha256": "b33a957d94dcb4780171b6414590c6ef10012c5768c0c7638fc1c8f3d16ecda9"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 12
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 14
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 17,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1405 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gnaf:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T20:24:33.312Z",
+    "sha256": "b33a957d94dcb4780171b6414590c6ef10012c5768c0c7638fc1c8f3d16ecda9"
+  }
+}

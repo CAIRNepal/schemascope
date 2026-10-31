@@ -1,0 +1,11 @@
+{
+  "id": "sweet-hukd",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/humanKnowledgeDomain.ttl",
+  "checkedAt": "2026-10-29T03:23:13.022Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:23:23.520Z"
+  }
+}

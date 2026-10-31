@@ -1,0 +1,85 @@
+{
+  "id": "co-336",
+  "artefact": "http://cropontology.org/rdf/CO_336.owl",
+  "checkedAt": "2026-10-28T10:28:24.482Z",
+  "sha256": "95af90c36c2b2d5c0d805688c0641cfebbcffdeb08730ecbceffb0bf59105058",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T10:28:25.703Z",
+    "sha256": "95af90c36c2b2d5c0d805688c0641cfebbcffdeb08730ecbceffb0bf59105058"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 132,
+      "WARN": 531,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T10:28:28.694Z",
+    "sha256": "95af90c36c2b2d5c0d805688c0641cfebbcffdeb08730ecbceffb0bf59105058"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 185
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 176
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 344,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-523 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/co-336:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T10:44:34.479Z",
+    "sha256": "95af90c36c2b2d5c0d805688c0641cfebbcffdeb08730ecbceffb0bf59105058"
+  }
+}

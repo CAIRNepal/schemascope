@@ -1,0 +1,103 @@
+{
+  "id": "foodon",
+  "artefact": "http://purl.obolibrary.org/obo/foodon.owl",
+  "checkedAt": "2026-10-28T19:47:05.221Z",
+  "sha256": "b897bf64c1b265c422db9ee01e1235c10c0b809e7f02326ef810a52068347edf",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 47,
+      "obi": 47,
+      "ro": 50,
+      "bfo": 21,
+      "envo": 50,
+      "hancestro": 50,
+      "cob": 16,
+      "agro": 7,
+      "afpo": 50,
+      "po": 50,
+      "cdno": 50,
+      "chebi": 50,
+      "pato": 50,
+      "uberon": 50,
+      "dcterms": 7,
+      "rdfs": 4,
+      "owl": 9,
+      "xsd": 8,
+      "dron": 23,
+      "ecocore": 41,
+      "fao": 50,
+      "flopo": 4,
+      "ncbitaxon": 50,
+      "gaz": 50,
+      "ncit": 16,
+      "go": 26,
+      "is": 9,
+      "genepio": 4,
+      "ons": 50,
+      "uo": 50,
+      "caro": 3
+    },
+    "scannedMb": 41,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:47:07.064Z",
+    "sha256": "b897bf64c1b265c422db9ee01e1235c10c0b809e7f02326ef810a52068347edf"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 632,
+      "WARN": 23304,
+      "INFO": 87
+    },
+    "checkedAt": "2026-10-28T19:48:14.206Z",
+    "sha256": "b897bf64c1b265c422db9ee01e1235c10c0b809e7f02326ef810a52068347edf"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 61
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 10659
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 62
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 40057,
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:48:22.113Z",
+    "sha256": "b897bf64c1b265c422db9ee01e1235c10c0b809e7f02326ef810a52068347edf"
+  }
+}

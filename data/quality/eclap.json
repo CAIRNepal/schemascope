@@ -1,0 +1,94 @@
+{
+  "id": "eclap",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/eclap/versions/2014-09-04.n3",
+  "checkedAt": "2026-10-28T17:38:43.530Z",
+  "sha256": "ff797c52a34728b52bb9c93e5d12a14233fc207574a5c4094a52ca4532312c7b",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/2004/02/skos/core",
+        "id": "skos",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/oa#",
+        "id": "oa",
+        "own": false
+      },
+      {
+        "iri": "http://xmlns.com/foaf/0.1/",
+        "id": "foaf",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/dc/terms/",
+        "id": "dcterms",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:38:45.342Z",
+    "sha256": "ff797c52a34728b52bb9c93e5d12a14233fc207574a5c4094a52ca4532312c7b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 90,
+      "INFO": 13
+    },
+    "checkedAt": "2026-10-28T17:38:50.007Z",
+    "sha256": "ff797c52a34728b52bb9c93e5d12a14233fc207574a5c4094a52ca4532312c7b"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 63
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 56
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 19,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1032 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/eclap:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-28T17:38:50.802Z",
+    "sha256": "ff797c52a34728b52bb9c93e5d12a14233fc207574a5c4094a52ca4532312c7b"
+  }
+}

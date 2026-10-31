@@ -1,0 +1,75 @@
+{
+  "id": "plink",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/plink/versions/2015-02-14.n3",
+  "checkedAt": "2026-10-29T01:12:01.192Z",
+  "sha256": "322a6dff44b0ae979f3b678a106ead03c720020c263d35ebe8797999e572a083",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "rel": 7
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:12:08.373Z",
+    "sha256": "322a6dff44b0ae979f3b678a106ead03c720020c263d35ebe8797999e572a083"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 228,
+      "WARN": 107,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T01:12:10.029Z",
+    "sha256": "322a6dff44b0ae979f3b678a106ead03c720020c263d35ebe8797999e572a083"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 17
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 103
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 3,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2651 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/plink:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T01:12:10.976Z",
+    "sha256": "322a6dff44b0ae979f3b678a106ead03c720020c263d35ebe8797999e572a083"
+  }
+}

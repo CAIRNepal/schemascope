@@ -1,0 +1,63 @@
+{
+  "id": "uat",
+  "artefact": "https://raw.githubusercontent.com/astrothesaurus/UAT/master/UAT.rdf",
+  "checkedAt": "2026-10-29T05:44:49.312Z",
+  "sha256": "90f35b92398d00af881be4b3290e3a938d80aae76674df4638f0c6673266ccee",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 3,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:44:52.197Z",
+    "sha256": "90f35b92398d00af881be4b3290e3a938d80aae76674df4638f0c6673266ccee"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2316,
+      "WARN": 115,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T05:44:54.680Z",
+    "sha256": "90f35b92398d00af881be4b3290e3a938d80aae76674df4638f0c6673266ccee"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T05:45:14.363Z",
+    "sha256": "90f35b92398d00af881be4b3290e3a938d80aae76674df4638f0c6673266ccee"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "op",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/op/versions/2016-02-28.n3",
+  "checkedAt": "2026-10-29T00:27:27.028Z",
+  "sha256": "f87a1fa823bc16fb88f1585d185a6c96ad859e29e97363a0ce31557f5a19533f",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://qudt.org/1.1/schema/quantity",
+        "id": "qudt.org/1.1/schema/quantity",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/vocab/vann/",
+        "id": "vann",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/vocommons/voaf",
+        "id": "voaf",
+        "own": false
+      },
+      {
+        "iri": "http://purl.org/dc/elements/1.1/",
+        "id": "dc",
+        "own": false
+      }
+    ],
+    "uses": {
+      "rdf": 4,
+      "owl": 16,
+      "rdfs": 8,
+      "xsd": 6,
+      "skos": 8,
+      "dcterms": 10
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:27:27.849Z",
+    "sha256": "f87a1fa823bc16fb88f1585d185a6c96ad859e29e97363a0ce31557f5a19533f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://qudt.org/1.1/schema/quantity> Cause: https://qudt.org/1.1/schema/quantity\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T00:27:29.081Z",
+    "sha256": "f87a1fa823bc16fb88f1585d185a6c96ad859e29e97363a0ce31557f5a19533f"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 8
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 11
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 6,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2461 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/op:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-29T00:27:29.791Z",
+    "sha256": "f87a1fa823bc16fb88f1585d185a6c96ad859e29e97363a0ce31557f5a19533f"
+  }
+}

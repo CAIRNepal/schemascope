@@ -1,0 +1,123 @@
+{
+  "id": "nfdi-core",
+  "artefact": "https://github.com/ISE-FIZKarlsruhe/nfdicore/raw/refs/heads/main/nfdicore.owl",
+  "checkedAt": "2026-10-28T23:17:37.108Z",
+  "sha256": "8dcb748811ba8583ecff1c90f03a8f5fb5ba4e4201df81e155d9e241d1e31890",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 50,
+      "bfo": 50,
+      "obi": 6,
+      "ro": 20,
+      "t4fs": 4,
+      "dc": 5,
+      "dcterms": 6,
+      "skos": 11,
+      "xsd": 3,
+      "owl": 6,
+      "swrl": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:17:37.750Z",
+    "sha256": "8dcb748811ba8583ecff1c90f03a8f5fb5ba4e4201df81e155d9e241d1e31890"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 30,
+      "WARN": 250,
+      "INFO": 25
+    },
+    "checkedAt": "2026-10-28T23:17:39.442Z",
+    "sha256": "8dcb748811ba8583ecff1c90f03a8f5fb5ba4e4201df81e155d9e241d1e31890"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 3,
+    "important": 3,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 20
+      },
+      {
+        "code": "P05",
+        "name": "Defining wrong inverse relationships",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 95
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 26
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 7
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 13
+      },
+      {
+        "code": "P29",
+        "name": "Defining wrong transitive relationships",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T23:17:50.809Z",
+    "sha256": "8dcb748811ba8583ecff1c90f03a8f5fb5ba4e4201df81e155d9e241d1e31890"
+  }
+}

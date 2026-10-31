@@ -1,0 +1,108 @@
+{
+  "id": "sio",
+  "artefact": "https://raw.githubusercontent.com/micheldumontier/semanticscience/master/ontology/sio/release/sio-release.owl",
+  "checkedAt": "2026-10-29T02:59:38.128Z",
+  "sha256": "a7025c9bc510749a9ff72858298228797396e92b5063f3b21f9c93d08a26e425",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "so": 9,
+      "obi": 6,
+      "owl": 14,
+      "xsd": 10,
+      "bibo": 5,
+      "skos": 9,
+      "dcterms": 9,
+      "dc": 3
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:59:38.521Z",
+    "sha256": "a7025c9bc510749a9ff72858298228797396e92b5063f3b21f9c93d08a26e425"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 30,
+      "WARN": 1861,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-29T02:59:43.186Z",
+    "sha256": "a7025c9bc510749a9ff72858298228797396e92b5063f3b21f9c93d08a26e425"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 6,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 205
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 199
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 10
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 6
+      },
+      {
+        "code": "P25",
+        "name": "Defining a relationship as inverse to itself",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P26",
+        "name": "Defining inverse relationships for a symmetric one",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 67
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 9
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:00:14.879Z",
+    "sha256": "a7025c9bc510749a9ff72858298228797396e92b5063f3b21f9c93d08a26e425"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "id": "osgeom",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/osgeom/versions/2012-10-08.n3",
+  "checkedAt": "2026-10-29T00:33:43.841Z",
+  "sha256": "31a8e82c22696e9a60217b6e75f25da1d5be41ebb988ddd026e5ba16d053fe16",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:33:44.763Z",
+    "sha256": "31a8e82c22696e9a60217b6e75f25da1d5be41ebb988ddd026e5ba16d053fe16"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 5,
+      "WARN": 6,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-29T00:33:45.742Z",
+    "sha256": "31a8e82c22696e9a60217b6e75f25da1d5be41ebb988ddd026e5ba16d053fe16"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 3,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2510 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/osgeom:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T00:33:46.365Z",
+    "sha256": "31a8e82c22696e9a60217b6e75f25da1d5be41ebb988ddd026e5ba16d053fe16"
+  }
+}

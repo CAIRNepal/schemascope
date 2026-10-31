@@ -1,0 +1,11 @@
+{
+  "id": "sweet-maf",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/matrFacility.ttl",
+  "checkedAt": "2026-10-29T03:25:19.145Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:25:29.659Z"
+  }
+}

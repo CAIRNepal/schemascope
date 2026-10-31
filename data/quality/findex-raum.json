@@ -1,0 +1,73 @@
+{
+  "id": "findex-raum",
+  "artefact": "https://gitlab.com/fid-bau/terminologie/findex-raum/-/raw/0.0.7/TS/findex-raum-skos.owl",
+  "checkedAt": "2026-10-28T19:43:38.347Z",
+  "sha256": "228488d1a200d9c122cf986b2df0fae70c54566fc38c57350a44850505f338f7",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 5,
+      "dc": 4,
+      "dcterms": 7
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:43:39.086Z",
+    "sha256": "228488d1a200d9c122cf986b2df0fae70c54566fc38c57350a44850505f338f7"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2379,
+      "WARN": 2,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T19:43:41.173Z",
+    "sha256": "228488d1a200d9c122cf986b2df0fae70c54566fc38c57350a44850505f338f7"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 3
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T19:43:51.944Z",
+    "sha256": "228488d1a200d9c122cf986b2df0fae70c54566fc38c57350a44850505f338f7"
+  }
+}

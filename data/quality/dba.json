@@ -1,0 +1,82 @@
+{
+  "id": "dba",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/dba/versions/2022-01-05.n3",
+  "checkedAt": "2026-10-28T16:51:59.311Z",
+  "sha256": "c1b5f5da062d5a6e628134473ebcd700689e14b4ae009ef4bcf7863569d01188",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "foaf": 3,
+      "person": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T16:52:00.386Z",
+    "sha256": "c1b5f5da062d5a6e628134473ebcd700689e14b4ae009ef4bcf7863569d01188"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 157,
+      "WARN": 82,
+      "INFO": 9
+    },
+    "checkedAt": "2026-10-28T16:52:01.935Z",
+    "sha256": "c1b5f5da062d5a6e628134473ebcd700689e14b4ae009ef4bcf7863569d01188"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 8
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 11
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 32,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-759 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/dba:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T16:52:03.442Z",
+    "sha256": "c1b5f5da062d5a6e628134473ebcd700689e14b4ae009ef4bcf7863569d01188"
+  }
+}

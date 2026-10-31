@@ -1,0 +1,11 @@
+{
+  "id": "sphn",
+  "artefact": "https://git.dcc.sib.swiss/sphn-semantic-framework/sphn-ontology/-/raw/master/rdf_schema/sphn_rdf_schema.owl",
+  "checkedAt": "2026-10-29T03:14:48.967Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:14:59.465Z"
+  }
+}

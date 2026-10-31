@@ -1,0 +1,77 @@
+{
+  "id": "doce",
+  "artefact": "http://purl.org/nemo/doce",
+  "checkedAt": "2026-10-28T17:15:23.961Z",
+  "sha256": "2560953314ad62d0f79645d2a721859a1c4d39a35989ae8361d4bf7f9634c9c0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dc": 3,
+      "gufo": 13,
+      "wgs84": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:15:25.253Z",
+    "sha256": "2560953314ad62d0f79645d2a721859a1c4d39a35989ae8361d4bf7f9634c9c0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 15,
+      "WARN": 94,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T17:15:26.332Z",
+    "sha256": "2560953314ad62d0f79645d2a721859a1c4d39a35989ae8361d4bf7f9634c9c0"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 107
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 12
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 145,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-903 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/doce:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T17:15:27.117Z",
+    "sha256": "2560953314ad62d0f79645d2a721859a1c4d39a35989ae8361d4bf7f9634c9c0"
+  }
+}

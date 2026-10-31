@@ -1,0 +1,73 @@
+{
+  "id": "mexperf",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/mexperf/versions/2016-05-01.n3",
+  "checkedAt": "2026-10-28T21:52:28.149Z",
+  "sha256": "76ab6e05dc657f869afd7892912f2dcd89de46200db6493981afdeed1ac9bafd",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:52:28.449Z",
+    "sha256": "76ab6e05dc657f869afd7892912f2dcd89de46200db6493981afdeed1ac9bafd"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://usefulinc.com/ns/doap#> Cause: (certificate_unknown) No subject alternative DNS name matching usefulinc.com found.\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T21:52:29.242Z",
+    "sha256": "76ab6e05dc657f869afd7892912f2dcd89de46200db6493981afdeed1ac9bafd"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 10
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 10,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2041 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mexperf:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-28T21:52:29.929Z",
+    "sha256": "76ab6e05dc657f869afd7892912f2dcd89de46200db6493981afdeed1ac9bafd"
+  }
+}

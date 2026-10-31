@@ -1,0 +1,84 @@
+{
+  "id": "qb4o",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/qb4o/versions/2015-07-11.n3",
+  "checkedAt": "2026-10-29T01:57:48.608Z",
+  "sha256": "4e6ba246c55399e4f77095a9701a5d4560892c347054c263ed93611705cc72c0",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/linked-data/cube#",
+        "id": "qb",
+        "own": true
+      }
+    ],
+    "uses": {
+      "owl": 7,
+      "rdfs": 8,
+      "dcterms": 6,
+      "qb": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:57:52.121Z",
+    "sha256": "4e6ba246c55399e4f77095a9701a5d4560892c347054c263ed93611705cc72c0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 9,
+      "WARN": 24,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-29T01:57:58.048Z",
+    "sha256": "4e6ba246c55399e4f77095a9701a5d4560892c347054c263ed93611705cc72c0"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 16
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 8,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2794 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/qb4o:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-29T01:57:58.777Z",
+    "sha256": "4e6ba246c55399e4f77095a9701a5d4560892c347054c263ed93611705cc72c0"
+  }
+}

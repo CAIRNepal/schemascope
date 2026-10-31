@@ -1,0 +1,11 @@
+{
+  "id": "bila",
+  "artefact": "http://purl.obolibrary.org/obo/bila.owl",
+  "checkedAt": "2026-10-28T01:40:37.489Z",
+  "downloadError": "download HTTP 403",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:40:38.051Z"
+  }
+}

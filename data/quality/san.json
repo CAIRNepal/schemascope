@@ -1,0 +1,72 @@
+{
+  "id": "san",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/SAN/versions/2016-02-26.n3",
+  "checkedAt": "2026-10-29T02:42:20.959Z",
+  "sha256": "4dd6a3275665f58349547553421a9bdb7a491902d5ec628a2423cb48c2b997f3",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://delicias.dia.fi.upm.es/ontologies/ObjectWithStates.owl",
+        "id": "obws",
+        "own": false
+      },
+      {
+        "iri": "http://www.loa-cnr.it/ontologies/DUL.owl",
+        "id": "loa-cnr.it/ontologies/dul",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:42:27.073Z",
+    "sha256": "4dd6a3275665f58349547553421a9bdb7a491902d5ec628a2423cb48c2b997f3"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://www.loa-cnr.it/ontologies/DUL.owl> Cause: Server returned HTTP response code: 403 for URL: http://www.loa-cnr.it/ontologies/DUL.owl\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T02:42:29.023Z",
+    "sha256": "4dd6a3275665f58349547553421a9bdb7a491902d5ec628a2423cb48c2b997f3"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 7
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 12,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3107 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/san:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T02:42:29.733Z",
+    "sha256": "4dd6a3275665f58349547553421a9bdb7a491902d5ec628a2423cb48c2b997f3"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "sweet-phb",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/phenBiol.ttl",
+  "checkedAt": "2026-10-29T03:30:13.453Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:30:23.953Z"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "spvqa",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/spvqa/versions/2017-06-05.n3",
+  "checkedAt": "2026-10-29T03:15:41.480Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:15:51.978Z"
+  }
+}

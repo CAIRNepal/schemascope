@@ -1,0 +1,67 @@
+{
+  "id": "pimsii",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/pimsii/versions/2023-05-09.n3",
+  "checkedAt": "2026-10-29T01:06:12.128Z",
+  "sha256": "82e15e2585971437038174366ff49207198767a3a8c42335bcc2a591f39cdea8",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:06:15.529Z",
+    "sha256": "82e15e2585971437038174366ff49207198767a3a8c42335bcc2a591f39cdea8"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "2026-10-29 01:06:16,603 ERROR org.obolibrary.robot.ReportOperation - Could not complete query 'equivalent_class_axiom_no_genus' - report may be incomplete.\nCause:\niri cannot be null\nreport#MISSING ENTITY BINDING query 'equivalent_class_axiom_no_genus' must include an '?entity'\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T01:06:16.725Z",
+    "sha256": "82e15e2585971437038174366ff49207198767a3a8c42335bcc2a591f39cdea8"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 8
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 194
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 61
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 133,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2637 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/pimsii:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-29T01:06:17.541Z",
+    "sha256": "82e15e2585971437038174366ff49207198767a3a8c42335bcc2a591f39cdea8"
+  }
+}

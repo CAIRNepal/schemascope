@@ -1,0 +1,11 @@
+{
+  "id": "sri",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/sri/versions/2023-11-30.n3",
+  "checkedAt": "2026-10-29T03:16:23.486Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:16:33.987Z"
+  }
+}

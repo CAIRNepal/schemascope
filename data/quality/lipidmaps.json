@@ -1,0 +1,85 @@
+{
+  "id": "lipidmaps",
+  "artefact": "https://lipidmaps.org/files/?file=sparql_lipids&ext=ttl",
+  "checkedAt": "2026-10-28T21:26:49.320Z",
+  "sha256": "3b232d52354b23731931a6410848cec33d1787c5d819ac91749264aa759f68b9",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "chebi": 50
+    },
+    "scannedMb": 37,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:26:57.479Z",
+    "sha256": "3b232d52354b23731931a6410848cec33d1787c5d819ac91749264aa759f68b9"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 76948,
+      "WARN": 80168,
+      "INFO": 480
+    },
+    "checkedAt": "2026-10-28T21:27:28.868Z",
+    "sha256": "3b232d52354b23731931a6410848cec33d1787c5d819ac91749264aa759f68b9"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 2342
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 50606
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 50606,
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:27:37.919Z",
+    "sha256": "3b232d52354b23731931a6410848cec33d1787c5d819ac91749264aa759f68b9"
+  }
+}

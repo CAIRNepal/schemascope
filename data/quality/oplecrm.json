@@ -1,0 +1,11 @@
+{
+  "id": "oplecrm",
+  "artefact": "http://www.openlinksw.com/ontology/ecrm",
+  "checkedAt": "2026-10-29T00:28:13.923Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:28:14.161Z"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "id": "gsel",
+  "artefact": "https://w3id.org/gso/1.0/element/",
+  "checkedAt": "2026-10-28T20:33:31.495Z",
+  "sha256": "f02d5907ace00bc939c688822fe6aa187925516bf3f3faf7fd8052ecacb3c5c6",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "chebi": 50
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:33:31.747Z",
+    "sha256": "f02d5907ace00bc939c688822fe6aa187925516bf3f3faf7fd8052ecacb3c5c6"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "er.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1243)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1143)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadImports(OWLOntologyManagerImpl.java:1873)\n\n\n\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T20:33:36.897Z",
+    "sha256": "f02d5907ace00bc939c688822fe6aa187925516bf3f3faf7fd8052ecacb3c5c6"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 102
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 102,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1434 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/gsel:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T20:33:37.595Z",
+    "sha256": "f02d5907ace00bc939c688822fe6aa187925516bf3f3faf7fd8052ecacb3c5c6"
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "id": "ngbo",
+  "artefact": "http://purl.obolibrary.org/obo/ngbo.owl",
+  "checkedAt": "2026-10-28T23:18:41.199Z",
+  "sha256": "943495c35bfc7e95b2cbb7213815caf2b47c550258262c7affdc30eb57b6dfce",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "genepio": 7,
+      "iao": 50,
+      "bfo": 44,
+      "go": 3,
+      "obi": 50,
+      "ro": 50,
+      "obib": 50,
+      "omiabis": 33,
+      "omrse": 5,
+      "ogms": 4,
+      "bto": 14,
+      "cl": 50,
+      "ncit": 7,
+      "ico": 9,
+      "ncbitaxon": 10,
+      "pato": 19,
+      "so": 7,
+      "pmid": 24,
+      "dc": 12,
+      "xsd": 4,
+      "dcterms": 8,
+      "sio": 37,
+      "rdfs": 8,
+      "owl": 11,
+      "skos": 5,
+      "po": 9
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T23:18:41.644Z",
+    "sha256": "943495c35bfc7e95b2cbb7213815caf2b47c550258262c7affdc30eb57b6dfce"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 304,
+      "WARN": 619,
+      "INFO": 168
+    },
+    "checkedAt": "2026-10-28T23:18:45.044Z",
+    "sha256": "943495c35bfc7e95b2cbb7213815caf2b47c550258262c7affdc30eb57b6dfce"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 2,
+    "important": 2,
+    "minor": 7,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1598
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 104
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 79
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 2
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P29",
+        "name": "Defining wrong transitive relationships",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 10
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T23:19:07.533Z",
+    "sha256": "943495c35bfc7e95b2cbb7213815caf2b47c550258262c7affdc30eb57b6dfce"
+  }
+}

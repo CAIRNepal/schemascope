@@ -1,0 +1,107 @@
+{
+  "id": "tp-ont",
+  "artefact": "https://w3id.org/tp-ont",
+  "checkedAt": "2026-10-29T05:30:29.792Z",
+  "sha256": "810998c4387e88a50400dc037c33a3cce760cbcb70c0298232465d1ca333047f",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://purl.org/ai4s/ontology/planning",
+        "id": "purl.org/ai4s/ontology/planning",
+        "own": false
+      }
+    ],
+    "uses": {
+      "xsd": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:30:30.276Z",
+    "sha256": "810998c4387e88a50400dc037c33a3cce760cbcb70c0298232465d1ca333047f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 67,
+      "WARN": 225,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-29T05:30:33.253Z",
+    "sha256": "810998c4387e88a50400dc037c33a3cce760cbcb70c0298232465d1ca333047f"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 2,
+    "important": 3,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P05",
+        "name": "Defining wrong inverse relationships",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 257
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 46
+      },
+      {
+        "code": "P12",
+        "name": "Equivalent properties not explicitly declared",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 179
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P31",
+        "name": "Defining wrong equivalent classes",
+        "importance": "critical",
+        "affected": 5
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T05:30:51.695Z",
+    "sha256": "810998c4387e88a50400dc037c33a3cce760cbcb70c0298232465d1ca333047f"
+  }
+}

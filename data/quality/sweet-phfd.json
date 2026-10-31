@@ -1,0 +1,11 @@
+{
+  "id": "sweet-phfd",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/phenFluidDynamics.ttl",
+  "checkedAt": "2026-10-29T03:31:37.461Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:31:47.962Z"
+  }
+}

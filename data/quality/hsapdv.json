@@ -1,0 +1,83 @@
+{
+  "id": "hsapdv",
+  "artefact": "http://purl.obolibrary.org/obo/hsapdv.owl",
+  "checkedAt": "2026-10-28T20:45:48.841Z",
+  "sha256": "bc310742b68d398f991fe5f6f3e8177f3ed30f648cc75411f175029d0ec5f5d8",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 3,
+      "uo": 3,
+      "go": 5,
+      "ehdaa2": 48,
+      "uberon": 8,
+      "hp": 4,
+      "rdfs": 3
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:45:49.484Z",
+    "sha256": "bc310742b68d398f991fe5f6f3e8177f3ed30f648cc75411f175029d0ec5f5d8"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 13,
+      "WARN": 43,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T20:45:51.750Z",
+    "sha256": "bc310742b68d398f991fe5f6f3e8177f3ed30f648cc75411f175029d0ec5f5d8"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 22
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 215
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T20:45:59.556Z",
+    "sha256": "bc310742b68d398f991fe5f6f3e8177f3ed30f648cc75411f175029d0ec5f5d8"
+  }
+}

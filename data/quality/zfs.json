@@ -1,0 +1,71 @@
+{
+  "id": "zfs",
+  "artefact": "http://purl.obolibrary.org/obo/zfs.owl",
+  "checkedAt": "2026-10-29T08:11:32.837Z",
+  "sha256": "240ae4ddde3b44a0d5492f5bbb45141c2eeadf056903a65331fc57b9082c94d0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "zfa": 50,
+      "iao": 5,
+      "bfo": 3,
+      "ro": 7,
+      "dcterms": 3,
+      "owl": 3,
+      "cl": 10
+    },
+    "scannedMb": 7,
+    "truncated": false,
+    "scannedAt": "2026-10-29T08:11:35.426Z",
+    "sha256": "240ae4ddde3b44a0d5492f5bbb45141c2eeadf056903a65331fc57b9082c94d0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 545,
+      "INFO": 5
+    },
+    "checkedAt": "2026-10-29T08:11:39.293Z",
+    "sha256": "240ae4ddde3b44a0d5492f5bbb45141c2eeadf056903a65331fc57b9082c94d0"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 126
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 3185
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 10
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 7
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T08:15:30.115Z",
+    "sha256": "240ae4ddde3b44a0d5492f5bbb45141c2eeadf056903a65331fc57b9082c94d0"
+  }
+}

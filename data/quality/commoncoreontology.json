@@ -1,0 +1,67 @@
+{
+  "id": "commoncoreontology",
+  "artefact": "https://github.com/CommonCoreOntology/CommonCoreOntologies/releases/download/v2.2/CommonCoreOntologiesMerged-2.2.ttl",
+  "checkedAt": "2026-10-28T13:04:55.899Z",
+  "sha256": "a9453382b25b40781c181d6ba44981f228abb76d90d548846713adba9baadb42",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 50,
+      "iao": 4,
+      "dcterms": 8,
+      "dc": 3,
+      "skos": 7
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-28T13:04:56.547Z",
+    "sha256": "a9453382b25b40781c181d6ba44981f228abb76d90d548846713adba9baadb42"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 1650,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T13:05:01.105Z",
+    "sha256": "a9453382b25b40781c181d6ba44981f228abb76d90d548846713adba9baadb42"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 18
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1400,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-584 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/commoncoreontology:/work schemascope/oops --input-file"
+    ],
+    "checkedAt": "2026-10-28T13:05:03.435Z",
+    "sha256": "a9453382b25b40781c181d6ba44981f228abb76d90d548846713adba9baadb42"
+  }
+}

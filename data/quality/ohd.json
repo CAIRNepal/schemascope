@@ -1,0 +1,130 @@
+{
+  "id": "ohd",
+  "artefact": "http://purl.obolibrary.org/obo/ohd.owl",
+  "checkedAt": "2026-10-29T00:02:36.708Z",
+  "sha256": "5673ac437ed533b3ba0d11fd87126be30ff8af02981a2ecd573163c5a3ce7525",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 50,
+      "iao": 50,
+      "omo": 25,
+      "ncit": 14,
+      "obi": 26,
+      "ro": 50,
+      "ubprop": 13,
+      "cdt": 50,
+      "ido": 11,
+      "uberon": 50,
+      "pain": 50,
+      "go": 43,
+      "chebi": 50,
+      "ecto": 3,
+      "emro": 33,
+      "hp": 5,
+      "mfoem": 4,
+      "mondo": 4,
+      "omit": 6,
+      "symp": 6,
+      "envo": 4,
+      "ncbitaxon": 18,
+      "ogms": 50,
+      "mf": 7,
+      "rdfs": 6,
+      "xsd": 9,
+      "dc": 16,
+      "dcterms": 8,
+      "skos": 7,
+      "foaf": 3,
+      "owl": 10,
+      "sio": 4,
+      "pato": 47,
+      "omrse": 5,
+      "ohmi": 3,
+      "fma": 12
+    },
+    "scannedMb": 4,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:02:37.203Z",
+    "sha256": "5673ac437ed533b3ba0d11fd87126be30ff8af02981a2ecd573163c5a3ce7525"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 431,
+      "WARN": 720,
+      "INFO": 95
+    },
+    "checkedAt": "2026-10-29T00:02:42.991Z",
+    "sha256": "5673ac437ed533b3ba0d11fd87126be30ff8af02981a2ecd573163c5a3ce7525"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 4,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 97
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 69
+      },
+      {
+        "code": "P13-S",
+        "name": "Inverse relationships not explicitly declared - Symmetric or Transitive?",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P24",
+        "name": "Using recursive definitions",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P26",
+        "name": "Defining inverse relationships for a symmetric one",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 101
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:04:16.877Z",
+    "sha256": "5673ac437ed533b3ba0d11fd87126be30ff8af02981a2ecd573163c5a3ce7525"
+  }
+}

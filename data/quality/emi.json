@@ -1,0 +1,91 @@
+{
+  "id": "emi",
+  "artefact": "https://github.com/earth-metabolome-initiative/earth_metabolome_ontology/raw/refs/heads/main/emi.ttl",
+  "checkedAt": "2026-10-28T18:53:21.763Z",
+  "sha256": "556965cd71bb7e8af8b30d0f730f8e9c958ae8b4913bae94d68a81fc674b77c6",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/2004/02/skos/core",
+        "id": "skos",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/prov-o-20130430",
+        "id": "w3.org/ns/prov-o-20130430",
+        "own": false
+      }
+    ],
+    "uses": {
+      "dc": 3,
+      "dcterms": 9,
+      "vann": 3,
+      "skos": 4,
+      "foaf": 3,
+      "uniprot-core": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T18:53:23.364Z",
+    "sha256": "556965cd71bb7e8af8b30d0f730f8e9c958ae8b4913bae94d68a81fc674b77c6"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 23,
+      "WARN": 127,
+      "INFO": 33
+    },
+    "checkedAt": "2026-10-28T18:53:39.740Z",
+    "sha256": "556965cd71bb7e8af8b30d0f730f8e9c958ae8b4913bae94d68a81fc674b77c6"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 24
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 51,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1105 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/emi:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T18:53:40.455Z",
+    "sha256": "556965cd71bb7e8af8b30d0f730f8e9c958ae8b4913bae94d68a81fc674b77c6"
+  }
+}

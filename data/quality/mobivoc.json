@@ -1,0 +1,73 @@
+{
+  "id": "mobivoc",
+  "artefact": "https://raw.githubusercontent.com/vocol/mobivoc/develop/diagrams/mobivoc_v1.1.4.ttl",
+  "checkedAt": "2026-10-28T22:25:40.515Z",
+  "sha256": "eb456b291d0bf9c71dd24bd73f559964c73970d7e054a4a82bd2d45373d8a541",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T22:25:40.735Z",
+    "sha256": "eb456b291d0bf9c71dd24bd73f559964c73970d7e054a4a82bd2d45373d8a541"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 286,
+      "WARN": 178,
+      "INFO": 34
+    },
+    "checkedAt": "2026-10-28T22:25:42.020Z",
+    "sha256": "eb456b291d0bf9c71dd24bd73f559964c73970d7e054a4a82bd2d45373d8a541"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 33
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 45,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2097 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/mobivoc:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-28T22:25:42.687Z",
+    "sha256": "eb456b291d0bf9c71dd24bd73f559964c73970d7e054a4a82bd2d45373d8a541"
+  }
+}

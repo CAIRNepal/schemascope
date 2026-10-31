@@ -1,0 +1,85 @@
+{
+  "id": "ito",
+  "artefact": "http://aber-owl.net/media/ontologies/ITO/1/ito.owl",
+  "checkedAt": "2026-10-28T21:15:44.312Z",
+  "sha256": "7f4107260e32a7ae16edb4e956a347f3d0bf02f2e44425bd0d0160fd1dc7026f",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 3,
+      "obi": 6,
+      "xsd": 4,
+      "owl": 11,
+      "biotop": 4,
+      "sio": 12,
+      "dc": 7
+    },
+    "scannedMb": 54,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:15:58.058Z",
+    "sha256": "7f4107260e32a7ae16edb4e956a347f3d0bf02f2e44425bd0d0160fd1dc7026f"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 2369,
+      "WARN": 19684,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T21:16:19.354Z",
+    "sha256": "7f4107260e32a7ae16edb4e956a347f3d0bf02f2e44425bd0d0160fd1dc7026f"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 5
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 13985
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 5
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 13987,
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:16:32.973Z",
+    "sha256": "7f4107260e32a7ae16edb4e956a347f3d0bf02f2e44425bd0d0160fd1dc7026f"
+  }
+}

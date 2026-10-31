@@ -1,0 +1,35 @@
+{
+  "id": "ic-prefix",
+  "artefact": "http://imi.go.jp/ns/core/rdf",
+  "checkedAt": "2026-10-28T20:47:25.828Z",
+  "sha256": "62402e5bc7799bebde1d6a20a4de73991bb8a099a2b97a0fed80214a48b042d5",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "rdfs": 4,
+      "owl": 9,
+      "dcterms": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T20:47:36.007Z",
+    "sha256": "62402e5bc7799bebde1d6a20a4de73991bb8a099a2b97a0fed80214a48b042d5"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "Not a valid (absolute) IRI: @graph\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T20:47:36.523Z",
+    "sha256": "62402e5bc7799bebde1d6a20a4de73991bb8a099a2b97a0fed80214a48b042d5"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1575 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ic-prefix:/work schemascope/oops --input-file /work/o",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ic-prefix/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T20:47:37.138Z",
+    "sha256": "62402e5bc7799bebde1d6a20a4de73991bb8a099a2b97a0fed80214a48b042d5"
+  }
+}

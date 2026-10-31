@@ -1,0 +1,85 @@
+{
+  "id": "fowl",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/fowl/versions/2013-02-23.n3",
+  "checkedAt": "2026-10-28T19:48:54.527Z",
+  "sha256": "a982b11c878b8279c618be3be536d8ba2b2fe4bfcf5ca64e512856051f59fea8",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine",
+        "id": "vin",
+        "own": true
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:48:55.784Z",
+    "sha256": "a982b11c878b8279c618be3be536d8ba2b2fe4bfcf5ca64e512856051f59fea8"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 66,
+      "WARN": 64,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T19:48:58.657Z",
+    "sha256": "a982b11c878b8279c618be3be536d8ba2b2fe4bfcf5ca64e512856051f59fea8"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 63
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 4
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 63,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1261 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/fowl:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T19:48:59.381Z",
+    "sha256": "a982b11c878b8279c618be3be536d8ba2b2fe4bfcf5ca64e512856051f59fea8"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "cerif",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/cerif/versions/2013-04-23.n3",
+  "checkedAt": "2026-10-28T02:07:14.968Z",
+  "sha256": "316e0902c63b2b2251cedac4c0161ac10d082d8ce15b293ad90412bc5c30254a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:07:16.379Z",
+    "sha256": "316e0902c63b2b2251cedac4c0161ac10d082d8ce15b293ad90412bc5c30254a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 14,
+      "WARN": 84,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-28T02:07:17.516Z",
+    "sha256": "316e0902c63b2b2251cedac4c0161ac10d082d8ce15b293ad90412bc5c30254a"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 26,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-407 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/cerif:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T02:07:18.290Z",
+    "sha256": "316e0902c63b2b2251cedac4c0161ac10d082d8ce15b293ad90412bc5c30254a"
+  }
+}

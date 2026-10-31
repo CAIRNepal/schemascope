@@ -1,0 +1,59 @@
+{
+  "id": "taxrank",
+  "artefact": "http://purl.obolibrary.org/obo/taxrank.owl",
+  "checkedAt": "2026-10-29T04:58:44.445Z",
+  "sha256": "ac134041984f1157d617f10f67e1c384c18a6a9385d396aa60732df34c193b3e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "iao": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T04:58:44.693Z",
+    "sha256": "ac134041984f1157d617f10f67e1c384c18a6a9385d396aa60732df34c193b3e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 84,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-29T04:58:46.140Z",
+    "sha256": "ac134041984f1157d617f10f67e1c384c18a6a9385d396aa60732df34c193b3e"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 77
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T04:58:54.510Z",
+    "sha256": "ac134041984f1157d617f10f67e1c384c18a6a9385d396aa60732df34c193b3e"
+  }
+}

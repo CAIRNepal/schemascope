@@ -1,0 +1,85 @@
+{
+  "id": "coypu-tiva",
+  "artefact": "https://gitlab.com/coypu-project/coy-ontology/-/raw/main/ontology/indicators/valueandtradeflows.ttl",
+  "checkedAt": "2026-10-28T14:38:31.863Z",
+  "sha256": "804a67ddfad05957ddf8e8b2a7feee0f492fdbc4eb2faaeea24ca05fcf36211a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T14:38:32.174Z",
+    "sha256": "804a67ddfad05957ddf8e8b2a7feee0f492fdbc4eb2faaeea24ca05fcf36211a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 30,
+      "INFO": 9
+    },
+    "checkedAt": "2026-10-28T14:38:34.062Z",
+    "sha256": "804a67ddfad05957ddf8e8b2a7feee0f492fdbc4eb2faaeea24ca05fcf36211a"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 13
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 13
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 14,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-634 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/coypu-tiva:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-28T14:38:35.451Z",
+    "sha256": "804a67ddfad05957ddf8e8b2a7feee0f492fdbc4eb2faaeea24ca05fcf36211a"
+  }
+}

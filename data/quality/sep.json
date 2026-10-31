@@ -1,0 +1,11 @@
+{
+  "id": "sep",
+  "artefact": "http://purl.obolibrary.org/obo/sep.owl",
+  "checkedAt": "2026-10-29T02:51:29.025Z",
+  "downloadError": "download HTTP 403",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T02:51:29.429Z"
+  }
+}

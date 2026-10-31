@@ -1,0 +1,11 @@
+{
+  "id": "sweet-phhe",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/phenHelio.ttl",
+  "checkedAt": "2026-10-29T03:33:11.971Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:33:22.471Z"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "sweet-repsme",
+  "artefact": "https://github.com/ESIPFed/sweet/raw/refs/heads/master/src/reprSciMethodology.ttl",
+  "checkedAt": "2026-10-29T04:31:43.824Z",
+  "sha256": "6484605468b3300014de8627afc3566e7768e6e1f007efa847907dad2baa9f2c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T04:31:44.254Z",
+    "sha256": "6484605468b3300014de8627afc3566e7768e6e1f007efa847907dad2baa9f2c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 19,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T04:32:18.895Z",
+    "sha256": "6484605468b3300014de8627afc3566e7768e6e1f007efa847907dad2baa9f2c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 21
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 21,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3560 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/sweet-repsme:/work schemascope/oops --input-file /wor"
+    ],
+    "checkedAt": "2026-10-29T04:32:20.230Z",
+    "sha256": "6484605468b3300014de8627afc3566e7768e6e1f007efa847907dad2baa9f2c"
+  }
+}

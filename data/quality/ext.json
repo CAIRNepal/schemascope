@@ -1,0 +1,95 @@
+{
+  "id": "ext",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ext/versions/2014-08-28.n3",
+  "checkedAt": "2026-10-28T19:38:59.794Z",
+  "sha256": "a3e853f713604b54838803c31c70142d41c49ca092b8f59a43dc922938fcfee1",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal",
+        "id": "tm",
+        "own": true
+      },
+      {
+        "iri": "http://def.seegrid.csiro.au/isotc211/iso19150/-2/2012/basic",
+        "id": "h2o",
+        "own": true
+      },
+      {
+        "iri": "http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry",
+        "id": "gm",
+        "own": true
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T19:39:00.909Z",
+    "sha256": "a3e853f713604b54838803c31c70142d41c49ca092b8f59a43dc922938fcfee1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal> Cause: def.seegrid.csiro.au\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T19:39:02.147Z",
+    "sha256": "a3e853f713604b54838803c31c70142d41c49ca092b8f59a43dc922938fcfee1"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 2
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 8
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 8
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 8,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1188 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ext:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T19:39:02.749Z",
+    "sha256": "a3e853f713604b54838803c31c70142d41c49ca092b8f59a43dc922938fcfee1"
+  }
+}

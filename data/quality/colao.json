@@ -1,0 +1,87 @@
+{
+  "id": "colao",
+  "artefact": "http://purl.obolibrary.org/obo/colao.owl",
+  "checkedAt": "2026-10-28T12:47:36.071Z",
+  "sha256": "59da1642385e7761f7d5a59e2f3b54fd9202c5a75689c5063e9472ee0f792124",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "aism": 50,
+      "pato": 38,
+      "uberon": 23,
+      "iao": 4,
+      "ro": 15,
+      "bfo": 3,
+      "bspo": 48,
+      "hao": 4,
+      "cl": 4,
+      "dc": 5,
+      "dcterms": 3,
+      "rdfs": 3,
+      "owl": 6
+    },
+    "scannedMb": 3,
+    "truncated": false,
+    "scannedAt": "2026-10-28T12:47:36.646Z",
+    "sha256": "59da1642385e7761f7d5a59e2f3b54fd9202c5a75689c5063e9472ee0f792124"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 72,
+      "WARN": 26,
+      "INFO": 31
+    },
+    "checkedAt": "2026-10-28T12:47:40.983Z",
+    "sha256": "59da1642385e7761f7d5a59e2f3b54fd9202c5a75689c5063e9472ee0f792124"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 32
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 13
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 14
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 893,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-576 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/colao:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T13:04:42.416Z",
+    "sha256": "59da1642385e7761f7d5a59e2f3b54fd9202c5a75689c5063e9472ee0f792124"
+  }
+}

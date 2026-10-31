@@ -1,0 +1,67 @@
+{
+  "id": "kim-educationlevel",
+  "artefact": "https://raw.githubusercontent.com/dini-ag-kim/educationalLevel/main/educationalLevel.ttl",
+  "checkedAt": "2026-10-28T21:19:04.273Z",
+  "sha256": "837993fb5e99850f19d61f1fd9c6626eff13d2bc81348f0efa31b9768d869320",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:19:04.475Z",
+    "sha256": "837993fb5e99850f19d61f1fd9c6626eff13d2bc81348f0efa31b9768d869320"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 16,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T21:19:05.337Z",
+    "sha256": "837993fb5e99850f19d61f1fd9c6626eff13d2bc81348f0efa31b9768d869320"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P39",
+        "name": "Ambiguous namespace",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P38",
+        "name": "No OWL ontology declaration",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1759 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/kim-educationlevel:/work schemascope/oops --input-fil"
+    ],
+    "checkedAt": "2026-10-28T21:19:06.111Z",
+    "sha256": "837993fb5e99850f19d61f1fd9c6626eff13d2bc81348f0efa31b9768d869320"
+  }
+}

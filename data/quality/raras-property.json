@@ -1,0 +1,69 @@
+{
+  "id": "raras-property",
+  "artefact": "https://raras.org/ontology",
+  "checkedAt": "2026-10-29T02:14:25.235Z",
+  "sha256": "f77cf06fe6cb6a3ceeca9b9ed1be6987f6e00d606d9bf38c7f3d2694ba66315b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:14:25.866Z",
+    "sha256": "f77cf06fe6cb6a3ceeca9b9ed1be6987f6e00d606d9bf38c7f3d2694ba66315b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 40,
+      "INFO": 8
+    },
+    "checkedAt": "2026-10-29T02:14:27.280Z",
+    "sha256": "f77cf06fe6cb6a3ceeca9b9ed1be6987f6e00d606d9bf38c7f3d2694ba66315b"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 7
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 8,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2826 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/raras-property:/work schemascope/oops --input-file /w"
+    ],
+    "checkedAt": "2026-10-29T02:14:28.385Z",
+    "sha256": "f77cf06fe6cb6a3ceeca9b9ed1be6987f6e00d606d9bf38c7f3d2694ba66315b"
+  }
+}

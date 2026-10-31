@@ -1,0 +1,79 @@
+{
+  "id": "tdwg-abcd",
+  "artefact": "https://raw.githubusercontent.com/tdwg/abcd/master/ontology/abcd_concepts.owl",
+  "checkedAt": "2026-10-29T04:59:59.945Z",
+  "sha256": "183ab68ef3b2da11edd7e4aa000a41fdea18d883ead00af12da235b4165a4db0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "foaf": 9,
+      "dcterms": 9,
+      "xsd": 8,
+      "vcard": 11,
+      "ac-lov": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:00:00.168Z",
+    "sha256": "183ab68ef3b2da11edd7e4aa000a41fdea18d883ead00af12da235b4165a4db0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 90,
+      "WARN": 463,
+      "INFO": 46
+    },
+    "checkedAt": "2026-10-29T05:00:02.740Z",
+    "sha256": "183ab68ef3b2da11edd7e4aa000a41fdea18d883ead00af12da235b4165a4db0"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 88
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 64,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3704 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tdwg-abcd:/work schemascope/oops --input-file /work/o"
+    ],
+    "checkedAt": "2026-10-29T05:00:04.527Z",
+    "sha256": "183ab68ef3b2da11edd7e4aa000a41fdea18d883ead00af12da235b4165a4db0"
+  }
+}

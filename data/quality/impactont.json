@@ -1,0 +1,41 @@
+{
+  "id": "impactont",
+  "artefact": "https://w3id.org/impactont",
+  "checkedAt": "2026-10-28T21:08:25.272Z",
+  "sha256": "504359c8e499e859902c095659ffed94456591c747a6e70f2cfe942ef8d1b86a",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 13,
+      "rdfs": 5,
+      "dcterms": 3
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:08:28.012Z",
+    "sha256": "504359c8e499e859902c095659ffed94456591c747a6e70f2cfe942ef8d1b86a"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 24,
+      "INFO": 5
+    },
+    "checkedAt": "2026-10-28T21:08:29.180Z",
+    "sha256": "504359c8e499e859902c095659ffed94456591c747a6e70f2cfe942ef8d1b86a"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1639 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/impactont:/work schemascope/oops --input-file /work/o",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/impactont/ontology.owl\n"
+    ],
+    "checkedAt": "2026-10-28T21:08:30.223Z",
+    "sha256": "504359c8e499e859902c095659ffed94456591c747a6e70f2cfe942ef8d1b86a"
+  }
+}

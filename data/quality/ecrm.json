@@ -1,0 +1,73 @@
+{
+  "id": "ecrm",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ecrm/versions/2017-01-03.n3",
+  "checkedAt": "2026-10-28T17:52:47.651Z",
+  "sha256": "d5907e9eedf44ec32db33d1ee8d46a5e6f56e43face4fe5d6736935cdcc09bca",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:52:48.531Z",
+    "sha256": "d5907e9eedf44ec32db33d1ee8d46a5e6f56e43face4fe5d6736935cdcc09bca"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 11,
+      "WARN": 365,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T17:52:50.044Z",
+    "sha256": "d5907e9eedf44ec32db33d1ee8d46a5e6f56e43face4fe5d6736935cdcc09bca"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 19
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 6
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 84,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1042 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ecrm:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T17:52:50.807Z",
+    "sha256": "d5907e9eedf44ec32db33d1ee8d46a5e6f56e43face4fe5d6736935cdcc09bca"
+  }
+}

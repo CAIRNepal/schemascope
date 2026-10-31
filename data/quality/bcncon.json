@@ -1,0 +1,11 @@
+{
+  "id": "bcncon",
+  "artefact": "http://datos.bcn.cl/ontologies/bcn-congress",
+  "checkedAt": "2026-10-28T01:01:29.394Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:02:41.126Z"
+  }
+}

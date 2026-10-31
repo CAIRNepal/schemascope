@@ -1,0 +1,11 @@
+{
+  "id": "wfdesc",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/wfdesc/versions/2016-01-28.n3",
+  "checkedAt": "2026-10-29T07:23:33.379Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:23:43.893Z"
+  }
+}

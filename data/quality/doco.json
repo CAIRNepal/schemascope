@@ -1,0 +1,69 @@
+{
+  "id": "doco",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/doco/versions/2015-07-03.n3",
+  "checkedAt": "2026-10-28T17:15:27.118Z",
+  "sha256": "6ce234715ebcbdf3f01e838da407fdfe187b42ee985f94c3b276a2c4c91465c9",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://purl.org/spar/deo",
+        "id": "deo",
+        "own": false
+      },
+      {
+        "iri": "http://www.essepuntato.it/2008/12/pattern",
+        "id": "pattern",
+        "own": false
+      }
+    ],
+    "uses": {
+      "pattern": 13,
+      "deo": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:15:27.979Z",
+    "sha256": "6ce234715ebcbdf3f01e838da407fdfe187b42ee985f94c3b276a2c4c91465c9"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "er.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1243)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1143)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadImports(OWLOntologyManagerImpl.java:1873)\n\n\n\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T17:15:31.550Z",
+    "sha256": "6ce234715ebcbdf3f01e838da407fdfe187b42ee985f94c3b276a2c4c91465c9"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 4
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 57,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-905 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/doco:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T17:15:32.273Z",
+    "sha256": "6ce234715ebcbdf3f01e838da407fdfe187b42ee985f94c3b276a2c4c91465c9"
+  }
+}

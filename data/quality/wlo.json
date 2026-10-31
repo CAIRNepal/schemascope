@@ -1,0 +1,11 @@
+{
+  "id": "wlo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/wlo/versions/2013-12-18.n3",
+  "checkedAt": "2026-10-29T07:28:07.706Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:28:18.218Z"
+  }
+}

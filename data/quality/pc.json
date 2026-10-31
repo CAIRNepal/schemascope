@@ -1,0 +1,61 @@
+{
+  "id": "pc",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/pc/versions/2012-10-10.n3",
+  "checkedAt": "2026-10-29T00:38:43.582Z",
+  "sha256": "bbcb98236dc42232a7b9979b1f9bfc0003cd13f3504936db6ed73cb49710b544",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T00:38:46.756Z",
+    "sha256": "bbcb98236dc42232a7b9979b1f9bfc0003cd13f3504936db6ed73cb49710b544"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 118,
+      "WARN": 51,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-29T00:38:48.050Z",
+    "sha256": "bbcb98236dc42232a7b9979b1f9bfc0003cd13f3504936db6ed73cb49710b544"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 6,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2569 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/pc:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-29T00:38:48.913Z",
+    "sha256": "bbcb98236dc42232a7b9979b1f9bfc0003cd13f3504936db6ed73cb49710b544"
+  }
+}

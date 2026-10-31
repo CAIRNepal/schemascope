@@ -1,0 +1,75 @@
+{
+  "id": "l4lod",
+  "artefact": "http://ns.inria.fr/l4lod/v2/",
+  "checkedAt": "2026-10-28T21:20:05.462Z",
+  "sha256": "4a3625016d0d8bf2ea004d36a20b0dd930f3690c1907e201d3f0add2fd678a93",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:20:07.778Z",
+    "sha256": "4a3625016d0d8bf2ea004d36a20b0dd930f3690c1907e201d3f0add2fd678a93"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 23,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T21:20:08.777Z",
+    "sha256": "4a3625016d0d8bf2ea004d36a20b0dd930f3690c1907e201d3f0add2fd678a93"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 5
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "minor",
+        "affected": 2
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:20:14.347Z",
+    "sha256": "4a3625016d0d8bf2ea004d36a20b0dd930f3690c1907e201d3f0add2fd678a93"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "xlmod",
+  "artefact": "http://purl.obolibrary.org/obo/xlmod.owl",
+  "checkedAt": "2026-10-29T08:05:35.976Z",
+  "sha256": "3a3024f23b30918d61576d67080d97321b2f5f7a5eeb655ef3aa2c10bc0593b0",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 5
+    },
+    "scannedMb": 2,
+    "truncated": false,
+    "scannedAt": "2026-10-29T08:05:39.212Z",
+    "sha256": "3a3024f23b30918d61576d67080d97321b2f5f7a5eeb655ef3aa2c10bc0593b0"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 15,
+      "WARN": 11,
+      "INFO": 30
+    },
+    "checkedAt": "2026-10-29T08:05:41.244Z",
+    "sha256": "3a3024f23b30918d61576d67080d97321b2f5f7a5eeb655ef3aa2c10bc0593b0"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 3,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1106
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 17
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 17
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T08:06:05.873Z",
+    "sha256": "3a3024f23b30918d61576d67080d97321b2f5f7a5eeb655ef3aa2c10bc0593b0"
+  }
+}

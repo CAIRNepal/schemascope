@@ -1,0 +1,11 @@
+{
+  "id": "doap",
+  "artefact": "http://usefulinc.com/ns/doap",
+  "checkedAt": "2026-10-28T17:15:09.953Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T17:15:10.229Z"
+  }
+}

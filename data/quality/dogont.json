@@ -1,0 +1,116 @@
+{
+  "id": "dogont",
+  "artefact": "https://raw.githubusercontent.com/iot-ontologies/dogont/master/dogont.owl",
+  "checkedAt": "2026-10-28T17:15:37.541Z",
+  "sha256": "ae031bb40c2a8b17f33d6649bad54795ffe17d0c837a56dbb1a833ffc8194bd1",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://elite.polito.it/ontologies/ucum-instances.owl",
+        "id": "elite.polito.it/ontologies/ucum-instances",
+        "own": false
+      }
+    ],
+    "uses": {
+      "xsd": 7,
+      "dcterms": 7,
+      "rdfs": 3,
+      "owl": 7
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:15:37.861Z",
+    "sha256": "ae031bb40c2a8b17f33d6649bad54795ffe17d0c837a56dbb1a833ffc8194bd1"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 928,
+      "WARN": 1123,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-28T17:15:41.072Z",
+    "sha256": "ae031bb40c2a8b17f33d6649bad54795ffe17d0c837a56dbb1a833ffc8194bd1"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 3,
+    "minor": 7,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P07",
+        "name": "Merging different concepts in the same class",
+        "importance": "minor",
+        "affected": 11
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 956
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 12
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 12
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P21",
+        "name": "Using a miscellaneous class",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 3
+      },
+      {
+        "code": "P31",
+        "name": "Defining wrong equivalent classes",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T17:16:11.291Z",
+    "sha256": "ae031bb40c2a8b17f33d6649bad54795ffe17d0c837a56dbb1a833ffc8194bd1"
+  }
+}

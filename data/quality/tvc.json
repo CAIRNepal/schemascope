@@ -1,0 +1,78 @@
+{
+  "id": "tvc",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/tvc/versions/2012-06-08.n3",
+  "checkedAt": "2026-10-29T05:33:46.493Z",
+  "sha256": "b4b3f3e697cb6037d0ba56252d3877f4c4bb043f92e42cd5fc9fc9784f1ea4e3",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://www.ontologydesignpatterns.org/cp/owl/timeindexedsituation.owl",
+        "id": "ontologydesignpatterns.org/cp/owl/timeindexedsituation",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/2006/time",
+        "id": "time",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:33:54.496Z",
+    "sha256": "b4b3f3e697cb6037d0ba56252d3877f4c4bb043f92e42cd5fc9fc9784f1ea4e3"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 6,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-29T05:33:56.809Z",
+    "sha256": "b4b3f3e697cb6037d0ba56252d3877f4c4bb043f92e42cd5fc9fc9784f1ea4e3"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 4
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 1,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3879 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/tvc:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-29T05:33:57.509Z",
+    "sha256": "b4b3f3e697cb6037d0ba56252d3877f4c4bb043f92e42cd5fc9fc9784f1ea4e3"
+  }
+}

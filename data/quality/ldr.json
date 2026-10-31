@@ -1,0 +1,81 @@
+{
+  "id": "ldr",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ldr/versions/2014-08-30.n3",
+  "checkedAt": "2026-10-28T21:21:52.364Z",
+  "sha256": "d77d7ec6005eb3af42d7dab85619e1e4bb723fb47b319dcc33a7ad5cc8753a17",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "odrl": 7
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:21:52.672Z",
+    "sha256": "d77d7ec6005eb3af42d7dab85619e1e4bb723fb47b319dcc33a7ad5cc8753a17"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 88,
+      "WARN": 41,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T21:21:54.475Z",
+    "sha256": "d77d7ec6005eb3af42d7dab85619e1e4bb723fb47b319dcc33a7ad5cc8753a17"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 21
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 4
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 21,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1818 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ldr:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T21:21:55.652Z",
+    "sha256": "d77d7ec6005eb3af42d7dab85619e1e4bb723fb47b319dcc33a7ad5cc8753a17"
+  }
+}

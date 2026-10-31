@@ -1,0 +1,65 @@
+{
+  "id": "bsdo",
+  "artefact": "https://w3id.org/bsdo",
+  "checkedAt": "2026-10-28T01:46:18.219Z",
+  "sha256": "71ae7bae875511f4a166ea406e658287ae0c575e77c27fe6662b1fe5eaaea505",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "xsd": 7
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:46:19.648Z",
+    "sha256": "71ae7bae875511f4a166ea406e658287ae0c575e77c27fe6662b1fe5eaaea505"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 82,
+      "INFO": 14
+    },
+    "checkedAt": "2026-10-28T01:46:20.800Z",
+    "sha256": "71ae7bae875511f4a166ea406e658287ae0c575e77c27fe6662b1fe5eaaea505"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 0,
+    "minor": 4,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 6
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 20
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:46:27.454Z",
+    "sha256": "71ae7bae875511f4a166ea406e658287ae0c575e77c27fe6662b1fe5eaaea505"
+  }
+}

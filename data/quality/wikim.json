@@ -1,0 +1,11 @@
+{
+  "id": "wikim",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/wikim/versions/2013-12-15.n3",
+  "checkedAt": "2026-10-29T07:24:50.736Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:25:01.250Z"
+  }
+}

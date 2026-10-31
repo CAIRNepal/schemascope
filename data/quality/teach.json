@@ -1,0 +1,79 @@
+{
+  "id": "teach",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/teach/versions/2013-04-25.n3",
+  "checkedAt": "2026-10-29T05:00:28.856Z",
+  "sha256": "ab9fb0c729b0a2d8ef65df2812f0f30e8dbd6b5e7c1f4da097ae659adb0dc02e",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T05:00:31.341Z",
+    "sha256": "ab9fb0c729b0a2d8ef65df2812f0f30e8dbd6b5e7c1f4da097ae659adb0dc02e"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 8,
+      "WARN": 39,
+      "INFO": 11
+    },
+    "checkedAt": "2026-10-29T05:00:32.763Z",
+    "sha256": "ab9fb0c729b0a2d8ef65df2812f0f30e8dbd6b5e7c1f4da097ae659adb0dc02e"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 3,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 22
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 28
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 11,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3714 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/teach:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T05:00:34.146Z",
+    "sha256": "ab9fb0c729b0a2d8ef65df2812f0f30e8dbd6b5e7c1f4da097ae659adb0dc02e"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "id": "biolink",
+  "artefact": "https://w3id.org/biolink/biolink-model.owl.ttl",
+  "checkedAt": "2026-10-28T01:41:31.686Z",
+  "sha256": "599e64cbdc3772ca8a0e8e34f80c50217db4fd3be780f9234d3038d07caacaa9",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "uo": 5,
+      "ncit": 50,
+      "chebi": 13,
+      "pr": 4,
+      "snomed": 22,
+      "bfo": 14,
+      "geno": 12,
+      "mondo": 6,
+      "go": 11,
+      "pato": 8,
+      "cl": 3,
+      "so": 24,
+      "foodon": 8,
+      "uberon": 21,
+      "stato": 25,
+      "envo": 3,
+      "ncbitaxon": 9,
+      "mpath": 3,
+      "obi": 8,
+      "bspo": 40,
+      "hp": 4,
+      "sepio": 4,
+      "ro": 50,
+      "exo": 3,
+      "sio": 50,
+      "snomedct": 6,
+      "gorel": 6,
+      "iao": 9,
+      "efo": 6,
+      "faldo": 3
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:41:32.109Z",
+    "sha256": "599e64cbdc3772ca8a0e8e34f80c50217db4fd3be780f9234d3038d07caacaa9"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 66,
+      "WARN": 1271,
+      "INFO": 0
+    },
+    "checkedAt": "2026-10-28T01:41:34.392Z",
+    "sha256": "599e64cbdc3772ca8a0e8e34f80c50217db4fd3be780f9234d3038d07caacaa9"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P06",
+        "name": "Including cycles in a class hierarchy",
+        "importance": "critical",
+        "affected": 4
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 70
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 158
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 111
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 699,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-213 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/biolink:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T01:41:35.565Z",
+    "sha256": "599e64cbdc3772ca8a0e8e34f80c50217db4fd3be780f9234d3038d07caacaa9"
+  }
+}

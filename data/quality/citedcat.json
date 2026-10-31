@@ -1,0 +1,73 @@
+{
+  "id": "citedcat",
+  "artefact": "https://ec-jrc.github.io/datacite-to-dcat-ap/citedcat-ap.ttl",
+  "checkedAt": "2026-10-28T05:10:18.251Z",
+  "sha256": "0e5afd98add31d6913619ff296f2977892ee933315fa27d10511e7d76afb0c96",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T05:10:18.419Z",
+    "sha256": "0e5afd98add31d6913619ff296f2977892ee933315fa27d10511e7d76afb0c96"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 30,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T05:10:20.318Z",
+    "sha256": "0e5afd98add31d6913619ff296f2977892ee933315fa27d10511e7d76afb0c96"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 24
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 17
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 3,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-469 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/citedcat:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-28T05:10:21.757Z",
+    "sha256": "0e5afd98add31d6913619ff296f2977892ee933315fa27d10511e7d76afb0c96"
+  }
+}

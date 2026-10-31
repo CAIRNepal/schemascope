@@ -1,0 +1,76 @@
+{
+  "id": "eccrev",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/eccrev/versions/2016-03-14.n3",
+  "checkedAt": "2026-10-28T17:37:44.489Z",
+  "sha256": "f9a36788552bb12e0dc4b7780ee9b432ca7baf99966892e94964260b5d550e10",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "owl": 15,
+      "rdfs": 8,
+      "prov": 8,
+      "vann": 3,
+      "dcterms": 9,
+      "foaf": 3,
+      "xsd": 4,
+      "doap": 5
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:37:45.326Z",
+    "sha256": "f9a36788552bb12e0dc4b7780ee9b432ca7baf99966892e94964260b5d550e10"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 25,
+      "WARN": 32,
+      "INFO": 3
+    },
+    "checkedAt": "2026-10-28T17:37:46.556Z",
+    "sha256": "f9a36788552bb12e0dc4b7780ee9b432ca7baf99966892e94964260b5d550e10"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 4
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 7
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 4,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1022 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/eccrev:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T17:37:47.287Z",
+    "sha256": "f9a36788552bb12e0dc4b7780ee9b432ca7baf99966892e94964260b5d550e10"
+  }
+}

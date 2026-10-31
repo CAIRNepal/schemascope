@@ -1,0 +1,54 @@
+{
+  "id": "ccf",
+  "artefact": "http://aber-owl.net/media/ontologies/CCF/1/ccf.owl",
+  "checkedAt": "2026-10-28T01:53:26.968Z",
+  "sha256": "d6643e9d1e38bb9d770a6c5827d7572204d697ed7676afade6b546cef5ead5b4",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T01:53:28.074Z",
+    "sha256": "d6643e9d1e38bb9d770a6c5827d7572204d697ed7676afade6b546cef5ead5b4"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 114,
+      "INFO": 21
+    },
+    "checkedAt": "2026-10-28T01:53:29.200Z",
+    "sha256": "d6643e9d1e38bb9d770a6c5827d7572204d697ed7676afade6b546cef5ead5b4"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-327 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ccf:/work schemascope/oops --input-file /work/ontology"
+    ],
+    "checkedAt": "2026-10-28T01:53:29.998Z",
+    "sha256": "d6643e9d1e38bb9d770a6c5827d7572204d697ed7676afade6b546cef5ead5b4"
+  }
+}

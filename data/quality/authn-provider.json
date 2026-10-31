@@ -1,0 +1,67 @@
+{
+  "id": "authn-provider",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/authn_provider/versions/2023-09-20.n3",
+  "checkedAt": "2026-10-28T00:02:08.146Z",
+  "sha256": "f7f44acf573bd6f614855d151de598d5e371aad8e5742bbc0d213c3b4041174c",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T00:02:10.281Z",
+    "sha256": "f7f44acf573bd6f614855d151de598d5e371aad8e5742bbc0d213c3b4041174c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 2,
+      "WARN": 4,
+      "INFO": 1
+    },
+    "checkedAt": "2026-10-28T00:02:11.302Z",
+    "sha256": "f7f44acf573bd6f614855d151de598d5e371aad8e5742bbc0d213c3b4041174c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-133 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/authn-provider:/work schemascope/oops --input-file /wo"
+    ],
+    "checkedAt": "2026-10-28T00:02:12.182Z",
+    "sha256": "f7f44acf573bd6f614855d151de598d5e371aad8e5742bbc0d213c3b4041174c"
+  }
+}

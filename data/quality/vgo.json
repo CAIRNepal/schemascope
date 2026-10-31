@@ -1,0 +1,11 @@
+{
+  "id": "vgo",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/vgo/versions/2015-05-05.n3",
+  "checkedAt": "2026-10-29T06:58:19.427Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T06:58:21.183Z"
+  }
+}

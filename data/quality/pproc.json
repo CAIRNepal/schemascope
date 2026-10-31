@@ -1,0 +1,85 @@
+{
+  "id": "pproc",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/pproc/versions/2015-01-11.n3",
+  "checkedAt": "2026-10-29T01:29:28.370Z",
+  "sha256": "cf984e7d112e75d518822d593b09f651f93dc2e138175def4d17fe38c208b783",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:29:29.532Z",
+    "sha256": "cf984e7d112e75d518822d593b09f651f93dc2e138175def4d17fe38c208b783"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 655,
+      "WARN": 251,
+      "INFO": 35
+    },
+    "checkedAt": "2026-10-29T01:29:30.922Z",
+    "sha256": "cf984e7d112e75d518822d593b09f651f93dc2e138175def4d17fe38c208b783"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 1,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P19",
+        "name": "Defining multiple domains or ranges in properties",
+        "importance": "critical",
+        "affected": 3
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 11
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 28
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 62
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 78,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2720 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/pproc:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T01:29:31.703Z",
+    "sha256": "cf984e7d112e75d518822d593b09f651f93dc2e138175def4d17fe38c208b783"
+  }
+}

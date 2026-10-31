@@ -1,0 +1,65 @@
+{
+  "id": "depmap",
+  "artefact": "https://w3id.org/biopragmatics/resources/depmap/depmap.owl",
+  "checkedAt": "2026-10-28T16:59:09.570Z",
+  "sha256": "c2df175cefa465e56a7cf902a3c9b2c50b6dc9eed359cab20f3cafb0c3cfc609",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "dcterms": 3
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-28T16:59:10.272Z",
+    "sha256": "c2df175cefa465e56a7cf902a3c9b2c50b6dc9eed359cab20f3cafb0c3cfc609"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 1815,
+      "INFO": 1814
+    },
+    "checkedAt": "2026-10-28T16:59:12.146Z",
+    "sha256": "c2df175cefa465e56a7cf902a3c9b2c50b6dc9eed359cab20f3cafb0c3cfc609"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 1814
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 1814
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T16:59:31.242Z",
+    "sha256": "c2df175cefa465e56a7cf902a3c9b2c50b6dc9eed359cab20f3cafb0c3cfc609"
+  }
+}

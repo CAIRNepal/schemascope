@@ -1,0 +1,104 @@
+{
+  "id": "d2kg",
+  "artefact": "https://w3id.org/d2kg",
+  "checkedAt": "2026-10-28T16:27:41.544Z",
+  "sha256": "0411a90384f74c64329172b4c2b343a5048ca5756b9a0a197263ca2f8a666568",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://data.europa.eu/m8g",
+        "id": "data.europa.eu/m8g",
+        "own": false
+      },
+      {
+        "iri": "http://data.europa.eu/2sa/cssv#CSSV.ttl",
+        "id": "data.europa.eu/2sa/cssv",
+        "own": false
+      },
+      {
+        "iri": "http://data.europa.eu/a4g/ontology#",
+        "id": "data.europa.eu/a4g/ontology",
+        "own": false
+      },
+      {
+        "iri": "http://data.europa.eu/eli/ontology#",
+        "id": "eli",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/locn#",
+        "id": "locn",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/person#",
+        "id": "person",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/ns/org#",
+        "id": "org",
+        "own": false
+      },
+      {
+        "iri": "http://diavgeia.gov.gr/ontology/",
+        "id": "diavgeia.gov.gr/ontology",
+        "own": false
+      },
+      {
+        "iri": "http://geo.linkedopendata.gr/gag/ontology/",
+        "id": "geo.linkedopendata.gr/gag/ontology",
+        "own": false
+      }
+    ],
+    "uses": {
+      "org": 4,
+      "xsd": 7
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T16:27:42.864Z",
+    "sha256": "0411a90384f74c64329172b4c2b343a5048ca5756b9a0a197263ca2f8a666568"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "org.semanticweb.owlapi.model.UnloadableImportException: Could not load imported ontology: <http://data.europa.eu/m8g> Cause: Server returned HTTP response code: 502 for URL: https://uri.semic.eu/cv/\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-28T16:27:44.744Z",
+    "sha256": "0411a90384f74c64329172b4c2b343a5048ca5756b9a0a197263ca2f8a666568"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 9
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 0,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-725 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/d2kg:/work schemascope/oops --input-file /work/ontolog"
+    ],
+    "checkedAt": "2026-10-28T16:28:03.622Z",
+    "sha256": "0411a90384f74c64329172b4c2b343a5048ca5756b9a0a197263ca2f8a666568"
+  }
+}

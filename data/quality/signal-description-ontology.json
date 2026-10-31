@@ -1,0 +1,42 @@
+{
+  "id": "signal-description-ontology",
+  "artefact": "https://w3id.org/signal-description-ontology",
+  "checkedAt": "2026-10-29T02:59:04.951Z",
+  "sha256": "4285040b94d65aa22e8ad945441e34484b6b7516d78a7d731f307ce853f0d057",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "rdfs": 7,
+      "owl": 10,
+      "dcterms": 5,
+      "xsd": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:59:05.415Z",
+    "sha256": "4285040b94d65aa22e8ad945441e34484b6b7516d78a7d731f307ce853f0d057"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 0,
+      "WARN": 63,
+      "INFO": 8
+    },
+    "checkedAt": "2026-10-29T02:59:07.045Z",
+    "sha256": "4285040b94d65aa22e8ad945441e34484b6b7516d78a7d731f307ce853f0d057"
+  },
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3293 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/signal-description-ontology:/work schemascope/oops --",
+      "Python scan: Command failed: python3 /Users/tekrajchhetri/Documents/schemascope/scripts/pitfalls.py scan /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/signal-description-ontology/ontology.ow"
+    ],
+    "checkedAt": "2026-10-29T02:59:08.095Z",
+    "sha256": "4285040b94d65aa22e8ad945441e34484b6b7516d78a7d731f307ce853f0d057"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "ppo-lov",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ppo/versions/2013-11-13.n3",
+  "checkedAt": "2026-10-29T01:29:17.020Z",
+  "sha256": "8446aa4edd7b3e5f363d246c8ed52f243bb37f890501ff62eb6d6dad4f7a4fd4",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:29:24.027Z",
+    "sha256": "8446aa4edd7b3e5f363d246c8ed52f243bb37f890501ff62eb6d6dad4f7a4fd4"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 6,
+      "WARN": 30,
+      "INFO": 7
+    },
+    "checkedAt": "2026-10-29T01:29:24.968Z",
+    "sha256": "8446aa4edd7b3e5f363d246c8ed52f243bb37f890501ff62eb6d6dad4f7a4fd4"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 2,
+    "minor": 0,
+    "pitfalls": [
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 10,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-2716 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ppo-lov:/work schemascope/oops --input-file /work/ont"
+    ],
+    "checkedAt": "2026-10-29T01:29:25.686Z",
+    "sha256": "8446aa4edd7b3e5f363d246c8ed52f243bb37f890501ff62eb6d6dad4f7a4fd4"
+  }
+}

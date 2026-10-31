@@ -1,0 +1,75 @@
+{
+  "id": "drama",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/drama/versions/2018-06-11.n3",
+  "checkedAt": "2026-10-28T17:19:13.597Z",
+  "sha256": "c3dd6f7938a6b93e4e5962eba46ff70ef05a6bb4ccf25d52acbb439b366f1a48",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "rdf": 5,
+      "owl": 33,
+      "dc": 9,
+      "rdfs": 8,
+      "xsd": 5,
+      "olo": 6,
+      "dolce": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T17:19:14.255Z",
+    "sha256": "c3dd6f7938a6b93e4e5962eba46ff70ef05a6bb4ccf25d52acbb439b366f1a48"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 1,
+      "WARN": 132,
+      "INFO": 8
+    },
+    "checkedAt": "2026-10-28T17:19:15.583Z",
+    "sha256": "c3dd6f7938a6b93e4e5962eba46ff70ef05a6bb4ccf25d52acbb439b366f1a48"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 1,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 29
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 20
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 48,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-946 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/drama:/work schemascope/oops --input-file /work/ontolo"
+    ],
+    "checkedAt": "2026-10-28T17:19:16.409Z",
+    "sha256": "c3dd6f7938a6b93e4e5962eba46ff70ef05a6bb4ccf25d52acbb439b366f1a48"
+  }
+}

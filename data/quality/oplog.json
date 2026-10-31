@@ -1,0 +1,11 @@
+{
+  "id": "oplog",
+  "artefact": "http://www.openlinksw.com/schemas/opengraph",
+  "checkedAt": "2026-10-29T00:28:15.532Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T00:28:15.750Z"
+  }
+}

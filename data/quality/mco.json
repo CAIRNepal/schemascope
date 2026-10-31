@@ -1,0 +1,101 @@
+{
+  "id": "mco",
+  "artefact": "http://purl.obolibrary.org/obo/mco.owl",
+  "checkedAt": "2026-10-28T21:46:27.818Z",
+  "sha256": "910807227de31317e2aa65587a5030988b1e4efc2fabe558f973609876cd739b",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 38,
+      "iao": 18,
+      "ncit": 38,
+      "ro": 4,
+      "ubprop": 3,
+      "obi": 9,
+      "chebi": 50,
+      "rdfs": 4,
+      "dc": 4,
+      "sio": 3,
+      "owl": 3,
+      "uberon": 5,
+      "go": 4,
+      "micro": 21,
+      "ncbitaxon": 29,
+      "pato": 12,
+      "omp": 6,
+      "peco": 4,
+      "omit": 5
+    },
+    "scannedMb": 17,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:46:28.766Z",
+    "sha256": "910807227de31317e2aa65587a5030988b1e4efc2fabe558f973609876cd739b"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 65,
+      "WARN": 2701,
+      "INFO": 57
+    },
+    "checkedAt": "2026-10-28T21:46:36.695Z",
+    "sha256": "910807227de31317e2aa65587a5030988b1e4efc2fabe558f973609876cd739b"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 1,
+    "minor": 6,
+    "pitfalls": [
+      {
+        "code": "P04",
+        "name": "Creating unconnected ontology elements",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 3385
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 14
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 14
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 188
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-28T21:48:39.008Z",
+    "sha256": "910807227de31317e2aa65587a5030988b1e4efc2fabe558f973609876cd739b"
+  }
+}

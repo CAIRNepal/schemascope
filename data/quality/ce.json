@@ -1,0 +1,56 @@
+{
+  "id": "ce",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/ce/versions/2025-11-22.n3",
+  "checkedAt": "2026-10-28T02:01:19.320Z",
+  "sha256": "e5cf9a60c64fa8095318345651c034eed45da22738bb505a4c026b7ab86739dc",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "schema": 13
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T02:01:19.866Z",
+    "sha256": "e5cf9a60c64fa8095318345651c034eed45da22738bb505a4c026b7ab86739dc"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 511,
+      "WARN": 62,
+      "INFO": 2
+    },
+    "checkedAt": "2026-10-28T02:01:21.932Z",
+    "sha256": "e5cf9a60c64fa8095318345651c034eed45da22738bb505a4c026b7ab86739dc"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 0,
+    "minor": 0,
+    "pitfalls": [],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 47,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-363 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/ce:/work schemascope/oops --input-file /work/ontology."
+    ],
+    "checkedAt": "2026-10-28T02:01:23.168Z",
+    "sha256": "e5cf9a60c64fa8095318345651c034eed45da22738bb505a4c026b7ab86739dc"
+  }
+}

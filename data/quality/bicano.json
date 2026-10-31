@@ -1,0 +1,11 @@
+{
+  "id": "bicano",
+  "artefact": "https://purl.brain-bican.org/ontology/bicano.owl",
+  "checkedAt": "2026-10-28T01:38:43.231Z",
+  "downloadError": "resolves to an HTML page (https://github.com/brain-bican/purl.brain-bican.org/), not the ontology file",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-28T01:38:44.313Z"
+  }
+}

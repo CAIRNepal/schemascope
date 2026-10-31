@@ -1,0 +1,109 @@
+{
+  "id": "rsctx",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/rsctx/versions/2017-01-17.n3",
+  "checkedAt": "2026-10-29T02:37:13.710Z",
+  "sha256": "eed8eb3df1ef05698807caf93b664a9c6311dc08d6c8817f38d9c9c5d61a6a4c",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "https://www.auto.tuwien.ac.at/downloads/thinkhome/ontology/WeatherOntology.owl",
+        "id": "auto.tuwien.ac.at/downloads/thinkhome/ontology/weatherontology",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/2006/time",
+        "id": "time",
+        "own": false
+      },
+      {
+        "iri": "http://www.ontologydesignpatterns.org/ont/dul/DUL.owl",
+        "id": "dolce",
+        "own": false
+      },
+      {
+        "iri": "http://www.w3.org/2007/uwa/context/deliverycontext.owl",
+        "id": "w3.org/2007/uwa/context/deliverycontext",
+        "own": false
+      },
+      {
+        "iri": "http://ns.inria.fr/prissma/v2#",
+        "id": "prissma",
+        "own": false
+      },
+      {
+        "iri": "http://rdfs.co/juso/0.1.2",
+        "id": "juso",
+        "own": false
+      },
+      {
+        "iri": "http://gumo.org/2.0/",
+        "id": "gumo.org/2.0",
+        "own": false
+      }
+    ],
+    "uses": {
+      "prissma": 11,
+      "juso": 14,
+      "rooms": 6,
+      "time": 10,
+      "emotion": 4
+    },
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T02:37:15.500Z",
+    "sha256": "eed8eb3df1ef05698807caf93b664a9c6311dc08d6c8817f38d9c9c5d61a6a4c"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": null,
+    "reasonError": "er.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1243)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadOntology(OWLOntologyManagerImpl.java:1143)\n        uk.ac.manchester.cs.owl.owlapi.OWLOntologyManagerImpl.loadImports(OWLOntologyManagerImpl.java:1873)\n\n\n\nUse the -vvv option to show the stack trace.\nUse the --help option to see usage information.\n",
+    "checkedAt": "2026-10-29T02:37:29.853Z",
+    "sha256": "eed8eb3df1ef05698807caf93b664a9c6311dc08d6c8817f38d9c9c5d61a6a4c"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 1,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 4
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 47
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 39,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-3086 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/rsctx:/work schemascope/oops --input-file /work/ontol"
+    ],
+    "checkedAt": "2026-10-29T02:37:30.582Z",
+    "sha256": "eed8eb3df1ef05698807caf93b664a9c6311dc08d6c8817f38d9c9c5d61a6a4c"
+  }
+}

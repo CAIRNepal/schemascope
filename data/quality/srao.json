@@ -1,0 +1,11 @@
+{
+  "id": "srao",
+  "artefact": "https://github.com/FAIRsharing/subject-ontology/raw/refs/heads/master/SRAO.owl",
+  "checkedAt": "2026-10-29T03:16:12.985Z",
+  "downloadError": "fetch failed",
+  "oops": {
+    "error": "no pitfall scanner succeeded",
+    "attempts": [],
+    "checkedAt": "2026-10-29T03:16:23.484Z"
+  }
+}

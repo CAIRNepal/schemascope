@@ -1,0 +1,69 @@
+{
+  "id": "worldavatar-derivation",
+  "artefact": "https://raw.githubusercontent.com/TheWorldAvatar/ontology/main/ontology/ontoderivation/OntoDerivation.owl",
+  "checkedAt": "2026-10-29T07:38:45.039Z",
+  "sha256": "de1fb427118e3688f918f2fbf9fb556343c20f6cde9a992923c08c56a4cf5202",
+  "artefactScan": {
+    "imports": [],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-29T07:38:46.729Z",
+    "sha256": "de1fb427118e3688f918f2fbf9fb556343c20f6cde9a992923c08c56a4cf5202"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": true,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 15,
+      "INFO": 4
+    },
+    "checkedAt": "2026-10-29T07:38:47.560Z",
+    "sha256": "de1fb427118e3688f918f2fbf9fb556343c20f6cde9a992923c08c56a4cf5202"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 0,
+    "important": 2,
+    "minor": 3,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 16
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjoint-ness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 3
+      },
+      {
+        "code": "P13-Y",
+        "name": "Inverse relationships not explicitly declared - With Suggestion",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T07:38:53.623Z",
+    "sha256": "de1fb427118e3688f918f2fbf9fb556343c20f6cde9a992923c08c56a4cf5202"
+  }
+}

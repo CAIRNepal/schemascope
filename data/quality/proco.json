@@ -1,0 +1,111 @@
+{
+  "id": "proco",
+  "artefact": "http://purl.obolibrary.org/obo/proco.owl",
+  "checkedAt": "2026-10-29T01:49:55.279Z",
+  "sha256": "c11ac45665556bd352075fac67f585d1a62fff606097a72a0ee3ab672edd373d",
+  "artefactScan": {
+    "imports": [],
+    "uses": {
+      "bfo": 26,
+      "iao": 50,
+      "obi": 50,
+      "ro": 20,
+      "chmo": 50,
+      "pato": 10,
+      "chebi": 50,
+      "fix": 7,
+      "go": 6,
+      "rdfs": 4,
+      "xsd": 7,
+      "dc": 9,
+      "dcterms": 8,
+      "sio": 6,
+      "owl": 8,
+      "skos": 7,
+      "foaf": 3
+    },
+    "scannedMb": 1,
+    "truncated": false,
+    "scannedAt": "2026-10-29T01:49:55.651Z",
+    "sha256": "c11ac45665556bd352075fac67f585d1a62fff606097a72a0ee3ab672edd373d"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 180,
+      "WARN": 409,
+      "INFO": 54
+    },
+    "checkedAt": "2026-10-29T01:49:57.566Z",
+    "sha256": "c11ac45665556bd352075fac67f585d1a62fff606097a72a0ee3ab672edd373d"
+  },
+  "oops": {
+    "engine": "OOPS! (local Docker)",
+    "critical": 1,
+    "important": 3,
+    "minor": 5,
+    "pitfalls": [
+      {
+        "code": "P08-A",
+        "name": "Missing annotations - Label & Comment",
+        "importance": "minor",
+        "affected": 960
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 43
+      },
+      {
+        "code": "P13-N",
+        "name": "Inverse relationships not explicitly declared - No Suggestion",
+        "importance": "minor",
+        "affected": 34
+      },
+      {
+        "code": "P20",
+        "name": "Misusing ontology annotations",
+        "importance": "minor",
+        "affected": 2
+      },
+      {
+        "code": "P22",
+        "name": "Using different naming conventions in the ontology",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P29",
+        "name": "Defining wrong transitive relationships",
+        "importance": "critical",
+        "affected": 1
+      },
+      {
+        "code": "P30",
+        "name": "Equivalent classes not explicitly declared",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P32",
+        "name": "Several classes with the same label",
+        "importance": "minor",
+        "affected": 1
+      },
+      {
+        "code": "P41",
+        "name": "No license declared",
+        "importance": "important",
+        "affected": 1
+      }
+    ],
+    "attempts": [],
+    "checkedAt": "2026-10-29T01:50:14.750Z",
+    "sha256": "c11ac45665556bd352075fac67f585d1a62fff606097a72a0ee3ab672edd373d"
+  }
+}

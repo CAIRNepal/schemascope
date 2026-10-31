@@ -1,0 +1,112 @@
+{
+  "id": "lslife",
+  "artefact": "https://lov.linkeddata.es/dataset/lov/vocabs/lslife/versions/2015-09-24.n3",
+  "checkedAt": "2026-10-28T21:32:11.269Z",
+  "sha256": "7fb4f366b8c80f21a77b2a51d8095b442481983185cca2986503c7d6b3f1c485",
+  "artefactScan": {
+    "imports": [
+      {
+        "iri": "http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-data.owl",
+        "id": "lsmap",
+        "own": false
+      },
+      {
+        "iri": "http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-modelling.owl",
+        "id": "lswmo",
+        "own": false
+      },
+      {
+        "iri": "http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-lifemapper-parameters.owl",
+        "id": "lswpm",
+        "own": false
+      },
+      {
+        "iri": "http://ontology.cybershare.utep.edu/ELSEWeb/elseweb-edac.owl",
+        "id": "edac",
+        "own": false
+      }
+    ],
+    "uses": {},
+    "scannedMb": 0,
+    "truncated": false,
+    "scannedAt": "2026-10-28T21:32:12.236Z",
+    "sha256": "7fb4f366b8c80f21a77b2a51d8095b442481983185cca2986503c7d6b3f1c485"
+  },
+  "robot": {
+    "reasoner": "ELK",
+    "robotVersion": "ROBOT version 1.9.7",
+    "consistent": true,
+    "unsatisfiable": 0,
+    "owl2dl": false,
+    "robot": {
+      "ERROR": 3,
+      "WARN": 77,
+      "INFO": 10
+    },
+    "checkedAt": "2026-10-28T21:32:18.476Z",
+    "sha256": "7fb4f366b8c80f21a77b2a51d8095b442481983185cca2986503c7d6b3f1c485"
+  },
+  "oops": {
+    "engine": "SchemaScope Python scan (OOPS! pitfall subset)",
+    "critical": 0,
+    "important": 4,
+    "minor": 2,
+    "pitfalls": [
+      {
+        "code": "P34",
+        "name": "Untyped class",
+        "importance": "important",
+        "affected": 5
+      },
+      {
+        "code": "P35",
+        "name": "Untyped property",
+        "importance": "important",
+        "affected": 5
+      },
+      {
+        "code": "P11",
+        "name": "Missing domain or range in properties",
+        "importance": "important",
+        "affected": 19
+      },
+      {
+        "code": "P10",
+        "name": "Missing disjointness",
+        "importance": "important",
+        "affected": 1
+      },
+      {
+        "code": "P08",
+        "name": "Missing annotations",
+        "importance": "minor",
+        "affected": 31
+      },
+      {
+        "code": "P13",
+        "name": "Inverse relationships not explicitly declared",
+        "importance": "minor",
+        "affected": 17
+      }
+    ],
+    "checked": [
+      "P06",
+      "P19",
+      "P39",
+      "P38",
+      "P41",
+      "P34",
+      "P35",
+      "P11",
+      "P10",
+      "P08",
+      "P13"
+    ],
+    "classes": 33,
+    "attempts": [
+      "local OOPS!: Command failed: docker run --rm --name schemascope-q-9296-1940 --memory 8g -v /var/folders/qc/ymnxqz0x7g70whhm9jqspd8r0000gn/T/schemascope-quality/lslife:/work schemascope/oops --input-file /work/onto"
+    ],
+    "checkedAt": "2026-10-28T21:32:19.182Z",
+    "sha256": "7fb4f366b8c80f21a77b2a51d8095b442481983185cca2986503c7d6b3f1c485"
+  }
+}
