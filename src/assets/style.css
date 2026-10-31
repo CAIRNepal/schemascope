@@ -986,3 +986,23 @@ body.nav-open .nav-toggle .nt-close { display: inline; }
 
 .dh-table td:first-child code { white-space: nowrap; overflow-wrap: normal; word-break: normal; }
 @media (max-width: 760px) { .dh-table td, .dh-table th { padding: 10px; } }
+
+/* Developer hub: docs for LLMs */
+.dh-btn.ghost { background: transparent; color: var(--navy); border-color: var(--line); }
+.dh-btn.ghost:hover { border-color: var(--navy); }
+.dh-btn.small { font-size: .8rem; padding: 6px 12px; margin: 0; }
+:root[data-theme="dark"] .dh-btn.ghost { background: transparent; color: var(--text); border-color: var(--line); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .dh-btn.ghost { background: transparent; color: var(--text); border-color: var(--line); } }
+.dh-pagebar { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 0; margin: 16px 0 6px; padding: 0 0 12px; border-bottom: 1px solid var(--line); }
+.dh-pagebar > * { display: inline-flex; align-items: center; gap: 7px; font: inherit; font-size: .85rem; font-weight: 600; color: var(--muted); background: none; border: 0; padding: 4px 14px; cursor: pointer; text-decoration: none; border-left: 1px solid var(--line); }
+.dh-pagebar > :first-child { border-left: 0; padding-left: 0; }
+.dh-pagebar > :hover { color: var(--accent-ink); }
+.dh-pagebar svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 560px) { .dh-pagebar > * { padding: 4px 10px; } .dh-pagebar > :nth-child(3) { border-left: 0; padding-left: 0; } }
+.dh-llmfiles { display: grid; gap: 14px; }
+.dh-llmfile { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.dh-llmfile h3 { margin: 4px 0 4px; font-size: 1.05rem; }
+.dh-llmfile p { margin: 0; color: var(--muted); font-size: .9rem; }
+.dh-llmactions { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.dh-llmactions .dh-btn { margin: 0; }
+@media (max-width: 640px) { .dh-llmfile { flex-direction: column; align-items: flex-start; } }

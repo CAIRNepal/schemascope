@@ -12,11 +12,11 @@ from typing import Optional
 from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, JSONResponse, Response
+from fastapi.responses import FileResponse, JSONResponse, PlainTextResponse, Response
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from mcp.server.transport_security import TransportSecuritySettings
 
-from . import auth, docs_text, store
+from . import auth, docs_text, llms, store
 from .guard import TITLES, Guard
 from .mcp_server import mcp
 from .settings import CORS_ORIGINS, MCP_ALLOWED_HOSTS, PUBLIC_API_URL, RATE_LIMIT_ANON, RATE_LIMIT_USER, TOKEN_PREFIX, site_config
@@ -106,6 +106,17 @@ def custom_openapi():
 
 
 api.openapi = custom_openapi
+
+
+# Docs for LLMs (llms.txt convention): a short index and the full reference as Markdown, from the OpenAPI document.
+@api.get("/llms.txt", include_in_schema=False)
+def get_llms_txt():
+    return PlainTextResponse(llms.llms_txt(api.openapi()), media_type="text/plain; charset=utf-8", headers={"Cache-Control": "public, max-age=300"})
+
+
+@api.get("/llms-full.txt", include_in_schema=False)
+def get_llms_full_txt():
+    return PlainTextResponse(llms.llms_full_txt(api.openapi()), media_type="text/plain; charset=utf-8", headers={"Cache-Control": "public, max-age=300"})
 
 
 @api.get("/api/health", tags=["Meta"], summary="Health")

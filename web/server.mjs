@@ -122,7 +122,7 @@ function staticItem(file) {
 // ---------- API proxy ----------
 // /api/, /mcp/ and the API docs are served by the API on the same origin, so sign-in cookies work and clients
 // need one URL. The visitor's address goes along as X-Forwarded-For (rate limits are per visitor, not per server).
-const PROXIED = /^\/(api|mcp)(\/|$)|^\/(docs|redoc|openapi\.json)(\/|$)/;
+const PROXIED = /^\/(api|mcp)(\/|$)|^\/(docs|redoc|openapi\.json|llms\.txt|llms-full\.txt)(\/|$)/;
 const api = new URL(API_URL);
 function proxy(req, res) {
   if (req.url.startsWith("/api/site-data")) return send(req, res, 404, Buffer.from("Not found"), "text/plain");
