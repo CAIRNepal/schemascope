@@ -12,6 +12,48 @@
     try { localStorage.setItem("theme", root.dataset.theme); } catch {}
   });
 
+  // Menu button (small screens): opens the links as a panel under the header.
+  const navToggle = $(".nav-toggle");
+  const navLinks = $("#nav-links");
+  if (navToggle && navLinks) {
+    const setOpen = (open) => {
+      navToggle.setAttribute("aria-expanded", String(open));
+      document.body.classList.toggle("nav-open", open);
+    };
+    navToggle.addEventListener("click", () => setOpen(navToggle.getAttribute("aria-expanded") !== "true"));
+    navLinks.addEventListener("click", (e) => e.target.closest("a") && setOpen(false));
+    document.addEventListener("keydown", (e) => e.key === "Escape" && setOpen(false));
+    matchMedia("(min-width: 1101px)").addEventListener("change", (m) => m.matches && setOpen(false));
+  }
+
+  // Account link: "Sign in", or the signed-in user's avatar and name (from the API on this origin).
+  const account = $("[data-account]");
+  if (account) account.href = `/api/auth/github/login?next=${encodeURIComponent(location.pathname + location.search)}`;
+  const signinError = new URLSearchParams(location.search).get("signin_error");
+  if (signinError) {
+    const note = document.createElement("p");
+    note.className = "signin-notice";
+    note.setAttribute("role", "alert");
+    note.textContent = signinError === "access_denied" ? "Sign-in was cancelled on GitHub." : `Sign-in didn't work (${signinError}). Please try again.`;
+    document.querySelector("main")?.prepend(note);
+    setTimeout(() => note.remove(), 8000);
+  }
+  if (account && location.protocol.startsWith("http")) {
+    fetch("/api/auth/session", { credentials: "same-origin" })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((s) => {
+        if (!s?.user) return;
+        const u = s.user;
+        account.href = "/account/";
+        account.classList.add("signed-in");
+        account.title = `Signed in as @${u.login}`;
+        account.innerHTML = (u.avatarUrl ? `<img src="${u.avatarUrl}&s=48" alt="" width="22" height="22">` : "") + `<span data-account-label></span>`;
+        account.querySelector("[data-account-label]").textContent = u.name?.split(" ")[0] || u.login;
+        document.dispatchEvent(new CustomEvent("session", { detail: s }));
+      })
+      .catch(() => {});
+  }
+
   // Catalog explorer: data-driven, paginated (thousands of entries). The first page is server-rendered.
   const grid = $("#cards");
   const q = $("#q");

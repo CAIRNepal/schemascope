@@ -137,6 +137,9 @@ def github_login(next: str | None = None):
     """Redirects to GitHub. After sign-in, GitHub returns to `/api/auth/github/callback`, which sets the session
     cookie and returns to `next` (a path on this site)."""
     if not settings.GITHUB_CLIENT_ID:
+        # Sandbox without a GitHub app: sign in as a test user instead, so the flow can be tried end to end.
+        if settings.DEV_LOGIN:
+            return RedirectResponse(f"/api/auth/dev-login?{urlencode({'login': 'test-user', 'next': _safe_next(next)})}", status_code=302)
         raise HTTPException(503, "GitHub sign-in is not configured on this server (GITHUB_CLIENT_ID)")
     state = secrets.token_urlsafe(24)
     params = {
@@ -160,7 +163,8 @@ async def github_callback(request: Request, code: str | None = None, state: str 
         saved = {}
     if error:
         _audit(request, "auth.login_failed", None, details=error, method="github")
-        return RedirectResponse(f"/login/?{urlencode({'error': error})}", status_code=302)
+        back = saved.get("n") or "/"
+        return RedirectResponse(f"{back}{'&' if '?' in back else '?'}{urlencode({'signin_error': error})}", status_code=302)
     if not code or not state or not secrets.compare_digest(state, saved.get("s", "")):
         raise HTTPException(400, "Sign-in expired or was started elsewhere. Please try again.")
     async with httpx.AsyncClient(timeout=15) as client:
@@ -219,6 +223,18 @@ class Me(BaseModel):
     via: str
     scopes: list[str]
     rateLimit: dict
+
+
+@router.get("/auth/session", tags=["Auth"], summary="Session")
+def session(request: Request):
+    """The signed-in user, or `{"user": null}`. Never 401, so pages can ask without errors."""
+    try:
+        p = resolve(request)
+    except HTTPException:
+        p = None
+    if not p:
+        return {"user": None, "rateLimit": accounts.rate_limits()}
+    return {"user": p.user.public(), "via": p.kind, "rateLimit": {"perMinute": accounts.limit_for(p.user), **accounts.rate_limits()}}
 
 
 @router.get("/auth/me", tags=["Auth"], summary="Me", response_model=Me)

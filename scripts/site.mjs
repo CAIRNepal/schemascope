@@ -370,16 +370,23 @@ ${gtmBody}
   <div class="wrap header-inner">
     <a class="brand" href="/" aria-label="SchemaScope home">${logo()}</a>
     <nav class="nav" aria-label="Main">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path class="nt-open" d="M4 7h16M4 12h16M4 17h16"/><path class="nt-close" d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <div class="nav-links" id="nav-links">
       ${nav("/catalog/", "Catalog")}
       ${nav("/categories/", "Categories")}
       ${nav("/evaluation/", "Evaluation")}
-      ${nav("/submit/", "Submit")}
+      ${nav("/api-docs/", "API &amp; MCP")}
       ${nav("/roadmap/", "Roadmap")}
       ${nav("/about/", "About")}
       ${nav("/contact/", "Contact")}
+      <a class="nav-submit" href="/submit/"${pathname.startsWith("/submit/") ? ' aria-current="page"' : ""}>Submit</a>
+      </div>
       <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
       </button>
+      <a class="nav-account" href="/api/auth/github/login" data-account${pathname.startsWith("/account/") ? ' aria-current="page"' : ""}><span data-account-label>Sign in</span></a>
     </nav>
   </div>
 </header>
@@ -396,6 +403,7 @@ ${body}
       <a href="/submit/">Submit a resource</a>
       <a href="/roadmap/">Features &amp; roadmap</a>
       <a href="/contact/">Contact</a>
+      <a href="/api-docs/">API &amp; MCP</a>
       <a href="/catalog.json">catalog.json</a>
       <a href="/catalog.jsonld">DCAT JSON-LD</a>
       ${config.repository ? `<a href="${attr(config.repository)}">GitHub</a>` : ""}
@@ -1268,8 +1276,14 @@ function submitPage() {
 </section>
 
 <section class="wrap section submit-grid">
-  <form id="submit-form" class="panel submit-form" novalidate data-repo="${attr(config.repository || "")}" data-categories="${attr(categories.map((c) => c.id).join(","))}">
+  <div class="panel signin-gate" data-signin-gate hidden>
+    <h2>Sign in to submit</h2>
+    <p>Submissions are made with your GitHub account, so reviewers can credit you and follow up. We only read your public profile and email.</p>
+    <p><a class="btn" data-signin-link href="/api/auth/github/login?next=/submit/">Sign in with GitHub</a></p>
+  </div>
+  <form id="submit-form" class="panel submit-form" novalidate hidden data-repo="${attr(config.repository || "")}" data-categories="${attr(categories.map((c) => c.id).join(","))}">
     <h2>Resource details</h2>
+    <p class="submitter small" data-submitter hidden></p>
     <input type="hidden" name="update">
     <div class="row2">
       <label>Name *<input name="name" required placeholder="Uber-anatomy Ontology"></label>
@@ -1299,7 +1313,19 @@ function submitPage() {
       <label>BioPortal acronym<input name="bioportal" placeholder="UBERON"></label>
     </div>
     <label>Reference paper DOI<input name="doi" placeholder="10.1186/gb-2012-13-1-r5"></label>
-    <label>Used by <small class="muted">one per line: Project name | URL | how it is used</small><textarea name="usedBy" rows="3" placeholder="Project | https://example.org | How it uses the resource"></textarea></label>
+    <fieldset class="usedby">
+      <legend>Used by <small class="muted">projects, tools or datasets that use this resource</small></legend>
+      <div class="usedby-rows" data-usedby></div>
+      <button type="button" class="btn-ghost btn-sm" data-usedby-add>+ Add a project</button>
+      <template data-usedby-row>
+        <div class="usedby-row">
+          <label>Project name<input data-f="name" placeholder="e.g. Allen Brain Atlas" autocomplete="off"></label>
+          <label>URL<input data-f="url" type="url" placeholder="https://…" autocomplete="off"></label>
+          <label class="usedby-note">How it is used <small class="muted">optional</small><input data-f="note" placeholder="e.g. annotates every image with these terms" autocomplete="off"></label>
+          <button type="button" class="usedby-remove" data-usedby-remove aria-label="Remove this project" title="Remove">×</button>
+        </div>
+      </template>
+    </fieldset>
     <label>Tags <small class="muted">comma-separated</small><input name="tags" placeholder="brain regions, mouse"></label>
     <label>Anything else reviewers should know?<textarea name="notes" rows="2"></textarea></label>
     <p class="form-errors" id="form-errors" role="alert" hidden></p>
@@ -1633,6 +1659,116 @@ ${paths.map((p) => `  <url><loc>${esc(abs(p))}</loc><lastmod>${lastmod}</lastmod
 `;
 }
 
+
+// ---------- accounts: sign-in, account, API docs ----------
+// These pages are filled in by /assets/account.js and /assets/apidocs.js from the API (same origin).
+
+function accountPage() {
+  const trail = [["Home", "/"], ["Account", "/account/"]];
+  const brandSlug = (config.brand || config.name || "catalog").toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  const body = `
+<section class="page-head wrap">
+  ${crumbsHtml(trail)}
+  <h1>Your account</h1>
+  <p class="lede" data-account-intro>Loading…</p>
+</section>
+<section class="wrap section account" data-account-page hidden>
+  <div class="account-grid">
+    <div class="panel profile" data-profile></div>
+    <div class="panel">
+      <h2>Rate limit</h2>
+      <p class="limit-big"><b data-my-limit>—</b> <span class="muted">requests per minute</span></p>
+      <p class="small muted">Applies to everything you do with your session or your tokens. Without signing in: <span data-anon-limit>—</span> per minute per IP address.</p>
+    </div>
+  </div>
+
+  <div class="panel" id="tokens">
+    <h2>Personal access tokens</h2>
+    <p class="small muted">Use a token in the <code>Authorization: Bearer …</code> header for the API, or in an MCP client. A token is shown once, when you create it. Tokens act as you; revoke any you no longer use.</p>
+    <form class="token-form" data-token-form>
+      <label>Name<input name="name" required maxlength="80" placeholder="e.g. Claude Desktop, nightly script"></label>
+      <fieldset class="scopes"><legend>Access</legend>
+        <label class="check"><input type="checkbox" name="scope" value="api" checked> API</label>
+        <label class="check"><input type="checkbox" name="scope" value="mcp" checked> MCP</label>
+      </fieldset>
+      <label>Expires<select name="expires"><option value="30">in 30 days</option><option value="90" selected>in 90 days</option><option value="365">in 1 year</option><option value="">never</option></select></label>
+      <button class="btn" type="submit">Create token</button>
+    </form>
+    <div class="token-new" data-token-new hidden>
+      <p><b>Your new token.</b> Copy it now; it won't be shown again.</p>
+      <div class="copy-row"><code data-token-value></code><button type="button" class="btn-ghost btn-sm" data-copy-token>Copy</button></div>
+    </div>
+    <div class="table-wrap"><table class="hist-table token-table"><thead><tr><th>Name</th><th>Token</th><th>Access</th><th>Created</th><th>Last used</th><th>Expires</th><th></th></tr></thead><tbody data-tokens></tbody></table></div>
+  </div>
+
+  <div class="panel" id="mcp">
+    <h2>Connect an AI agent (MCP)</h2>
+    <p class="small">Create a token with MCP access above, then add the server to your client:</p>
+    <div class="code-block"><div class="code-head"><span>Claude Code</span><button type="button" class="copy" data-copy>Copy</button></div><pre><code data-mcp-cmd>claude mcp add --transport http ${esc(brandSlug)} &lt;site&gt;/mcp/ --header "Authorization: Bearer &lt;token&gt;"</code></pre></div>
+    <div class="code-block"><div class="code-head"><span>Other clients (JSON)</span><button type="button" class="copy" data-copy>Copy</button></div><pre><code data-mcp-json></code></pre></div>
+    <p class="small muted">Tools: search the catalog, read an entry's full evaluation and history, list categories, statistics and the scoring rubric. See <a href="/api-docs/#mcp">API &amp; MCP</a>.</p>
+  </div>
+
+  <div class="panel" id="submissions">
+    <h2>Your submissions</h2>
+    <div class="table-wrap"><table class="hist-table"><thead><tr><th>When</th><th>Entry</th><th>Type</th><th>GitHub issue</th></tr></thead><tbody data-submissions></tbody></table></div>
+    <p class="small"><a href="/submit/">Submit a resource</a></p>
+  </div>
+
+  <div class="panel" id="activity">
+    <h2>Activity</h2>
+    <p class="small muted">Sign-ins, sign-outs, tokens and submissions on your account.</p>
+    <div class="table-wrap"><table class="hist-table"><thead><tr><th>When</th><th>What</th><th>Details</th><th>From</th></tr></thead><tbody data-activity></tbody></table></div>
+  </div>
+
+  <div class="panel admin" id="admin" data-admin hidden>
+    <h2>Superadmin</h2>
+    <h3>Rate limits</h3>
+    <form class="limits-form" data-limits-form>
+      <label>Anonymous, per IP<input type="number" name="anonymousPerMinute" min="1" required></label>
+      <label>Signed in or token, per user<input type="number" name="authenticatedPerMinute" min="1" required></label>
+      <span class="small muted">requests per minute</span>
+      <button class="btn" type="submit">Save</button>
+      <span class="small" data-limits-status></span>
+    </form>
+    <p class="small muted" data-limit-defaults></p>
+    <h3>Users</h3>
+    <input type="search" class="admin-search" data-user-search placeholder="Search users by login, name or email">
+    <div class="table-wrap"><table class="hist-table"><thead><tr><th>User</th><th>Email</th><th>Last sign-in</th><th class="num">Tokens</th><th>Rate limit</th></tr></thead><tbody data-users></tbody></table></div>
+    <h3>Audit log</h3>
+    <div class="audit-filter"><label>Action<select data-audit-action><option value="">All</option><option value="auth.*">Sign-in &amp; sign-out</option><option value="token.*">Tokens</option><option value="submission.*">Submissions</option><option value="admin.*">Admin changes</option><option value="catalog.*">Data loads</option></select></label></div>
+    <div class="table-wrap"><table class="hist-table"><thead><tr><th>When</th><th>Who</th><th>What</th><th>Target</th><th>Details</th><th>From</th></tr></thead><tbody data-audit></tbody></table></div>
+    <p><button type="button" class="btn-ghost btn-sm" data-audit-more hidden>Older entries</button></p>
+  </div>
+
+  <p><button type="button" class="btn-ghost" data-signout>Sign out</button></p>
+</section>`;
+  return page({ title: "Account", pathname: "/account/", body, noindex: true, description: "Your account: tokens, MCP setup, submissions and activity.", scripts: ["/assets/account.js"] });
+}
+
+function apiDocsPage() {
+  const brand = config.brand || config.name || "Catalog";
+  // Examples use this catalog's own best-scored entry and first category, so every request works as written.
+  const top = [...catalog].sort(byScore)[0] || { id: "example", name: "Example" };
+  const lastRun = runs.length ? runs[runs.length - 1].run.id : "";
+  const body = `
+<div class="devhub" data-devhub data-brand="${attr(brand)}" data-slug="${attr(brand.toLowerCase().replace(/[^a-z0-9]+/g, "-"))}"
+  data-entry="${attr(top.id)}" data-entry-name="${attr(top.acronym || top.name)}" data-topic="${attr((top.tags || [])[0] || "ontology")}"
+  data-category="${attr(categories[0]?.id || "")}" data-run="${attr(lastRun)}" data-repo="${attr(config.repository || "")}">
+  <button class="dh-menu" type="button" data-dh-menu aria-expanded="false">☰ Developer docs</button>
+  <aside class="dh-side" data-dh-side>
+    <input class="dh-search" type="search" placeholder="Search documentation…" aria-label="Search documentation" data-dh-search>
+    <div class="dh-switch" data-dh-switch role="tablist"></div>
+    <nav data-dh-nav aria-label="Developer documentation"></nav>
+    <div class="dh-foot"><span class="dh-dot"></span>${esc(brand)} developer resources<br><span>Built for connected knowledge.</span></div>
+  </aside>
+  <div class="dh-main" data-dh-content>
+    <noscript><p>The developer documentation needs JavaScript. The API reference is also at <a href="/docs">/docs</a> and <a href="/openapi.json">/openapi.json</a>.</p></noscript>
+  </div>
+</div>`;
+  return page({ title: "Developers: API & MCP", pathname: "/api-docs/", body, description: `Build on ${brand}: a REST API for applications and data pipelines, and an MCP server for AI assistants. Quickstart, authentication, rate limits, every endpoint, and MCP setup for Claude, Cursor, VS Code and Codex.`, scripts: ["/assets/apidocs.js"] });
+}
+
 // ---------- output files ----------
 const files = new Map();
 // Each output file is produced on demand: the static build renders them all, a server one at a time.
@@ -1682,6 +1818,8 @@ put(
   )
 );
 put("submit/index.html", () => submitPage());
+put("account/index.html", () => accountPage());
+put("api-docs/index.html", () => apiDocsPage());
 put("about/index.html", () => aboutPage());
 put("contact/index.html", () => contactPage());
 put("roadmap/index.html", () => roadmapPage());
@@ -1694,7 +1832,7 @@ put("catalog.schema.json", () => data.catalogSchema);
 for (const x of runs) put(`runs/${x.run.id}.json`, () => JSON.stringify(x));
 put("runs/index.json", () => JSON.stringify({ runs: [...runs].reverse().map((x) => ({ ...x.run, snapshot: abs(`/runs/${x.run.id}.json`) })) }, null, 2));
 put("site.webmanifest", () => JSON.stringify({ name: "SchemaScope", short_name: "SchemaScope", start_url: "/", display: "standalone", background_color: "#faf8f3", theme_color: "#0b1530", icons: [{ src: "/assets/brand/logo-mark.png", sizes: "512x512", type: "image/png" }, { src: "/assets/apple-touch-icon.png", sizes: "180x180", type: "image/png" }] }, null, 2));
-const htmlPaths = [...files.keys()].filter((p) => p.endsWith("index.html")).map((p) => "/" + p.replace(/index\.html$/, ""));
+const htmlPaths = [...files.keys()].filter((p) => p.endsWith("index.html") && !/^(login|account)\//.test(p)).map((p) => "/" + p.replace(/index\.html$/, ""));
 put("sitemap.xml", () => sitemap(htmlPaths));
 put("robots.txt", () => `User-agent: *\nAllow: /\nDisallow: /404\n\nSitemap: ${abs("/sitemap.xml")}\n`);
 

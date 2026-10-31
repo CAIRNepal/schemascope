@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27",
+  "updated": "2026-10-31",
   "note": "Status is one of: done, in-progress, planned. Edit this file to update the Features & roadmap page.",
   "sections": [
     {
@@ -136,14 +136,14 @@
       "title": "AI-ready",
       "items": [
         {
-          "status": "planned",
+          "status": "done",
           "title": "MCP server",
-          "text": "A Model Context Protocol server so AI assistants can search the catalog, look up a resource's score and its evidence, compare resources and get recommendations, with every answer linked back to its SchemaScope page."
+          "text": "AI assistants can search the catalog, read a resource's score with the evidence behind each point, follow its history across runs, and get the scoring rubric, through a Model Context Protocol server authenticated with a personal access token. Setup on the API & MCP page."
         },
         {
-          "status": "planned",
+          "status": "done",
           "title": "Machine-readable catalog and API",
-          "text": "Every record and score as JSON and JSON-LD (DCAT, schema.org), with a stable, documented API and bulk downloads, so tools and AI agents can use the catalog without scraping pages."
+          "text": "A documented JSON API (OpenAPI) for search with facets, entries, history, runs and statistics, plus JSON and JSON-LD (DCAT, schema.org) downloads. The site itself is built from the same API."
         },
         {
           "status": "planned",
@@ -159,6 +159,32 @@
           "status": "planned",
           "title": "Semantic search",
           "text": "Search by meaning across resource descriptions and term definitions, not only keywords, to find the right ontology for a concept."
+        }
+      ]
+    },
+    {
+      "id": "accounts",
+      "title": "Accounts & access",
+      "items": [
+        {
+          "status": "done",
+          "title": "Sign in with GitHub",
+          "text": "Sign in with your GitHub account. Submissions and corrections are credited to you on the GitHub issue, and you can follow them on your account page."
+        },
+        {
+          "status": "done",
+          "title": "Personal access tokens and rate limits",
+          "text": "Create scoped, expiring, revocable tokens for the API and for MCP clients. Anonymous use is limited per IP; signed-in users and tokens get a much higher limit."
+        },
+        {
+          "status": "done",
+          "title": "Activity and audit log",
+          "text": "Every sign-in, sign-out, token change, submission and data load is recorded with who, what and when. You can see your own activity; administrators see everything and can adjust rate limits."
+        },
+        {
+          "status": "done",
+          "title": "Easier submissions",
+          "text": "Projects that use a resource are entered one per row instead of a formatted text box, and the form checks each one before you submit."
         }
       ]
     },
