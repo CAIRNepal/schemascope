@@ -16,7 +16,7 @@ from fastapi.responses import FileResponse, JSONResponse, Response
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from mcp.server.transport_security import TransportSecuritySettings
 
-from . import auth, store
+from . import auth, docs_text, store
 from .guard import TITLES, Guard
 from .mcp_server import mcp
 from .settings import CORS_ORIGINS, MCP_ALLOWED_HOSTS, PUBLIC_API_URL, RATE_LIMIT_ANON, RATE_LIMIT_USER, TOKEN_PREFIX, site_config
@@ -100,6 +100,7 @@ def custom_openapi():
         "personalAccessToken": {"type": "http", "scheme": "bearer", "description": f"Personal access token ({TOKEN_PREFIX}…) from the account page."},
     }
     schema["security"] = [{}, {"sessionJwt": []}, {"personalAccessToken": []}]
+    docs_text.apply(schema)
     api.openapi_schema = schema
     return schema
 

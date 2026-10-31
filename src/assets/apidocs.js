@@ -190,22 +190,8 @@
 
   // Endpoint pages from the OpenAPI document: one page, no tabs. What it is for, the parameters, a filled-in form
   // that sends the request from this page (public GET requests run as soon as the page opens), the response, and code.
-  const NOTES = {
-    "/api/entries": "Start here to find resources. Every word in q must match; combine filters freely. The facets tell you how many results each filter value would give, so you can build filter menus without extra calls.",
-    "/api/entries/{entry_id}": "Everything about one resource in one call: use it for a detail page, or to check a score before you rely on a resource.",
-    "/api/entries/{entry_id}/history": "How a resource changed over time: one point per evaluation run, plus a readable list of differences.",
-    "/api/categories": "The domains of the catalog. count is resources whose primary domain it is; reach also counts resources used there.",
-    "/api/stats": "Catalog-wide numbers for dashboards: size, grades, average score and the latest run.",
-    "/api/runs": "Evaluation runs, newest first, with the rubric version each used.",
-    "/api/runs/{run_id}": "Every entry's score and metrics in one run, paginated.",
-    "/api/runs/{run_id}/snapshot": "The full archived run file, exactly as written by the evaluator (large).",
-    "/api/domain-graph": "How domains connect: shared resources and imports between domains, and the resources that bridge the most domains.",
-    "/api/top-entries": "The best-scored resources, optionally within one domain.",
-    "/api/recent-entries": "Resources with the most recent activity (commits, releases, dated files).",
-    "/api/entry-ids": "Every id, for sitemaps and bulk processing.",
-    "/api/tokens": "Your personal access tokens. Needs a signed-in session.",
-    "/api/submissions": "Submit a new entry or a correction; it is recorded with your GitHub identity.",
-  };
+  // Descriptions come from the OpenAPI document (backend/catalog_api/docs_text.py): paragraphs, `code` and **bold**.
+  const md = (t) => esc(t || "").replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>").replace(/`([^`]+)`/g, "<code>$1</code>");
   const opById = (id) => endpointPages().flatMap(([, ops]) => ops).find(([pid]) => pid === id);
   const authNeeded = (path) => /^\/api\/(tokens|submissions|admin|audit|auth\/(me|token|activity))/.test(path);
   const typeOf = (sch = {}) => sch.type || (sch.anyOf || []).map((x) => x.type).filter((t) => t && t !== "null").join(" | ") || "string";
@@ -220,7 +206,9 @@
   // Builds the request from the form (or the samples when the form isn't there yet).
   function currentRequest(id) {
     const [, , method, path, op] = opById(id);
-    const form = $("[data-ep-form]");
+    // Only read the form when it belongs to this endpoint (while navigating, the previous page's form is still there).
+    const found = $("[data-ep-form]");
+    const form = found && found.dataset.ep === id ? found : null;
     const val = (name, fallback) => (form ? form.elements[`p_${name}`]?.value ?? "" : fallback);
     let p = path;
     const qs = new URLSearchParams();
@@ -252,15 +240,15 @@
     const ref = op.requestBody?.content?.["application/json"]?.schema?.$ref;
     const body = ref ? state.spec.components.schemas[ref.split("/").pop()] : null;
     const sampleBody = body ? JSON.stringify(Object.fromEntries(Object.entries(body.properties || {}).map(([k, v]) => [k, v.default ?? (v.type === "array" ? [] : v.type === "integer" ? 90 : v.type === "object" ? {} : k === "name" ? "My script" : "")])), null, 2) : "";
-    const desc = esc(op.description || "").replace(/`([^`]+)`/g, "<code>$1</code>");
+    const desc = (op.description || op.summary || "").split(/\n\s*\n/).map((t) => `<p>${md(t.trim())}</p>`).join("");
     const needs = authNeeded(path);
     const ex = examples(id);
     return hero("API reference", esc(name), `<code>${esc(method.toUpperCase())} ${esc(path)}</code>`) + `
       <div class="dh-endpoint"><span class="dh-method m-${method}">${method.toUpperCase()}</span><code>${esc(path)}</code><span class="dh-auth">${needs ? "Needs sign-in or a token" : "Public · no token needed"}</span></div>
-      ${desc || NOTES[path] ? `<div class="dh-about">${desc ? `<p>${desc}</p>` : ""}${NOTES[path] ? `<p class="dh-muted">${esc(NOTES[path])}</p>` : ""}</div>` : ""}
+      ${desc ? `<div class="dh-about">${desc}</div>` : ""}
       ${title("Parameters")}
-      ${ps.length ? `<table class="dh-table"><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>${ps.map((p) => `<tr><td><code>${esc(p.name)}</code></td><td>${esc(typeOf(p.schema))} · ${p.in}${p.required ? " · <b>required</b>" : ""}</td><td>${esc(p.description || p.schema?.description || (p.schema?.enum ? `One of: ${p.schema.enum.join(", ")}` : ""))}${p.schema?.default != null ? ` <span class="dh-muted">Default ${esc(p.schema.default)}.</span>` : ""}</td></tr>`).join("")}</tbody></table>` : `<p class="dh-p dh-muted">None.</p>`}
-      ${body ? `${title("Request body", "JSON")}<table class="dh-table"><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>${Object.entries(body.properties || {}).map(([k, v]) => `<tr><td><code>${esc(k)}</code>${(body.required || []).includes(k) ? " · <b>required</b>" : ""}</td><td>${esc(typeOf(v))}</td><td>${esc(v.description || "")}</td></tr>`).join("")}</tbody></table>` : ""}
+      ${ps.length ? `<table class="dh-table"><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody>${ps.map((p) => `<tr><td><code>${esc(p.name)}</code></td><td>${esc(typeOf(p.schema))} · ${p.in}${p.required ? " · <b>required</b>" : ""}</td><td>${md(p.description || p.schema?.description || (p.schema?.enum ? `One of: ${p.schema.enum.join(", ")}` : ""))}${p.schema?.default != null ? ` <span class="dh-muted">Default ${esc(p.schema.default)}.</span>` : ""}</td></tr>`).join("")}</tbody></table>` : `<p class="dh-p dh-muted">None.</p>`}
+      ${body ? `${title("Request body", "JSON")}<table class="dh-table"><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody>${Object.entries(body.properties || {}).map(([k, v]) => `<tr><td><code>${esc(k)}</code>${(body.required || []).includes(k) ? " · <b>required</b>" : ""}</td><td>${esc(typeOf(v))}</td><td>${md(v.description || "")}</td></tr>`).join("")}</tbody></table>` : ""}
       ${title("Try it", "Sends the request from this page")}
       <form class="dh-try" data-ep-form data-ep="${esc(id)}">
         ${ps.length ? `<div class="dh-try-grid">${ps.map((p) => `<label>${esc(p.name)}${p.required ? " *" : ""}<small>${p.in}</small>${p.schema?.enum ? `<select name="p_${esc(p.name)}"><option value=""></option>${p.schema.enum.map((o) => `<option${o === sampleFor(p) ? " selected" : ""}>${esc(o)}</option>`).join("")}</select>` : `<input name="p_${esc(p.name)}" value="${esc(sampleFor(p))}" placeholder="${esc(p.schema?.default ?? "")}" autocomplete="off">`}</label>`).join("")}</div>` : ""}
