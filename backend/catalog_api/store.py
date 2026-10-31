@@ -80,6 +80,35 @@ def content(name: str) -> Any:
     return _meta().get(f"content:{name}") if name in CONTENT else None
 
 
+def site_data() -> str:
+    """Everything the page templates (scripts/site.mjs) need, as one JSON document. Data files are passed through
+    as stored; history and per-run scores come from the history table. Built as text: the evaluation alone is
+    tens of MB, and re-encoding it would only cost time."""
+    con = db()
+    raw = {r["key"]: r["value"] for r in con.execute("SELECT key, value FROM raw")}
+    if not raw:
+        raise NotIngested("No raw data in the database. Re-run `python -m catalog_api.ingest`.")
+    runs, history = [], {}
+    run_rows = con.execute("SELECT id, data FROM runs ORDER BY id").fetchall()
+    scores: dict[str, list] = {r["id"]: [] for r in run_rows}
+    for h in con.execute("SELECT entry_id, run_id, point FROM history ORDER BY entry_id, run_id"):
+        history.setdefault(h["entry_id"], []).append(h["point"])
+        scores[h["run_id"]].append(json.loads(h["point"]).get("score"))
+    for r in run_rows:
+        runs.append('{"run":%s,"scores":%s}' % (r["data"], json.dumps(scores[r["id"]])))
+    hist = ",".join(f"{json.dumps(k)}:[{','.join(v)}]" for k, v in history.items())
+    parts = [f'"{k}":{raw[k]}' for k in ("config", "categories", "catalog", "evaluation", "roadmap", "validation", "catalogSchema")]
+    parts += [f'"runs":[{",".join(runs)}]', f'"history":{{{hist}}}', f'"ingestedAt":{json.dumps(_meta().get("ingestedAt"))}']
+    return "{" + ",".join(parts) + "}"
+
+
+def run_file(run_id: str):
+    """Path of an archived run snapshot, published or local preview."""
+    from .ingest import run_files
+
+    return next((f for f in reversed(run_files()) if f.stem == run_id), None)
+
+
 def domain_graph() -> dict:
     """Domains as nodes, shared resources and imports as weighted edges, and the resources spanning most domains."""
     return _meta().get("domainGraph") or {"nodes": [], "edges": [], "bridges": []}
@@ -210,7 +239,7 @@ def summaries(ids: list[str]) -> list[dict]:
 
 
 def history(entry_id: str) -> list[dict]:
-    rows = db().execute("SELECT point FROM history WHERE entry_id = ? ORDER BY at, run_id", (entry_id,)).fetchall()
+    rows = db().execute("SELECT point FROM history WHERE entry_id = ? ORDER BY run_id", (entry_id,)).fetchall()
     return [json.loads(r["point"]) for r in rows]
 
 

@@ -1,7 +1,0 @@
-/* Additions for the server-rendered app (the rest comes from /assets/style.css, shared with the static build). */
-.pager { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; justify-content: center; margin: 2rem 0 1rem; }
-.pager a, .pager-current { display: inline-block; min-width: 2.2rem; padding: .35rem .6rem; text-align: center; border-radius: 8px; }
-.pager-current { font-weight: 600; background: var(--accent-soft, rgba(127,127,127,.15)); }
-.filters .facet-n { color: var(--muted, #888); }
-.result-count { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; align-items: baseline; }
-.api-note code { word-break: break-all; }

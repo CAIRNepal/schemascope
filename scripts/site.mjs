@@ -35,6 +35,40 @@ export async function loadLocalData() {
   };
 }
 
+// One entry's state in one archived run: score, criteria and quality metrics, compared across runs.
+// Used by the templates below and by the API's ingest (backend/), so both compute history the same way.
+export function historyPoint(run, r) {
+  return {
+    runId: run.id,
+    at: run.finishedAt,
+    score: r.score,
+    grade: r.grade,
+    fair: r.fair ?? null,
+    version: r.evaluatedVersion?.label || r.ols?.version || r.github?.latestRelease?.tag || null,
+    terms: r.ols?.terms ?? null,
+    stars: r.github?.stars ?? null,
+    license: r.obo?.license || r.github?.license || null,
+    lastActivity: r.lastActivity || null,
+    adopters: r.adopterCount ?? null,
+    links: Object.fromEntries(Object.entries(r.links || {}).filter(([, l]) => l).map(([k, l]) => [k, l.state])),
+    archived: r.github?.archived || false,
+    rubric: run.evaluator?.rubricVersion,
+    // Per-criterion points and the quality metrics behind them, to compare runs.
+    crit: Object.fromEntries(Object.entries(r.breakdown || {}).map(([k, b]) => [k, b.score])),
+    penalty: r.penalty?.score ?? null,
+    metrics: {
+      consistent: (r.quality && !r.quality.error ? r.quality.consistent : null) ?? r.dashboard?.consistent ?? null,
+      unsatisfiable: (r.quality && !r.quality.error ? r.quality.unsatisfiable : null) ?? r.dashboard?.unsatisfiable ?? null,
+      owl2dl: (r.quality && !r.quality.error ? r.quality.owl2dl : null) ?? r.dashboard?.owl2dl ?? null,
+      robotErrors: (r.quality?.robot || r.dashboard?.robot)?.ERROR ?? null,
+      robotWarnings: (r.quality?.robot || r.dashboard?.robot)?.WARN ?? null,
+      criticalPitfalls: r.oops && !r.oops.error ? r.oops.critical ?? null : null,
+      imports: r.importCount ?? null,
+      reuse: r.reuseCount ?? null,
+    },
+  };
+}
+
 // data: { config, categories, catalog, evaluation, runs, roadmap, validation, catalogSchema,
 //        history? (per-entry points; then runs may be summaries { run, scores }), buildId?, strict? }
 export async function createSite(data) {
@@ -125,39 +159,7 @@ const versionLabel = (r) => r?.evaluatedVersion?.label || null;
 // ---------- history & provenance ----------
 const history = {};
 if (data.history) Object.assign(history, data.history);
-else for (const run of runs) {
-  for (const [id, r] of Object.entries(run.entries)) {
-    (history[id] ??= []).push({
-      runId: run.run.id,
-      at: run.run.finishedAt,
-      score: r.score,
-      grade: r.grade,
-      fair: r.fair ?? null,
-      version: r.evaluatedVersion?.label || r.ols?.version || r.github?.latestRelease?.tag || null,
-      terms: r.ols?.terms ?? null,
-      stars: r.github?.stars ?? null,
-      license: r.obo?.license || r.github?.license || null,
-      lastActivity: r.lastActivity || null,
-      adopters: r.adopterCount ?? null,
-      links: Object.fromEntries(Object.entries(r.links || {}).filter(([, l]) => l).map(([k, l]) => [k, l.state])),
-      archived: r.github?.archived || false,
-      rubric: run.run.evaluator?.rubricVersion,
-      // Per-criterion points and the quality metrics behind them, to compare runs.
-      crit: Object.fromEntries(Object.entries(r.breakdown || {}).map(([k, b]) => [k, b.score])),
-      penalty: r.penalty?.score ?? null,
-      metrics: {
-        consistent: (r.quality && !r.quality.error ? r.quality.consistent : null) ?? r.dashboard?.consistent ?? null,
-        unsatisfiable: (r.quality && !r.quality.error ? r.quality.unsatisfiable : null) ?? r.dashboard?.unsatisfiable ?? null,
-        owl2dl: (r.quality && !r.quality.error ? r.quality.owl2dl : null) ?? r.dashboard?.owl2dl ?? null,
-        robotErrors: (r.quality?.robot || r.dashboard?.robot)?.ERROR ?? null,
-        robotWarnings: (r.quality?.robot || r.dashboard?.robot)?.WARN ?? null,
-        criticalPitfalls: r.oops && !r.oops.error ? r.oops.critical ?? null : null,
-        imports: r.importCount ?? null,
-        reuse: r.reuseCount ?? null,
-      },
-    });
-  }
-}
+else for (const run of runs) for (const [id, r] of Object.entries(run.entries)) (history[id] ??= []).push(historyPoint(run.run, r));
 
 const CRIT_LABELS = [["findable", "Findable"], ["accessible", "Accessible"], ["interoperable", "Interoperable"], ["reusable", "Reusable"], ["quality", "Quality"], ["maintenance", "Maintenance"], ["adoption", "Adoption"]];
 const METRIC_LABELS = [["consistent", "Logically consistent"], ["unsatisfiable", "Unsatisfiable classes"], ["owl2dl", "In OWL 2 DL"], ["robotErrors", "ROBOT errors"], ["robotWarnings", "ROBOT warnings"], ["criticalPitfalls", "Critical pitfalls"], ["imports", "Imported vocabularies"], ["reuse", "Reused by"]];

@@ -136,3 +136,14 @@ def test_domain_graph(client):
     # go spans life+earth (1) and imports envo across domains (0.5).
     assert g["edges"] == [{"a": "earth", "b": "life", "n": 1.5}]
     assert g["bridges"][0]["id"] == "go"
+
+
+def test_site_data_and_snapshot(client):
+    d = client.get("/api/site-data").json()
+    assert d["config"]["name"] == "TestScope" and len(d["catalog"]) == 4
+    assert d["evaluation"]["entries"]["go"]["score"] == 80
+    assert [x["score"] for x in d["history"]["go"]] == [70, 80]
+    assert [r["run"]["id"] for r in d["runs"]] == ["r1", "r2"] and sorted(d["runs"][0]["scores"]) == [40, 70]
+    assert d["roadmap"]["sections"] == [] and d["validation"] is None
+    assert client.get("/api/runs/r1/snapshot").json()["run"]["id"] == "r1"
+    assert client.get("/api/runs/nope/snapshot").status_code == 404

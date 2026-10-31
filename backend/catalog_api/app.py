@@ -9,7 +9,7 @@ from typing import Optional
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import FileResponse, JSONResponse, Response
 from mcp.server.transport_security import TransportSecuritySettings
 
 from . import store
@@ -69,6 +69,21 @@ def get_content(name: str):
     if doc is None:
         raise HTTPException(404, f"No {name} document in this catalog")
     return doc
+
+
+@app.get("/api/site-data", include_in_schema=False)
+def get_site_data():
+    """Bulk data for the web server's page templates (large; not meant for other clients)."""
+    return Response(store.site_data(), media_type="application/json")
+
+
+@app.get("/api/runs/{run_id}/snapshot")
+def get_run_snapshot(run_id: str):
+    """The archived run file as written by the evaluator: every entry's facts and scores in that run."""
+    f = store.run_file(run_id)
+    if f is None:
+        raise HTTPException(404, "Run not found")
+    return FileResponse(f, media_type="application/json")
 
 
 @app.get("/api/domain-graph")

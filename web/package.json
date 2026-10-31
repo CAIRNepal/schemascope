@@ -1,31 +1,12 @@
 {
   "name": "catalog-web",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
+  "description": "Web server: renders the site's pages (scripts/site.mjs) from the catalog API. No dependencies.",
   "scripts": {
-    "sync-assets": "node scripts/sync-assets.mjs",
-    "predev": "node scripts/sync-assets.mjs",
-    "prebuild": "node scripts/sync-assets.mjs",
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "typecheck": "tsc --noEmit",
+    "start": "node server.mjs",
     "check-links": "node scripts/check-links.mjs"
   },
-  "engines": {
-    "node": ">=20"
-  },
-  "dependencies": {
-    "next": "^16.4.3",
-    "react": "^19.3.1",
-    "react-dom": "^19.3.1",
-    "server-only": "^0.0.1"
-  },
-  "devDependencies": {
-    "@types/node": "^26.6.6",
-    "@types/react": "^19.3.0",
-    "@types/react-dom": "^19.3.0",
-    "typescript": "^7.0.2"
-  }
+  "engines": { "node": ">=18" }
 }

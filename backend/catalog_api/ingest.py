@@ -36,6 +36,8 @@ CREATE TABLE IF NOT EXISTS entry_keys (key TEXT PRIMARY KEY, entry_id TEXT NOT N
 CREATE VIRTUAL TABLE IF NOT EXISTS entries_fts USING fts5 (
   id UNINDEXED, acronym, name, description, extra, tokenize = 'unicode61 remove_diacritics 2'
 );
+-- Data files as they are on disk, for the web server's page templates (scripts/site.mjs).
+CREATE TABLE IF NOT EXISTS raw (key TEXT PRIMARY KEY, value TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS runs (id TEXT PRIMARY KEY, started_at TEXT, finished_at TEXT, entries INTEGER, data TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS history (
   entry_id TEXT NOT NULL, run_id TEXT NOT NULL, at TEXT, point TEXT NOT NULL, PRIMARY KEY (entry_id, run_id)
@@ -52,10 +54,14 @@ def _stamp(ev: dict) -> str:
     return r if r > g else g
 
 
-def latest_evaluation() -> dict:
-    """The newer of the published evaluation and a local preview (same rule as build.mjs)."""
-    found = [x for x in (_read(DATA_DIR / "evaluation.json"), _read(LOCAL_DATA_DIR / "evaluation.json")) if x]
-    return max(found, key=_stamp) if found else {"entries": {}}
+def latest_evaluation() -> tuple[dict, str]:
+    """The newer of the published evaluation and a local preview (same rule as build.mjs), parsed and as text."""
+    found = []
+    for f in (DATA_DIR / "evaluation.json", LOCAL_DATA_DIR / "evaluation.json"):
+        if f.exists():
+            text = f.read_text()
+            found.append((json.loads(text), text))
+    return max(found, key=lambda x: _stamp(x[0])) if found else ({"entries": {}}, '{"entries": {}}')
 
 
 def run_files() -> list[Path]:
@@ -119,6 +125,33 @@ def domain_graph(catalog: list[dict], categories: list[dict], ev: dict) -> dict:
     }
 
 
+SITE_JS = REPO_ROOT / "scripts" / "site.mjs"
+# Computes every entry's history point for one run file with the templates' own historyPoint().
+HISTORY_JS = """
+import { readFileSync } from "node:fs";
+import { historyPoint } from %s;
+const snap = JSON.parse(readFileSync(process.argv[1], "utf8"));
+const out = {};
+for (const [id, r] of Object.entries(snap.entries || {})) out[id] = historyPoint(snap.run, r);
+process.stdout.write(JSON.stringify(out));
+"""
+
+
+def history_points(path: Path, snap: dict, run: dict) -> dict[str, str]:
+    """entry id → history point (JSON text). Uses scripts/site.mjs when present so the API and the pages agree
+    exactly; otherwise the Python port in derived.py."""
+    if SITE_JS.exists():
+        try:
+            out = subprocess.run(
+                ["node", "--input-type=module", "-e", HISTORY_JS % json.dumps(SITE_JS.as_uri()), str(path)],
+                capture_output=True, text=True, check=True, timeout=600,
+            )
+            return {k: json.dumps(v, ensure_ascii=False) for k, v in json.loads(out.stdout).items()}
+        except (OSError, subprocess.SubprocessError, json.JSONDecodeError) as err:
+            print(f"warning: history from site.mjs failed for {path.name} ({err}); using the Python port", file=sys.stderr)
+    return {eid: json.dumps(derived.history_point(run, r), ensure_ascii=False) for eid, r in (snap.get("entries") or {}).items()}
+
+
 def ingest(rebuild: bool = False, db_path: Path = DB_PATH) -> dict:
     t0 = time.time()
     db_path.parent.mkdir(parents=True, exist_ok=True)
@@ -129,12 +162,12 @@ def ingest(rebuild: bool = False, db_path: Path = DB_PATH) -> dict:
 
     categories = _read(DATA_DIR / "categories.json") or []
     catalog = _read(DATA_DIR / "catalog.json") or []
-    evaluation = latest_evaluation()
+    evaluation, evaluation_text = latest_evaluation()
     ev = evaluation.get("entries") or {}
     cat_names = {c["id"]: c["name"] for c in categories}
 
     with con:
-        for table in ("meta", "categories", "entries", "entry_domains", "entry_formats", "entry_registries", "entry_keys", "entries_fts"):
+        for table in ("raw", "meta", "categories", "entries", "entry_domains", "entry_formats", "entry_registries", "entry_keys", "entries_fts"):
             con.execute(f"DELETE FROM {table}")
         meta = {
             "site": site_config(),
@@ -146,6 +179,17 @@ def ingest(rebuild: bool = False, db_path: Path = DB_PATH) -> dict:
             "content:validation": _read(DATA_DIR / "validation" / "report.json"),
         }
         con.executemany("INSERT INTO meta VALUES (?, ?)", [(k, json.dumps(v)) for k, v in meta.items()])
+        text = lambda f: f.read_text() if f.exists() else "null"  # noqa: E731
+        raw = {
+            "config": text(REPO_ROOT / "site.config.json"),
+            "categories": text(DATA_DIR / "categories.json"),
+            "catalog": text(DATA_DIR / "catalog.json"),
+            "evaluation": evaluation_text,
+            "roadmap": text(DATA_DIR / "roadmap.json"),
+            "validation": text(DATA_DIR / "validation" / "report.json"),
+            "catalogSchema": json.dumps(text(DATA_DIR / "catalog.schema.json")),
+        }
+        con.executemany("INSERT INTO raw VALUES (?, ?)", list(raw.items()))
         con.executemany("INSERT INTO categories VALUES (?, ?, ?)", [(c["id"], i, json.dumps(c)) for i, c in enumerate(categories)])
 
         for e in catalog:
@@ -188,9 +232,10 @@ def ingest(rebuild: bool = False, db_path: Path = DB_PATH) -> dict:
                 "INSERT OR REPLACE INTO runs VALUES (?, ?, ?, ?, ?)",
                 (run_id, run.get("startedAt"), run.get("finishedAt"), len(entries), json.dumps(run)),
             )
+            points = history_points(f, snap, {**run, "id": run_id})
             con.executemany(
                 "INSERT OR REPLACE INTO history VALUES (?, ?, ?, ?)",
-                [(eid, run_id, run.get("finishedAt"), json.dumps(derived.history_point({**run, "id": run_id}, r))) for eid, r in entries.items()],
+                [(eid, run_id, run.get("finishedAt"), point) for eid, point in points.items()],
             )
         added += 1
         print(f"  loaded run {run_id} ({len(entries)} entries)")

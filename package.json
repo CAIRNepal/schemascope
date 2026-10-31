@@ -27,7 +27,7 @@
     "ingest": "cd backend && uv run python -m catalog_api.ingest",
     "api": "cd backend && uv run uvicorn catalog_api.app:app --reload --port 8000",
     "mcp:stdio": "cd backend && uv run python -m catalog_api.mcp_server",
-    "web": "cd web && API_URL=http://127.0.0.1:8000 npm run dev",
+    "web": "API_URL=http://127.0.0.1:8000 PORT=3000 node web/server.mjs",
     "test:api": "cd backend && uv run pytest -q"
   }
 }

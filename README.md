@@ -43,22 +43,23 @@ Records are merged across sources by prefix, cross-registry mappings, ontology o
 ```
 data/*.json ──ingest──▶ SQLite (.local/catalog.db) ──▶ FastAPI  /api/…  (JSON, OpenAPI at /docs)
  (evaluate,                                              │       /mcp/   (MCP, streamable HTTP)
-  rescore, quality)                                      └──▶ Next.js UI (web/, server-rendered)
+  rescore, quality)                                      └──▶ web/server.mjs: pages rendered by scripts/site.mjs
+                                                              (the same templates as the static build)
 ```
 
 ```bash
 npm run ingest        # load data/ into .local/catalog.db (incremental; --rebuild to start over). refresh.sh runs it too
 npm run api           # API + MCP on http://127.0.0.1:8000  (needs uv: https://docs.astral.sh/uv/)
-npm run web           # UI on http://localhost:3000, reading the API
+npm run web           # site on http://localhost:3000, rendered from the API's data
 npm run test:api      # backend tests
 cd web && npm run check-links -- http://localhost:3000 http://127.0.0.1:8000   # crawl the running site for broken links
 ```
 
 - **API** (`backend/catalog_api/`): `/api/entries` (search with `q`, filters `category`, `kind`, `grade`, `format`, `registry`, `legacy`, `sort`, pagination and facet counts), `/api/entries/{id}`, `/api/entries/{id}/history`, `/api/categories`, `/api/runs`, `/api/runs/{id}`, `/api/stats`, `/api/meta`.
 - **MCP** at `/mcp/`: tools `search_catalog`, `get_entry`, `get_entry_history`, `list_categories`, `catalog_stats`, `scoring_rubric`. Add it to Claude Code with `claude mcp add --transport http schemascope http://127.0.0.1:8000/mcp/`, or run it over stdio with `npm run mcp:stdio`.
-- **UI** (`web/`): Next.js App Router. Stylesheet and brand images come from `src/assets/` (copied on build). Pages not ported yet are proxied to the static build when `LEGACY_SITE_URL` is set.
+- **Site** (`web/server.mjs`): renders the static site's own templates (`scripts/site.mjs`) from API data, so pages are identical to `npm run build` output; reloads automatically after an ingest.
 
-Environment: `CATALOG_REPO` (repository root; default: parent of `backend/`), `CATALOG_DB`, `CORS_ORIGINS`, `MCP_ALLOWED_HOSTS` (public host name(s) of the API, e.g. `api.schemascope.org`; localhost always works) for the API; `API_URL` (server-side), `NEXT_PUBLIC_API_URL` (links shown to readers), `REVALIDATE_SECONDS`, `LEGACY_SITE_URL` for the UI. The UI build pre-renders some pages, so the API must be reachable during `next build`.
+Environment: `CATALOG_REPO` (repository root; default: parent of `backend/`), `CATALOG_DB`, `CORS_ORIGINS`, `MCP_ALLOWED_HOSTS` (public host name(s) of the API, e.g. `api.schemascope.org`; localhost always works) for the API; `API_URL`, `PORT`, `HOST`, `POLL_SECONDS`, `CACHE_MB` for the site server.
 
 ## Domains
 
@@ -74,7 +75,7 @@ Use the site's `/submit/` form, which opens a GitHub issue that a bot turns into
 
 ## Deploy
 
-Two processes: the API (`uvicorn catalog_api.app:app`, Python ≥ 3.11, with `.local/catalog.db` built by `npm run ingest`) and the UI (`cd web && npm run build && npm start`, with `API_URL` pointing at the API). The static build (`node scripts/build.mjs` → `dist/`, `vercel.json`) still works and serves the pages that are not ported yet; see S-014 in DECISIONS.md.
+Two processes: the API (`uvicorn catalog_api.app:app`, Python ≥ 3.11, with `.local/catalog.db` built by `npm run ingest`) and the site server (`node web/server.mjs`, with `API_URL` pointing at the API). The static build (`node scripts/build.mjs` → `dist/`, `vercel.json`) still works and produces the same pages; see S-014 and S-015 in DECISIONS.md.
 
 ## License
 
