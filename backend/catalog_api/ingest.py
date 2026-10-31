@@ -107,6 +107,9 @@ def ingest(rebuild: bool = False, db_path: Path = DB_PATH) -> dict:
             "evaluation": {k: evaluation.get(k) for k in ("generatedAt", "rescoredAt", "rubricVersion", "run")},
             "rubric": rubric_meta(),
             "ingestedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            # Content pages built from data files (absent in a repository → the page says so or redirects).
+            "content:roadmap": _read(DATA_DIR / "roadmap.json"),
+            "content:validation": _read(DATA_DIR / "validation" / "report.json"),
         }
         con.executemany("INSERT INTO meta VALUES (?, ?)", [(k, json.dumps(v)) for k, v in meta.items()])
         con.executemany("INSERT INTO categories VALUES (?, ?, ?)", [(c["id"], i, json.dumps(c)) for i, c in enumerate(categories)])

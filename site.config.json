@@ -5,5 +5,18 @@
   "tagline": "Ontologies, schemas & standards across every domain",
   "description": "A curated, automatically evaluated catalog of ontologies, schemas, vocabularies and data standards across the sciences, from biomedicine and earth science to chemistry, engineering and the humanities.",
   "repository": "https://github.com/CAIRNepal/schemascope",
-  "gtmId": "GTM-M265DH2W"
+  "gtmId": "GTM-M265DH2W",
+  "contact": {
+    "name": "Tek Raj Chhetri",
+    "role": "Creator & maintainer",
+    "emails": [
+      "tekraj.chhetri@cair-nepal.org",
+      "tekraj@mit.edu"
+    ],
+    "site": "https://tekrajchhetri.com/",
+    "github": "tekrajchhetri"
+  },
+  "contributorsExclude": [
+    "claude"
+  ]
 }

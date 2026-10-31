@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Crumbs } from "@/components/ui";
 import { PUBLIC_API_URL, api } from "@/lib/api";
 import { fmtDateTime, fmtNum } from "@/lib/format";
@@ -6,7 +7,7 @@ import { fmtDateTime, fmtNum } from "@/lib/format";
 export const metadata: Metadata = { title: "Evaluation", description: "How resources are scored: the rubric, penalties, grades and every evaluation run.", alternates: { canonical: "/evaluation/" } };
 
 export default async function EvaluationPage() {
-  const [{ rubric, evaluation }, runs, stats] = await Promise.all([api.meta(), api.runs(100), api.stats()]);
+  const [{ rubric, evaluation }, runs, stats, validation] = await Promise.all([api.meta(), api.runs(100), api.stats(), api.content("validation")]);
   return (
     <>
       <section className="page-head wrap">
@@ -40,6 +41,7 @@ export default async function EvaluationPage() {
               </tbody>
             </table>
           </div>
+          {validation ? <p className="small"><Link href="/evaluation/validation/">How robust are these scores? Rubric validation →</Link></p> : null}
           <p className="small muted">Grades: {rubric.grades.map((g) => `${g.grade} ≥ ${g.min}`).join(" · ")}. Grade counts: {Object.entries(stats.grades).sort().map(([g, n]) => `${g === "none" ? "not evaluated" : g} ${fmtNum(n)}`).join(" · ")}.</p>
         </section>
       ) : null}

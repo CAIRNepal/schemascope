@@ -23,6 +23,13 @@ export type Site = { name: string; brand?: string; url: string; tagline?: string
   // Home page headline: before <em>em</em> after.
   hero?: { before?: string; em?: string; after?: string };
   sister?: { name: string; url: string; eyebrow?: string; title?: string; blurb?: string };
+  // About page: what the catalog covers (first paragraph).
+  about?: string;
+  // Roadmap kept elsewhere (e.g. shared with a sister catalog): /roadmap/ redirects there.
+  roadmapUrl?: string;
+  contact?: { name: string; role?: string; emails?: string[]; site?: string; github?: string };
+  // GitHub logins not listed as contributors (e.g. AI assistants credited in commits).
+  contributorsExclude?: string[];
 };
 export type RubricItem = { key: string; symbol: string; label: string; fair: boolean; max: number; formula: string; how: string; ontologyOnly?: boolean };
 export type Rubric = { version: string; rubric: RubricItem[]; penalty: { label: string; formula: string; how: string }; fairMax: number; grades: { grade: string; min: number }[] };
@@ -66,9 +73,18 @@ export const api = {
   category: (id: string) => get<Category>(`/api/categories/${encodeURIComponent(id)}`),
   search: (p: { q?: string; category?: string; kind?: string; grade?: string; format?: string; registry?: string; legacy?: boolean; sort?: string; page?: number; size?: number }) =>
     get<SearchResult>("/api/entries", p),
-  top: (n = 6, category?: string) => get<Summary[]>("/api/entries/top", { n, category }),
-  recent: (n = 6) => get<Summary[]>("/api/entries/recent", { n }),
+  top: (n = 6, category?: string) => get<Summary[]>("/api/top-entries", { n, category }),
+  recent: (n = 6) => get<Summary[]>("/api/recent-entries", { n }),
   entry: (id: string) => get<EntryDetail>(`/api/entries/${encodeURIComponent(id)}`),
-  ids: () => get<{ id: string; category: string }[]>("/api/entries/ids"),
+  ids: () => get<{ id: string; category: string }[]>("/api/entry-ids"),
+  // Content documents from data/ (roadmap, validation); null when this catalog has none.
+  content: async <T,>(name: "roadmap" | "validation") => {
+    try {
+      return await get<T>(`/api/content/${name}`);
+    } catch (e) {
+      if (e instanceof NotFound) return null;
+      throw e;
+    }
+  },
   runs: (limit = 50) => get<RunListItem[]>("/api/runs", { limit }),
 };

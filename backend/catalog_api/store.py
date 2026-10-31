@@ -72,6 +72,14 @@ def _categories() -> dict[str, dict]:
     return _categories_at(_generation())
 
 
+CONTENT = ("roadmap", "validation")
+
+
+def content(name: str) -> Any:
+    """A content document loaded from data/ (roadmap, rubric validation report), or None if this catalog has none."""
+    return _meta().get(f"content:{name}") if name in CONTENT else None
+
+
 def meta() -> dict:
     m = _meta()
     return {"site": m.get("site"), "evaluation": m.get("evaluation"), "rubric": m.get("rubric"), "ingestedAt": m.get("ingestedAt")}

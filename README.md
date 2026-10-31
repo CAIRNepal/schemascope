@@ -51,6 +51,7 @@ npm run ingest        # load data/ into .local/catalog.db (incremental; --rebuil
 npm run api           # API + MCP on http://127.0.0.1:8000  (needs uv: https://docs.astral.sh/uv/)
 npm run web           # UI on http://localhost:3000, reading the API
 npm run test:api      # backend tests
+cd web && npm run check-links -- http://localhost:3000 http://127.0.0.1:8000   # crawl the running site for broken links
 ```
 
 - **API** (`backend/catalog_api/`): `/api/entries` (search with `q`, filters `category`, `kind`, `grade`, `format`, `registry`, `legacy`, `sort`, pagination and facet counts), `/api/entries/{id}`, `/api/entries/{id}/history`, `/api/categories`, `/api/runs`, `/api/runs/{id}`, `/api/stats`, `/api/meta`.

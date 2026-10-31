@@ -62,6 +62,15 @@ def get_meta():
     return store.meta()
 
 
+@app.get("/api/content/{name}")
+def get_content(name: str):
+    """Data behind the content pages: `roadmap` (data/roadmap.json) and `validation` (data/validation/report.json)."""
+    doc = store.content(name)
+    if doc is None:
+        raise HTTPException(404, f"No {name} document in this catalog")
+    return doc
+
+
 @app.get("/api/stats")
 def get_stats():
     return store.stats()
@@ -80,6 +89,8 @@ def get_category(cat_id: str):
     return c
 
 
+# Note: routes under /api/entries/ take an entry id, so helper lists live at /api/top-entries etc.
+# (an entry is literally called "top").
 @app.get("/api/entries")
 def list_entries(
     q: Optional[str] = Query(None, description="Free text; every word must match (prefix)"),
@@ -96,17 +107,17 @@ def list_entries(
     return store.search(q=q, category=category, kind=kind, grade=grade, format=format, registry=registry, include_legacy=legacy, sort=sort, page=page, size=size)
 
 
-@app.get("/api/entries/top")
+@app.get("/api/top-entries")
 def top_entries(n: int = Query(8, ge=1, le=50), category: Optional[str] = None):
     return store.top(n, category)
 
 
-@app.get("/api/entries/recent")
+@app.get("/api/recent-entries")
 def recent_entries(n: int = Query(8, ge=1, le=50)):
     return store.recently_active(n)
 
 
-@app.get("/api/entries/ids")
+@app.get("/api/entry-ids")
 def entry_ids():
     """All entry ids (for sitemaps and bulk clients)."""
     return store.ids()
