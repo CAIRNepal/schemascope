@@ -43,6 +43,25 @@ services:
       timeout: 5s
       retries: 30
 
+  # Nightly database dump into BACKUP_DIR on the server (see backup.sh). Test the newest one with:
+  #   docker compose -f infrastructure/production/docker-compose.yml --env-file infrastructure/production/.env exec backup backup.sh check
+  backup:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      PGHOST: db
+      PGUSER: ${POSTGRES_USER}
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+      PGDATABASE: ${POSTGRES_DB}
+      BACKUP_AT: ${BACKUP_AT:-02:45}
+      BACKUP_KEEP_DAILY: ${BACKUP_KEEP_DAILY:-7}
+      BACKUP_KEEP_WEEKLY: ${BACKUP_KEEP_WEEKLY:-4}
+    volumes:
+      - ./backup.sh:/usr/local/bin/backup.sh:ro
+      - ${BACKUP_DIR:-/srv/backups/schemascope}:/backups
+    entrypoint: ["sh", "/usr/local/bin/backup.sh", "loop"]
+    depends_on: { db: { condition: service_healthy } }
+
   ingest:
     build: { context: ../.., dockerfile: infrastructure/docker/api.Dockerfile }
     command: ["python", "-m", "catalog_api.ingest"]
