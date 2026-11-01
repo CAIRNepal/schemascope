@@ -1456,7 +1456,9 @@ a.rec-path:hover { border-color: var(--accent-ink); transform: translateY(-2px);
 .rec-gap { color: var(--muted); padding: 0 4px; }
 
 /* ---------- Chat (/recommend/ask/): sidebar of saved chats, centred conversation, composer at the bottom ---------- */
-.cg { display: grid; grid-template-columns: 270px minmax(0, 1fr); height: calc(100vh - 64px); height: calc(100dvh - 64px); border-bottom: 1px solid var(--line); }
+.cg { display: grid; grid-template-columns: 270px minmax(0, 1fr); height: calc(100vh - 64px); height: calc(100dvh - 64px); }
+/* Ask page: the footer sits right under the chat, sharing one divider line. */
+body:has(.cg) .site-footer { margin-top: 0; }
 .cg-side { display: flex; flex-direction: column; gap: 6px; padding: 16px 12px; background: var(--surface); border-right: 1px solid var(--line); min-height: 0; }
 .cg-new { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; color: var(--text); text-decoration: none; font-weight: 600; font-size: .9rem; background: var(--bg); }
 .cg-new:hover { border-color: var(--accent-ink); color: var(--accent-ink); }
