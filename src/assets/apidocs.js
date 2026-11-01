@@ -168,6 +168,14 @@
       <div><b>Don't work around the limits</b><p>Rotating IP addresses or accounts to exceed them, or reselling access, isn't allowed; tokens used that way may be revoked.</p></div>
       <div><b>Credit the source</b><p>Each resource belongs to its maintainers and keeps its own license; scores and evaluations come from ${esc(BRAND)}. Link back when you republish them.</p></div>
     </div>
+    ${title("How limits are counted")}
+    <ul class="dh-list">
+      <li><b>Per account when signed in.</b> Your browser session and all your tokens share one budget of ${fmt(state.cfg.rateLimit.authenticatedPerMinute)} requests per minute; more tokens don't give more requests. See your usage on your <a href="/account/">account page</a>.</li>
+      <li><b>Per network when signed out:</b> ${fmt(state.cfg.rateLimit.anonymousPerMinute)} requests per minute per IP address.</li>
+      <li><b>A ceiling per IP address</b> applies to everyone, signed in or not, and is checked before anything else, so floods are turned away early.</li>
+      <li><b>Automatic blocks:</b> sending more than three times your limit in a minute, or going over it three minutes running, blocks you for a short time (the error says how long). Contact us if you were blocked by mistake.</li>
+      <li>Counts are shared by all of our servers and kept for a few days to protect the service; IP addresses are stored only as a one-way hash.</li>
+    </ul>
     ${title("Where you stand", "Sent with every response")}
     <table class="dh-table"><thead><tr><th>Header</th><th>Meaning</th></tr></thead><tbody><tr><td><code>X-RateLimit-Limit</code></td><td>Requests allowed this minute</td></tr><tr><td><code>X-RateLimit-Remaining</code></td><td>Requests left this minute</td></tr><tr><td><code>X-RateLimit-Reset</code></td><td>When the window resets (Unix time)</td></tr><tr><td><code>Retry-After</code></td><td>Seconds to wait, on 429</td></tr></tbody></table>
     ${code(`curl -i "${ORIGIN}/api/stats"`, "cURL", { run: "/api/stats" })}

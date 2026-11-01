@@ -233,11 +233,11 @@ def test_sessions_tokens_and_scopes(client):
 
 def test_rate_limit_and_problem_details(client):
     from catalog_api import settings
-    from catalog_api.guard import window
+    from catalog_api import rate
 
     old = settings.RATE_LIMIT_ANON
     settings.RATE_LIMIT_ANON = 3
-    window.counts.clear()
+    rate.reset()
     try:
         codes = [client.get("/api/stats", headers={"X-Forwarded-For": "203.0.113.9"}).status_code for _ in range(4)]
         assert codes == [200, 200, 200, 429]
@@ -246,7 +246,7 @@ def test_rate_limit_and_problem_details(client):
         assert client.get("/api/stats", headers={"X-Forwarded-For": "203.0.113.10"}).status_code == 200  # other IP
     finally:
         settings.RATE_LIMIT_ANON = old
-        window.counts.clear()
+        rate.reset()
     p = client.get("/api/entries/nope").json()
     assert p["status"] == 404 and p["title"] == "Not Found" and p["instance"] == "/api/entries/nope"
     assert client.get("/api/entries", params={"page": 0}).json()["status"] == 422
@@ -299,8 +299,8 @@ def test_superadmin_rate_limits(client):
     assert bob.get("/api/stats").headers["x-ratelimit-limit"] == "7"
     assert any(u["login"] == "bob" and u["rateLimit"] == 7 for u in admin.get("/api/admin/users").json())
     admin.put("/api/admin/settings", json={"authenticatedPerMinute": 1000})
-    from catalog_api.guard import window
-    window.counts.clear()
+    from catalog_api import rate
+    rate.reset()
     accounts._settings_cache["at"] = 0
     actions = [a["action"] for a in admin.get("/api/audit", params={"action": "admin.*"}).json()]
     assert "admin.rate_limits" in actions and "admin.user_rate_limit" in actions
@@ -483,3 +483,45 @@ def test_search_logs_and_admin_exports(client):
     admin.put("/api/auth/preferences", json={"improveSearch": False})
     assert admin.post("/api/logs/search", json={"source": "catalog", "q": "x"}).json() == {"id": None}
     admin.put("/api/auth/preferences", json={"improveSearch": True})
+
+
+def test_abuse_protection_shared_counts_and_blocks(client):
+    from catalog_api import db, rate, settings
+
+    rate.reset()
+    old = (settings.RATE_IP_CEILING, settings.RATE_LIMIT_ANON)
+    settings.RATE_IP_CEILING, settings.RATE_LIMIT_ANON = 5, 1000
+    try:
+        # The per-IP ceiling applies before any token lookup, even to sign-in routes and with fake tokens.
+        h = {"X-Forwarded-For": "198.51.100.7", "Authorization": "Bearer sch_pat_fake"}
+        codes = [client.get("/api/stats", headers=h).status_code for _ in range(6)]
+        assert codes[:5] == [401] * 5 and codes[5] == 429
+        assert client.get("/api/auth/session", headers={"X-Forwarded-For": "198.51.100.7"}).status_code == 429
+        # Far over the ceiling: blocked automatically, stored, and audited.
+        for _ in range(12):
+            client.get("/api/stats", headers={"X-Forwarded-For": "198.51.100.7"})
+        key = rate.ip_key("198.51.100.7")
+        assert rate.blocked(key) > 0
+        assert run(db.value("SELECT reason FROM rate_blocks WHERE key = %s", (key,))).startswith("automatic")
+        assert "198.51.100.7" not in key  # IP addresses are stored only as a keyed hash
+        # Counts are shared through the database.
+        run(rate.sync())
+        assert run(db.value("SELECT SUM(count) FROM rate_usage WHERE key = %s", (key,))) >= 7  # requests after the block are refused before counting
+    finally:
+        settings.RATE_IP_CEILING, settings.RATE_LIMIT_ANON = old
+    # Superadmins see usage and blocks, and can block and unblock (by IP or @login).
+    admin = _signed_in()
+    r = admin.get("/api/admin/rate").json()
+    assert any(b["key"] == key and b["auto"] for b in r["blocks"])
+    assert admin.delete(f"/api/admin/rate/blocks/{key}").status_code == 204
+    rate.reset()
+    assert client.get("/api/stats", headers={"X-Forwarded-For": "198.51.100.7"}).status_code == 200
+    assert admin.post("/api/admin/rate/blocks", json={"target": "198.51.100.8", "minutes": 5}).status_code == 201
+    assert client.get("/api/stats", headers={"X-Forwarded-For": "198.51.100.8"}).status_code == 429
+    assert admin.post("/api/admin/rate/blocks", json={"target": "@ada"}).status_code == 422  # not yourself
+    assert admin.post("/api/admin/rate/blocks", json={"target": "not an ip"}).status_code == 422
+    # Your own usage, per account.
+    u = admin.get("/api/auth/usage").json()
+    assert u["perMinute"] >= 1 and u["lastHour"] >= 0
+    run(rate.unblock(rate.ip_key("198.51.100.8")))
+    rate.reset()

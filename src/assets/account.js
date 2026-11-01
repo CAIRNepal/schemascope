@@ -69,6 +69,9 @@
         <span class="acc-connected">Connected with GitHub</span>
         <div class="acc-profile-actions">${u.superadmin ? '<a class="btn-ghost btn-sm" href="/admin/">Admin dashboard →</a>' : ""}<button type="button" class="btn-ghost btn-sm" data-signout>Sign out</button></div>`;
       $("[data-my-limit]").textContent = fmt(s.rateLimit.perMinute);
+      api("/api/auth/usage").then((u) => {
+        $("[data-anon-limit]").closest("p").textContent = `${fmt(u.lastHour)} requests in the last hour, ${fmt(u.last24h)} in the last 24 hours (session and tokens together).`;
+      }).catch(() => {});
       $("[data-anon-limit]").textContent = fmt(s.rateLimit.anonymousPerMinute);
       $("[data-account-body]").hidden = false;
       showTab(location.hash.slice(1) || "overview");

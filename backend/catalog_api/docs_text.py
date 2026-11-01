@@ -288,6 +288,13 @@ OPS: dict[tuple[str, str], dict] = {
         "d": "Your preferences. `improveSearch` (default on): let your chats be logged, without your identity, to improve "
              "recommendations. Turn it off and your chats are only kept in your account.",
     },
+    ("get", "/api/auth/usage"): {"d": "How many requests your account (session and all your tokens together) made in the last hour and the last 24 hours, and your limit per minute."},
+    ("get", "/api/admin/rate"): {
+        "d": "**Superadmins only.** Who used the API most in the last `minutes` (accounts by login; signed-out visitors by a hash of their IP, never the IP itself), with their peak per minute, and the active blocks.",
+        "p": {"minutes": "The window to report, from 1 to 1440 (default 60)."},
+    },
+    ("post", "/api/admin/rate/blocks"): {"d": "**Superadmins only.** Block an account (`@login`), an IP address (stored as a hash) or a key from the usage list for `minutes`. Blocked callers get 429 until it ends. Recorded in the audit log."},
+    ("delete", "/api/admin/rate/blocks/{key}"): {"d": "**Superadmins only.** Lift a block early.", "p": {"key": "The block's `key` from `GET /api/admin/rate`."}},
     ("post", "/api/logs/search"): {
         "d": "Used by the site to log a search (guided recommendations, the search bar, catalog filters) without identity: the "
              "words, filters, number of results and the top results. Signed-in users with *Help improve recommendations* off are "

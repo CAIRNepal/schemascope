@@ -1592,7 +1592,7 @@ function privacyPage() {
       <a href="#summary">In short</a>
       <a href="#chat">Search and chat</a>
       <a href="#account">Accounts and sign-in</a>
-      <a href="#limits">Rate limits</a>
+      <a href="#limits">Rate limits and abuse</a>
       <a href="#submissions">Submissions</a>
       <a href="#analytics">Analytics and cookies</a>
       <a href="#browser">Stored in your browser</a>
@@ -1644,8 +1644,13 @@ function privacyPage() {
   <p><b>Activity log:</b> for security and accountability we record sign-ins and sign-outs, token changes, submissions, reviews and administrative changes, with the time, your account, the IP address and the browser's user agent. You can see your own activity on your account page; administrators can see the full log.</p>
     </section>
     <section class="doc-sec" id="limits">
-      <h2>Rate limits</h2>
-  <p>To share the service fairly we count requests per minute, by IP address when signed out and by account when signed in. These counts are kept in memory for about a minute and are not stored.</p>
+      <h2>Rate limits and abuse protection</h2>
+  <p>To share the service fairly and protect it from abuse, we count requests per minute: <b>per account</b> when you are signed in (your session and all your tokens together), and <b>per IP address</b> when you are not. Every request also counts toward a ceiling per IP address.</p>
+  <ul>
+    <li>Counts are stored per minute and kept for 7 days, so all our servers enforce the same limits and abuse can be investigated. You can see your own usage on your account page.</li>
+    <li>IP addresses are <b>not stored as such</b>: we keep a one-way, keyed hash of them, enough to count and block but not to recover the address.</li>
+    <li>Sending far more than the limit blocks the account or address automatically for a short time; administrators can also block and unblock. Blocks are recorded in the activity log.</li>
+  </ul>
     </section>
     <section class="doc-sec" id="submissions">
       <h2>Submissions</h2>
@@ -1660,6 +1665,7 @@ function privacyPage() {
     <section class="doc-sec" id="browser">
       <h2>Stored in your browser</h2>
   <ul>
+    <li><b>Server:</b> per-minute request counts per account or hashed IP address (7 days), see <a href="#limits">Rate limits</a>.</li>
     <li><b>Local storage:</b> your theme (light or dark), cookie choice, and a few display preferences of the developer docs.</li>
     <li><b>Session storage</b> (cleared when you close the browser): signed-out chats and the chat session id, a token you paste on the API docs page, and a newly created token so the setup instructions can show it.</li>
     <li><b>Cookies:</b> the sign-in session cookie, and a short-lived cookie during GitHub sign-in to protect against forged requests.</li>
@@ -2095,6 +2101,18 @@ function adminPage() {
           <button class="btn" type="submit">Save</button>
         </form>
         <p class="small muted" data-limit-defaults></p>
+      </article>
+      <article class="acc-card acc-pad">
+        <h3>Usage &amp; blocks</h3>
+        <p class="small muted">Who used the API most in the last hour (signed-out visitors appear as a hash of their IP address). Anyone far over their limit is blocked automatically for a short time; block or unblock here.</p>
+        <form class="limits-form" data-block-form>
+          <label>Block<input name="target" required placeholder="@login, an IP address, or a key"></label>
+          <label>For (minutes)<input type="number" name="minutes" min="1" value="60" required></label>
+          <label>Reason<input name="reason" placeholder="optional"></label>
+          <button class="btn" type="submit">Block</button>
+        </form>
+        <div class="acc-tablewrap"><table class="acc-table"><thead><tr><th>Blocked</th><th>Until</th><th>Reason</th><th></th></tr></thead><tbody data-blocks></tbody></table></div>
+        <div class="acc-tablewrap"><table class="acc-table"><thead><tr><th>Caller (last hour)</th><th class="num">Requests</th><th class="num">Peak / minute</th><th></th></tr></thead><tbody data-usage></tbody></table></div>
       </article>
       <div class="acc-filters"><input type="search" data-user-search placeholder="Search users by login, name or email…" aria-label="Search users"></div>
       <div class="acc-card acc-tablewrap"><table class="acc-table"><thead><tr><th>User</th><th>Email</th><th>Last sign-in</th><th class="num">Tokens</th><th>Rate limit (per minute)</th></tr></thead><tbody data-users></tbody></table></div>

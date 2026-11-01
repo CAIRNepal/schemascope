@@ -45,8 +45,12 @@ async def lifespan(_app: FastAPI):
         await to_thread.run_sync(api.openapi)
     except Exception:
         api.openapi_schema = None
+    from . import rate
+
+    rate.start()   # share rate-limit counts between workers through the database
     async with mcp.session_manager.run():
         yield
+    await rate.stop()
     await db.aclose()
 
 
@@ -505,3 +509,70 @@ async def admin_logs_export(request: Request, kind: str, fmt: str, p: auth.Princ
     rows = await (chatlog.chat_rows(limit=10000) if kind == "chats" else chatlog.search_rows(limit=10000))
     await auth._audit(request, "admin.export", p.user, f"{kind}.{fmt}", rows=len(rows))
     return _export(rows, fmt, f"{kind}-log")
+
+
+# ---------- rate limits: your usage; superadmin usage and blocks ----------
+from . import db, rate  # noqa: E402
+
+
+@api.get("/api/auth/usage", tags=["Auth"], summary="My API usage")
+async def my_usage(p: auth.Principal = Depends(auth.require_user)):
+    from . import accounts
+
+    return {**await rate.usage(rate.user_key(p.user.id)), "perMinute": await accounts.limit_for(p.user)}
+
+
+async def _label_keys(items: list[dict]) -> list[dict]:
+    ids = [int(x["key"].split(":", 1)[1]) for x in items if x["key"].startswith("user:")]
+    names = {}
+    if ids:
+        for r in await db.rows("SELECT id, login FROM users WHERE id = ANY(%s)", (ids,)):
+            names[f"user:{r['id']}"] = f"@{r['login']}"
+    for x in items:
+        x["label"] = names.get(x["key"]) or ("Signed-out visitor (IP hash " + x["key"][3:11] + "…)" if x["key"].startswith("ip:") else x["key"])
+    return items
+
+
+@api.get("/api/admin/rate", tags=["Admin"], summary="Usage and blocks")
+async def admin_rate(minutes: int = Query(60, ge=1, le=1440), p: auth.Principal = Depends(_admin)):
+    return {"top": await _label_keys(await rate.top(minutes)), "blocks": await _label_keys(await rate.blocks()),
+            "ipCeiling": settings.RATE_IP_CEILING, "blockMinutes": settings.RATE_BLOCK_MINUTES}
+
+
+class BlockIn(BaseModel):
+    target: str = Field(min_length=1, max_length=200, description="@login, an IP address, or a key from the usage list (user:…, ip:…)")
+    minutes: int = Field(60, ge=1, le=60 * 24 * 30)
+    reason: str = Field("", max_length=300)
+
+
+@api.post("/api/admin/rate/blocks", tags=["Admin"], summary="Block a user or IP", status_code=201)
+async def admin_block(request: Request, body: BlockIn, p: auth.Principal = Depends(_admin)):
+    import ipaddress
+
+    t = body.target.strip()
+    if t.startswith(("user:", "ip:")):
+        key = t
+    elif t.startswith("@"):
+        uid = await db.value("SELECT id FROM users WHERE lower(login) = lower(%s)", (t[1:],))
+        if uid is None:
+            raise HTTPException(404, "No such user")
+        key = rate.user_key(uid)
+    else:
+        try:
+            ipaddress.ip_address(t)
+        except ValueError:
+            raise HTTPException(422, "Give @login, an IP address, or a key (user:… / ip:…)")
+        key = rate.ip_key(t)
+    if key == rate.user_key(p.user.id):
+        raise HTTPException(422, "You can't block yourself")
+    await rate.block(key, body.minutes, body.reason or "blocked by a superadmin", auto=False, by=p.user.login)
+    await auth._audit(request, "admin.block", p.user, key, minutes=body.minutes, reason=body.reason)
+    return {"key": key, "minutes": body.minutes}
+
+
+@api.delete("/api/admin/rate/blocks/{key}", tags=["Admin"], summary="Unblock", status_code=204)
+async def admin_unblock(request: Request, key: str, p: auth.Principal = Depends(_admin)):
+    if not await rate.unblock(key):
+        raise HTTPException(404, "Not blocked")
+    await auth._audit(request, "admin.unblock", p.user, key)
+    return Response(status_code=204)

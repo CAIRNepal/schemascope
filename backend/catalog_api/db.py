@@ -100,6 +100,14 @@ CREATE TABLE IF NOT EXISTS search_logs (
   clicked text[] NOT NULL DEFAULT '{}', created_at timestamptz NOT NULL DEFAULT now()
 );
 CREATE INDEX IF NOT EXISTS search_logs_created ON search_logs (created_at DESC);
+-- Rate limiting, shared by all API workers and kept for abuse protection. Keys are "user:<id>" for accounts and
+-- "ip:<keyed hash>" for signed-out visitors (raw IP addresses are not stored). Counts per minute, kept 7 days.
+CREATE TABLE IF NOT EXISTS rate_usage (key text NOT NULL, minute bigint NOT NULL, count int NOT NULL, PRIMARY KEY (key, minute));
+CREATE INDEX IF NOT EXISTS rate_usage_minute ON rate_usage (minute);
+CREATE TABLE IF NOT EXISTS rate_blocks (
+  key text PRIMARY KEY, until timestamptz NOT NULL, reason text, auto boolean NOT NULL DEFAULT false,
+  created_at timestamptz NOT NULL DEFAULT now(), created_by text
+);
 """
 
 _pool: ConnectionPool | None = None

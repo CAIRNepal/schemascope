@@ -212,7 +212,39 @@
     form.elements.authenticatedPerMinute.value = s.rateLimit.authenticatedPerMinute;
     $("[data-limit-defaults]").textContent = `Defaults from the server's environment: ${fmt(s.defaults.anonymousPerMinute)} anonymous, ${fmt(s.defaults.authenticatedPerMinute)} signed in. Changes apply within seconds and are recorded in the activity log.`;
     loadUsers();
+    loadRate();
   }
+  async function loadRate() {
+    const r = await api("/api/admin/rate?minutes=60");
+    $("[data-blocks]").innerHTML = r.blocks.length
+      ? r.blocks.map((b) => `<tr><td>${esc(b.label)}<small>${b.auto ? "automatic" : `by @${esc(b.by || "?")}`}</small></td><td class="small">${when(b.until)}</td><td class="small">${esc(b.reason || "")}</td><td class="acc-right"><button type="button" class="acc-link" data-unblock="${esc(b.key)}">Unblock</button></td></tr>`).join("")
+      : `<tr><td colspan="4"><div class="acc-empty small">Nobody is blocked.</div></td></tr>`;
+    $("[data-usage]").innerHTML = r.top.length
+      ? r.top.map((u) => `<tr><td>${esc(u.label)}</td><td class="num">${fmt(u.requests)}</td><td class="num">${fmt(u.peakPerMinute)}</td><td class="acc-right"><button type="button" class="acc-link" data-block-key="${esc(u.key)}">Block…</button></td></tr>`).join("")
+      : `<tr><td colspan="4"><div class="acc-empty small">No API use in the last hour.</div></td></tr>`;
+  }
+  $("[data-block-form]").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const f = e.target;
+    try {
+      await api("/api/admin/rate/blocks", { method: "POST", body: JSON.stringify({ target: f.elements.target.value.trim(), minutes: Number(f.elements.minutes.value), reason: f.elements.reason.value.trim() }) });
+      toast("Blocked");
+      f.reset();
+      loadRate();
+      loaded.delete("activity");
+    } catch (err) { toast(err.message); }
+  });
+  document.addEventListener("click", async (e) => {
+    const un = e.target.closest("[data-unblock]");
+    const bk = e.target.closest("[data-block-key]");
+    if (un) {
+      try { await api(`/api/admin/rate/blocks/${encodeURIComponent(un.dataset.unblock)}`, { method: "DELETE" }); toast("Unblocked"); loadRate(); loaded.delete("activity"); } catch (err) { toast(err.message); }
+    } else if (bk) {
+      const f = $("[data-block-form]");
+      f.elements.target.value = bk.dataset.blockKey;
+      f.elements.reason.focus();
+    }
+  });
   async function loadUsers() {
     const q = $("[data-user-search]").value.trim();
     const list = await api(`/api/admin/users${q ? `?q=${encodeURIComponent(q)}` : ""}`);
@@ -247,7 +279,7 @@
     "auth.login": "Signed in", "auth.logout": "Signed out", "auth.login_failed": "Sign-in failed", "auth.jwt_issued": "Session token issued",
     "token.create": "Token created", "token.revoke": "Token revoked", "submission.create": "Submitted an entry",
     "submission.approved": "Approved a submission", "submission.changes_requested": "Requested changes", "submission.rejected": "Rejected a submission", "submission.pending": "Reopened a submission",
-    "admin.rate_limits": "Changed rate limits", "admin.user_rate_limit": "Changed a user's rate limit", "admin.export": "Exported data", "account.preferences": "Changed settings", "catalog.ingest": "Catalog data loaded",
+    "admin.rate_limits": "Changed rate limits", "admin.user_rate_limit": "Changed a user's rate limit", "admin.export": "Exported data", "admin.block": "Blocked a caller", "admin.unblock": "Unblocked a caller", "security.block": "Blocked automatically", "account.preferences": "Changed settings", "catalog.ingest": "Catalog data loaded",
   };
   const ICON = (a) => (a.startsWith("token.") ? "⚿" : a.startsWith("submission.") ? "✎" : a.startsWith("admin.") ? "⚙" : a.startsWith("catalog.") ? "⟳" : a === "auth.logout" ? "↙" : "↗");
   const detail = (a) => {

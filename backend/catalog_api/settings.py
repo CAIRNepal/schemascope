@@ -103,3 +103,10 @@ LLM_CONCURRENCY = int(os.environ.get("LLM_CONCURRENCY", "1"))      # answers gen
 LLM_THREADS = int(os.environ.get("LLM_THREADS", "0"))              # CPU threads for the model (0 = the server decides)
 CHAT_RATE_ANON = int(os.environ.get("CHAT_RATE_ANON", "6"))        # chat turns per minute, per IP, signed out
 CHAT_RATE_USER = int(os.environ.get("CHAT_RATE_USER", "20"))       # chat turns per minute, per user
+
+# Abuse protection (rate.py). Every request is first checked against a per-IP ceiling and the block list, before any
+# token or database lookup; then against the caller's limit (per account, or per IP when signed out).
+RATE_IP_CEILING = int(os.environ.get("RATE_IP_CEILING", "600"))        # requests per minute from one IP, whoever signs in
+RATE_BLOCK_MINUTES = int(os.environ.get("RATE_BLOCK_MINUTES", "15"))   # automatic block length
+RATE_SYNC_SECONDS = float(os.environ.get("RATE_SYNC_SECONDS", "5"))    # how often workers share counts via the database
+RATE_KEEP_DAYS = int(os.environ.get("RATE_KEEP_DAYS", "7"))            # usage history kept
