@@ -9,7 +9,7 @@ from __future__ import annotations
 from contextlib import asynccontextmanager
 from typing import Optional
 
-from fastapi import FastAPI, HTTPException, Query, Request
+from fastapi import Depends, FastAPI, HTTPException, Query, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse, PlainTextResponse, Response, StreamingResponse
@@ -60,7 +60,7 @@ api = FastAPI(
     openapi_tags=TAGS,
     servers=[{"url": PUBLIC_API_URL}] if PUBLIC_API_URL else None,
 )
-api.add_middleware(CORSMiddleware, allow_origins=CORS_ORIGINS, allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"], allow_headers=["*"],
+api.add_middleware(CORSMiddleware, allow_origins=CORS_ORIGINS, allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"], allow_headers=["*"],
                    expose_headers=["X-RateLimit-Limit", "X-RateLimit-Remaining", "X-RateLimit-Reset", "Retry-After"])
 api.mount("/mcp", mcp_app)
 api.include_router(auth.router)
@@ -263,8 +263,9 @@ def get_recommendations(
     open_license: bool = False,
     used: bool = False,
     limit: int = Query(8, ge=1, le=20),
+    page: int = Query(1, ge=1, le=20),
 ):
-    return recommend.recommend(q, limit=limit, category=category, kind=kind, format=format, min_grade=min_grade,
+    return recommend.recommend(q, limit=limit, page=page, category=category, kind=kind, format=format, min_grade=min_grade,
                                maintained=maintained, open_license=open_license, used=used)
 
 
@@ -275,6 +276,7 @@ class ChatMessage(BaseModel):
 
 class ChatIn(BaseModel):
     messages: list[ChatMessage] = Field(min_length=1, max_length=20, description="The conversation so far; the last message is the user's question.")
+    chat_id: Optional[str] = Field(None, max_length=40, description="Signed in: the saved chat to continue. Omit to start a new one.")
 
 
 class _ChatWindow:
@@ -313,5 +315,40 @@ async def chat_turn(request: Request, body: ChatIn):
                                  + ("" if p else ", or sign in for a higher limit") + ".", headers={"Retry-After": str(wait)})
     if not any(m.role == "user" and m.content.strip() for m in body.messages[-1:]):
         raise HTTPException(422, "The last message must be the user's question")
-    return StreamingResponse(chat.stream([m.model_dump() for m in body.messages]), media_type="application/x-ndjson",
+    return StreamingResponse(chat.stream([m.model_dump() for m in body.messages], p.user.id if p else None, body.chat_id), media_type="application/x-ndjson",
                              headers={"Cache-Control": "no-store", "X-Accel-Buffering": "no"})
+
+
+# ---------- saved chats (signed in) ----------
+from . import chats as chat_store  # noqa: E402
+
+
+class ChatTitleIn(BaseModel):
+    title: str = Field(min_length=1, max_length=120)
+
+
+@api.get("/api/chats", tags=["Recommend"], summary="My saved chats")
+def list_chats(p: auth.Principal = Depends(auth.require_user)):
+    return chat_store.list_for(p.user.id)
+
+
+@api.get("/api/chats/{chat_id}", tags=["Recommend"], summary="Open a saved chat")
+def get_chat(chat_id: str, p: auth.Principal = Depends(auth.require_user)):
+    c = chat_store.get(p.user.id, chat_id)
+    if not c:
+        raise HTTPException(404, "No such chat")
+    return c
+
+
+@api.patch("/api/chats/{chat_id}", tags=["Recommend"], summary="Rename a saved chat")
+def rename_chat(chat_id: str, body: ChatTitleIn, p: auth.Principal = Depends(auth.require_user)):
+    if not chat_store.rename(p.user.id, chat_id, body.title):
+        raise HTTPException(404, "No such chat")
+    return {"id": chat_id, "title": body.title.strip()}
+
+
+@api.delete("/api/chats/{chat_id}", tags=["Recommend"], summary="Delete a saved chat", status_code=204)
+def delete_chat(chat_id: str, p: auth.Principal = Depends(auth.require_user)):
+    if not chat_store.delete(p.user.id, chat_id):
+        raise HTTPException(404, "No such chat")
+    return Response(status_code=204)

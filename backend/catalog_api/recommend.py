@@ -49,7 +49,7 @@ def options() -> dict:
     }
 
 
-def _candidates(words: list[str], f: dict, limit: int = 80) -> list[dict]:
+def _candidates(words: list[str], f: dict, limit: int = 200) -> list[dict]:
     where, args = ["NOT e.legacy"], []
     rank = "0"
     rank_args: list = []
@@ -143,7 +143,7 @@ RELAX_ORDER = [("format", "format"), ("used", "used by other projects"), ("open_
                ("maintained", "actively maintained"), ("min_grade", "minimum grade"), ("kind", "type"), ("category", "area")]
 
 
-def recommend(q: str | None = None, limit: int = 8, **filters) -> dict:
+def recommend(q: str | None = None, limit: int = 8, page: int = 1, **filters) -> dict:
     """Ranked recommendations with reasons. Empty results relax the filters one at a time (most specific first)."""
     f = {k: v for k, v in filters.items() if v not in (None, "", False)}
     words = _words(q)
@@ -158,5 +158,9 @@ def recommend(q: str | None = None, limit: int = 8, **filters) -> dict:
             rows = _candidates(words, f)
     if not rows and words:  # last resort: the words alone, any word
         rows = _candidates(words, {})
-    items = _rank(rows, words)[: max(1, min(limit, 20))]
-    return {"query": q or "", "words": words, "filters": f, "relaxed": relaxed, "total": len(rows), "items": items}
+    size = max(1, min(limit, 20))
+    page = max(1, page)
+    ranked = _rank(rows, words)
+    items = ranked[(page - 1) * size: page * size]
+    return {"query": q or "", "words": words, "filters": f, "relaxed": relaxed, "total": len(ranked), "page": page, "size": size,
+            "pages": max(1, -(-len(ranked) // size)), "capped": len(ranked) >= 200, "items": items}

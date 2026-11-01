@@ -73,6 +73,17 @@ ALTER TABLE submissions ADD COLUMN IF NOT EXISTS status text NOT NULL DEFAULT 'p
 ALTER TABLE submissions ADD COLUMN IF NOT EXISTS reviewed_by text;
 ALTER TABLE submissions ADD COLUMN IF NOT EXISTS reviewed_at timestamptz;
 ALTER TABLE submissions ADD COLUMN IF NOT EXISTS review_notes text;
+-- Saved recommendation chats (signed-in users only). Assistant messages keep the results they showed (data).
+CREATE TABLE IF NOT EXISTS chats (
+  id text PRIMARY KEY, user_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE, title text NOT NULL,
+  created_at timestamptz NOT NULL DEFAULT now(), updated_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS chats_user ON chats (user_id, updated_at DESC);
+CREATE TABLE IF NOT EXISTS chat_messages (
+  id bigserial PRIMARY KEY, chat_id text NOT NULL REFERENCES chats(id) ON DELETE CASCADE, role text NOT NULL,
+  content text NOT NULL, data jsonb, created_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS chat_messages_chat ON chat_messages (chat_id, id);
 """
 
 _pool: ConnectionPool | None = None

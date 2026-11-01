@@ -361,3 +361,33 @@ def test_mcp_recommend_tool(client):
 
     r = mcp_server.recommend_resources("gene function")
     assert r["items"][0]["id"] == "go" and r["items"][0]["url"].endswith("/o/go/")
+
+
+def test_saved_chats(client):
+    me = _signed_in()
+    r = me.post("/api/recommend/chat", json={"messages": [{"role": "user", "content": "Which ontology for gene function?"}]})
+    events = [json.loads(line) for line in r.text.splitlines()]
+    assert events[0]["type"] == "chat" and events[0]["new"] is True
+    cid = events[0]["id"]
+    r = me.post("/api/recommend/chat", json={"chat_id": cid, "messages": [{"role": "user", "content": "Which ontology for gene function?"},
+                                                                        {"role": "assistant", "content": "GO."}, {"role": "user", "content": "Only OWL ones"}]})
+    assert json.loads(r.text.splitlines()[0]) == {"type": "chat", "id": cid, "new": False}
+    lst = me.get("/api/chats").json()
+    assert lst[0]["id"] == cid and lst[0]["title"] == "Which ontology for gene function?"
+    c = me.get(f"/api/chats/{cid}").json()
+    assert [m["role"] for m in c["messages"]] == ["user", "assistant", "user", "assistant"] and c["messages"][1]["data"]["items"][0]["id"] == "go"
+    assert me.patch(f"/api/chats/{cid}", json={"title": "Genes"}).json()["title"] == "Genes"
+    # Other people can't see it; signed out, nothing is saved.
+    from fastapi.testclient import TestClient
+    from catalog_api.app import app
+    other = TestClient(app)
+    other.get("/api/auth/dev-login", params={"login": "dave"}, follow_redirects=False)
+    assert other.get(f"/api/chats/{cid}").status_code == 404 and other.delete(f"/api/chats/{cid}").status_code == 404
+    from catalog_api.app import _chat_window
+    _chat_window.counts.clear()
+    anon = TestClient(app)
+    first = json.loads(anon.post("/api/recommend/chat", json={"messages": [{"role": "user", "content": "gene"}]}).text.splitlines()[0])
+    assert first["type"] == "filters"
+    assert me.delete(f"/api/chats/{cid}").status_code == 204 and me.get("/api/chats").json() == []
+    r = client.get("/api/recommend", params={"limit": 2, "page": 2}).json()
+    assert r["page"] == 2 and r["pages"] == 2 and len(r["items"]) == 1

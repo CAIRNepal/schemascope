@@ -138,18 +138,30 @@ def _plain_answer(items: list[dict], relaxed: list[str]) -> str:
     return lead + " ".join(parts)
 
 
-async def stream(messages: list[dict]) -> AsyncIterator[bytes]:
-    """NDJSON events for one chat turn."""
+async def stream(messages: list[dict], user_id: int | None = None, chat_id: str | None = None) -> AsyncIterator[bytes]:
+    """NDJSON events for one chat turn. Signed in (user_id): the turn is saved to chat_id, or to a new chat."""
     def ev(**d) -> bytes:
         return (json.dumps(d, ensure_ascii=False) + "\n").encode()
 
     users = [m["content"] for m in messages if m.get("role") == "user" and m.get("content")]
     question = users[-1].strip()[:600]
+    if user_id:
+        from anyio import to_thread
+
+        from . import chats
+
+        if not chat_id or not await to_thread.run_sync(chats.owned, user_id, chat_id):
+            c = await to_thread.run_sync(chats.start, user_id, question)
+            chat_id = c["id"]
+            yield ev(type="chat", id=chat_id, title=c["title"], new=True)
+        else:
+            yield ev(type="chat", id=chat_id, new=False)
     filters = parse(question, users[:-1])
     rec = recommend.recommend(question, limit=6, **filters)
     yield ev(type="filters", filters=rec["filters"], relaxed=rec["relaxed"], words=rec["words"])
     yield ev(type="results", items=rec["items"])
     model = None
+    answer: list[str] = []
     if rec["items"] and await available() and not _slots.locked():
         async with _slots:
             try:
@@ -157,17 +169,27 @@ async def stream(messages: list[dict]) -> AsyncIterator[bytes]:
                 got = False
                 async for piece in _generate(prompt(question, rec["items"], rec["relaxed"])):
                     got = True
+                    answer.append(piece)
                     yield ev(type="token", text=piece)
                 if not got:
                     raise RuntimeError("empty answer")
             except Exception:
                 _status.update(at=time.monotonic(), ok=False)
                 model = None
-                yield ev(type="token", text=_plain_answer(rec["items"], rec["relaxed"]))
+                answer[:] = [_plain_answer(rec["items"], rec["relaxed"])]
+                yield ev(type="token", text=answer[0])
     else:
         if rec["items"] and settings.LLM_URL and _slots.locked():
             yield ev(type="notice", text="The assistant is busy, so here are the best matches directly.")
-        yield ev(type="token", text=_plain_answer(rec["items"], rec["relaxed"]))
+        answer[:] = [_plain_answer(rec["items"], rec["relaxed"])]
+        yield ev(type="token", text=answer[0])
+    if user_id and chat_id:
+        from anyio import to_thread
+
+        from . import chats
+
+        data = {"items": rec["items"], "filters": rec["filters"], "relaxed": rec["relaxed"], "words": rec["words"], "model": model}
+        await to_thread.run_sync(chats.add_turn, chat_id, question, "".join(answer), data)
     yield ev(type="done", model=model)
 
 

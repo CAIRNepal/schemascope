@@ -1877,10 +1877,10 @@ function recommendGuidedPage() {
 <section class="wrap section rec" data-recommend>
   <aside class="rec-guide" aria-label="Questions">
     <form data-guide>
-      <label class="rec-field"><span class="rec-step">1</span> What's it about? <span class="muted">(optional)</span><input type="search" name="q" placeholder="e.g. ${attr([...new Set([topic, "cell types", "datasets", "units"])].slice(0, 3).join(", "))}" autocomplete="off"></label>
-      <label class="rec-field"><span class="rec-step">2</span> Your area<select name="category"><option value="">Any area</option>${areas.map(([id, name]) => `<option value="${attr(id)}">${esc(name)}</option>`).join("")}</select></label>
+      <label class="rec-field"><span class="rec-q"><span class="rec-step">1</span> What's it about? <span class="muted">(optional)</span></span><input type="search" name="q" placeholder="e.g. ${attr([...new Set([topic, "cell types", "datasets", "units"])].slice(0, 3).join(", "))}" autocomplete="off"></label>
+      <label class="rec-field"><span class="rec-q"><span class="rec-step">2</span> Your area</span><select name="category"><option value="">Any area</option>${areas.map(([id, name]) => `<option value="${attr(id)}">${esc(name)}</option>`).join("")}</select></label>
       <fieldset class="rec-field"><legend><span class="rec-step">3</span> Type of resource</legend><div class="rec-chips">${chip("kind", "", "Any", null, true)}${kinds.map(([k, n]) => chip("kind", k, KIND_LABEL[k] || k, n)).join("")}</div></fieldset>
-      <label class="rec-field"><span class="rec-step">4</span> Format you need<select name="format"><option value="">Any format</option>${formats.map(([f, n]) => `<option value="${attr(f)}">${esc(f)} (${n})</option>`).join("")}</select></label>
+      <label class="rec-field"><span class="rec-q"><span class="rec-step">4</span> Format you need</span><select name="format"><option value="">Any format</option>${formats.map(([f, n]) => `<option value="${attr(f)}">${esc(f)} (${n})</option>`).join("")}</select></label>
       <fieldset class="rec-field"><legend><span class="rec-step">5</span> Must have</legend>
         <label class="rec-check"><input type="checkbox" name="maintained"><span><b>Actively maintained</b><small>Updated in the last two years</small></span></label>
         <label class="rec-check"><input type="checkbox" name="open_license"><span><b>Open licence</b><small>CC0, CC BY, MIT, Apache, BSD…</small></span></label>
@@ -1897,27 +1897,47 @@ function recommendGuidedPage() {
 
 function recommendAskPage() {
   const brand = config.brand || config.name || "Catalog";
-  const { examples } = recommendData();
-  const trail = [["Home", "/"], ["Find the right resource", "/recommend/"], ["Ask", "/recommend/ask/"]];
+  const { examples, topic } = recommendData();
+  const cards = [
+    [examples[0], "Maintained resources for a topic"],
+    [examples[1], "Schemas with an open licence"],
+    [examples[2], "What most projects use"],
+    [`Compare the best options for ${topic}`, "Trade-offs between candidates"],
+  ];
   const body = `
-<section class="page-head wrap">
-  ${crumbsHtml(trail)}
-  <h1>Ask in your own words</h1>
-  <p class="lede">Describe what you're working on and what matters to you. Prefer to choose options? <a href="/recommend/guided/">Answer a few questions</a> instead.</p>
-</section>
-<section class="wrap section rec-ask-page" data-recommend>
-  <div class="rec-chat">
-    <div class="rec-chat-head"><span class="rec-status" data-chat-status></span></div>
-    <div class="rec-log" data-chat-log aria-live="polite">
-      <div class="rec-msg bot"><p>Hi! Tell me what you're describing or building, and anything that matters (format, licence, maintenance). I'll suggest resources from ${esc(brand)} and explain why.</p></div>
+<div class="cg" data-chatapp data-brand="${attr(brand)}">
+  <aside class="cg-side" data-chat-side aria-label="Chats">
+    <a class="cg-new" href="/recommend/ask/" data-new-chat><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>New chat</a>
+    <p class="cg-side-title">Your chats</p>
+    <nav class="cg-list" data-chat-list aria-label="Saved chats"><p class="cg-side-note">Loading…</p></nav>
+    <div class="cg-side-foot"><a href="/recommend/guided/">Prefer choosing options? <b>Answer a few questions →</b></a></div>
+  </aside>
+  <section class="cg-main">
+    <div class="cg-top">
+      <button type="button" class="cg-menu" data-chat-menu aria-label="Show chats" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <h1 class="cg-title" data-chat-title>Find the right resource</h1>
+      <span class="cg-status" data-chat-status></span>
     </div>
-    <div class="rec-examples" data-examples>${examples.map((x) => `<button type="button" class="rec-example">${esc(x)}</button>`).join("")}</div>
-    <form class="rec-ask" data-chat-form><label class="sr-only" for="rec-input">Your question</label><textarea id="rec-input" name="q" rows="2" maxlength="600" placeholder="e.g. I need an ontology for mouse brain regions that is still maintained" required></textarea><button class="btn" type="submit">Ask</button></form>
-    <p class="rec-fine small muted">Answers are written by a small AI model from ${esc(brand)}'s own data; check the resource pages before relying on them. Your question is used only to answer it.</p>
-  </div>
-  <div class="rec-main" data-ask-results hidden>${recResults()}</div>
-</section>`;
-  return page({ title: "Find a resource: ask", pathname: "/recommend/ask/", body, description: `Describe what you need and get ${brand} recommendations for ontologies, schemas and standards, explained by an AI assistant.`, scripts: ["/assets/recommend.js"] });
+    <div class="cg-scroll" data-chat-scroll>
+      <div class="cg-empty" data-chat-empty>
+        <div class="cg-mark" aria-hidden="true">✦</div>
+        <h2>What are you working on?</h2>
+        <p>Describe your data or project and what matters (format, licence, maintenance). I'll suggest resources from ${esc(brand)} and explain why.</p>
+        <div class="cg-cards">${cards.map(([q, d]) => `<button type="button" class="cg-card" data-suggest="${attr(q)}"><b>${esc(q)}</b><small>${esc(d)}</small></button>`).join("")}</div>
+      </div>
+      <div class="cg-thread" data-chat-log aria-live="polite"></div>
+    </div>
+    <form class="cg-composer" data-chat-form>
+      <div class="cg-box">
+        <label class="sr-only" for="cg-input">Message</label>
+        <textarea id="cg-input" name="q" rows="1" maxlength="600" placeholder="Ask about ontologies, schemas or standards…" required></textarea>
+        <button type="submit" class="cg-send" aria-label="Send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+      </div>
+      <p class="cg-fine">Answers are written by a small AI model from ${esc(brand)}'s own data; check resource pages before relying on them. <span data-save-note></span></p>
+    </form>
+  </section>
+</div>`;
+  return page({ title: "Ask: find a resource", pathname: "/recommend/ask/", body, noindex: false, description: `Describe what you need and get ${brand} recommendations for ontologies, schemas and standards, explained by an AI assistant.`, scripts: ["/assets/chat.js"] });
 }
 
 function adminPage() {

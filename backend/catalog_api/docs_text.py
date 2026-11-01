@@ -268,9 +268,14 @@ OPS: dict[tuple[str, str], dict] = {
             "maintained": "Only resources updated in the last two years.",
             "open_license": "Only resources under an open licence (CC0, CC BY, MIT, Apache, BSD, GPL and similar).",
             "used": "Only resources with at least one known adopter.",
-            "limit": "How many recommendations to return, from 1 to 20.",
+            "limit": "How many recommendations per page, from 1 to 20.",
+            "page": "Which page of recommendations, starting at 1 (the best 200 matches are ranked).",
         },
     },
+    ("get", "/api/chats"): {"d": "Your saved recommendation chats, most recent first. Chats are saved automatically when you are signed in."},
+    ("get", "/api/chats/{chat_id}"): {"d": "One saved chat with every question, answer and the recommendations that were shown.", "p": {"chat_id": "The chat's `id` from `GET /api/chats`."}},
+    ("patch", "/api/chats/{chat_id}"): {"d": "Renames a saved chat.", "p": {"chat_id": "The chat's `id` from `GET /api/chats`."}},
+    ("delete", "/api/chats/{chat_id}"): {"d": "Deletes a saved chat and its messages. This cannot be undone.", "p": {"chat_id": "The chat's `id` from `GET /api/chats`."}},
     ("get", "/api/recommend/chat/status"): {
         "d": "Whether the chat assistant's language model is configured and reachable. Without it, the chat still answers with "
              "ranked matches.",
