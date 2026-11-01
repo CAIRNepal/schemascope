@@ -366,6 +366,11 @@ async def rename_chat(chat_id: str, body: ChatTitleIn, p: auth.Principal = Depen
     return {"id": chat_id, "title": body.title.strip()}
 
 
+@api.delete("/api/chats", tags=["Recommend"], summary="Delete all my saved chats")
+async def delete_all_chats(p: auth.Principal = Depends(auth.require_user)):
+    return {"deleted": await chat_store.delete_all(p.user.id)}
+
+
 @api.delete("/api/chats/{chat_id}", tags=["Recommend"], summary="Delete a saved chat", status_code=204)
 async def delete_chat(chat_id: str, p: auth.Principal = Depends(auth.require_user)):
     if not await chat_store.delete(p.user.id, chat_id):

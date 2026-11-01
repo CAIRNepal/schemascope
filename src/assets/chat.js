@@ -213,42 +213,144 @@
 
   // ---------- saved chats ----------
   const setTitle = (t) => ($("[data-chat-title]").textContent = t || "Find the right resource");
+  // Search box above the list: filters chats by title; every typed word must appear.
+  const search = $("[data-chat-search]");
+  const searchBox = search?.querySelector("input");
+  const matches = (c) => {
+    const words = (searchBox?.value || "").toLowerCase().split(/\s+/).filter(Boolean);
+    const t = (c.title || "").toLowerCase();
+    return words.every((w) => t.includes(w));
+  };
   function renderList() {
     const signIn = `<p class="cg-side-note"><a href="/api/auth/github/login?next=${encodeURIComponent("/recommend/ask/")}">Sign in</a> to keep your chats after you close the browser.</p>`;
-    list.innerHTML = (chats.length
-      ? chats.map((c) => `<div class="cg-item${c.id === chatId ? " active" : ""}" data-id="${esc(c.id)}"><a href="/recommend/ask/?chat=${encodeURIComponent(c.id)}" data-open>${esc(c.title)}</a><span class="cg-item-tools"><button type="button" data-rename title="Rename" aria-label="Rename">✎</button><button type="button" data-delete title="Delete" aria-label="Delete">✕</button></span></div>`).join("")
-      : `<p class="cg-side-note">Your chats will appear here.</p>`) + (user ? "" : signIn);
+    const shown = chats.filter(matches);
+    list.innerHTML = (shown.length
+      ? shown.map((c) => `<div class="cg-item${c.id === chatId ? " active" : ""}" data-id="${esc(c.id)}"><a href="/recommend/ask/?chat=${encodeURIComponent(c.id)}" data-open>${esc(c.title)}</a><span class="cg-item-tools"><button type="button" data-rename title="Rename" aria-label="Rename">✎</button><button type="button" data-delete title="Delete" aria-label="Delete">✕</button></span></div>`).join("")
+      : `<p class="cg-side-note">${chats.length ? "No chats match your search." : "Your chats will appear here."}</p>`) + (user ? "" : signIn);
     $(".cg-side-title").textContent = user ? "Your chats" : "This session";
+    const clear = $("[data-clear-chats]");
+    if (clear) clear.hidden = !chats.length;
+    if (search) search.hidden = !chats.length;
   }
+  searchBox?.addEventListener("input", renderList);
+  searchBox?.addEventListener("keydown", (e) => { if (e.key === "Escape" && searchBox.value) { searchBox.value = ""; renderList(); } });
   const upsertChat = (c) => { chats = [c, ...chats.filter((x) => x.id !== c.id)]; renderList(); };
   const touchChat = (id) => { const c = chats.find((x) => x.id === id); if (c) upsertChat(c); };
+  // Rename in place: the title turns into a text box; Enter or leaving it saves, Esc cancels.
+  async function saveTitle(id, value) {
+    const c = chats.find((x) => x.id === id);
+    const t = value.trim().slice(0, 120);
+    if (!c || !t || t === c.title) return renderList();
+    if (user) {
+      const r = await fetch(`/api/chats/${encodeURIComponent(id)}`, { method: "PATCH", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ title: t }) }).catch(() => null);
+      if (r?.ok) c.title = (await r.json()).title;
+    } else {
+      const all = localChats();
+      const lc = all.find((x) => x.id === id);
+      if (lc) { lc.title = t; saveLocal(all); }
+      c.title = t;
+    }
+    renderList();
+    if (id === chatId) setTitle(c.title);
+  }
+  function startRename(id) {
+    const item = [...list.querySelectorAll(".cg-item")].find((x) => x.dataset.id === id);
+    const c = chats.find((x) => x.id === id);
+    if (!item || !c || item.classList.contains("editing")) return;
+    const box = document.createElement("input");
+    box.className = "cg-rename";
+    box.value = c.title;
+    box.maxLength = 120;
+    box.setAttribute("aria-label", "Chat name");
+    item.querySelector("[data-open]").replaceWith(box);
+    item.classList.add("editing");
+    box.focus();
+    box.select();
+    let done = false;
+    const finish = (save) => { if (done) return; done = true; save ? saveTitle(id, box.value) : renderList(); };
+    box.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") { e.preventDefault(); finish(true); }
+      else if (e.key === "Escape") { e.preventDefault(); finish(false); }
+    });
+    box.addEventListener("blur", () => finish(true));
+  }
+  list.addEventListener("dblclick", (e) => {
+    const item = e.target.closest(".cg-item");
+    if (item && e.target.closest("[data-open]")) { e.preventDefault(); startRename(item.dataset.id); }
+  });
   list.addEventListener("click", async (e) => {
     const item = e.target.closest(".cg-item");
     if (!item) return;
     const id = item.dataset.id;
     if (e.target.closest("[data-open]")) {
       e.preventDefault();
-      openChat(id);
+      if (id !== chatId) openChat(id);
       app.classList.remove("side-open");
-    } else if (!user && (e.target.closest("[data-rename]") || e.target.closest("[data-delete]"))) {
-      const list = localChats();
-      const c = list.find((x) => x.id === id);
-      if (e.target.closest("[data-delete]")) { if (!confirm("Remove this chat from this session?")) return; saveLocal(list.filter((x) => x.id !== id)); }
-      else { const t = prompt("Rename chat", c?.title || ""); if (!t?.trim()) return; c.title = t.trim(); saveLocal(list); if (id === chatId) setTitle(c.title); }
-      chats = localChats().map(({ id, title }) => ({ id, title }));
-      if (id === chatId && !chats.some((x) => x.id === id)) newChat(); else renderList();
     } else if (e.target.closest("[data-rename]")) {
-      const c = chats.find((x) => x.id === id);
-      const t = prompt("Rename chat", c?.title || "");
-      if (!t?.trim()) return;
-      const r = await fetch(`/api/chats/${encodeURIComponent(id)}`, { method: "PATCH", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ title: t.trim() }) });
-      if (r.ok) { c.title = (await r.json()).title; renderList(); if (id === chatId) setTitle(c.title); }
+      startRename(id);
     } else if (e.target.closest("[data-delete]")) {
-      if (!confirm("Delete this chat? This can't be undone.")) return;
-      const r = await fetch(`/api/chats/${encodeURIComponent(id)}`, { method: "DELETE", credentials: "same-origin" });
-      if (r.ok) { chats = chats.filter((x) => x.id !== id); if (id === chatId) newChat(); else renderList(); }
+      deleteChat(id);
     }
   });
+  async function deleteChat(id) {
+    if (!confirm(user ? "Delete this chat? This can't be undone." : "Remove this chat from this session?")) return;
+    if (user) {
+      const r = await fetch(`/api/chats/${encodeURIComponent(id)}`, { method: "DELETE", credentials: "same-origin" }).catch(() => null);
+      if (!r?.ok) return;
+    } else saveLocal(localChats().filter((x) => x.id !== id));
+    chats = chats.filter((x) => x.id !== id);
+    if (id === chatId) newChat(); else renderList();
+  }
+  async function deleteAllChats() {
+    if (!chats.length) return;
+    if (!confirm(user ? `Delete all ${chats.length} chats? This can't be undone.` : "Remove all chats from this session?")) return;
+    if (user) {
+      const r = await fetch("/api/chats", { method: "DELETE", credentials: "same-origin" }).catch(() => null);
+      if (!r?.ok) return;
+    } else saveLocal([]);
+    chats = [];
+    newChat();
+  }
+  $("[data-clear-chats]")?.addEventListener("click", deleteAllChats);
+
+  // Right-click (or long-press) menu on a chat: Rename, Delete, Delete all.
+  const menu = document.createElement("div");
+  menu.className = "cg-ctx";
+  menu.setAttribute("role", "menu");
+  menu.hidden = true;
+  menu.innerHTML = `<button type="button" role="menuitem" data-act="rename">Rename</button><button type="button" role="menuitem" data-act="delete" class="danger">Delete</button><hr><button type="button" role="menuitem" data-act="all" class="danger">Delete all chats</button>`;
+  document.body.append(menu);
+  let menuFor = null;
+  const closeMenu = () => { menu.hidden = true; menuFor = null; };
+  list.addEventListener("contextmenu", (e) => {
+    const item = e.target.closest(".cg-item");
+    if (!item || item.classList.contains("editing")) return;
+    e.preventDefault();
+    menuFor = item.dataset.id;
+    menu.hidden = false;
+    const { innerWidth: w, innerHeight: h } = window;
+    menu.style.left = `${Math.min(e.clientX, w - menu.offsetWidth - 8)}px`;
+    menu.style.top = `${Math.min(e.clientY, h - menu.offsetHeight - 8)}px`;
+    menu.querySelector("button").focus();
+  });
+  menu.addEventListener("click", (e) => {
+    const act = e.target.closest("[data-act]")?.dataset.act;
+    const id = menuFor;
+    closeMenu();
+    if (act === "rename") startRename(id);
+    else if (act === "delete") deleteChat(id);
+    else if (act === "all") deleteAllChats();
+  });
+  menu.addEventListener("keydown", (e) => {
+    const items = [...menu.querySelectorAll("button")];
+    const i = items.indexOf(document.activeElement);
+    if (e.key === "Escape") closeMenu();
+    else if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); items[(i + (e.key === "ArrowDown" ? 1 : items.length - 1)) % items.length].focus(); }
+  });
+  document.addEventListener("pointerdown", (e) => { if (!menu.hidden && !menu.contains(e.target)) closeMenu(); });
+  window.addEventListener("blur", closeMenu);
+  window.addEventListener("resize", closeMenu);
+  list.addEventListener("scroll", closeMenu);
   function newChat() {
     chatId = null; history = []; log.innerHTML = ""; setEmpty(true); setTitle();
     window.history.replaceState(null, "", "/recommend/ask/");

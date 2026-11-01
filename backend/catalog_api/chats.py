@@ -56,3 +56,7 @@ async def rename(user_id: int, chat_id: str, title: str) -> bool:
 
 async def delete(user_id: int, chat_id: str) -> bool:
     return bool(await db.one("DELETE FROM chats WHERE id = %s AND user_id = %s RETURNING id", (chat_id, user_id)))
+
+
+async def delete_all(user_id: int) -> int:
+    return await db.execute("DELETE FROM chats WHERE user_id = %s", (user_id,))

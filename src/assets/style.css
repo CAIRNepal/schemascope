@@ -1474,6 +1474,25 @@ body:has(.cg) .site-footer { margin-top: 0; }
 .cg-item:hover .cg-item-tools, .cg-item:focus-within .cg-item-tools { display: flex; }
 .cg-item-tools button { border: 0; background: none; color: var(--muted); cursor: pointer; padding: 4px 6px; border-radius: 6px; font-size: .8rem; }
 .cg-item-tools button:hover { color: var(--text); background: var(--bg); }
+.cg-item.active .cg-item-tools { display: flex; }
+@media (hover: none) { .cg-item-tools { display: flex; } }
+.cg-item.editing { background: var(--surface-2); }
+.cg-rename { flex: 1; min-width: 0; margin: 3px 4px; padding: 5px 8px; font: inherit; font-size: .88rem; color: var(--text); background: var(--bg); border: 1px solid var(--accent-ink); border-radius: 6px; outline: none; }
+.cg-side-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin: 14px 10px 4px; }
+.cg-side-head .cg-side-title { margin: 0; }
+.cg-search { position: relative; margin: 2px 4px 6px; }
+.cg-search[hidden] { display: none; }
+.cg-search svg { position: absolute; left: 10px; top: 50%; width: 15px; height: 15px; transform: translateY(-50%); fill: none; stroke: var(--muted); stroke-width: 2; stroke-linecap: round; pointer-events: none; }
+.cg-search input { width: 100%; box-sizing: border-box; padding: 7px 10px 7px 32px; font: inherit; font-size: .86rem; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; outline: none; }
+.cg-search input:focus { border-color: var(--accent-ink); }
+.cg-clear { border: 0; background: none; padding: 0; color: var(--muted); font: inherit; font-size: .75rem; cursor: pointer; }
+.cg-clear:hover { color: #b42318; text-decoration: underline; }
+.cg-ctx { position: fixed; z-index: 1000; min-width: 170px; padding: 4px; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 8px 24px rgba(0, 0, 0, .14); display: grid; }
+.cg-ctx[hidden] { display: none; }
+.cg-ctx button { text-align: left; border: 0; background: none; padding: 8px 10px; border-radius: 6px; font: inherit; font-size: .88rem; color: var(--text); cursor: pointer; }
+.cg-ctx button:hover, .cg-ctx button:focus-visible { background: var(--surface-2); outline: none; }
+.cg-ctx button.danger { color: #b42318; }
+.cg-ctx hr { border: 0; border-top: 1px solid var(--line); margin: 4px 2px; }
 .cg-side-foot { border-top: 1px solid var(--line); padding: 12px 10px 4px; font-size: .82rem; }
 .cg-side-foot a { color: var(--muted); text-decoration: none; }
 .cg-side-foot a b { color: var(--accent-ink); font-weight: 600; }

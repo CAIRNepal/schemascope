@@ -2002,7 +2002,8 @@ function recommendAskPage() {
 <div class="cg" data-chatapp data-brand="${attr(brand)}">
   <aside class="cg-side" data-chat-side aria-label="Chats">
     <a class="cg-new" href="/recommend/ask/" data-new-chat><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>New chat</a>
-    <p class="cg-side-title">Your chats</p>
+    <div class="cg-side-head"><p class="cg-side-title">Your chats</p><button type="button" class="cg-clear" data-clear-chats hidden>Delete all</button></div>
+    <div class="cg-search" data-chat-search role="search" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search chats" aria-label="Search chats" autocomplete="off"></div>
     <nav class="cg-list" data-chat-list aria-label="Saved chats"><p class="cg-side-note">Loading…</p></nav>
     <div class="cg-side-foot"><a href="/recommend/guided/">Prefer choosing options? <b>Answer a few questions →</b></a></div>
   </aside>
