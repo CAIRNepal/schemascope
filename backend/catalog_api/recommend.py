@@ -11,6 +11,7 @@ response says which were relaxed.
 from __future__ import annotations
 
 import json
+import math
 import re
 from datetime import datetime, timedelta, timezone
 
@@ -29,11 +30,11 @@ def _words(q: str | None) -> list[str]:
     return [w for w in re.findall(r"[a-z0-9]+", (q or "").lower()) if len(w) > 1 and w not in STOPWORDS][:10]
 
 
-def options() -> dict:
+async def options() -> dict:
     """Everything the guided form needs: areas, types and formats with counts, and the must-haves."""
-    cats = store.categories()
-    kinds = db.rows("SELECT kind AS k, COUNT(*) AS n FROM entries WHERE NOT legacy GROUP BY 1 ORDER BY 2 DESC")
-    formats = db.rows("SELECT f.format AS k, COUNT(*) AS n FROM entry_formats f JOIN entries e ON e.id = f.entry_id WHERE NOT e.legacy GROUP BY 1 ORDER BY 2 DESC LIMIT 16")
+    cats = await store.categories()
+    kinds = await db.rows("SELECT kind AS k, COUNT(*) AS n FROM entries WHERE NOT legacy GROUP BY 1 ORDER BY 2 DESC")
+    formats = await db.rows("SELECT f.format AS k, COUNT(*) AS n FROM entry_formats f JOIN entries e ON e.id = f.entry_id WHERE NOT e.legacy GROUP BY 1 ORDER BY 2 DESC LIMIT 16")
     from .derived import KIND_LABEL
 
     return {
@@ -49,16 +50,38 @@ def options() -> dict:
     }
 
 
-def _candidates(words: list[str], f: dict, limit: int = 200) -> list[dict]:
+async def _weights(words: list[str]) -> dict[str, float]:
+    """How much each word counts: rare words (“gdpr”) far more than common ones (“data”). Inverse document frequency
+    over the catalog; words that match nothing are dropped."""
+    if not words:
+        return {}
+    cols = ", ".join(f"COUNT(*) FILTER (WHERE search @@ to_tsquery('simple', %s)) AS d{i}" for i in range(len(words)))
+    r = await db.one(f"SELECT COUNT(*) AS n, {cols} FROM entries WHERE NOT legacy", [f"{w}:*" for w in words])
+    n = r["n"] or 1
+    return {w: math.log((n + 1) / (r[f"d{i}"] + 1)) + 0.05 for i, w in enumerate(words) if r[f"d{i}"]}
+
+
+async def _candidates(weights: dict[str, float], f: dict, limit: int = 200) -> list[dict]:
+    """Resources matching the words (any of them) and the filters, most relevant first.
+
+    Relevance is computed in SQL: the summed weights of the words a resource matches, plus a third more for a word in
+    its name or acronym (tsvector weight A). `hits` lists the matched words, for the reasons shown to people."""
     where, args = ["NOT e.legacy"], []
-    rank = "0"
-    rank_args: list = []
+    rel, rel_args, hits, hit_args = "0", [], "ARRAY[]::text[]", []
+    words = list(weights)
     if words:
         tsq = " | ".join(f"{w}:*" for w in words)
         where.append("e.search @@ to_tsquery('simple', %s)")
         args.append(tsq)
-        rank = "ts_rank_cd(e.search, to_tsquery('simple', %s), 32)"
-        rank_args = [tsq]
+        parts = []
+        for w, wt in weights.items():
+            parts.append(f"(CASE WHEN e.search @@ to_tsquery('simple', %s) THEN {wt:.4f} ELSE 0 END)")
+            parts.append(f"(CASE WHEN e.search @@ to_tsquery('simple', %s) THEN {wt / 3:.4f} ELSE 0 END)")
+            rel_args += [f"{w}:*", f"{w}:*A"]
+        rel = " + ".join(parts)
+        hits = "ARRAY_REMOVE(ARRAY[" + ", ".join("CASE WHEN e.search @@ to_tsquery('simple', %s) THEN %s END" for _ in words) + "], NULL)"
+        for w in words:
+            hit_args += [f"{w}:*", w]
     if f.get("category"):
         where.append("e.id IN (SELECT entry_id FROM entry_domains WHERE category = %s)")
         args.append(f["category"])
@@ -77,55 +100,63 @@ def _candidates(words: list[str], f: dict, limit: int = 200) -> list[dict]:
         args.append(since)
     if f.get("used"):
         where.append("e.adopters > 0")
-    rows = db.rows(
-        f"SELECT e.*, {rank} AS rel FROM entries e WHERE {' AND '.join(where)} ORDER BY rel DESC, e.score DESC NULLS LAST LIMIT %s",
-        [*rank_args, *args, limit],
+    rows = await db.rows(
+        f"SELECT e.*, {rel} AS rel, {hits} AS hits FROM entries e WHERE {' AND '.join(where)} "
+        f"ORDER BY rel DESC, e.score DESC NULLS LAST LIMIT %s",
+        [*rel_args, *hit_args, *args, limit],
     )
     if f.get("open_license"):
         rows = [r for r in rows if OPEN_LICENSE.search(str(json.loads(r["data"]).get("license") or ""))]
     return rows
 
 
-def _rank(rows: list[dict], words: list[str]) -> list[dict]:
+def _quality(r: dict, now: datetime) -> float:
+    """Evaluation score, adoption and recent activity, 0–1. Used to break ties between equally relevant results."""
+    score = (r["score"] or 0) / 100
+    adopt = min(r["adopters"] or 0, 20) / 20
+    recent = 0.0
+    if r["last_activity"]:
+        try:
+            age = (now - datetime.fromisoformat(r["last_activity"].replace("Z", "+00:00"))).days / 365
+            recent = max(0.0, 1 - age / 5)
+        except ValueError:
+            pass
+    return 0.6 * score + 0.25 * adopt + 0.15 * recent
+
+
+async def _rank(rows: list[dict], weights: dict[str, float], sort: str | None = None) -> list[dict]:
+    """Relevance first. Quality only nudges results that are about equally relevant; with sort="score", the relevant
+    results (at least 60% as relevant as the best) are ordered by evaluation score instead."""
     if not rows:
         return []
-    top_rel = max(float(r["rel"] or 0) for r in rows) or 1.0
+    full = sum(weights.values()) * (4 / 3) or 1.0
     now = datetime.now(timezone.utc)
     out = []
     for r in rows:
         data = json.loads(r["data"])
-        rel = float(r["rel"] or 0) / top_rel if words else 0.0
-        score = (r["score"] or 0) / 100
-        adopt = min(r["adopters"] or 0, 20) / 20
-        recent = 0.0
-        if r["last_activity"]:
-            try:
-                age = (now - datetime.fromisoformat(r["last_activity"].replace("Z", "+00:00"))).days / 365
-                recent = max(0.0, 1 - age / 5)
-            except ValueError:
-                pass
-        # Coverage: the share of the user's words the resource matches (a mouse-anatomy question prefers mouse anatomy).
-        text = " ".join([data.get("acronym") or "", data.get("name") or "", data.get("description") or "", " ".join(data.get("tags") or []),
-                         " ".join(data.get("species") or [])]).lower()
-        coverage = sum(1 for w in words if w in text) / len(words) if words else 0.0
-        match = (0.3 * rel + 0.3 * coverage + 0.25 * score + 0.1 * adopt + 0.05 * recent) if words else (0.65 * score + 0.2 * adopt + 0.15 * recent)
-        s = store._summary(r)
+        rel = min(1.0, float(r["rel"] or 0) / full) if weights else 0.0
+        q = _quality(r, now)
+        s = await store._summary(r)
         s["license"] = data.get("license")
         s["homepage"] = data.get("homepage")
-        s["match"] = round(match, 3)
-        s["why"] = _reasons(s, words, data)
+        s["relevance"] = round(rel, 3)
+        s["match"] = round(0.85 * rel + 0.15 * q, 3) if weights else round(q, 3)
+        s["why"] = _reasons(s, list(r.get("hits") or []))
         out.append(s)
     out.sort(key=lambda x: x["match"], reverse=True)
+    if sort == "score" and weights:
+        top = max(x["relevance"] for x in out)
+        relevant = [x for x in out if x["relevance"] >= 0.6 * top]
+        rest = [x for x in out if x["relevance"] < 0.6 * top]
+        relevant.sort(key=lambda x: (x["score"] or -1, x["relevance"]), reverse=True)
+        out = relevant + rest
     return out
 
 
-def _reasons(s: dict, words: list[str], data: dict) -> list[str]:
+def _reasons(s: dict, hits: list[str]) -> list[str]:
     why = []
-    if words:
-        text = " ".join([s.get("acronym") or "", s["name"], data.get("description") or "", " ".join(data.get("tags") or [])]).lower()
-        hit = [w for w in words if w in text]
-        if hit:
-            why.append("Matches " + ", ".join(f"“{w}”" for w in hit[:3]))
+    if hits:
+        why.append("Matches " + ", ".join(f"“{w}”" for w in hits[:4]))
     if s.get("grade"):
         why.append(f"Grade {s['grade']} ({s['score']}/100)")
     if s.get("adopters"):
@@ -143,24 +174,25 @@ RELAX_ORDER = [("format", "format"), ("used", "used by other projects"), ("open_
                ("maintained", "actively maintained"), ("min_grade", "minimum grade"), ("kind", "type"), ("category", "area")]
 
 
-def recommend(q: str | None = None, limit: int = 8, page: int = 1, **filters) -> dict:
-    """Ranked recommendations with reasons. Empty results relax the filters one at a time (most specific first)."""
+async def recommend(q: str | None = None, limit: int = 8, page: int = 1, sort: str | None = None, **filters) -> dict:
+    """Ranked recommendations with reasons: relevance to the words first, quality to break ties (or to order the
+    relevant results, with sort="score"). Empty results relax the filters one at a time (most specific first)."""
     f = {k: v for k, v in filters.items() if v not in (None, "", False)}
     words = _words(q)
+    weights = await _weights(words)
     relaxed: list[str] = []
-    rows = _candidates(words, f)
+    rows = await _candidates(weights, f)
     for key, label in RELAX_ORDER:
         if rows:
             break
         if key in f:
             f.pop(key)
             relaxed.append(label)
-            rows = _candidates(words, f)
-    if not rows and words:  # last resort: the words alone, any word
-        rows = _candidates(words, {})
+            rows = await _candidates(weights, f)
     size = max(1, min(limit, 20))
     page = max(1, page)
-    ranked = _rank(rows, words)
+    ranked = await _rank(rows, weights, sort)
     items = ranked[(page - 1) * size: page * size]
-    return {"query": q or "", "words": words, "filters": f, "relaxed": relaxed, "total": len(ranked), "page": page, "size": size,
-            "pages": max(1, -(-len(ranked) // size)), "capped": len(ranked) >= 200, "items": items}
+    return {"query": q or "", "words": list(weights) or words, "filters": f, "relaxed": relaxed, "sort": sort or "relevance",
+            "total": len(ranked), "page": page, "size": size, "pages": max(1, -(-len(ranked) // size)),
+            "capped": len(ranked) >= 200, "items": items}

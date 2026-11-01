@@ -3,9 +3,7 @@ from __future__ import annotations
 
 import json
 import re
-import threading
 import time
-from functools import lru_cache
 from typing import Any, Literal
 
 from . import db, derived
@@ -26,70 +24,69 @@ class NotIngested(RuntimeError):
 
 
 _gen = {"value": None, "checked": 0.0}
-_gen_lock = threading.Lock()
+_cache: dict[str, Any] = {}
 
 
-def _generation() -> str:
+async def _generation() -> str:
     """The time of the last ingest, re-read at most every 2 s, so cached lookups refresh without a restart."""
-    with _gen_lock:
-        if time.time() - _gen["checked"] > 2:
-            v = db.value("SELECT value FROM meta WHERE key = 'ingestedAt'")
-            if v is None:
-                raise NotIngested("The catalog has not been loaded. Run `python -m catalog_api.ingest` first.")
-            _gen["value"], _gen["checked"] = v, time.time()
-        return _gen["value"]
+    if time.time() - _gen["checked"] > 2:
+        v = await db.value("SELECT value FROM meta WHERE key = 'ingestedAt'")
+        if v is None:
+            raise NotIngested("The catalog has not been loaded. Run `python -m catalog_api.ingest` first.")
+        _gen["value"], _gen["checked"] = v, time.time()
+    return _gen["value"]
 
 
 def reset() -> None:
     _gen["checked"] = 0.0
-    _meta_at.cache_clear()
-    _categories_at.cache_clear()
+    _cache.clear()
 
 
-@lru_cache(maxsize=2)
-def _meta_at(_gen: str) -> dict:
-    return {r["key"]: json.loads(r["value"]) for r in db.rows("SELECT key, value FROM meta")}
+async def _cached(name: str, sql: str, build) -> Any:
+    """A small table read once per ingest (meta, categories)."""
+    gen = await _generation()
+    hit = _cache.get(name)
+    if hit and hit[0] == gen:
+        return hit[1]
+    value = build(await db.rows(sql))
+    _cache[name] = (gen, value)
+    return value
 
 
-@lru_cache(maxsize=2)
-def _categories_at(_gen: str) -> dict[str, dict]:
-    return {r["id"]: json.loads(r["data"]) for r in db.rows("SELECT id, data FROM categories ORDER BY position")}
+async def _meta() -> dict:
+    return await _cached("meta", "SELECT key, value FROM meta", lambda rs: {r["key"]: json.loads(r["value"]) for r in rs})
 
 
-def _meta() -> dict:
-    return _meta_at(_generation())
-
-
-def _categories() -> dict[str, dict]:
-    return _categories_at(_generation())
+async def _categories() -> dict[str, dict]:
+    return await _cached("categories", "SELECT id, data FROM categories ORDER BY position", lambda rs: {r["id"]: json.loads(r["data"]) for r in rs})
 
 
 CONTENT = ("roadmap", "validation")
 
 
-def content(name: str) -> Any:
+async def content(name: str) -> Any:
     """A content document loaded from data/ (roadmap, rubric validation report), or None if this catalog has none."""
-    return _meta().get(f"content:{name}") if name in CONTENT else None
+    return (await _meta()).get(f"content:{name}") if name in CONTENT else None
 
 
-def site_data() -> str:
+async def site_data() -> str:
     """Everything the page templates (scripts/site.mjs) need, as one JSON document. Data files are passed through
     as stored; history and per-run scores come from the history table. Built as text: the evaluation alone is
     tens of MB, and re-encoding it would only cost time."""
-    raw = {r["key"]: r["value"] for r in db.rows("SELECT key, value FROM raw")}
+    raw = {r["key"]: r["value"] for r in await db.rows("SELECT key, value FROM raw")}
     if not raw:
         raise NotIngested("No raw data in the database. Re-run `python -m catalog_api.ingest`.")
     runs, history = [], {}
-    run_rows = db.rows("SELECT id, data FROM runs ORDER BY id")
+    run_rows = await db.rows("SELECT id, data FROM runs ORDER BY id")
     scores: dict[str, list] = {r["id"]: [] for r in run_rows}
-    for h in db.rows("SELECT entry_id, run_id, point FROM history ORDER BY entry_id, run_id"):
+    for h in await db.rows("SELECT entry_id, run_id, point FROM history ORDER BY entry_id, run_id"):
         history.setdefault(h["entry_id"], []).append(h["point"])
         scores[h["run_id"]].append(json.loads(h["point"]).get("score"))
     for r in run_rows:
         runs.append('{"run":%s,"scores":%s}' % (r["data"], json.dumps(scores[r["id"]])))
     hist = ",".join(f"{json.dumps(k)}:[{','.join(v)}]" for k, v in history.items())
     parts = [f'"{k}":{raw[k]}' for k in ("config", "categories", "catalog", "evaluation", "roadmap", "validation", "catalogSchema")]
-    parts += [f'"runs":[{",".join(runs)}]', f'"history":{{{hist}}}', f'"ingestedAt":{json.dumps(_meta().get("ingestedAt"))}']
+    parts += [f'"runs":[{",".join(runs)}]', f'"history":{{{hist}}}', f'"ingestedAt":{json.dumps((await _meta()).get("ingestedAt"))}']
     return "{" + ",".join(parts) + "}"
 
 
@@ -100,20 +97,20 @@ def run_file(run_id: str):
     return next((f for f in reversed(run_files()) if f.stem == run_id), None)
 
 
-def domain_graph() -> dict:
+async def domain_graph() -> dict:
     """Domains as nodes, shared resources and imports as weighted edges, and the resources spanning most domains."""
-    return _meta().get("domainGraph") or {"nodes": [], "edges": [], "bridges": []}
+    return (await _meta()).get("domainGraph") or {"nodes": [], "edges": [], "bridges": []}
 
 
-def meta() -> dict:
-    m = _meta()
+async def meta() -> dict:
+    m = await _meta()
     return {"site": m.get("site"), "evaluation": m.get("evaluation"), "rubric": m.get("rubric"), "ingestedAt": m.get("ingestedAt")}
 
 
-def _summary(row: dict) -> dict:
+async def _summary(row: dict) -> dict:
     e = json.loads(row["data"])
     facts = json.loads(row["facts"]) if row["facts"] else None
-    cats = _categories()
+    cats = await _categories()
     desc = e.get("description") or ""
     return {
         "id": e["id"],
@@ -147,7 +144,7 @@ def _ts_query(q: str) -> str | None:
     return " & ".join(f"{w}:*" for w in words[:12]) or None
 
 
-def search(
+async def search(
     q: str | None = None,
     category: str | None = None,
     kind: str | None = None,
@@ -201,8 +198,8 @@ def search(
         order_args = [text, text, text, text + "%", tsq]
     elif order is None:
         order = SORTS["score"]
-    total = db.value(f"SELECT COUNT(*) FROM entries e {w}", params)
-    rows = db.rows(f"SELECT e.* FROM entries e {w} ORDER BY {order} LIMIT %s OFFSET %s", [*params, *order_args, size, (page - 1) * size])
+    total = await db.value(f"SELECT COUNT(*) FROM entries e {w}", params)
+    rows = await db.rows(f"SELECT e.* FROM entries e {w} ORDER BY {order} LIMIT %s OFFSET %s", [*params, *order_args, size, (page - 1) * size])
 
     # Facet counts: each facet ignores its own filter, so the UI can show what switching it would give.
     facets: dict[str, dict[str, int]] = {}
@@ -214,27 +211,27 @@ def search(
         ("registry", "SELECT x.registry AS k, COUNT(*) AS n FROM entries e JOIN entry_registries x ON x.entry_id = e.id {w} GROUP BY 1"),
     ]:
         fw, fp = clause(skip=name)
-        facets[name] = {r["k"]: r["n"] for r in db.rows(sql.format(w=fw), fp) if r["k"] is not None}
-    return {"total": total, "page": page, "size": size, "items": [_summary(r) for r in rows], "facets": facets}
+        facets[name] = {r["k"]: r["n"] for r in await db.rows(sql.format(w=fw), fp) if r["k"] is not None}
+    return {"total": total, "page": page, "size": size, "items": [await _summary(r) for r in rows], "facets": facets}
 
 
-def summaries(ids: list[str]) -> list[dict]:
+async def summaries(ids: list[str]) -> list[dict]:
     if not ids:
         return []
-    by_id = {r["id"]: _summary(r) for r in db.rows("SELECT * FROM entries WHERE id = ANY(%s)", (ids,))}
+    by_id = {r["id"]: await _summary(r) for r in await db.rows("SELECT * FROM entries WHERE id = ANY(%s)", (ids,))}
     return [by_id[i] for i in ids if i in by_id]
 
 
-def history(entry_id: str) -> list[dict]:
-    rows = db.rows("SELECT point FROM history WHERE entry_id = %s ORDER BY run_id", (entry_id,))
+async def history(entry_id: str) -> list[dict]:
+    rows = await db.rows("SELECT point FROM history WHERE entry_id = %s ORDER BY run_id", (entry_id,))
     return [json.loads(r["point"]) for r in rows]
 
 
-def _resolve(keys: list[str]) -> list[dict]:
+async def _resolve(keys: list[str]) -> list[dict]:
     """Bioregistry-style prefixes → catalog entries where we have them, otherwise a Bioregistry link."""
     if not keys:
         return []
-    found = {r["key"]: r for r in db.rows(
+    found = {r["key"]: r for r in await db.rows(
         "SELECT k.key, e.id, e.acronym FROM entry_keys k JOIN entries e ON e.id = k.entry_id WHERE k.key = ANY(%s)", (keys,)
     )}
     return [
@@ -244,54 +241,54 @@ def _resolve(keys: list[str]) -> list[dict]:
     ]
 
 
-def entry(entry_id: str) -> dict | None:
+async def entry(entry_id: str) -> dict | None:
     """Everything the entry page shows: catalog record, evaluation facts, derived lists, history and related entries."""
-    row = db.one("SELECT * FROM entries WHERE id = %s", (entry_id,))
+    row = await db.one("SELECT * FROM entries WHERE id = %s", (entry_id,))
     if row is None:
         return None
     e = json.loads(row["data"])
     facts = json.loads(row["facts"]) if row["facts"] else None
-    cats = _categories()
-    h = history(entry_id)
-    related = db.rows(f"SELECT * FROM entries e WHERE e.category = %s AND e.id <> %s ORDER BY {SORTS['score']} LIMIT 5", (e["category"], entry_id))
+    cats = await _categories()
+    h = await history(entry_id)
+    related = await db.rows(f"SELECT * FROM entries e WHERE e.category = %s AND e.id <> %s ORDER BY {SORTS['score']} LIMIT 5", (e["category"], entry_id))
     return {
         "entry": e,
-        "summary": _summary(row),
+        "summary": await _summary(row),
         "category": cats.get(e["category"]),
         "domains": [cats[d] for d in e.get("domains") or [] if d in cats],
         "facts": facts,
         "license": derived.license_of(e, facts),
         "adopters": derived.adopters(e, facts),
-        "imports": _resolve(derived.imports(facts)) if facts else [],
-        "reusedBy": _resolve(derived.reused_by(facts)) if facts else [],
+        "imports": await _resolve(derived.imports(facts)) if facts else [],
+        "reusedBy": await _resolve(derived.reused_by(facts)) if facts else [],
         "history": h,
         "changes": list(reversed(derived.changes(h))),
-        "related": [_summary(r) for r in related],
+        "related": [await _summary(r) for r in related],
     }
 
 
-def categories() -> list[dict]:
-    primary = {r["category"]: r["n"] for r in db.rows("SELECT category, COUNT(*) AS n FROM entries GROUP BY category")}
-    reach = {r["category"]: r["n"] for r in db.rows("SELECT category, COUNT(*) AS n FROM entry_domains GROUP BY category")}
-    return [{**c, "count": primary.get(c["id"], 0), "reach": reach.get(c["id"], 0)} for c in _categories().values()]
+async def categories() -> list[dict]:
+    primary = {r["category"]: r["n"] for r in await db.rows("SELECT category, COUNT(*) AS n FROM entries GROUP BY category")}
+    reach = {r["category"]: r["n"] for r in await db.rows("SELECT category, COUNT(*) AS n FROM entry_domains GROUP BY category")}
+    return [{**c, "count": primary.get(c["id"], 0), "reach": reach.get(c["id"], 0)} for c in (await _categories()).values()]
 
 
-def category(cat_id: str) -> dict | None:
-    c = next((x for x in categories() if x["id"] == cat_id), None)
+async def category(cat_id: str) -> dict | None:
+    c = next((x for x in await categories() if x["id"] == cat_id), None)
     return c
 
 
-def runs(limit: int = 50) -> list[dict]:
-    rows = db.rows("SELECT data, entries FROM runs ORDER BY finished_at DESC NULLS LAST, id DESC LIMIT %s", (limit,))
+async def runs(limit: int = 50) -> list[dict]:
+    rows = await db.rows("SELECT data, entries FROM runs ORDER BY finished_at DESC NULLS LAST, id DESC LIMIT %s", (limit,))
     return [{**json.loads(r["data"]), "entryCount": r["entries"]} for r in rows]
 
 
-def run(run_id: str, page: int = 1, size: int = 100) -> dict | None:
-    row = db.one("SELECT data, entries FROM runs WHERE id = %s", (run_id,))
+async def run(run_id: str, page: int = 1, size: int = 100) -> dict | None:
+    row = await db.one("SELECT data, entries FROM runs WHERE id = %s", (run_id,))
     if row is None:
         return None
     size = max(1, min(size, 500))
-    rows = db.rows("SELECT entry_id, point FROM history WHERE run_id = %s ORDER BY entry_id LIMIT %s OFFSET %s", (run_id, size, (max(1, page) - 1) * size))
+    rows = await db.rows("SELECT entry_id, point FROM history WHERE run_id = %s ORDER BY entry_id LIMIT %s OFFSET %s", (run_id, size, (max(1, page) - 1) * size))
     return {
         "run": json.loads(row["data"]),
         "total": row["entries"],
@@ -301,35 +298,35 @@ def run(run_id: str, page: int = 1, size: int = 100) -> dict | None:
     }
 
 
-def stats() -> dict:
+async def stats() -> dict:
     v = db.value
-    avg = v("SELECT ROUND(AVG(score)::numeric, 1) FROM entries WHERE score IS NOT NULL")
+    avg = await v("SELECT ROUND(AVG(score)::numeric, 1) FROM entries WHERE score IS NOT NULL")
     return {
-        "entries": v("SELECT COUNT(*) FROM entries"),
-        "evaluated": v("SELECT COUNT(*) FROM entries WHERE score IS NOT NULL"),
-        "categories": v("SELECT COUNT(*) FROM categories"),
-        "runs": v("SELECT COUNT(*) FROM runs"),
+        "entries": await v("SELECT COUNT(*) FROM entries"),
+        "evaluated": await v("SELECT COUNT(*) FROM entries WHERE score IS NOT NULL"),
+        "categories": await v("SELECT COUNT(*) FROM categories"),
+        "runs": await v("SELECT COUNT(*) FROM runs"),
         "averageScore": float(avg) if avg is not None else None,
-        "grades": {r["k"]: r["n"] for r in db.rows("SELECT COALESCE(grade, 'none') AS k, COUNT(*) AS n FROM entries GROUP BY 1")},
-        "kinds": {r["k"]: r["n"] for r in db.rows("SELECT kind AS k, COUNT(*) AS n FROM entries GROUP BY 1")},
-        "totalAdopters": v("SELECT COALESCE(SUM(adopters), 0) FROM entries"),
-        "crossDomain": v("SELECT COUNT(*) FROM (SELECT entry_id FROM entry_domains GROUP BY entry_id HAVING COUNT(*) > 1) x"),
-        "evaluation": _meta().get("evaluation"),
+        "grades": {r["k"]: r["n"] for r in await db.rows("SELECT COALESCE(grade, 'none') AS k, COUNT(*) AS n FROM entries GROUP BY 1")},
+        "kinds": {r["k"]: r["n"] for r in await db.rows("SELECT kind AS k, COUNT(*) AS n FROM entries GROUP BY 1")},
+        "totalAdopters": await v("SELECT COALESCE(SUM(adopters), 0) FROM entries"),
+        "crossDomain": await v("SELECT COUNT(*) FROM (SELECT entry_id FROM entry_domains GROUP BY entry_id HAVING COUNT(*) > 1) x"),
+        "evaluation": (await _meta()).get("evaluation"),
     }
 
 
-def top(n: int = 8, category: str | None = None) -> list[dict]:
+async def top(n: int = 8, category: str | None = None) -> list[dict]:
     cat = "AND e.id IN (SELECT entry_id FROM entry_domains WHERE category = %s)" if category else ""
-    return [_summary(r) for r in db.rows(f"SELECT * FROM entries e WHERE e.score IS NOT NULL {cat} ORDER BY {SORTS['score']} LIMIT %s", ([category] if category else []) + [n])]
+    return [await _summary(r) for r in await db.rows(f"SELECT * FROM entries e WHERE e.score IS NOT NULL {cat} ORDER BY {SORTS['score']} LIMIT %s", ([category] if category else []) + [n])]
 
 
-def recently_active(n: int = 8) -> list[dict]:
-    return [_summary(r) for r in db.rows(f"SELECT * FROM entries e WHERE e.last_activity IS NOT NULL ORDER BY {SORTS['activity']} LIMIT %s", (n,))]
+async def recently_active(n: int = 8) -> list[dict]:
+    return [await _summary(r) for r in await db.rows(f"SELECT * FROM entries e WHERE e.last_activity IS NOT NULL ORDER BY {SORTS['activity']} LIMIT %s", (n,))]
 
 
-def ids() -> list[dict]:
+async def ids() -> list[dict]:
     """Every entry id and its primary category, for sitemaps."""
-    return db.rows("SELECT id, category FROM entries ORDER BY id")
+    return await db.rows("SELECT id, category FROM entries ORDER BY id")
 
 
 def compact(obj: Any) -> Any:
@@ -342,12 +339,12 @@ def compact(obj: Any) -> Any:
 
 
 # ---------- admin dashboard ----------
-def score_changes(limit: int = 8) -> dict:
+async def score_changes(limit: int = 8) -> dict:
     """Resources whose score changed between the two latest runs, biggest change first."""
-    ids = [r["id"] for r in db.rows("SELECT id FROM runs ORDER BY finished_at DESC NULLS LAST, id DESC LIMIT 2")]
+    ids = [r["id"] for r in await db.rows("SELECT id FROM runs ORDER BY finished_at DESC NULLS LAST, id DESC LIMIT 2")]
     if len(ids) < 2:
         return {"latest": ids[0] if ids else None, "previous": None, "changes": []}
-    rows = db.rows(
+    rows = await db.rows(
         """SELECT e.id, e.name, e.acronym, e.kind, (h1.point::jsonb->>'score')::int AS now, (h0.point::jsonb->>'score')::int AS before,
                   h1.point::jsonb->>'grade' AS grade, h0.point::jsonb->>'grade' AS grade_before, h1.at
            FROM history h1 JOIN history h0 ON h0.entry_id = h1.entry_id AND h0.run_id = %s
@@ -355,7 +352,7 @@ def score_changes(limit: int = 8) -> dict:
            WHERE h1.run_id = %s AND (h1.point::jsonb->>'score') IS DISTINCT FROM (h0.point::jsonb->>'score')
            ORDER BY ABS(COALESCE((h1.point::jsonb->>'score')::int, 0) - COALESCE((h0.point::jsonb->>'score')::int, 0)) DESC, e.name
            LIMIT %s""", (ids[1], ids[0], limit))
-    count = db.value(
+    count = await db.value(
         """SELECT COUNT(*) FROM history h1 JOIN history h0 ON h0.entry_id = h1.entry_id AND h0.run_id = %s
            WHERE h1.run_id = %s AND (h1.point::jsonb->>'score') IS DISTINCT FROM (h0.point::jsonb->>'score')""", (ids[1], ids[0]))
     return {"latest": ids[0], "previous": ids[1], "changed": count, "changes": [
@@ -363,18 +360,18 @@ def score_changes(limit: int = 8) -> dict:
          "grade": r["grade"], "gradeBefore": r["grade_before"], "at": r["at"]} for r in rows]}
 
 
-def attention(limit: int = 8) -> dict:
+async def attention(limit: int = 8) -> dict:
     """Resources that need a look: not evaluated, or with a grade E and recent adopters (widely used but weak)."""
-    unevaluated = db.rows("SELECT id, name, acronym, kind, category FROM entries WHERE score IS NULL ORDER BY name LIMIT %s", (limit,))
+    unevaluated = await db.rows("SELECT id, name, acronym, kind, category FROM entries WHERE score IS NULL ORDER BY name LIMIT %s", (limit,))
     return {
-        "unevaluated": db.value("SELECT COUNT(*) FROM entries WHERE score IS NULL"),
+        "unevaluated": await db.value("SELECT COUNT(*) FROM entries WHERE score IS NULL"),
         "unevaluatedSample": [{"id": r["id"], "name": r["acronym"] or r["name"], "kind": r["kind"], "category": r["category"]} for r in unevaluated],
-        "weakButUsed": db.value("SELECT COUNT(*) FROM entries WHERE grade = 'E' AND adopters > 0"),
+        "weakButUsed": await db.value("SELECT COUNT(*) FROM entries WHERE grade = 'E' AND adopters > 0"),
     }
 
 
 CSV_FIELDS = ["id", "acronym", "name", "kind", "category", "grade", "score", "fair", "adopters", "version", "last_activity", "legacy"]
 
 
-def catalog_rows():
-    return db.rows(f"SELECT {', '.join(CSV_FIELDS)} FROM entries ORDER BY position")
+async def catalog_rows():
+    return await db.rows(f"SELECT {', '.join(CSV_FIELDS)} FROM entries ORDER BY position")

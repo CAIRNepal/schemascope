@@ -40,6 +40,26 @@
   });
   document.addEventListener("keydown", (e) => e.key === "Escape" && closeGroups());
 
+  // Starting a chat from elsewhere (recommend landing page): the question goes to the chat page in session storage,
+  // not in the URL, and is sent from there with POST.
+  const startChat = (q) => {
+    if (!q?.trim()) return;
+    try { sessionStorage.setItem("ask-question", q.trim()); } catch {}
+    location.href = "/recommend/ask/";
+  };
+  document.addEventListener("submit", (e) => {
+    const f = e.target.closest("[data-ask-start]");
+    if (!f) return;
+    e.preventDefault();
+    startChat(f.elements.q.value);
+  });
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("[data-ask-q]");
+    if (!a) return;
+    e.preventDefault();
+    startChat(a.dataset.askQ);
+  });
+
   // Account link: "Sign in", or the signed-in user's avatar and name (from the API on this origin).
   const account = $("[data-account]");
   if (account) account.href = `/api/auth/github/login?next=${encodeURIComponent(location.pathname + location.search)}`;

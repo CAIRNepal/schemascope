@@ -25,23 +25,23 @@ def _site() -> tuple[str, str, str]:
     return brand, (settings.PUBLIC_SITE_URL or cfg.get("url", "")).rstrip("/"), cfg.get("description", "")
 
 
-def _limits() -> dict:
+async def _limits() -> dict:
     try:
-        return accounts.rate_limits()
+        return await accounts.rate_limits()
     except Exception:
         return {"anonymousPerMinute": settings.RATE_LIMIT_ANON, "authenticatedPerMinute": settings.RATE_LIMIT_USER}
 
 
-def _samples() -> dict:
+async def _samples() -> dict:
     s = {"name": "roadmap"}
     try:
-        top = store.top(1, None)
+        top = await store.top(1, None)
         if top:
             s["entry_id"] = top[0]["id"]
-        cats = store.categories()
+        cats = await store.categories()
         if cats:
             s["cat_id"] = s["category"] = cats[0]["id"]
-        runs = store.runs(1)
+        runs = await store.runs(1)
         if runs:
             s["run_id"] = runs[0]["id"]
     except Exception:
@@ -94,26 +94,26 @@ def _tool_doc(name: str) -> tuple[str, str]:
     return f"{name}({sig})", inspect.cleandoc(fn.__doc__ or "")
 
 
-def _cached(key: str, build) -> str:
+async def _cached(key: str, build) -> str:
     hit = _cache.get(key)
     if hit and time.monotonic() - hit[0] < TTL:
         return hit[1]
-    text = build()
+    text = await build()
     _cache[key] = (time.monotonic(), text)
     return text
 
 
-def llms_txt(spec: dict) -> str:
-    return _cached("index", lambda: _index(spec))
+async def llms_txt(spec: dict) -> str:
+    return await _cached("index", lambda: _index(spec))
 
 
-def llms_full_txt(spec: dict) -> str:
-    return _cached("full", lambda: _full(spec))
+async def llms_full_txt(spec: dict) -> str:
+    return await _cached("full", lambda: _full(spec))
 
 
-def _index(spec: dict) -> str:
+async def _index(spec: dict) -> str:
     brand, origin, desc = _site()
-    lim = _limits()
+    lim = await _limits()
     out = [
         f"# {brand}",
         "",
@@ -144,10 +144,10 @@ def _index(spec: dict) -> str:
     return "\n".join(out)
 
 
-def _full(spec: dict) -> str:
+async def _full(spec: dict) -> str:
     brand, origin, desc = _site()
-    lim = _limits()
-    samples = _samples()
+    lim = await _limits()
+    samples = await _samples()
     prefix = settings.TOKEN_PREFIX
     env = "".join(c if c.isalnum() else "_" for c in brand.upper()) + "_TOKEN"
     out = [

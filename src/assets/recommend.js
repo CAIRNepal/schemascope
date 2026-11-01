@@ -8,7 +8,7 @@
   const $ = (s, r = root) => r.querySelector(s);
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   const list = $("[data-rec-results]"), summary = $("[data-rec-summary]"), understood = $("[data-understood]");
-  const KEYS = ["q", "category", "kind", "format", "min_grade", "maintained", "open_license", "used"];
+  const KEYS = ["q", "category", "kind", "format", "min_grade", "maintained", "open_license", "used", "sort"];
   const SIZE = 10;
   let page = 1, seq = 0, typing;
 

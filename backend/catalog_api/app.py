@@ -35,8 +35,18 @@ mcp_app = mcp.streamable_http_app(
 
 @asynccontextmanager
 async def lifespan(_app: FastAPI):
+    from anyio import to_thread
+
+    from . import db
+
+    # Build the OpenAPI document once, off the event loop (it reads one category id with the sync pool).
+    try:
+        await to_thread.run_sync(api.openapi)
+    except Exception:
+        api.openapi_schema = None
     async with mcp.session_manager.run():
         yield
+    await db.aclose()
 
 
 BRAND = site_config().get("brand") or site_config().get("name", "Catalog")
@@ -111,44 +121,44 @@ api.openapi = custom_openapi
 
 # Docs for LLMs (llms.txt convention): a short index and the full reference as Markdown, from the OpenAPI document.
 @api.get("/llms.txt", include_in_schema=False)
-def get_llms_txt():
-    return PlainTextResponse(llms.llms_txt(api.openapi()), media_type="text/plain; charset=utf-8", headers={"Cache-Control": "public, max-age=300"})
+async def get_llms_txt():
+    return PlainTextResponse(await llms.llms_txt(api.openapi()), media_type="text/plain; charset=utf-8", headers={"Cache-Control": "public, max-age=300"})
 
 
 @api.get("/llms-full.txt", include_in_schema=False)
-def get_llms_full_txt():
-    return PlainTextResponse(llms.llms_full_txt(api.openapi()), media_type="text/plain; charset=utf-8", headers={"Cache-Control": "public, max-age=300"})
+async def get_llms_full_txt():
+    return PlainTextResponse(await llms.llms_full_txt(api.openapi()), media_type="text/plain; charset=utf-8", headers={"Cache-Control": "public, max-age=300"})
 
 
 @api.get("/api/health", tags=["Meta"], summary="Health")
-def health():
-    m = store.meta()
+async def health():
+    m = await store.meta()
     return {"ok": True, "ingestedAt": m["ingestedAt"], "evaluation": m["evaluation"]}
 
 
 @api.get("/api/meta", tags=["Meta"], summary="Meta & rubric")
-def get_meta():
+async def get_meta():
     """Site configuration, the latest evaluation run and the scoring rubric."""
-    return store.meta()
+    return await store.meta()
 
 
 @api.get("/api/content/{name}", tags=["Meta"], summary="Content document")
-def get_content(name: str):
+async def get_content(name: str):
     """Data behind the content pages: `roadmap` (data/roadmap.json) and `validation` (data/validation/report.json)."""
-    doc = store.content(name)
+    doc = await store.content(name)
     if doc is None:
         raise HTTPException(404, f"No {name} document in this catalog")
     return doc
 
 
 @api.get("/api/site-data", include_in_schema=False)
-def get_site_data():
+async def get_site_data():
     """Bulk data for the web server's page templates (large; not meant for other clients)."""
-    return Response(store.site_data(), media_type="application/json")
+    return Response(await store.site_data(), media_type="application/json")
 
 
 @api.get("/api/runs/{run_id}/snapshot", tags=["Runs"], summary="Run snapshot")
-def get_run_snapshot(run_id: str):
+async def get_run_snapshot(run_id: str):
     """The archived run file as written by the evaluator: every entry's facts and scores in that run."""
     f = store.run_file(run_id)
     if f is None:
@@ -157,24 +167,24 @@ def get_run_snapshot(run_id: str):
 
 
 @api.get("/api/domain-graph", tags=["Catalog"], summary="Domain graph")
-def get_domain_graph():
+async def get_domain_graph():
     """How domains connect: nodes (domains, with reach), weighted edges (shared resources + imports), bridges."""
-    return store.domain_graph()
+    return await store.domain_graph()
 
 
 @api.get("/api/stats", tags=["Catalog"], summary="Stats")
-def get_stats():
-    return store.stats()
+async def get_stats():
+    return await store.stats()
 
 
 @api.get("/api/categories", tags=["Catalog"], summary="List categories")
-def get_categories():
-    return store.categories()
+async def get_categories():
+    return await store.categories()
 
 
 @api.get("/api/categories/{cat_id}", tags=["Catalog"], summary="Get category")
-def get_category(cat_id: str):
-    c = store.category(cat_id)
+async def get_category(cat_id: str):
+    c = await store.category(cat_id)
     if c is None:
         raise HTTPException(404, "Category not found")
     return c
@@ -183,7 +193,7 @@ def get_category(cat_id: str):
 # Note: routes under /api/entries/ take an entry id, so helper lists live at /api/top-entries etc.
 # (an entry is literally called "top").
 @api.get("/api/entries", tags=["Catalog"], summary="Search entries")
-def list_entries(
+async def list_entries(
     q: Optional[str] = Query(None, description="Free text; every word must match (prefix)"),
     category: Optional[str] = Query(None, description="Category id (primary or secondary domain)"),
     kind: Optional[str] = Query(None, description="Type: ontology, schema, vocabulary, atlas, data-standard or knowledge-base"),
@@ -195,49 +205,49 @@ def list_entries(
     page: int = Query(1, ge=1, description="Page number, from 1"),
     size: int = Query(24, ge=1, le=store.MAX_PAGE_SIZE, description="Results per page, up to 100"),
 ):
-    return store.search(q=q, category=category, kind=kind, grade=grade, format=format, registry=registry, include_legacy=legacy, sort=sort, page=page, size=size)
+    return await store.search(q=q, category=category, kind=kind, grade=grade, format=format, registry=registry, include_legacy=legacy, sort=sort, page=page, size=size)
 
 
 @api.get("/api/top-entries", tags=["Catalog"], summary="Top entries")
-def top_entries(n: int = Query(8, ge=1, le=50), category: Optional[str] = None):
-    return store.top(n, category)
+async def top_entries(n: int = Query(8, ge=1, le=50), category: Optional[str] = None):
+    return await store.top(n, category)
 
 
 @api.get("/api/recent-entries", tags=["Catalog"], summary="Recently active")
-def recent_entries(n: int = Query(8, ge=1, le=50)):
-    return store.recently_active(n)
+async def recent_entries(n: int = Query(8, ge=1, le=50)):
+    return await store.recently_active(n)
 
 
 @api.get("/api/entry-ids", tags=["Catalog"], summary="Entry ids")
-def entry_ids():
+async def entry_ids():
     """All entry ids (for sitemaps and bulk clients)."""
-    return store.ids()
+    return await store.ids()
 
 
 @api.get("/api/entries/{entry_id}", tags=["Catalog"], summary="Get entry")
-def get_entry(entry_id: str):
-    d = store.entry(entry_id)
+async def get_entry(entry_id: str):
+    d = await store.entry(entry_id)
     if d is None:
         raise HTTPException(404, "Entry not found")
     return d
 
 
 @api.get("/api/entries/{entry_id}/history", tags=["Runs"], summary="Entry history")
-def get_history(entry_id: str):
+async def get_history(entry_id: str):
     from .derived import changes
 
-    h = store.history(entry_id)
+    h = await store.history(entry_id)
     return {"runs": h, "changes": changes(h)}
 
 
 @api.get("/api/runs", tags=["Runs"], summary="List runs")
-def list_runs(limit: int = Query(50, ge=1, le=500)):
-    return store.runs(limit)
+async def list_runs(limit: int = Query(50, ge=1, le=500)):
+    return await store.runs(limit)
 
 
 @api.get("/api/runs/{run_id}", tags=["Runs"], summary="Get run")
-def get_run(run_id: str, page: int = Query(1, ge=1), size: int = Query(100, ge=1, le=500)):
-    r = store.run(run_id, page, size)
+async def get_run(run_id: str, page: int = Query(1, ge=1), size: int = Query(100, ge=1, le=500)):
+    r = await store.run(run_id, page, size)
     if r is None:
         raise HTTPException(404, "Run not found")
     return r
@@ -248,12 +258,12 @@ from pydantic import BaseModel, Field  # noqa: E402
 
 
 @api.get("/api/recommend/options", tags=["Recommend"], summary="Recommendation options")
-def recommend_options():
-    return recommend.options()
+async def recommend_options():
+    return await recommend.options()
 
 
 @api.get("/api/recommend", tags=["Recommend"], summary="Recommend resources")
-def get_recommendations(
+async def get_recommendations(
     q: Optional[str] = Query(None, max_length=600),
     category: Optional[str] = None,
     kind: Optional[str] = None,
@@ -264,8 +274,9 @@ def get_recommendations(
     used: bool = False,
     limit: int = Query(8, ge=1, le=20),
     page: int = Query(1, ge=1, le=20),
+    sort: Optional[str] = Query(None, pattern="^(relevance|score)$"),
 ):
-    return recommend.recommend(q, limit=limit, page=page, category=category, kind=kind, format=format, min_grade=min_grade,
+    return await recommend.recommend(q, limit=limit, page=page, sort=sort, category=category, kind=kind, format=format, min_grade=min_grade,
                                maintained=maintained, open_license=open_license, used=used)
 
 
@@ -277,6 +288,7 @@ class ChatMessage(BaseModel):
 class ChatIn(BaseModel):
     messages: list[ChatMessage] = Field(min_length=1, max_length=20, description="The conversation so far; the last message is the user's question.")
     chat_id: Optional[str] = Field(None, max_length=40, description="Signed in: the saved chat to continue. Omit to start a new one.")
+    session: Optional[str] = Field(None, max_length=64, description="A random id for this browser session, grouping turns in the anonymous chat log.")
 
 
 class _ChatWindow:
@@ -307,7 +319,7 @@ async def chat_status():
 
 @api.post("/api/recommend/chat", tags=["Recommend"], summary="Ask for a recommendation")
 async def chat_turn(request: Request, body: ChatIn):
-    p = auth.resolve(request)
+    p = await auth.resolve(request)
     key, limit = (f"u{p.user.id}", settings.CHAT_RATE_USER) if p else (f"ip{auth.client_ip(request.scope)}", settings.CHAT_RATE_ANON)
     wait = _chat_window.hit(key, limit)
     if wait:
@@ -315,7 +327,9 @@ async def chat_turn(request: Request, body: ChatIn):
                                  + ("" if p else ", or sign in for a higher limit") + ".", headers={"Retry-After": str(wait)})
     if not any(m.role == "user" and m.content.strip() for m in body.messages[-1:]):
         raise HTTPException(422, "The last message must be the user's question")
-    return StreamingResponse(chat.stream([m.model_dump() for m in body.messages], p.user.id if p else None, body.chat_id), media_type="application/x-ndjson",
+    log = p.user.improve_search if p else True
+    return StreamingResponse(chat.stream([m.model_dump() for m in body.messages], p.user.id if p else None, body.chat_id, log=log, session=body.session),
+                             media_type="application/x-ndjson",
                              headers={"Cache-Control": "no-store", "X-Accel-Buffering": "no"})
 
 
@@ -328,27 +342,64 @@ class ChatTitleIn(BaseModel):
 
 
 @api.get("/api/chats", tags=["Recommend"], summary="My saved chats")
-def list_chats(p: auth.Principal = Depends(auth.require_user)):
-    return chat_store.list_for(p.user.id)
+async def list_chats(p: auth.Principal = Depends(auth.require_user)):
+    return await chat_store.list_for(p.user.id)
 
 
 @api.get("/api/chats/{chat_id}", tags=["Recommend"], summary="Open a saved chat")
-def get_chat(chat_id: str, p: auth.Principal = Depends(auth.require_user)):
-    c = chat_store.get(p.user.id, chat_id)
+async def get_chat(chat_id: str, p: auth.Principal = Depends(auth.require_user)):
+    c = await chat_store.get(p.user.id, chat_id)
     if not c:
         raise HTTPException(404, "No such chat")
     return c
 
 
 @api.patch("/api/chats/{chat_id}", tags=["Recommend"], summary="Rename a saved chat")
-def rename_chat(chat_id: str, body: ChatTitleIn, p: auth.Principal = Depends(auth.require_user)):
-    if not chat_store.rename(p.user.id, chat_id, body.title):
+async def rename_chat(chat_id: str, body: ChatTitleIn, p: auth.Principal = Depends(auth.require_user)):
+    if not await chat_store.rename(p.user.id, chat_id, body.title):
         raise HTTPException(404, "No such chat")
     return {"id": chat_id, "title": body.title.strip()}
 
 
 @api.delete("/api/chats/{chat_id}", tags=["Recommend"], summary="Delete a saved chat", status_code=204)
-def delete_chat(chat_id: str, p: auth.Principal = Depends(auth.require_user)):
-    if not chat_store.delete(p.user.id, chat_id):
+async def delete_chat(chat_id: str, p: auth.Principal = Depends(auth.require_user)):
+    if not await chat_store.delete(p.user.id, chat_id):
         raise HTTPException(404, "No such chat")
     return Response(status_code=204)
+
+
+# ---------- chat feedback and logging preference ----------
+from . import chatlog  # noqa: E402
+
+
+class FeedbackIn(BaseModel):
+    rating: Optional[int] = Field(None, ge=-1, le=1, description="1 good, -1 bad")
+    comment: Optional[str] = Field(None, max_length=2000)
+
+
+@api.post("/api/recommend/chat/feedback/{log_id}", tags=["Recommend"], summary="Rate an answer", status_code=204)
+async def chat_feedback(log_id: str, body: FeedbackIn):
+    if body.rating is None and not (body.comment or "").strip():
+        raise HTTPException(422, "Send a rating, a comment or both")
+    if not await chatlog.feedback(log_id, body.rating, body.comment):
+        raise HTTPException(404, "No such answer (it may not have been logged)")
+    return Response(status_code=204)
+
+
+class PrefsIn(BaseModel):
+    improveSearch: bool = Field(description="Let your chats be logged, without your identity, to improve recommendations.")
+
+
+@api.put("/api/auth/preferences", tags=["Auth"], summary="Update preferences")
+async def update_prefs(request: Request, body: PrefsIn, p: auth.Principal = Depends(auth.require_user)):
+    from . import accounts
+
+    await accounts.set_improve_search(p.user, body.improveSearch)
+    await auth._audit(request, "account.preferences", p.user, improveSearch=body.improveSearch)
+    return {"improveSearch": body.improveSearch}
+
+
+@api.get("/api/admin/chat-feedback", tags=["Admin"], summary="Chat log and feedback")
+async def admin_chat_feedback(p: auth.Principal = Depends(auth.require_session)):
+    auth.require_superadmin(p)
+    return await chatlog.summary()

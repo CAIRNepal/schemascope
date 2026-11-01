@@ -1540,3 +1540,19 @@ a.rec-path:hover { border-color: var(--accent-ink); transform: translateY(-2px);
   .cg-msg.user { max-width: 92%; }
 }
 .rec-q { display: block; }
+a.rec-path-cta { text-decoration: none; margin-top: 4px; } a.rec-path-cta:hover { text-decoration: underline; }
+
+/* Chat feedback, the "improve recommendations" switch */
+.cg-fb { display: inline-flex; gap: 2px; }
+.cg-fb button { border: 1px solid transparent; background: none; border-radius: 8px; padding: 2px 6px; cursor: pointer; font-size: .82rem; color: var(--muted); }
+.cg-fb button:hover { border-color: var(--line); color: var(--text); }
+.cg-fb button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent-ink); color: var(--accent-ink); }
+.cg-fb-thanks { color: #2c8071; }
+.cg-fb-form { display: grid; gap: 8px; margin-top: 10px; max-width: 560px; }
+.cg-fb-form textarea { border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; background: var(--surface); color: var(--text); font: inherit; font-size: .9rem; resize: vertical; }
+.cg-fb-form div { display: flex; gap: 8px; justify-content: flex-end; }
+.cg-improve { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 10px; cursor: pointer; }
+.cg-improve input { margin-top: 3px; accent-color: var(--accent-ink); }
+.cg-improve b { display: block; color: var(--text); font-weight: 600; font-size: .82rem; }
+.cg-improve small { color: var(--muted); font-size: .74rem; line-height: 1.4; }
+.cg-fine a { color: inherit; }

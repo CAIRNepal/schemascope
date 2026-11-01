@@ -80,7 +80,7 @@ class Guard:
 
         request = Request(scope)
         try:
-            principal = resolve(request)
+            principal = await resolve(request)
         except HTTPException as e:
             return await self._reply(send, *problem(e.status_code, TITLES.get(e.status_code, "Error"), e.detail, path, e.headers))
         if is_mcp:
@@ -92,12 +92,12 @@ class Guard:
         elif principal and principal.kind == "token" and "api" not in principal.scopes:
             return await self._reply(send, *problem(403, "Forbidden", "This token does not have the `api` scope.", path))
 
-        limit = limit_for(principal.user if principal else None)
+        limit = await limit_for(principal.user if principal else None)
         key = f"user:{principal.user.id}" if principal else f"ip:{client_ip(scope)}"
         ok, remaining, reset = window.hit(key, limit)
         rl = {"x-ratelimit-limit": str(limit), "x-ratelimit-remaining": str(remaining), "x-ratelimit-reset": str(reset)}
         if not ok:
-            hint = "" if principal else f" Sign in and use a token for {rate_limits()['authenticatedPerMinute']} requests per minute: {settings.PUBLIC_SITE_URL}/account/"
+            hint = "" if principal else f" Sign in and use a token for {(await rate_limits())['authenticatedPerMinute']} requests per minute: {settings.PUBLIC_SITE_URL}/account/"
             return await self._reply(send, *problem(429, TITLES[429], f"Rate limit of {limit} requests per minute exceeded.{hint}", path,
                                                     {**rl, "retry-after": str(max(1, reset - int(time.time())))}))
 

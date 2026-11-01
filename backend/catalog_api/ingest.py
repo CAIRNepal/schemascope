@@ -199,7 +199,7 @@ def ingest(rebuild: bool = False) -> dict:
         cur.executemany("INSERT INTO entry_registries VALUES (%s, %s) ON CONFLICT DO NOTHING", registries)
         cur.executemany("INSERT INTO entry_keys VALUES (%s, %s) ON CONFLICT DO NOTHING", keys)
 
-    known = {r["id"] for r in db.rows("SELECT id FROM runs")}
+    known = {r["id"] for r in db.rows_sync("SELECT id FROM runs")}
     added = []
     for f in run_files():
         if f.stem in known:
@@ -221,13 +221,16 @@ def ingest(rebuild: bool = False) -> dict:
         added.append(run_id)
         print(f"  loaded run {run_id} ({len(entries)} entries)")
 
-    total_runs = db.value("SELECT COUNT(*) FROM runs")
+    total_runs = db.value_sync("SELECT COUNT(*) FROM runs")
     summary = {"entries": len(catalog), "categories": len(categories), "runsAdded": len(added), "runs": total_runs, "seconds": round(time.time() - t0, 1)}
     # Data loads are changes too: record them with the operator's OS user name.
-    from .accounts import audit
+    from psycopg.types.json import Jsonb
 
-    audit("catalog.ingest", None, target=meta["evaluation"].get("run", {}).get("id") if meta["evaluation"].get("run") else None,
-          details={**summary, "rebuild": rebuild, "newRuns": added, "operator": getpass.getuser(), "dataDir": str(DATA_DIR)})
+    db.execute_sync(
+        "INSERT INTO audit_log (actor_id, actor_login, action, target, details) VALUES (NULL, NULL, 'catalog.ingest', %s, %s)",
+        (meta["evaluation"].get("run", {}).get("id") if meta["evaluation"].get("run") else None,
+         Jsonb({**summary, "rebuild": rebuild, "newRuns": added, "operator": getpass.getuser(), "dataDir": str(DATA_DIR)})),
+    )
     print(f"Ingested {summary['entries']} entries, {summary['categories']} categories, {len(added)} new run(s) ({total_runs} total) in {summary['seconds']}s")
     return summary
 

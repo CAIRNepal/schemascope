@@ -40,12 +40,12 @@ def issue_jwt(user: User) -> tuple[str, int]:
     return jwt.encode(claims, settings.jwt_secret(), algorithm="HS256"), exp
 
 
-def _from_jwt(token: str) -> Principal | None:
+async def _from_jwt(token: str) -> Principal | None:
     try:
         claims = jwt.decode(token, settings.jwt_secret(), algorithms=["HS256"], options={"require": ["exp", "sub"]})
     except jwt.PyJWTError:
         return None
-    user = accounts.get_user(int(claims["sub"]))
+    user = await accounts.get_user(int(claims["sub"]))
     return Principal(user, "session", list(accounts.SCOPES)) if user else None
 
 
@@ -64,11 +64,11 @@ def client_ip(scope) -> str:
     return host
 
 
-def _audit(request: Request, action: str, user: User | None, target: str | None = None, **details) -> None:
-    accounts.audit(action, user, target, details or None, client_ip(request.scope), request.headers.get("user-agent"))
+async def _audit(request: Request, action: str, user: User | None, target: str | None = None, **details) -> None:
+    await accounts.audit(action, user, target, details or None, client_ip(request.scope), request.headers.get("user-agent"))
 
 
-def resolve(request: Request) -> Principal | None:
+async def resolve(request: Request) -> Principal | None:
     """Who is calling: a bearer token (JWT or PAT), else the session cookie. None for anonymous callers.
     Raises 401 when a credential is sent but is not valid (rather than silently treating the caller as anonymous)."""
     if "principal" in request.scope:
@@ -78,24 +78,24 @@ def resolve(request: Request) -> Principal | None:
     if auth.lower().startswith("bearer "):
         token = auth[7:].strip()
         if token.startswith(settings.TOKEN_PREFIX):
-            found = accounts.verify_token(token)
+            found = await accounts.verify_token(token)
             principal = Principal(found[0], "token", found[1]) if found and found[0] else None
         else:
-            principal = _from_jwt(token)
+            principal = await _from_jwt(token)
         if principal is None:
             raise HTTPException(401, "Invalid or expired token", headers={"WWW-Authenticate": 'Bearer error="invalid_token"'})
     elif request.cookies.get(SESSION_COOKIE):
-        principal = _from_jwt(request.cookies[SESSION_COOKIE])
+        principal = await _from_jwt(request.cookies[SESSION_COOKIE])
     request.scope["principal"] = principal
     return principal
 
 
-def optional_user(request: Request) -> Principal | None:
-    return resolve(request)
+async def optional_user(request: Request) -> Principal | None:
+    return await resolve(request)
 
 
-def require_user(request: Request) -> Principal:
-    p = resolve(request)
+async def require_user(request: Request) -> Principal:
+    p = await resolve(request)
     if p is None:
         raise HTTPException(401, "Sign in, or send a bearer token", headers={"WWW-Authenticate": "Bearer"})
     return p
@@ -107,9 +107,9 @@ def require_superadmin(p: Principal) -> Principal:
     return p
 
 
-def require_session(request: Request) -> Principal:
+async def require_session(request: Request) -> Principal:
     """Account management needs the person's own session, not a token (a leaked token can't mint more)."""
-    p = require_user(request)
+    p = await require_user(request)
     if p.kind != "session":
         raise HTTPException(403, "Use a signed-in session (JWT) for this; personal access tokens can't manage accounts")
     return p
@@ -133,7 +133,7 @@ router = APIRouter(prefix="/api")
 
 
 @router.get("/auth/github/login", tags=["Auth"], summary="Sign in with GitHub")
-def github_login(next: str | None = None):
+async def github_login(next: str | None = None):
     """Redirects to GitHub. After sign-in, GitHub returns to `/api/auth/github/callback`, which sets the session
     cookie and returns to `next` (a path on this site)."""
     if not settings.GITHUB_CLIENT_ID:
@@ -162,7 +162,7 @@ async def github_callback(request: Request, code: str | None = None, state: str 
     except json.JSONDecodeError:
         saved = {}
     if error:
-        _audit(request, "auth.login_failed", None, details=error, method="github")
+        await _audit(request, "auth.login_failed", None, details=error, method="github")
         back = saved.get("n") or "/"
         return RedirectResponse(f"{back}{'&' if '?' in back else '?'}{urlencode({'signin_error': error})}", status_code=302)
     if not code or not state or not secrets.compare_digest(state, saved.get("s", "")):
@@ -175,7 +175,7 @@ async def github_callback(request: Request, code: str | None = None, state: str 
             headers={"Accept": "application/json"},
         )).json()
         if "access_token" not in tok:
-            _audit(request, "auth.login_failed", None, method="github", reason=tok.get("error"))
+            await _audit(request, "auth.login_failed", None, method="github", reason=tok.get("error"))
             raise HTTPException(400, f"GitHub sign-in failed: {tok.get('error_description') or tok.get('error') or 'no token'}")
         gh_headers = {"Authorization": f"Bearer {tok['access_token']}", "Accept": "application/vnd.github+json"}
         gh = (await client.get("https://api.github.com/user", headers=gh_headers)).json()
@@ -183,8 +183,8 @@ async def github_callback(request: Request, code: str | None = None, state: str 
             emails = (await client.get("https://api.github.com/user/emails", headers=gh_headers)).json()
             gh["email"] = next((e["email"] for e in emails if isinstance(e, dict) and e.get("primary") and e.get("verified")), None)
     # The GitHub access token is not kept: sign-in only needs the profile.
-    user = accounts.upsert_user(gh)
-    _audit(request, "auth.login", user, method="github")
+    user = await accounts.upsert_user(gh)
+    await _audit(request, "auth.login", user, method="github")
     resp = RedirectResponse(saved.get("n") or "/", status_code=302)
     _set_session(resp, user)
     resp.delete_cookie(STATE_COOKIE, path="/api/auth/github/")
@@ -192,27 +192,27 @@ async def github_callback(request: Request, code: str | None = None, state: str 
 
 
 @router.get("/auth/dev-login", tags=["Auth"], include_in_schema=False)
-def dev_login(request: Request, login: str = "dev-user", next: str | None = None):
+async def dev_login(request: Request, login: str = "dev-user", next: str | None = None):
     """Local testing only (DEV_LOGIN=1): sign in as a made-up GitHub user without an OAuth app."""
     if not settings.DEV_LOGIN:
         raise HTTPException(404, "Not found")
     uid = 10**9 + int.from_bytes(login.encode()[:4].ljust(4, b"\0"), "big") % 10**8
-    user = accounts.upsert_user({"id": uid, "login": login, "name": login.replace("-", " ").title(), "email": f"{login}@example.org",
+    user = await accounts.upsert_user({"id": uid, "login": login, "name": login.replace("-", " ").title(), "email": f"{login}@example.org",
                                  "avatar_url": None, "html_url": f"https://github.com/{login}"})
-    _audit(request, "auth.login", user, method="dev")
+    await _audit(request, "auth.login", user, method="dev")
     resp = RedirectResponse(_safe_next(next), status_code=302)
     _set_session(resp, user)
     return resp
 
 
 @router.post("/auth/logout", tags=["Auth"], summary="Sign out", status_code=204)
-def logout(request: Request):
+async def logout(request: Request):
     try:
-        p = resolve(request)
+        p = await resolve(request)
     except HTTPException:
         p = None
     if p:
-        _audit(request, "auth.logout", p.user)
+        await _audit(request, "auth.logout", p.user)
     resp = Response(status_code=204)
     resp.delete_cookie(SESSION_COOKIE, path="/")
     return resp
@@ -226,38 +226,38 @@ class Me(BaseModel):
 
 
 @router.get("/auth/session", tags=["Auth"], summary="Session")
-def session(request: Request):
+async def session(request: Request):
     """The signed-in user, or `{"user": null}`. Never 401, so pages can ask without errors."""
     try:
-        p = resolve(request)
+        p = await resolve(request)
     except HTTPException:
         p = None
     if not p:
-        return {"user": None, "rateLimit": accounts.rate_limits()}
-    return {"user": p.user.public(), "via": p.kind, "rateLimit": {"perMinute": accounts.limit_for(p.user), **accounts.rate_limits()}}
+        return {"user": None, "rateLimit": await accounts.rate_limits()}
+    return {"user": p.user.public(), "via": p.kind, "rateLimit": {"perMinute": await accounts.limit_for(p.user), **await accounts.rate_limits()}}
 
 
 @router.get("/auth/me", tags=["Auth"], summary="Me", response_model=Me)
-def me(p: Principal = Depends(require_user)):
+async def me(p: Principal = Depends(require_user)):
     """The signed-in user, how the request was authenticated, and the rate limit that applies."""
-    return {"user": p.user.public(), "via": p.kind, "scopes": p.scopes, "rateLimit": {"perMinute": accounts.limit_for(p.user), **accounts.rate_limits()}}
+    return {"user": p.user.public(), "via": p.kind, "scopes": p.scopes, "rateLimit": {"perMinute": await accounts.limit_for(p.user), **await accounts.rate_limits()}}
 
 
 @router.get("/auth/config", tags=["Auth"], summary="Auth config")
-def auth_config():
+async def auth_config():
     """Which sign-in methods this server offers, and the rate limits."""
     return {
         "github": bool(settings.GITHUB_CLIENT_ID), "devLogin": settings.DEV_LOGIN, "sessionHours": settings.SESSION_HOURS,
         "tokenPrefix": settings.TOKEN_PREFIX, "scopes": list(accounts.SCOPES),
-        "rateLimit": accounts.rate_limits(),
+        "rateLimit": await accounts.rate_limits(),
     }
 
 
 @router.post("/auth/token", tags=["Auth"], summary="Session JWT")
-def session_token(request: Request, p: Principal = Depends(require_session)):
+async def session_token(request: Request, p: Principal = Depends(require_session)):
     """A session JWT for scripts, for the signed-in user (from the browser session). Valid for SESSION_HOURS."""
     token, exp = issue_jwt(p.user)
-    _audit(request, "auth.jwt_issued", p.user)
+    await _audit(request, "auth.jwt_issued", p.user)
     return {"token": token, "tokenType": "Bearer", "expiresAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime(exp))}
 
 
@@ -268,30 +268,30 @@ class TokenIn(BaseModel):
 
 
 @router.get("/tokens", tags=["API tokens"], summary="List tokens")
-def tokens(p: Principal = Depends(require_session)):
+async def tokens(p: Principal = Depends(require_session)):
     """Your active personal access tokens (the tokens themselves are never shown again)."""
-    return accounts.list_tokens(p.user)
+    return await accounts.list_tokens(p.user)
 
 
 @router.post("/tokens", tags=["API tokens"], summary="Create token", status_code=201)
-def create_token(request: Request, body: TokenIn, p: Principal = Depends(require_session)):
+async def create_token(request: Request, body: TokenIn, p: Principal = Depends(require_session)):
     """Creates a personal access token. The `token` value is returned once: store it now."""
     bad = [s for s in body.scopes if s not in accounts.SCOPES]
     if bad or not body.scopes:
         raise HTTPException(422, f"Scopes must be a non-empty subset of {list(accounts.SCOPES)}")
-    if len(accounts.list_tokens(p.user)) >= 25:
+    if len(await accounts.list_tokens(p.user)) >= 25:
         raise HTTPException(409, "You have 25 active tokens; revoke one first")
-    token, info = accounts.create_token(p.user, body.name.strip(), sorted(set(body.scopes)), body.expiresInDays)
-    _audit(request, "token.create", p.user, info["id"], name=info["name"], scopes=info["scopes"], expiresAt=info["expiresAt"])
+    token, info = await accounts.create_token(p.user, body.name.strip(), sorted(set(body.scopes)), body.expiresInDays)
+    await _audit(request, "token.create", p.user, info["id"], name=info["name"], scopes=info["scopes"], expiresAt=info["expiresAt"])
     return {"token": token, **info}
 
 
 @router.delete("/tokens/{token_id}", tags=["API tokens"], summary="Revoke token", status_code=204)
-def revoke_token(request: Request, token_id: str, p: Principal = Depends(require_session)):
-    info = accounts.revoke_token(p.user, token_id)
+async def revoke_token(request: Request, token_id: str, p: Principal = Depends(require_session)):
+    info = await accounts.revoke_token(p.user, token_id)
     if not info:
         raise HTTPException(404, "No such active token")
-    _audit(request, "token.revoke", p.user, token_id, name=info["name"])
+    await _audit(request, "token.revoke", p.user, token_id, name=info["name"])
     return Response(status_code=204)
 
 
@@ -321,7 +321,7 @@ def _problems(e: dict) -> list[str]:
 
 
 @router.post("/submissions", tags=["Submissions"], summary="Submit an entry", status_code=201)
-def submit(request: Request, body: SubmissionIn, p: Principal = Depends(require_user)):
+async def submit(request: Request, body: SubmissionIn, p: Principal = Depends(require_user)):
     """Records the submission with the contributor's GitHub identity and returns a pre-filled GitHub issue URL.
     A workflow turns that issue into a pull request; maintainers review it there."""
     problems = _problems(body.entry)
@@ -345,30 +345,30 @@ def submit(request: Request, body: SubmissionIn, p: Principal = Depends(require_
     params = {"template": "add-resource.yml", "title": f"{'Update' if body.updateId else 'Add'}: {body.entry.get('acronym') or body.entry.get('name')}",
               "entry": issue_body, "update-id": body.updateId or ""}
     issue_url = f"{repo}/issues/new?{urlencode(params)}"
-    sid = accounts.record_submission(u, body.entry, body.updateId, body.notes, issue_url)
-    _audit(request, "submission.create", u, body.entry.get("id"), submission=sid, updateOf=body.updateId, name=body.entry.get("name"), via=p.kind)
+    sid = await accounts.record_submission(u, body.entry, body.updateId, body.notes, issue_url)
+    await _audit(request, "submission.create", u, body.entry.get("id"), submission=sid, updateOf=body.updateId, name=body.entry.get("name"), via=p.kind)
     # GitHub limits URL length; the form falls back to copy-and-paste for very long entries.
     return {"id": sid, "issueUrl": issue_url, "issueBody": issue_body, "tooLong": len(issue_url) > 7500, "submittedBy": u.public()}
 
 
 @router.get("/submissions", tags=["Submissions"], summary="My submissions")
-def my_submissions(p: Principal = Depends(require_user)):
-    return accounts.list_submissions(p.user)
+async def my_submissions(p: Principal = Depends(require_user)):
+    return await accounts.list_submissions(p.user)
 
 
 # ---------- activity ----------
 @router.get("/auth/activity", tags=["Auth"], summary="My activity")
-def my_activity(limit: int = 50, before: int | None = None, p: Principal = Depends(require_user)):
+async def my_activity(limit: int = 50, before: int | None = None, p: Principal = Depends(require_user)):
     """Your own sign-ins, sign-outs, tokens and submissions, newest first. Page with `before` = the last id seen."""
-    return accounts.audit_entries(p.user, limit=limit, before=before)
+    return await accounts.audit_entries(p.user, limit=limit, before=before)
 
 
 @router.get("/audit", tags=["Auth"], summary="Audit log (admins)")
-def audit_log(action: str | None = None, limit: int = 100, before: int | None = None, p: Principal = Depends(require_user)):
+async def audit_log(action: str | None = None, limit: int = 100, before: int | None = None, p: Principal = Depends(require_user)):
     """Everything: who signed in or out, created or revoked tokens, submitted entries, and every data load.
     Filter with `action` (e.g. `auth.*`, `token.create`). Superadmins only (SUPERADMIN_EMAILS)."""
     require_superadmin(p)
-    return accounts.audit_entries(None, action=action, limit=limit, before=before)
+    return await accounts.audit_entries(None, action=action, limit=limit, before=before)
 
 
 # ---------- superadmin: rate limits ----------
@@ -382,43 +382,43 @@ class UserLimitIn(BaseModel):
 
 
 @router.get("/admin/settings", tags=["Admin"], summary="Rate limits")
-def admin_settings(p: Principal = Depends(require_session)):
+async def admin_settings(p: Principal = Depends(require_session)):
     """Current rate limits and their defaults from the environment. Superadmins only."""
     require_superadmin(p)
-    return {"rateLimit": accounts.rate_limits(), "defaults": {"anonymousPerMinute": settings.RATE_LIMIT_ANON, "authenticatedPerMinute": settings.RATE_LIMIT_USER}}
+    return {"rateLimit": await accounts.rate_limits(), "defaults": {"anonymousPerMinute": settings.RATE_LIMIT_ANON, "authenticatedPerMinute": settings.RATE_LIMIT_USER}}
 
 
 @router.put("/admin/settings", tags=["Admin"], summary="Change rate limits")
-def admin_update_settings(request: Request, body: LimitsIn, p: Principal = Depends(require_session)):
+async def admin_update_settings(request: Request, body: LimitsIn, p: Principal = Depends(require_session)):
     """Change the default rate limits for everyone. Takes effect within seconds; recorded in the audit log."""
     require_superadmin(p)
-    before = accounts.rate_limits()
+    before = await accounts.rate_limits()
     if body.anonymousPerMinute is not None:
-        accounts.set_app_setting("rate_limit_anon", body.anonymousPerMinute, p.user)
+        await accounts.set_app_setting("rate_limit_anon", body.anonymousPerMinute, p.user)
     if body.authenticatedPerMinute is not None:
-        accounts.set_app_setting("rate_limit_user", body.authenticatedPerMinute, p.user)
-    after = accounts.rate_limits()
-    _audit(request, "admin.rate_limits", p.user, "settings", before=before, after=after)
+        await accounts.set_app_setting("rate_limit_user", body.authenticatedPerMinute, p.user)
+    after = await accounts.rate_limits()
+    await _audit(request, "admin.rate_limits", p.user, "settings", before=before, after=after)
     return {"rateLimit": after}
 
 
 @router.get("/admin/users", tags=["Admin"], summary="List users")
-def admin_users(q: str | None = None, p: Principal = Depends(require_session)):
+async def admin_users(q: str | None = None, p: Principal = Depends(require_session)):
     """Signed-in users with their rate-limit override and active token count. Superadmins only."""
     require_superadmin(p)
-    return accounts.list_users(q=q)
+    return await accounts.list_users(q=q)
 
 
 @router.put("/admin/users/{user_id}/rate-limit", tags=["Admin"], summary="Set a user's rate limit")
-def admin_user_limit(request: Request, user_id: int, body: UserLimitIn, p: Principal = Depends(require_session)):
+async def admin_user_limit(request: Request, user_id: int, body: UserLimitIn, p: Principal = Depends(require_session)):
     """Give one user (and all their tokens) a different limit, or null to use the default."""
     require_superadmin(p)
     if body.perMinute is not None and not 1 <= body.perMinute <= 1_000_000:
         raise HTTPException(422, "perMinute must be between 1 and 1,000,000, or null")
-    u = accounts.set_user_rate_limit(user_id, body.perMinute)
+    u = await accounts.set_user_rate_limit(user_id, body.perMinute)
     if not u:
         raise HTTPException(404, "No such user")
-    _audit(request, "admin.user_rate_limit", p.user, u.login, userId=u.id, perMinute=body.perMinute)
+    await _audit(request, "admin.user_rate_limit", p.user, u.login, userId=u.id, perMinute=body.perMinute)
     return {"user": u.public(), "rateLimit": body.perMinute}
 
 
@@ -429,7 +429,7 @@ class ReviewIn(BaseModel):
 
 
 @router.get("/admin/overview", tags=["Admin"], summary="Admin dashboard")
-def admin_overview(p: Principal = Depends(require_session)):
+async def admin_overview(p: Principal = Depends(require_session)):
     """Everything the admin dashboard shows at a glance: catalog size and evaluation coverage, the review queue,
     accounts, score changes in the latest run, what needs attention and service health. Superadmins only."""
     require_superadmin(p)
@@ -438,29 +438,29 @@ def admin_overview(p: Principal = Depends(require_session)):
     t0 = time.perf_counter()
     db_ok = True
     try:
-        store.db.value("SELECT 1")
+        await store.db.value("SELECT 1")
     except Exception:
         db_ok = False
     db_ms = round((time.perf_counter() - t0) * 1000, 1)
-    m = store.meta()
+    m = await store.meta()
     return {
-        "stats": store.stats(), "accounts": accounts.admin_counts(), "changes": store.score_changes(8), "attention": store.attention(6),
-        "queue": accounts.all_submissions("pending", limit=6), "runs": store.runs(5),
+        "stats": await store.stats(), "accounts": await accounts.admin_counts(), "changes": await store.score_changes(8), "attention": await store.attention(6),
+        "queue": await accounts.all_submissions("pending", limit=6), "runs": await store.runs(5),
         "health": {"database": {"ok": db_ok, "ms": db_ms}, "ingestedAt": m.get("ingestedAt"), "evaluation": m.get("evaluation"),
-                   "rateLimit": accounts.rate_limits(), "github": bool(settings.GITHUB_CLIENT_ID)},
+                   "rateLimit": await accounts.rate_limits(), "github": bool(settings.GITHUB_CLIENT_ID)},
     }
 
 
 @router.get("/admin/submissions", tags=["Admin"], summary="All submissions")
-def admin_submissions(status: str | None = "pending", q: str | None = None, p: Principal = Depends(require_session)):
+async def admin_submissions(status: str | None = "pending", q: str | None = None, p: Principal = Depends(require_session)):
     """Every contributor's submissions with the proposed entry, for review. Filter by `status` (`pending`, `approved`,
     `changes_requested`, `rejected` or `all`) and search with `q`. Superadmins only."""
     require_superadmin(p)
-    return accounts.all_submissions(status, q)
+    return await accounts.all_submissions(status, q)
 
 
 @router.post("/admin/submissions/{submission_id}/review", tags=["Admin"], summary="Review a submission")
-def admin_review(request: Request, submission_id: int, body: ReviewIn, p: Principal = Depends(require_session)):
+async def admin_review(request: Request, submission_id: int, body: ReviewIn, p: Principal = Depends(require_session)):
     """Records an editorial decision on a submission, with notes for the contributor. The decision is recorded in the
     audit log; merging the entry itself still happens through the pull request on GitHub. Superadmins only."""
     require_superadmin(p)
@@ -469,15 +469,15 @@ def admin_review(request: Request, submission_id: int, body: ReviewIn, p: Princi
     notes = (body.notes or "").strip() or None
     if body.decision in ("changes_requested", "rejected") and not notes:
         raise HTTPException(422, "Add a note explaining this decision")
-    s = accounts.review_submission(submission_id, body.decision, notes, p.user)
+    s = await accounts.review_submission(submission_id, body.decision, notes, p.user)
     if not s:
         raise HTTPException(404, "No such submission")
-    _audit(request, f"submission.{body.decision}", p.user, s["entryId"], submission=submission_id, notes=notes)
+    await _audit(request, f"submission.{body.decision}", p.user, s["entryId"], submission=submission_id, notes=notes)
     return s
 
 
 @router.get("/admin/catalog.csv", tags=["Admin"], summary="Export catalog (CSV)")
-def admin_catalog_csv(request: Request, p: Principal = Depends(require_session)):
+async def admin_catalog_csv(request: Request, p: Principal = Depends(require_session)):
     """Every resource with its type, domain, grade, score, adopters and version, as CSV. Superadmins only."""
     require_superadmin(p)
     import csv
@@ -488,8 +488,8 @@ def admin_catalog_csv(request: Request, p: Principal = Depends(require_session))
     buf = io.StringIO()
     w = csv.writer(buf)
     w.writerow(store.CSV_FIELDS)
-    for r in store.catalog_rows():
+    for r in await store.catalog_rows():
         w.writerow([r[k] for k in store.CSV_FIELDS])
-    _audit(request, "admin.export", p.user, "catalog.csv")
+    await _audit(request, "admin.export", p.user, "catalog.csv")
     name = (settings.site_config().get("brand") or "catalog").lower().replace(" ", "-")
     return Response(buf.getvalue(), media_type="text/csv; charset=utf-8", headers={"Content-Disposition": f'attachment; filename="{name}-catalog.csv"'})

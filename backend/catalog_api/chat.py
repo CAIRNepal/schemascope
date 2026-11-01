@@ -50,13 +50,15 @@ NEEDS = {
 }
 # "best" is not a filter (ranking already prefers high scores); only an explicit quality ask is.
 GRADE_WORDS = r"\b(high[- ]quality|high[- ]grade|grade [ab]|well[- ]evaluated)\b"
+# "Best rated" orders the relevant results by grade (relevance still decides what is relevant).
+SORT_WORDS = r"\b(best[- ]rated|top[- ]rated|highest[- ](rated|scor\w*|grade\w*)|best[- ](scor\w*|grade\w*)|by (score|grade))\b"
 # People say "vocabulary" or "standard" loosely, so only these types become a hard filter.
 STRICT_KINDS = {"ontology", "schema", "atlas", "knowledge-base"}
 
 
-def parse(text: str, history: list[str] | None = None) -> dict:
+async def parse(text: str, history: list[str] | None = None) -> dict:
     """Filters from the user's latest message (with earlier user messages as context for follow-ups)."""
-    opts = recommend.options()
+    opts = await recommend.options()
     t = text.lower()
     ctx = " ".join([*(history or [])[-3:], text]).lower()
     f: dict = {}
@@ -79,6 +81,8 @@ def parse(text: str, history: list[str] | None = None) -> dict:
             f[key] = True
     if re.search(GRADE_WORDS, t):
         f["min_grade"] = "B"
+    if re.search(SORT_WORDS, t):
+        f["sort"] = "score"
     return f
 
 
@@ -138,26 +142,27 @@ def _plain_answer(items: list[dict], relaxed: list[str]) -> str:
     return lead + " ".join(parts)
 
 
-async def stream(messages: list[dict], user_id: int | None = None, chat_id: str | None = None) -> AsyncIterator[bytes]:
-    """NDJSON events for one chat turn. Signed in (user_id): the turn is saved to chat_id, or to a new chat."""
+async def stream(messages: list[dict], user_id: int | None = None, chat_id: str | None = None, log: bool = True,
+                 session: str | None = None, sort: str | None = None) -> AsyncIterator[bytes]:
+    """NDJSON events for one chat turn. Signed in (user_id): the turn is saved to chat_id, or to a new chat.
+    With `log`, the turn also goes to the anonymous chat log (no identity), and a `log` event carries its id for feedback."""
     def ev(**d) -> bytes:
         return (json.dumps(d, ensure_ascii=False) + "\n").encode()
 
     users = [m["content"] for m in messages if m.get("role") == "user" and m.get("content")]
     question = users[-1].strip()[:600]
     if user_id:
-        from anyio import to_thread
-
         from . import chats
 
-        if not chat_id or not await to_thread.run_sync(chats.owned, user_id, chat_id):
-            c = await to_thread.run_sync(chats.start, user_id, question)
+        if not chat_id or not await chats.owned(user_id, chat_id):
+            c = await chats.start(user_id, question)
             chat_id = c["id"]
             yield ev(type="chat", id=chat_id, title=c["title"], new=True)
         else:
             yield ev(type="chat", id=chat_id, new=False)
-    filters = parse(question, users[:-1])
-    rec = recommend.recommend(question, limit=6, **filters)
+    filters = await parse(question, users[:-1])
+    sort = filters.pop("sort", None) or sort
+    rec = await recommend.recommend(question, limit=6, sort=sort, **filters)
     yield ev(type="filters", filters=rec["filters"], relaxed=rec["relaxed"], words=rec["words"])
     yield ev(type="results", items=rec["items"])
     model = None
@@ -184,12 +189,16 @@ async def stream(messages: list[dict], user_id: int | None = None, chat_id: str 
         answer[:] = [_plain_answer(rec["items"], rec["relaxed"])]
         yield ev(type="token", text=answer[0])
     if user_id and chat_id:
-        from anyio import to_thread
-
         from . import chats
 
         data = {"items": rec["items"], "filters": rec["filters"], "relaxed": rec["relaxed"], "words": rec["words"], "model": model}
-        await to_thread.run_sync(chats.add_turn, chat_id, question, "".join(answer), data)
+        await chats.add_turn(chat_id, question, "".join(answer), data)
+    if log:
+        from . import chatlog
+
+        lid = await chatlog.log_turn(session, question, {**rec["filters"], **({"sort": sort} if sort else {})},
+                                     [x["id"] for x in rec["items"]], "".join(answer), model)
+        yield ev(type="log", id=lid)
     yield ev(type="done", model=model)
 
 
@@ -197,5 +206,5 @@ def status() -> dict:
     return {"configured": bool(settings.LLM_URL), "model": settings.LLM_MODEL if settings.LLM_URL else None}
 
 
-def _store_ok() -> bool:  # used by tests
-    return bool(store.stats())
+async def _store_ok() -> bool:  # used by tests
+    return bool(await store.stats())

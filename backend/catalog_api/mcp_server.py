@@ -29,7 +29,7 @@ def _base_url() -> str:
 
 
 @mcp.tool()
-def search_catalog(
+async def search_catalog(
     query: Optional[str] = None,
     category: Optional[str] = None,
     kind: Optional[str] = None,
@@ -47,7 +47,7 @@ def search_catalog(
     grade: A–E, or "none" for not evaluated. format: e.g. OWL, OBO, JSON Schema, LinkML.
     sort: relevance (default with a query) | score | name | fair | activity | adopters.
     """
-    res = store.search(q=query, category=category, kind=kind, grade=grade, format=format, sort=sort, page=page, size=min(page_size, 50))
+    res = await store.search(q=query, category=category, kind=kind, grade=grade, format=format, sort=sort, page=page, size=min(page_size, 50))
     base = _base_url()
     items = [
         store.compact({**{k: x[k] for k in ("id", "acronym", "name", "description", "kindLabel", "categoryName", "grade", "score", "fair", "version", "lastActivity", "formats")}, "url": f"{base}/o/{x['id']}/"})
@@ -57,11 +57,11 @@ def search_catalog(
 
 
 @mcp.tool()
-def get_entry(entry_id: str, include_evidence: bool = False) -> dict:
+async def get_entry(entry_id: str, include_evidence: bool = False) -> dict:
     """Full record for one resource: description, links, license, score and per-criterion breakdown with the steps
     behind each point, quality checks, adopters, imports and reuse. Set include_evidence=true for the raw facts
     fetched from each source (large)."""
-    d = store.entry(entry_id)
+    d = await store.entry(entry_id)
     if d is None:
         return {"error": f"No entry with id '{entry_id}'. Use search_catalog to find ids."}
     facts = d["facts"] or {}
@@ -86,11 +86,11 @@ def get_entry(entry_id: str, include_evidence: bool = False) -> dict:
 
 
 @mcp.tool()
-def get_entry_history(entry_id: str) -> dict:
+async def get_entry_history(entry_id: str) -> dict:
     """Score, grade, per-criterion points and quality metrics for one resource in every archived evaluation run,
     oldest first, plus a list of what changed between runs."""
-    h = store.history(entry_id)
-    if not h and store.entry(entry_id) is None:
+    h = await store.history(entry_id)
+    if not h and await store.entry(entry_id) is None:
         return {"error": f"No entry with id '{entry_id}'."}
     from .derived import changes
 
@@ -98,25 +98,25 @@ def get_entry_history(entry_id: str) -> dict:
 
 
 @mcp.tool()
-def list_categories() -> list[dict]:
+async def list_categories() -> list[dict]:
     """Domains of the catalog, with the number of resources whose primary domain it is (count) and the number that
     are used in it at all (reach)."""
-    return [{k: c[k] for k in ("id", "name", "blurb", "count", "reach") if k in c} for c in store.categories()]
+    return [{k: c[k] for k in ("id", "name", "blurb", "count", "reach") if k in c} for c in await store.categories()]
 
 
 @mcp.tool()
-def catalog_stats() -> dict:
+async def catalog_stats() -> dict:
     """Size of the catalog, grade distribution, average score, latest evaluation run and rubric version."""
-    s = store.stats()
-    s["rubricVersion"] = (store.meta().get("rubric") or {}).get("version")
+    s = await store.stats()
+    s["rubricVersion"] = ((await store.meta()).get("rubric") or {}).get("version")
     return s
 
 
 @mcp.tool()
-def scoring_rubric() -> dict:
+async def scoring_rubric() -> dict:
     """How scores are computed: each criterion with its maximum points, formula and explanation, the penalties and
     the grade thresholds."""
-    return store.meta().get("rubric") or {"error": "Rubric metadata was not ingested."}
+    return (await store.meta()).get("rubric") or {"error": "Rubric metadata was not ingested."}
 
 
 if __name__ == "__main__":
@@ -124,7 +124,7 @@ if __name__ == "__main__":
 
 
 @mcp.tool()
-def recommend_resources(
+async def recommend_resources(
     need: str,
     category: Optional[str] = None,
     kind: Optional[str] = None,
@@ -144,7 +144,7 @@ def recommend_resources(
     """
     from . import recommend as rec
 
-    r = rec.recommend(need, limit=min(max(limit, 1), 10), category=category, kind=kind, format=format, min_grade=min_grade,
+    r = await rec.recommend(need, limit=min(max(limit, 1), 10), category=category, kind=kind, format=format, min_grade=min_grade,
                       maintained=maintained, open_license=open_license, used=used)
     base = _base_url()
     for x in r["items"]:

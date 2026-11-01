@@ -1582,25 +1582,71 @@ function aboutPage() {
 }
 
 function privacyPage() {
+  const brand = config.brand || config.name || "This site";
   const trail = [["Home", "/"], ["Privacy", "/privacy/"]];
   const body = `
 <section class="page-head wrap">
   ${crumbsHtml(trail)}
   <h1>Privacy</h1>
-  <p class="lede">This site is a static catalog. It has no accounts, no forms that store data on our servers, and no tracking unless you allow it.</p>
+  <p class="lede">What ${esc(brand)} stores, why, and what you can do about it. Reading the catalog needs no account and stores nothing about you.</p>
 </section>
 <section class="wrap section prose">
-  <h2>Analytics and cookies</h2>
+  <h2 id="summary">In short</h2>
+  <ul>
+    <li><b>Browsing</b> the catalog, the API and the documentation is anonymous.</li>
+    <li><b>Signing in</b> with GitHub stores your public GitHub profile and email so we can show your account, credit your submissions and give you a higher rate limit.</li>
+    <li><b>The recommendation chat</b> keeps an anonymous log of questions and answers, without who asked, to improve search. Signed in, you can turn this off.</li>
+    <li>We never sell data, and questions are answered on our own server: they are not sent to an outside AI service.</li>
+  </ul>
+
+  <h2 id="chat">Recommendation chat</h2>
+  <p>When you ask the assistant on <a href="/recommend/ask/">Find a resource</a>, your question is turned into a search of the catalog and a small language model running on our server writes the answer. Nothing is sent to an outside AI provider.</p>
+  <h3>The anonymous chat log</h3>
+  <p>To improve search and recommendations (for example to see which questions return poor results, and to evaluate and train better ranking and models), we keep a log of chat turns. Each entry holds:</p>
+  <ul>
+    <li>the question you typed, what the assistant understood (filters), the resources it showed and the answer it wrote, and which model wrote it;</li>
+    <li>your feedback, if you give it: 👍 or 👎 and any comment;</li>
+    <li>a random id for your browser session, so turns of one conversation stay together; and the time.</li>
+  </ul>
+  <p>The log does <b>not</b> contain your name, account, email, IP address or browser details, and it is not linked to your saved chats. Because it can't be traced back to you, we can't find or delete your entries later, so <b>please don't type personal or confidential information</b> into the chat.</p>
+  <h3>When chats are logged</h3>
+  <ul>
+    <li><b>Signed out:</b> every chat turn is logged as above. Your chats are also kept in your browser for the current session only (session storage), so you can go back to them until you close the browser.</li>
+    <li><b>Signed in:</b> logging is <b>on by default</b>. Turn it off at any time with <i>Help improve recommendations</i> in the chat's sidebar; after that, your chats are no longer logged. Feedback you give is only recorded with the log, so it isn't stored while logging is off.</li>
+  </ul>
+  <h3>Saved chats (signed in)</h3>
+  <p>Signed in, your chats are saved to your account so you can return to them. Only you can see them. Rename or delete them in the chat's sidebar; deleting removes the chat and its messages from your account.</p>
+
+  <h2 id="account">Accounts and sign-in</h2>
+  <p>Signing in uses GitHub. We store your GitHub user id, login, name, avatar and profile link, and your verified email address (used to identify administrators and to contact you about your submissions). We set a session cookie (<code>HttpOnly</code>, valid for a limited time) to keep you signed in. You can sign out at any time.</p>
+  <p><b>Personal access tokens</b> you create are stored only as a one-way hash, with their name, access, expiry and when they were last used. You can revoke them on your account page.</p>
+  <p><b>Activity log:</b> for security and accountability we record sign-ins and sign-outs, token changes, submissions, reviews and administrative changes, with the time, your account, the IP address and the browser's user agent. You can see your own activity on your account page; administrators can see the full log.</p>
+
+  <h2 id="limits">Rate limits</h2>
+  <p>To share the service fairly we count requests per minute, by IP address when signed out and by account when signed in. These counts are kept in memory for about a minute and are not stored.</p>
+
+  <h2 id="submissions">Submissions</h2>
+  <p>When you submit or correct a resource, the entry is recorded with your account so you are credited, and you finish it as a GitHub issue and pull request, which are public and subject to <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>. Reviewers' decisions and notes are shown to you on your account page.</p>
+
+  <h2 id="analytics">Analytics and cookies</h2>
   ${GTM ? `<p>With your consent we use <b>Google Analytics</b>, loaded through <b>Google Tag Manager</b> (container <code>${GTM}</code>), to count visits and see which pages are useful. Until you click <i>Accept</i>, no Google script is loaded and no analytics cookies are set. Advertising storage and personalisation remain disabled even if you accept (Google Consent Mode v2).</p>
   <p>Your choice is stored in your browser's local storage (<code>cookie-consent</code>). You can change it at any time with <a href="#" data-consent-open>Cookie settings</a>; withdrawing consent removes the Google Analytics cookies.</p>
   <p>Visitors with JavaScript disabled cannot be asked for consent; for them Google Tag Manager's no-script fallback may load.</p>` : "<p>This site does not use analytics or tracking cookies.</p>"}
-  <p>The theme preference (light/dark) is also kept in local storage. It is never sent anywhere.</p>
-  <h2>Submissions</h2>
-  <p>Submissions go through GitHub issues and pull requests, which are subject to <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>.</p>
-  <h2>Hosting</h2>
-  <p>The site is served by Vercel, which may log technical request data (such as IP addresses) for security and operations.</p>
+  <h2 id="browser">Stored in your browser</h2>
+  <ul>
+    <li><b>Local storage:</b> your theme (light or dark), cookie choice, and a few display preferences of the developer docs.</li>
+    <li><b>Session storage</b> (cleared when you close the browser): signed-out chats and the chat session id, a token you paste on the API docs page, and a newly created token so the setup instructions can show it.</li>
+    <li><b>Cookies:</b> the sign-in session cookie, and a short-lived cookie during GitHub sign-in to protect against forged requests.</li>
+  </ul>
+
+  <h2 id="hosting">Hosting</h2>
+  <p>The site runs on our own server. Its web server and hosting provider may log technical request data (such as IP addresses) for security and operations; these logs are kept briefly and not used for anything else.</p>
+
+  <h2 id="contact">Questions and requests</h2>
+  <p>To ask what we hold about your account, to have it deleted, or about anything on this page, <a href="/contact/">contact us</a>. Deleting your account removes your profile, tokens and saved chats; the anonymous chat log and public GitHub contributions are not linked to your account and stay as they are.</p>
+  ${evaluation.generatedAt ? "" : ""}<p class="muted small">Last updated 31 October 2026.</p>
 </section>`;
-  return page({ title: "Privacy", pathname: "/privacy/", body, description: "How this site handles analytics, cookies and your data.", graph: [webPage("WebPage", "/privacy/", "Privacy", "Privacy and cookies"), breadcrumbs(trail)] });
+  return page({ title: "Privacy", pathname: "/privacy/", body, description: `How ${brand} handles accounts, chats, analytics, cookies and your data.`, graph: [webPage("WebPage", "/privacy/", "Privacy", "Privacy and cookies"), breadcrumbs(trail)] });
 }
 
 function notFound() {
@@ -1847,8 +1893,9 @@ function recommendPage() {
     <span class="rec-path-tag">Chat · AI assistant</span>
     <h2>Ask in your own words</h2>
     <p>Describe what you're working on, like you would to a colleague. An assistant finds matching resources in the catalog and explains which fit best and why.</p>
-    <form class="rec-quick" action="/recommend/ask/" method="get"><label class="sr-only" for="rec-quick-q">Your question</label><input id="rec-quick-q" name="q" type="text" maxlength="600" placeholder="e.g. ${attr(examples[0])}" required><button class="btn" type="submit">Ask</button></form>
-    <div class="rec-path-examples">${examples.slice(1).map((x) => `<a href="/recommend/ask/?q=${encodeURIComponent(x)}">${esc(x)}</a>`).join("")}</div>
+    <form class="rec-quick" action="/recommend/ask/" method="post" data-ask-start><label class="sr-only" for="rec-quick-q">Your question</label><input id="rec-quick-q" name="q" type="text" maxlength="600" placeholder="e.g. ${attr(examples[0])}" required><button class="btn" type="submit">Ask</button></form>
+    <div class="rec-path-examples">${examples.slice(1).map((x) => `<a href="/recommend/ask/" data-ask-q="${attr(x)}">${esc(x)}</a>`).join("")}</div>
+    <a class="rec-path-cta" href="/recommend/ask/">Open the chat →</a>
   </div>
 </section>
 <section class="wrap section rec-how">
@@ -1887,6 +1934,7 @@ function recommendGuidedPage() {
         <label class="rec-check"><input type="checkbox" name="used"><span><b>Used by other projects</b><small>At least one known adopter</small></span></label>
       </fieldset>
       <fieldset class="rec-field"><legend><span class="rec-step">6</span> Minimum grade</legend><div class="rec-chips">${chip("min_grade", "", "Any", null, true)}${["A", "B", "C"].map((g) => chip("min_grade", g, `${g}${g === "A" ? "" : " or better"}`)).join("")}</div></fieldset>
+      <label class="rec-field"><span class="rec-q"><span class="rec-step">7</span> Order by</span><select name="sort"><option value="">Most relevant first</option><option value="score">Highest grade (among relevant)</option></select></label>
       <button type="reset" class="btn-ghost btn-sm">Start over</button>
     </form>
   </aside>

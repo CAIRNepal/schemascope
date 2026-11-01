@@ -34,6 +34,13 @@ CATEGORIES = [
     {"id": "life", "name": "Life Sciences", "icon": "dna", "blurb": "Genes and cells."},
     {"id": "earth", "name": "Earth Science", "icon": "globe", "blurb": "Planet."},
 ]
+def run(coro):
+    """Run one of the API's async functions from a test."""
+    import asyncio
+
+    return asyncio.run(coro)
+
+
 CATALOG = [
     {"id": "go", "acronym": "GO", "name": "Gene Ontology", "category": "life", "kind": "ontology", "description": "Gene function.",
      "formats": ["OWL", "OBO"], "tags": ["genes"], "obo": "go", "domains": ["earth"], "usedBy": [{"name": "UniProt", "url": "https://uniprot.org"}]},
@@ -122,10 +129,10 @@ def test_runs_stats_categories(client):
 def test_mcp_tools(client):
     from catalog_api import mcp_server
 
-    assert mcp_server.search_catalog(query="environment")["items"][0]["url"] == "https://example.org/o/envo/"
-    assert mcp_server.get_entry("go")["evaluation"]["score"] == 80
-    assert len(mcp_server.get_entry_history("go")["runs"]) == 2
-    assert "error" in mcp_server.get_entry("nope")
+    assert run(mcp_server.search_catalog(query="environment"))["items"][0]["url"] == "https://example.org/o/envo/"
+    assert run(mcp_server.get_entry("go"))["evaluation"]["score"] == 80
+    assert len(run(mcp_server.get_entry_history("go"))["runs"]) == 2
+    assert "error" in run(mcp_server.get_entry("nope"))
 
 
 def _signed_in():
@@ -339,7 +346,7 @@ def test_recommend(client):
 def test_recommend_chat_without_model(client):
     from catalog_api import chat, settings
 
-    assert chat.parse("an actively maintained open schema in JSON Schema for life sciences") == {
+    assert run(chat.parse("an actively maintained open schema in JSON Schema for life sciences")) == {
         "category": "life", "kind": "schema", "format": "JSON Schema", "maintained": True, "open_license": True}
     assert client.get("/api/recommend/chat/status").json()["available"] is False
     r = client.post("/api/recommend/chat", json={"messages": [{"role": "user", "content": "Which ontology for gene function?"}]})
@@ -359,7 +366,7 @@ def test_recommend_chat_without_model(client):
 def test_mcp_recommend_tool(client):
     from catalog_api import mcp_server
 
-    r = mcp_server.recommend_resources("gene function")
+    r = run(mcp_server.recommend_resources("gene function"))
     assert r["items"][0]["id"] == "go" and r["items"][0]["url"].endswith("/o/go/")
 
 
@@ -391,3 +398,51 @@ def test_saved_chats(client):
     assert me.delete(f"/api/chats/{cid}").status_code == 204 and me.get("/api/chats").json() == []
     r = client.get("/api/recommend", params={"limit": 2, "page": 2}).json()
     assert r["page"] == 2 and r["pages"] == 2 and len(r["items"]) == 1
+
+
+def test_every_endpoint_is_async(client):
+    """All API routes are async and query the database with the async pool (nothing blocks the event loop)."""
+    import inspect
+
+    from fastapi.routing import APIRoute
+    from catalog_api.app import api
+
+    sync = [r.path for r in api.routes if isinstance(r, APIRoute) and not inspect.iscoroutinefunction(r.endpoint)]
+    assert sync == []
+    from catalog_api import mcp_server
+    for name in ["search_catalog", "get_entry", "get_entry_history", "list_categories", "catalog_stats", "scoring_rubric", "recommend_resources"]:
+        assert inspect.iscoroutinefunction(getattr(mcp_server, name))
+
+
+def test_chat_log_feedback_and_opt_out(client):
+    from catalog_api import db
+    from catalog_api.app import _chat_window
+    _chat_window.counts.clear()
+    # Signed out: always logged, with no identity; the log id comes back for feedback.
+    anon = client.post("/api/recommend/chat", json={"session": "s1", "messages": [{"role": "user", "content": "best rated ontology for gene function"}]})
+    ev = [json.loads(line) for line in anon.text.splitlines()]
+    log = next(e for e in ev if e["type"] == "log")["id"]
+    assert client.post(f"/api/recommend/chat/feedback/{log}", json={"rating": -1, "comment": "Wanted GO first"}).status_code == 204
+    assert client.post(f"/api/recommend/chat/feedback/{log}", json={}).status_code == 422
+    assert client.post("/api/recommend/chat/feedback/nope", json={"rating": 1}).status_code == 404
+    row = run(db.one("SELECT * FROM chat_logs WHERE id = %s", (log,)))
+    assert row["session"] == "s1" and row["rating"] == -1 and row["result_ids"][0] == "go" and row["filters"].get("sort") == "score"
+    assert "user_id" not in row and "ip" not in row
+    # Signed in: logged by default; turning "improve search" off stops logging (the chat is still saved to the account).
+    me = _signed_in()
+    assert me.get("/api/auth/session").json()["user"]["improveSearch"] is True
+    assert any(json.loads(l)["type"] == "log" for l in me.post("/api/recommend/chat", json={"messages": [{"role": "user", "content": "gene"}]}).text.splitlines())
+    assert me.put("/api/auth/preferences", json={"improveSearch": False}).json() == {"improveSearch": False}
+    types = [json.loads(l)["type"] for l in me.post("/api/recommend/chat", json={"messages": [{"role": "user", "content": "gene"}]}).text.splitlines()]
+    assert "log" not in types and types[0] == "chat"
+    me.put("/api/auth/preferences", json={"improveSearch": True})
+    _chat_window.counts.clear()
+
+
+def test_relevance_first(client):
+    # Rare words outweigh common ones, and relevance comes before quality.
+    r = client.get("/api/recommend", params={"q": "gene environments"}).json()
+    assert r["items"][0]["relevance"] >= r["items"][-1]["relevance"]
+    r = client.get("/api/recommend", params={"q": "ontology", "sort": "score"}).json()
+    scores = [x["score"] or -1 for x in r["items"]]
+    assert scores == sorted(scores, reverse=True)
