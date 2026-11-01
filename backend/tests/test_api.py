@@ -446,3 +446,40 @@ def test_relevance_first(client):
     r = client.get("/api/recommend", params={"q": "ontology", "sort": "score"}).json()
     scores = [x["score"] or -1 for x in r["items"]]
     assert scores == sorted(scores, reverse=True)
+
+
+def test_feedback_on_unlogged_answer(client):
+    r = client.post("/api/recommend/chat/feedback", json={"question": "gene?", "answer": "GO", "resultIds": ["go"], "rating": 1})
+    assert r.status_code == 201
+    lid = r.json()["id"]
+    assert client.post(f"/api/recommend/chat/feedback/{lid}", json={"comment": "great"}).status_code == 204
+    me = _signed_in()
+    from catalog_api.app import _chat_window
+    _chat_window.counts.clear()
+    ev = [json.loads(l) for l in me.post("/api/recommend/chat", json={"messages": [{"role": "user", "content": "gene"}]}).text.splitlines()]
+    cid = ev[0]["id"]
+    log = next(e["id"] for e in ev if e["type"] == "log")
+    assert me.get(f"/api/chats/{cid}").json()["messages"][1]["data"]["logId"] == log
+
+
+def test_search_logs_and_admin_exports(client):
+    r = client.post("/api/logs/search", json={"source": "guided", "q": "gene", "filters": {"kind": "ontology"}, "resultCount": 2, "resultIds": ["go", "top"], "session": "s9"})
+    lid = r.json()["id"]
+    assert lid and client.post(f"/api/logs/search/{lid}/click", json={"entryId": "go"}).status_code == 204
+    client.post("/api/logs/search", json={"source": "search", "q": "zzzz", "resultCount": 0})
+    assert client.post("/api/logs/search", json={"source": "elsewhere"}).status_code == 422
+    admin = _signed_in()
+    assert client.get("/api/admin/logs/summary").status_code == 401
+    s = admin.get("/api/admin/logs/summary").json()
+    assert s["searches"]["guided"]["clicked"] >= 1 and any(x["q"] == "zzzz" for x in s["noResultQueries"])
+    rows = admin.get("/api/admin/logs/searches", params={"source": "guided"}).json()
+    assert rows[0]["clicked"] == ["go"] and rows[0]["filters"] == {"kind": "ontology"}
+    csv = admin.get("/api/admin/logs/export/searches.csv")
+    assert csv.status_code == 200 and csv.text.startswith("id,session,source,query")
+    jl = admin.get("/api/admin/logs/export/chats.jsonl")
+    assert jl.status_code == 200 and all(json.loads(l)["question"] for l in jl.text.splitlines())
+    assert admin.get("/api/admin/logs/export/users.csv").status_code == 404
+    # Opted out: not logged.
+    admin.put("/api/auth/preferences", json={"improveSearch": False})
+    assert admin.post("/api/logs/search", json={"source": "catalog", "q": "x"}).json() == {"id": None}
+    admin.put("/api/auth/preferences", json={"improveSearch": True})

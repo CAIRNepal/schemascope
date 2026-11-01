@@ -93,6 +93,13 @@ CREATE TABLE IF NOT EXISTS chat_logs (
 );
 CREATE INDEX IF NOT EXISTS chat_logs_created ON chat_logs (created_at DESC);
 ALTER TABLE users ADD COLUMN IF NOT EXISTS improve_search boolean NOT NULL DEFAULT true;   -- may chats be logged (no identity)
+-- Search log (guided recommendations, the search bar, catalog filters), also without identity: what people looked for,
+-- how many results they got, the top results and what they clicked.
+CREATE TABLE IF NOT EXISTS search_logs (
+  id text PRIMARY KEY, session text, source text NOT NULL, query text, filters jsonb, result_count int, result_ids text[],
+  clicked text[] NOT NULL DEFAULT '{}', created_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS search_logs_created ON search_logs (created_at DESC);
 """
 
 _pool: ConnectionPool | None = None
@@ -149,8 +156,9 @@ async def apool() -> AsyncConnectionPool:
 
 
 async def aclose() -> None:
+    """Close the async pool at shutdown (only if it belongs to this event loop; a pool from another loop is dropped)."""
     global _apool, _apool_loop
-    if _apool is not None:
+    if _apool is not None and _apool_loop is asyncio.get_running_loop():
         await _apool.close()
     _apool, _apool_loop = None, None
 

@@ -188,17 +188,18 @@ async def stream(messages: list[dict], user_id: int | None = None, chat_id: str 
             yield ev(type="notice", text="The assistant is busy, so here are the best matches directly.")
         answer[:] = [_plain_answer(rec["items"], rec["relaxed"])]
         yield ev(type="token", text=answer[0])
-    if user_id and chat_id:
-        from . import chats
-
-        data = {"items": rec["items"], "filters": rec["filters"], "relaxed": rec["relaxed"], "words": rec["words"], "model": model}
-        await chats.add_turn(chat_id, question, "".join(answer), data)
+    lid = None
     if log:
         from . import chatlog
 
         lid = await chatlog.log_turn(session, question, {**rec["filters"], **({"sort": sort} if sort else {})},
                                      [x["id"] for x in rec["items"]], "".join(answer), model)
         yield ev(type="log", id=lid)
+    if user_id and chat_id:
+        from . import chats
+
+        data = {"items": rec["items"], "filters": rec["filters"], "relaxed": rec["relaxed"], "words": rec["words"], "model": model, "logId": lid}
+        await chats.add_turn(chat_id, question, "".join(answer), data)
     yield ev(type="done", model=model)
 
 

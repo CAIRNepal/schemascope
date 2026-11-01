@@ -69,6 +69,10 @@
       const r = await (await fetch(`/api/recommend?${p}&limit=${SIZE}&page=${page}`)).json();
       if (n !== seq) return;
       render(r);
+      if (page === 1) {
+        const f = Object.fromEntries([...p].filter(([k]) => k !== "q"));
+        window.searchLog?.("guided", p.get("q") || "", f, (r.items || []).map((x) => x.id), r.total || 0, list);
+      }
       if (scroll) $(".rec-results-head").scrollIntoView({ behavior: "smooth", block: "start" });
     } catch {
       if (n === seq) list.innerHTML = `<li class="rec-empty">Couldn't load recommendations. Please try again.</li>`;

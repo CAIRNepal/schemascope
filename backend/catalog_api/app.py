@@ -6,6 +6,7 @@
 """
 from __future__ import annotations
 
+import json
 from contextlib import asynccontextmanager
 from typing import Optional
 
@@ -377,6 +378,24 @@ class FeedbackIn(BaseModel):
     comment: Optional[str] = Field(None, max_length=2000)
 
 
+class TurnFeedbackIn(FeedbackIn):
+    question: str = Field(max_length=2000)
+    answer: str = Field("", max_length=8000)
+    resultIds: list[str] = Field(default_factory=list, max_length=20)
+    session: Optional[str] = Field(None, max_length=64)
+
+
+@api.post("/api/recommend/chat/feedback", tags=["Recommend"], summary="Rate an answer that wasn't logged", status_code=201)
+async def chat_feedback_new(body: TurnFeedbackIn):
+    """For answers that weren't logged (logging off, or older saved chats): giving feedback logs that one question and
+    answer, without identity, together with the feedback."""
+    if body.rating is None and not (body.comment or "").strip():
+        raise HTTPException(422, "Send a rating, a comment or both")
+    lid = await chatlog.log_turn(body.session, body.question, {}, body.resultIds, body.answer, None)
+    await chatlog.feedback(lid, body.rating, body.comment)
+    return {"id": lid}
+
+
 @api.post("/api/recommend/chat/feedback/{log_id}", tags=["Recommend"], summary="Rate an answer", status_code=204)
 async def chat_feedback(log_id: str, body: FeedbackIn):
     if body.rating is None and not (body.comment or "").strip():
@@ -399,7 +418,90 @@ async def update_prefs(request: Request, body: PrefsIn, p: auth.Principal = Depe
     return {"improveSearch": body.improveSearch}
 
 
-@api.get("/api/admin/chat-feedback", tags=["Admin"], summary="Chat log and feedback")
-async def admin_chat_feedback(p: auth.Principal = Depends(auth.require_session)):
+# ---------- search logs (anonymous) ----------
+class SearchLogIn(BaseModel):
+    source: str = Field(pattern="^(guided|search|catalog)$", description="Where the search happened")
+    q: Optional[str] = Field(None, max_length=500)
+    filters: dict = Field(default_factory=dict)
+    resultCount: int = Field(0, ge=0)
+    resultIds: list[str] = Field(default_factory=list, max_length=20)
+    clicked: list[str] = Field(default_factory=list, max_length=5, description="A result opened before the search was logged")
+    session: Optional[str] = Field(None, max_length=64)
+
+
+class ClickIn(BaseModel):
+    entryId: str = Field(max_length=100)
+
+
+async def _may_log(request: Request) -> bool:
+    try:
+        p = await auth.resolve(request)
+    except HTTPException:
+        p = None
+    return p.user.improve_search if p else True
+
+
+@api.post("/api/logs/search", tags=["Recommend"], summary="Log a search")
+async def log_search(request: Request, body: SearchLogIn):
+    if not await _may_log(request):
+        return {"id": None}
+    filters = {k: v for k, v in body.filters.items() if isinstance(k, str) and len(k) < 40 and isinstance(v, (str, bool, int)) and len(str(v)) < 200}
+    lid = await chatlog.log_search(body.session, body.source, body.q, filters, body.resultCount, body.resultIds)
+    for c in body.clicked:
+        await chatlog.click(lid, c)
+    return {"id": lid}
+
+
+@api.post("/api/logs/search/{log_id}/click", tags=["Recommend"], summary="Log a click on a search result", status_code=204)
+async def log_click(log_id: str, body: ClickIn):
+    await chatlog.click(log_id, body.entryId)
+    return Response(status_code=204)
+
+
+# ---------- superadmin: logs and feedback, with exports ----------
+def _export(rows: list[dict], fmt: str, name: str) -> Response:
+    import csv
+    import io
+
+    if fmt == "jsonl":
+        text = "\n".join(json.dumps(r, ensure_ascii=False) for r in rows) + ("\n" if rows else "")
+        return Response(text, media_type="application/x-ndjson; charset=utf-8", headers={"Content-Disposition": f'attachment; filename="{name}.jsonl"'})
+    buf = io.StringIO()
+    if rows:
+        w = csv.DictWriter(buf, fieldnames=list(rows[0]))
+        w.writeheader()
+        for r in rows:
+            w.writerow({k: (json.dumps(v, ensure_ascii=False) if isinstance(v, (dict, list)) else v) for k, v in r.items()})
+    return Response(buf.getvalue(), media_type="text/csv; charset=utf-8", headers={"Content-Disposition": f'attachment; filename="{name}.csv"'})
+
+
+async def _admin(request: Request) -> auth.Principal:
+    p = await auth.require_session(request)
     auth.require_superadmin(p)
+    return p
+
+
+@api.get("/api/admin/logs/summary", tags=["Admin"], summary="Logs and feedback summary")
+async def admin_logs_summary(p: auth.Principal = Depends(_admin)):
     return await chatlog.summary()
+
+
+@api.get("/api/admin/logs/chats", tags=["Admin"], summary="Chat log")
+async def admin_logs_chats(rating: Optional[str] = Query(None, pattern="^(good|bad|comment|rated)$"), q: Optional[str] = None,
+                           before: Optional[str] = None, limit: int = Query(50, ge=1, le=500), p: auth.Principal = Depends(_admin)):
+    return await chatlog.chat_rows(rating, q, before, limit)
+
+
+@api.get("/api/admin/logs/searches", tags=["Admin"], summary="Search log")
+async def admin_logs_searches(source: Optional[str] = Query(None, pattern="^(guided|search|catalog)$"), q: Optional[str] = None, empty: bool = False,
+                              before: Optional[str] = None, limit: int = Query(50, ge=1, le=500), p: auth.Principal = Depends(_admin)):
+    return await chatlog.search_rows(source, q, before, limit, empty)
+
+
+@api.get("/api/admin/logs/export/{kind}.{fmt}", tags=["Admin"], summary="Export logs")
+async def admin_logs_export(request: Request, kind: str, fmt: str, p: auth.Principal = Depends(_admin)):
+    if kind not in ("chats", "searches") or fmt not in ("csv", "jsonl"):
+        raise HTTPException(404, "Use chats or searches, and csv or jsonl")
+    rows = await (chatlog.chat_rows(limit=10000) if kind == "chats" else chatlog.search_rows(limit=10000))
+    await auth._audit(request, "admin.export", p.user, f"{kind}.{fmt}", rows=len(rows))
+    return _export(rows, fmt, f"{kind}-log")

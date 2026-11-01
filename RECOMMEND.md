@@ -87,14 +87,25 @@ notice. The chat has its own rate limit: `CHAT_RATE_ANON` (default 6/min per IP)
 | | Signed out | Signed in |
 |---|---|---|
 | Chat history | In the browser, for the session (`sessionStorage`), listed in the sidebar | Saved to the account (`chats`, `chat_messages`): list, rename, delete |
-| Anonymous log (`chat_logs`) | Always | On by default; *Help improve recommendations* turns it off (`users.improve_search`, `PUT /api/auth/preferences`) |
-| Feedback (👍 / 👎 / comment) | Yes | Yes, while logging is on |
+| Anonymous logs (`chat_logs`, `search_logs`) | Always | On by default; *Help improve recommendations* in the account's **Settings** turns it off (`users.improve_search`, `PUT /api/auth/preferences`) |
+| Feedback (👍 / 👎 / comment) on every answer | Yes | Yes. If the answer wasn't logged, giving feedback logs that one answer with it (`POST /api/recommend/chat/feedback`) |
 
-`chat_logs` holds the question, filters, the ids of the results shown, the answer, the model, a random per-browser-
-session id, the time, and feedback (`rating` 1/-1, `comment`). It has **no user id, IP address or link to saved chats**
-by design. Its purpose is to improve search: find questions with poor or 👎 answers, build evaluation sets, and tune
-ranking, rules, prompts and models. Superadmins can read a summary at `GET /api/admin/chat-feedback`. The privacy
-policy (`/privacy/#chat`) describes this to people.
+**`chat_logs`**: question, filters, ids of the results shown, answer, model, a random per-browser-session id, time, and
+feedback (`rating` 1/-1, `comment`). Saved chats keep the log id of each answer, so feedback works on reopened chats.
+
+**`search_logs`**: searches from Guided (`guided`), the search bar (`search`) and the catalog filters (`catalog`): the
+words, filters, result count, the top 20 result ids, which results were opened (`clicked`), the session id and time.
+The browser logs a search once typing pauses (1.5 s) via `POST /api/logs/search`; opening a result is recorded with
+`POST /api/logs/search/{id}/click` (or sent with the entry if it hadn't been logged yet). Shared helper:
+`window.searchLog` in `src/assets/app.js`.
+
+Neither table has a user id, IP address or link to saved chats, by design. Purpose: improve search (questions with 👎
+or no results, click-through), build evaluation sets, and tune ranking, rules, prompts and models.
+
+**Admin:** the dashboard's *Logs & feedback* view (`/admin/#logs`) shows ratings, searches per source with no-result
+and click-through rates, the most common queries and the queries that found nothing, and filterable tables of chat
+answers and searches. Export with `GET /api/admin/logs/export/{chats|searches}.{csv|jsonl}` (JSONL: one record per
+line, for evaluation and training; exports are audit-logged). The privacy policy (`/privacy/#chat`) explains all of this.
 
 ## 4. Front end
 

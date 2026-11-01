@@ -76,11 +76,14 @@
     log.append(d);
     return d;
   };
-  const finishBot = (el, text, data, model, logId, rating) => {
+  const finishBot = (el, text, data, model, logId, rating, question) => {
+    el.dataset.question = question || "";
+    el.dataset.answer = text;
+    el.dataset.results = JSON.stringify((data.items || []).map((x) => x.id).slice(0, 20));
     el.querySelector(".cg-text").innerHTML = linkify(text, data.items);
     el.querySelector(".cg-extra").innerHTML = recsHtml(data);
     el.querySelector(".cg-actions").innerHTML = `<button type="button" data-copy-text title="Copy the answer">Copy</button>
-      ${logId ? `<span class="cg-fb" role="group" aria-label="Was this helpful?"><button type="button" data-rate="1" aria-pressed="${rating === 1}" title="Good answer">👍</button><button type="button" data-rate="-1" aria-pressed="${rating === -1}" title="Bad answer">👎</button><button type="button" data-comment>Comment</button></span>` : ""}
+      <span class="cg-fb" role="group" aria-label="Was this helpful?"><button type="button" data-rate="1" aria-pressed="${rating === 1}" title="Good answer">👍</button><button type="button" data-rate="-1" aria-pressed="${rating === -1}" title="Bad answer">👎</button><button type="button" data-comment>Comment</button></span>
       ${model ? `<span>Written by ${esc(model)}</span>` : ""}`;
     el.dataset.log = logId || "";
     el.querySelector("[data-copy-text]").addEventListener("click", async (e) => {
@@ -88,7 +91,15 @@
     });
   };
   // Feedback: 👍 / 👎 and an optional comment, attached to the anonymous log of that answer.
-  const sendFeedback = (logId, body) => fetch(`/api/recommend/chat/feedback/${encodeURIComponent(logId)}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  // Answers that weren't logged (logging off, older chats) are logged together with their first feedback.
+  async function sendFeedback(msg, body) {
+    const logId = msg.dataset.log;
+    if (logId) return fetch(`/api/recommend/chat/feedback/${encodeURIComponent(logId)}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    const r = await fetch("/api/recommend/chat/feedback", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...body, question: msg.dataset.question || "(unknown)", answer: msg.dataset.answer || "", resultIds: JSON.parse(msg.dataset.results || "[]"), session: sessionId }) });
+    if (r.ok) msg.dataset.log = (await r.json()).id;
+    return r;
+  }
   const remember = (logId, patch) => {
     if (user) return;
     const list = localChats();
@@ -97,14 +108,13 @@
   };
   log.addEventListener("click", async (e) => {
     const msg = e.target.closest(".cg-msg.bot");
-    const logId = msg?.dataset.log;
-    if (!logId) return;
+    if (!msg) return;
     const rate = e.target.closest("[data-rate]");
     if (rate) {
       const v = Number(rate.dataset.rate);
       msg.querySelectorAll("[data-rate]").forEach((b) => b.setAttribute("aria-pressed", String(b === rate)));
-      await sendFeedback(logId, { rating: v }).catch(() => {});
-      remember(logId, { rating: v });
+      await sendFeedback(msg, { rating: v }).catch(() => {});
+      remember(msg.dataset.log, { rating: v });
       if (v === -1 && !msg.querySelector(".cg-fb-form")) openComment(msg, "What was wrong or missing?");
       else flash(msg, "Thanks for the feedback.");
     } else if (e.target.closest("[data-comment]") && !msg.querySelector(".cg-fb-form")) openComment(msg, "Tell us what would have helped");
@@ -123,7 +133,7 @@
     f.addEventListener("click", (e) => { if (e.target.closest("[data-cancel]")) f.remove(); });
     f.addEventListener("submit", async (e) => {
       e.preventDefault();
-      await sendFeedback(msg.dataset.log, { comment: f.querySelector("textarea").value }).catch(() => {});
+      await sendFeedback(msg, { comment: f.querySelector("textarea").value }).catch(() => {});
       f.remove();
       flash(msg, "Thanks, that helps us improve.");
     });
@@ -176,7 +186,7 @@
           else if (ev.type === "done") model = ev.model;
         }
       }
-      finishBot(el, text, data, model, logId);
+      finishBot(el, text, data, model, logId, null, q);
       history.push({ role: "assistant", content: text });
       if (user && chatId) touchChat(chatId);
       if (!user) {
@@ -255,9 +265,10 @@
     }
     if (!c) return newChat();
     chatId = c.id; history = []; log.innerHTML = ""; setEmpty(!c.messages.length); setTitle(c.title);
+    let lastQ = "";
     for (const m of c.messages) {
-      if (m.role === "user") userMsg(m.content);
-      else finishBot(botMsg(), m.content, m.data || {}, m.data?.model, m.logId, m.rating);
+      if (m.role === "user") { userMsg(m.content); lastQ = m.content; }
+      else finishBot(botMsg(), m.content, m.data || {}, m.data?.model, m.logId || m.data?.logId, m.rating, lastQ);
       history.push({ role: m.role, content: m.content });
     }
     window.history.replaceState(null, "", id.startsWith("l-") ? "/recommend/ask/" : `/recommend/ask/?chat=${encodeURIComponent(id)}`);
@@ -274,18 +285,10 @@
   fetch("/api/auth/session", { credentials: "same-origin" }).then((r) => r.json()).catch(() => ({})).then(async (s) => {
     user = s?.user || null;
     $("[data-save-note]").innerHTML = user
-      ? `Your chats are saved to your account.${user.improveSearch ? " Questions and answers are also logged without your identity to improve search." : ""} <a href="/privacy/#chat">Privacy</a>`
+      ? `Your chats are saved to your account.${user.improveSearch ? " Questions and answers are also logged without your identity to improve search" : " Logging to improve search is off"} (<a href="/account/#settings">change in Settings</a>).`
       : `Chats are logged without your identity to improve search. <a href="/privacy/#chat">Privacy</a>`;
     if (user) {
       chats = await fetch("/api/chats", { credentials: "same-origin" }).then((r) => (r.ok ? r.json() : [])).catch(() => []);
-      // "Help improve recommendations" (on by default): log chats without identity.
-      const foot = $(".cg-side-foot");
-      foot.insertAdjacentHTML("afterbegin", `<label class="cg-improve"><input type="checkbox" data-improve${user.improveSearch ? " checked" : ""}><span><b>Help improve recommendations</b><small>Log my questions and answers without my identity. <a href="/privacy/#chat">Privacy</a></small></span></label>`);
-      foot.querySelector("[data-improve]").addEventListener("change", async (e) => {
-        const on = e.target.checked;
-        const r = await fetch("/api/auth/preferences", { method: "PUT", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ improveSearch: on }) });
-        if (!r.ok) e.target.checked = !on; else user.improveSearch = on;
-      });
     } else chats = localChats().map(({ id, title }) => ({ id, title }));
     renderList();
     if (user && params.get("chat")) await openChat(params.get("chat"));

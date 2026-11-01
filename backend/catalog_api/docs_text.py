@@ -279,11 +279,37 @@ OPS: dict[tuple[str, str], dict] = {
              "log (no identity) and used to improve recommendations.",
         "p": {"log_id": "The id from the `log` event of the chat stream."},
     },
+    ("post", "/api/recommend/chat/feedback"): {
+        "d": "Rate an answer that wasn't logged (for example with *Help improve recommendations* off): the question and answer "
+             "are logged once, without identity, together with your `rating` and/or `comment`. **Returns** the new log `id`, "
+             "for further feedback on the same answer.",
+    },
     ("put", "/api/auth/preferences"): {
         "d": "Your preferences. `improveSearch` (default on): let your chats be logged, without your identity, to improve "
              "recommendations. Turn it off and your chats are only kept in your account.",
     },
-    ("get", "/api/admin/chat-feedback"): {"d": "**Superadmins only.** How chat answers are rated, and the most recent logged turns."},
+    ("post", "/api/logs/search"): {
+        "d": "Used by the site to log a search (guided recommendations, the search bar, catalog filters) without identity: the "
+             "words, filters, number of results and the top results. Signed-in users with *Help improve recommendations* off are "
+             "not logged (the response `id` is null). **Returns** the log `id`, for recording which result was clicked.",
+    },
+    ("post", "/api/logs/search/{log_id}/click"): {"d": "Records which result of a logged search was opened.", "p": {"log_id": "The `id` from `POST /api/logs/search`."}},
+    ("get", "/api/admin/logs/summary"): {"d": "**Superadmins only.** Chat ratings and comments, searches per source (with no-result and click-through counts), the most common queries and the queries that found nothing."},
+    ("get", "/api/admin/logs/chats"): {
+        "d": "**Superadmins only.** Logged chat turns, newest first: question, what was understood, results shown, answer, model and feedback.",
+        "p": {"rating": "`good`, `bad`, `comment` (has a comment) or `rated` (any feedback).", "q": "Only questions containing this text.",
+              "before": "Paging: the `createdAt` of the last item you received.", "limit": "How many, from 1 to 500."},
+    },
+    ("get", "/api/admin/logs/searches"): {
+        "d": "**Superadmins only.** Logged searches, newest first.",
+        "p": {"source": "`guided`, `search` or `catalog`.", "q": "Only queries containing this text.", "empty": "Only searches that found nothing.",
+              "before": "Paging: the `createdAt` of the last item you received.", "limit": "How many, from 1 to 500."},
+    },
+    ("get", "/api/admin/logs/export/{kind}.{fmt}"): {
+        "d": "**Superadmins only.** Download a log (up to the latest 10,000 records): `chats` or `searches`, as `csv` or `jsonl` "
+             "(one JSON record per line, convenient for evaluation and training). Exports are recorded in the audit log.",
+        "p": {"kind": "`chats` or `searches`.", "fmt": "`csv` or `jsonl`."},
+    },
     ("get", "/api/chats"): {"d": "Your saved recommendation chats, most recent first. Chats are saved automatically when you are signed in."},
     ("get", "/api/chats/{chat_id}"): {"d": "One saved chat with every question, answer and the recommendations that were shown.", "p": {"chat_id": "The chat's `id` from `GET /api/chats`."}},
     ("patch", "/api/chats/{chat_id}"): {"d": "Renames a saved chat.", "p": {"chat_id": "The chat's `id` from `GET /api/chats`."}},
