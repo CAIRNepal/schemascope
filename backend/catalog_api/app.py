@@ -502,7 +502,7 @@ async def admin_logs_chats(rating: Optional[str] = Query(None, pattern="^(good|b
 
 
 @api.get("/api/admin/logs/searches", tags=["Admin"], summary="Search log")
-async def admin_logs_searches(source: Optional[str] = Query(None, pattern="^(guided|search|catalog)$"), q: Optional[str] = None, empty: bool = False,
+async def admin_logs_searches(source: Optional[str] = Query(None, pattern="^(guided|search|catalog|mcp)$"), q: Optional[str] = None, empty: bool = False,
                               before: Optional[str] = None, limit: int = Query(50, ge=1, le=500), p: auth.Principal = Depends(_admin)):
     return await chatlog.search_rows(source, q, before, limit, empty)
 

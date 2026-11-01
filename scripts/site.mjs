@@ -1628,6 +1628,7 @@ function privacyPage() {
     <li>a random id for your browser session, so turns of one conversation stay together; and the time.</li>
   </ul>
   <p>For each <b>search</b> (the guided questions on Find a resource, the search bar, and the catalog's filters) it holds the words and filters used, how many results there were, the top results, which result you opened, the session id and the time. Searches are logged once you stop typing, not every keystroke.</p>
+  <p>For each <b>MCP tool call</b> (an AI assistant using the catalog through <a href="/mcp-docs/">MCP</a>) it holds the tool used, its search words or the resource it looked up, the filters, how many results there were, the top results and the time. Your access token, account and IP address are not stored with it, and calls are not logged if you turned <i>Help improve recommendations</i> off.</p>
   <p>The log does <b>not</b> contain your name, account, email, IP address or browser details, and it is not linked to your saved chats. Because it can't be traced back to you, we can't find or delete your entries later, so <b>please don't type personal or confidential information</b> into the chat.</p>
   <h3>When chats are logged</h3>
   <ul>
@@ -2131,7 +2132,7 @@ function adminPage() {
       <div class="acc-card acc-tablewrap"><table class="acc-table adm-logtable"><thead><tr><th>When</th><th>Question</th><th>Answer</th><th>Shown</th><th>Feedback</th></tr></thead><tbody data-chatlog></tbody></table></div>
       <p><button type="button" class="btn-ghost btn-sm" data-chatlog-more hidden>Older</button></p>
       <div class="acc-intro adm-below"><div><h3 class="adm-h3">Searches</h3></div><div class="adm-actions"><a class="btn-ghost btn-sm" href="/api/admin/logs/export/searches.csv" download>↓ CSV</a><a class="btn-ghost btn-sm" href="/api/admin/logs/export/searches.jsonl" download>↓ JSONL</a></div></div>
-      <div class="acc-filters"><input type="search" data-searchlog-q placeholder="Search queries…" aria-label="Search queries"><select data-searchlog-source aria-label="Source"><option value="">All sources</option><option value="guided">Guided</option><option value="search">Search bar</option><option value="catalog">Catalog filters</option></select><label class="adm-check"><input type="checkbox" data-searchlog-empty> No results only</label></div>
+      <div class="acc-filters"><input type="search" data-searchlog-q placeholder="Search queries…" aria-label="Search queries"><select data-searchlog-source aria-label="Source"><option value="">All sources</option><option value="guided">Guided</option><option value="search">Search bar</option><option value="catalog">Catalog filters</option><option value="mcp">MCP (AI agents)</option></select><label class="adm-check"><input type="checkbox" data-searchlog-empty> No results only</label></div>
       <div class="acc-card acc-tablewrap"><table class="acc-table adm-logtable"><thead><tr><th>When</th><th>Source</th><th>Query</th><th>Filters</th><th class="num">Results</th><th>Opened</th></tr></thead><tbody data-searchlog></tbody></table></div>
       <p><button type="button" class="btn-ghost btn-sm" data-searchlog-more hidden>Older</button></p>
     </section>

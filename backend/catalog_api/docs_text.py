@@ -285,7 +285,7 @@ OPS: dict[tuple[str, str], dict] = {
              "for further feedback on the same answer.",
     },
     ("put", "/api/auth/preferences"): {
-        "d": "Your preferences. `improveSearch` (default on): let your chats be logged, without your identity, to improve "
+        "d": "Your preferences. `improveSearch` (default on): let your chats, searches and MCP tool calls be logged, without your identity, to improve "
              "recommendations. Turn it off and your chats are only kept in your account.",
     },
     ("get", "/api/auth/usage"): {"d": "How many requests your account (session and all your tokens together) made in the last hour and the last 24 hours, and your limit per minute."},
@@ -309,7 +309,7 @@ OPS: dict[tuple[str, str], dict] = {
     },
     ("get", "/api/admin/logs/searches"): {
         "d": "**Superadmins only.** Logged searches, newest first.",
-        "p": {"source": "`guided`, `search` or `catalog`.", "q": "Only queries containing this text.", "empty": "Only searches that found nothing.",
+        "p": {"source": "`guided`, `search`, `catalog` or `mcp` (tool calls from AI agents; the tool is in `filters.tool`).", "q": "Only queries containing this text.", "empty": "Only searches that found nothing.",
               "before": "Paging: the `createdAt` of the last item you received.", "limit": "How many, from 1 to 500."},
     },
     ("get", "/api/admin/logs/export/{kind}.{fmt}"): {

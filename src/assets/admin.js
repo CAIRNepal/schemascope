@@ -312,7 +312,7 @@
   $("[data-audit-more]").addEventListener("click", () => activity(true));
 
   // ---------- logs & feedback ----------
-  const SRC = { guided: "Guided", search: "Search bar", catalog: "Catalog filters" };
+  const SRC = { guided: "Guided", search: "Search bar", catalog: "Catalog filters", mcp: "MCP" };
   async function logs() {
     const s = await api("/api/admin/logs/summary");
     const c = s.chats || {};
@@ -322,6 +322,7 @@
     $("[data-log-stats]").innerHTML = [
       card("Chat answers", c.turns, `${fmt(c.sessions)} sessions · ${fmt(c.good)} 👍 · ${fmt(c.bad)} 👎 · ${fmt(c.comments)} comments`),
       ...["guided", "search", "catalog"].map((k) => card(`${SRC[k]} searches`, src(k).count, `${pct(src(k).noResults, src(k).count)} found nothing · ${pct(src(k).clicked, src(k).count)} opened a result`)),
+      card("MCP tool calls", src("mcp").count, `From AI agents · ${pct(src("mcp").noResults, src("mcp").count)} found nothing`),
     ].join("");
     const ql = (rows, extra) => rows.length ? rows.map((r) => `<li>${esc(r.q)}<span>${fmt(r.n)}×${extra ? extra(r) : ""}</span></li>`).join("") : `<li class="muted">Nothing yet.</li>`;
     $("[data-top-queries]").innerHTML = ql(s.topQueries, (r) => (r.fewest === 0 ? " · sometimes no results" : ""));
@@ -350,7 +351,7 @@
     const rows = await api(`/api/admin/logs/searches?limit=50${source ? `&source=${source}` : ""}${q ? `&q=${encodeURIComponent(q)}` : ""}${empty ? "&empty=true" : ""}${before}`);
     searchRows = reset ? rows : searchRows.concat(rows);
     $("[data-searchlog]").innerHTML = searchRows.length ? searchRows.map((r) => `<tr>
-        <td class="small">${when(r.createdAt)}</td><td>${esc(SRC[r.source] || r.source)}</td><td class="q">${esc(r.query || "—")}</td>
+        <td class="small">${when(r.createdAt)}</td><td>${esc(SRC[r.source] || r.source)}${r.source === "mcp" && r.filters?.tool ? `<br><small class="muted">${esc(r.filters.tool)}</small>` : ""}</td><td class="q">${esc(r.query || "—")}</td>
         <td class="small">${esc(Object.entries(r.filters || {}).map(([k, v]) => (v === true ? k : `${k}: ${v}`)).join(" · ") || "—")}</td>
         <td class="num">${fmt(r.resultCount)}</td>
         <td class="small">${(r.clicked || []).map((id) => `<a href="/o/${esc(id)}/">${esc(id)}</a>`).join(", ") || "—"}</td></tr>`).join("")

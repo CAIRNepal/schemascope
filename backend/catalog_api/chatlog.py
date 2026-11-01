@@ -29,7 +29,7 @@ async def feedback(log_id: str, rating: int | None, comment: str | None) -> bool
     ))
 
 
-SOURCES = ("guided", "search", "catalog")
+SOURCES = ("guided", "search", "catalog", "mcp")   # mcp: tool calls from AI agents (logged server-side)
 
 
 async def log_search(session: str | None, source: str, query: str | None, filters: dict, result_count: int, result_ids: list[str]) -> str:
