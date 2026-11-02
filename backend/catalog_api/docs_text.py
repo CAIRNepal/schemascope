@@ -246,6 +246,92 @@ OPS: dict[tuple[str, str], dict] = {
         "d": "**Superadmins only.** Downloads every resource as CSV: id, acronym, name, type, domain, grade, score, FAIR score, "
              "adopters, version, last activity and whether it is legacy.",
     },
+    # ---------- Recommend ----------
+    ("get", "/api/recommend/options"): {
+        "d": "The choices for guided recommendations: the areas (domains), types and file formats in the catalog with how many "
+             "resources each has, and the must-haves you can ask for (actively maintained, open licence, used by other projects).",
+    },
+    ("get", "/api/recommend"): {
+        "d": "Recommends resources for a need, best first, with the reasons for each. Describe the need in a few words, choose "
+             "filters, or both.\n\n"
+             "Results are ranked by how well they match your words, their evaluation score, how widely they are used and how "
+             "recently they were updated. If the filters leave nothing, they are relaxed one at a time (most specific first) and "
+             "`relaxed` lists which.\n\n"
+             "**Returns** `items` (each with `match`, a 0–1 ranking score, and `why`, the reasons in words), `filters` as applied, "
+             "`relaxed` and `total`.",
+        "p": {
+            "q": "The need in your own words, e.g. `mouse brain anatomy` or `describe research datasets`.",
+            "category": "Only this area (domain id from `GET /api/recommend/options`).",
+            "kind": "Only this type, e.g. `ontology` or `schema`.",
+            "format": "Only resources available in this format, e.g. `OWL` or `JSON Schema`.",
+            "min_grade": "Only resources graded this well or better: `A` (best) to `E`.",
+            "maintained": "Only resources updated in the last two years.",
+            "open_license": "Only resources under an open licence (CC0, CC BY, MIT, Apache, BSD, GPL and similar).",
+            "used": "Only resources with at least one known adopter.",
+            "limit": "How many recommendations per page, from 1 to 20.",
+            "page": "Which page of recommendations, starting at 1 (the best 200 matches are ranked).",
+            "sort": "`relevance` (default): best match to your words first, quality only breaks ties. `score`: the relevant "
+                    "results ordered by evaluation score.",
+        },
+    },
+    ("post", "/api/recommend/chat/feedback/{log_id}"): {
+        "d": "Rate a chat answer: `rating` 1 (good) or -1 (bad), and/or a `comment`. Feedback is stored with the anonymous chat "
+             "log (no identity) and used to improve recommendations.",
+        "p": {"log_id": "The id from the `log` event of the chat stream."},
+    },
+    ("post", "/api/recommend/chat/feedback"): {
+        "d": "Rate an answer that wasn't logged (for example with *Help improve recommendations* off): the question and answer "
+             "are logged once, without identity, together with your `rating` and/or `comment`. **Returns** the new log `id`, "
+             "for further feedback on the same answer.",
+    },
+    ("put", "/api/auth/preferences"): {
+        "d": "Your preferences. `improveSearch` (default on): let your chats, searches and MCP tool calls be logged, without your identity, to improve "
+             "recommendations. Turn it off and your chats are only kept in your account.",
+    },
+    ("get", "/api/auth/usage"): {"d": "How many requests your account (session and all your tokens together) made in the last hour and the last 24 hours, and your limit per minute."},
+    ("get", "/api/admin/rate"): {
+        "d": "**Superadmins only.** Who used the API most in the last `minutes` (accounts by login; signed-out visitors by a hash of their IP, never the IP itself), with their peak per minute, and the active blocks.",
+        "p": {"minutes": "The window to report, from 1 to 1440 (default 60)."},
+    },
+    ("post", "/api/admin/rate/blocks"): {"d": "**Superadmins only.** Block an account (`@login`), an IP address (stored as a hash) or a key from the usage list for `minutes`. Blocked callers get 429 until it ends. Recorded in the audit log."},
+    ("delete", "/api/admin/rate/blocks/{key}"): {"d": "**Superadmins only.** Lift a block early.", "p": {"key": "The block's `key` from `GET /api/admin/rate`."}},
+    ("post", "/api/logs/search"): {
+        "d": "Used by the site to log a search (guided recommendations, the search bar, catalog filters) without identity: the "
+             "words, filters, number of results and the top results. Signed-in users with *Help improve recommendations* off are "
+             "not logged (the response `id` is null). **Returns** the log `id`, for recording which result was clicked.",
+    },
+    ("post", "/api/logs/search/{log_id}/click"): {"d": "Records which result of a logged search was opened.", "p": {"log_id": "The `id` from `POST /api/logs/search`."}},
+    ("get", "/api/admin/logs/summary"): {"d": "**Superadmins only.** Chat ratings and comments, searches per source (with no-result and click-through counts), the most common queries and the queries that found nothing."},
+    ("get", "/api/admin/logs/chats"): {
+        "d": "**Superadmins only.** Logged chat turns, newest first: question, what was understood, results shown, answer, model and feedback.",
+        "p": {"rating": "`good`, `bad`, `comment` (has a comment) or `rated` (any feedback).", "q": "Only questions containing this text.",
+              "before": "Paging: the `createdAt` of the last item you received.", "limit": "How many, from 1 to 500."},
+    },
+    ("get", "/api/admin/logs/searches"): {
+        "d": "**Superadmins only.** Logged searches, newest first.",
+        "p": {"source": "`guided`, `search`, `catalog` or `mcp` (tool calls from AI agents; the tool is in `filters.tool`).", "q": "Only queries containing this text.", "empty": "Only searches that found nothing.",
+              "before": "Paging: the `createdAt` of the last item you received.", "limit": "How many, from 1 to 500."},
+    },
+    ("get", "/api/admin/logs/export/{kind}.{fmt}"): {
+        "d": "**Superadmins only.** Download a log (up to the latest 10,000 records): `chats` or `searches`, as `csv` or `jsonl` "
+             "(one JSON record per line, convenient for evaluation and training). Exports are recorded in the audit log.",
+        "p": {"kind": "`chats` or `searches`.", "fmt": "`csv` or `jsonl`."},
+    },
+    ("get", "/api/chats"): {"d": "Your saved recommendation chats, most recent first. Chats are saved automatically when you are signed in."},
+    ("get", "/api/chats/{chat_id}"): {"d": "One saved chat with every question, answer and the recommendations that were shown.", "p": {"chat_id": "The chat's `id` from `GET /api/chats`."}},
+    ("patch", "/api/chats/{chat_id}"): {"d": "Renames a saved chat.", "p": {"chat_id": "The chat's `id` from `GET /api/chats`."}},
+    ("delete", "/api/chats/{chat_id}"): {"d": "Deletes a saved chat and its messages. This cannot be undone.", "p": {"chat_id": "The chat's `id` from `GET /api/chats`."}},
+    ("get", "/api/recommend/chat/status"): {
+        "d": "Whether the chat assistant's language model is configured and reachable. Without it, the chat still answers with "
+             "ranked matches.",
+    },
+    ("post", "/api/recommend/chat"): {
+        "d": "Ask for a recommendation in plain language, as a conversation. Your words are turned into filters, the catalog is "
+             "searched, and a small language model writes a short answer that may only use the resources found.\n\n"
+             "**Returns** a stream of JSON lines (`application/x-ndjson`): `filters` (what was understood), `results` (the ranked "
+             "resources with reasons), then `token` events with the answer text as it is written, and `done`. Signed out: a few "
+             "questions per minute; signed in: more.",
+    },
 }
 
 # Request body fields without their own description.
@@ -260,9 +346,9 @@ def apply(schema: dict) -> dict:
     """Fills in descriptions on an OpenAPI document generated by FastAPI. `{category}` becomes a real domain id of
     this catalog, so the examples work as written."""
     try:
-        from . import store
+        from . import db
 
-        category = store.categories()[0]["id"]
+        category = db.rows_sync("SELECT id FROM categories ORDER BY position LIMIT 1")[0]["id"]
     except Exception:
         category = "<category id>"
     fill = lambda t: t.replace("{category}", category)  # noqa: E731

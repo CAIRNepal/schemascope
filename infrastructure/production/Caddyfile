@@ -1,3 +1,17 @@
+# Global options: limits that make slow or oversized requests cheap to refuse (a first line against abuse; large
+# distributed attacks must be stopped earlier, by the hosting provider's firewall or a CDN).
+{
+	servers {
+		timeouts {
+			read_header 10s
+			read_body 15s
+			write 3m
+			idle 2m
+		}
+		max_header_size 32KB
+	}
+}
+
 # Public entry point: HTTPS (automatic certificates) → site server, which serves pages and proxies /api/ and /mcp/.
 {$SITE_DOMAIN} {
 	encode zstd gzip
@@ -7,7 +21,13 @@
 		Referrer-Policy strict-origin-when-cross-origin
 		-Server
 	}
-	reverse_proxy web:3000
+	# Flush immediately so streamed responses (the recommendation chat) arrive as they are written.
+	request_body {
+		max_size 1MB
+	}
+	reverse_proxy web:3000 {
+		flush_interval -1
+	}
 }
 
 # Optional: redirect www to the apex domain.

@@ -40,6 +40,36 @@
   });
   document.addEventListener("keydown", (e) => e.key === "Escape" && closeGroups());
 
+  // Starting a chat from elsewhere (recommend landing page): the question goes to the chat page in session storage,
+  // not in the URL, and is sent from there with POST.
+  const startChat = (q) => {
+    if (!q?.trim()) return;
+    try { sessionStorage.setItem("ask-question", q.trim()); } catch {}
+    location.href = "/recommend/ask/";
+  };
+  document.addEventListener("submit", (e) => {
+    const f = e.target.closest("[data-ask-start]");
+    if (!f) return;
+    e.preventDefault();
+    startChat(f.elements.q.value);
+  });
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("[data-ask-q]");
+    if (!a) return;
+    e.preventDefault();
+    startChat(a.dataset.askQ);
+  });
+
+  // Document pages: highlight the section being read in "On this page".
+  const docToc = $("[data-doc-toc]");
+  if (docToc && "IntersectionObserver" in window) {
+    const links = [...docToc.querySelectorAll("a")];
+    const spy = new IntersectionObserver((entries) => {
+      for (const en of entries) if (en.isIntersecting) links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === `#${en.target.id}`));
+    }, { rootMargin: "-20% 0px -70% 0px" });
+    links.forEach((a) => { const t = document.getElementById(a.getAttribute("href").slice(1)); if (t) spy.observe(t); });
+  }
+
   // Account link: "Sign in", or the signed-in user's avatar and name (from the API on this origin).
   const account = $("[data-account]");
   if (account) account.href = `/api/auth/github/login?next=${encodeURIComponent(location.pathname + location.search)}`;
@@ -91,6 +121,45 @@
       .catch(() => {});
   }
 
+  // Anonymous search log (privacy policy: /privacy/#chat): what people searched for, how many results, the top results,
+  // and which one they opened. Logged once typing pauses; a click before that is sent with the log entry.
+  const logSession = () => {
+    try {
+      let id = JSON.parse(sessionStorage.getItem("chat-session"));
+      if (!id) { id = crypto.randomUUID?.() || String(Math.random()).slice(2); sessionStorage.setItem("chat-session", JSON.stringify(id)); }
+      return id;
+    } catch { return null; }
+  };
+  const logState = new WeakMap();
+  const postLog = (path, body) => fetch(path, { method: "POST", credentials: "same-origin", keepalive: true, headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  window.searchLog = (source, q, filters, ids, count, container) => {
+    if (!container || !location.protocol.startsWith("http")) return;
+    const clean = Object.fromEntries(Object.entries(filters || {}).filter(([, v]) => v !== "" && v != null && v !== false));
+    let st = logState.get(container);
+    if (!st) {
+      st = {};
+      logState.set(container, st);
+      container.addEventListener("click", (e) => {
+        const a = e.target.closest('a[href^="/o/"]');
+        if (!a) return;
+        const entry = decodeURIComponent(a.getAttribute("href").split("/")[2] || "");
+        if (st.id) postLog(`/api/logs/search/${encodeURIComponent(st.id)}/click`, { entryId: entry }).catch(() => {});
+        else if (st.body) { clearTimeout(st.timer); postLog("/api/logs/search", { ...st.body, clicked: [entry] }).catch(() => {}); st.body = null; }
+      });
+    }
+    clearTimeout(st.timer);
+    st.id = null;
+    st.body = null;
+    if (!(q || "").trim() && !Object.keys(clean).length) return;
+    st.body = { source, q: (q || "").trim() || null, filters: clean, resultCount: count, resultIds: ids.slice(0, 20), session: logSession() };
+    st.timer = setTimeout(() => {
+      const body = st.body;
+      if (!body) return;
+      st.body = null;
+      postLog("/api/logs/search", body).then((r) => r.json()).then((d) => { st.id = d.id; }).catch(() => {});
+    }, 1500);
+  };
+
   // Catalog explorer: data-driven, paginated (thousands of entries). The first page is server-rendered.
   const grid = $("#cards");
   const q = $("#q");
@@ -133,6 +202,8 @@
       page();
       count.textContent = `${view.length.toLocaleString()} of ${all.length.toLocaleString()} resources`;
       empty.hidden = view.length > 0;
+      window.searchLog?.("catalog", q.value, { category: f.cat.value, kind: f.kind.value, source: f.reg.value, grade: f.grade.value, activeOnly: f.active.checked },
+        view.slice(0, 20).map((e) => e.id), view.length, grid);
       if (push) {
         const p = new URLSearchParams();
         if (q.value.trim()) p.set("q", q.value.trim());

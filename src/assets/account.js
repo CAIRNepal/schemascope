@@ -36,7 +36,7 @@
   };
 
   // ---------- tabs (#overview, #tokens, #connections, #activity) ----------
-  const TABS = ["overview", "tokens", "connections", "activity"];
+  const TABS = ["overview", "tokens", "connections", "activity", "settings"];
   function showTab(id, push = true) {
     if (!TABS.includes(id)) id = "overview";
     $$(".acc-panel").forEach((p) => (p.hidden = p.id !== id));
@@ -69,12 +69,16 @@
         <span class="acc-connected">Connected with GitHub</span>
         <div class="acc-profile-actions">${u.superadmin ? '<a class="btn-ghost btn-sm" href="/admin/">Admin dashboard →</a>' : ""}<button type="button" class="btn-ghost btn-sm" data-signout>Sign out</button></div>`;
       $("[data-my-limit]").textContent = fmt(s.rateLimit.perMinute);
+      api("/api/auth/usage").then((u) => {
+        $("[data-anon-limit]").closest("p").textContent = `${fmt(u.lastHour)} requests in the last hour, ${fmt(u.last24h)} in the last 24 hours (session and tokens together).`;
+      }).catch(() => {});
       $("[data-anon-limit]").textContent = fmt(s.rateLimit.anonymousPerMinute);
       $("[data-account-body]").hidden = false;
       showTab(location.hash.slice(1) || "overview");
       let saved = "api";
       try { saved = sessionStorage.getItem("acc-conn") || "api"; } catch {}
       selectConnection(saved);
+      settingsInit(u);
       loadTokens();
       loadSubmissions();
       loadActivity(true);
@@ -105,6 +109,24 @@
     else if (t.matches("[data-copy-code]")) copy(codeText, t);
     else if (t.dataset.conn) selectConnection(t.dataset.conn);
   });
+
+  // ---------- settings ----------
+  function settingsInit(u) {
+    const box = $("[data-improve]"), status = $("[data-improve-status]");
+    box.checked = u.improveSearch !== false;
+    box.addEventListener("change", async () => {
+      const on = box.checked;
+      try {
+        await api("/api/auth/preferences", { method: "PUT", body: JSON.stringify({ improveSearch: on }) });
+        status.textContent = on ? "On: your chat questions and answers are logged without your identity." : "Off: your chats are no longer logged.";
+        toast("Setting saved");
+        loadActivity(true);
+      } catch (err) {
+        box.checked = !on;
+        toast(err.message);
+      }
+    });
+  }
 
   // ---------- tokens ----------
   let pendingRevoke = null;
@@ -216,7 +238,7 @@
   const ACTIONS = {
     "auth.login": "Signed in", "auth.logout": "Signed out", "auth.login_failed": "Sign-in failed", "auth.jwt_issued": "Session token issued",
     "token.create": "Token created", "token.revoke": "Token revoked", "submission.create": "Submitted an entry",
-    "submission.approved": "Submission approved", "submission.changes_requested": "Changes requested on a submission", "submission.rejected": "Submission rejected", "submission.pending": "Submission reopened", "admin.export": "Exported the catalog",
+    "submission.approved": "Submission approved", "submission.changes_requested": "Changes requested on a submission", "submission.rejected": "Submission rejected", "submission.pending": "Submission reopened", "admin.export": "Exported the catalog", "account.preferences": "Changed settings",
     "admin.rate_limits": "Changed rate limits", "admin.user_rate_limit": "Changed a user's rate limit", "catalog.ingest": "Catalog data loaded",
   };
   const details = (a) => {

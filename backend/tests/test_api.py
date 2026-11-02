@@ -34,6 +34,13 @@ CATEGORIES = [
     {"id": "life", "name": "Life Sciences", "icon": "dna", "blurb": "Genes and cells."},
     {"id": "earth", "name": "Earth Science", "icon": "globe", "blurb": "Planet."},
 ]
+def run(coro):
+    """Run one of the API's async functions from a test."""
+    import asyncio
+
+    return asyncio.run(coro)
+
+
 CATALOG = [
     {"id": "go", "acronym": "GO", "name": "Gene Ontology", "category": "life", "kind": "ontology", "description": "Gene function.",
      "formats": ["OWL", "OBO"], "tags": ["genes"], "obo": "go", "domains": ["earth"], "usedBy": [{"name": "UniProt", "url": "https://uniprot.org"}]},
@@ -122,10 +129,10 @@ def test_runs_stats_categories(client):
 def test_mcp_tools(client):
     from catalog_api import mcp_server
 
-    assert mcp_server.search_catalog(query="environment")["items"][0]["url"] == "https://example.org/o/envo/"
-    assert mcp_server.get_entry("go")["evaluation"]["score"] == 80
-    assert len(mcp_server.get_entry_history("go")["runs"]) == 2
-    assert "error" in mcp_server.get_entry("nope")
+    assert run(mcp_server.search_catalog(query="environment"))["items"][0]["url"] == "https://example.org/o/envo/"
+    assert run(mcp_server.get_entry("go"))["evaluation"]["score"] == 80
+    assert len(run(mcp_server.get_entry_history("go"))["runs"]) == 2
+    assert "error" in run(mcp_server.get_entry("nope"))
 
 
 def _signed_in():
@@ -226,11 +233,11 @@ def test_sessions_tokens_and_scopes(client):
 
 def test_rate_limit_and_problem_details(client):
     from catalog_api import settings
-    from catalog_api.guard import window
+    from catalog_api import rate
 
     old = settings.RATE_LIMIT_ANON
     settings.RATE_LIMIT_ANON = 3
-    window.counts.clear()
+    rate.reset()
     try:
         codes = [client.get("/api/stats", headers={"X-Forwarded-For": "203.0.113.9"}).status_code for _ in range(4)]
         assert codes == [200, 200, 200, 429]
@@ -239,7 +246,7 @@ def test_rate_limit_and_problem_details(client):
         assert client.get("/api/stats", headers={"X-Forwarded-For": "203.0.113.10"}).status_code == 200  # other IP
     finally:
         settings.RATE_LIMIT_ANON = old
-        window.counts.clear()
+        rate.reset()
     p = client.get("/api/entries/nope").json()
     assert p["status"] == 404 and p["title"] == "Not Found" and p["instance"] == "/api/entries/nope"
     assert client.get("/api/entries", params={"page": 0}).json()["status"] == 422
@@ -292,8 +299,8 @@ def test_superadmin_rate_limits(client):
     assert bob.get("/api/stats").headers["x-ratelimit-limit"] == "7"
     assert any(u["login"] == "bob" and u["rateLimit"] == 7 for u in admin.get("/api/admin/users").json())
     admin.put("/api/admin/settings", json={"authenticatedPerMinute": 1000})
-    from catalog_api.guard import window
-    window.counts.clear()
+    from catalog_api import rate
+    rate.reset()
     accounts._settings_cache["at"] = 0
     actions = [a["action"] for a in admin.get("/api/audit", params={"action": "admin.*"}).json()]
     assert "admin.rate_limits" in actions and "admin.user_rate_limit" in actions
@@ -321,3 +328,200 @@ def test_admin_dashboard_and_review(client):
     csv = admin.get("/api/admin/catalog.csv")
     assert csv.status_code == 200 and csv.text.startswith("id,acronym,name")
     assert "submission.changes_requested" in [a["action"] for a in admin.get("/api/audit", params={"action": "submission.*"}).json()]
+
+
+def test_recommend(client):
+    o = client.get("/api/recommend/options").json()
+    assert {a["id"] for a in o["areas"]} >= {"life", "earth"} and any(k["id"] == "schema" for k in o["kinds"])
+    r = client.get("/api/recommend", params={"q": "gene function"}).json()
+    assert r["items"][0]["id"] == "go" and any("gene" in w.lower() for w in r["items"][0]["why"])
+    assert all(x["id"] != "envo" for x in r["items"])  # legacy resources are not recommended
+    # Filters that leave nothing are relaxed, most specific first, and reported.
+    r = client.get("/api/recommend", params={"q": "gene", "format": "SHACL"}).json()
+    assert r["relaxed"] == ["format"] and r["items"][0]["id"] == "go"
+    r = client.get("/api/recommend", params={"kind": "schema"}).json()
+    assert [x["id"] for x in r["items"]] == ["sch"]
+
+
+def test_recommend_chat_without_model(client):
+    from catalog_api import chat, settings
+
+    assert run(chat.parse("an actively maintained open schema in JSON Schema for life sciences")) == {
+        "category": "life", "kind": "schema", "format": "JSON Schema", "maintained": True, "open_license": True}
+    assert client.get("/api/recommend/chat/status").json()["available"] is False
+    r = client.post("/api/recommend/chat", json={"messages": [{"role": "user", "content": "Which ontology for gene function?"}]})
+    assert r.status_code == 200 and r.headers["content-type"].startswith("application/x-ndjson")
+    events = [json.loads(line) for line in r.text.splitlines()]
+    assert [e["type"] for e in events][:2] == ["filters", "results"] and events[-1] == {"type": "done", "model": None}
+    assert events[1]["items"][0]["id"] == "go" and "GO" in "".join(e["text"] for e in events if e["type"] == "token")
+    assert client.post("/api/recommend/chat", json={"messages": [{"role": "assistant", "content": "hi"}]}).status_code == 422
+    # Chat turns have their own, tighter per-minute limit.
+    from catalog_api.app import _chat_window
+    _chat_window.counts.clear()
+    codes = [client.post("/api/recommend/chat", json={"messages": [{"role": "user", "content": "gene"}]}).status_code for _ in range(settings.CHAT_RATE_ANON + 1)]
+    assert codes[-1] == 429 and set(codes[:-1]) == {200}
+    _chat_window.counts.clear()
+
+
+def test_mcp_recommend_tool(client):
+    from catalog_api import mcp_server
+
+    r = run(mcp_server.recommend_resources("gene function"))
+    assert r["items"][0]["id"] == "go" and r["items"][0]["url"].endswith("/o/go/")
+
+
+def test_saved_chats(client):
+    me = _signed_in()
+    r = me.post("/api/recommend/chat", json={"messages": [{"role": "user", "content": "Which ontology for gene function?"}]})
+    events = [json.loads(line) for line in r.text.splitlines()]
+    assert events[0]["type"] == "chat" and events[0]["new"] is True
+    cid = events[0]["id"]
+    r = me.post("/api/recommend/chat", json={"chat_id": cid, "messages": [{"role": "user", "content": "Which ontology for gene function?"},
+                                                                        {"role": "assistant", "content": "GO."}, {"role": "user", "content": "Only OWL ones"}]})
+    assert json.loads(r.text.splitlines()[0]) == {"type": "chat", "id": cid, "new": False}
+    lst = me.get("/api/chats").json()
+    assert lst[0]["id"] == cid and lst[0]["title"] == "Which ontology for gene function?"
+    c = me.get(f"/api/chats/{cid}").json()
+    assert [m["role"] for m in c["messages"]] == ["user", "assistant", "user", "assistant"] and c["messages"][1]["data"]["items"][0]["id"] == "go"
+    assert me.patch(f"/api/chats/{cid}", json={"title": "Genes"}).json()["title"] == "Genes"
+    # Other people can't see it; signed out, nothing is saved.
+    from fastapi.testclient import TestClient
+    from catalog_api.app import app
+    other = TestClient(app)
+    other.get("/api/auth/dev-login", params={"login": "dave"}, follow_redirects=False)
+    assert other.get(f"/api/chats/{cid}").status_code == 404 and other.delete(f"/api/chats/{cid}").status_code == 404
+    from catalog_api.app import _chat_window
+    _chat_window.counts.clear()
+    anon = TestClient(app)
+    first = json.loads(anon.post("/api/recommend/chat", json={"messages": [{"role": "user", "content": "gene"}]}).text.splitlines()[0])
+    assert first["type"] == "filters"
+    assert me.delete(f"/api/chats/{cid}").status_code == 204 and me.get("/api/chats").json() == []
+    r = client.get("/api/recommend", params={"limit": 2, "page": 2}).json()
+    assert r["page"] == 2 and r["pages"] == 2 and len(r["items"]) == 1
+
+
+def test_every_endpoint_is_async(client):
+    """All API routes are async and query the database with the async pool (nothing blocks the event loop)."""
+    import inspect
+
+    from fastapi.routing import APIRoute
+    from catalog_api.app import api
+
+    sync = [r.path for r in api.routes if isinstance(r, APIRoute) and not inspect.iscoroutinefunction(r.endpoint)]
+    assert sync == []
+    from catalog_api import mcp_server
+    for name in ["search_catalog", "get_entry", "get_entry_history", "list_categories", "catalog_stats", "scoring_rubric", "recommend_resources"]:
+        assert inspect.iscoroutinefunction(getattr(mcp_server, name))
+
+
+def test_chat_log_feedback_and_opt_out(client):
+    from catalog_api import db
+    from catalog_api.app import _chat_window
+    _chat_window.counts.clear()
+    # Signed out: always logged, with no identity; the log id comes back for feedback.
+    anon = client.post("/api/recommend/chat", json={"session": "s1", "messages": [{"role": "user", "content": "best rated ontology for gene function"}]})
+    ev = [json.loads(line) for line in anon.text.splitlines()]
+    log = next(e for e in ev if e["type"] == "log")["id"]
+    assert client.post(f"/api/recommend/chat/feedback/{log}", json={"rating": -1, "comment": "Wanted GO first"}).status_code == 204
+    assert client.post(f"/api/recommend/chat/feedback/{log}", json={}).status_code == 422
+    assert client.post("/api/recommend/chat/feedback/nope", json={"rating": 1}).status_code == 404
+    row = run(db.one("SELECT * FROM chat_logs WHERE id = %s", (log,)))
+    assert row["session"] == "s1" and row["rating"] == -1 and row["result_ids"][0] == "go" and row["filters"].get("sort") == "score"
+    assert "user_id" not in row and "ip" not in row
+    # Signed in: logged by default; turning "improve search" off stops logging (the chat is still saved to the account).
+    me = _signed_in()
+    assert me.get("/api/auth/session").json()["user"]["improveSearch"] is True
+    assert any(json.loads(l)["type"] == "log" for l in me.post("/api/recommend/chat", json={"messages": [{"role": "user", "content": "gene"}]}).text.splitlines())
+    assert me.put("/api/auth/preferences", json={"improveSearch": False}).json() == {"improveSearch": False}
+    types = [json.loads(l)["type"] for l in me.post("/api/recommend/chat", json={"messages": [{"role": "user", "content": "gene"}]}).text.splitlines()]
+    assert "log" not in types and types[0] == "chat"
+    me.put("/api/auth/preferences", json={"improveSearch": True})
+    _chat_window.counts.clear()
+
+
+def test_relevance_first(client):
+    # Rare words outweigh common ones, and relevance comes before quality.
+    r = client.get("/api/recommend", params={"q": "gene environments"}).json()
+    assert r["items"][0]["relevance"] >= r["items"][-1]["relevance"]
+    r = client.get("/api/recommend", params={"q": "ontology", "sort": "score"}).json()
+    scores = [x["score"] or -1 for x in r["items"]]
+    assert scores == sorted(scores, reverse=True)
+
+
+def test_feedback_on_unlogged_answer(client):
+    r = client.post("/api/recommend/chat/feedback", json={"question": "gene?", "answer": "GO", "resultIds": ["go"], "rating": 1})
+    assert r.status_code == 201
+    lid = r.json()["id"]
+    assert client.post(f"/api/recommend/chat/feedback/{lid}", json={"comment": "great"}).status_code == 204
+    me = _signed_in()
+    from catalog_api.app import _chat_window
+    _chat_window.counts.clear()
+    ev = [json.loads(l) for l in me.post("/api/recommend/chat", json={"messages": [{"role": "user", "content": "gene"}]}).text.splitlines()]
+    cid = ev[0]["id"]
+    log = next(e["id"] for e in ev if e["type"] == "log")
+    assert me.get(f"/api/chats/{cid}").json()["messages"][1]["data"]["logId"] == log
+
+
+def test_search_logs_and_admin_exports(client):
+    r = client.post("/api/logs/search", json={"source": "guided", "q": "gene", "filters": {"kind": "ontology"}, "resultCount": 2, "resultIds": ["go", "top"], "session": "s9"})
+    lid = r.json()["id"]
+    assert lid and client.post(f"/api/logs/search/{lid}/click", json={"entryId": "go"}).status_code == 204
+    client.post("/api/logs/search", json={"source": "search", "q": "zzzz", "resultCount": 0})
+    assert client.post("/api/logs/search", json={"source": "elsewhere"}).status_code == 422
+    admin = _signed_in()
+    assert client.get("/api/admin/logs/summary").status_code == 401
+    s = admin.get("/api/admin/logs/summary").json()
+    assert s["searches"]["guided"]["clicked"] >= 1 and any(x["q"] == "zzzz" for x in s["noResultQueries"])
+    rows = admin.get("/api/admin/logs/searches", params={"source": "guided"}).json()
+    assert rows[0]["clicked"] == ["go"] and rows[0]["filters"] == {"kind": "ontology"}
+    csv = admin.get("/api/admin/logs/export/searches.csv")
+    assert csv.status_code == 200 and csv.text.startswith("id,session,source,query")
+    jl = admin.get("/api/admin/logs/export/chats.jsonl")
+    assert jl.status_code == 200 and all(json.loads(l)["question"] for l in jl.text.splitlines())
+    assert admin.get("/api/admin/logs/export/users.csv").status_code == 404
+    # Opted out: not logged.
+    admin.put("/api/auth/preferences", json={"improveSearch": False})
+    assert admin.post("/api/logs/search", json={"source": "catalog", "q": "x"}).json() == {"id": None}
+    admin.put("/api/auth/preferences", json={"improveSearch": True})
+
+
+def test_abuse_protection_shared_counts_and_blocks(client):
+    from catalog_api import db, rate, settings
+
+    rate.reset()
+    old = (settings.RATE_IP_CEILING, settings.RATE_LIMIT_ANON)
+    settings.RATE_IP_CEILING, settings.RATE_LIMIT_ANON = 5, 1000
+    try:
+        # The per-IP ceiling applies before any token lookup, even to sign-in routes and with fake tokens.
+        h = {"X-Forwarded-For": "198.51.100.7", "Authorization": "Bearer sch_pat_fake"}
+        codes = [client.get("/api/stats", headers=h).status_code for _ in range(6)]
+        assert codes[:5] == [401] * 5 and codes[5] == 429
+        assert client.get("/api/auth/session", headers={"X-Forwarded-For": "198.51.100.7"}).status_code == 429
+        # Far over the ceiling: blocked automatically, stored, and audited.
+        for _ in range(12):
+            client.get("/api/stats", headers={"X-Forwarded-For": "198.51.100.7"})
+        key = rate.ip_key("198.51.100.7")
+        assert rate.blocked(key) > 0
+        assert run(db.value("SELECT reason FROM rate_blocks WHERE key = %s", (key,))).startswith("automatic")
+        assert "198.51.100.7" not in key  # IP addresses are stored only as a keyed hash
+        # Counts are shared through the database.
+        run(rate.sync())
+        assert run(db.value("SELECT SUM(count) FROM rate_usage WHERE key = %s", (key,))) >= 7  # requests after the block are refused before counting
+    finally:
+        settings.RATE_IP_CEILING, settings.RATE_LIMIT_ANON = old
+    # Superadmins see usage and blocks, and can block and unblock (by IP or @login).
+    admin = _signed_in()
+    r = admin.get("/api/admin/rate").json()
+    assert any(b["key"] == key and b["auto"] for b in r["blocks"])
+    assert admin.delete(f"/api/admin/rate/blocks/{key}").status_code == 204
+    rate.reset()
+    assert client.get("/api/stats", headers={"X-Forwarded-For": "198.51.100.7"}).status_code == 200
+    assert admin.post("/api/admin/rate/blocks", json={"target": "198.51.100.8", "minutes": 5}).status_code == 201
+    assert client.get("/api/stats", headers={"X-Forwarded-For": "198.51.100.8"}).status_code == 429
+    assert admin.post("/api/admin/rate/blocks", json={"target": "@ada"}).status_code == 422  # not yourself
+    assert admin.post("/api/admin/rate/blocks", json={"target": "not an ip"}).status_code == 422
+    # Your own usage, per account.
+    u = admin.get("/api/auth/usage").json()
+    assert u["perMinute"] >= 1 and u["lastHour"] >= 0
+    run(rate.unblock(rate.ip_key("198.51.100.8")))
+    rate.reset()

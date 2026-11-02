@@ -18,6 +18,9 @@ x-api-env: &api-env
   RATE_LIMIT_USER: ${RATE_LIMIT_USER:-1000}
   TRUSTED_PROXIES: 127.0.0.1,::1,172.16.0.0/12,192.168.0.0/16,10.0.0.0/8
   MCP_ALLOWED_HOSTS: ${MCP_ALLOWED_HOSTS:-localhost,api}
+  # Recommendation chat: the sandbox uses Ollama on the host machine (`ollama pull <model>` there first).
+  LLM_URL: ${LLM_URL:-http://host.docker.internal:11434}
+  LLM_MODEL: ${LLM_MODEL:-llama3.2:1b}
 
 services:
   db:
@@ -45,6 +48,7 @@ services:
   api:
     build: { context: ../.., dockerfile: infrastructure/docker/api.Dockerfile }
     environment: *api-env
+    extra_hosts: ["host.docker.internal:host-gateway"]
     volumes: ["../../data:/app/data:ro"]
     ports: ["127.0.0.1:${API_PORT:-8381}:8000"]
     depends_on:

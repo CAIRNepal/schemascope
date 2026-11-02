@@ -84,6 +84,7 @@
 </li>`;
       })
       .join("");
+    window.searchLog?.("search", q, {}, results.slice(0, 20).map(({ e }) => e.id), results.length, list);
   }
 
   input.value = new URLSearchParams(location.search).get("q") || "";

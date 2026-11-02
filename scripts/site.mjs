@@ -381,8 +381,9 @@ ${gtmBody}
       </button>
       <div class="nav-links" id="nav-links">
       ${group("Catalog", [["/catalog/", "Browse the catalog", "Search and filter every resource"], ["/categories/", "Categories", "Resources grouped by domain"]])}
+      <a class="nav-find" href="/recommend/"${pathname.startsWith("/recommend/") ? ' aria-current="page"' : ""}><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg>Find a resource</a>
       ${nav("/evaluation/", "Evaluation")}
-      ${group("Developers", [["/api-docs/", "REST API", "Search and read the catalog from your code"], ["/mcp-docs/", "MCP server", "Connect Claude, Cursor, VS Code and other assistants"]])}
+      ${nav("/mcp-docs/", "Use with AI")}
       ${group("About", [["/about/", "About", "What this is, who runs it and how"], ["/roadmap/", "Roadmap", "What's available and what's next"], ["/contact/", "Contact", "Questions, corrections and partnerships"]])}
       <a class="nav-submit" href="/submit/"${pathname.startsWith("/submit/") ? ' aria-current="page"' : ""}>Submit</a>
       </div>
@@ -397,23 +398,39 @@ ${gtmBody}
 ${body}
 </main>
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div class="footer-brand">${logo("logo-footer")}<p class="muted">${esc(config.description)}</p>${config.parent ? `<a class="footer-parent" href="${attr(config.parent.url)}" rel="noopener"><span class="muted small">${esc(config.parent.label || "Part of")}</span><img src="${attr(config.parent.logo)}" alt="${attr(config.parent.name)}" width="${config.parent.logoWidth || 320}" height="${config.parent.logoHeight || 80}" loading="lazy"></a>` : ""}</div>
-    <nav class="footer-links" aria-label="Footer">
-      <a href="/categories/">Categories</a>
-      <a href="/evaluation/">Methodology</a>
-      <a href="/evaluation/#runs">Run history</a>
-      <a href="/submit/">Submit a resource</a>
-      <a href="/roadmap/">Features &amp; roadmap</a>
-      <a href="/contact/">Contact</a>
-      <a href="/api-docs/">Developer docs</a>
-      <a href="/catalog.json">catalog.json</a>
-      <a href="/catalog.jsonld">DCAT JSON-LD</a>
-      ${config.repository ? `<a href="${attr(config.repository)}">GitHub</a>` : ""}
-      <a href="/privacy/">Privacy</a>
-      ${GTM ? `<a href="#" data-consent-open>Cookie settings</a>` : ""}
-    </nav>
-    <p class="muted small">Descriptions are summaries; each resource is owned by its maintainers and keeps its own license.${evaluatedAt ? ` Last evaluated ${evaluatedAt}.` : ""}</p>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">${logo("logo-footer")}<p>${esc(config.description)}</p></div>
+      <nav class="footer-cols" aria-label="Footer">
+        <div><h2>Explore</h2>
+        <a href="/catalog/">Catalog</a>
+        <a href="/categories/">Categories</a>
+        <a href="/recommend/">Find a resource</a>
+        <a href="/evaluation/">How evaluation works</a>
+        <a href="/evaluation/#runs">Run history</a></div>
+        <div><h2>Developers</h2>
+        <a href="/api-docs/">REST API</a>
+        <a href="/mcp-docs/">Use with AI (MCP)</a>
+        <a href="/llms-full.txt">Docs for LLMs</a>
+        <a href="/catalog.json">catalog.json</a>
+        <a href="/catalog.jsonld">DCAT JSON-LD</a></div>
+        <div><h2>Community</h2>
+        <a href="/submit/">Submit a resource</a>
+        <a href="/roadmap/">Roadmap</a>
+        ${config.repository ? `<a href="${attr(config.repository)}">GitHub</a>` : ""}
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a></div>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <span>© ${new Date().getFullYear()} ${esc(config.brand || config.name || "")}</span>
+        <a href="/privacy/">Privacy</a>
+        ${GTM ? `<a href="#" data-consent-open>Cookie settings</a>` : ""}
+        <span class="footer-note">Descriptions are summaries; each resource keeps its own licence.${evaluatedAt ? ` Last evaluated ${evaluatedAt}.` : ""}</span>
+      </div>
+      ${config.parent ? `<a class="footer-parent" href="${attr(config.parent.url)}" rel="noopener"><span>${esc(config.parent.label || "Part of")}</span><img src="${attr(config.parent.logo)}" alt="${attr(config.parent.name)}" width="${config.parent.logoWidth || 320}" height="${config.parent.logoHeight || 80}" loading="lazy"></a>` : ""}
+    </div>
   </div>
 </footer>
 <script src="/assets/app.js?v=${BUILD_ID}" defer></script>
@@ -588,6 +605,11 @@ function homePage() {
     <h1>See how the world&rsquo;s <em>schemas</em> fit together.</h1>
     <p class="lede">${esc(config.description)} Every entry is scored against the FAIR principles, ontology quality, maintenance and community adoption, with the exact version evaluated and full provenance.</p>
     ${searchForm("hero-q")}
+    <div class="find-choices">
+      <span class="find-label"><span aria-hidden="true">✦</span> Not sure which to use?</span>
+      <a class="find-box" href="/recommend/guided/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="12" r="2"/><circle cx="14" cy="18" r="2"/></svg><span><b>Answer a few questions</b><small>Area, type, format, must-haves</small></span><i aria-hidden="true">→</i></a>
+      <a class="find-box" href="/recommend/ask/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg><span><b>Ask in your own words</b><small>An AI assistant suggests and explains</small></span><i aria-hidden="true">→</i></a>
+    </div>
     <dl class="stats">
       <div><dt>Resources</dt><dd>${catalog.length}</dd></div>
       <div><dt>Categories</dt><dd>${categories.length}</dd></div>
@@ -690,6 +712,11 @@ function searchPage() {
   ${crumbsHtml(trail)}
   <h1>Search</h1>
   ${searchForm("search-q", "", "search search-page")}
+    <div class="find-choices">
+      <span class="find-label"><span aria-hidden="true">✦</span> Not sure which to use?</span>
+      <a class="find-box" href="/recommend/guided/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="12" r="2"/><circle cx="14" cy="18" r="2"/></svg><span><b>Answer a few questions</b><small>Area, type, format, must-haves</small></span><i aria-hidden="true">→</i></a>
+      <a class="find-box" href="/recommend/ask/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg><span><b>Ask in your own words</b><small>An AI assistant suggests and explains</small></span><i aria-hidden="true">→</i></a>
+    </div>
   <p class="muted small" id="search-status" aria-live="polite">Type to search ${catalog.length} resources by name, acronym, tag, species, format, schema module or maintainer.</p>
 </section>
 <section class="wrap section">
@@ -1555,25 +1582,108 @@ function aboutPage() {
 }
 
 function privacyPage() {
+  const brand = config.brand || config.name || "This site";
   const trail = [["Home", "/"], ["Privacy", "/privacy/"]];
   const body = `
-<section class="page-head wrap">
-  ${crumbsHtml(trail)}
-  <h1>Privacy</h1>
-  <p class="lede">This site is a static catalog. It has no accounts, no forms that store data on our servers, and no tracking unless you allow it.</p>
-</section>
-<section class="wrap section prose">
-  <h2>Analytics and cookies</h2>
+<div class="wrap doc">
+  <aside class="doc-toc" aria-label="On this page">
+    <p class="doc-toc-title">On this page</p>
+    <nav data-doc-toc>
+      <a href="#summary">In short</a>
+      <a href="#chat">Search and chat</a>
+      <a href="#account">Accounts and sign-in</a>
+      <a href="#limits">Rate limits and abuse</a>
+      <a href="#submissions">Submissions</a>
+      <a href="#analytics">Analytics and cookies</a>
+      <a href="#browser">Stored in your browser</a>
+      <a href="#hosting">Hosting</a>
+      <a href="#contact">Questions and requests</a>
+    </nav>
+  </aside>
+  <article class="doc-main">
+    ${crumbsHtml(trail)}
+    <header class="doc-hero">
+      <p class="doc-eyebrow"><span></span>Privacy</p>
+      <h1>Your data, <em>plainly.</em></h1>
+      <p>What ${esc(brand)} stores, why, and what you can do about it. Reading the catalog needs no account and stores nothing about you.</p>
+      <p class="doc-updated">Last updated 31 October 2026</p>
+    </header>
+    <section class="doc-sec" id="summary">
+      <h2>In short</h2>
+      <div class="doc-cards">
+        <div class="doc-card"><span class="doc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></span><b>Browsing is anonymous</b><p>The catalog, search, the API and the documentation work without an account and store nothing about you.</p></div>
+        <div class="doc-card"><span class="doc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></svg></span><b>Accounts use GitHub</b><p>Signing in stores your public GitHub profile and email, to show your account, credit submissions and raise your rate limit.</p></div>
+        <div class="doc-card"><span class="doc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H8l-4 4zM8 9h8M8 12h5"/></svg></span><b>Logs without identity</b><p>Searches and chat answers are logged without who asked, to improve search. Signed in, turn it off in <a href='/account/#settings'>Settings</a>.</p></div>
+        <div class="doc-card"><span class="doc-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></span><b>Never sold, never sent out</b><p>We never sell data, and chat questions are answered by a model on our own server, not an outside AI service.</p></div>
+      </div>
+    </section>
+    <section class="doc-sec" id="chat">
+      <h2>Search and the recommendation chat</h2>
+  <p>When you ask the assistant on <a href="/recommend/ask/">Find a resource</a>, your question is turned into a search of the catalog and a small language model running on our server writes the answer. Nothing is sent to an outside AI provider.</p>
+  <h3>The anonymous chat and search log</h3>
+  <p>To improve search and recommendations (for example to see which questions and searches return poor or no results, and to evaluate and train better ranking and models), we keep a log. For each <b>chat answer</b> it holds:</p>
+  <ul>
+    <li>the question you typed, what the assistant understood (filters), the resources it showed and the answer it wrote, and which model wrote it;</li>
+    <li>your feedback, if you give it: 👍 or 👎 and any comment;</li>
+    <li>a random id for your browser session, so turns of one conversation stay together; and the time.</li>
+  </ul>
+  <p>For each <b>search</b> (the guided questions on Find a resource, the search bar, and the catalog's filters) it holds the words and filters used, how many results there were, the top results, which result you opened, the session id and the time. Searches are logged once you stop typing, not every keystroke.</p>
+  <p>For each <b>MCP tool call</b> (an AI assistant using the catalog through <a href="/mcp-docs/">MCP</a>) it holds the tool used, its search words or the resource it looked up, the filters, how many results there were, the top results and the time. Your access token, account and IP address are not stored with it, and calls are not logged if you turned <i>Help improve recommendations</i> off.</p>
+  <p>The log does <b>not</b> contain your name, account, email, IP address or browser details, and it is not linked to your saved chats. Because it can't be traced back to you, we can't find or delete your entries later, so <b>please don't type personal or confidential information</b> into the chat.</p>
+  <h3>When chats are logged</h3>
+  <ul>
+    <li><b>Signed out:</b> chat answers and searches are logged as above. Your chats are also kept in your browser for the current session only (session storage), so you can go back to them until you close the browser.</li>
+    <li><b>Signed in:</b> logging is <b>on by default</b>. Turn it off at any time with <i>Help improve recommendations</i> in your account's <a href="/account/#settings">Settings</a>; after that, your chats and searches are no longer logged. If you rate or comment on an answer while logging is off, that one question and answer are logged (still without your identity) together with your feedback.</li>
+  </ul>
+  <h3>Saved chats (signed in)</h3>
+  <p>Signed in, your chats are saved to your account so you can return to them. Only you can see them. Rename or delete them in the chat's sidebar; deleting removes the chat and its messages from your account.</p>
+    </section>
+    <section class="doc-sec" id="account">
+      <h2>Accounts and sign-in</h2>
+  <p>Signing in uses GitHub. We store your GitHub user id, login, name, avatar and profile link, and your verified email address (used to identify administrators and to contact you about your submissions). We set a session cookie (<code>HttpOnly</code>, valid for a limited time) to keep you signed in. You can sign out at any time.</p>
+  <p><b>Personal access tokens</b> you create are stored only as a one-way hash, with their name, access, expiry and when they were last used. You can revoke them on your account page.</p>
+  <p><b>Activity log:</b> for security and accountability we record sign-ins and sign-outs, token changes, submissions, reviews and administrative changes, with the time, your account, the IP address and the browser's user agent. You can see your own activity on your account page; administrators can see the full log.</p>
+    </section>
+    <section class="doc-sec" id="limits">
+      <h2>Rate limits and abuse protection</h2>
+  <p>To share the service fairly and protect it from abuse, we count requests per minute: <b>per account</b> when you are signed in (your session and all your tokens together), and <b>per IP address</b> when you are not. Every request also counts toward a ceiling per IP address.</p>
+  <ul>
+    <li>Counts are stored per minute and kept for 7 days, so all our servers enforce the same limits and abuse can be investigated. You can see your own usage on your account page.</li>
+    <li>IP addresses are <b>not stored as such</b>: we keep a one-way, keyed hash of them, enough to count and block but not to recover the address.</li>
+    <li>Sending far more than the limit blocks the account or address automatically for a short time; administrators can also block and unblock. Blocks are recorded in the activity log.</li>
+  </ul>
+    </section>
+    <section class="doc-sec" id="submissions">
+      <h2>Submissions</h2>
+  <p>When you submit or correct a resource, the entry is recorded with your account so you are credited, and you finish it as a GitHub issue and pull request, which are public and subject to <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>. Reviewers' decisions and notes are shown to you on your account page.</p>
+    </section>
+    <section class="doc-sec" id="analytics">
+      <h2>Analytics and cookies</h2>
   ${GTM ? `<p>With your consent we use <b>Google Analytics</b>, loaded through <b>Google Tag Manager</b> (container <code>${GTM}</code>), to count visits and see which pages are useful. Until you click <i>Accept</i>, no Google script is loaded and no analytics cookies are set. Advertising storage and personalisation remain disabled even if you accept (Google Consent Mode v2).</p>
   <p>Your choice is stored in your browser's local storage (<code>cookie-consent</code>). You can change it at any time with <a href="#" data-consent-open>Cookie settings</a>; withdrawing consent removes the Google Analytics cookies.</p>
   <p>Visitors with JavaScript disabled cannot be asked for consent; for them Google Tag Manager's no-script fallback may load.</p>` : "<p>This site does not use analytics or tracking cookies.</p>"}
-  <p>The theme preference (light/dark) is also kept in local storage. It is never sent anywhere.</p>
-  <h2>Submissions</h2>
-  <p>Submissions go through GitHub issues and pull requests, which are subject to <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>.</p>
-  <h2>Hosting</h2>
-  <p>The site is served by Vercel, which may log technical request data (such as IP addresses) for security and operations.</p>
-</section>`;
-  return page({ title: "Privacy", pathname: "/privacy/", body, description: "How this site handles analytics, cookies and your data.", graph: [webPage("WebPage", "/privacy/", "Privacy", "Privacy and cookies"), breadcrumbs(trail)] });
+    </section>
+    <section class="doc-sec" id="browser">
+      <h2>Stored in your browser</h2>
+  <ul>
+    <li><b>Server:</b> per-minute request counts per account or hashed IP address (7 days), see <a href="#limits">Rate limits</a>.</li>
+    <li><b>Local storage:</b> your theme (light or dark), cookie choice, and a few display preferences of the developer docs.</li>
+    <li><b>Session storage</b> (cleared when you close the browser): signed-out chats and the chat session id, a token you paste on the API docs page, and a newly created token so the setup instructions can show it.</li>
+    <li><b>Cookies:</b> the sign-in session cookie, and a short-lived cookie during GitHub sign-in to protect against forged requests.</li>
+  </ul>
+    </section>
+    <section class="doc-sec" id="hosting">
+      <h2>Hosting</h2>
+  <p>The site runs on our own server. Its web server and hosting provider may log technical request data (such as IP addresses) for security and operations; these logs are kept briefly and not used for anything else.</p>
+    </section>
+    <section class="doc-sec" id="contact">
+      <h2>Questions and requests</h2>
+  <p>To ask what we hold about your account, to have it deleted, or about anything on this page, <a href="/contact/">contact us</a>. Deleting your account removes your profile, tokens and saved chats; the anonymous chat log and public GitHub contributions are not linked to your account and stay as they are.</p>
+  
+    </section>
+  </article>
+</div>`;
+  return page({ title: "Privacy", pathname: "/privacy/", body, description: `How ${brand} handles accounts, chats, analytics, cookies and your data.`, graph: [webPage("WebPage", "/privacy/", "Privacy", "Privacy and cookies"), breadcrumbs(trail)] });
 }
 
 function notFound() {
@@ -1691,6 +1801,7 @@ function accountPage() {
     <button role="tab" id="tab-tokens" aria-controls="tokens" data-tab="tokens">Access tokens <span class="acc-count" data-token-count>0</span></button>
     <button role="tab" id="tab-connections" aria-controls="connections" data-tab="connections">Connections</button>
     <button role="tab" id="tab-activity" aria-controls="activity" data-tab="activity">Activity</button>
+    <button role="tab" id="tab-settings" aria-controls="settings" data-tab="settings">Settings</button>
   </div>
 
   <section class="acc-panel" id="overview" role="tabpanel" aria-labelledby="tab-overview">
@@ -1729,6 +1840,15 @@ function accountPage() {
       </select></label>
       <div class="acc-code"><div class="acc-code-head"><span data-code-label></span><button type="button" data-copy-code>Copy</button></div><pre data-conn-code></pre></div>
       <p class="acc-note" data-conn-note></p>
+    </article>
+  </section>
+
+  <section class="acc-panel" id="settings" role="tabpanel" aria-labelledby="tab-settings" hidden>
+    <div class="acc-intro"><div><h2>Settings</h2><p>How your data is used. Changes are saved straight away.</p></div></div>
+    <article class="acc-card acc-pad">
+      <h3>Privacy &amp; data</h3>
+      <label class="acc-setting"><input type="checkbox" data-improve><span><b>Help improve recommendations</b><small>Log my chat questions and answers and my searches, <b>without my identity</b>, so search and recommendations can be improved. When off, nothing is logged and your chats are only saved to your account. <a href="/privacy/#chat">How this works</a></small></span></label>
+      <p class="small muted" data-improve-status></p>
     </article>
   </section>
 
@@ -1772,6 +1892,150 @@ function accountPage() {
   return page({ title: "Account", pathname: "/account/", body, noindex: true, description: "Your account: tokens, connections, submissions and activity.", scripts: ["/assets/account.js"] });
 }
 
+// Recommend: a landing page that sends people to the guided questions or the chat (two pages, one engine).
+function recommendData() {
+  const live = catalog.filter((e) => e.status !== "legacy");
+  const count = (fn) => { const m = new Map(); for (const e of live) for (const k of [fn(e)].flat()) if (k) m.set(k, (m.get(k) || 0) + 1); return [...m].sort((a, b) => b[1] - a[1]); };
+  const top = [...catalog].sort(byScore)[0];
+  const topic = (top?.tags || [])[0] || "anatomy";
+  const kinds = count((e) => e.kind);
+  const areas = categories.map((c) => [c.id, c.name]);
+  return { kinds, formats: count((e) => e.formats || []).slice(0, 14), areas, topic, examples: [
+    `An actively maintained ontology for ${topic}`,
+    "A schema to describe research datasets, with an open licence",
+    `Which ontology is most widely used in ${areas[0]?.[1] || "my field"}?`,
+  ] };
+}
+const REC_ICON = {
+  guide: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="12" r="2"/><circle cx="14" cy="18" r="2"/></svg>',
+  ask: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg>',
+};
+const recResults = () => `
+    <div class="rec-results-head"><h2>Recommendations</h2><span class="small muted" data-rec-summary></span></div>
+    <div class="rec-understood" data-understood hidden></div>
+    <ol class="rec-results" data-rec-results><li class="rec-empty">Loading…</li></ol>`;
+
+function recommendPage() {
+  const brand = config.brand || config.name || "Catalog";
+  const { examples, topic } = recommendData();
+  const trail = [["Home", "/"], ["Catalog", "/catalog/"], ["Find the right resource", "/recommend/"]];
+  const body = `
+<section class="page-head wrap">
+  ${crumbsHtml(trail)}
+  <p class="eyebrow">Recommend</p>
+  <h1>Find the right resource</h1>
+  <p class="lede">Not sure which ontology, schema or standard to use? Choose how you'd like to look. Both use ${esc(brand)}'s evaluations, how widely each resource is used and how recently it was updated, and show the reasons for every suggestion.</p>
+</section>
+<section class="wrap section rec-landing">
+  <a class="rec-path" href="/recommend/guided/">
+    <span class="rec-path-icon">${REC_ICON.guide}</span>
+    <span class="rec-path-tag">Guided · no typing needed</span>
+    <h2>Answer a few questions</h2>
+    <p>Pick the area you work in, the type of resource, the format you need and your must-haves, such as an open licence or active maintenance. Results update as you choose.</p>
+    <ul><li>Best when you know your requirements</li><li>Every filter is visible and easy to change</li><li>Instant results</li></ul>
+    <span class="rec-path-cta">Start with questions →</span>
+  </a>
+  <div class="rec-path">
+    <span class="rec-path-icon">${REC_ICON.ask}</span>
+    <span class="rec-path-tag">Chat · AI assistant</span>
+    <h2>Ask in your own words</h2>
+    <p>Describe what you're working on, like you would to a colleague. An assistant finds matching resources in the catalog and explains which fit best and why.</p>
+    <form class="rec-quick" action="/recommend/ask/" method="post" data-ask-start><label class="sr-only" for="rec-quick-q">Your question</label><input id="rec-quick-q" name="q" type="text" maxlength="600" placeholder="e.g. ${attr(examples[0])}" required><button class="btn" type="submit">Ask</button></form>
+    <div class="rec-path-examples">${examples.slice(1).map((x) => `<a href="/recommend/ask/" data-ask-q="${attr(x)}">${esc(x)}</a>`).join("")}</div>
+    <a class="rec-path-cta" href="/recommend/ask/">Open the chat →</a>
+  </div>
+</section>
+<section class="wrap section rec-how">
+  <h2>How recommendations are made</h2>
+  <div class="rec-how-grid">
+    <div><b>Match</b><p>How well a resource fits your words or choices: its name, description, tags and domains.</p></div>
+    <div><b>Quality</b><p>Its ${esc(brand)} grade, from automated checks of FAIRness, quality and maintenance.</p></div>
+    <div><b>Use</b><p>How many projects are known to use it, and how recently it was updated.</p></div>
+    <div><b>Reasons</b><p>Each suggestion lists why it was picked, so you can judge for yourself. <a href="/evaluation/">How grades work</a></p></div>
+  </div>
+</section>`;
+  return page({ title: "Find the right resource", pathname: "/recommend/", body, description: `Which ontology, schema or standard should you use? Answer a few questions or ask in your own words, and get recommendations from ${brand} with the reasons for each.`, scripts: [] });
+}
+
+function recommendGuidedPage() {
+  const brand = config.brand || config.name || "Catalog";
+  const { kinds, formats, areas, topic } = recommendData();
+  const trail = [["Home", "/"], ["Find the right resource", "/recommend/"], ["Guided", "/recommend/guided/"]];
+  const chip = (name, value, label, n, checked = false) => `<label class="rec-chip"><input type="radio" name="${name}" value="${attr(value)}"${checked ? " checked" : ""}><span>${esc(label)}${n != null ? ` <small>${n.toLocaleString("en-US")}</small>` : ""}</span></label>`;
+  const body = `
+<section class="page-head wrap">
+  ${crumbsHtml(trail)}
+  <h1>Answer a few questions</h1>
+  <p class="lede">Choose what matters to you; recommendations update as you go. Prefer to describe it? <a href="/recommend/ask/">Ask in your own words</a>.</p>
+</section>
+<section class="wrap section rec" data-recommend>
+  <aside class="rec-guide" aria-label="Questions">
+    <form data-guide>
+      <label class="rec-field"><span class="rec-q"><span class="rec-step">1</span> What's it about? <span class="muted">(optional)</span></span><input type="search" name="q" placeholder="e.g. ${attr([...new Set([topic, "cell types", "datasets", "units"])].slice(0, 3).join(", "))}" autocomplete="off"></label>
+      <label class="rec-field"><span class="rec-q"><span class="rec-step">2</span> Your area</span><select name="category"><option value="">Any area</option>${areas.map(([id, name]) => `<option value="${attr(id)}">${esc(name)}</option>`).join("")}</select></label>
+      <fieldset class="rec-field"><legend><span class="rec-step">3</span> Type of resource</legend><div class="rec-chips">${chip("kind", "", "Any", null, true)}${kinds.map(([k, n]) => chip("kind", k, KIND_LABEL[k] || k, n)).join("")}</div></fieldset>
+      <label class="rec-field"><span class="rec-q"><span class="rec-step">4</span> Format you need</span><select name="format"><option value="">Any format</option>${formats.map(([f, n]) => `<option value="${attr(f)}">${esc(f)} (${n})</option>`).join("")}</select></label>
+      <fieldset class="rec-field"><legend><span class="rec-step">5</span> Must have</legend>
+        <label class="rec-check"><input type="checkbox" name="maintained"><span><b>Actively maintained</b><small>Updated in the last two years</small></span></label>
+        <label class="rec-check"><input type="checkbox" name="open_license"><span><b>Open licence</b><small>CC0, CC BY, MIT, Apache, BSD…</small></span></label>
+        <label class="rec-check"><input type="checkbox" name="used"><span><b>Used by other projects</b><small>At least one known adopter</small></span></label>
+      </fieldset>
+      <fieldset class="rec-field"><legend><span class="rec-step">6</span> Minimum grade</legend><div class="rec-chips">${chip("min_grade", "", "Any", null, true)}${["A", "B", "C"].map((g) => chip("min_grade", g, `${g}${g === "A" ? "" : " or better"}`)).join("")}</div></fieldset>
+      <label class="rec-field"><span class="rec-q"><span class="rec-step">7</span> Order by</span><select name="sort"><option value="">Most relevant first</option><option value="score">Highest grade (among relevant)</option></select></label>
+      <button type="reset" class="btn-ghost btn-sm">Start over</button>
+    </form>
+  </aside>
+  <div class="rec-main">${recResults()}</div>
+</section>`;
+  return page({ title: "Find a resource: guided", pathname: "/recommend/guided/", body, description: `Answer a few questions and get ${brand} recommendations for ontologies, schemas and standards, with the reasons for each.`, scripts: ["/assets/recommend.js"] });
+}
+
+function recommendAskPage() {
+  const brand = config.brand || config.name || "Catalog";
+  const { examples, topic } = recommendData();
+  const cards = [
+    [examples[0], "Maintained resources for a topic"],
+    [examples[1], "Schemas with an open licence"],
+    [examples[2], "What most projects use"],
+    [`Compare the best options for ${topic}`, "Trade-offs between candidates"],
+  ];
+  const body = `
+<div class="cg" data-chatapp data-brand="${attr(brand)}">
+  <aside class="cg-side" data-chat-side aria-label="Chats">
+    <a class="cg-new" href="/recommend/ask/" data-new-chat><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>New chat</a>
+    <div class="cg-side-head"><p class="cg-side-title">Your chats</p><button type="button" class="cg-clear" data-clear-chats hidden>Delete all</button></div>
+    <div class="cg-search" data-chat-search role="search" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" placeholder="Search chats" aria-label="Search chats" autocomplete="off"></div>
+    <nav class="cg-list" data-chat-list aria-label="Saved chats"><p class="cg-side-note">Loading…</p></nav>
+    <div class="cg-side-foot"><a href="/recommend/guided/">Prefer choosing options? <b>Answer a few questions →</b></a></div>
+  </aside>
+  <section class="cg-main">
+    <div class="cg-top">
+      <button type="button" class="cg-menu" data-chat-menu aria-label="Show chats" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <h1 class="cg-title" data-chat-title>Find the right resource</h1>
+      <span class="cg-status" data-chat-status></span>
+    </div>
+    <div class="cg-scroll" data-chat-scroll>
+      <div class="cg-empty" data-chat-empty>
+        <div class="cg-mark" aria-hidden="true">✦</div>
+        <h2>What are you working on?</h2>
+        <p>Describe your data or project and what matters (format, licence, maintenance). I'll suggest resources from ${esc(brand)} and explain why.</p>
+        <div class="cg-cards">${cards.map(([q, d]) => `<button type="button" class="cg-card" data-suggest="${attr(q)}"><b>${esc(q)}</b><small>${esc(d)}</small></button>`).join("")}</div>
+      </div>
+      <div class="cg-thread" data-chat-log aria-live="polite"></div>
+    </div>
+    <form class="cg-composer" data-chat-form>
+      <div class="cg-box">
+        <label class="sr-only" for="cg-input">Message</label>
+        <textarea id="cg-input" name="q" rows="1" maxlength="600" placeholder="Ask about ontologies, schemas or standards…" required></textarea>
+        <button type="submit" class="cg-send" aria-label="Send"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+      </div>
+      <p class="cg-fine">Answers are written by a small AI model from ${esc(brand)}'s own data; check resource pages before relying on them. <span data-save-note></span></p>
+    </form>
+  </section>
+</div>`;
+  return page({ title: "Ask: find a resource", pathname: "/recommend/ask/", body, noindex: false, description: `Describe what you need and get ${brand} recommendations for ontologies, schemas and standards, explained by an AI assistant.`, scripts: ["/assets/chat.js"] });
+}
+
 function adminPage() {
   const brand = config.brand || config.name || "Catalog";
   const ic = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
@@ -1781,6 +2045,7 @@ function adminPage() {
     ["catalog", "Catalog", ic('<path d="M4 4h16v16H4zM8 4v16M11 8h6M11 12h6M11 16h4"/>')],
     ["evaluations", "Evaluations", ic('<path d="m4 12 5 5L20 6M4 5h7M14 20h6"/>')],
     ["users", "Users &amp; access", ic('<circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6M18 15a5 5 0 0 1 3 5"/>')],
+    ["logs", "Logs &amp; feedback", ic('<path d="M4 5h16v11H8l-4 4zM8 9h8M8 12h5"/>')],
     ["activity", "Activity log", ic('<circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/>')],
   ];
   const body = `
@@ -1839,8 +2104,37 @@ function adminPage() {
         </form>
         <p class="small muted" data-limit-defaults></p>
       </article>
+      <article class="acc-card acc-pad">
+        <h3>Usage &amp; blocks</h3>
+        <p class="small muted">Who used the API most in the last hour (signed-out visitors appear as a hash of their IP address). Anyone far over their limit is blocked automatically for a short time; block or unblock here.</p>
+        <form class="limits-form" data-block-form>
+          <label>Block<input name="target" required placeholder="@login, an IP address, or a key"></label>
+          <label>For (minutes)<input type="number" name="minutes" min="1" value="60" required></label>
+          <label>Reason<input name="reason" placeholder="optional"></label>
+          <button class="btn" type="submit">Block</button>
+        </form>
+        <div class="acc-tablewrap"><table class="acc-table"><thead><tr><th>Blocked</th><th>Until</th><th>Reason</th><th></th></tr></thead><tbody data-blocks></tbody></table></div>
+        <div class="acc-tablewrap"><table class="acc-table"><thead><tr><th>Caller (last hour)</th><th class="num">Requests</th><th class="num">Peak / minute</th><th></th></tr></thead><tbody data-usage></tbody></table></div>
+      </article>
       <div class="acc-filters"><input type="search" data-user-search placeholder="Search users by login, name or email…" aria-label="Search users"></div>
       <div class="acc-card acc-tablewrap"><table class="acc-table"><thead><tr><th>User</th><th>Email</th><th>Last sign-in</th><th class="num">Tokens</th><th>Rate limit (per minute)</th></tr></thead><tbody data-users></tbody></table></div>
+    </section>
+
+    <section class="adm-view" id="logs" hidden>
+      <div class="adm-vtitle"><h2>Logs &amp; feedback</h2><p>What people ask the assistant and search for, without their identity, and how they rate the answers. Use it to find questions with poor or no results, and export it to evaluate and improve ranking, prompts and models.</p></div>
+      <div class="adm-stats" data-log-stats></div>
+      <div class="adm-grid adm-even">
+        <article class="acc-card"><div class="acc-card-head"><h2>Most common queries</h2></div><ol class="adm-qlist" data-top-queries></ol></article>
+        <article class="acc-card"><div class="acc-card-head"><h2>Queries that found nothing</h2></div><ol class="adm-qlist" data-empty-queries></ol></article>
+      </div>
+      <div class="acc-intro adm-below"><div><h3 class="adm-h3">Chat answers</h3></div><div class="adm-actions"><a class="btn-ghost btn-sm" href="/api/admin/logs/export/chats.csv" download>↓ CSV</a><a class="btn-ghost btn-sm" href="/api/admin/logs/export/chats.jsonl" download>↓ JSONL</a></div></div>
+      <div class="acc-filters"><input type="search" data-chatlog-q placeholder="Search questions…" aria-label="Search questions"><select data-chatlog-rating aria-label="Feedback"><option value="">All answers</option><option value="rated">With any feedback</option><option value="bad">👎 Bad</option><option value="good">👍 Good</option><option value="comment">With a comment</option></select></div>
+      <div class="acc-card acc-tablewrap"><table class="acc-table adm-logtable"><thead><tr><th>When</th><th>Question</th><th>Answer</th><th>Shown</th><th>Feedback</th></tr></thead><tbody data-chatlog></tbody></table></div>
+      <p><button type="button" class="btn-ghost btn-sm" data-chatlog-more hidden>Older</button></p>
+      <div class="acc-intro adm-below"><div><h3 class="adm-h3">Searches</h3></div><div class="adm-actions"><a class="btn-ghost btn-sm" href="/api/admin/logs/export/searches.csv" download>↓ CSV</a><a class="btn-ghost btn-sm" href="/api/admin/logs/export/searches.jsonl" download>↓ JSONL</a></div></div>
+      <div class="acc-filters"><input type="search" data-searchlog-q placeholder="Search queries…" aria-label="Search queries"><select data-searchlog-source aria-label="Source"><option value="">All sources</option><option value="guided">Guided</option><option value="search">Search bar</option><option value="catalog">Catalog filters</option><option value="mcp">MCP (AI agents)</option></select><label class="adm-check"><input type="checkbox" data-searchlog-empty> No results only</label></div>
+      <div class="acc-card acc-tablewrap"><table class="acc-table adm-logtable"><thead><tr><th>When</th><th>Source</th><th>Query</th><th>Filters</th><th class="num">Results</th><th>Opened</th></tr></thead><tbody data-searchlog></tbody></table></div>
+      <p><button type="button" class="btn-ghost btn-sm" data-searchlog-more hidden>Older</button></p>
     </section>
 
     <section class="adm-view" id="activity" hidden>
@@ -1944,6 +2238,9 @@ put(
 put("submit/index.html", () => submitPage());
 put("account/index.html", () => accountPage());
 put("admin/index.html", () => adminPage());
+put("recommend/index.html", () => recommendPage());
+put("recommend/guided/index.html", () => recommendGuidedPage());
+put("recommend/ask/index.html", () => recommendAskPage());
 put("api-docs/index.html", () => apiDocsPage("api"));
 put("mcp-docs/index.html", () => apiDocsPage("mcp"));
 put("about/index.html", () => aboutPage());

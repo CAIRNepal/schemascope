@@ -41,14 +41,14 @@ Records are merged across sources by prefix, cross-registry mappings, ontology o
 ## API, MCP and UI
 
 ```
-data/*.json ──ingest──▶ SQLite (.local/catalog.db) ──▶ FastAPI  /api/…  (JSON, OpenAPI at /docs)
+data/*.json ──ingest──▶ Postgres ─────────────────▶ FastAPI  /api/…  (JSON, OpenAPI at /docs)
  (evaluate,                                              │       /mcp/   (MCP, streamable HTTP)
   rescore, quality)                                      └──▶ web/server.mjs: pages rendered by scripts/site.mjs
                                                               (the same templates as the static build)
 ```
 
 ```bash
-npm run ingest        # load data/ into .local/catalog.db (incremental; --rebuild to start over). refresh.sh runs it too
+npm run ingest        # load data/ into Postgres at DATABASE_URL (incremental; --rebuild to start over). refresh.sh runs it too
 npm run api           # API + MCP on http://127.0.0.1:8000  (needs uv: https://docs.astral.sh/uv/)
 npm run web           # site on http://localhost:3000, rendered from the API's data
 npm run test:api      # backend tests
@@ -56,10 +56,10 @@ cd web && npm run check-links -- http://localhost:3000 http://127.0.0.1:8000   #
 ```
 
 - **API** (`backend/catalog_api/`): `/api/entries` (search with `q`, filters `category`, `kind`, `grade`, `format`, `registry`, `legacy`, `sort`, pagination and facet counts), `/api/entries/{id}`, `/api/entries/{id}/history`, `/api/categories`, `/api/runs`, `/api/runs/{id}`, `/api/stats`, `/api/meta`.
-- **MCP** at `/mcp/`: tools `search_catalog`, `get_entry`, `get_entry_history`, `list_categories`, `catalog_stats`, `scoring_rubric`. Add it to Claude Code with `claude mcp add --transport http schemascope http://127.0.0.1:8000/mcp/`, or run it over stdio with `npm run mcp:stdio`.
+- **MCP** at `/mcp/`: tools `search_catalog`, `get_entry`, `get_entry_history`, `list_categories`, `catalog_stats`, `scoring_rubric`, `recommend_resources`. Needs a personal access token with the `mcp` scope. Tool calls go into the anonymous search log (source `mcp`) unless the token's owner turned off *Help improve recommendations*. Add it to Claude Code with `claude mcp add --transport http schemascope http://127.0.0.1:8000/mcp/`, or run it over stdio with `npm run mcp:stdio`.
 - **Site** (`web/server.mjs`): renders the static site's own templates (`scripts/site.mjs`) from API data, so pages are identical to `npm run build` output; reloads automatically after an ingest.
 
-Environment: `CATALOG_REPO` (repository root; default: parent of `backend/`), `CATALOG_DB`, `CORS_ORIGINS`, `MCP_ALLOWED_HOSTS` (public host name(s) of the API, e.g. `api.schemascope.org`; localhost always works) for the API; `API_URL`, `PORT`, `HOST`, `POLL_SECONDS`, `CACHE_MB` for the site server.
+Environment: `CATALOG_REPO` (repository root; default: parent of `backend/`), `DATABASE_URL` (Postgres; default `postgresql://catalog:catalog@127.0.0.1:5433/catalog`), `CORS_ORIGINS`, `MCP_ALLOWED_HOSTS` (public host name(s) of the API, e.g. `api.schemascope.org`; localhost always works) for the API; `API_URL`, `PORT`, `HOST`, `POLL_SECONDS`, `CACHE_MB` for the site server.
 
 ## Domains
 
@@ -75,7 +75,39 @@ Use the site's `/submit/` form, which opens a GitHub issue that a bot turns into
 
 ## Deploy
 
-Two processes: the API (`uvicorn catalog_api.app:app`, Python ≥ 3.11, with `.local/catalog.db` built by `npm run ingest`) and the site server (`node web/server.mjs`, with `API_URL` pointing at the API). The static build (`node scripts/build.mjs` → `dist/`, `vercel.json`) still works and produces the same pages; see S-014 and S-015 in DECISIONS.md.
+Everything runs in Docker Compose: Postgres, an `ingest` job (loads `data/`), the API (+ MCP), the site server, the chat model (Ollama, optional) and Caddy (HTTPS).
+
+**Sandbox** (the full stack on one machine, sign-in without a GitHub app):
+
+```bash
+docker compose -f infrastructure/sandbox/docker-compose.yml up -d --build
+open http://localhost:8380          # API on :8381, Postgres on 127.0.0.1:5433
+```
+
+**Production** (one server, e.g. a 4–6 vCPU / 8–12 GB VPS; `infrastructure/production/`):
+
+```bash
+cp infrastructure/production/.env.example infrastructure/production/.env   # fill in domain, secrets, GitHub app
+sudo mkdir -p /srv/backups/schemascope
+docker compose -f infrastructure/production/docker-compose.yml --env-file infrastructure/production/.env --profile llm up -d --build
+# after each evaluation run (git pull updated data/):
+docker compose -f infrastructure/production/docker-compose.yml --env-file infrastructure/production/.env run --rm ingest
+```
+
+Leave out `--profile llm` to run without the chat model (answers then list ranked matches only). Point the domain's `A` record at the server; Caddy gets the certificate.
+
+**Database backups** (`backup` service, `infrastructure/production/backup.sh`; see S-023 in DECISIONS.md): a `pg_dump` every night at `BACKUP_AT` (02:45 UTC) into `BACKUP_DIR` (`/srv/backups/schemascope`), keeping 7 daily and 4 weekly dumps. Keep that folder inside the host's own backup (e.g. Contabo Auto Backup) so the dumps leave the server. The catalog tables can always be rebuilt with `ingest`; the dumps protect accounts, tokens, submissions, the audit log, saved chats and the logs.
+
+```bash
+dc="docker compose -f infrastructure/production/docker-compose.yml --env-file infrastructure/production/.env"
+$dc exec backup backup.sh now                 # dump right away
+$dc exec backup backup.sh check               # restore the newest dump into a throwaway database and compare row counts (changes nothing)
+$dc stop api web && $dc exec backup backup.sh restore <file>.dump && $dc start api web   # replace the live database
+```
+
+Run `check` after the first night and now and then after that.
+
+**Static build** (same pages, no accounts, chat or MCP): `node scripts/build.mjs` → `dist/`; `vercel.json` sets the build command and output directory. The full stack needs long-running containers (Postgres, the model), so it does not run on Vercel.
 
 ## License
 

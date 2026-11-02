@@ -5,11 +5,12 @@ audit log (kept across ingests). Start it with `docker compose up -d db`; the AP
 """
 from __future__ import annotations
 
+import asyncio
 import threading
 from typing import Any
 
 from psycopg.rows import dict_row
-from psycopg_pool import ConnectionPool
+from psycopg_pool import AsyncConnectionPool, ConnectionPool
 
 from . import settings
 
@@ -73,11 +74,51 @@ ALTER TABLE submissions ADD COLUMN IF NOT EXISTS status text NOT NULL DEFAULT 'p
 ALTER TABLE submissions ADD COLUMN IF NOT EXISTS reviewed_by text;
 ALTER TABLE submissions ADD COLUMN IF NOT EXISTS reviewed_at timestamptz;
 ALTER TABLE submissions ADD COLUMN IF NOT EXISTS review_notes text;
+-- Saved recommendation chats (signed-in users only). Assistant messages keep the results they showed (data).
+CREATE TABLE IF NOT EXISTS chats (
+  id text PRIMARY KEY, user_id bigint NOT NULL REFERENCES users(id) ON DELETE CASCADE, title text NOT NULL,
+  created_at timestamptz NOT NULL DEFAULT now(), updated_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS chats_user ON chats (user_id, updated_at DESC);
+CREATE TABLE IF NOT EXISTS chat_messages (
+  id bigserial PRIMARY KEY, chat_id text NOT NULL REFERENCES chats(id) ON DELETE CASCADE, role text NOT NULL,
+  content text NOT NULL, data jsonb, created_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS chat_messages_chat ON chat_messages (chat_id, id);
+-- Chat log for improving search and recommendations. Deliberately has no user id, IP or chat id: only an anonymous
+-- per-browser-session id, the question, what was understood and shown, the answer and any feedback.
+CREATE TABLE IF NOT EXISTS chat_logs (
+  id text PRIMARY KEY, session text, question text NOT NULL, filters jsonb, result_ids text[], answer text, model text,
+  rating smallint, comment text, created_at timestamptz NOT NULL DEFAULT now(), feedback_at timestamptz
+);
+CREATE INDEX IF NOT EXISTS chat_logs_created ON chat_logs (created_at DESC);
+ALTER TABLE users ADD COLUMN IF NOT EXISTS improve_search boolean NOT NULL DEFAULT true;   -- may chats be logged (no identity)
+-- Search log (guided recommendations, the search bar, catalog filters), also without identity: what people looked for,
+-- how many results they got, the top results and what they clicked.
+CREATE TABLE IF NOT EXISTS search_logs (
+  id text PRIMARY KEY, session text, source text NOT NULL, query text, filters jsonb, result_count int, result_ids text[],
+  clicked text[] NOT NULL DEFAULT '{}', created_at timestamptz NOT NULL DEFAULT now()
+);
+CREATE INDEX IF NOT EXISTS search_logs_created ON search_logs (created_at DESC);
+-- Rate limiting, shared by all API workers and kept for abuse protection. Keys are "user:<id>" for accounts and
+-- "ip:<keyed hash>" for signed-out visitors (raw IP addresses are not stored). Counts per minute, kept 7 days.
+CREATE TABLE IF NOT EXISTS rate_usage (key text NOT NULL, minute bigint NOT NULL, count int NOT NULL, PRIMARY KEY (key, minute));
+CREATE INDEX IF NOT EXISTS rate_usage_minute ON rate_usage (minute);
+CREATE TABLE IF NOT EXISTS rate_blocks (
+  key text PRIMARY KEY, until timestamptz NOT NULL, reason text, auto boolean NOT NULL DEFAULT false,
+  created_at timestamptz NOT NULL DEFAULT now(), created_by text
+);
 """
 
 _pool: ConnectionPool | None = None
 _lock = threading.Lock()
 _ready = False
+
+# The API uses an async pool (non-blocking: queries are awaited on the event loop). The ingest CLI, schema setup and
+# the OpenAPI document use the small synchronous pool below.
+_apool: AsyncConnectionPool | None = None
+_apool_loop: asyncio.AbstractEventLoop | None = None
+_alock: asyncio.Lock | None = None
 
 
 class Unavailable(RuntimeError):
@@ -85,6 +126,7 @@ class Unavailable(RuntimeError):
 
 
 def pool() -> ConnectionPool:
+    """Synchronous pool (ingest and one-off work); creates the schema on first use."""
     global _pool, _ready
     with _lock:
         if _pool is None:
@@ -99,6 +141,36 @@ def pool() -> ConnectionPool:
     return _pool
 
 
+async def apool() -> AsyncConnectionPool:
+    """The async pool for the API, opened on first use in the running event loop."""
+    global _apool, _apool_loop, _alock, _ready
+    loop = asyncio.get_running_loop()
+    if _apool is not None and _apool_loop is loop:
+        return _apool
+    if _alock is None or _apool_loop is not loop:
+        _alock = asyncio.Lock()
+    async with _alock:
+        if _apool is None or _apool_loop is not loop:
+            # A new event loop (tests start one per client) gets its own pool; the old one belongs to a closed loop.
+            p = AsyncConnectionPool(settings.DATABASE_URL, min_size=1, max_size=settings.DB_POOL_SIZE, open=False, timeout=10,
+                                    kwargs={"autocommit": True, "row_factory": dict_row})
+            await p.open()
+            if not _ready:
+                async with p.connection() as con:
+                    await con.execute(SCHEMA)
+                _ready = True
+            _apool, _apool_loop = p, loop
+    return _apool
+
+
+async def aclose() -> None:
+    """Close the async pool at shutdown (only if it belongs to this event loop; a pool from another loop is dropped)."""
+    global _apool, _apool_loop
+    if _apool is not None and _apool_loop is asyncio.get_running_loop():
+        await _apool.close()
+    _apool, _apool_loop = None, None
+
+
 def close() -> None:
     global _pool, _ready
     with _lock:
@@ -107,22 +179,40 @@ def close() -> None:
         _pool, _ready = None, False
 
 
-def rows(sql: str, params: Any = ()) -> list[dict]:
+# ---------- async helpers (API) ----------
+async def rows(sql: str, params: Any = ()) -> list[dict]:
+    async with (await apool()).connection() as con:
+        return await (await con.execute(sql, params)).fetchall()
+
+
+async def one(sql: str, params: Any = ()) -> dict | None:
+    async with (await apool()).connection() as con:
+        return await (await con.execute(sql, params)).fetchone()
+
+
+async def value(sql: str, params: Any = ()) -> Any:
+    r = await one(sql, params)
+    return next(iter(r.values())) if r else None
+
+
+async def execute(sql: str, params: Any = ()) -> int:
+    """Run a write; returns the affected row count."""
+    async with (await apool()).connection() as con:
+        return (await con.execute(sql, params)).rowcount
+
+
+# ---------- sync helpers (ingest CLI, OpenAPI) ----------
+def rows_sync(sql: str, params: Any = ()) -> list[dict]:
     with pool().connection() as con:
         return con.execute(sql, params).fetchall()
 
 
-def one(sql: str, params: Any = ()) -> dict | None:
+def value_sync(sql: str, params: Any = ()) -> Any:
     with pool().connection() as con:
-        return con.execute(sql, params).fetchone()
-
-
-def value(sql: str, params: Any = ()) -> Any:
-    r = one(sql, params)
+        r = con.execute(sql, params).fetchone()
     return next(iter(r.values())) if r else None
 
 
-def execute(sql: str, params: Any = ()) -> int:
-    """Run a write; returns the affected row count."""
+def execute_sync(sql: str, params: Any = ()) -> int:
     with pool().connection() as con:
         return con.execute(sql, params).rowcount

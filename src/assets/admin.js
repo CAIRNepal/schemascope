@@ -32,7 +32,7 @@
   $("[data-adm-date]").textContent = new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 
   // ---------- views ----------
-  const VIEWS = ["overview", "submissions", "catalog", "evaluations", "users", "activity"];
+  const VIEWS = ["overview", "submissions", "catalog", "evaluations", "users", "logs", "activity"];
   const loaded = new Set();
   function show(id) {
     if (!VIEWS.includes(id)) id = "overview";
@@ -212,7 +212,39 @@
     form.elements.authenticatedPerMinute.value = s.rateLimit.authenticatedPerMinute;
     $("[data-limit-defaults]").textContent = `Defaults from the server's environment: ${fmt(s.defaults.anonymousPerMinute)} anonymous, ${fmt(s.defaults.authenticatedPerMinute)} signed in. Changes apply within seconds and are recorded in the activity log.`;
     loadUsers();
+    loadRate();
   }
+  async function loadRate() {
+    const r = await api("/api/admin/rate?minutes=60");
+    $("[data-blocks]").innerHTML = r.blocks.length
+      ? r.blocks.map((b) => `<tr><td>${esc(b.label)}<small>${b.auto ? "automatic" : `by @${esc(b.by || "?")}`}</small></td><td class="small">${when(b.until)}</td><td class="small">${esc(b.reason || "")}</td><td class="acc-right"><button type="button" class="acc-link" data-unblock="${esc(b.key)}">Unblock</button></td></tr>`).join("")
+      : `<tr><td colspan="4"><div class="acc-empty small">Nobody is blocked.</div></td></tr>`;
+    $("[data-usage]").innerHTML = r.top.length
+      ? r.top.map((u) => `<tr><td>${esc(u.label)}</td><td class="num">${fmt(u.requests)}</td><td class="num">${fmt(u.peakPerMinute)}</td><td class="acc-right"><button type="button" class="acc-link" data-block-key="${esc(u.key)}">Block…</button></td></tr>`).join("")
+      : `<tr><td colspan="4"><div class="acc-empty small">No API use in the last hour.</div></td></tr>`;
+  }
+  $("[data-block-form]").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const f = e.target;
+    try {
+      await api("/api/admin/rate/blocks", { method: "POST", body: JSON.stringify({ target: f.elements.target.value.trim(), minutes: Number(f.elements.minutes.value), reason: f.elements.reason.value.trim() }) });
+      toast("Blocked");
+      f.reset();
+      loadRate();
+      loaded.delete("activity");
+    } catch (err) { toast(err.message); }
+  });
+  document.addEventListener("click", async (e) => {
+    const un = e.target.closest("[data-unblock]");
+    const bk = e.target.closest("[data-block-key]");
+    if (un) {
+      try { await api(`/api/admin/rate/blocks/${encodeURIComponent(un.dataset.unblock)}`, { method: "DELETE" }); toast("Unblocked"); loadRate(); loaded.delete("activity"); } catch (err) { toast(err.message); }
+    } else if (bk) {
+      const f = $("[data-block-form]");
+      f.elements.target.value = bk.dataset.blockKey;
+      f.elements.reason.focus();
+    }
+  });
   async function loadUsers() {
     const q = $("[data-user-search]").value.trim();
     const list = await api(`/api/admin/users${q ? `?q=${encodeURIComponent(q)}` : ""}`);
@@ -247,7 +279,7 @@
     "auth.login": "Signed in", "auth.logout": "Signed out", "auth.login_failed": "Sign-in failed", "auth.jwt_issued": "Session token issued",
     "token.create": "Token created", "token.revoke": "Token revoked", "submission.create": "Submitted an entry",
     "submission.approved": "Approved a submission", "submission.changes_requested": "Requested changes", "submission.rejected": "Rejected a submission", "submission.pending": "Reopened a submission",
-    "admin.rate_limits": "Changed rate limits", "admin.user_rate_limit": "Changed a user's rate limit", "admin.export": "Exported the catalog", "catalog.ingest": "Catalog data loaded",
+    "admin.rate_limits": "Changed rate limits", "admin.user_rate_limit": "Changed a user's rate limit", "admin.export": "Exported data", "admin.block": "Blocked a caller", "admin.unblock": "Unblocked a caller", "security.block": "Blocked automatically", "account.preferences": "Changed settings", "catalog.ingest": "Catalog data loaded",
   };
   const ICON = (a) => (a.startsWith("token.") ? "⚿" : a.startsWith("submission.") ? "✎" : a.startsWith("admin.") ? "⚙" : a.startsWith("catalog.") ? "⟳" : a === "auth.logout" ? "↙" : "↗");
   const detail = (a) => {
@@ -279,7 +311,62 @@
   $("[data-audit-search]").addEventListener("input", renderAudit);
   $("[data-audit-more]").addEventListener("click", () => activity(true));
 
-  const LOAD = { overview, submissions, catalog, evaluations, users, activity };
+  // ---------- logs & feedback ----------
+  const SRC = { guided: "Guided", search: "Search bar", catalog: "Catalog filters", mcp: "MCP" };
+  async function logs() {
+    const s = await api("/api/admin/logs/summary");
+    const c = s.chats || {};
+    const card = (label, value, note) => `<div class="acc-stat"><span class="acc-eyebrow">${label}</span><strong>${fmt(value)}</strong><p>${note}</p></div>`;
+    const src = (k) => s.searches[k] || { count: 0, noResults: 0, clicked: 0 };
+    const pct = (a, b) => (b ? `${Math.round((100 * a) / b)}%` : "—");
+    $("[data-log-stats]").innerHTML = [
+      card("Chat answers", c.turns, `${fmt(c.sessions)} sessions · ${fmt(c.good)} 👍 · ${fmt(c.bad)} 👎 · ${fmt(c.comments)} comments`),
+      ...["guided", "search", "catalog"].map((k) => card(`${SRC[k]} searches`, src(k).count, `${pct(src(k).noResults, src(k).count)} found nothing · ${pct(src(k).clicked, src(k).count)} opened a result`)),
+      card("MCP tool calls", src("mcp").count, `From AI agents · ${pct(src("mcp").noResults, src("mcp").count)} found nothing`),
+    ].join("");
+    const ql = (rows, extra) => rows.length ? rows.map((r) => `<li>${esc(r.q)}<span>${fmt(r.n)}×${extra ? extra(r) : ""}</span></li>`).join("") : `<li class="muted">Nothing yet.</li>`;
+    $("[data-top-queries]").innerHTML = ql(s.topQueries, (r) => (r.fewest === 0 ? " · sometimes no results" : ""));
+    $("[data-empty-queries]").innerHTML = ql(s.noResultQueries);
+    chatlog(true);
+    searchlog(true);
+  }
+  let chatRows = [], searchRows = [];
+  async function chatlog(reset) {
+    const q = $("[data-chatlog-q]").value.trim(), rating = $("[data-chatlog-rating]").value;
+    const before = !reset && chatRows.length ? `&before=${encodeURIComponent(chatRows[chatRows.length - 1].createdAt)}` : "";
+    const rows = await api(`/api/admin/logs/chats?limit=50${rating ? `&rating=${rating}` : ""}${q ? `&q=${encodeURIComponent(q)}` : ""}${before}`);
+    chatRows = reset ? rows : chatRows.concat(rows);
+    $("[data-chatlog]").innerHTML = chatRows.length ? chatRows.map((r) => `<tr>
+        <td class="small">${when(r.createdAt)}</td>
+        <td class="q">${esc(r.question)}${Object.keys(r.filters || {}).length ? `<small>${esc(Object.entries(r.filters).map(([k, v]) => (v === true ? k : `${k}: ${v}`)).join(" · "))}</small>` : ""}</td>
+        <td class="a"><div>${esc(r.answer || "")}</div>${(r.answer || "").length > 220 ? `<details><summary>Full answer</summary>${esc(r.answer)}</details>` : ""}<small>${esc(r.model || "no model")}</small></td>
+        <td class="small">${(r.resultIds || []).slice(0, 5).map((id) => `<a href="/o/${esc(id)}/">${esc(id)}</a>`).join(", ")}</td>
+        <td>${r.rating === 1 ? "👍" : r.rating === -1 ? "👎" : ""}${r.comment ? `<small>${esc(r.comment)}</small>` : ""}</td></tr>`).join("")
+      : `<tr><td colspan="5"><div class="acc-empty small">No chat answers logged${rating || q ? " for this filter" : " yet"}.</div></td></tr>`;
+    $("[data-chatlog-more]").hidden = rows.length < 50;
+  }
+  async function searchlog(reset) {
+    const q = $("[data-searchlog-q]").value.trim(), source = $("[data-searchlog-source]").value, empty = $("[data-searchlog-empty]").checked;
+    const before = !reset && searchRows.length ? `&before=${encodeURIComponent(searchRows[searchRows.length - 1].createdAt)}` : "";
+    const rows = await api(`/api/admin/logs/searches?limit=50${source ? `&source=${source}` : ""}${q ? `&q=${encodeURIComponent(q)}` : ""}${empty ? "&empty=true" : ""}${before}`);
+    searchRows = reset ? rows : searchRows.concat(rows);
+    $("[data-searchlog]").innerHTML = searchRows.length ? searchRows.map((r) => `<tr>
+        <td class="small">${when(r.createdAt)}</td><td>${esc(SRC[r.source] || r.source)}${r.source === "mcp" && r.filters?.tool ? `<br><small class="muted">${esc(r.filters.tool)}</small>` : ""}</td><td class="q">${esc(r.query || "—")}</td>
+        <td class="small">${esc(Object.entries(r.filters || {}).map(([k, v]) => (v === true ? k : `${k}: ${v}`)).join(" · ") || "—")}</td>
+        <td class="num">${fmt(r.resultCount)}</td>
+        <td class="small">${(r.clicked || []).map((id) => `<a href="/o/${esc(id)}/">${esc(id)}</a>`).join(", ") || "—"}</td></tr>`).join("")
+      : `<tr><td colspan="6"><div class="acc-empty small">No searches logged${q || source || empty ? " for this filter" : " yet"}.</div></td></tr>`;
+    $("[data-searchlog-more]").hidden = rows.length < 50;
+  }
+  $("[data-chatlog-q]").addEventListener("input", () => { clearTimeout(typing); typing = setTimeout(() => chatlog(true), 300); });
+  $("[data-chatlog-rating]").addEventListener("change", () => chatlog(true));
+  $("[data-chatlog-more]").addEventListener("click", () => chatlog(false));
+  $("[data-searchlog-q]").addEventListener("input", () => { clearTimeout(typing); typing = setTimeout(() => searchlog(true), 300); });
+  $("[data-searchlog-source]").addEventListener("change", () => searchlog(true));
+  $("[data-searchlog-empty]").addEventListener("change", () => searchlog(true));
+  $("[data-searchlog-more]").addEventListener("click", () => searchlog(false));
+
+  const LOAD = { overview, submissions, catalog, evaluations, users, logs, activity };
 
   document.addEventListener("click", (e) => {
     const t = e.target.closest("[data-review], [data-close], [data-filter-grade]");
